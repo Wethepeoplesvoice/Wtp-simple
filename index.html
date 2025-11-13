@@ -63,4 +63,1095 @@
     }
 
     header.hero {
-      border-radius: 22
+      border-radius: 22px;
+      background: radial-gradient(circle at top left, #0f172a, #020617 55%);
+      padding: 18px 16px 18px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 16px;
+    }
+
+    @media (min-width: 640px) {
+      header.hero {
+        padding: 20px 22px 22px;
+      }
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr);
+      gap: 16px;
+    }
+
+    @media (min-width: 700px) {
+      .hero-grid {
+        grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+        align-items: center;
+      }
+    }
+
+    .hero-left h1 {
+      margin: 0 0 6px;
+      font-size: 1.75rem;
+      line-height: 1.1;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .hero-left h1 span {
+      display: block;
+    }
+
+    @media (min-width: 640px) {
+      .hero-left h1 {
+        font-size: 2.05rem;
+      }
+    }
+
+    .hero-tagline {
+      font-size: 0.94rem;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+
+    .hero-tagline strong {
+      color: var(--text-main);
+      font-weight: 600;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+      margin-bottom: 6px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 11px;
+      border-radius: var(--radius-pill);
+      font-size: 0.78rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      color: var(--text-soft);
+      background: rgba(15, 23, 42, 0.8);
+    }
+
+    .pill-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 0 6px rgba(34, 197, 94, 0.2);
+    }
+
+    .pill-cta {
+      background: var(--accent);
+      color: #022c22;
+      border-color: rgba(34, 197, 94, 0.8);
+      box-shadow: 0 0 0 1px rgba(22, 163, 74, 0.4);
+      font-weight: 600;
+    }
+
+    .pill-cta span {
+      font-size: 0.75rem;
+    }
+
+    .hero-note {
+      font-size: 0.8rem;
+      color: var(--text-soft);
+      max-width: 420px;
+    }
+
+    .hero-note strong {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .hero-right {
+      border-radius: 18px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      background: radial-gradient(circle at top, #020617, #020617 45%, #000 100%);
+      padding: 10px 11px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-right::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background: radial-gradient(circle at 0 0, rgba(34, 197, 94, 0.2), transparent 55%);
+      opacity: 0.8;
+      pointer-events: none;
+    }
+
+    .hero-right-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-right-title {
+      font-size: 0.83rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--text-soft);
+      margin-bottom: 6px;
+    }
+
+    .hero-right-main {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    .hero-right-main strong {
+      color: var(--accent);
+    }
+
+    .hero-stat-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .hero-stat {
+      flex: 1 1 110px;
+      border-radius: 12px;
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      padding: 8px 9px;
+    }
+
+    .hero-stat-label {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-soft);
+      margin-bottom: 4px;
+    }
+
+    .hero-stat-value {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    .hero-stat-hint {
+      font-size: 0.73rem;
+      color: var(--text-soft);
+      margin-top: 2px;
+    }
+
+    .layout-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr);
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    @media (min-width: 880px) {
+      .layout-grid {
+        grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.05fr);
+        align-items: flex-start;
+      }
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-subtle);
+      padding: 12px 12px 14px;
+    }
+
+    @media (min-width: 640px) {
+      .card {
+        padding: 14px 14px 16px;
+      }
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+
+    .card-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    .card-subtitle {
+      font-size: 0.8rem;
+      color: var(--text-soft);
+      margin-bottom: 12px;
+    }
+
+    .badge {
+      font-size: 0.72rem;
+      padding: 3px 9px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      color: var(--text-soft);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      white-space: nowrap;
+    }
+
+    .badge-green {
+      background: var(--accent-soft);
+      border-color: rgba(34, 197, 94, 0.9);
+      color: #bbf7d0;
+      font-weight: 600;
+    }
+
+    .badge-outline {
+      background: rgba(15, 23, 42, 0.85);
+    }
+
+    .select-wrap {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .select-wrap select {
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--border-strong);
+      background: rgba(15, 23, 42, 0.9);
+      color: var(--text-main);
+      padding: 5px 28px 5px 10px;
+      font-size: 0.78rem;
+    }
+
+    .select-wrap::after {
+      content: "▾";
+      position: absolute;
+      right: 10px;
+      font-size: 0.7rem;
+      color: var(--text-soft);
+      pointer-events: none;
+    }
+
+    .issues-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 6px;
+    }
+
+    .issue-card {
+      border-radius: 14px;
+      background: var(--card-soft);
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      padding: 9px 9px 10px;
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      gap: 8px;
+    }
+
+    @media (min-width: 620px) {
+      .issue-card {
+        padding: 10px 11px 11px;
+        gap: 10px;
+      }
+    }
+
+    .issue-vote {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3px;
+      padding-right: 6px;
+      border-right: 1px solid rgba(75, 85, 99, 0.5);
+    }
+
+    .vote-btn {
+      width: 26px;
+      height: 26px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      background: rgba(15, 23, 42, 0.95);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: var(--text-soft);
+      font-size: 0.85rem;
+      transition: all 0.16s ease;
+    }
+
+    .vote-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      box-shadow: 0 0 0 1px rgba(34, 197, 94, 0.4);
+    }
+
+    .vote-btn.active-up {
+      background: rgba(34, 197, 94, 0.16);
+      border-color: var(--accent);
+      color: var(--accent);
+      box-shadow: 0 0 0 1px rgba(34, 197, 94, 0.5);
+    }
+
+    .vote-btn.active-down {
+      background: rgba(239, 68, 68, 0.1);
+      border-color: var(--danger);
+      color: var(--danger);
+      box-shadow: 0 0 0 1px rgba(239, 68, 68, 0.5);
+    }
+
+    .vote-score {
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .issue-main {
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .issue-header-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .issue-title {
+      font-size: 0.96rem;
+      font-weight: 600;
+    }
+
+    .issue-meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      align-items: baseline;
+      font-size: 0.76rem;
+      color: var(--text-soft);
+    }
+
+    .issue-meta-row span {
+      white-space: nowrap;
+    }
+
+    .dot-separator::before {
+      content: "• ";
+      margin: 0 2px;
+      color: var(--text-soft);
+    }
+
+    .issue-desc {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 3px;
+      max-height: 5.2em;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .issue-desc.expanded {
+      max-height: none;
+    }
+
+    .issue-desc-fade {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 1.4em;
+      background: linear-gradient(to bottom, transparent, rgba(15, 23, 42, 0.95));
+    }
+
+    .issue-actions {
+      margin-top: 4px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.75rem;
+      color: var(--text-soft);
+    }
+
+    .text-link {
+      border: none;
+      background: none;
+      padding: 0;
+      margin: 0;
+      color: var(--accent);
+      font-size: 0.75rem;
+      cursor: pointer;
+      text-decoration: underline;
+      text-decoration-style: dotted;
+      text-underline-offset: 3px;
+    }
+
+    .empty-state {
+      border-radius: 12px;
+      border: 1px dashed rgba(148, 163, 184, 0.6);
+      padding: 10px 10px;
+      font-size: 0.8rem;
+      color: var(--text-soft);
+      background: rgba(15, 23, 42, 0.75);
+      margin-top: 6px;
+    }
+
+    .empty-state strong {
+      color: var(--accent);
+    }
+
+    .tag-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 5px;
+    }
+
+    .chip {
+      font-size: 0.72rem;
+      padding: 2px 7px;
+      border-radius: var(--radius-pill);
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.55);
+      color: var(--text-soft);
+    }
+
+    .chip-green {
+      background: rgba(34, 197, 94, 0.16);
+      border-color: rgba(34, 197, 94, 0.8);
+      color: #bbf7d0;
+      font-weight: 500;
+    }
+
+    .field-group {
+      margin-bottom: 8px;
+    }
+
+    .field-label {
+      font-size: 0.78rem;
+      color: var(--text-soft);
+      margin-bottom: 4px;
+      display: block;
+    }
+
+    .field-label span {
+      color: rgba(252, 165, 165, 0.9);
+      margin-left: 2px;
+    }
+
+    input[type="text"],
+    textarea,
+    select.field-select {
+      width: 100%;
+      border-radius: 11px;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      background: rgba(15, 23, 42, 0.92);
+      color: var(--text-main);
+      padding: 7px 9px;
+      font-size: 0.84rem;
+    }
+
+    textarea {
+      min-height: 90px;
+      resize: vertical;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: rgba(148, 163, 184, 0.7);
+    }
+
+    .btn-primary {
+      border-radius: var(--radius-pill);
+      border: none;
+      padding: 7px 15px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+      color: #022c22;
+      cursor: pointer;
+      box-shadow: var(--shadow-button);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .btn-primary:hover {
+      box-shadow: var(--shadow-button-soft);
+    }
+
+    .btn-primary:active {
+      transform: translateY(1px);
+      box-shadow: 0 5px 16px rgba(22, 163, 74, 0.35);
+    }
+
+    .btn-secondary {
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      padding: 6px 11px;
+      font-size: 0.78rem;
+      background: rgba(15, 23, 42, 0.95);
+      color: var(--text-soft);
+      cursor: pointer;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .form-footer {
+      margin-top: 6px;
+      font-size: 0.75rem;
+      color: var(--text-soft);
+    }
+
+    .form-footer strong {
+      color: var(--accent);
+    }
+
+    .disclaimer {
+      margin-top: 10px;
+      font-size: 0.74rem;
+      color: var(--text-soft);
+      border-radius: 12px;
+      border: 1px dashed rgba(148, 163, 184, 0.6);
+      padding: 8px 10px;
+      background: rgba(15, 23, 42, 0.75);
+    }
+
+    .disclaimer strong {
+      color: var(--accent);
+    }
+
+    footer {
+      margin-top: 18px;
+      font-size: 0.72rem;
+      color: var(--text-soft);
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="hero">
+      <div class="hero-grid">
+        <div class="hero-left">
+          <div class="hero-badges">
+            <div class="pill">
+              <span class="pill-dot"></span>
+              Live grassroots prototype
+            </div>
+            <div class="pill pill-cta">
+              <span>GRASSROOTS CIVIC APP</span>
+            </div>
+          </div>
+          <h1>
+            <span>WE THE</span>
+            <span>PEOPLE'S</span>
+            <span>VOICE</span>
+          </h1>
+          <p class="hero-tagline">
+            <strong>Vote. Your power.</strong> We The People will be heard.
+          </p>
+          <p class="hero-note">
+            This simple app lets anyone draft a clear, one-page idea and see how people
+            would vote on it. Later, verified support can be turned into
+            <strong>formal petitions and proposals</strong> that are delivered to Congress
+            and your state representatives as a mandate from We The People.
+          </p>
+        </div>
+
+        <aside class="hero-right" aria-label="App overview">
+          <div class="hero-right-inner">
+            <div class="hero-right-title">How this prototype works</div>
+            <div class="hero-right-main">
+              Right now your issues and votes are
+              <strong>saved only on this device</strong> using your browser.
+              It’s a safe place to practice and refine ideas before we connect it
+              to verified voters and real submissions.
+            </div>
+            <div class="hero-stat-row">
+              <div class="hero-stat">
+                <div class="hero-stat-label">Today’s test</div>
+                <div class="hero-stat-value">Term limits</div>
+                <div class="hero-stat-hint">National proposal example</div>
+              </div>
+              <div class="hero-stat">
+                <div class="hero-stat-label">Next phase</div>
+                <div class="hero-stat-value">Verified voters</div>
+                <div class="hero-stat-hint">
+                  Link support to real citizens &amp; legal petitions.
+                </div>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </header>
+
+    <section class="layout-grid" aria-label="Voting app layout">
+      <!-- LEFT: Live issues -->
+      <section class="card" aria-labelledby="issues-heading">
+        <div class="card-header">
+          <div>
+            <div id="issues-heading" class="card-title">
+              Live issues &amp; votes (on this device)
+            </div>
+            <div class="card-subtitle">
+              See the proposals you’ve created here and practice voting them up or down.
+            </div>
+          </div>
+          <div class="select-wrap" aria-label="Filter issues by scope">
+            <select id="filterSelect">
+              <option value="all">All scopes</option>
+              <option value="national">National only</option>
+              <option value="state">State only</option>
+              <option value="local">Local only</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="issues-list" id="issuesList"></div>
+
+        <div class="disclaimer">
+          <strong>Prototype only:</strong> Issues and votes are stored
+          <em>only in this browser</em> for now. They are not yet tied to your
+          real identity or sent anywhere. The next phase will connect verified
+          U.S. voters and legally formatted submissions to Congress and state
+          representatives once enough support is reached.
+        </div>
+      </section>
+
+      <!-- RIGHT: New issue form -->
+      <section class="card" aria-labelledby="new-issue-heading">
+        <div class="card-header">
+          <div>
+            <div id="new-issue-heading" class="card-title">
+              Create a new issue to vote on
+            </div>
+            <div class="card-subtitle">
+              One page, one idea. Draft your proposal and let people vote it up or down.
+            </div>
+          </div>
+          <span class="badge badge-outline">Prototype bill builder</span>
+        </div>
+
+        <form id="newIssueForm">
+          <div class="field-group">
+            <label class="field-label" for="issueTitle">
+              Issue title<span>*</span>
+            </label>
+            <input
+              id="issueTitle"
+              type="text"
+              required
+              placeholder="Example: Term limits for members of Congress"
+            />
+          </div>
+
+          <div class="field-group">
+            <label class="field-label" for="issueScope">
+              Where does this apply?<span>*</span>
+            </label>
+            <select id="issueScope" class="field-select" required>
+              <option value="national">National (U.S.-wide)</option>
+              <option value="state">State level</option>
+              <option value="local">Local / city / county</option>
+            </select>
+          </div>
+
+          <div class="field-group">
+            <span class="field-label">How should we think about this?</span>
+            <div class="tag-chips">
+              <span class="chip chip-green">No party labels</span>
+              <span class="chip">Ideas only</span>
+              <span class="chip">Article V style reform</span>
+              <span class="chip">Checks &amp; balances</span>
+            </div>
+          </div>
+
+          <div class="field-group">
+            <label class="field-label" for="issueDescription">
+              What are you asking for?<span>*</span>
+            </label>
+            <textarea
+              id="issueDescription"
+              required
+              placeholder="Describe the change, why it matters, and what action you want Congress or your state to take. This is your simple, plain-language one-page ‘bill’."
+            ></textarea>
+          </div>
+
+          <div class="field-group">
+            <label class="field-label" for="issueTags">
+              Optional tags / key points
+            </label>
+            <input
+              id="issueTags"
+              type="text"
+              placeholder="Example: term limits, corruption, campaign finance, transparency"
+            />
+          </div>
+
+          <div style="display:flex;align-items:center;gap:8px;margin-top:6px;flex-wrap:wrap;">
+            <button type="submit" class="btn-primary">
+              <span>+ Publish issue for voting</span>
+            </button>
+            <button type="button" id="clearFormButton" class="btn-secondary">
+              Clear form
+            </button>
+          </div>
+
+          <div class="form-footer">
+            <strong>Reminder:</strong> this is a grassroots movement tool.
+            It does not replace voting in real elections. It is a way for
+            citizens to show what they want changed and give Congress and
+            state leaders a clear mandate from We The People.
+          </div>
+        </form>
+      </section>
+    </section>
+
+    <footer>
+      Built as a grassroots prototype by and for citizens who believe that
+      the government should work for the people again. When enough of us
+      stand up behind a clear idea, it becomes a mandate they cannot ignore.
+    </footer>
+  </main>
+
+  <script>
+    (function () {
+      const STORAGE_KEY = "wtp_simple_issues_v1";
+
+      function defaultIssues() {
+        const now = new Date();
+        const today = now.toISOString().slice(0, 10);
+
+        return [
+          {
+            id: "term-limits",
+            title: "Term limits for members of Congress",
+            scope: "national",
+            description:
+              "Set clear, reasonable term limits for members of the U.S. House and Senate so that public service is not a lifetime career. The goal is to reduce entrenched power, limit corruption, and make room for new voices who better reflect the people they serve.",
+            tags: ["term limits", "corruption", "career politicians"],
+            createdAt: today,
+            createdBy: "You (local test)",
+            score: 1,
+            userVote: 1,
+          },
+          {
+            id: "state-budget-transparency",
+            title: "State-level budget transparency",
+            scope: "state",
+            description:
+              "Require our state to publish an easy-to-read, line-by-line budget with plain-language explanations so ordinary citizens can see where every dollar goes and how much is spent on salaries, benefits, and perks for elected officials.",
+            tags: ["transparency", "state budget"],
+            createdAt: today,
+            createdBy: "You (local example)",
+            score: 0,
+            userVote: 0,
+          },
+          {
+            id: "local-town-hall-streaming",
+            title: "Stream & record all local town-hall meetings",
+            scope: "local",
+            description:
+              "Require our city and county to live-stream all town-hall meetings and keep recordings available online for free. This helps people who work nights, care for family, or cannot attend in person still see how decisions are made.",
+            tags: ["local", "access", "transparency"],
+            createdAt: today,
+            createdBy: "You (local example)",
+            score: 0,
+            userVote: 0,
+          },
+        ];
+      }
+
+      function loadIssues() {
+        try {
+          const raw = localStorage.getItem(STORAGE_KEY);
+          if (!raw) return defaultIssues();
+          const data = JSON.parse(raw);
+          if (Array.isArray(data) && data.length) return data;
+          return defaultIssues();
+        } catch (e) {
+          console.warn("Failed to load stored issues, using defaults.", e);
+          return defaultIssues();
+        }
+      }
+
+      function saveIssues() {
+        try {
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(issues));
+        } catch (e) {
+          console.warn("Failed to save issues.", e);
+        }
+      }
+
+      const issues = loadIssues();
+      let currentFilter = "all";
+
+      const issuesListEl = document.getElementById("issuesList");
+      const filterSelectEl = document.getElementById("filterSelect");
+      const newIssueForm = document.getElementById("newIssueForm");
+      const clearFormButton = document.getElementById("clearFormButton");
+
+      function formatScope(scope) {
+        if (scope === "national") return "National";
+        if (scope === "state") return "State";
+        if (scope === "local") return "Local";
+        return "Unknown";
+      }
+
+      function formatDate(iso) {
+        if (!iso) return "Unknown date";
+        const d = new Date(iso);
+        if (Number.isNaN(d.getTime())) return iso;
+        return d.toLocaleDateString(undefined, {
+          year: "numeric",
+          month: "short",
+          day: "numeric",
+        });
+      }
+
+      function renderIssues() {
+        issuesListEl.innerHTML = "";
+
+        const filtered = issues.filter((issue) =>
+          currentFilter === "all" ? true : issue.scope === currentFilter
+        );
+
+        if (!filtered.length) {
+          const div = document.createElement("div");
+          div.className = "empty-state";
+          div.innerHTML =
+            "No issues match this filter yet. <strong>Create a new issue on the right</strong> and it will appear here for voting.";
+          issuesListEl.appendChild(div);
+          return;
+        }
+
+        filtered
+          .slice()
+          .sort((a, b) => b.score - a.score)
+          .forEach((issue) => {
+            const card = document.createElement("article");
+            card.className = "issue-card";
+            card.dataset.issueId = issue.id;
+
+            const voteCol = document.createElement("div");
+            voteCol.className = "issue-vote";
+
+            const upBtn = document.createElement("button");
+            upBtn.type = "button";
+            upBtn.className =
+              "vote-btn" + (issue.userVote === 1 ? " active-up" : "");
+            upBtn.textContent = "▲";
+            upBtn.title = "Vote up";
+
+            const score = document.createElement("div");
+            score.className = "vote-score";
+            score.textContent = issue.score;
+
+            const downBtn = document.createElement("button");
+            downBtn.type = "button";
+            downBtn.className =
+              "vote-btn" + (issue.userVote === -1 ? " active-down" : "");
+            downBtn.textContent = "▼";
+            downBtn.title = "Vote down";
+
+            voteCol.appendChild(upBtn);
+            voteCol.appendChild(score);
+            voteCol.appendChild(downBtn);
+
+            const main = document.createElement("div");
+            main.className = "issue-main";
+
+            const headerRow = document.createElement("div");
+            headerRow.className = "issue-header-row";
+
+            const titleEl = document.createElement("div");
+            titleEl.className = "issue-title";
+            titleEl.textContent = issue.title;
+
+            const scopeBadge = document.createElement("span");
+            scopeBadge.className = "badge badge-green";
+            scopeBadge.textContent = formatScope(issue.scope);
+
+            headerRow.appendChild(titleEl);
+            headerRow.appendChild(scopeBadge);
+
+            const metaRow = document.createElement("div");
+            metaRow.className = "issue-meta-row";
+            const createdSpan = document.createElement("span");
+            createdSpan.textContent = "Created " + formatDate(issue.createdAt);
+            const bySpan = document.createElement("span");
+            bySpan.className = "dot-separator";
+            bySpan.textContent = "By: " + (issue.createdBy || "You (local)");
+
+            metaRow.appendChild(createdSpan);
+            metaRow.appendChild(bySpan);
+
+            const desc = document.createElement("div");
+            desc.className = "issue-desc";
+            desc.textContent = issue.description || "";
+            let needsFade = desc.textContent.length > 260;
+            let fadeEl = null;
+            if (needsFade) {
+              fadeEl = document.createElement("div");
+              fadeEl.className = "issue-desc-fade";
+              desc.appendChild(fadeEl);
+            }
+
+            const actions = document.createElement("div");
+            actions.className = "issue-actions";
+
+            const detailsBtn = document.createElement("button");
+            detailsBtn.type = "button";
+            detailsBtn.className = "text-link";
+            detailsBtn.textContent = needsFade ? "Show full text" : "Hide / show";
+            detailsBtn.addEventListener("click", () => {
+              const expanded = desc.classList.toggle("expanded");
+              if (fadeEl) fadeEl.style.display = expanded ? "none" : "block";
+              detailsBtn.textContent = expanded
+                ? "Show less"
+                : needsFade
+                ? "Show full text"
+                : "Hide / show";
+            });
+
+            const tagsInfo = document.createElement("div");
+            if (Array.isArray(issue.tags) && issue.tags.length) {
+              tagsInfo.textContent = "Tags: " + issue.tags.join(", ");
+            } else {
+              tagsInfo.textContent = "No tags added.";
+            }
+
+            actions.appendChild(detailsBtn);
+            actions.appendChild(tagsInfo);
+
+            main.appendChild(headerRow);
+            main.appendChild(metaRow);
+            main.appendChild(desc);
+            main.appendChild(actions);
+
+            card.appendChild(voteCol);
+            card.appendChild(main);
+
+            upBtn.addEventListener("click", () => handleVote(issue.id, 1));
+            downBtn.addEventListener("click", () => handleVote(issue.id, -1));
+
+            issuesListEl.appendChild(card);
+          });
+      }
+
+      function handleVote(id, direction) {
+        const issue = issues.find((i) => i.id === id);
+        if (!issue) return;
+
+        const prevVote = issue.userVote || 0;
+        let newVote = direction; // 1 or -1
+
+        if (prevVote === direction) {
+          newVote = 0;
+        }
+
+        issue.score += newVote - prevVote;
+        issue.userVote = newVote;
+
+        saveIssues();
+        renderIssues();
+      }
+
+      filterSelectEl.addEventListener("change", (e) => {
+        currentFilter = e.target.value || "all";
+        renderIssues();
+      });
+
+      newIssueForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const title = document.getElementById("issueTitle").value.trim();
+        const scope = document.getElementById("issueScope").value;
+        const description = document
+          .getElementById("issueDescription")
+          .value.trim();
+        const tagsRaw = document.getElementById("issueTags").value.trim();
+
+        if (!title || !scope || !description) {
+          alert("Please fill out the title, scope, and description.");
+          return;
+        }
+
+        const tags = tagsRaw
+          ? tagsRaw
+              .split(",")
+              .map((t) => t.trim())
+              .filter(Boolean)
+          : [];
+
+        const idBase =
+          title
+            .toLowerCase()
+            .replace(/[^a-z0-9]+/g, "-")
+            .replace(/^-+|-+$/g, "") || "issue";
+        let id = idBase;
+        let counter = 1;
+        while (issues.some((i) => i.id === id)) {
+          id = idBase + "-" + counter++;
+        }
+
+        const now = new Date().toISOString().slice(0, 10);
+
+        issues.push({
+          id,
+          title,
+          scope,
+          description,
+          tags,
+          createdAt: now,
+          createdBy: "You (local)",
+          score: 0,
+          userVote: 0,
+        });
+
+        saveIssues();
+        renderIssues();
+
+        newIssueForm.reset();
+        document.getElementById("issueScope").value = scope;
+
+        alert("Your issue has been saved on this device and added for voting.");
+      });
+
+      clearFormButton.addEventListener("click", () => {
+        if (
+          confirm(
+            "Clear everything you have typed in the form? This does not delete any issues you already published."
+          )
+        ) {
+          newIssueForm.reset();
+        }
+      });
+
+      renderIssues();
+    })();
+  </script>
+</body>
+</html>
