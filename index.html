@@ -745,79 +745,216 @@
         <div class="card-header">
           <div>
             <div id="new-issue-heading" class="card-title">
-              Create a new issue to vote on
-            </div>
-            <div class="card-subtitle">
-              One page, one idea. Draft your proposal and let people vote it up or down.
-            </div>
-          </div>
-          <span class="badge badge-outline">Prototype bill builder</span>
-        </div>
+              <!-- CREATE ISSUE FORM -->
+<section class="card">
+  <div class="card-header-row">
+    <div>
+      <div class="card-title">Create a new issue to vote on</div>
+      <div class="card-subtitle">Draft a clear, one-page proposal and publish it for voting.</div>
+    </div>
+    <button class="btn-secondary" id="loadExample">
+      📄 Load term-limits example
+    </button>
+  </div>
 
-        <form id="newIssueForm">
-          <div class="field-group">
-            <label class="field-label" for="issueTitle">
-              Issue title<span>*</span>
-            </label>
-            <input
-              id="issueTitle"
-              type="text"
-              required
-              placeholder="Example: Term limits for members of Congress"
-            />
-          </div>
+  <form id="issueForm" class="modern-form">
 
-          <div class="field-group">
-            <label class="field-label" for="issueScope">
-              Where does this apply?<span>*</span>
-            </label>
-            <select id="issueScope" class="field-select" required>
-              <option value="national">National (U.S.-wide)</option>
-              <option value="state">State level</option>
-              <option value="local">Local / city / county</option>
-            </select>
-          </div>
+    <!-- ISSUE TITLE -->
+    <div class="form-group">
+      <label class="floating-label" for="issueTitle">Issue Title *</label>
+      <input 
+        id="issueTitle"
+        type="text"
+        maxlength="120"
+        required
+        class="modern-input"
+      />
+      <div class="char-count"><span id="titleCount">0</span>/120</div>
+    </div>
 
-          <div class="field-group">
-            <span class="field-label">How should we think about this?</span>
-            <div class="tag-chips">
-              <span class="chip chip-green">No party labels</span>
-              <span class="chip">Ideas only</span>
-              <span class="chip">Article V style reform</span>
-              <span class="chip">Checks &amp; balances</span>
-            </div>
-          </div>
+    <!-- SCOPE -->
+    <div class="form-group">
+      <label class="floating-label" for="scopeInput">Where does this apply? *</label>
+      <select id="scopeInput" required class="modern-input">
+        <option value="National">National (U.S.-wide)</option>
+        <option value="State">State-level</option>
+        <option value="Local">Local / City / County</option>
+      </select>
+    </div>
 
-          <div class="field-group">
-            <label class="field-label" for="issueDescription">
-              What are you asking for?<span>*</span>
-            </label>
-            <textarea
-              id="issueDescription"
-              required
-              placeholder="Describe the change, why it matters, and what action you want Congress or your state to take. This is your simple, plain-language one-page ‘bill’."
-            ></textarea>
-          </div>
+    <!-- TAGS -->
+    <div class="form-group">
+      <label class="floating-label">How should this be categorized?</label>
+      <div class="tag-grid" id="tagOptions">
+        <button type="button" class="tag-btn">No party labels</button>
+        <button type="button" class="tag-btn">Checks & balances</button>
+        <button type="button" class="tag-btn">Article V style reform</button>
+        <button type="button" class="tag-btn">Anti-corruption</button>
+        <button type="button" class="tag-btn">Election reform</button>
+        <button type="button" class="tag-btn">Fiscal responsibility</button>
+      </div>
+      <input type="hidden" id="selectedTags" />
+    </div>
 
-          <div class="field-group">
-            <label class="field-label" for="issueTags">
-              Optional tags / key points
-            </label>
-            <input
-              id="issueTags"
-              type="text"
-              placeholder="Example: term limits, corruption, campaign finance, transparency"
-            />
-          </div>
+    <!-- PROPOSAL TEXT -->
+    <div class="form-group">
+      <label class="floating-label" for="issueDescription">
+        What action do you want Congress or your state to take? *
+      </label>
+      <textarea
+        id="issueDescription"
+        class="modern-input auto-expand"
+        maxlength="1200"
+        required
+      ></textarea>
+      <div class="char-count"><span id="descCount">0</span>/1200</div>
+    </div>
 
-          <div style="display:flex;align-items:center;gap:8px;margin-top:6px;flex-wrap:wrap;">
-            <button type="submit" class="btn-primary">
-              <span>+ Publish issue for voting</span>
-            </button>
-            <button type="button" id="clearFormButton" class="btn-secondary">
-              Clear form
-            </button>
-          </div>
+    <!-- EXTRA TAGS -->
+    <div class="form-group">
+      <label class="floating-label" for="extraTags">Optional tags / key points</label>
+      <input
+        id="extraTags"
+        type="text"
+        class="modern-input"
+        placeholder="term limits, corruption, spending reform"
+      />
+    </div>
+
+    <!-- SUBMIT BUTTON -->
+    <div class="submit-wrap">
+      <button type="submit" class="btn-primary full-width">
+        ➕ Publish issue for voting (local test)
+      </button>
+    </div>
+
+  </form>
+</section>
+
+<style>
+/* === PREMIUM UI STYLING === */
+
+.modern-form { display: flex; flex-direction: column; gap: 26px; margin-top: 12px; }
+
+.form-group { position: relative; margin-top: 10px; }
+
+.floating-label {
+  position: absolute;
+  top: -10px;
+  left: 12px;
+  background: var(--card);
+  padding: 0 6px;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.modern-input {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid var(--border-subtle);
+  border-radius: 10px;
+  font-size: 16px;
+  background: var(--card-soft);
+  color: var(--text-main);
+  transition: 0.15s;
+}
+
+.modern-input:focus {
+  outline: 2px solid var(--accent);
+  border-color: var(--accent);
+}
+
+.auto-expand {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.char-count {
+  text-align: right;
+  font-size: 12px;
+  margin-top: 4px;
+  color: var(--text-muted);
+}
+
+/* TAG GRID */
+.tag-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.tag-btn {
+  padding: 8px 14px;
+  background: var(--card-soft);
+  border-radius: 20px;
+  border: 1px solid var(--border-subtle);
+  font-size: 14px;
+  color: var(--text-muted);
+  transition: 0.2s;
+}
+
+.tag-btn.active {
+  background: var(--accent);
+  color: black;
+  border-color: var(--accent-strong);
+}
+
+/* SUBMIT BUTTON */
+.full-width {
+  width: 100%;
+  padding: 14px;
+  font-size: 18px;
+}
+
+.submit-wrap {
+  margin-top: 10px;
+}
+
+</style>
+
+<script>
+// ===== LIVE CHARACTER COUNTS =====
+const title = document.getElementById("issueTitle");
+const desc = document.getElementById("issueDescription");
+
+title.addEventListener("input", () => {
+  document.getElementById("titleCount").innerText = title.value.length;
+});
+
+desc.addEventListener("input", () => {
+  document.getElementById("descCount").innerText = desc.value.length;
+});
+
+// ===== TAG SELECTION =====
+const tagButtons = document.querySelectorAll(".tag-btn");
+const selectedTagsInput = document.getElementById("selectedTags");
+let tagList = [];
+
+tagButtons.forEach(btn => {
+  btn.addEventListener("click", () => {
+    btn.classList.toggle("active");
+
+    const tag = btn.innerText;
+    if (btn.classList.contains("active")) {
+      if (tagList.length < 3) tagList.push(tag);
+      else btn.classList.remove("active");
+    } else {
+      tagList = tagList.filter(t => t !== tag);
+    }
+
+    selectedTagsInput.value = tagList.join(",");
+  });
+});
+
+// ===== AUTO-EXPAND TEXTAREA =====
+document.querySelectorAll(".auto-expand").forEach(textarea => {
+  textarea.addEventListener("input", () => {
+    textarea.style.height = "auto";
+    textarea.style.height = textarea.scrollHeight + "px";
+  });
+});
+</script>
 
           <div class="form-footer">
             <strong>Reminder:</strong> this is a grassroots movement tool.
