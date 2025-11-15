@@ -2,19 +2,19 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>We The People’s Voice</title>
+  <title>The American Mandate</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta
     name="description"
-    content="We The People’s Voice – a citizen-powered platform to give Americans a direct voice on laws, reforms, and government accountability."
+    content="The American Mandate – a citizen-powered platform from the Restore The Republic Movement to give Americans a direct voice on laws, reforms, and government accountability."
   />
   <style>
     :root {
       --bg: #020617;
       --bg-soft: #0b1220;
       --card: #0f172a;
-      --accent: #b91c1c;
-      --accent2: #1d4ed8;
+      --accent: #b91c1c;   /* deep red */
+      --accent2: #1d4ed8;  /* deep blue */
       --text: #f9fafb;
       --muted: #9ca3af;
       --border: #1f2937;
@@ -32,8 +32,8 @@
       margin: 0;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       background:
-        radial-gradient(circle at top left, rgba(30, 64, 175, 0.32), transparent 55%),
-        radial-gradient(circle at bottom right, rgba(185, 28, 28, 0.36), transparent 60%),
+        radial-gradient(circle at top left, rgba(30, 64, 175, 0.35), transparent 55%),
+        radial-gradient(circle at bottom right, rgba(148, 27, 27, 0.4), transparent 60%),
         #020617;
       color: var(--text);
       line-height: 1.6;
@@ -49,8 +49,6 @@
       display: block;
     }
 
-    /* Layout */
-
     .page {
       min-height: 100vh;
       display: flex;
@@ -62,21 +60,22 @@
       top: 0;
       z-index: 20;
       backdrop-filter: blur(16px);
-      background: linear-gradient(to bottom, rgba(15, 23, 42, 0.97), rgba(15, 23, 42, 0.75));
-      border-bottom: 1px solid rgba(148, 163, 184, 0.18);
+      background: linear-gradient(to bottom, rgba(15, 23, 42, 0.97), rgba(15, 23, 42, 0.8));
+      border-bottom: 1px solid rgba(148, 163, 184, 0.25);
     }
 
+    /* Flag stripe */
     .flag-bar {
       height: 4px;
       background: linear-gradient(
         90deg,
         #7f1d1d 0%,
-        #ef4444 20%,
+        #dc2626 25%,
         #ffffff 50%,
-        #60a5fa 80%,
+        #60a5fa 75%,
         #1d4ed8 100%
       );
-      box-shadow: 0 2px 6px rgba(15, 23, 42, 0.8);
+      box-shadow: 0 2px 6px rgba(15, 23, 42, 0.85);
     }
 
     .nav {
@@ -92,17 +91,18 @@
     .nav-left {
       display: flex;
       align-items: center;
-      gap: 0.7rem;
+      gap: 0.75rem;
     }
 
+    /* Circle logo – AM */
     .logo-pill {
-      width: 42px;
-      height: 42px;
+      width: 44px;
+      height: 44px;
       border-radius: 999px;
       padding: 2px;
       background:
-        radial-gradient(circle at 30% 0, #ffffff 0, #fee2e2 18%, transparent 40%),
-        conic-gradient(from 220deg, #b91c1c, #ef4444, #ffffff, #60a5fa, #1d4ed8, #b91c1c);
+        radial-gradient(circle at 30% 0, #ffffff 0, #e5e7eb 18%, transparent 40%),
+        conic-gradient(from 220deg, #b91c1c, #dc2626, #ffffff, #60a5fa, #1d4ed8, #b91c1c);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -113,7 +113,7 @@
       width: 100%;
       height: 100%;
       border-radius: 999px;
-      border: 1px solid rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(15, 23, 42, 0.95);
       background: radial-gradient(circle at top, #020617, #020617);
       display: flex;
       align-items: center;
@@ -126,7 +126,7 @@
       content: "★";
       position: absolute;
       top: 6px;
-      left: 8px;
+      left: 7px;
       font-size: 0.6rem;
       color: #e5e7eb;
       opacity: 0.45;
@@ -140,17 +140,23 @@
       text-transform: uppercase;
     }
 
-    .nav-title-main {
+    .nav-titles-main {
       font-size: 1.05rem;
       font-weight: 700;
-      letter-spacing: 0.03em;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
     }
 
-    .nav-title-sub {
-      font-size: 0.75rem;
+    .nav-titles-sub {
+      font-size: 0.72rem;
       color: var(--muted);
       text-transform: uppercase;
       letter-spacing: 0.18em;
+    }
+
+    .nav-titles-sub em {
+      font-style: normal;
+      color: #e5e7eb;
     }
 
     .nav-right {
@@ -181,7 +187,7 @@
       letter-spacing: 0.06em;
       text-transform: uppercase;
       cursor: pointer;
-      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.8);
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.85);
     }
 
     main {
@@ -194,14 +200,77 @@
       padding: 2.5rem 1.25rem 3.5rem;
     }
 
-    /* Hero */
+    /* HERO */
 
     .hero {
+      position: relative;
       display: grid;
       grid-template-columns: minmax(0, 1.5fr) minmax(0, 1.2fr);
       gap: 2.2rem;
       align-items: center;
-      padding-top: 2.2rem;
+      padding-top: 2.5rem;
+    }
+
+    /* stylized flag + eagle silhouette background */
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: -40px -40px 10%;
+      background:
+        linear-gradient(
+          135deg,
+          rgba(15, 23, 42, 0.9) 0%,
+          rgba(15, 23, 42, 0.88) 25%,
+          rgba(15, 23, 42, 0.85) 50%,
+          rgba(15, 23, 42, 0.92) 100%
+        ),
+        repeating-linear-gradient(
+          -12deg,
+          rgba(220, 38, 38, 0.24) 0,
+          rgba(220, 38, 38, 0.24) 16px,
+          rgba(15, 23, 42, 0) 16px,
+          rgba(15, 23, 42, 0) 32px
+        ),
+        radial-gradient(circle at 75% 10%, rgba(15, 23, 42, 0) 0, rgba(15, 23, 42, 0) 30%, rgba(15, 23, 42, 0.9) 60%),
+        radial-gradient(circle at 80% 0, rgba(148, 163, 184, 0.5) 0, transparent 45%);
+      opacity: 0.9;
+      pointer-events: none;
+      z-index: -2;
+    }
+
+    .hero::after {
+      /* abstract eagle wings shape */
+      content: "";
+      position: absolute;
+      right: -40px;
+      top: -10px;
+      width: 360px;
+      height: 260px;
+      background:
+        radial-gradient(circle at 20% 40%, rgba(255, 255, 255, 0.18), transparent 60%),
+        radial-gradient(circle at 60% 20%, rgba(96, 165, 250, 0.4), transparent 60%),
+        radial-gradient(circle at 80% 70%, rgba(220, 38, 38, 0.5), transparent 65%);
+      clip-path: polygon(
+        0% 60%,
+        20% 20%,
+        40% 5%,
+        70% 0%,
+        100% 15%,
+        85% 35%,
+        100% 55%,
+        80% 80%,
+        55% 100%,
+        30% 85%,
+        10% 80%
+      );
+      opacity: 0.35;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .hero-left {
+      position: relative;
+      z-index: 1;
     }
 
     .hero-tag {
@@ -211,7 +280,7 @@
       padding: 0.25rem 0.6rem;
       border-radius: 999px;
       border: 1px solid rgba(148, 163, 184, 0.55);
-      background: radial-gradient(circle at left, rgba(248, 250, 252, 0.08), transparent 60%);
+      background: radial-gradient(circle at left, rgba(248, 250, 252, 0.09), transparent 60%);
       font-size: 0.72rem;
       text-transform: uppercase;
       letter-spacing: 0.18em;
@@ -227,25 +296,46 @@
       box-shadow: 0 0 18px rgba(34, 197, 94, 0.9);
     }
 
+    .hero-title-top {
+      font-size: 0.95rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: #e5e7eb;
+      margin-bottom: 0.3rem;
+    }
+
     .hero-title {
       font-size: clamp(2.1rem, 3vw + 1rem, 3.1rem);
       line-height: 1.05;
       font-weight: 800;
       letter-spacing: 0.03em;
       margin-bottom: 0.85rem;
+      text-transform: uppercase;
     }
 
     .hero-title span.highlight {
-      background: linear-gradient(120deg, #ef4444, #f59e0b, #facc15);
+      background: linear-gradient(115deg, #dc2626, #ffffff, #60a5fa);
       -webkit-background-clip: text;
       color: transparent;
     }
 
     .hero-subtitle {
-      font-size: 0.99rem;
+      font-size: 0.97rem;
       color: var(--muted);
       max-width: 34rem;
       margin-bottom: 1.4rem;
+    }
+
+    .hero-sub-sub {
+      font-size: 0.8rem;
+      color: #cbd5f5;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      margin-bottom: 0.35rem;
+    }
+
+    .hero-sub-sub strong {
+      color: #e5e7eb;
     }
 
     .hero-list {
@@ -309,7 +399,7 @@
     .btn-outline {
       border-color: rgba(148, 163, 184, 0.6);
       color: var(--muted);
-      background: rgba(15, 23, 42, 0.7);
+      background: rgba(15, 23, 42, 0.75);
     }
 
     .btn-sm {
@@ -329,18 +419,22 @@
       font-weight: 600;
     }
 
-    /* Hero Card */
+    /* HERO CARD (right) */
 
     .hero-card-wrap {
       display: flex;
       justify-content: flex-end;
+      position: relative;
+      z-index: 1;
     }
 
     .hero-card {
       width: 100%;
       max-width: 430px;
       border-radius: var(--radius-xl);
-      background: radial-gradient(circle at top left, rgba(248, 113, 113, 0.16), rgba(15, 23, 42, 0.98));
+      background:
+        radial-gradient(circle at top left, rgba(248, 250, 252, 0.14), transparent 60%),
+        radial-gradient(circle at bottom right, rgba(30, 64, 175, 0.5), rgba(15, 23, 42, 0.98));
       border: 1px solid rgba(148, 163, 184, 0.45);
       box-shadow: var(--shadow-soft);
       padding: 1.2rem 1.15rem;
@@ -367,15 +461,15 @@
       font-size: 0.72rem;
       padding: 0.25rem 0.55rem;
       border-radius: 999px;
-      border: 1px solid rgba(251, 191, 36, 0.7);
-      background: radial-gradient(circle at top, rgba(250, 204, 21, 0.22), transparent 70%);
-      color: #facc15;
+      border: 1px solid rgba(191, 219, 254, 0.8);
+      background: radial-gradient(circle at top, rgba(59, 130, 246, 0.28), transparent 70%);
+      color: #bfdbfe;
       text-transform: uppercase;
       letter-spacing: 0.12em;
     }
 
     .hero-card-body {
-      background: rgba(15, 23, 42, 0.9);
+      background: rgba(15, 23, 42, 0.92);
       border-radius: 15px;
       padding: 0.85rem;
       border: 1px solid rgba(148, 163, 184, 0.55);
@@ -411,7 +505,7 @@
 
     .hero-row-value span {
       font-weight: 500;
-      color: #a5b4fc;
+      color: #bfdbfe;
     }
 
     .issue-tag-list {
@@ -426,7 +520,7 @@
       border-radius: 999px;
       border: 1px solid rgba(148, 163, 184, 0.6);
       color: var(--muted);
-      background: rgba(15, 23, 42, 0.9);
+      background: rgba(15, 23, 42, 0.98);
     }
 
     .hero-bar {
@@ -456,7 +550,7 @@
     }
 
     .hero-bar-inner:nth-child(3) {
-      background: radial-gradient(circle at left, rgba(239, 68, 68, 0.8), rgba(220, 38, 38, 0.9));
+      background: radial-gradient(circle at left, rgba(220, 38, 38, 0.8), rgba(185, 28, 28, 0.9));
     }
 
     .hero-bar-thumb {
@@ -467,7 +561,7 @@
       left: 35%;
       border-radius: 999px;
       border: 1px solid rgba(15, 23, 42, 0.9);
-      background: rgba(15, 23, 42, 0.5);
+      background: rgba(15, 23, 42, 0.55);
     }
 
     .hero-card-footer {
@@ -516,7 +610,7 @@
       color: #e5e7eb;
     }
 
-    /* Section Titles */
+    /* SECTIONS */
 
     .section-kicker {
       font-size: 0.75rem;
@@ -539,8 +633,6 @@
       margin-bottom: 1.5rem;
     }
 
-    /* Why This Matters */
-
     .grid-2 {
       display: grid;
       grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.2fr);
@@ -557,7 +649,7 @@
     }
 
     .card-soft {
-      background: rgba(15, 23, 42, 0.75);
+      background: rgba(15, 23, 42, 0.78);
     }
 
     .why-list {
@@ -575,7 +667,7 @@
       margin-top: 0.9rem;
       padding: 0.8rem;
       border-radius: 12px;
-      background: radial-gradient(circle at left, rgba(248, 113, 113, 0.16), rgba(15, 23, 42, 0.95));
+      background: radial-gradient(circle at left, rgba(220, 38, 38, 0.2), rgba(15, 23, 42, 0.96));
       border: 1px solid rgba(248, 250, 252, 0.08);
       font-size: 0.86rem;
     }
@@ -605,7 +697,7 @@
       min-width: 7.5rem;
     }
 
-    /* How It Works */
+    /* HOW IT WORKS */
 
     .steps {
       display: grid;
@@ -614,7 +706,7 @@
     }
 
     .step {
-      background: rgba(15, 23, 42, 0.82);
+      background: rgba(15, 23, 42, 0.85);
       border-radius: 16px;
       padding: 0.85rem 0.9rem;
       border: 1px solid rgba(148, 163, 184, 0.4);
@@ -646,7 +738,7 @@
       color: var(--muted);
     }
 
-    /* Reform Grid */
+    /* REFORMS */
 
     .reforms-grid {
       display: grid;
@@ -702,7 +794,7 @@
       background: #22c55e;
     }
 
-    /* Coming Soon */
+    /* COMING SOON / EMAIL */
 
     .coming-grid {
       display: grid;
@@ -728,13 +820,13 @@
     }
 
     .pill-flag {
-      border-color: rgba(239, 68, 68, 0.7);
-      background: radial-gradient(circle at top, rgba(239, 68, 68, 0.45), rgba(15, 23, 42, 0.98));
+      border-color: rgba(220, 38, 38, 0.8);
+      background: radial-gradient(circle at top, rgba(220, 38, 38, 0.45), rgba(15, 23, 42, 0.98));
       color: #fee2e2;
     }
 
     .email-card {
-      background: radial-gradient(circle at top, rgba(37, 99, 235, 0.17), rgba(15, 23, 42, 0.96));
+      background: radial-gradient(circle at top, rgba(37, 99, 235, 0.2), rgba(15, 23, 42, 0.96));
       border-radius: 18px;
       border: 1px solid rgba(148, 163, 184, 0.5);
       padding: 1.1rem 1rem 1.15rem;
@@ -766,7 +858,7 @@
       border-radius: 999px;
       border: 1px solid rgba(148, 163, 184, 0.7);
       padding: 0.55rem 0.8rem;
-      background: rgba(15, 23, 42, 0.9);
+      background: rgba(15, 23, 42, 0.96);
       color: #f9fafb;
       font-size: 0.85rem;
       outline: none;
@@ -815,7 +907,7 @@
       color: #e5e7eb;
     }
 
-    /* Responsive */
+    /* RESPONSIVE */
 
     @media (max-width: 900px) {
       .hero {
@@ -884,16 +976,18 @@
         <div class="nav-left">
           <div class="logo-pill">
             <div class="logo-inner">
-              <span class="logo-abbrev">WPV</span>
+              <span class="logo-abbrev">AM</span>
             </div>
           </div>
           <div>
-            <div class="nav-title-main">We The People’s Voice</div>
-            <div class="nav-title-sub">UNITED · NON-PARTISAN · CITIZEN POWERED</div>
+            <div class="nav-titles-main">The American Mandate</div>
+            <div class="nav-titles-sub">
+              A <em>Restore The Republic Movement</em> initiative
+            </div>
           </div>
         </div>
         <div class="nav-right">
-          <div class="nav-pill">No more 2-party rule</div>
+          <div class="nav-pill">Citizen powered · Non-partisan</div>
           <button class="nav-cta" onclick="scrollToSection('coming-soon')">
             Join the Waiting List
           </button>
@@ -902,22 +996,28 @@
     </header>
 
     <main>
-      <!-- Hero -->
+      <!-- HERO -->
       <section class="section">
         <div class="hero">
-          <div>
+          <div class="hero-left">
             <div class="hero-tag">
               <span class="hero-tag-dot"></span>
               <span>CITIZEN PLATFORM · COMING SOON</span>
             </div>
+
+            <div class="hero-title-top">Restore The Republic Movement</div>
 
             <h1 class="hero-title">
               A peaceful, powerful way to
               <span class="highlight">put Congress back under the people</span>.
             </h1>
 
+            <div class="hero-sub-sub">
+              NOT A PARTY · NOT A CAMPAIGN · A CITIZEN MANDATE
+            </div>
+
             <p class="hero-subtitle">
-              We The People’s Voice is a citizen-powered platform where Americans vote on
+              The American Mandate is a citizen-powered platform where Americans vote on
               term limits, government spending, one-page bills, and more — so politicians
               can no longer ignore the people who pay the taxes.
             </p>
@@ -1017,7 +1117,7 @@
         </div>
       </section>
 
-      <!-- Why This Matters -->
+      <!-- WHY THIS MATTERS -->
       <section class="section" id="why">
         <div class="section-kicker">Why this matters</div>
         <h2 class="section-title">America is strongest when its people are heard.</h2>
@@ -1044,19 +1144,19 @@
           </article>
 
           <article class="card card-soft">
-            <h3 style="margin-top:0; font-size:1rem;">What We The People’s Voice stands for</h3>
+            <h3 style="margin-top:0; font-size:1rem;">What The American Mandate stands for</h3>
             <ul class="principles-list">
               <li><span>Citizen Power</span> Government answers to the people, not the other way around.</li>
               <li><span>One Page Bills</span> Laws written in plain language that every citizen can read and understand.</li>
               <li><span>Smaller Government</span> Less control over daily life, more freedom and responsibility for citizens.</li>
               <li><span>Real Transparency</span> Where tax money goes, how votes are cast, and who benefits.</li>
-              <li><span>No More 2-Party Trap</span> Problems are solved by people, not by team colors.</li>
+              <li><span>No Party Trap</span> Problems are solved by people, not by team colors.</li>
             </ul>
           </article>
         </div>
       </section>
 
-      <!-- How It Works -->
+      <!-- HOW IT WORKS -->
       <section class="section" id="how">
         <div class="section-kicker">How it will work</div>
         <h2 class="section-title">A clear, simple process every American can follow.</h2>
@@ -1097,7 +1197,7 @@
         </div>
       </section>
 
-      <!-- Reforms -->
+      <!-- REFORMS -->
       <section class="section" id="reforms">
         <div class="section-kicker">Movement priorities</div>
         <h2 class="section-title">Ideas that shrink government and return power to the people.</h2>
@@ -1189,12 +1289,12 @@
         </div>
       </section>
 
-      <!-- Coming Soon / Email -->
+      <!-- COMING SOON / EMAIL -->
       <section class="section" id="coming-soon">
         <div class="section-kicker">Coming soon</div>
         <h2 class="section-title">This is more than an app. It’s a movement.</h2>
         <p class="section-subtitle">
-          We The People’s Voice will roll out in stages: first as an information hub,
+          The American Mandate will roll out in stages: first as an information hub,
           then as a basic voting platform, and finally as a full citizen-powered engine
           for reforms that shrink government and restore accountability.
         </p>
@@ -1225,7 +1325,7 @@
 
           <div>
             <div class="email-card">
-              <div class="email-title">Be notified when We The People’s Voice goes live</div>
+              <div class="email-title">Be notified when The American Mandate goes live</div>
               <p class="email-text">
                 Enter your email below and you’ll be the first to know when the platform
                 is ready for public testing and early citizen votes.
@@ -1260,7 +1360,8 @@
     <footer>
       <div class="footer-inner">
         <div>
-          © <span id="year"></span> We The People’s Voice · A peaceful, lawful, citizen-powered movement.
+          © <span id="year"></span> Restore The Republic Movement · The American Mandate.
+          A peaceful, lawful, citizen-powered movement.
         </div>
         <div class="footer-links">
           <a href="#why">Why this matters</a>
@@ -1288,7 +1389,7 @@
       const email = input.value.trim();
       if (!email) return;
       alert(
-        "Thank you for your interest in We The People’s Voice. " +
+        "Thank you for your interest in The American Mandate. " +
         "This demo site does not save emails yet, but when we connect a real email service, " +
         "you’ll be able to join the official waiting list."
       );
