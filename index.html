@@ -1,74 +1,1251 @@
-/* ==== BRANDING & LOGO TWEAKS ==== */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>We The People’s Voice</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="We The People’s Voice – a citizen-powered platform to give Americans a direct voice on laws, reforms, and government accountability."
+  />
+  <style>
+    :root {
+      --bg: #050816;
+      --bg-soft: #0b1220;
+      --card: #0f172a;
+      --accent: #e11d48;
+      --accent-soft: rgba(239, 68, 68, 0.2);
+      --accent2: #2563eb;
+      --text: #f9fafb;
+      --muted: #9ca3af;
+      --border: #1f2937;
+      --radius-lg: 18px;
+      --radius-xl: 26px;
+      --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.55);
+      --shadow-subtle: 0 10px 30px rgba(15, 23, 42, 0.7);
+    }
 
-/* Softer, deeper background gradient */
-body {
-  min-height: 100vh;
-  margin: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
-    -apple-system, system-ui, sans-serif;
-  background:
-    radial-gradient(circle at top left, #0f172a 0, #020617 45%, #000 100%),
-    radial-gradient(circle at bottom right, #022c22 0, #020617 50%, #000 100%);
-  color: var(--text-main);
-}
+    * {
+      box-sizing: border-box;
+    }
 
-/* Keep main page centered and slightly narrower on desktop */
-.page {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 24px 16px 72px;
-}
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #111827, #020617 55%);
+      color: var(--text);
+      line-height: 1.6;
+    }
 
-/* Hero layout with logo + title in a row on desktop */
-.hero {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-/* Wrap logo + title */
-.hero-brand {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
+    img {
+      max-width: 100%;
+      display: block;
+    }
 
-/* Logo image */
-.hero-logo {
-  width: 56px;
-  height: 56px;
-  border-radius: 16px;
-  object-fit: cover;
-  box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.35),
-    0 18px 45px rgba(0, 0, 0, 0.7);
-}
+    /* Layout */
 
-/* Text beside the logo */
-.hero-brand-text h1 {
-  margin: 0;
-}
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
 
-/* Small label above title (optional) */
-.hero-tagline-small {
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  color: var(--accent-soft);
-}
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(16px);
+      background: linear-gradient(to bottom, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.6));
+      border-bottom: 1px solid rgba(148, 163, 184, 0.18);
+    }
 
-/* On wider screens, hero text + description side-by-side */
-@media (min-width: 900px) {
-  .hero {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-  }
+    .nav {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0.85rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
 
-  .hero-main {
-    max-width: 540px;
-  }
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+    }
 
-  .hero-copy {
-    max-width: 520px;
-  }
-}
+    .logo-pill {
+      width: 36px;
+      height: 36px;
+      border-radius: 999px;
+      border: 1px solid rgba(248, 250, 252, 0.14);
+      background: radial-gradient(circle at 30% 0, #f97316, #dc2626 35%, #020617 70%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #f9fafb;
+      font-weight: 800;
+      font-size: 0.9rem;
+      box-shadow: 0 0 26px rgba(248, 250, 252, 0.35);
+    }
+
+    .nav-title-main {
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+    }
+
+    .nav-title-sub {
+      font-size: 0.75rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .nav-pill {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      border-radius: 999px;
+      padding: 0.35rem 0.75rem;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      color: var(--muted);
+      display: none;
+    }
+
+    .nav-cta {
+      font-size: 0.8rem;
+      padding: 0.45rem 0.95rem;
+      border-radius: 999px;
+      border: none;
+      background: linear-gradient(135deg, var(--accent), #f97316);
+      color: #f9fafb;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      cursor: pointer;
+      box-shadow: 0 10px 25px rgba(248, 113, 113, 0.45);
+    }
+
+    main {
+      flex: 1;
+    }
+
+    .section {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 2.5rem 1.25rem 3.5rem;
+    }
+
+    /* Hero */
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1.2fr);
+      gap: 2.2rem;
+      align-items: center;
+      padding-top: 2.4rem;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.55);
+      background: radial-gradient(circle at left, rgba(239, 68, 68, 0.3), transparent 58%);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--muted);
+      margin-bottom: 0.9rem;
+    }
+
+    .hero-tag-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 18px rgba(34, 197, 94, 0.9);
+    }
+
+    .hero-title {
+      font-size: clamp(2.1rem, 3vw + 1rem, 3.1rem);
+      line-height: 1.05;
+      font-weight: 800;
+      letter-spacing: 0.03em;
+      margin-bottom: 0.85rem;
+    }
+
+    .hero-title span.highlight {
+      background: linear-gradient(120deg, #f97316, #ef4444, #eab308);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 0.99rem;
+      color: var(--muted);
+      max-width: 34rem;
+      margin-bottom: 1.4rem;
+    }
+
+    .hero-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1.6rem 0;
+      display: grid;
+      gap: 0.45rem;
+    }
+
+    .hero-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      font-size: 0.93rem;
+      color: #e5e7eb;
+    }
+
+    .hero-list-icon {
+      width: 18px;
+      height: 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(248, 250, 252, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      margin-top: 0.2rem;
+      background: radial-gradient(circle at top, #22c55e, #15803d);
+      flex-shrink: 0;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      align-items: center;
+      margin-bottom: 1.1rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      padding: 0.65rem 1.2rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), #fb923c);
+      color: #fefce8;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .btn-outline {
+      border-color: rgba(148, 163, 184, 0.6);
+      color: var(--muted);
+      background: rgba(15, 23, 42, 0.7);
+    }
+
+    .btn-sm {
+      padding: 0.5rem 0.95rem;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+
+    .hero-note {
+      font-size: 0.78rem;
+      color: var(--muted);
+      max-width: 30rem;
+    }
+
+    .hero-note strong {
+      color: #e5e7eb;
+      font-weight: 600;
+    }
+
+    /* Hero Card */
+
+    .hero-card-wrap {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .hero-card {
+      width: 100%;
+      max-width: 430px;
+      border-radius: var(--radius-xl);
+      background: radial-gradient(circle at top left, rgba(248, 113, 113, 0.16), rgba(15, 23, 42, 0.98));
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      box-shadow: var(--shadow-soft);
+      padding: 1.2rem 1.15rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.7rem;
+    }
+
+    .hero-card-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #e5e7eb;
+    }
+
+    .hero-card-badge {
+      font-size: 0.72rem;
+      padding: 0.25rem 0.55rem;
+      border-radius: 999px;
+      border: 1px solid rgba(251, 191, 36, 0.7);
+      background: radial-gradient(circle at top, rgba(250, 204, 21, 0.22), transparent 70%);
+      color: #facc15;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .hero-card-body {
+      background: rgba(15, 23, 42, 0.9);
+      border-radius: 15px;
+      padding: 0.85rem;
+      border: 1px solid rgba(148, 163, 184, 0.55);
+      margin-bottom: 0.85rem;
+    }
+
+    .hero-card-rows {
+      display: grid;
+      gap: 0.45rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 0.8rem;
+      font-size: 0.8rem;
+    }
+
+    .hero-row-label {
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-size: 0.7rem;
+    }
+
+    .hero-row-value {
+      font-weight: 600;
+      color: #e5e7eb;
+      text-align: right;
+    }
+
+    .hero-row-value span {
+      font-weight: 500;
+      color: #a5b4fc;
+    }
+
+    .issue-tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .issue-tag {
+      font-size: 0.75rem;
+      padding: 0.25rem 0.55rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      color: var(--muted);
+      background: rgba(15, 23, 42, 0.9);
+    }
+
+    .hero-bar {
+      margin-top: 0.4rem;
+      background: #020617;
+      border-radius: 999px;
+      padding: 0.15rem;
+      border: 1px solid rgba(15, 23, 42, 0.9);
+      display: flex;
+      gap: 0.1rem;
+    }
+
+    .hero-bar-inner {
+      height: 12px;
+      border-radius: 999px;
+      flex: 1;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-bar-inner:nth-child(1) {
+      background: radial-gradient(circle at left, rgba(34, 197, 94, 0.8), rgba(22, 163, 74, 0.7));
+    }
+
+    .hero-bar-inner:nth-child(2) {
+      background: radial-gradient(circle at left, rgba(59, 130, 246, 0.7), rgba(37, 99, 235, 0.75));
+    }
+
+    .hero-bar-inner:nth-child(3) {
+      background: radial-gradient(circle at left, rgba(239, 68, 68, 0.8), rgba(220, 38, 38, 0.9));
+    }
+
+    .hero-bar-thumb {
+      position: absolute;
+      top: 1px;
+      bottom: 1px;
+      right: 3px;
+      left: 35%;
+      border-radius: 999px;
+      border: 1px solid rgba(15, 23, 42, 0.9);
+      background: rgba(15, 23, 42, 0.5);
+    }
+
+    .hero-card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .hero-mini-legend {
+      display: flex;
+      gap: 0.8rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .legend-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      margin-right: 0.25rem;
+      display: inline-block;
+    }
+
+    .legend-yes {
+      background: #22c55e;
+    }
+
+    .legend-no {
+      background: #ef4444;
+    }
+
+    .legend-undecided {
+      background: #3b82f6;
+    }
+
+    .hero-card-caption {
+      text-align: right;
+      font-size: 0.7rem;
+      color: var(--muted);
+      margin-top: 0.4rem;
+    }
+
+    .hero-card-caption strong {
+      color: #e5e7eb;
+    }
+
+    /* Section Titles */
+
+    .section-kicker {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--muted);
+      margin-bottom: 0.3rem;
+    }
+
+    .section-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 0.35rem;
+    }
+
+    .section-subtitle {
+      font-size: 0.9rem;
+      color: var(--muted);
+      max-width: 40rem;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Why This Matters */
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.2fr);
+      gap: 2rem;
+      align-items: flex-start;
+    }
+
+    .card {
+      background: radial-gradient(circle at top, rgba(15, 23, 42, 0.9), #020617);
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      padding: 1.2rem 1.2rem 1.25rem;
+      box-shadow: var(--shadow-subtle);
+    }
+
+    .card-soft {
+      background: rgba(15, 23, 42, 0.75);
+    }
+
+    .why-list {
+      margin: 0.4rem 0 0;
+      padding-left: 1.1rem;
+      font-size: 0.9rem;
+      color: #e5e7eb;
+    }
+
+    .why-list li + li {
+      margin-top: 0.35rem;
+    }
+
+    .emphasis-box {
+      margin-top: 0.9rem;
+      padding: 0.8rem;
+      border-radius: 12px;
+      background: radial-gradient(circle at left, rgba(248, 113, 113, 0.16), rgba(15, 23, 42, 0.95));
+      border: 1px solid rgba(248, 250, 252, 0.08);
+      font-size: 0.86rem;
+    }
+
+    .emphasis-box strong {
+      color: #fee2e2;
+    }
+
+    .principles-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 0.4rem;
+      font-size: 0.9rem;
+    }
+
+    .principles-list li {
+      display: flex;
+      gap: 0.4rem;
+    }
+
+    .principles-list span {
+      display: inline-block;
+      font-weight: 600;
+      color: #e5e7eb;
+      min-width: 7.5rem;
+    }
+
+    /* How It Works */
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .step {
+      background: rgba(15, 23, 42, 0.82);
+      border-radius: 16px;
+      padding: 0.85rem 0.9rem;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      box-shadow: var(--shadow-subtle);
+    }
+
+    .step-num {
+      width: 22px;
+      height: 22px;
+      border-radius: 999px;
+      border: 1px solid rgba(248, 250, 252, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 600;
+      margin-bottom: 0.45rem;
+      background: radial-gradient(circle at top, rgba(59, 130, 246, 0.7), rgba(15, 23, 42, 1));
+    }
+
+    .step-title {
+      font-size: 0.93rem;
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+    }
+
+    .step-text {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    /* Reform Grid */
+
+    .reforms-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .reform-card {
+      background: rgba(15, 23, 42, 0.9);
+      border-radius: 18px;
+      padding: 0.9rem 0.95rem 1rem;
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      box-shadow: var(--shadow-subtle);
+      font-size: 0.87rem;
+    }
+
+    .reform-pill {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--muted);
+      margin-bottom: 0.25rem;
+    }
+
+    .reform-title {
+      font-size: 0.98rem;
+      font-weight: 600;
+      margin-bottom: 0.45rem;
+    }
+
+    .reform-body {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .reform-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      padding: 0.25rem 0.55rem;
+      border-radius: 999px;
+      background: rgba(34, 197, 94, 0.12);
+      border: 1px solid rgba(34, 197, 94, 0.6);
+      font-size: 0.72rem;
+      color: #bbf7d0;
+    }
+
+    .reform-badge span.dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #22c55e;
+    }
+
+    /* Coming Soon */
+
+    .coming-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.1fr);
+      gap: 1.6rem;
+      align-items: center;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.55rem;
+    }
+
+    .pill {
+      font-size: 0.8rem;
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      color: var(--muted);
+      background: rgba(15, 23, 42, 0.9);
+    }
+
+    .pill-flag {
+      border-color: rgba(239, 68, 68, 0.7);
+      background: radial-gradient(circle at top, rgba(239, 68, 68, 0.45), rgba(15, 23, 42, 0.98));
+      color: #fee2e2;
+    }
+
+    .email-card {
+      background: radial-gradient(circle at top, rgba(37, 99, 235, 0.17), rgba(15, 23, 42, 0.96));
+      border-radius: 18px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      padding: 1.1rem 1rem 1.15rem;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .email-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 0.35rem;
+    }
+
+    .email-text {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 0.75rem;
+    }
+
+    .email-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      align-items: center;
+    }
+
+    .email-input {
+      flex: 1;
+      min-width: 0;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      padding: 0.55rem 0.8rem;
+      background: rgba(15, 23, 42, 0.9);
+      color: #f9fafb;
+      font-size: 0.85rem;
+      outline: none;
+    }
+
+    .email-input::placeholder {
+      color: #6b7280;
+    }
+
+    .email-note {
+      margin-top: 0.45rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    footer {
+      border-top: 1px solid rgba(30, 64, 175, 0.7);
+      background: radial-gradient(circle at top, rgba(30, 64, 175, 0.35), #020617);
+      padding: 1rem 1.25rem 1.4rem;
+      margin-top: 1.5rem;
+    }
+
+    .footer-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+    }
+
+    .footer-links a {
+      color: #9ca3af;
+    }
+
+    .footer-links a:hover {
+      color: #e5e7eb;
+    }
+
+    /* Responsive */
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-card-wrap {
+        justify-content: center;
+      }
+
+      .grid-2 {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .steps {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .reforms-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .coming-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .section {
+        padding-inline: 1rem;
+      }
+
+      .nav {
+        padding-inline: 1rem;
+      }
+
+      .nav-pill {
+        display: none;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero-title {
+        font-size: 2rem;
+      }
+
+      .hero-subtitle {
+        font-size: 0.95rem;
+      }
+
+      .hero {
+        padding-top: 2rem;
+      }
+    }
+
+    @media (min-width: 901px) {
+      .nav-pill {
+        display: inline-flex;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="nav">
+        <div class="nav-left">
+          <div class="logo-pill">WPV</div>
+          <div>
+            <div class="nav-title-main">We The People’s Voice</div>
+            <div class="nav-title-sub">UNITED · NON-PARTISAN · CITIZEN POWERED</div>
+          </div>
+        </div>
+        <div class="nav-right">
+          <div class="nav-pill">No more 2-party rule</div>
+          <button class="nav-cta" onclick="scrollToSection('coming-soon')">
+            Join the Waiting List
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero -->
+      <section class="section">
+        <div class="hero">
+          <div>
+            <div class="hero-tag">
+              <span class="hero-tag-dot"></span>
+              <span>Citizen platform · Coming soon</span>
+            </div>
+
+            <h1 class="hero-title">
+              A peaceful, powerful way to
+              <span class="highlight">put Congress back under the people</span>.
+            </h1>
+
+            <p class="hero-subtitle">
+              We The People’s Voice is a citizen-powered platform where Americans vote on
+              term limits, government spending, one-page bills, and more — so politicians
+              can no longer ignore the people who pay the taxes.
+            </p>
+
+            <ul class="hero-list">
+              <li>
+                <div class="hero-list-icon">✓</div>
+                <div>One person, one verified vote — no parties, no special interests.</div>
+              </li>
+              <li>
+                <div class="hero-list-icon">✓</div>
+                <div>Clearly written, one-page proposals that every citizen can understand.</div>
+              </li>
+              <li>
+                <div class="hero-list-icon">✓</div>
+                <div>Results the public can see — a mandate leaders can’t pretend doesn’t exist.</div>
+              </li>
+            </ul>
+
+            <div class="hero-actions">
+              <button class="btn btn-primary" onclick="scrollToSection('coming-soon')">
+                Get launch updates
+              </button>
+              <a href="#why" class="btn btn-outline">
+                Read why this matters
+              </a>
+            </div>
+
+            <p class="hero-note">
+              <strong>Not a political party. Not a campaign.</strong>  
+              A peaceful, legal, transparent way for Americans to speak with one voice and demand
+              a smaller, more accountable government.
+            </p>
+          </div>
+
+          <div class="hero-card-wrap">
+            <div class="hero-card" aria-label="Example of a national citizen vote card">
+              <div class="hero-card-header">
+                <div class="hero-card-title">Example National Vote</div>
+                <div class="hero-card-badge">Mock preview</div>
+              </div>
+
+              <div class="hero-card-body">
+                <div class="hero-card-rows">
+                  <div class="hero-row">
+                    <div class="hero-row-label">Proposal</div>
+                    <div class="hero-row-value">
+                      12-Year Term Limits  
+                      <span>for Congress</span>
+                    </div>
+                  </div>
+                  <div class="hero-row">
+                    <div class="hero-row-label">Type</div>
+                    <div class="hero-row-value">One-page citizen bill</div>
+                  </div>
+                  <div class="hero-row">
+                    <div class="hero-row-label">Status</div>
+                    <div class="hero-row-value">
+                      Gathering votes  
+                      <span>(citizen mandate)</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="issue-tag-list">
+                  <div class="issue-tag">No self-voted raises</div>
+                  <div class="issue-tag">Lifetime benefits ended</div>
+                  <div class="issue-tag">Back to regular jobs</div>
+                </div>
+
+                <div class="hero-bar">
+                  <div class="hero-bar-inner">
+                    <div class="hero-bar-thumb"></div>
+                  </div>
+                  <div class="hero-bar-inner">
+                    <div class="hero-bar-thumb" style="left: 15%;"></div>
+                  </div>
+                  <div class="hero-bar-inner">
+                    <div class="hero-bar-thumb" style="left: 60%;"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="hero-card-footer">
+                <div class="hero-mini-legend">
+                  <span><span class="legend-dot legend-yes"></span> Yes: 78%</span>
+                  <span><span class="legend-dot legend-no"></span> No: 14%</span>
+                  <span><span class="legend-dot legend-undecided"></span> Undecided: 8%</span>
+                </div>
+                <div>Citizens voting: <strong>12,438,201</strong></div>
+              </div>
+              <div class="hero-card-caption">
+                Mock data only · Real votes will be verified US citizens: one person, one vote.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Why This Matters -->
+      <section class="section" id="why">
+        <div class="section-kicker">Why this matters</div>
+        <h2 class="section-title">America is strongest when its people are heard.</h2>
+        <p class="section-subtitle">
+          Trust in government has collapsed. Division has grown. Transparency has faded.  
+          Millions of citizens feel ignored — even though they are the ones paying the bill.
+        </p>
+
+        <div class="grid-2">
+          <article class="card">
+            <h3 style="margin-top:0; font-size:1rem;">What’s gone wrong</h3>
+            <ul class="why-list">
+              <li>Politicians can vote themselves raises and lifetime benefits.</li>
+              <li>Bills are thousands of pages long, stuffed with hidden spending and favors.</li>
+              <li>Career politicians stay in office for decades with no real accountability.</li>
+              <li>Tax money is spent on things citizens never agreed to and often never see.</li>
+              <li>The two-party system keeps us fighting each other instead of fixing problems.</li>
+            </ul>
+
+            <div class="emphasis-box">
+              The truth is simple: <strong>we have far more in common than what separates us.</strong>  
+              We all want honesty, fairness, safety, opportunity, and a better future for our families.
+            </div>
+          </article>
+
+          <article class="card card-soft">
+            <h3 style="margin-top:0; font-size:1rem;">What We The People’s Voice stands for</h3>
+            <ul class="principles-list">
+              <li><span>Citizen Power</span> Government answers to the people, not the other way around.</li>
+              <li><span>One Page Bills</span> Laws written in plain language that every citizen can read and understand.</li>
+              <li><span>Smaller Government</span> Less control over daily life, more freedom and responsibility for citizens.</li>
+              <li><span>Real Transparency</span> Where tax money goes, how votes are cast, and who benefits.</li>
+              <li><span>No More 2-Party Trap</span> Problems are solved by people, not by team colors.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <!-- How It Works -->
+      <section class="section" id="how">
+        <div class="section-kicker">How it will work</div>
+        <h2 class="section-title">A clear, simple process every American can follow.</h2>
+        <p class="section-subtitle">
+          As the platform grows, proposals and reforms will be introduced through a legal,
+          constitutional process. The goal is not chaos — it’s order, clarity, and a peaceful
+          mandate that leaders cannot ignore.
+        </p>
+
+        <div class="steps">
+          <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-title">Citizens join and verify</div>
+            <p class="step-text">
+              Eligible US citizens create an account and verify once.  
+              One real person = one vote. No bots. No duplicate accounts.
+            </p>
+          </div>
+
+          <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-title">Read the one-page proposal</div>
+            <p class="step-text">
+              Each proposal is limited to one page, in plain language:
+              what it does, what it costs, and how it reduces government overreach.
+            </p>
+          </div>
+
+          <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-title">Vote · Track · Build a mandate</div>
+            <p class="step-text">
+              Citizens vote “Yes” or “No.” Results are public and transparent.  
+              When an issue hits the required threshold, it becomes a mandate the states
+              and Congress can no longer pretend not to see.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Reforms -->
+      <section class="section" id="reforms">
+        <div class="section-kicker">Movement priorities</div>
+        <h2 class="section-title">Ideas that shrink government and return power to the people.</h2>
+        <p class="section-subtitle">
+          These are examples of the type of reforms citizens may choose to advance.  
+          Final language and process will always follow every legal and constitutional step.
+        </p>
+
+        <div class="reforms-grid">
+          <article class="reform-card">
+            <div class="reform-pill">Accountability</div>
+            <div class="reform-title">Term limits for Congress</div>
+            <p class="reform-body">
+              Limit the number of years any member of Congress can serve — ending lifetime
+              political careers and encouraging real public service instead of permanent power.
+            </p>
+            <div class="reform-badge">
+              <span class="dot"></span>
+              Citizen priority: end career politicians
+            </div>
+          </article>
+
+          <article class="reform-card">
+            <div class="reform-pill">Spending & perks</div>
+            <div class="reform-title">No self-approved raises or lifetime benefits</div>
+            <p class="reform-body">
+              Congress should not be able to vote itself pay raises, special perks, or lifetime
+              benefits. After serving, members return to regular jobs and regular healthcare
+              like the people they represented.
+            </p>
+            <div class="reform-badge">
+              <span class="dot"></span>
+              “This is public service, not a retirement plan.”
+            </div>
+          </article>
+
+          <article class="reform-card">
+            <div class="reform-pill">Honest lawmaking</div>
+            <div class="reform-title">Single-subject, one-page bills</div>
+            <p class="reform-body">
+              Each law must focus on one clear subject, written in plain language,
+              on a single page — so citizens can read it, understand it, and vote on it
+              without hidden surprises.
+            </p>
+            <div class="reform-badge">
+              <span class="dot"></span>
+              No more 2,000-page “mystery bills”
+            </div>
+          </article>
+
+          <article class="reform-card">
+            <div class="reform-pill">Tax honesty</div>
+            <div class="reform-title">Transparency for where tax money goes</div>
+            <p class="reform-body">
+              Clear, public breakdowns of how federal and state tax money is used —
+              so citizens can see exactly what they are paying for, and what should be voted out.
+            </p>
+            <div class="reform-badge">
+              <span class="dot"></span>
+              Follow the money, follow the truth
+            </div>
+          </article>
+
+          <article class="reform-card">
+            <div class="reform-pill">Citizen protection</div>
+            <div class="reform-title">Stronger rights and jury power</div>
+            <p class="reform-body">
+              Educating citizens on their right to a jury, the power of jury
+              nullification, and safeguards against laws that are twisted or abused.
+            </p>
+            <div class="reform-badge">
+              <span class="dot"></span>
+              Government should fear abusing the people
+            </div>
+          </article>
+
+          <article class="reform-card">
+            <div class="reform-pill">Future ideas</div>
+            <div class="reform-title">Citizen-driven Article V discussions</div>
+            <p class="reform-body">
+              When appropriate, citizens can explore legal, peaceful ways to push reforms
+              through the states — always within the Constitution, never outside of it.
+            </p>
+            <div class="reform-badge">
+              <span class="dot"></span>
+              Always lawful · Always peaceful
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Coming Soon / Email -->
+      <section class="section" id="coming-soon">
+        <div class="section-kicker">Coming soon</div>
+        <h2 class="section-title">This is more than an app. It’s a movement.</h2>
+        <p class="section-subtitle">
+          We The People’s Voice will roll out in stages: first as an information hub,
+          then as a basic voting platform, and finally as a full citizen-powered engine
+          for reforms that shrink government and restore accountability.
+        </p>
+
+        <div class="coming-grid">
+          <div>
+            <h3 style="margin-top:0; font-size:1rem;">What’s planned</h3>
+            <div class="pill-row">
+              <span class="pill pill-flag">Verified US citizen accounts</span>
+              <span class="pill">One person, one vote</span>
+              <span class="pill">National & state-level votes</span>
+              <span class="pill">One-page proposals</span>
+              <span class="pill">Real-time vote totals</span>
+            </div>
+
+            <div class="pill-row" style="margin-top:0.65rem;">
+              <span class="pill">Education on jury power & rights</span>
+              <span class="pill">Tools to contact state leaders</span>
+              <span class="pill">Citizen-submitted ideas</span>
+            </div>
+
+            <p style="margin-top:1rem; font-size:0.9rem; color:var(--muted); max-width:34rem;">
+              When enough citizens stand together, it becomes a mandate.  
+              This platform exists to turn frustration into focused, lawful, united action —
+              not every four years, but every day.
+            </p>
+          </div>
+
+          <div>
+            <div class="email-card">
+              <div class="email-title">Be notified when We The People’s Voice goes live</div>
+              <p class="email-text">
+                Enter your email below and you’ll be the first to know when the platform
+                is ready for public testing and early citizen votes.
+              </p>
+
+              <!-- NOTE: This form doesn’t actually submit anywhere yet.
+                   Later we can connect it to an email service (Mailchimp, etc.). -->
+              <form onsubmit="handleJoin(event)">
+                <div class="email-row">
+                  <input
+                    type="email"
+                    class="email-input"
+                    placeholder="you@example.com"
+                    aria-label="Email address"
+                    required
+                  />
+                  <button type="submit" class="btn btn-primary btn-sm">
+                    Join the list
+                  </button>
+                </div>
+                <div class="email-note">
+                  This is a preview site. By joining, you’re simply asking to be notified
+                  when the platform is ready. No spam. No selling your information.
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <div>
+          © <span id="year"></span> We The People’s Voice · A peaceful, lawful, citizen-powered movement.
+        </div>
+        <div class="footer-links">
+          <a href="#why">Why this matters</a>
+          <a href="#how">How it works</a>
+          <a href="#reforms">Movement priorities</a>
+          <a href="#coming-soon">Join the waiting list</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    function scrollToSection(id) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      window.scrollTo({
+        top: el.offsetTop - 70,
+        behavior: "smooth"
+      });
+    }
+
+    function handleJoin(event) {
+      event.preventDefault();
+      const input = event.target.querySelector(".email-input");
+      const email = input.value.trim();
+      if (!email) return;
+      alert(
+        "Thank you for your interest in We The People’s Voice. " +
+        "This demo site does not save emails yet, but when we connect a real email service, " +
+        "you’ll be able to join the official waiting list."
+      );
+      input.value = "";
+    }
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
