@@ -1,37 +1,35 @@
 <!doctype html>
-
 <html lang="en">
-<head></head>
+<head>
   <meta charset="utf-8" />
   <title>United by Truth – Peacefully Taking Our Power Back</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="United by Truth – a peaceful national movement and platform giving Americans alerts, dashboards, voting, and tools to take power back from corruption." />  <!-- ================= FULL GLOBAL STYLES ================= -->  <style>
+  <meta name="description" content="United by Truth – a peaceful national movement and platform giving Americans alerts, dashboards, voting, and tools to take power back from corruption." />
+
+  <style>
     :root {
       --bg: #05060a;
-      --bg-alt: #0b0e18;
       --card: #11141f;
-      --card-soft: #191d2a;
-      --accent: #f04444;
-      --accent-soft: #ff6b6b;
-      --accent-gold: #f2c56b;
-      --accent-blue: #3b82f6;
-      --accent-blue-soft: #1d4ed8;
-      --accent-green: #16a34a;
-      --accent-amber: #f59e0b;
-      --border-subtle: rgba(255,255,255,0.07);
+      --accent: #f97316;
+      --accent-red: #ef4444;
+      --accent-gold: #facc15;
+      --border-subtle: rgba(148,163,184,0.35);
       --text-main: #f9fafb;
       --text-muted: #9ca3af;
       --text-soft: #6b7280;
-      --pill-bg: rgba(15,23,42,0.85);
       --radius-lg: 18px;
       --radius-pill: 999px;
       --shadow-soft: 0 18px 45px rgba(0,0,0,0.6);
-      --transition-fast: 0.18s ease-out;
       --font-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    html, body { height: 100%; scroll-behavior: smooth; }
+
+    html, body {
+      height: 100%;
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: var(--font-main);
       background: radial-gradient(circle at top, #111827 0, #020617 45%, #000 100%);
@@ -40,15 +38,15 @@
     }
 
     a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; display: block; }
 
     .page-shell {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 0 16px 80px;
+      padding: 0 16px 64px;
     }
 
-    /* ================= HEADER ================= */
+    /* HEADER / NAV */
+
     header {
       position: sticky;
       top: 0;
@@ -70,7 +68,11 @@
       gap: 16px;
     }
 
-    .nav-left { display: flex; align-items: center; gap: 12px; }
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
 
     .logo-mark {
       width: 32px;
@@ -90,8 +92,19 @@
         #020617;
     }
 
-    .logo-text-main { font-weight: 800; letter-spacing: 0.12em; font-size: 13px; text-transform: uppercase; }
-    .logo-text-sub { font-size: 11px; color: var(--text-soft); text-transform: uppercase; letter-spacing: 0.2em; }
+    .logo-text-main {
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      font-size: 13px;
+      text-transform: uppercase;
+    }
+
+    .logo-text-sub {
+      font-size: 11px;
+      color: var(--text-soft);
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+    }
 
     .nav-links {
       display: flex;
@@ -119,7 +132,7 @@
       padding: 9px 16px;
       border-radius: var(--radius-pill);
       border: 1px solid rgba(248,250,252,0.5);
-      background: linear-gradient(135deg, #f97316, #ef4444);
+      background: linear-gradient(135deg, var(--accent), var(--accent-red));
       color: #f9fafb;
       font-size: 12px;
       font-weight: 700;
@@ -128,39 +141,336 @@
       box-shadow: 0 14px 40px rgba(248,113,113,0.75);
     }
 
-    /* ================= HERO (PARTIAL SHOWN TO SHORTEN) ================= */
+    .nav-cta:hover {
+      filter: brightness(1.05);
+      transform: translateY(-1px);
+    }
+
+    /* HERO */
+
     .hero {
       padding-top: 32px;
       padding-bottom: 32px;
       display: grid;
-      grid-template-columns: minmax(0, 3.1fr) minmax(0, 2.8fr);
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.5fr);
       gap: 32px;
       align-items: center;
     }
 
-    .hero-badge-row { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 18px; align-items: center; }
+    .hero-badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 18px;
+      align-items: center;
+    }
+
     .badge-chip {
       display: inline-flex;
       align-items: center;
       gap: 6px;
       padding: 6px 11px;
-      border-radius: var(--radius-pill);
+      border-radius: 999px;
       border: 1px solid rgba(148,163,184,0.55);
-      background: radial-gradient(circle at top left, rgba(248,113,113,0.32), transparent 60%), rgba(15,23,42,0.96);
+      background: radial-gradient(circle at top left, rgba(248,113,113,0.32), transparent 60%),
+                  rgba(15,23,42,0.96);
       font-size: 11px;
       text-transform: uppercase;
       letter-spacing: 0.16em;
       color: #e5e7eb;
     }
 
-    .badge-dot { width: 7px; height: 7px; border-radius: 999px; background: radial-gradient(circle at 30% 0, #facc15, #dc2626); }
+    .badge-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 0, #facc15, #dc2626);
+      box-shadow: 0 0 8px rgba(248,250,252,0.7);
+    }
 
-    .hero h1 { font-size: clamp(30px, 4.1vw, 40px); line-height: 1.12; text-transform: uppercase; margin-bottom: 10px; }
-    .hero-highlight { background: linear-gradient(120deg, #f97316, #facc15, #f97316); -webkit-background-clip: text; color: transparent; }
-    .hero-subline { font-size: 13px; text-transform: uppercase; color: var(--text-soft); margin-bottom: 16px; }
-    .hero p { font-size: 14px; color: var(--text-muted); max-width: 560px; margin-bottom: 20px; }
+    .hero h1 {
+      font-size: clamp(30px, 4.1vw, 40px);
+      line-height: 1.12;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
 
-    /* ================= JOIN FORM ================= */
+    .hero-highlight {
+      background: linear-gradient(120deg, var(--accent), var(--accent-gold), var(--accent));
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-subline {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.26em;
+      color: var(--text-soft);
+      margin-bottom: 16px;
+    }
+
+    .hero p {
+      font-size: 14px;
+      color: var(--text-muted);
+      max-width: 560px;
+      margin-bottom: 20px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .btn-primary {
+      padding: 11px 20px;
+      border-radius: var(--radius-pill);
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      border: none;
+      cursor: pointer;
+      background: linear-gradient(135deg, var(--accent), var(--accent-red));
+      color: #f9fafb;
+      box-shadow: 0 16px 40px rgba(248,113,113,0.7);
+    }
+
+    .btn-primary:hover {
+      filter: brightness(1.05);
+      transform: translateY(-1px);
+    }
+
+    .btn-ghost {
+      padding: 11px 16px;
+      border-radius: var(--radius-pill);
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      border: 1px solid rgba(148,163,184,0.5);
+      cursor: pointer;
+      background: rgba(15,23,42,0.7);
+      color: var(--text-muted);
+    }
+
+    .btn-ghost:hover {
+      border-color: rgba(248,250,252,0.7);
+      color: #e5e7eb;
+    }
+
+    .hero-footnote {
+      font-size: 11px;
+      color: var(--text-soft);
+      max-width: 460px;
+    }
+
+    .hero-visual {
+      position: relative;
+      min-height: 260px;
+    }
+
+    .hero-card {
+      position: relative;
+      border-radius: 24px;
+      background:
+        radial-gradient(circle at top, rgba(248,113,113,0.35), transparent 65%),
+        radial-gradient(circle at bottom, rgba(56,189,248,0.4), transparent 60%),
+        linear-gradient(145deg, #020617, #020617 40%, #020617);
+      border: 1px solid rgba(148,163,184,0.4);
+      box-shadow: var(--shadow-soft);
+      padding: 16px 16px 14px;
+      overflow: hidden;
+    }
+
+    .hero-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+
+    .hero-pill {
+      padding: 5px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(248,250,252,0.3);
+      background: rgba(15,23,42,0.85);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: #e5e7eb;
+    }
+
+    .hero-storm-tag {
+      font-size: 11px;
+      color: #e5e7eb;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+    }
+
+    .hero-storm-box {
+      margin-top: 10px;
+      border-radius: 16px;
+      border: 1px solid rgba(248,250,252,0.2);
+      background: linear-gradient(160deg, rgba(15,23,42,0.9), rgba(15,23,42,0.7));
+      padding: 12px;
+    }
+
+    .hero-storm-title {
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      margin-bottom: 6px;
+    }
+
+    .hero-storm-text {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+
+    .storm-bar {
+      height: 5px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #f97316, #facc15, #22c55e, #0ea5e9);
+      box-shadow: 0 0 12px rgba(250,204,21,0.7);
+      margin-bottom: 10px;
+    }
+
+    .hero-mini-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 8px;
+    }
+
+    .mini-card {
+      border-radius: 12px;
+      border: 1px solid rgba(148,163,184,0.4);
+      background: rgba(15,23,42,0.9);
+      padding: 8px;
+      font-size: 11px;
+    }
+
+    .mini-label {
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--text-soft);
+      margin-bottom: 4px;
+    }
+
+    .mini-value {
+      color: #e5e7eb;
+      font-weight: 600;
+    }
+
+    .mini-subvalue {
+      color: var(--text-muted);
+      font-size: 10px;
+    }
+
+    .hero-float-tag {
+      position: absolute;
+      right: -4px;
+      top: 50%;
+      transform: translateY(-50%);
+      padding: 8px 12px;
+      border-radius: 999px 0 0 999px;
+      background: rgba(15,23,42,0.92);
+      border: 1px solid rgba(148,163,184,0.4);
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--accent-gold);
+      box-shadow: 0 10px 25px rgba(15,23,42,0.9);
+    }
+
+    /* SECTION WRAPPER */
+
+    section {
+      margin-top: 40px;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: flex-end;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+    }
+
+    .section-title-block h2 {
+      font-size: 18px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+    }
+
+    .section-title-block p {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-top: 6px;
+      max-width: 480px;
+    }
+
+    .section-tag {
+      font-size: 11px;
+      color: var(--text-soft);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+    }
+
+    /* SIMPLE CARD GRID */
+
+    .card-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 14px;
+    }
+
+    .card {
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-subtle);
+      background: radial-gradient(circle at top, rgba(148,163,184,0.15), transparent 60%),
+                  var(--card);
+      padding: 14px;
+      box-shadow: 0 12px 35px rgba(0,0,0,0.65);
+    }
+
+    .card h3 {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      margin-bottom: 6px;
+    }
+
+    .card p {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .tag {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      border-radius: 999px;
+      padding: 4px 8px;
+      border: 1px solid rgba(148,163,184,0.4);
+      color: var(--text-soft);
+      background: rgba(15,23,42,0.8);
+    }
+
+    /* JOIN SECTION */
+
     .join-grid {
       display: grid;
       grid-template-columns: minmax(0, 1.3fr) minmax(0, 1.7fr);
@@ -189,7 +499,31 @@
       margin-bottom: 9px;
     }
 
-    .join-confirm-note { font-size: 10px; color: var(--text-soft); margin-top: 4px; }
+    .join-confirm-note {
+      font-size: 10px;
+      color: var(--text-soft);
+      margin-top: 4px;
+    }
+
+    .list {
+      list-style: none;
+      font-size: 11px;
+    }
+
+    .list-item {
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(15,23,42,0.9);
+    }
+
+    .list-main {
+      color: #e5e7eb;
+      margin-bottom: 2px;
+    }
+
+    .list-sub {
+      color: var(--text-soft);
+      font-size: 10px;
+    }
 
     footer {
       margin-top: 40px;
@@ -197,3 +531,352 @@
       padding-top: 16px;
       font-size: 11px;
       color: var(--text-soft);
+      text-align: center;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+        padding-top: 24px;
+      }
+
+      .hero-visual {
+        order: -1;
+      }
+
+      .join-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    @media (max-width: 680px) {
+      .nav-links {
+        display: none;
+      }
+
+      .page-shell {
+        padding-bottom: 60px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <div class="nav-left">
+        <div class="logo-mark">UT</div>
+        <div>
+          <div class="logo-text-main">UNITED BY TRUTH</div>
+          <div class="logo-text-sub">Peacefully Taking Our Power Back</div>
+        </div>
+      </div>
+      <nav class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#join">Join</a>
+        <a href="#why">Why This Matters</a>
+        <a href="#join" class="nav-cta">Join the Movement</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-shell">
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div>
+        <div class="hero-badge-row">
+          <div class="badge-chip">
+            <span class="badge-dot"></span>
+            LIVE BLUEPRINT · UNITED BY TRUTH
+          </div>
+        </div>
+
+        <h1>
+          UNITED BY TRUTH<br />
+          <span class="hero-highlight">A peaceful way to take our power back.</span>
+        </h1>
+
+        <div class="hero-subline">
+          ALERTS · FACTS · VOTES · UNITY
+        </div>
+
+        <p>
+          United by Truth is a citizen-powered platform and movement to expose what’s really
+          happening in our government, track corruption, and organize peaceful pressure in
+          every state – without violence, without parties, and without special interests.
+        </p>
+
+        <div class="hero-actions">
+          <button class="btn-primary" onclick="document.getElementById('join').scrollIntoView({behavior:'smooth'})">
+            Join United by Truth
+          </button>
+          <button class="btn-ghost" onclick="document.getElementById('features').scrollIntoView({behavior:'smooth'})">
+            See the plan
+          </button>
+        </div>
+
+        <div class="hero-footnote">
+          This page is your first live version. You can share it, collect supporters,
+          and later connect it to live data, voting, and state dashboards.
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-card">
+          <div class="hero-card-header">
+            <div class="hero-pill">The Storm of Truth</div>
+            <div class="hero-storm-tag">Prototype · Visual Only</div>
+          </div>
+          <div class="hero-storm-box">
+            <div class="hero-storm-title">Lightning over the Capitol</div>
+            <div class="hero-storm-text">
+              Imagine a live map of bills, votes, power hikes and corruption – all in one place,
+              lit up like lightning hitting the Capitol. That’s what this app will become.
+            </div>
+            <div class="storm-bar"></div>
+            <div class="hero-mini-grid">
+              <div class="mini-card">
+                <div class="mini-label">Potential supporters</div>
+                <div class="mini-value">Millions</div>
+                <div class="mini-subvalue">Across all 50 states</div>
+              </div>
+              <div class="mini-card">
+                <div class="mini-label">Goal</div>
+                <div class="mini-value">One citizen = one voice</div>
+                <div class="mini-subvalue">Real pressure, real change, no violence</div>
+              </div>
+            </div>
+          </div>
+          <div class="hero-float-tag">UNITED · BY · TRUTH</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section id="features">
+      <div class="section-header">
+        <div class="section-title-block">
+          <h2>What this app will do</h2>
+          <p>
+            This is the starting point for a bigger platform. Here’s the simple version of
+            what United by Truth is built to do once the back-end and data feeds are connected.
+          </p>
+        </div>
+        <div class="section-tag">Roadmap · Prototype · Real Movement</div>
+      </div>
+
+      <div class="card-grid-3">
+        <article class="card">
+          <h3>Track the truth</h3>
+          <p>
+            Surface the bills, votes, power hikes and spending that affect real people –
+            in plain language instead of 2,000-page legal tricks.
+          </p>
+          <div class="tag-row">
+            <span class="tag">Bills</span>
+            <span class="tag">Votes</span>
+            <span class="tag">Power & Taxes</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Show who paid</h3>
+          <p>
+            Connect politicians to donors, lobbyists and special interests so citizens can
+            finally see who really benefits from each decision.
+          </p>
+          <div class="tag-row">
+            <span class="tag">Lobbyists</span>
+            <span class="tag">Mega donors</span>
+            <span class="tag">Influence Chains</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Organize peaceful pressure</h3>
+          <p>
+            When enough people agree on an issue, the platform helps direct calls, emails,
+            town halls and Article V pushes at the exact right time, in the exact right state.
+          </p>
+          <div class="tag-row">
+            <span class="tag">No violence</span>
+            <span class="tag">Real unity</span>
+            <span class="tag">State by state</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- WHY THIS MATTERS -->
+    <section id="why">
+      <div class="section-header">
+        <div class="section-title-block">
+          <h2>Why this matters</h2>
+          <p>
+            Americans are divided on purpose. The more we fight each other, the easier it is
+            for corrupt systems to keep draining our time, money and freedom. United by Truth
+            exists to flip that script.
+          </p>
+        </div>
+        <div class="section-tag">Unity · Facts · Hard Truths</div>
+      </div>
+
+      <article class="card">
+        <p style="font-size:13px;color:var(--text-muted);">
+          We are not building another party, cult, or personality brand. This is a tool for
+          regular people who are tired of being lied to, overcharged, overtaxed, and ignored.
+          The goal isn’t chaos – it’s accountability. The power belongs with the people, and
+          it always has. Most of us want the same things: honesty, stability, fair rules,
+          and a future for our kids that isn’t built on debt, corruption and fear.
+        </p>
+      </article>
+    </section>
+
+    <!-- JOIN -->
+    <section id="join">
+      <div class="section-header">
+        <div class="section-title-block">
+          <h2>Join United by Truth</h2>
+          <p>
+            This form is live and connected to Formspree. When someone joins, their name,
+            email and state go to your Formspree dashboard and email. Later we can replace
+            this with your own database and login system.
+          </p>
+        </div>
+        <div class="section-tag">No parties · No violence · No special interests</div>
+      </div>
+
+      <div class="card join-grid">
+        <div>
+          <h3 style="font-size:13px;text-transform:uppercase;letter-spacing:0.18em;margin-bottom:8px;">
+            Be part of the first wave
+          </h3>
+          <p style="font-size:12px;color:var(--text-muted);margin-bottom:10px;">
+            Enter your name, email, and state. This uses your real Formspree endpoint so
+            you can start collecting support by state right now.
+          </p>
+
+          <!-- REAL FORMSPREE JOIN FORM -->
+          <form class="join-form" action="https://formspree.io/f/xovypnwk" method="POST">
+            <label for="name">Your Name</label>
+            <input
+              id="name"
+              name="name"
+              type="text"
+              placeholder="Your full name"
+              required
+            />
+
+            <label for="email">Your Email</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              placeholder="you@example.com"
+              required
+            />
+
+            <label for="state">Your State</label>
+            <select id="state" name="state" required>
+              <option value="">Select your state</option>
+              <option value="AL">Alabama</option>
+              <option value="AK">Alaska</option>
+              <option value="AZ">Arizona</option>
+              <option value="AR">Arkansas</option>
+              <option value="CA">California</option>
+              <option value="CO">Colorado</option>
+              <option value="CT">Connecticut</option>
+              <option value="DE">Delaware</option>
+              <option value="FL">Florida</option>
+              <option value="GA">Georgia</option>
+              <option value="HI">Hawaii</option>
+              <option value="ID">Idaho</option>
+              <option value="IL">Illinois</option>
+              <option value="IN">Indiana</option>
+              <option value="IA">Iowa</option>
+              <option value="KS">Kansas</option>
+              <option value="KY">Kentucky</option>
+              <option value="LA">Louisiana</option>
+              <option value="ME">Maine</option>
+              <option value="MD">Maryland</option>
+              <option value="MA">Massachusetts</option>
+              <option value="MI">Michigan</option>
+              <option value="MN">Minnesota</option>
+              <option value="MS">Mississippi</option>
+              <option value="MO">Missouri</option>
+              <option value="MT">Montana</option>
+              <option value="NE">Nebraska</option>
+              <option value="NV">Nevada</option>
+              <option value="NH">New Hampshire</option>
+              <option value="NJ">New Jersey</option>
+              <option value="NM">New Mexico</option>
+              <option value="NY">New York</option>
+              <option value="NC">North Carolina</option>
+              <option value="ND">North Dakota</option>
+              <option value="OH">Ohio</option>
+              <option value="OK">Oklahoma</option>
+              <option value="OR">Oregon</option>
+              <option value="PA">Pennsylvania</option>
+              <option value="RI">Rhode Island</option>
+              <option value="SC">South Carolina</option>
+              <option value="SD">South Dakota</option>
+              <option value="TN">Tennessee</option>
+              <option value="TX">Texas</option>
+              <option value="UT">Utah</option>
+              <option value="VT">Vermont</option>
+              <option value="VA">Virginia</option>
+              <option value="WA">Washington</option>
+              <option value="WV">West Virginia</option>
+              <option value="WI">Wisconsin</option>
+              <option value="WY">Wyoming</option>
+            </select>
+
+            <button class="btn-primary" type="submit">Join United by Truth</button>
+            <p class="join-confirm-note">
+              After submitting, check your email for a confirmation from Formspree.
+            </p>
+          </form>
+        </div>
+
+        <div>
+          <h3 style="font-size:13px;text-transform:uppercase;letter-spacing:0.18em;margin-bottom:8px;">
+            What happens next
+          </h3>
+          <ul class="list">
+            <li class="list-item">
+              <div class="list-main">1 · Launch this page</div>
+              <div class="list-sub">
+                Use your Vercel or GitHub Pages URL as your public link. This is your live movement homepage.
+              </div>
+            </li>
+            <li class="list-item">
+              <div class="list-main">2 · Collect supporters by state</div>
+              <div class="list-sub">
+                Formspree will store names, emails, and states so you can see where your early support is coming from.
+              </div>
+            </li>
+            <li class="list-item">
+              <div class="list-main">3 · Add more features later</div>
+              <div class="list-sub">
+                When you’re ready, we can add dashboards, alerts, maps, town halls and voting on top of this working base.
+              </div>
+            </li>
+            <li class="list-item">
+              <div class="list-main">4 · Build peaceful pressure</div>
+              <div class="list-sub">
+                Use hard truths, real data, and unity – not chaos – to push back on corruption in every state.
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      UNITED BY TRUTH · A peaceful, citizen-powered movement to take our power back with facts,
+      hard truths, and united action.
+    </footer>
+  </main>
+</body>
+</html>
