@@ -1,42 +1,51 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>The American Mandate</title>
+  <meta charset="utf-8" />
+  <title>United by Truth – Peacefully Taking Our Power Back</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta
-    name="description"
-    content="The American Mandate – a citizen-powered platform from the Restore The Republic Movement to give Americans a direct voice on laws, reforms, and government accountability."
-  />
+  <meta name="description" content="United by Truth – a peaceful national movement and platform giving Americans alerts, dashboards, voting, and tools to take power back from corruption." />
   <style>
     :root {
-      --bg: #020617;
-      --bg-soft: #0b1220;
-      --card: #0f172a;
-      --accent: #b91c1c;   /* deep red */
-      --accent2: #1d4ed8;  /* deep blue (used elsewhere, not on button now) */
-      --text: #f9fafb;
-      --muted: #9ca3af;
-      --border: #1f2937;
+      --bg: #05060a;
+      --bg-alt: #0b0e18;
+      --card: #11141f;
+      --card-soft: #191d2a;
+      --accent: #f04444;
+      --accent-soft: #ff6b6b;
+      --accent-gold: #f2c56b;
+      --accent-blue: #3b82f6;
+      --accent-blue-soft: #1d4ed8;
+      --accent-green: #16a34a;
+      --accent-amber: #f59e0b;
+      --border-subtle: rgba(255,255,255,0.07);
+      --text-main: #f9fafb;
+      --text-muted: #9ca3af;
+      --text-soft: #6b7280;
+      --pill-bg: rgba(15,23,42,0.85);
       --radius-lg: 18px;
-      --radius-xl: 26px;
-      --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.55);
-      --shadow-subtle: 0 10px 30px rgba(15, 23, 42, 0.7);
+      --radius-pill: 999px;
+      --shadow-soft: 0 18px 45px rgba(0,0,0,0.6);
+      --transition-fast: 0.18s ease-out;
+      --font-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
 
     * {
+      margin: 0;
+      padding: 0;
       box-sizing: border-box;
     }
 
+    html, body {
+      height: 100%;
+      scroll-behavior: smooth;
+    }
+
     body {
-      margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background:
-        radial-gradient(circle at top left, rgba(30, 64, 175, 0.35), transparent 55%),
-        radial-gradient(circle at bottom right, rgba(148, 27, 27, 0.4), transparent 60%),
-        #020617;
-      color: var(--text);
-      line-height: 1.6;
+      font-family: var(--font-main);
+      background: radial-gradient(circle at top, #111827 0, #020617 45%, #000 100%);
+      color: var(--text-main);
+      -webkit-font-smoothing: antialiased;
     }
 
     a {
@@ -49,1329 +58,1816 @@
       display: block;
     }
 
-    .page {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
+    /* Layout */
+    .page-shell {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 16px 80px;
     }
 
     header {
       position: sticky;
       top: 0;
-      z-index: 20;
-      backdrop-filter: blur(16px);
-      background: linear-gradient(to bottom, rgba(15, 23, 42, 0.97), rgba(15, 23, 42, 0.8));
-      border-bottom: 1px solid rgba(148, 163, 184, 0.25);
-    }
-
-    /* Flag stripe */
-    .flag-bar {
-      height: 4px;
-      background: linear-gradient(
-        90deg,
-        #7f1d1d 0%,
-        #dc2626 25%,
-        #ffffff 50%,
-        #60a5fa 75%,
-        #1d4ed8 100%
-      );
-      box-shadow: 0 2px 6px rgba(15, 23, 42, 0.85);
+      z-index: 40;
+      backdrop-filter: blur(18px);
+      background: radial-gradient(circle at top left, rgba(148,163,184,0.18), transparent 55%),
+                  radial-gradient(circle at top right, rgba(248,113,113,0.12), transparent 55%),
+                  rgba(15,23,42,0.93);
+      border-bottom: 1px solid rgba(148,163,184,0.25);
     }
 
     .nav {
-      max-width: 1120px;
+      max-width: 1200px;
       margin: 0 auto;
-      padding: 0.6rem 1.25rem 0.9rem;
+      padding: 10px 16px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 1rem;
+      gap: 16px;
     }
 
     .nav-left {
       display: flex;
       align-items: center;
-      gap: 0.75rem;
+      gap: 12px;
     }
 
-    /* Circle logo – AM with clean red/white/blue ring */
-    .logo-pill {
-      width: 44px;
-      height: 44px;
+    .logo-mark {
+      width: 32px;
+      height: 32px;
       border-radius: 999px;
-      padding: 2px;
-      background:
-        linear-gradient(90deg, #dc2626 0%, #ffffff 50%, #1d4ed8 100%);
+      border: 2px solid rgba(248,250,252,0.8);
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 0 26px rgba(15, 23, 42, 0.9);
-    }
-
-    .logo-inner {
-      width: 100%;
-      height: 100%;
-      border-radius: 999px;
-      border: 2px solid #020617;
-      background: radial-gradient(circle at top, #020617, #020617);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .logo-inner::before {
-      content: "★";
-      position: absolute;
-      top: 6px;
-      left: 7px;
-      font-size: 0.6rem;
-      color: #e5e7eb;
-      opacity: 0.45;
-    }
-
-    .logo-abbrev {
-      color: #fefce8;
+      font-size: 17px;
       font-weight: 800;
-      font-size: 0.9rem;
+      color: var(--accent-gold);
+      box-shadow: 0 0 0 1px rgba(15,23,42,0.9), 0 0 16px rgba(251,191,36,0.75);
+      background:
+        radial-gradient(circle at 20% 0, rgba(251,191,36,0.55), transparent 62%),
+        radial-gradient(circle at 80% 120%, rgba(248,113,113,0.4), transparent 60%),
+        #020617;
+    }
+
+    .logo-text-main {
+      font-weight: 800;
       letter-spacing: 0.12em;
+      font-size: 13px;
       text-transform: uppercase;
     }
 
-    .nav-titles-main {
-      font-size: 1.05rem;
-      font-weight: 700;
-      letter-spacing: 0.04em;
+    .logo-text-sub {
+      font-size: 11px;
+      color: var(--text-soft);
       text-transform: uppercase;
+      letter-spacing: 0.2em;
     }
 
-    .nav-titles-sub {
-      font-size: 0.72rem;
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-    }
-
-    .nav-titles-sub em {
-      font-style: normal;
-      color: #e5e7eb;
-    }
-
-    .nav-right {
+    .nav-links {
       display: flex;
       align-items: center;
-      gap: 0.4rem;
-    }
-
-    .nav-pill {
-      font-size: 0.75rem;
+      gap: 16px;
+      font-size: 13px;
       text-transform: uppercase;
-      letter-spacing: 0.16em;
-      border-radius: 999px;
-      padding: 0.35rem 0.75rem;
-      border: 1px solid rgba(148, 163, 184, 0.4);
-      color: var(--muted);
-      display: none;
+      letter-spacing: 0.12em;
     }
 
-    /* BUTTON: solid deep red, no pink/purple */
+    .nav-links a {
+      padding: 8px 10px;
+      border-radius: 999px;
+      color: var(--text-muted);
+      border: 1px solid transparent;
+    }
+
+    .nav-links a:hover {
+      color: #e5e7eb;
+      border-color: rgba(148,163,184,0.5);
+      background: rgba(15,23,42,0.85);
+    }
+
     .nav-cta {
-      font-size: 0.8rem;
-      padding: 0.45rem 0.95rem;
-      border-radius: 999px;
-      border: 1px solid #7f1d1d;
-      background: #b91c1c;
+      padding: 9px 16px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(248,250,252,0.5);
+      background: linear-gradient(135deg, #f97316, #ef4444);
       color: #f9fafb;
-      font-weight: 600;
-      letter-spacing: 0.06em;
+      font-size: 12px;
+      font-weight: 700;
       text-transform: uppercase;
-      cursor: pointer;
-      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.85);
+      letter-spacing: 0.14em;
+      box-shadow: 0 14px 40px rgba(248,113,113,0.75);
     }
 
     .nav-cta:hover {
-      background: #dc2626;
+      filter: brightness(1.1);
+      transform: translateY(-1px);
     }
 
-    main {
-      flex: 1;
-    }
-
-    .section {
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 2.5rem 1.25rem 3.5rem;
-    }
-
-    /* HERO */
-
+    /* Hero */
     .hero {
-      position: relative;
+      padding-top: 32px;
+      padding-bottom: 32px;
       display: grid;
-      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1.2fr);
-      gap: 2.2rem;
+      grid-template-columns: minmax(0, 3.1fr) minmax(0, 2.8fr);
+      gap: 32px;
       align-items: center;
-      padding-top: 2.5rem;
     }
 
-    /* CLEAR flag-style red stripes over navy */
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: -40px -40px 10%;
-      background:
-        linear-gradient(
-          180deg,
-          rgba(15, 23, 42, 0.85),
-          rgba(15, 23, 42, 0.95)
-        ),
-        repeating-linear-gradient(
-          -15deg,
-          rgba(239, 68, 68, 0.75) 0px,
-          rgba(239, 68, 68, 0.75) 18px,
-          rgba(15, 23, 42, 0.95) 18px,
-          rgba(15, 23, 42, 0.95) 36px
-        );
-      opacity: 0.9;
-      pointer-events: none;
-      z-index: -2;
+    .hero-badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 18px;
+      align-items: center;
     }
 
-    .hero-left {
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero-tag {
+    .badge-chip {
       display: inline-flex;
       align-items: center;
-      gap: 0.4rem;
-      padding: 0.25rem 0.6rem;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.55);
-      background: radial-gradient(circle at left, rgba(248, 250, 252, 0.09), transparent 60%);
-      font-size: 0.72rem;
+      gap: 6px;
+      padding: 6px 11px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(148,163,184,0.55);
+      background: radial-gradient(circle at top left, rgba(248,113,113,0.32), transparent 60%),
+                  rgba(15,23,42,0.96);
+      font-size: 11px;
       text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: var(--muted);
-      margin-bottom: 0.9rem;
+      letter-spacing: 0.16em;
+      color: #e5e7eb;
     }
 
-    .hero-tag-dot {
+    .badge-dot {
       width: 7px;
       height: 7px;
       border-radius: 999px;
-      background: #22c55e;
-      box-shadow: 0 0 18px rgba(34, 197, 94, 0.9);
+      background: radial-gradient(circle at 30% 0, #facc15, #dc2626);
+      box-shadow: 0 0 8px rgba(248,250,252,0.7);
     }
 
-    .hero-title-top {
-      font-size: 0.95rem;
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
-      color: #e5e7eb;
-      margin-bottom: 0.3rem;
-    }
-
-    .hero-title {
-      font-size: clamp(2.1rem, 3vw + 1rem, 3.1rem);
-      line-height: 1.05;
-      font-weight: 800;
+    .hero h1 {
+      font-size: clamp(30px, 4.1vw, 40px);
+      line-height: 1.12;
       letter-spacing: 0.03em;
-      margin-bottom: 0.85rem;
       text-transform: uppercase;
+      margin-bottom: 10px;
     }
 
-    .hero-title span.highlight {
-      background: linear-gradient(115deg, #dc2626, #ffffff, #60a5fa);
+    .hero-highlight {
+      background: linear-gradient(120deg, #f97316, #facc15, #f97316);
       -webkit-background-clip: text;
       color: transparent;
     }
 
-    .hero-sub-sub {
-      font-size: 0.8rem;
-      color: #cbd5f5;
+    .hero-subline {
+      font-size: 13px;
       text-transform: uppercase;
-      letter-spacing: 0.18em;
-      margin-bottom: 0.35rem;
+      letter-spacing: 0.26em;
+      color: var(--text-soft);
+      margin-bottom: 16px;
     }
 
-    .hero-sub-sub strong {
-      color: #e5e7eb;
-    }
-
-    .hero-subtitle {
-      font-size: 0.97rem;
-      color: var(--muted);
-      max-width: 34rem;
-      margin-bottom: 1.4rem;
-    }
-
-    .hero-list {
-      list-style: none;
-      padding: 0;
-      margin: 0 0 1.6rem 0;
-      display: grid;
-      gap: 0.45rem;
-    }
-
-    .hero-list li {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.5rem;
-      font-size: 0.93rem;
-      color: #e5e7eb;
-    }
-
-    .hero-list-icon {
-      width: 18px;
-      height: 18px;
-      border-radius: 999px;
-      border: 1px solid rgba(248, 250, 252, 0.2);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.7rem;
-      margin-top: 0.2rem;
-      background: radial-gradient(circle at top, #22c55e, #15803d);
-      flex-shrink: 0;
+    .hero p {
+      font-size: 14px;
+      color: var(--text-muted);
+      max-width: 560px;
+      margin-bottom: 20px;
     }
 
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.7rem;
-      align-items: center;
-      margin-bottom: 1.1rem;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.45rem;
-      border-radius: 999px;
-      border: 1px solid transparent;
-      padding: 0.65rem 1.2rem;
-      font-size: 0.9rem;
-      font-weight: 600;
-      cursor: pointer;
-      text-decoration: none;
+      gap: 12px;
+      margin-bottom: 18px;
     }
 
     .btn-primary {
-      background: #b91c1c;
-      border-color: #7f1d1d;
-      color: #fefce8;
-      box-shadow: var(--shadow-soft);
+      padding: 11px 20px;
+      border-radius: var(--radius-pill);
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      border: none;
+      cursor: pointer;
+      background: linear-gradient(135deg, #f97316, #ef4444);
+      color: #f9fafb;
+      box-shadow: 0 16px 40px rgba(248,113,113,0.7);
     }
 
     .btn-primary:hover {
-      background: #dc2626;
+      filter: brightness(1.08);
+      transform: translateY(-1px);
     }
 
-    .btn-outline {
-      border-color: rgba(148, 163, 184, 0.6);
-      color: var(--muted);
-      background: rgba(15, 23, 42, 0.75);
-    }
-
-    .btn-sm {
-      padding: 0.5rem 0.95rem;
-      font-size: 0.8rem;
-      font-weight: 500;
-    }
-
-    .hero-note {
-      font-size: 0.78rem;
-      color: var(--muted);
-      max-width: 30rem;
-    }
-
-    .hero-note strong {
-      color: #e5e7eb;
+    .btn-ghost {
+      padding: 11px 16px;
+      border-radius: var(--radius-pill);
+      font-size: 13px;
       font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      border: 1px solid rgba(148,163,184,0.5);
+      cursor: pointer;
+      background: rgba(15,23,42,0.7);
+      color: var(--text-muted);
     }
 
-    /* HERO CARD (right) */
+    .btn-ghost:hover {
+      border-color: rgba(248,250,252,0.7);
+      color: #e5e7eb;
+    }
 
-    .hero-card-wrap {
-      display: flex;
-      justify-content: flex-end;
+    .hero-footnote {
+      font-size: 11px;
+      color: var(--text-soft);
+      max-width: 460px;
+    }
+
+    /* Hero, right visual */
+    .hero-visual {
       position: relative;
-      z-index: 1;
+      min-height: 260px;
     }
 
     .hero-card {
-      width: 100%;
-      max-width: 430px;
-      border-radius: var(--radius-xl);
-      background:
-        radial-gradient(circle at top left, rgba(248, 250, 252, 0.14), transparent 60%),
-        radial-gradient(circle at bottom right, rgba(30, 64, 175, 0.5), rgba(15, 23, 42, 0.98));
-      border: 1px solid rgba(148, 163, 184, 0.45);
-      box-shadow: var(--shadow-soft);
-      padding: 1.2rem 1.15rem;
       position: relative;
+      border-radius: 24px;
+      background:
+        radial-gradient(circle at top, rgba(248,113,113,0.35), transparent 65%),
+        radial-gradient(circle at bottom, rgba(56,189,248,0.4), transparent 60%),
+        linear-gradient(145deg, #020617, #020617 40%, #020617);
+      border: 1px solid rgba(148,163,184,0.4);
+      box-shadow: var(--shadow-soft);
+      padding: 16px 16px 14px;
       overflow: hidden;
     }
 
     .hero-card-header {
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      margin-bottom: 0.7rem;
+      justify-content: space-between;
+      margin-bottom: 12px;
     }
 
-    .hero-card-title {
-      font-size: 0.9rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
+    .hero-pill {
+      padding: 5px 10px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(248,250,252,0.3);
+      background: rgba(15,23,42,0.85);
+      font-size: 11px;
       text-transform: uppercase;
+      letter-spacing: 0.18em;
       color: #e5e7eb;
     }
 
-    .hero-card-badge {
-      font-size: 0.72rem;
-      padding: 0.25rem 0.55rem;
-      border-radius: 999px;
-      border: 1px solid rgba(191, 219, 254, 0.8);
-      background: radial-gradient(circle at top, rgba(59, 130, 246, 0.28), transparent 70%);
-      color: #bfdbfe;
+    .hero-storm-tag {
+      font-size: 11px;
+      color: #e5e7eb;
       text-transform: uppercase;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.18em;
     }
 
-    .hero-card-body {
-      background: rgba(15, 23, 42, 0.92);
-      border-radius: 15px;
-      padding: 0.85rem;
-      border: 1px solid rgba(148, 163, 184, 0.55);
-      margin-bottom: 0.85rem;
+    .hero-storm-box {
+      margin-top: 10px;
+      border-radius: 16px;
+      border: 1px solid rgba(248,250,252,0.2);
+      background: linear-gradient(160deg, rgba(15,23,42,0.9), rgba(15,23,42,0.7));
+      padding: 12px;
     }
 
-    .hero-card-rows {
-      display: grid;
-      gap: 0.45rem;
-      margin-bottom: 0.75rem;
-    }
-
-    .hero-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      gap: 0.8rem;
-      font-size: 0.8rem;
-    }
-
-    .hero-row-label {
-      color: var(--muted);
+    .hero-storm-title {
+      font-size: 13px;
+      font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.14em;
-      font-size: 0.7rem;
+      margin-bottom: 6px;
     }
 
-    .hero-row-value {
-      font-weight: 600;
+    .hero-storm-text {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+
+    .storm-bar {
+      height: 5px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #f97316, #facc15, #22c55e, #0ea5e9);
+      box-shadow: 0 0 12px rgba(250,204,21,0.7);
+      margin-bottom: 10px;
+    }
+
+    .hero-mini-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 8px;
+    }
+
+    .mini-card {
+      border-radius: 12px;
+      border: 1px solid rgba(148,163,184,0.4);
+      background: rgba(15,23,42,0.9);
+      padding: 8px;
+      font-size: 11px;
+    }
+
+    .mini-label {
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--text-soft);
+      margin-bottom: 4px;
+    }
+
+    .mini-value {
       color: #e5e7eb;
-      text-align: right;
+      font-weight: 600;
     }
 
-    .hero-row-value span {
-      font-weight: 500;
-      color: #bfdbfe;
+    .mini-subvalue {
+      color: var(--text-muted);
+      font-size: 10px;
     }
 
-    .issue-tag-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-    }
-
-    .issue-tag {
-      font-size: 0.75rem;
-      padding: 0.25rem 0.55rem;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.6);
-      color: var(--muted);
-      background: rgba(15, 23, 42, 0.98);
-    }
-
-    .hero-bar {
-      margin-top: 0.4rem;
-      background: #020617;
-      border-radius: 999px;
-      padding: 0.15rem;
-      border: 1px solid rgba(15, 23, 42, 0.9);
-      display: flex;
-      gap: 0.1rem;
-    }
-
-    .hero-bar-inner {
-      height: 12px;
-      border-radius: 999px;
-      flex: 1;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-bar-inner:nth-child(1) {
-      background: radial-gradient(circle at left, rgba(34, 197, 94, 0.8), rgba(22, 163, 74, 0.7));
-    }
-
-    .hero-bar-inner:nth-child(2) {
-      background: radial-gradient(circle at left, rgba(59, 130, 246, 0.7), rgba(37, 99, 235, 0.75));
-    }
-
-    .hero-bar-inner:nth-child(3) {
-      background: radial-gradient(circle at left, rgba(220, 38, 38, 0.8), rgba(185, 28, 28, 0.9));
-    }
-
-    .hero-bar-thumb {
+    .hero-float-tag {
       position: absolute;
-      top: 1px;
-      bottom: 1px;
-      right: 3px;
-      left: 35%;
-      border-radius: 999px;
-      border: 1px solid rgba(15, 23, 42, 0.9);
-      background: rgba(15, 23, 42, 0.55);
+      right: -4px;
+      top: 50%;
+      transform: translateY(-50%);
+      padding: 8px 12px;
+      border-radius: 999px 0 0 999px;
+      background: rgba(15,23,42,0.92);
+      border: 1px solid rgba(148,163,184,0.4);
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--accent-gold);
+      box-shadow: 0 10px 25px rgba(15,23,42,0.9);
     }
 
-    .hero-card-footer {
+    /* Sections */
+    section {
+      margin-top: 40px;
+    }
+
+    .section-header {
       display: flex;
       justify-content: space-between;
-      align-items: baseline;
-      font-size: 0.78rem;
-      color: var(--muted);
-    }
-
-    .hero-mini-legend {
-      display: flex;
-      gap: 0.8rem;
-      align-items: center;
+      gap: 20px;
+      align-items: flex-end;
+      margin-bottom: 18px;
       flex-wrap: wrap;
     }
 
-    .legend-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 999px;
-      margin-right: 0.25rem;
-      display: inline-block;
-    }
-
-    .legend-yes {
-      background: #22c55e;
-    }
-
-    .legend-no {
-      background: #ef4444;
-    }
-
-    .legend-undecided {
-      background: #3b82f6;
-    }
-
-    .hero-card-caption {
-      text-align: right;
-      font-size: 0.7rem;
-      color: var(--muted);
-      margin-top: 0.4rem;
-    }
-
-    .hero-card-caption strong {
-      color: #e5e7eb;
-    }
-
-    /* SECTIONS */
-
-    .section-kicker {
-      font-size: 0.75rem;
+    .section-title-block h2 {
+      font-size: 18px;
       text-transform: uppercase;
-      letter-spacing: 0.2em;
-      color: var(--muted);
-      margin-bottom: 0.3rem;
+      letter-spacing: 0.18em;
     }
 
-    .section-title {
-      font-size: 1.4rem;
-      font-weight: 700;
-      margin-bottom: 0.35rem;
+    .section-title-block p {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-top: 6px;
+      max-width: 480px;
     }
 
-    .section-subtitle {
-      font-size: 0.9rem;
-      color: var(--muted);
-      max-width: 40rem;
-      margin-bottom: 1.5rem;
+    .section-tag {
+      font-size: 11px;
+      color: var(--text-soft);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
     }
 
-    .grid-2 {
+    /* Cards / UI blocks */
+    .card-grid-3 {
       display: grid;
-      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.2fr);
-      gap: 2rem;
-      align-items: flex-start;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 14px;
     }
 
     .card {
-      background: radial-gradient(circle at top, rgba(15, 23, 42, 0.9), #020617);
       border-radius: var(--radius-lg);
-      border: 1px solid rgba(148, 163, 184, 0.4);
-      padding: 1.2rem 1.2rem 1.25rem;
-      box-shadow: var(--shadow-subtle);
+      border: 1px solid var(--border-subtle);
+      background: radial-gradient(circle at top, rgba(148,163,184,0.15), transparent 60%),
+                  var(--card);
+      padding: 14px;
+      box-shadow: 0 12px 35px rgba(0,0,0,0.65);
     }
 
-    .card-soft {
-      background: rgba(15, 23, 42, 0.78);
-    }
-
-    .why-list {
-      margin: 0.4rem 0 0;
-      padding-left: 1.1rem;
-      font-size: 0.9rem;
-      color: #e5e7eb;
-    }
-
-    .why-list li + li {
-      margin-top: 0.35rem;
-    }
-
-    .emphasis-box {
-      margin-top: 0.9rem;
-      padding: 0.8rem;
-      border-radius: 12px;
-      background: radial-gradient(circle at left, rgba(220, 38, 38, 0.2), rgba(15, 23, 42, 0.96));
-      border: 1px solid rgba(248, 250, 252, 0.08);
-      font-size: 0.86rem;
-    }
-
-    .emphasis-box strong {
-      color: #fee2e2;
-    }
-
-    .principles-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: grid;
-      gap: 0.4rem;
-      font-size: 0.9rem;
-    }
-
-    .principles-list li {
-      display: flex;
-      gap: 0.4rem;
-    }
-
-    .principles-list span {
-      display: inline-block;
-      font-weight: 600;
-      color: #e5e7eb;
-      min-width: 7.5rem;
-    }
-
-    /* HOW IT WORKS */
-
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1rem;
-    }
-
-    .step {
-      background: rgba(15, 23, 42, 0.85);
-      border-radius: 16px;
-      padding: 0.85rem 0.9rem;
-      border: 1px solid rgba(148, 163, 184, 0.4);
-      box-shadow: var(--shadow-subtle);
-    }
-
-    .step-num {
-      width: 22px;
-      height: 22px;
-      border-radius: 999px;
-      border: 1px solid rgba(248, 250, 252, 0.2);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.75rem;
-      font-weight: 600;
-      margin-bottom: 0.45rem;
-      background: radial-gradient(circle at top, rgba(59, 130, 246, 0.7), rgba(15, 23, 42, 1));
-    }
-
-    .step-title {
-      font-size: 0.93rem;
-      font-weight: 600;
-      margin-bottom: 0.2rem;
-    }
-
-    .step-text {
-      font-size: 0.85rem;
-      color: var(--muted);
-    }
-
-    /* REFORMS */
-
-    .reforms-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1rem;
-    }
-
-    .reform-card {
-      background: rgba(15, 23, 42, 0.9);
-      border-radius: 18px;
-      padding: 0.9rem 0.95rem 1rem;
-      border: 1px solid rgba(148, 163, 184, 0.45);
-      box-shadow: var(--shadow-subtle);
-      font-size: 0.87rem;
-    }
-
-    .reform-pill {
-      font-size: 0.7rem;
+    .card h3 {
+      font-size: 13px;
       text-transform: uppercase;
       letter-spacing: 0.16em;
-      color: var(--muted);
-      margin-bottom: 0.25rem;
+      margin-bottom: 6px;
     }
 
-    .reform-title {
-      font-size: 0.98rem;
-      font-weight: 600;
-      margin-bottom: 0.45rem;
+    .card p {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 10px;
     }
 
-    .reform-body {
-      font-size: 0.85rem;
-      color: var(--muted);
-      margin-bottom: 0.5rem;
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 4px;
     }
 
-    .reform-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.3rem;
-      padding: 0.25rem 0.55rem;
+    .tag {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
       border-radius: 999px;
-      background: rgba(34, 197, 94, 0.12);
-      border: 1px solid rgba(34, 197, 94, 0.6);
-      font-size: 0.72rem;
+      padding: 4px 8px;
+      border: 1px solid rgba(148,163,184,0.4);
+      color: var(--text-soft);
+      background: rgba(15,23,42,0.8);
+    }
+
+    .tag-alert {
+      border-color: rgba(248,113,113,0.6);
+      color: #fecaca;
+    }
+
+    .tag-state {
+      border-color: rgba(96,165,250,0.7);
+      color: #bfdbfe;
+    }
+
+    .tag-national {
+      border-color: rgba(52,211,153,0.7);
       color: #bbf7d0;
     }
 
-    .reform-badge span.dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 999px;
-      background: #22c55e;
-    }
-
-    /* COMING SOON / EMAIL */
-
-    .coming-grid {
+    /* Dashboard mock */
+    .dash-layout {
       display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.1fr);
-      gap: 1.6rem;
-      align-items: center;
+      grid-template-columns: minmax(0, 2.3fr) minmax(0, 2fr);
+      gap: 14px;
     }
 
-    .pill-row {
+    .dash-header {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-top: 0.55rem;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 10px;
     }
 
     .pill {
-      font-size: 0.8rem;
-      padding: 0.25rem 0.7rem;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.5);
-      color: var(--muted);
-      background: rgba(15, 23, 42, 0.9);
-    }
-
-    .pill-flag {
-      border-color: rgba(220, 38, 38, 0.8);
-      background: radial-gradient(circle at top, rgba(220, 38, 38, 0.45), rgba(15, 23, 42, 0.98));
-      color: #fee2e2;
-    }
-
-    .email-card {
-      background: radial-gradient(circle at top, rgba(37, 99, 235, 0.2), rgba(15, 23, 42, 0.96));
-      border-radius: 18px;
-      border: 1px solid rgba(148, 163, 184, 0.5);
-      padding: 1.1rem 1rem 1.15rem;
-      box-shadow: var(--shadow-soft);
-    }
-
-    .email-title {
-      font-size: 0.95rem;
-      font-weight: 600;
-      margin-bottom: 0.35rem;
-    }
-
-    .email-text {
-      font-size: 0.85rem;
-      color: var(--muted);
-      margin-bottom: 0.75rem;
-    }
-
-    .email-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem;
-      align-items: center;
-    }
-
-    .email-input {
-      flex: 1;
-      min-width: 0;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.7);
-      padding: 0.55rem 0.8rem;
-      background: rgba(15, 23, 42, 0.96);
-      color: #f9fafb;
-      font-size: 0.85rem;
-      outline: none;
-    }
-
-    .email-input::placeholder {
-      color: #6b7280;
-    }
-
-    .email-note {
-      margin-top: 0.45rem;
-      font-size: 0.78rem;
-      color: var(--muted);
-    }
-
-    footer {
-      border-top: 1px solid rgba(30, 64, 175, 0.7);
-      background: radial-gradient(circle at top, rgba(30, 64, 175, 0.35), #020617);
-      padding: 1rem 1.25rem 1.4rem;
-      margin-top: 1.5rem;
-    }
-
-    .footer-inner {
-      max-width: 1120px;
-      margin: 0 auto;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.7rem;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.78rem;
-      color: var(--muted);
-    }
-
-    .footer-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.9rem;
-    }
-
-    .footer-links a {
-      color: #9ca3af;
-    }
-
-    .footer-links a:hover {
+      padding: 6px 11px;
+      border-radius: var(--radius-pill);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      border: 1px solid rgba(148,163,184,0.7);
+      background: var(--pill-bg);
       color: #e5e7eb;
     }
 
-    /* RESPONSIVE */
+    .pill-ghost {
+      border-style: dashed;
+      color: var(--text-soft);
+    }
 
+    .select {
+      background: rgba(15,23,42,0.9);
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(148,163,184,0.6);
+      padding: 6px 10px;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .dash-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .metric-card {
+      border-radius: 12px;
+      border: 1px solid rgba(148,163,184,0.4);
+      background: rgba(15,23,42,0.9);
+      padding: 8px;
+      font-size: 11px;
+    }
+
+    .metric-label {
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-soft);
+      margin-bottom: 3px;
+    }
+
+    .metric-value {
+      font-weight: 700;
+      color: #e5e7eb;
+      margin-bottom: 2px;
+    }
+
+    .metric-sub {
+      font-size: 10px;
+      color: var(--text-muted);
+    }
+
+    .list {
+      list-style: none;
+      font-size: 11px;
+      max-height: 190px;
+      overflow-y: auto;
+      padding-right: 4px;
+    }
+
+    .list-item {
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(15,23,42,0.9);
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      align-items: flex-start;
+    }
+
+    .list-main {
+      color: #e5e7eb;
+      margin-bottom: 2px;
+    }
+
+    .list-sub {
+      color: var(--text-soft);
+      font-size: 10px;
+    }
+
+    .pill-status {
+      padding: 3px 8px;
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      border-radius: 999px;
+      border: 1px solid rgba(248,113,113,0.6);
+      color: #fecaca;
+      background: rgba(127,29,29,0.55);
+      white-space: nowrap;
+    }
+
+    .pill-status-ok {
+      border-color: rgba(52,211,153,0.7);
+      color: #bbf7d0;
+      background: rgba(6,78,59,0.8);
+    }
+
+    /* Alerts section */
+    .alert-types-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 12px;
+    }
+
+    .alert-type-card {
+      border-radius: 14px;
+      padding: 10px;
+      border: 1px solid rgba(148,163,184,0.5);
+      background: linear-gradient(140deg, rgba(30,64,175,0.85), rgba(15,23,42,1));
+      box-shadow: 0 10px 32px rgba(0,0,0,0.7);
+      font-size: 12px;
+    }
+
+    .alert-type-card.red {
+      background: radial-gradient(circle at top left, rgba(248,113,113,0.9), transparent 60%),
+                  linear-gradient(140deg, #450a0a, #0b0f19);
+    }
+
+    .alert-type-card.gold {
+      background: radial-gradient(circle at 0% 0%, rgba(250,204,21,0.9), transparent 55%),
+                  linear-gradient(140deg, #78350f, #0b0f19);
+    }
+
+    .alert-type-card.power {
+      background: radial-gradient(circle at 0% 0%, rgba(56,189,248,0.85), transparent 55%),
+                  linear-gradient(140deg, #0f172a, #020617);
+    }
+
+    .alert-type-title {
+      font-size: 11px;
+      margin-bottom: 5px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+    }
+
+    .alert-type-desc {
+      color: #e5e7eb;
+      font-size: 11px;
+      margin-bottom: 6px;
+    }
+
+    .alert-type-sub {
+      font-size: 10px;
+      color: #fee2e2;
+    }
+
+    /* Voting & submissions */
+    .two-col {
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1.5fr);
+      gap: 14px;
+    }
+
+    .proposal-list {
+      list-style: none;
+      font-size: 11px;
+    }
+
+    .proposal-item {
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(15,23,42,0.9);
+    }
+
+    .proposal-title {
+      color: #e5e7eb;
+      margin-bottom: 3px;
+    }
+
+    .proposal-meta {
+      color: var(--text-soft);
+      font-size: 10px;
+      margin-bottom: 3px;
+    }
+
+    .proposal-bar-wrap {
+      height: 5px;
+      border-radius: 999px;
+      background: rgba(15,23,42,0.9);
+      overflow: hidden;
+    }
+
+    .proposal-bar {
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, #22c55e, #a3e635);
+    }
+
+    .submission-form label {
+      display: block;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      margin-bottom: 4px;
+      color: var(--text-soft);
+    }
+
+    .submission-form input,
+    .submission-form textarea,
+    .submission-form select {
+      width: 100%;
+      border-radius: 10px;
+      border: 1px solid rgba(148,163,184,0.6);
+      background: rgba(15,23,42,0.9);
+      color: var(--text-main);
+      font-size: 12px;
+      padding: 7px 9px;
+      margin-bottom: 8px;
+    }
+
+    .submission-form textarea {
+      min-height: 80px;
+      resize: vertical;
+    }
+
+    .btn-small {
+      padding: 7px 12px;
+      border-radius: var(--radius-pill);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      border: 1px solid rgba(248,250,252,0.55);
+      background: linear-gradient(135deg, #22c55e, #16a34a);
+      color: #f9fafb;
+      cursor: pointer;
+    }
+
+    .btn-small:hover {
+      filter: brightness(1.07);
+    }
+
+    .helper-text {
+      font-size: 10px;
+      color: var(--text-soft);
+      margin-top: 2px;
+    }
+
+    /* Influence section */
+    .influence-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.6fr);
+      gap: 14px;
+    }
+
+    .influence-chain {
+      font-size: 11px;
+      border-left: 2px solid rgba(248,250,252,0.5);
+      padding-left: 10px;
+    }
+
+    .influence-label {
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-soft);
+      margin-bottom: 3px;
+    }
+
+    .influence-value {
+      color: #e5e7eb;
+      margin-bottom: 5px;
+    }
+
+    .influence-impact {
+      font-size: 10px;
+      color: var(--text-muted);
+    }
+
+    /* Town Halls */
+    .townhall-list {
+      list-style: none;
+      font-size: 11px;
+    }
+
+    .townhall-item {
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(15,23,42,0.9);
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .pill-live {
+      padding: 4px 8px;
+      border-radius: 999px;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      border: 1px solid rgba(248,113,113,0.8);
+      background: rgba(127,29,29,0.85);
+      color: #fecaca;
+    }
+
+    .pill-upcoming {
+      padding: 4px 8px;
+      border-radius: 999px;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      border: 1px solid rgba(59,130,246,0.9);
+      background: rgba(30,64,175,0.9);
+      color: #dbeafe;
+    }
+
+    /* Join section */
+    .join-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1.7fr);
+      gap: 16px;
+      align-items: center;
+    }
+
+    .join-form label {
+      display: block;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--text-soft);
+      margin-bottom: 4px;
+    }
+
+    .join-form input,
+    .join-form select {
+      width: 100%;
+      padding: 8px 10px;
+      border-radius: 12px;
+      border: 1px solid rgba(148,163,184,0.7);
+      background: rgba(15,23,42,0.95);
+      color: #f9fafb;
+      font-size: 12px;
+      margin-bottom: 9px;
+    }
+
+    .footer-note {
+      font-size: 11px;
+      color: var(--text-soft);
+      margin-top: 8px;
+    }
+
+    footer {
+      margin-top: 40px;
+      border-top: 1px solid rgba(31,41,55,0.9);
+      padding-top: 16px;
+      font-size: 11px;
+      color: var(--text-soft);
+      text-align: center;
+    }
+
+    /* Responsive */
     @media (max-width: 900px) {
       .hero {
         grid-template-columns: minmax(0, 1fr);
+        padding-top: 24px;
       }
-
-      .hero-card-wrap {
-        justify-content: center;
+      .hero-visual {
+        order: -1;
       }
-
-      .grid-2 {
+      .dash-layout,
+      .two-col,
+      .influence-grid,
+      .join-grid {
         grid-template-columns: minmax(0, 1fr);
       }
+    }
 
-      .steps {
-        grid-template-columns: minmax(0, 1fr);
-      }
-
-      .reforms-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-
-      .coming-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-
-      .section {
-        padding-inline: 1rem;
-      }
-
-      .nav {
-        padding-inline: 1rem;
-      }
-
-      .nav-pill {
+    @media (max-width: 680px) {
+      .nav-links {
         display: none;
       }
-    }
-
-    @media (max-width: 640px) {
-      .hero-title {
-        font-size: 2rem;
-      }
-
-      .hero-subtitle {
-        font-size: 0.95rem;
-      }
-
-      .hero {
-        padding-top: 2rem;
-      }
-    }
-
-    @media (min-width: 901px) {
-      .nav-pill {
-        display: inline-flex;
+      .page-shell {
+        padding-bottom: 60px;
       }
     }
   </style>
 </head>
 <body>
-  <div class="page">
-    <header>
-      <div class="flag-bar"></div>
-      <div class="nav">
-        <div class="nav-left">
-          <div class="logo-pill">
-            <div class="logo-inner">
-              <span class="logo-abbrev">AM</span>
-            </div>
-          </div>
-          <div>
-            <div class="nav-titles-main">The American Mandate</div>
-            <div class="nav-titles-sub">
-              A <em>Restore The Republic Movement</em> initiative
-            </div>
-          </div>
+  <header>
+    <div class="nav">
+      <div class="nav-left">
+        <div class="logo-mark">UT</div>
+        <div>
+          <div class="logo-text-main">UNITED BY TRUTH</div>
+          <div class="logo-text-sub">Peacefully Taking Our Power Back</div>
         </div>
-        <div class="nav-right">
-          <div class="nav-pill">Citizen powered · Non-partisan</div>
-          <button class="nav-cta" onclick="scrollToSection('coming-soon')">
-            Join the Waiting List
+      </div>
+      <nav class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#dashboards">Dashboards</a>
+        <a href="#alerts">Alerts</a>
+        <a href="#voting">Voting</a>
+        <a href="#townhalls">Town Halls</a>
+        <a href="#join" class="nav-cta">Join the Movement</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-shell">
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div>
+        <div class="hero-badge-row">
+          <div class="badge-chip">
+            <span class="badge-dot"></span>
+            LIVE BETA BLUEPRINT
+          </div>
+          <span class="section-tag">Built for every American state</span>
+        </div>
+        <h1>
+          UNITED BY TRUTH<br />
+          <span class="hero-highlight">A national platform to hold power accountable.</span>
+        </h1>
+        <div class="hero-subline">Alerts · Dashboards · Voting · Town Halls · Article V Support</div>
+        <p>
+          United by Truth is a peaceful, citizen-powered movement and platform that gives Americans
+          real-time alerts, national and state dashboards, influence maps, and voting tools to
+          peacefully take our power back from corruption, secrecy, and unchecked government.
+        </p>
+        <div class="hero-actions">
+          <button class="btn-primary" onclick="scrollToSection('join')">
+            Join the Movement
+          </button>
+          <button class="btn-ghost" onclick="scrollToSection('features')">
+            Preview the App Layout
           </button>
         </div>
+        <div class="hero-footnote">
+          No parties, no special interests. One citizen = one voice. Our mission is simple:
+          expose the truth, unite the people, and organize peaceful pressure in every state.
+        </div>
       </div>
-    </header>
 
-    <main>
-      <!-- HERO -->
-      <section class="section">
-        <div class="hero">
-          <div class="hero-left">
-            <div class="hero-tag">
-              <span class="hero-tag-dot"></span>
-              <span>CITIZEN PLATFORM · COMING SOON</span>
-            </div>
-
-            <div class="hero-title-top">Restore The Republic Movement</div>
-
-            <h1 class="hero-title">
-              A peaceful, powerful way to
-              <span class="highlight">put Congress back under the people</span>.
-            </h1>
-
-            <div class="hero-sub-sub">
-              NOT A PARTY · NOT A CAMPAIGN · A CITIZEN MANDATE
-            </div>
-
-            <p class="hero-subtitle">
-              The American Mandate is a citizen-powered platform where Americans vote on
-              term limits, government spending, one-page bills, and more — so politicians
-              can no longer ignore the people who pay the taxes.
-            </p>
-
-            <ul class="hero-list">
-              <li>
-                <div class="hero-list-icon">✓</div>
-                <div>One person, one verified vote — no parties, no special interests.</div>
-              </li>
-              <li>
-                <div class="hero-list-icon">✓</div>
-                <div>Clearly written, one-page proposals that every citizen can understand.</div>
-              </li>
-              <li>
-                <div class="hero-list-icon">✓</div>
-                <div>Results the public can see — a mandate leaders can’t pretend doesn’t exist.</div>
-              </li>
-            </ul>
-
-            <div class="hero-actions">
-              <button class="btn btn-primary" onclick="scrollToSection('coming-soon')">
-                Get launch updates
-              </button>
-              <a href="#why" class="btn btn-outline">
-                Read why this matters
-              </a>
-            </div>
-
-            <p class="hero-note">
-              <strong>Not a political party. Not a campaign.</strong>
-              A peaceful, legal, transparent way for Americans to speak with one voice and demand
-              a smaller, more accountable government.
-            </p>
+      <div class="hero-visual">
+        <div class="hero-card">
+          <div class="hero-card-header">
+            <div class="hero-pill">The Storm of Truth</div>
+            <div class="hero-storm-tag">National Signal · Prototype</div>
           </div>
-
-          <div class="hero-card-wrap">
-            <div class="hero-card" aria-label="Example of a national citizen vote card">
-              <div class="hero-card-header">
-                <div class="hero-card-title">Example National Vote</div>
-                <div class="hero-card-badge">Mock preview</div>
+          <div class="hero-storm-box">
+            <div class="hero-storm-title">Lightning over the Capitol</div>
+            <div class="hero-storm-text">
+              A live-style preview of what United by Truth will surface:
+              bills, votes, and influence trying to hide in the storm —
+              revealed in one place where every American can see it.
+            </div>
+            <div class="storm-bar"></div>
+            <div class="hero-mini-grid">
+              <div class="mini-card">
+                <div class="mini-label">Nationwide votes</div>
+                <div class="mini-value" id="heroVotes">12,584,903</div>
+                <div class="mini-subvalue">On term limits, spending caps & transparency</div>
               </div>
-
-              <div class="hero-card-body">
-                <div class="hero-card-rows">
-                  <div class="hero-row">
-                    <div class="hero-row-label">Proposal</div>
-                    <div class="hero-row-value">
-                      12-Year Term Limits
-                      <span>for Congress</span>
-                    </div>
-                  </div>
-                  <div class="hero-row">
-                    <div class="hero-row-label">Type</div>
-                    <div class="hero-row-value">One-page citizen bill</div>
-                  </div>
-                  <div class="hero-row">
-                    <div class="hero-row-label">Status</div>
-                    <div class="hero-row-value">
-                      Gathering votes
-                      <span>(citizen mandate)</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="issue-tag-list">
-                  <div class="issue-tag">No self-voted raises</div>
-                  <div class="issue-tag">Lifetime benefits ended</div>
-                  <div class="issue-tag">Back to regular jobs</div>
-                </div>
-
-                <div class="hero-bar">
-                  <div class="hero-bar-inner">
-                    <div class="hero-bar-thumb"></div>
-                  </div>
-                  <div class="hero-bar-inner">
-                    <div class="hero-bar-thumb" style="left: 15%;"></div>
-                  </div>
-                  <div class="hero-bar-inner">
-                    <div class="hero-bar-thumb" style="left: 60%;"></div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="hero-card-footer">
-                <div class="hero-mini-legend">
-                  <span><span class="legend-dot legend-yes"></span> Yes: 78%</span>
-                  <span><span class="legend-dot legend-no"></span> No: 14%</span>
-                  <span><span class="legend-dot legend-undecided"></span> Undecided: 8%</span>
-                </div>
-                <div>Citizens voting: <strong>12,438,201</strong></div>
-              </div>
-              <div class="hero-card-caption">
-                Mock data only · Real votes will be verified US citizens: one person, one vote.
+              <div class="mini-card">
+                <div class="mini-label">States engaged</div>
+                <div class="mini-value" id="heroStates">37</div>
+                <div class="mini-subvalue">Actively watching bills & corruption alerts</div>
               </div>
             </div>
           </div>
+          <div class="hero-float-tag">PEACEFULLY TAKING OUR POWER BACK</div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- WHY THIS MATTERS -->
-      <section class="section" id="why">
-        <div class="section-kicker">Why this matters</div>
-        <h2 class="section-title">America is strongest when its people are heard.</h2>
-        <p class="section-subtitle">
-          Trust in government has collapsed. Division has grown. Transparency has faded.
-          Millions of citizens feel ignored — even though they are the ones paying the bill.
-        </p>
-
-        <div class="grid-2">
-          <article class="card">
-            <h3 style="margin-top:0; font-size:1rem;">What’s gone wrong</h3>
-            <ul class="why-list">
-              <li>Politicians can vote themselves raises and lifetime benefits.</li>
-              <li>Bills are thousands of pages long, stuffed with hidden spending and favors.</li>
-              <li>Career politicians stay in office for decades with no real accountability.</li>
-              <li>Tax money is spent on things citizens never agreed to and often never see.</li>
-              <li>The two-party system keeps us fighting each other instead of fixing problems.</li>
-            </ul>
-
-            <div class="emphasis-box">
-              The truth is simple: <strong>we have far more in common than what separates us.</strong>
-              We all want honesty, fairness, safety, opportunity, and a better future for our families.
-            </div>
-          </article>
-
-          <article class="card card-soft">
-            <h3 style="margin-top:0; font-size:1rem;">What The American Mandate stands for</h3>
-            <ul class="principles-list">
-              <li><span>Citizen Power</span> Government answers to the people, not the other way around.</li>
-              <li><span>One Page Bills</span> Laws written in plain language that every citizen can read and understand.</li>
-              <li><span>Smaller Government</span> Less control over daily life, more freedom and responsibility for citizens.</li>
-              <li><span>Real Transparency</span> Where tax money goes, how votes are cast, and who benefits.</li>
-              <li><span>No Party Trap</span> Problems are solved by people, not by team colors.</li>
-            </ul>
-          </article>
+    <!-- FEATURES OVERVIEW -->
+    <section id="features">
+      <div class="section-header">
+        <div class="section-title-block">
+          <h2>Core features of the United by Truth platform</h2>
+          <p>
+            Everything we’ve planned for this app in one place: national and state dashboards,
+            real-time alerts, citizen submissions, influence tracking, voting, and live town halls.
+            This is the blueprint your developer can follow — and you can already use visually.
+          </p>
         </div>
-      </section>
+        <div class="section-tag">
+          Version 1.0 · Front-end prototype · Back-end ready
+        </div>
+      </div>
 
-      <!-- HOW IT WORKS -->
-      <section class="section" id="how">
-        <div class="section-kicker">How it will work</div>
-        <h2 class="section-title">A clear, simple process every American can follow.</h2>
-        <p class="section-subtitle">
-          As the platform grows, proposals and reforms will be introduced through a legal,
-          constitutional process. The goal is not chaos — it’s order, clarity, and a peaceful
-          mandate that leaders cannot ignore.
-        </p>
+      <div class="card-grid-3">
+        <article class="card">
+          <h3>National dashboard</h3>
+          <p>
+            See what’s happening in America this week: top bills,
+            national alerts, spending, corruption stories, and
+            national vote totals from United by Truth members.
+          </p>
+          <div class="tag-row">
+            <span class="tag tag-national">Nationwide View</span>
+            <span class="tag">Top Issues</span>
+            <span class="tag">Live Totals</span>
+          </div>
+        </article>
 
-        <div class="steps">
-          <div class="step">
-            <div class="step-num">1</div>
-            <div class="step-title">Citizens join and verify</div>
-            <p class="step-text">
-              Eligible US citizens create an account and verify once.
-              One real person = one vote. No bots. No duplicate accounts.
-            </p>
+        <article class="card">
+          <h3>50 state dashboards</h3>
+          <p>
+            Every citizen sees their own state: bills,
+            votes, power hikes, property tax threats, local corruption,
+            and how many people in their state are awake and active.
+          </p>
+          <div class="tag-row">
+            <span class="tag tag-state">State Hubs</span>
+            <span class="tag">School boards</span>
+            <span class="tag">County action</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Alert system</h3>
+          <p>
+            Red Flag Bills, Sneaky Bills, Spending Alerts, Power & Utility Alerts,
+            Politician Voting Alerts and State Crisis Alerts — the heartbeat
+            of the movement.
+          </p>
+          <div class="tag-row">
+            <span class="tag tag-alert">Red Flag Bills</span>
+            <span class="tag tag-alert">Sneaky Bills</span>
+            <span class="tag">Power & Tax Alerts</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Voting & mandates</h3>
+          <p>
+            Citizens vote on national and state reforms, Article V ideas,
+            and local proposals. When an issue passes a threshold, the app
+            generates people’s mandates and pressure campaigns.
+          </p>
+          <div class="tag-row">
+            <span class="tag">National Votes</span>
+            <span class="tag">State Votes</span>
+            <span class="tag">Article V</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Citizen submissions</h3>
+          <p>
+            Anyone can submit an issue, reform idea, or local problem.
+            Submissions move through a queue, can be reviewed by State Captains,
+            and promoted to the ballot.
+          </p>
+          <div class="tag-row">
+            <span class="tag">One-page bills</span>
+            <span class="tag">Video proposals</span>
+            <span class="tag">Local issues</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Influence tracking</h3>
+          <p>
+            “Who paid for this?” For each bill, politician, and alert,
+            United by Truth shows donors, lobbyists, corporations, and
+            influence networks behind the scenes.
+          </p>
+          <div class="tag-row">
+            <span class="tag">Lobbyists</span>
+            <span class="tag">Mega-donors</span>
+            <span class="tag">Big Money Chains</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- DASHBOARDS -->
+    <section id="dashboards">
+      <div class="section-header">
+        <div class="section-title-block">
+          <h2>National & state dashboards</h2>
+          <p>
+            This is how the app will look and feel: a live control center for
+            the people. Below, you can flip between National and State views
+            to see how the same system empowers the entire country and each
+            individual state.
+          </p>
+        </div>
+        <div class="section-tag">
+          Prototype · Static data for now · API-ready
+        </div>
+      </div>
+
+      <div class="dash-layout card">
+        <div>
+          <div class="dash-header">
+            <button class="pill" id="dashNationalBtn" onclick="setDashboardMode('national')">
+              National View
+            </button>
+            <button class="pill pill-ghost" id="dashStateBtn" onclick="setDashboardMode('state')">
+              State View
+            </button>
+            <select class="select" id="stateSelector" onchange="updateStateDashboard()">
+              <option value="GA">Georgia</option>
+              <option value="SC">South Carolina</option>
+              <option value="TX">Texas</option>
+              <option value="FL">Florida</option>
+              <option value="AZ">Arizona</option>
+              <option value="WI">Wisconsin</option>
+            </select>
           </div>
 
-          <div class="step">
-            <div class="step-num">2</div>
-            <div class="step-title">Read the one-page proposal</div>
-            <p class="step-text">
-              Each proposal is limited to one page, in plain language:
-              what it does, what it costs, and how it reduces government overreach.
-            </p>
+          <div class="dash-metrics">
+            <div class="metric-card">
+              <div class="metric-label">Active alerts</div>
+              <div class="metric-value" id="metricAlerts">64</div>
+              <div class="metric-sub" id="metricAlertsSub">
+                Red Flag, Sneaky Bills, Power, Spending
+              </div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-label">Votes cast</div>
+              <div class="metric-value" id="metricVotes">12.6M</div>
+              <div class="metric-sub" id="metricVotesSub">
+                Across national & state mandates
+              </div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-label">States engaged</div>
+              <div class="metric-value" id="metricStates">37 / 50</div>
+              <div class="metric-sub" id="metricStatesSub">
+                States with active campaigns this week
+              </div>
+            </div>
           </div>
 
-          <div class="step">
-            <div class="step-num">3</div>
-            <div class="step-title">Vote · Track · Build a mandate</div>
-            <p class="step-text">
-              Citizens vote “Yes” or “No.” Results are public and transparent.
-              When an issue hits the required threshold, it becomes a mandate the states
-              and Congress can no longer pretend not to see.
-            </p>
+          <ul class="list" id="dashboardList">
+            <!-- JS will populate with example alerts/bills -->
+          </ul>
+        </div>
+
+        <div>
+          <div class="dash-header">
+            <span class="pill">Example state snapshot</span>
+            <span class="section-tag" id="stateSnapshotLabel">
+              Georgia · United by Truth Members · Sample Data
+            </span>
+          </div>
+          <div class="dash-metrics">
+            <div class="metric-card">
+              <div class="metric-label">Members in state</div>
+              <div class="metric-value" id="stateMembers">84,320</div>
+              <div class="metric-sub">Citizens receiving alerts & voting</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-label">Critical issues</div>
+              <div class="metric-value" id="stateCritical">5</div>
+              <div class="metric-sub">Power hike, tax use, school board, zoning</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-label">State captains</div>
+              <div class="metric-value" id="stateCaptains">3</div>
+              <div class="metric-sub">On-the-ground leadership team</div>
+            </div>
+          </div>
+
+          <ul class="list" id="stateIssuesList">
+            <!-- JS will populate -->
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ALERT SYSTEM -->
+    <section id="alerts">
+      <div class="section-header">
+        <div class="section-title-block">
+          <h2>The alert system – heartbeat of the movement</h2>
+          <p>
+            Alerts are how the people stay ahead of corruption. These six core alert types are the
+            ones we agreed are most important to launch with — the ones that actually wake people up
+            because they hit their wallet, their freedom, or their kids.
+          </p>
+        </div>
+        <div class="section-tag">
+          Red Flag · Sneaky · Spending · Power · Votes · Crisis
+        </div>
+      </div>
+
+      <div class="alert-types-grid">
+        <div class="alert-type-card red">
+          <div class="alert-type-title">Red Flag Bills</div>
+          <div class="alert-type-desc">
+            Harmful, corrupt, or dangerous bills that threaten rights, explode spending,
+            or give government more power over people without clear consent.
+          </div>
+          <div class="alert-type-sub">
+            Example: midnight vote to expand surveillance or new tax hidden in a “safety bill”.
           </div>
         </div>
-      </section>
 
-      <!-- REFORMS -->
-      <section class="section" id="reforms">
-        <div class="section-kicker">Movement priorities</div>
-        <h2 class="section-title">Ideas that shrink government and return power to the people.</h2>
-        <p class="section-subtitle">
-          These are examples of the type of reforms citizens may choose to advance.
-          Final language and process will always follow every legal and constitutional step.
-        </p>
-
-        <div class="reforms-grid">
-          <article class="reform-card">
-            <div class="reform-pill">Accountability</div>
-            <div class="reform-title">Term limits for Congress</div>
-            <p class="reform-body">
-              Limit the number of years any member of Congress can serve — ending lifetime
-              political careers and encouraging real public service instead of permanent power.
-            </p>
-            <div class="reform-badge">
-              <span class="dot"></span>
-              Citizen priority: end career politicians
-            </div>
-          </article>
-
-          <article class="reform-card">
-            <div class="reform-pill">Spending & perks</div>
-            <div class="reform-title">No self-approved raises or lifetime benefits</div>
-            <p class="reform-body">
-              Congress should not be able to vote itself pay raises, special perks, or lifetime
-              benefits. After serving, members return to regular jobs and regular healthcare
-              like the people they represented.
-            </p>
-            <div class="reform-badge">
-              <span class="dot"></span>
-              “This is public service, not a retirement plan.”
-            </div>
-          </article>
-
-          <article class="reform-card">
-            <div class="reform-pill">Honest lawmaking</div>
-            <div class="reform-title">Single-subject, one-page bills</div>
-            <p class="reform-body">
-              Each law must focus on one clear subject, written in plain language,
-              on a single page — so citizens can read it, understand it, and vote on it
-              without hidden surprises.
-            </p>
-            <div class="reform-badge">
-              <span class="dot"></span>
-              No more 2,000-page “mystery bills”
-            </div>
-          </article>
-
-          <article class="reform-card">
-            <div class="reform-pill">Tax honesty</div>
-            <div class="reform-title">Transparency for where tax money goes</div>
-            <p class="reform-body">
-              Clear, public breakdowns of how federal and state tax money is used —
-              so citizens can see exactly what they are paying for, and what should be voted out.
-            </p>
-            <div class="reform-badge">
-              <span class="dot"></span>
-              Follow the money, follow the truth
-            </div>
-          </article>
-
-          <article class="reform-card">
-            <div class="reform-pill">Citizen protection</div>
-            <div class="reform-title">Stronger rights and jury power</div>
-            <p class="reform-body">
-              Educating citizens on their right to a jury, the power of jury
-              nullification, and safeguards against laws that are twisted or abused.
-            </p>
-            <div class="reform-badge">
-              <span class="dot"></span>
-              Government should fear abusing the people
-            </div>
-          </article>
-
-          <article class="reform-card">
-            <div class="reform-pill">Future ideas</div>
-            <div class="reform-title">Citizen-driven Article V discussions</div>
-            <p class="reform-body">
-              When appropriate, citizens can explore legal, peaceful ways to push reforms
-              through the states — always within the Constitution, never outside of it.
-            </p>
-            <div class="reform-badge">
-              <span class="dot"></span>
-              Always lawful · Always peaceful
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <!-- COMING SOON / EMAIL -->
-      <section class="section" id="coming-soon">
-        <div class="section-kicker">Coming soon</div>
-        <h2 class="section-title">This is more than an app. It’s a movement.</h2>
-        <p class="section-subtitle">
-          The American Mandate will roll out in stages: first as an information hub,
-          then as a basic voting platform, and finally as a full citizen-powered engine
-          for reforms that shrink government and restore accountability.
-        </p>
-
-        <div class="coming-grid">
-          <div>
-            <h3 style="margin-top:0; font-size:1rem;">What’s planned</h3>
-            <div class="pill-row">
-              <span class="pill pill-flag">Verified US citizen accounts</span>
-              <span class="pill">One person, one vote</span>
-              <span class="pill">National & state-level votes</span>
-              <span class="pill">One-page proposals</span>
-              <span class="pill">Real-time vote totals</span>
-            </div>
-
-            <div class="pill-row" style="margin-top:0.65rem;">
-              <span class="pill">Education on jury power & rights</span>
-              <span class="pill">Tools to contact state leaders</span>
-              <span class="pill">Citizen-submitted ideas</span>
-            </div>
-
-            <p style="margin-top:1rem; font-size:0.9rem; color:var(--muted); max-width:34rem;">
-              When enough citizens stand together, it becomes a mandate.
-              This platform exists to turn frustration into focused, lawful, united action —
-              not every four years, but every day.
-            </p>
+        <div class="alert-type-card red">
+          <div class="alert-type-title">Sneaky Bills</div>
+          <div class="alert-type-desc">
+            Shady provisions hidden inside giant bills: where they try to bury giveaways,
+            immunity, or rule changes under “emergency” or “infrastructure” language.
           </div>
+          <div class="alert-type-sub">
+            Example: political pay raise hidden inside disaster funding.
+          </div>
+        </div>
 
-          <div>
-            <div class="email-card">
-              <div class="email-title">Be notified when The American Mandate goes live</div>
-              <p class="email-text">
-                Enter your email below and you’ll be the first to know when the platform
-                is ready for public testing and early citizen votes.
-              </p>
+        <div class="alert-type-card gold">
+          <div class="alert-type-title">Spending Alerts</div>
+          <div class="alert-type-desc">
+            Where the money is really going: billion-dollar contracts, pork projects,
+            backroom deals, and “emergency” funds that never reach the people.
+          </div>
+          <div class="alert-type-sub">
+            Example: state surplus used on pet projects instead of returning money to citizens.
+          </div>
+        </div>
 
-              <!-- NOTE: This form doesn’t actually submit anywhere yet.
-                   Later we can connect it to an email service (Mailchimp, etc.). -->
-              <form onsubmit="handleJoin(event)">
-                <div class="email-row">
-                  <input
-                    type="email"
-                    class="email-input"
-                    placeholder="you@example.com"
-                    aria-label="Email address"
-                    required
-                  />
-                  <button type="submit" class="btn btn-primary btn-sm">
-                    Join the list
-                  </button>
+        <div class="alert-type-card power">
+          <div class="alert-type-title">Power & Utility Alerts</div>
+          <div class="alert-type-desc">
+            Power bill hikes, monopoly utility deals, and corruption around basic services
+            that families rely on every month.
+          </div>
+          <div class="alert-type-sub">
+            Example: double-digit power hike while executives get bonuses.
+          </div>
+        </div>
+
+        <div class="alert-type-card">
+          <div class="alert-type-title">Politician Voting Alerts</div>
+          <div class="alert-type-desc">
+            How your representatives actually voted — not the spin. Every major vote tied to
+            their name, donors, and promises.
+          </div>
+          <div class="alert-type-sub">
+            Example: “Your senator voted YES on Bill 412 backed by donors X, Y, Z.”
+          </div>
+        </div>
+
+        <div class="alert-type-card">
+          <div class="alert-type-title">State Crisis Alerts</div>
+          <div class="alert-type-desc">
+            Urgent state events: rushed bills, emergency powers, scandals, resignations,
+            or major protests that require immediate attention.
+          </div>
+          <div class="alert-type-sub">
+            Example: “State attempts to fast-track new law without hearings tomorrow at 9AM.”
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VOTING & SUBMISSIONS -->
+    <section id="voting">
+      <div class="section-header">
+        <div class="section-title-block">
+          <h2>Voting & citizen submissions</h2>
+          <p>
+            United by Truth isn’t just a feed of bad news. It’s a tool. People can submit
+            issues and reforms, vote on them at the state and national level, and when
+            thresholds are reached, the platform generates peaceful but powerful action.
+          </p>
+        </div>
+        <div class="section-tag">
+          One citizen = one voice · Article V ready
+        </div>
+      </div>
+
+      <div class="two-col">
+        <!-- Voting -->
+        <article class="card">
+          <h3>Sample national and state votes</h3>
+          <p>
+            Here is how proposals could look inside the app. Each one has support percentages,
+            vote counts, and thresholds to trigger “Send to State Legislators” campaigns.
+          </p>
+          <ul class="proposal-list" id="proposalList">
+            <!-- JS populates sample proposals -->
+          </ul>
+        </article>
+
+        <!-- Submissions -->
+        <article class="card">
+          <h3>Citizen submission prototype</h3>
+          <p>
+            This form shows how citizens will be able to submit issues. In a real build,
+            this would send data to your backend for review by admins / State Captains.
+          </p>
+          <form class="submission-form" onsubmit="handleFakeSubmit(event)">
+            <label for="submissionLevel">Issue level</label>
+            <select id="submissionLevel">
+              <option>State issue</option>
+              <option>National issue</option>
+              <option>Local (city / county)</option>
+            </select>
+
+            <label for="submissionState">State</label>
+            <select id="submissionState">
+              <option value="GA">Georgia</option>
+              <option value="SC">South Carolina</option>
+              <option value="TX">Texas</option>
+              <option value="FL">Florida</option>
+              <option value="AZ">Arizona</option>
+              <option value="WI">Wisconsin</option>
+            </select>
+
+            <label for="submissionTitle">Title of issue / proposal</label>
+            <input id="submissionTitle" placeholder="Example: Stop surprise power bill hikes in Georgia" />
+
+            <label for="submissionBody">Describe the problem and solution</label>
+            <textarea id="submissionBody" placeholder="Explain what’s happening, who is affected, and what you think should change."></textarea>
+
+            <button class="btn-small" type="submit">
+              Submit (demo only)
+            </button>
+            <div class="helper-text" id="submissionStatus">
+              This is a demo – in a full build this would send data to your backend.
+            </div>
+          </form>
+        </article>
+      </div>
+    </section>
+
+    <!-- INFLUENCE TRACKING -->
+    <section id="influence">
+      <div class="section-header">
+        <div class="section-title-block">
+          <h2>“Who paid for this?” – Influence tracking</h2>
+          <p>
+            Every major bill and alert in United by Truth can be tied to donors, lobbyists, and
+            corporate interests. Below is a prototype of how an influence chain would be displayed
+            to regular citizens in plain language.
+          </p>
+        </div>
+        <div class="section-tag">
+          Donor → Politician → Bill → Impact
+        </div>
+      </div>
+
+      <div class="influence-grid card">
+        <div>
+          <div class="dash-header">
+            <span class="pill">Influence profile</span>
+            <span class="section-tag">Sample data – ready for real records</span>
+          </div>
+          <div class="list">
+            <div class="list-item">
+              <div>
+                <div class="list-main">Pharmaceutical Research & Manufacturers of America (PhRMA)</div>
+                <div class="list-sub">
+                  Industry lobby · Top federal lobbying spender · Focus: drug pricing, regulation
                 </div>
-                <div class="email-note">
-                  This is a preview site. By joining, you’re simply asking to be notified
-                  when the platform is ready. No spam. No selling your information.
+              </div>
+              <span class="pill-status-ok">Profile Loaded</span>
+            </div>
+            <div class="list-item">
+              <div>
+                <div class="list-main">Koch Network (e.g., Americans for Prosperity)</div>
+                <div class="list-sub">
+                  Fossil fuel & deregulation network · Heavy state-level influence
                 </div>
-              </form>
+              </div>
+              <span class="pill-status-ok">Profile Loaded</span>
+            </div>
+            <div class="list-item">
+              <div>
+                <div class="list-main">National Association of Realtors</div>
+                <div class="list-sub">
+                  Housing & property lobby · Major influence on tax, zoning, mortgage rules
+                </div>
+              </div>
+              <span class="pill-status-ok">Profile Loaded</span>
             </div>
           </div>
         </div>
-      </section>
-    </main>
+
+        <div>
+          <div class="dash-header">
+            <span class="pill">Example influence chain</span>
+          </div>
+          <div class="influence-chain">
+            <div class="influence-label">Donor / Lobby</div>
+            <div class="influence-value">
+              PhRMA & allied pharmaceutical companies
+            </div>
+
+            <div class="influence-label">Target</div>
+            <div class="influence-value">
+              Members of Congress on key health and finance committees
+            </div>
+
+            <div class="influence-label">Bill / Policy Pattern</div>
+            <div class="influence-value">
+              Repeated efforts to block or weaken Medicare drug-price negotiation and importation
+              reforms over multiple sessions of Congress.
+            </div>
+
+            <div class="influence-label">Who benefits</div>
+            <div class="influence-value">
+              Large drug manufacturers who preserve higher price control on U.S. medicines.
+            </div>
+
+            <div class="influence-label">Impact on citizens</div>
+            <div class="influence-impact">
+              Americans pay more for many prescription drugs for longer periods while reforms are
+              delayed, watered down, or quietly killed. United by Truth would flag this as a
+              **Red Flag + Big Money Influence** alert so people can see who paid, who voted, and
+              what it cost them.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TOWN HALLS -->
+    <section id="townhalls">
+      <div class="section-header">
+        <div class="section-title-block">
+          <h2>National & state town halls</h2>
+          <p>
+            United by Truth will host live National People’s Briefings and State Town Halls
+            whenever something critical happens. Below is a mockup list of live and upcoming
+            events so you can see how this fits visually into the app.
+          </p>
+        </div>
+        <div class="section-tag">
+          AI voice-over · Visual streams · No camera required
+        </div>
+      </div>
+
+      <div class="two-col">
+        <article class="card">
+          <h3>National town halls</h3>
+          <ul class="townhall-list">
+            <li class="townhall-item">
+              <div>
+                <div class="list-main">Weekly People’s Briefing – National</div>
+                <div class="list-sub">Tonight · 9:00 PM ET · Topic: “Spending, Surpluses & Power Bills”</div>
+              </div>
+              <span class="pill-live">Live Demo</span>
+            </li>
+            <li class="townhall-item">
+              <div>
+                <div class="list-main">The Storm of Truth – Alert Deep Dive</div>
+                <div class="list-sub">
+                  Tomorrow · 8:30 PM ET · Breaking down this week’s Red Flag and Sneaky Bills.
+                </div>
+              </div>
+              <span class="pill-upcoming">Upcoming</span>
+            </li>
+            <li class="townhall-item">
+              <div>
+                <div class="list-main">National Article V Update</div>
+                <div class="list-sub">
+                  Sunday · 7:00 PM ET · States moving toward term-limit and spending amendments.
+                </div>
+              </div>
+              <span class="pill-upcoming">Upcoming</span>
+            </li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>State town halls – triggered by alerts</h3>
+          <ul class="townhall-list">
+            <li class="townhall-item">
+              <div>
+                <div class="list-main">Georgia – Power & Surplus Breakdown</div>
+                <div class="list-sub">
+                  Live when a Power & Utility Alert or Spending Alert triggers a statewide threshold.
+                </div>
+              </div>
+              <span class="pill-upcoming">State Demo</span>
+            </li>
+            <li class="townhall-item">
+              <div>
+                <div class="list-main">South Carolina – Property Tax & School Funding</div>
+                <div class="list-sub">Local proposals, tax use, and accountability on the ballot.</div>
+              </div>
+              <span class="pill-upcoming">State Demo</span>
+            </li>
+            <li class="townhall-item">
+              <div>
+                <div class="list-main">Texas – Red Flag & Sneaky Bills Watch</div>
+                <div class="list-sub">
+                  Deep dive on hidden provisions and who paid for them. Citizen questions in Q&A.
+                </div>
+              </div>
+              <span class="pill-upcoming">State Demo</span>
+            </li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- JOIN / CTA -->
+    <section id="join">
+      <div class="section-header">
+        <div class="section-title-block">
+          <h2>Join United by Truth</h2>
+          <p>
+            This is where it becomes more than an idea. United by Truth is meant to be a real
+            movement, not just a pretty layout. Use this page as your first live site, start
+            collecting supporters by state, and later we can wire this form into a real backend.
+          </p>
+        </div>
+        <div class="section-tag">
+          No parties · No violence · No special interests
+        </div>
+      </div>
+
+      <div class="card join-grid">
+        <div>
+          <h3 style="font-size:13px;text-transform:uppercase;letter-spacing:0.18em;margin-bottom:8px;">
+            Be part of the first wave
+          </h3>
+          <p style="font-size:12px;color:var(--text-muted);margin-bottom:10px;">
+            Enter your name, email, and state. In a full build, this would add you to the
+            United by Truth list for your state so you can receive alerts, vote, and join
+            town halls as soon as the platform goes live.
+          </p>
+
+          <form class="join-form" onsubmit="handleFakeJoin(event)">
+            <label for="joinName">Name</label>
+            <input id="joinName" placeholder="First & last name (optional in v1)" />
+
+            <label for="joinEmail">Email</label>
+            <input id="joinEmail" placeholder="you@example.com" />
+
+            <label for="joinState">State</label>
+            <select id="joinState">
+              <option value="">Select your state</option>
+              <option value="GA">Georgia</option>
+              <option value="SC">South Carolina</option>
+              <option value="TX">Texas</option>
+              <option value="FL">Florida</option>
+              <option value="AZ">Arizona</option>
+              <option value="WI">Wisconsin</option>
+              <option value="CA">California</option>
+              <option value="NY">New York</option>
+              <option value="PA">Pennsylvania</option>
+              <option value="NC">North Carolina</option>
+            </select>
+
+            <button class="btn-primary" type="submit">
+              Join United by Truth (demo)
+            </button>
+            <div class="footer-note" id="joinStatus">
+              Demo only: this doesn’t save data yet. A developer can connect this to your database or email system later.
+            </div>
+          </form>
+        </div>
+
+        <div>
+          <h3 style="font-size:13px;text-transform:uppercase;letter-spacing:0.18em;margin-bottom:8px;">
+            What happens next
+          </h3>
+          <ul class="list">
+            <li class="list-item">
+              <div>
+                <div class="list-main">1 · Launch the public site</div>
+                <div class="list-sub">
+                  Put this page on your Vercel URL and share it with friends, family,
+                  and early supporters to explain the vision.
+                </div>
+              </div>
+            </li>
+            <li class="list-item">
+              <div>
+                <div class="list-main">2 · Collect interest by state</div>
+                <div class="list-sub">
+                  When a developer hooks up the backend, this form can build real state-by-state
+                  supporter lists to prepare for alerts and voting.
+                </div>
+              </div>
+            </li>
+            <li class="list-item">
+              <div>
+                <div class="list-main">3 · Connect data sources & logins</div>
+                <div class="list-sub">
+                  A developer can plug in bill-tracking APIs, campaign finance data, and
+                  authentication to turn this layout into a live platform.
+                </div>
+              </div>
+            </li>
+            <li class="list-item">
+              <div>
+                <div class="list-main">4 · Start peaceful pressure</div>
+                <div class="list-sub">
+                  Use alerts, votes, and state dashboards to direct thousands of phone calls,
+                  emails, and town halls at the exact right time, in the exact right state.
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
     <footer>
-      <div class="footer-inner">
-        <div>
-          © <span id="year"></span> Restore The Republic Movement · The American Mandate.
-          A peaceful, lawful, citizen-powered movement.
-        </div>
-        <div class="footer-links">
-          <a href="#why">Why this matters</a>
-          <a href="#how">How it works</a>
-          <a href="#reforms">Movement priorities</a>
-          <a href="#coming-soon">Join the waiting list</a>
-        </div>
-      </div>
+      UNITED BY TRUTH · A peaceful, citizen-powered movement to take our power back
+      with facts, hard truths, and united action. Front-end blueprint v1.0.
     </footer>
-  </div>
+  </main>
 
   <script>
-    function scrollToSection(id) {
-      const el = document.getElementById(id);
-      if (!el) return;
-      window.scrollTo({
-        top: el.offsetTop - 70,
-        behavior: "smooth"
+    // Simple JS to power demo functionality & example data
+
+    const dashboardData = {
+      national: [
+        {
+          title: "H.R. 412 – Emergency Infrastructure & Security Act",
+          sub: "Includes hidden immunity language for certain officials and a permanent new fee on power bills.",
+          status: "Red Flag Bill",
+          ok: false,
+        },
+        {
+          title: "Omnibus Spending Package – 2,400+ pages",
+          sub: "Rushed vote with 36 hours notice; contains multiple unrelated spending and policy riders.",
+          status: "Sneaky Bill",
+          ok: false,
+        },
+        {
+          title: "National Defense Authorization – Record Budget",
+          sub: "Adds tens of billions in new contracts while domestic programs are cut.",
+          status: "Spending Alert",
+          ok: false,
+        },
+        {
+          title: "Term Limits Resolution – Citizens’ Mandate",
+          sub: "Driven by millions of app votes; pending in multiple state legislatures.",
+          status: "People’s Mandate",
+          ok: true,
+        }
+      ],
+      states: {
+        GA: [
+          {
+            title: "SB 98 – Utility Rate Adjustment",
+            sub: "Double-digit power bill increase over 3 years; limited public hearings.",
+            status: "Red Flag · Power & Utility",
+            ok: false
+          },
+          {
+            title: "Property Tax ‘Reassessment’ Package",
+            sub: "May raise effective taxes for homeowners while billed as revenue neutral.",
+            status: "Spending / Tax Alert",
+            ok: false
+          },
+          {
+            title: "School Board Budget Vote",
+            sub: "Shifts funds away from classrooms toward administrative overhead.",
+            status: "Local Alert",
+            ok: false
+          }
+        ],
+        SC: [
+          {
+            title: "Act 221 – Cross-County School Transfer Policy",
+            sub: "Complicates education stability for families near the state line.",
+            status: "Family Impact",
+            ok: false
+          },
+          {
+            title: "Power Cooperative Restructuring",
+            sub: "Changes governance of rural electric co-op; accountability unclear.",
+            status: "Power & Utility",
+            ok: false
+          }
+        ],
+        TX: [
+          {
+            title: "Border & Security Funding Bill",
+            sub: "Includes major new surveillance powers.",
+            status: "Civil Liberties Alert",
+            ok: false
+          },
+          {
+            title: "Property Tax Relief Measure",
+            sub: "People’s Mandate – driven by citizen vote.",
+            status: "People’s Mandate",
+            ok: true
+          }
+        ],
+        FL: [
+          {
+            title: "Insurance Market ‘Stabilization’ Act",
+            sub: "Could raise homeowner premiums long-term.",
+            status: "Spending / Housing Alert",
+            ok: false
+          }
+        ],
+        AZ: [
+          {
+            title: "Water Rights & Usage Package",
+            sub: "Complex changes that may favor developers.",
+            status: "Resource Alert",
+            ok: false
+          }
+        ],
+        WI: [
+          {
+            title: "Election Process Reform Bill",
+            sub: "Changes oversight and ballot procedures.",
+            status: "Democracy Alert",
+            ok: false
+          }
+        ]
+      }
+    };
+
+    const proposals = [
+      {
+        title: "Term Limits for Congress (Article V-ready)",
+        level: "National",
+        support: 86,
+        votes: "8.2M",
+        threshold: "100k per state"
+      },
+      {
+        title: "No More Midnight Votes on Massive Bills",
+        level: "National",
+        support: 91,
+        votes: "9.5M",
+        threshold: "National petition + state pushes"
+      },
+      {
+        title: "Ban Power Companies From Raising Rates Without Full Public Hearings",
+        level: "State",
+        support: 89,
+        votes: "372k in GA / SC / TX",
+        threshold: "State-by-state"
+      },
+      {
+        title: "Return State Surpluses to Taxpayers Automatically",
+        level: "State",
+        support: 93,
+        votes: "1.3M across 7 states",
+        threshold: "Legislative action"
+      }
+    ];
+
+    function renderDashboardList(mode = "national") {
+      const listEl = document.getElementById("dashboardList");
+      listEl.innerHTML = "";
+      const items = mode === "national" ? dashboardData.national : dashboardData.states.GA;
+      items.forEach(item => {
+        const li = document.createElement("li");
+        li.className = "list-item";
+        li.innerHTML = `
+          <div>
+            <div class="list-main">${item.title}</div>
+            <div class="list-sub">${item.sub}</div>
+          </div>
+          <span class="pill-status ${item.ok ? "pill-status-ok" : ""}">
+            ${item.status}
+          </span>
+        `;
+        listEl.appendChild(li);
       });
     }
 
-    function handleJoin(event) {
-      event.preventDefault();
-      const input = event.target.querySelector(".email-input");
-      const email = input.value.trim();
-      if (!email) return;
-      alert(
-        "Thank you for your interest in The American Mandate. " +
-        "This demo site does not save emails yet, but when we connect a real email service, " +
-        "you’ll be able to join the official waiting list."
-      );
-      input.value = "";
+    function renderStateIssues(stateCode = "GA") {
+      const listEl = document.getElementById("stateIssuesList");
+      const labelEl = document.getElementById("stateSnapshotLabel");
+      const data = dashboardData.states[stateCode] || [];
+      listEl.innerHTML = "";
+      labelEl.textContent = `${stateCode} · United by Truth Members · Sample Issues`;
+      data.forEach(item => {
+        const li = document.createElement("li");
+        li.className = "list-item";
+        li.innerHTML = `
+          <div>
+            <div class="list-main">${item.title}</div>
+            <div class="list-sub">${item.sub}</div>
+          </div>
+          <span class="pill-status ${item.ok ? "pill-status-ok" : ""}">
+            ${item.status}
+          </span>
+        `;
+        listEl.appendChild(li);
+      });
     }
 
-    document.getElementById("year").textContent = new Date().getFullYear();
+    function setDashboardMode(mode) {
+      const nationalBtn = document.getElementById("dashNationalBtn");
+      const stateBtn = document.getElementById("dashStateBtn");
+      if (mode === "national") {
+        nationalBtn.classList.remove("pill-ghost");
+        stateBtn.classList.add("pill-ghost");
+        renderDashboardList("national");
+      } else {
+        nationalBtn.classList.add("pill-ghost");
+        stateBtn.classList.remove("pill-ghost");
+        const stateCode = document.getElementById("stateSelector").value;
+        renderDashboardList("state");
+        renderStateIssues(stateCode);
+      }
+    }
+
+    function updateStateDashboard() {
+      const modeIsState = !document.getElementById("dashStateBtn").classList.contains("pill-ghost");
+      const stateCode = document.getElementById("stateSelector").value;
+      if (modeIsState) {
+        renderDashboardList("state");
+        renderStateIssues(stateCode);
+      }
+    }
+
+    function renderProposals() {
+      const listEl = document.getElementById("proposalList");
+      listEl.innerHTML = "";
+      proposals.forEach(p => {
+        const li = document.createElement("li");
+        li.className = "proposal-item";
+        li.innerHTML = `
+          <div class="proposal-title">${p.title}</div>
+          <div class="proposal-meta">
+            Level: ${p.level} · Support: ${p.support}% · Votes: ${p.votes} · Threshold: ${p.threshold}
+          </div>
+          <div class="proposal-bar-wrap">
+            <div class="proposal-bar" style="width:${p.support}%;"></div>
+          </div>
+        `;
+        listEl.appendChild(li);
+      });
+    }
+
+    function handleFakeSubmit(e) {
+      e.preventDefault();
+      const statusEl = document.getElementById("submissionStatus");
+      statusEl.textContent = "Submission captured locally (demo only). A real build would send this to your backend for review.";
+    }
+
+    function handleFakeJoin(e) {
+      e.preventDefault();
+      const statusEl = document.getElementById("joinStatus");
+      statusEl.textContent = "Thank you for joining (demo). In a full build, your data would now be stored per state.";
+    }
+
+    function scrollToSection(id) {
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }
+
+    // Initialize demo content on load
+    renderDashboardList("national");
+    renderStateIssues("GA");
+    renderProposals();
   </script>
 </body>
 </html>
