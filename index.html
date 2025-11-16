@@ -4,20 +4,26 @@
   <meta charset="utf-8" />
   <title>United by Truth – Peacefully Taking Our Power Back</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="United by Truth – a peaceful national movement and platform giving Americans alerts, dashboards, voting, and tools to take power back from corruption." />
+  <meta name="description" content="United by Truth – a peaceful national movement and platform that gives Americans alerts, dashboards, voting, and tools to hold power accountable without violence or parties." />
 
   <style>
     :root {
       --bg: #05060a;
       --card: #11141f;
+      --card-soft: #191d2a;
       --accent: #f97316;
       --accent-red: #ef4444;
       --accent-gold: #facc15;
+      --accent-blue: #3b82f6;
+      --accent-blue-soft: #1d4ed8;
+      --accent-green: #16a34a;
+      --accent-amber: #f59e0b;
       --border-subtle: rgba(148,163,184,0.35);
       --text-main: #f9fafb;
       --text-muted: #9ca3af;
       --text-soft: #6b7280;
       --radius-lg: 18px;
+      --radius-xl: 24px;
       --radius-pill: 999px;
       --shadow-soft: 0 18px 45px rgba(0,0,0,0.6);
       --font-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -152,7 +158,7 @@
       padding-top: 32px;
       padding-bottom: 32px;
       display: grid;
-      grid-template-columns: minmax(0, 3fr) minmax(0, 2.5fr);
+      grid-template-columns: minmax(0, 3.1fr) minmax(0, 2.9fr);
       gap: 32px;
       align-items: center;
     }
@@ -274,7 +280,7 @@
 
     .hero-card {
       position: relative;
-      border-radius: 24px;
+      border-radius: var(--radius-xl);
       background:
         radial-gradient(circle at top, rgba(248,113,113,0.35), transparent 65%),
         radial-gradient(circle at bottom, rgba(56,189,248,0.4), transparent 60%),
@@ -387,7 +393,7 @@
       box-shadow: 0 10px 25px rgba(15,23,42,0.9);
     }
 
-    /* SECTION WRAPPER */
+    /* GENERAL SECTIONS */
 
     section {
       margin-top: 40px;
@@ -412,7 +418,7 @@
       font-size: 13px;
       color: var(--text-muted);
       margin-top: 6px;
-      max-width: 480px;
+      max-width: 520px;
     }
 
     .section-tag {
@@ -422,7 +428,7 @@
       letter-spacing: 0.16em;
     }
 
-    /* SIMPLE CARD GRID */
+    /* CARD LAYOUTS */
 
     .card-grid-3 {
       display: grid;
@@ -467,6 +473,127 @@
       border: 1px solid rgba(148,163,184,0.4);
       color: var(--text-soft);
       background: rgba(15,23,42,0.8);
+    }
+
+    /* LARGE METRIC CARDS (Nationwide Votes / States Engaged) */
+
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 16px;
+    }
+
+    .metric-card {
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(148,163,184,0.4);
+      background: linear-gradient(150deg, rgba(15,23,42,0.96), rgba(15,23,42,0.9));
+      padding: 12px 14px;
+      box-shadow: 0 16px 40px rgba(15,23,42,0.9);
+    }
+
+    .metric-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-soft);
+      margin-bottom: 4px;
+    }
+
+    .metric-value {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+
+    .metric-subvalue {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    /* TOWN HALLS */
+
+    .townhall-container {
+      border-radius: var(--radius-xl);
+      border: 1px solid rgba(148,163,184,0.45);
+      background:
+        radial-gradient(circle at top, rgba(248,113,113,0.24), transparent 60%),
+        radial-gradient(circle at bottom, rgba(37,99,235,0.4), transparent 70%),
+        var(--card);
+      box-shadow: var(--shadow-soft);
+      padding: 16px;
+    }
+
+    .townhall-subtitle {
+      font-size: 11px;
+      color: var(--text-soft);
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      margin-bottom: 8px;
+    }
+
+    .townhall-title {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      margin-bottom: 10px;
+    }
+
+    .townhall-grid {
+      display: grid;
+      grid-template-columns: minmax(0,1.3fr) minmax(0,1.4fr);
+      gap: 12px;
+    }
+
+    .event-list {
+      list-style: none;
+      font-size: 12px;
+    }
+
+    .event-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 9px 0;
+      border-bottom: 1px solid rgba(15,23,42,0.9);
+    }
+
+    .event-main {
+      max-width: 260px;
+    }
+
+    .event-name {
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+
+    .event-meta {
+      font-size: 11px;
+      color: var(--text-soft);
+    }
+
+    .event-pill {
+      padding: 6px 10px;
+      border-radius: var(--radius-pill);
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #f9fafb;
+      background: linear-gradient(135deg, #b91c1c, #dc2626);
+      border: 1px solid rgba(248,250,252,0.45);
+    }
+
+    .event-pill.upcoming {
+      background: linear-gradient(135deg, #1d4ed8, #3b82f6);
+    }
+
+    .event-pill.state-demo {
+      background: linear-gradient(135deg, #0f766e, #22c55e);
+    }
+
+    .townhall-note {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 8px;
     }
 
     /* JOIN SECTION */
@@ -549,6 +676,10 @@
       .join-grid {
         grid-template-columns: minmax(0, 1fr);
       }
+
+      .townhall-grid {
+        grid-template-columns: minmax(0,1fr);
+      }
     }
 
     @media (max-width: 680px) {
@@ -573,8 +704,8 @@
         </div>
       </div>
       <nav class="nav-links">
-        <a href="#features">Features</a>
-        <a href="#join">Join</a>
+        <a href="#features">Blueprint</a>
+        <a href="#townhalls">Town Halls</a>
         <a href="#why">Why This Matters</a>
         <a href="#join" class="nav-cta">Join the Movement</a>
       </nav>
@@ -588,13 +719,13 @@
         <div class="hero-badge-row">
           <div class="badge-chip">
             <span class="badge-dot"></span>
-            LIVE BLUEPRINT · UNITED BY TRUTH
+            LIVE SIGNAL · UNITED BY TRUTH
           </div>
         </div>
 
         <h1>
           UNITED BY TRUTH<br />
-          <span class="hero-highlight">A peaceful way to take our power back.</span>
+          <span class="hero-highlight">PeacEfully taking our power back.</span>
         </h1>
 
         <div class="hero-subline">
@@ -612,13 +743,13 @@
             Join United by Truth
           </button>
           <button class="btn-ghost" onclick="document.getElementById('features').scrollIntoView({behavior:'smooth'})">
-            See the plan
+            View the national blueprint
           </button>
         </div>
 
         <div class="hero-footnote">
-          This page is your first live version. You can share it, collect supporters,
-          and later connect it to live data, voting, and state dashboards.
+          This page is your first live prototype. You can share it, collect supporters by state,
+          and later connect it to real bill tracking, live dashboards, and secure voting.
         </div>
       </div>
 
@@ -632,7 +763,7 @@
             <div class="hero-storm-title">Lightning over the Capitol</div>
             <div class="hero-storm-text">
               Imagine a live map of bills, votes, power hikes and corruption – all in one place,
-              lit up like lightning hitting the Capitol. That’s what this app will become.
+              lit up like lightning hitting the Capitol. That’s what this app will surface.
             </div>
             <div class="storm-bar"></div>
             <div class="hero-mini-grid">
@@ -653,58 +784,173 @@
       </div>
     </section>
 
-    <!-- FEATURES -->
+    <!-- LIVE BETA BLUEPRINT -->
     <section id="features">
       <div class="section-header">
         <div class="section-title-block">
-          <h2>What this app will do</h2>
+          <h2>Live Beta Blueprint</h2>
           <p>
-            This is the starting point for a bigger platform. Here’s the simple version of
-            what United by Truth is built to do once the back-end and data feeds are connected.
+            This section shows how the full United by Truth platform will work when it’s wired
+            to live data: national alerts, state dashboards, corruption tracking, and peaceful
+            voting pressure that cannot be ignored.
           </p>
         </div>
-        <div class="section-tag">Roadmap · Prototype · Real Movement</div>
+        <div class="section-tag">Prototype · Not yet connected to real data</div>
+      </div>
+
+      <div class="card" style="margin-bottom:16px;">
+        <h3>Lightning over the Capitol · National Signal</h3>
+        <p>
+          A live-style preview of what United by Truth will surface: bills, votes, power hikes,
+          and Big Money influence trying to hide in the storm – all revealed in one national feed.
+        </p>
+        <div class="metrics-grid" style="margin-top:10px;">
+          <div class="metric-card">
+            <div class="metric-label">Nationwide Votes (demo)</div>
+            <div class="metric-value">12,584,903</div>
+            <div class="metric-subvalue">
+              On term limits, spending caps & transparency.
+            </div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-label">States Engaged (demo)</div>
+            <div class="metric-value">37</div>
+            <div class="metric-subvalue">
+              Actively watching bills, power hikes & corruption alerts.
+            </div>
+          </div>
+        </div>
       </div>
 
       <div class="card-grid-3">
         <article class="card">
-          <h3>Track the truth</h3>
+          <h3>Alerts</h3>
           <p>
-            Surface the bills, votes, power hikes and spending that affect real people –
-            in plain language instead of 2,000-page legal tricks.
+            Trigger citizen alerts when sneaky bills, tax hikes, or power rate increases move
+            quietly through committees, votes, or midnight sessions.
           </p>
           <div class="tag-row">
-            <span class="tag">Bills</span>
-            <span class="tag">Votes</span>
+            <span class="tag">Red Flag Bills</span>
             <span class="tag">Power & Taxes</span>
+            <span class="tag">Emergency Signals</span>
           </div>
         </article>
 
         <article class="card">
-          <h3>Show who paid</h3>
+          <h3>Dashboards</h3>
           <p>
-            Connect politicians to donors, lobbyists and special interests so citizens can
-            finally see who really benefits from each decision.
+            Show every state what’s happening in their backyard: bills, surpluses, spending,
+            property taxes, and who benefits from each move.
           </p>
           <div class="tag-row">
-            <span class="tag">Lobbyists</span>
-            <span class="tag">Mega donors</span>
-            <span class="tag">Influence Chains</span>
+            <span class="tag">State by State</span>
+            <span class="tag">Spending & Surpluses</span>
+            <span class="tag">Scorecards</span>
           </div>
         </article>
 
         <article class="card">
-          <h3>Organize peaceful pressure</h3>
+          <h3>Voting & Article V support</h3>
           <p>
-            When enough people agree on an issue, the platform helps direct calls, emails,
-            town halls and Article V pushes at the exact right time, in the exact right state.
+            When enough citizens agree, convert that support into peaceful pressure: phone calls,
+            emails, petitions, and Article V pushes to limit power.
           </p>
           <div class="tag-row">
-            <span class="tag">No violence</span>
-            <span class="tag">Real unity</span>
-            <span class="tag">State by state</span>
+            <span class="tag">One Citizen = One Vote</span>
+            <span class="tag">Term Limits</span>
+            <span class="tag">Spending Caps</span>
           </div>
         </article>
+      </div>
+    </section>
+
+    <!-- NATIONAL & STATE TOWN HALLS -->
+    <section id="townhalls">
+      <div class="section-header">
+        <div class="section-title-block">
+          <h2>National & State Town Halls</h2>
+          <p>
+            United by Truth will host live National People’s Briefings and State Town Halls
+            whenever something critical happens. Below is a mockup list of live and upcoming
+            events so you can see how this fits visually into the app.
+          </p>
+        </div>
+        <div class="section-tag">AI voice over · Visual streams · No camera required</div>
+      </div>
+
+      <div class="townhall-container">
+        <div style="margin-bottom:12px;">
+          <div class="townhall-subtitle">National Town Halls</div>
+          <div class="townhall-grid">
+            <div>
+              <ul class="event-list">
+                <li class="event-item">
+                  <div class="event-main">
+                    <div class="event-name">Weekly People’s Briefing – National</div>
+                    <div class="event-meta">
+                      Tonight · 9:00 PM ET · Topic: Spending, Surpluses & Power Bills
+                    </div>
+                  </div>
+                  <div class="event-pill">Live demo</div>
+                </li>
+                <li class="event-item">
+                  <div class="event-main">
+                    <div class="event-name">The Storm of Truth – Alert Deep Dive</div>
+                    <div class="event-meta">
+                      Tomorrow · 8:30 PM ET · Breaking down this week’s Red Flag and Sneaky Bills
+                    </div>
+                  </div>
+                  <div class="event-pill upcoming">Upcoming</div>
+                </li>
+                <li class="event-item">
+                  <div class="event-main">
+                    <div class="event-name">National Article V Update</div>
+                    <div class="event-meta">
+                      Sunday · 7:00 PM ET · States moving toward term-limit & spending amendments
+                    </div>
+                  </div>
+                  <div class="event-pill upcoming">Upcoming</div>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <div class="townhall-subtitle">State Town Halls – triggered by alerts</div>
+              <ul class="event-list">
+                <li class="event-item">
+                  <div class="event-main">
+                    <div class="event-name">Georgia – Power & Surplus Breakdown</div>
+                    <div class="event-meta">
+                      Live when a Power & Utility Alert or Spending Alert triggers a statewide threshold.
+                    </div>
+                  </div>
+                  <div class="event-pill state-demo">State demo</div>
+                </li>
+                <li class="event-item">
+                  <div class="event-main">
+                    <div class="event-name">South Carolina – Property Tax & School Funding</div>
+                    <div class="event-meta">
+                      Local proposals, tax use, and accountability on the ballot.
+                    </div>
+                  </div>
+                  <div class="event-pill state-demo">State demo</div>
+                </li>
+                <li class="event-item">
+                  <div class="event-main">
+                    <div class="event-name">Texas – Red Flag & Sneaky Bills Watch</div>
+                    <div class="event-meta">
+                      Deep dive on hidden provisions and who paid for them. Citizen questions in Q&A.
+                    </div>
+                  </div>
+                  <div class="event-pill state-demo">State demo</div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="townhall-note">
+            These are example events for layout only. A future version can pull real schedules and trigger
+            town halls automatically when certain alerts reach a threshold of citizen interest.
+          </div>
+        </div>
       </div>
     </section>
 
@@ -716,7 +962,7 @@
           <p>
             Americans are divided on purpose. The more we fight each other, the easier it is
             for corrupt systems to keep draining our time, money and freedom. United by Truth
-            exists to flip that script.
+            exists to flip that script and put the pressure where it belongs.
           </p>
         </div>
         <div class="section-tag">Unity · Facts · Hard Truths</div>
@@ -739,9 +985,9 @@
         <div class="section-title-block">
           <h2>Join United by Truth</h2>
           <p>
-            This form is live and connected to Formspree. When someone joins, their name,
-            email and state go to your Formspree dashboard and email. Later we can replace
-            this with your own database and login system.
+            This form is live and connected to Formspree. When someone joins, their name, email
+            and state go to your Formspree dashboard and email. Later we can replace this with
+            your own database and login system.
           </p>
         </div>
         <div class="section-tag">No parties · No violence · No special interests</div>
@@ -847,7 +1093,7 @@
             <li class="list-item">
               <div class="list-main">1 · Launch this page</div>
               <div class="list-sub">
-                Use your Vercel or GitHub Pages URL as your public link. This is your live movement homepage.
+                Use your GitHub Pages or Vercel URL as your public link. This is your live movement homepage.
               </div>
             </li>
             <li class="list-item">
@@ -859,7 +1105,7 @@
             <li class="list-item">
               <div class="list-main">3 · Add more features later</div>
               <div class="list-sub">
-                When you’re ready, we can add dashboards, alerts, maps, town halls and voting on top of this working base.
+                When you’re ready, we can add dashboards, live alerts, maps, town halls and voting on top of this working base.
               </div>
             </li>
             <li class="list-item">
