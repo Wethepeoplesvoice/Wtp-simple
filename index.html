@@ -1190,9 +1190,9 @@
         <div class="section-title-block">
           <h2>The alert system – heartbeat of the movement</h2>
           <p>
-            Alerts are how the people stay ahead of corruption. These six core alert types are the
-            ones we agreed are most important to launch with — the ones that actually wake people up
-            because they hit their wallet, their freedom, or their kids.
+            Alerts are how the people stay ahead of corruption. Below is a live-style preview
+            of national alerts United by Truth could push out right now, followed by the six
+            core alert types your platform will launch with.
           </p>
         </div>
         <div class="section-tag">
@@ -1200,6 +1200,18 @@
         </div>
       </div>
 
+      <!-- NEW: National alerts list -->
+      <article class="card" style="margin-bottom:14px;">
+        <div class="dash-header">
+          <span class="pill">Live National Alerts (Sample)</span>
+          <span class="section-tag">What members across all 50 states would see</span>
+        </div>
+        <ul class="list" id="nationalAlertsList">
+          <!-- JS populates national alerts -->
+        </ul>
+      </article>
+
+      <!-- Existing alert-type explanations -->
       <div class="alert-types-grid">
         <div class="alert-type-card red">
           <div class="alert-type-title">Red Flag Bills</div>
@@ -1423,7 +1435,7 @@
             <div class="influence-impact">
               Americans pay more for many prescription drugs for longer periods while reforms are
               delayed, watered down, or quietly killed. United by Truth would flag this as a
-              **Red Flag + Big Money Influence** alert so people can see who paid, who voted, and
+              <strong>Red Flag + Big Money Influence</strong> alert so people can see who paid, who voted, and
               what it cost them.
             </div>
           </div>
@@ -1618,7 +1630,7 @@
 
     <footer>
       UNITED BY TRUTH · A peaceful, citizen-powered movement to take our power back
-      with facts, hard truths, and united action. Front-end blueprint v1.0.
+      with facts, hard truths, and united action. Front-end blueprint v1.1.
     </footer>
   </main>
 
@@ -1779,6 +1791,26 @@
       });
     }
 
+    function renderNationalAlerts() {
+      const listEl = document.getElementById("nationalAlertsList");
+      if (!listEl) return;
+      listEl.innerHTML = "";
+      dashboardData.national.forEach(item => {
+        const li = document.createElement("li");
+        li.className = "list-item";
+        li.innerHTML = `
+          <div>
+            <div class="list-main">${item.title}</div>
+            <div class="list-sub">${item.sub}</div>
+          </div>
+          <span class="pill-status ${item.ok ? "pill-status-ok" : ""}">
+            ${item.status}
+          </span>
+        `;
+        listEl.appendChild(li);
+      });
+    }
+
     function renderStateIssues(stateCode = "GA") {
       const listEl = document.getElementById("stateIssuesList");
       const labelEl = document.getElementById("stateSnapshotLabel");
@@ -1868,6 +1900,7 @@
     renderDashboardList("national");
     renderStateIssues("GA");
     renderProposals();
+    renderNationalAlerts();
   </script>
 </body>
 </html>
