@@ -19,15 +19,14 @@
 
   <style>
     :root {
-      /* Colors inspired by your poster */
       --bg-top: #050811;
       --bg-mid: #10182a;
       --bg-bottom: #1b2235;
 
       --text-main: #f2e9d5;
       --text-muted: #c4cad9;
-      --headline: #d9be83; /* parchment/tan */
-      --accent: #ff8a3c;   /* button */
+      --headline: #d9be83;
+      --accent: #ff8a3c;
       --accent-soft: #ffc96b;
       --border-soft: rgba(255, 255, 255, 0.1);
       --card-bg: rgba(5, 8, 17, 0.9);
@@ -50,15 +49,15 @@
       overflow-x: hidden;
     }
 
-    /* Faint flag / texture background */
+    /* faint flag / texture background */
     body::before {
       content: "";
       position: fixed;
       inset: 0;
       background:
-        linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)),
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.8)),
         url("images/bg-texture.jpg") center/cover no-repeat;
-      opacity: 0.18; /* Adjust if you want more/less visible */
+      opacity: 0.22;
       pointer-events: none;
       z-index: -1;
     }
@@ -69,14 +68,14 @@
       padding: 20px 16px 60px;
     }
 
-    /* Header + nav */
+    /* HEADER */
     header {
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 8px 0 16px;
       border-bottom: 1px solid var(--border-soft);
-      margin-bottom: 20px;
+      margin-bottom: 16px;
       backdrop-filter: blur(10px);
     }
 
@@ -155,29 +154,56 @@
       width: 100%;
     }
 
-    /* Hero section */
+    /* HERO WRAPPER */
     .hero {
-      display: grid;
-      grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
-      gap: 24px;
-      margin-top: 26px;
-      align-items: stretch;
+      margin-top: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
     }
 
-    @media (max-width: 800px) {
-      .hero {
-        grid-template-columns: minmax(0, 1fr);
-      }
+    /* Top poster banner */
+    .hero-poster-banner {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow:
+        0 22px 45px rgba(0, 0, 0, 0.85),
+        0 0 0 1px rgba(0, 0, 0, 0.9);
+      background: radial-gradient(circle at top, rgba(255, 255, 255, 0.03), rgba(0, 0, 0, 0.92));
     }
 
+    .hero-poster-banner img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-poster-label {
+      position: absolute;
+      left: 14px;
+      bottom: 12px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.76);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      font-size: 0.68rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    /* Hero text card under the image */
     .hero-text-card {
-      background: linear-gradient(145deg, rgba(10, 14, 30, 0.92), rgba(7, 9, 20, 0.96));
+      background: linear-gradient(145deg, rgba(10, 14, 30, 0.94), rgba(7, 9, 20, 0.98));
       border-radius: var(--radius-lg);
       padding: 24px 22px 20px;
       border: 1px solid rgba(255, 255, 255, 0.10);
       box-shadow:
-        0 22px 45px rgba(0, 0, 0, 0.7),
-        0 0 0 1px rgba(0, 0, 0, 0.7);
+        0 22px 45px rgba(0, 0, 0, 0.75),
+        0 0 0 1px rgba(0, 0, 0, 0.85);
       position: relative;
       overflow: hidden;
     }
@@ -309,42 +335,9 @@
       margin-top: 8px;
     }
 
-    /* Hero poster side */
-    .hero-poster-card {
-      position: relative;
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      box-shadow:
-        0 18px 40px rgba(0, 0, 0, 0.85),
-        0 0 0 1px rgba(0, 0, 0, 0.9);
-      background: radial-gradient(circle at top, rgba(255, 255, 255, 0.03), rgba(0, 0, 0, 0.9));
-    }
-
-    .hero-poster-card img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .hero-poster-label {
-      position: absolute;
-      left: 12px;
-      bottom: 10px;
-      padding: 4px 9px;
-      border-radius: 999px;
-      background: rgba(0, 0, 0, 0.72);
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      font-size: 0.68rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-    }
-
-    /* Section shell */
+    /* SECTIONS */
     section {
-      margin-top: 40px;
+      margin-top: 32px;
       border-radius: var(--radius-lg);
       background: linear-gradient(150deg, rgba(5, 8, 17, 0.94), rgba(5, 8, 17, 0.98));
       border: 1px solid var(--border-soft);
@@ -352,8 +345,12 @@
       box-shadow: 0 18px 40px rgba(0, 0, 0, 0.75);
     }
 
-    section:not(:last-of-type) {
-      margin-bottom: 16px;
+    section.hero-section-shell {
+      background: transparent;
+      border: none;
+      box-shadow: none;
+      padding: 0;
+      margin-top: 20px;
     }
 
     .section-title {
@@ -371,7 +368,6 @@
       margin-bottom: 16px;
     }
 
-    /* Alerts grid */
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
@@ -427,7 +423,7 @@
       background: radial-gradient(circle at 30% 0, rgba(255, 201, 107, 0.18), rgba(0, 0, 0, 0.85));
     }
 
-    /* Join form */
+    /* JOIN LAYOUT */
     .join-layout {
       display: grid;
       grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
@@ -493,6 +489,13 @@
       color: var(--text-muted);
       text-align: center;
     }
+
+    /* smaller screens tweaks */
+    @media (max-width: 600px) {
+      .hero-text-card {
+        padding: 20px 16px 16px;
+      }
+    }
   </style>
 </head>
 
@@ -514,62 +517,67 @@
       </nav>
     </header>
 
-    <!-- HERO -->
-    <section class="hero">
-      <!-- Left: text -->
-      <div class="hero-text-card">
-        <div class="hero-label-row">
-          <span class="pill">Prototype · Visual</span>
-          <span class="pill pill-accent">Citizen-Powered Platform</span>
+    <!-- HERO SECTION SHELL -->
+    <section class="hero-section-shell">
+      <div class="hero">
+        <!-- Top poster banner -->
+        <div class="hero-poster-banner">
+          <img src="images/hero-poster.jpg" alt="America's Watchlist lightning poster" />
+          <div class="hero-poster-label">Concept art · America's Watchlist</div>
         </div>
 
-        <h1 class="hero-title">America's Watchlist</h1>
-        <p class="hero-tagline">The People's Eyes on Power.</p>
-
-        <p class="hero-body">
-          Imagine one place where Americans can finally see what government is doing:
-          bills, votes, taxes, power hikes, and influence — without having to dig through
-          dozens of sites or legal pages. America’s Watchlist is a peaceful,
-          citizen-powered platform to keep an eye on power so you don’t have to.
-        </p>
-
-        <div class="hero-metrics">
-          <div class="metric">
-            <div class="metric-label">Prototype · Demo</div>
-            <div class="metric-value">Live Visual Preview</div>
-            <div class="metric-note">This page is a mockup of how the movement could look in production.</div>
+        <!-- Text card underneath -->
+        <div class="hero-text-card">
+          <div class="hero-label-row">
+            <span class="pill">Prototype · Visual</span>
+            <span class="pill pill-accent">Citizen-Powered Platform</span>
           </div>
-          <div class="metric">
-            <div class="metric-label">Future Goal</div>
-            <div class="metric-value">50 States Watching</div>
-            <div class="metric-note">Every state with bill alerts, spending signals &amp; corruption watch.</div>
+
+          <h1 class="hero-title">America's Watchlist</h1>
+          <p class="hero-tagline">The People's Eyes on Power.</p>
+
+          <p class="hero-body">
+            Imagine one place where Americans can finally see what government is doing:
+            bills, votes, taxes, power hikes, and influence — without having to dig through
+            dozens of sites or legal pages. America’s Watchlist is a peaceful,
+            citizen-powered platform to keep an eye on power so you don’t have to.
+          </p>
+
+          <div class="hero-metrics">
+            <div class="metric">
+              <div class="metric-label">Prototype · Demo</div>
+              <div class="metric-value">Live Visual Preview</div>
+              <div class="metric-note">
+                This page is a mockup of how the movement could look in production.
+              </div>
+            </div>
+            <div class="metric">
+              <div class="metric-label">Future Goal</div>
+              <div class="metric-value">50 States Watching</div>
+              <div class="metric-note">
+                Every state with bill alerts, spending signals &amp; corruption watch.
+              </div>
+            </div>
           </div>
+
+          <div class="hero-actions">
+            <button class="btn-primary" onclick="document.getElementById('join').scrollIntoView({behavior:'smooth'})">
+              Join America's Watchlist (Demo)
+            </button>
+            <button class="btn-ghost" onclick="document.getElementById('alerts').scrollIntoView({behavior:'smooth'})">
+              See Example Alerts
+            </button>
+          </div>
+
+          <p class="hero-disclaimer">
+            Demo only: this prototype doesn’t use real data yet. A developer can later plug in bill-tracking,
+            spending data, and secure logins to make it fully live.
+          </p>
         </div>
-
-        <div class="hero-actions">
-          <button class="btn-primary" onclick="document.getElementById('join').scrollIntoView({behavior:'smooth'})">
-            Join America's Watchlist (Demo)
-          </button>
-          <button class="btn-ghost" onclick="document.getElementById('alerts').scrollIntoView({behavior:'smooth'})">
-            See Example Alerts
-          </button>
-        </div>
-
-        <p class="hero-disclaimer">
-          Demo only: this prototype doesn’t use real data yet. A developer can later plug in bill-tracking,
-          spending data, and secure logins to make it fully live.
-        </p>
-      </div>
-
-      <!-- Right: poster image -->
-      <div class="hero-poster-card">
-        <!-- Replace with your saved hero image path -->
-        <img src="images/hero-poster.jpg" alt="America's Watchlist poster with Capitol and lightning" />
-        <div class="hero-poster-label">Concept art · America's Watchlist</div>
       </div>
     </section>
 
-    <!-- ALERTS SECTION -->
+    <!-- ALERTS -->
     <section id="alerts">
       <h2 class="section-title">Example Alerts</h2>
       <p class="section-subtitle">
@@ -613,7 +621,7 @@
       </div>
     </section>
 
-    <!-- STATES SECTION -->
+    <!-- STATES -->
     <section id="states">
       <h2 class="section-title">State &amp; National Watch</h2>
       <p class="section-subtitle">
@@ -657,7 +665,7 @@
       </div>
     </section>
 
-    <!-- JOIN SECTION -->
+    <!-- JOIN -->
     <section id="join">
       <h2 class="section-title">Join America's Watchlist (Demo)</h2>
       <p class="section-subtitle">
@@ -686,7 +694,6 @@
         </div>
 
         <div>
-          <!-- Formspree form -->
           <form action="https://formspree.io/f/xovypnwk" method="POST">
             <label>
               Your Name
@@ -782,9 +789,8 @@
     </footer>
   </main>
 
-  <!-- Optional: smooth scrolling for older browsers -->
   <script>
-    // No heavy JS needed yet; the buttons use scrollIntoView.
+    // nothing heavy needed yet
   </script>
 </body>
 </html>
