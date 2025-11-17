@@ -1,1128 +1,790 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <title>United by Truth – Peacefully Taking Our Power Back</title>
+  <meta charset="UTF-8" />
+  <title>America's Watchlist – The People's Eyes on Power</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="United by Truth – a peaceful national movement and platform that gives Americans alerts, dashboards, voting, and tools to hold power accountable without violence or parties." />
+  <meta
+    name="description"
+    content="America's Watchlist is a citizen-powered platform that keeps an eye on power so you don't have to – tracking bills, votes, spending, and influence across all 50 states."
+  />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  />
 
   <style>
     :root {
-      --bg: #05060a;
-      --card: #11141f;
-      --card-soft: #191d2a;
-      --accent: #f97316;
-      --accent-red: #ef4444;
-      --accent-gold: #facc15;
-      --accent-blue: #3b82f6;
-      --accent-blue-soft: #1d4ed8;
-      --accent-green: #16a34a;
-      --accent-amber: #f59e0b;
-      --border-subtle: rgba(148,163,184,0.35);
-      --text-main: #f9fafb;
-      --text-muted: #9ca3af;
-      --text-soft: #6b7280;
+      /* Colors inspired by your poster */
+      --bg-top: #050811;
+      --bg-mid: #10182a;
+      --bg-bottom: #1b2235;
+
+      --text-main: #f2e9d5;
+      --text-muted: #c4cad9;
+      --headline: #d9be83; /* parchment/tan */
+      --accent: #ff8a3c;   /* button */
+      --accent-soft: #ffc96b;
+      --border-soft: rgba(255, 255, 255, 0.1);
+      --card-bg: rgba(5, 8, 17, 0.9);
+      --max-width: 1080px;
       --radius-lg: 18px;
-      --radius-xl: 24px;
-      --radius-pill: 999px;
-      --shadow-soft: 0 18px 45px rgba(0,0,0,0.6);
-      --font-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    html, body {
-      height: 100%;
-      scroll-behavior: smooth;
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     body {
-      font-family: var(--font-main);
-      background: radial-gradient(circle at top, #111827 0, #020617 45%, #000 100%);
+      min-height: 100vh;
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
       color: var(--text-main);
-      -webkit-font-smoothing: antialiased;
+      background: radial-gradient(circle at top, var(--bg-mid), var(--bg-bottom) 60%, #02030a 100%);
+      position: relative;
+      overflow-x: hidden;
     }
 
-    a { color: inherit; text-decoration: none; }
+    /* Faint flag / texture background */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background:
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)),
+        url("images/bg-texture.jpg") center/cover no-repeat;
+      opacity: 0.18; /* Adjust if you want more/less visible */
+      pointer-events: none;
+      z-index: -1;
+    }
 
-    .page-shell {
-      max-width: 1200px;
+    main {
+      max-width: var(--max-width);
       margin: 0 auto;
-      padding: 0 16px 64px;
+      padding: 20px 16px 60px;
     }
 
-    /* HEADER / NAV */
-
+    /* Header + nav */
     header {
-      position: sticky;
-      top: 0;
-      z-index: 40;
-      backdrop-filter: blur(18px);
-      background: radial-gradient(circle at top left, rgba(148,163,184,0.18), transparent 55%),
-                  radial-gradient(circle at top right, rgba(248,113,113,0.12), transparent 55%),
-                  rgba(15,23,42,0.93);
-      border-bottom: 1px solid rgba(148,163,184,0.25);
-    }
-
-    .nav {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 10px 16px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 16px;
+      padding: 8px 0 16px;
+      border-bottom: 1px solid var(--border-soft);
+      margin-bottom: 20px;
+      backdrop-filter: blur(10px);
     }
 
-    .nav-left {
+    .brand {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
     }
 
-    .logo-mark {
-      width: 32px;
-      height: 32px;
+    .brand-icon {
+      width: 40px;
+      height: 40px;
       border-radius: 999px;
-      border: 2px solid rgba(248,250,252,0.8);
+      background: radial-gradient(circle at 30% 20%, #ffe7a1, #b76b2a 55%, #2b1a0a 100%);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 17px;
-      font-weight: 800;
-      color: var(--accent-gold);
-      box-shadow: 0 0 0 1px rgba(15,23,42,0.9), 0 0 16px rgba(251,191,36,0.75);
-      background:
-        radial-gradient(circle at 20% 0, rgba(251,191,36,0.55), transparent 62%),
-        radial-gradient(circle at 80% 120%, rgba(248,113,113,0.4), transparent 60%),
-        #020617;
-    }
-
-    .logo-text-main {
-      font-weight: 800;
-      letter-spacing: 0.12em;
-      font-size: 13px;
-      text-transform: uppercase;
-    }
-
-    .logo-text-sub {
-      font-size: 11px;
-      color: var(--text-soft);
-      text-transform: uppercase;
-      letter-spacing: 0.2em;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      font-size: 13px;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-    }
-
-    .nav-links a {
-      padding: 8px 10px;
-      border-radius: 999px;
-      color: var(--text-muted);
-      border: 1px solid transparent;
-    }
-
-    .nav-links a:hover {
-      color: #e5e7eb;
-      border-color: rgba(148,163,184,0.5);
-      background: rgba(15,23,42,0.85);
-    }
-
-    .nav-cta {
-      padding: 9px 16px;
-      border-radius: var(--radius-pill);
-      border: 1px solid rgba(248,250,252,0.5);
-      background: linear-gradient(135deg, var(--accent), var(--accent-red));
-      color: #f9fafb;
-      font-size: 12px;
+      font-family: "Oswald", sans-serif;
       font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      box-shadow: 0 14px 40px rgba(248,113,113,0.75);
+      letter-spacing: 0.04em;
+      color: #150e06;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: 0 0 18px rgba(0, 0, 0, 0.8);
     }
 
-    .nav-cta:hover {
-      filter: brightness(1.05);
-      transform: translateY(-1px);
-    }
-
-    /* HERO */
-
-    .hero {
-      padding-top: 32px;
-      padding-bottom: 32px;
-      display: grid;
-      grid-template-columns: minmax(0, 3.1fr) minmax(0, 2.9fr);
-      gap: 32px;
-      align-items: center;
-    }
-
-    .hero-badge-row {
+    .brand-text {
       display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 18px;
-      align-items: center;
+      flex-direction: column;
+      gap: 2px;
     }
 
-    .badge-chip {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 6px 11px;
-      border-radius: 999px;
-      border: 1px solid rgba(148,163,184,0.55);
-      background: radial-gradient(circle at top left, rgba(248,113,113,0.32), transparent 60%),
-                  rgba(15,23,42,0.96);
-      font-size: 11px;
+    .brand-title {
+      font-family: "Oswald", sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--headline);
+    }
+
+    .brand-subtitle {
+      font-size: 0.72rem;
       text-transform: uppercase;
       letter-spacing: 0.16em;
-      color: #e5e7eb;
-    }
-
-    .badge-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 999px;
-      background: radial-gradient(circle at 30% 0, #facc15, #dc2626);
-      box-shadow: 0 0 8px rgba(248,250,252,0.7);
-    }
-
-    .hero h1 {
-      font-size: clamp(30px, 4.1vw, 40px);
-      line-height: 1.12;
-      letter-spacing: 0.03em;
-      text-transform: uppercase;
-      margin-bottom: 10px;
-    }
-
-    .hero-highlight {
-      background: linear-gradient(120deg, var(--accent), var(--accent-gold), var(--accent));
-      -webkit-background-clip: text;
-      color: transparent;
-    }
-
-    .hero-subline {
-      font-size: 13px;
-      text-transform: uppercase;
-      letter-spacing: 0.26em;
-      color: var(--text-soft);
-      margin-bottom: 16px;
-    }
-
-    .hero p {
-      font-size: 14px;
       color: var(--text-muted);
-      max-width: 560px;
+    }
+
+    nav {
+      display: flex;
+      gap: 16px;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-muted);
+    }
+
+    nav a {
+      color: inherit;
+      text-decoration: none;
+      position: relative;
+      padding-bottom: 2px;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-soft));
+      transition: width 0.18s ease-out;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    /* Hero section */
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+      gap: 24px;
+      margin-top: 26px;
+      align-items: stretch;
+    }
+
+    @media (max-width: 800px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .hero-text-card {
+      background: linear-gradient(145deg, rgba(10, 14, 30, 0.92), rgba(7, 9, 20, 0.96));
+      border-radius: var(--radius-lg);
+      padding: 24px 22px 20px;
+      border: 1px solid rgba(255, 255, 255, 0.10);
+      box-shadow:
+        0 22px 45px rgba(0, 0, 0, 0.7),
+        0 0 0 1px rgba(0, 0, 0, 0.7);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-label-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .pill {
+      border-radius: 999px;
+      padding: 4px 10px;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      color: var(--text-muted);
+      background: linear-gradient(90deg, rgba(255, 255, 255, 0.06), rgba(0, 0, 0, 0.4));
+    }
+
+    .pill-accent {
+      border-color: rgba(255, 166, 96, 0.8);
+      background: radial-gradient(circle at 30% 0, rgba(255, 201, 107, 0.3), rgba(0, 0, 0, 0.85));
+      color: #ffe7c3;
+    }
+
+    .hero-title {
+      font-family: "Oswald", sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 1.55rem;
+      color: var(--headline);
+      margin-bottom: 6px;
+    }
+
+    .hero-tagline {
+      font-size: 0.9rem;
+      color: var(--text-main);
+      text-transform: uppercase;
+      letter-spacing: 0.20em;
+      margin-bottom: 14px;
+    }
+
+    .hero-body {
+      font-size: 0.9rem;
+      line-height: 1.55;
+      color: var(--text-muted);
+      margin-bottom: 18px;
+    }
+
+    .hero-metrics {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
       margin-bottom: 20px;
+    }
+
+    .metric {
+      flex: 1 1 120px;
+      min-width: 120px;
+    }
+
+    .metric-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 3px;
+    }
+
+    .metric-value {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .metric-note {
+      font-size: 0.75rem;
+      color: var(--text-muted);
     }
 
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
-      margin-bottom: 18px;
+      align-items: center;
     }
 
     .btn-primary {
-      padding: 11px 20px;
-      border-radius: var(--radius-pill);
-      font-size: 13px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
+      padding: 10px 18px;
+      border-radius: 999px;
       border: none;
       cursor: pointer;
-      background: linear-gradient(135deg, var(--accent), var(--accent-red));
-      color: #f9fafb;
-      box-shadow: 0 16px 40px rgba(248,113,113,0.7);
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      background: radial-gradient(circle at 30% 0, var(--accent-soft), var(--accent));
+      color: #2a1204;
+      box-shadow:
+        0 0 18px rgba(255, 150, 70, 0.5),
+        0 0 0 1px rgba(0, 0, 0, 0.9);
+      transition: transform 0.12s ease-out, box-shadow 0.12s ease-out;
     }
 
     .btn-primary:hover {
-      filter: brightness(1.05);
       transform: translateY(-1px);
+      box-shadow:
+        0 0 25px rgba(255, 150, 70, 0.75),
+        0 0 0 1px rgba(0, 0, 0, 0.9);
     }
 
     .btn-ghost {
-      padding: 11px 16px;
-      border-radius: var(--radius-pill);
-      font-size: 13px;
-      font-weight: 600;
+      padding: 9px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      background: transparent;
+      color: var(--text-main);
+      font-size: 0.8rem;
       text-transform: uppercase;
-      letter-spacing: 0.12em;
-      border: 1px solid rgba(148,163,184,0.5);
+      letter-spacing: 0.16em;
       cursor: pointer;
-      background: rgba(15,23,42,0.7);
+    }
+
+    .hero-disclaimer {
+      font-size: 0.7rem;
       color: var(--text-muted);
+      margin-top: 8px;
     }
 
-    .btn-ghost:hover {
-      border-color: rgba(248,250,252,0.7);
-      color: #e5e7eb;
-    }
-
-    .hero-footnote {
-      font-size: 11px;
-      color: var(--text-soft);
-      max-width: 460px;
-    }
-
-    .hero-visual {
+    /* Hero poster side */
+    .hero-poster-card {
       position: relative;
-      min-height: 260px;
-    }
-
-    .hero-card {
-      position: relative;
-      border-radius: var(--radius-xl);
-      background:
-        radial-gradient(circle at top, rgba(248,113,113,0.35), transparent 65%),
-        radial-gradient(circle at bottom, rgba(56,189,248,0.4), transparent 60%),
-        linear-gradient(145deg, #020617, #020617 40%, #020617);
-      border: 1px solid rgba(148,163,184,0.4);
-      box-shadow: var(--shadow-soft);
-      padding: 16px 16px 14px;
+      border-radius: var(--radius-lg);
       overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow:
+        0 18px 40px rgba(0, 0, 0, 0.85),
+        0 0 0 1px rgba(0, 0, 0, 0.9);
+      background: radial-gradient(circle at top, rgba(255, 255, 255, 0.03), rgba(0, 0, 0, 0.9));
     }
 
-    .hero-card-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 12px;
+    .hero-poster-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
-    .hero-pill {
-      padding: 5px 10px;
+    .hero-poster-label {
+      position: absolute;
+      left: 12px;
+      bottom: 10px;
+      padding: 4px 9px;
       border-radius: 999px;
-      border: 1px solid rgba(248,250,252,0.3);
-      background: rgba(15,23,42,0.85);
-      font-size: 11px;
+      background: rgba(0, 0, 0, 0.72);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      font-size: 0.68rem;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: #e5e7eb;
-    }
-
-    .hero-storm-tag {
-      font-size: 11px;
-      color: #e5e7eb;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-    }
-
-    .hero-storm-box {
-      margin-top: 10px;
-      border-radius: 16px;
-      border: 1px solid rgba(248,250,252,0.2);
-      background: linear-gradient(160deg, rgba(15,23,42,0.9), rgba(15,23,42,0.7));
-      padding: 12px;
-    }
-
-    .hero-storm-title {
-      font-size: 13px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      margin-bottom: 6px;
-    }
-
-    .hero-storm-text {
-      font-size: 11px;
       color: var(--text-muted);
-      margin-bottom: 10px;
     }
 
-    .storm-bar {
-      height: 5px;
-      border-radius: 999px;
-      background: linear-gradient(90deg, #f97316, #facc15, #22c55e, #0ea5e9);
-      box-shadow: 0 0 12px rgba(250,204,21,0.7);
-      margin-bottom: 10px;
+    /* Section shell */
+    section {
+      margin-top: 40px;
+      border-radius: var(--radius-lg);
+      background: linear-gradient(150deg, rgba(5, 8, 17, 0.94), rgba(5, 8, 17, 0.98));
+      border: 1px solid var(--border-soft);
+      padding: 20px 18px;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.75);
     }
 
-    .hero-mini-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0,1fr));
-      gap: 8px;
+    section:not(:last-of-type) {
+      margin-bottom: 16px;
     }
 
-    .mini-card {
-      border-radius: 12px;
-      border: 1px solid rgba(148,163,184,0.4);
-      background: rgba(15,23,42,0.9);
-      padding: 8px;
-      font-size: 11px;
-    }
-
-    .mini-label {
+    .section-title {
+      font-family: "Oswald", sans-serif;
       text-transform: uppercase;
-      letter-spacing: 0.14em;
-      color: var(--text-soft);
+      letter-spacing: 0.18em;
+      font-size: 0.95rem;
+      color: var(--headline);
       margin-bottom: 4px;
     }
 
-    .mini-value {
-      color: #e5e7eb;
-      font-weight: 600;
-    }
-
-    .mini-subvalue {
+    .section-subtitle {
+      font-size: 0.8rem;
       color: var(--text-muted);
-      font-size: 10px;
+      margin-bottom: 16px;
     }
 
-    .hero-float-tag {
-      position: absolute;
-      right: -4px;
-      top: 50%;
-      transform: translateY(-50%);
-      padding: 8px 12px;
-      border-radius: 999px 0 0 999px;
-      background: rgba(15,23,42,0.92);
-      border: 1px solid rgba(148,163,184,0.4);
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: var(--accent-gold);
-      box-shadow: 0 10px 25px rgba(15,23,42,0.9);
-    }
-
-    /* GENERAL SECTIONS */
-
-    section {
-      margin-top: 40px;
-    }
-
-    .section-header {
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      align-items: flex-end;
-      margin-bottom: 18px;
-      flex-wrap: wrap;
-    }
-
-    .section-title-block h2 {
-      font-size: 18px;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-    }
-
-    .section-title-block p {
-      font-size: 13px;
-      color: var(--text-muted);
-      margin-top: 6px;
-      max-width: 520px;
-    }
-
-    .section-tag {
-      font-size: 11px;
-      color: var(--text-soft);
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-    }
-
-    /* CARD LAYOUTS */
-
-    .card-grid-3 {
+    /* Alerts grid */
+    .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
       gap: 14px;
     }
 
     .card {
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--border-subtle);
-      background: radial-gradient(circle at top, rgba(148,163,184,0.15), transparent 60%),
-                  var(--card);
-      padding: 14px;
-      box-shadow: 0 12px 35px rgba(0,0,0,0.65);
+      background: rgba(3, 5, 12, 0.9);
+      border-radius: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 12px 12px 10px;
     }
 
-    .card h3 {
-      font-size: 13px;
-      text-transform: uppercase;
+    .card-label {
+      font-size: 0.7rem;
       letter-spacing: 0.16em;
-      margin-bottom: 6px;
-    }
-
-    .card p {
-      font-size: 12px;
-      color: var(--text-muted);
-      margin-bottom: 10px;
-    }
-
-    .tag-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-    }
-
-    .tag {
-      font-size: 10px;
       text-transform: uppercase;
-      letter-spacing: 0.12em;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    .card-title {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text-main);
+      margin-bottom: 4px;
+    }
+
+    .card-body {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2px 8px;
       border-radius: 999px;
-      padding: 4px 8px;
-      border: 1px solid rgba(148,163,184,0.4);
-      color: var(--text-soft);
-      background: rgba(15,23,42,0.8);
-    }
-
-    /* LARGE METRIC CARDS (Nationwide Votes / States Engaged) */
-
-    .metrics-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 16px;
-    }
-
-    .metric-card {
-      border-radius: var(--radius-lg);
-      border: 1px solid rgba(148,163,184,0.4);
-      background: linear-gradient(150deg, rgba(15,23,42,0.96), rgba(15,23,42,0.9));
-      padding: 12px 14px;
-      box-shadow: 0 16px 40px rgba(15,23,42,0.9);
-    }
-
-    .metric-label {
-      font-size: 11px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      font-size: 0.65rem;
       text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--text-soft);
-      margin-bottom: 4px;
-    }
-
-    .metric-value {
-      font-size: 20px;
-      font-weight: 700;
-      margin-bottom: 2px;
-    }
-
-    .metric-subvalue {
-      font-size: 11px;
+      letter-spacing: 0.14em;
       color: var(--text-muted);
+      margin-top: 6px;
     }
 
-    /* TOWN HALLS */
-
-    .townhall-container {
-      border-radius: var(--radius-xl);
-      border: 1px solid rgba(148,163,184,0.45);
-      background:
-        radial-gradient(circle at top, rgba(248,113,113,0.24), transparent 60%),
-        radial-gradient(circle at bottom, rgba(37,99,235,0.4), transparent 70%),
-        var(--card);
-      box-shadow: var(--shadow-soft);
-      padding: 16px;
+    .badge-alert {
+      border-color: rgba(255, 138, 60, 0.85);
+      color: #ffd7ae;
+      background: radial-gradient(circle at 30% 0, rgba(255, 201, 107, 0.18), rgba(0, 0, 0, 0.85));
     }
 
-    .townhall-subtitle {
-      font-size: 11px;
-      color: var(--text-soft);
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      margin-bottom: 8px;
-    }
-
-    .townhall-title {
-      font-size: 13px;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      margin-bottom: 10px;
-    }
-
-    .townhall-grid {
+    /* Join form */
+    .join-layout {
       display: grid;
-      grid-template-columns: minmax(0,1.3fr) minmax(0,1.4fr);
-      gap: 12px;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 18px;
     }
 
-    .event-list {
-      list-style: none;
-      font-size: 12px;
+    @media (max-width: 880px) {
+      .join-layout {
+        grid-template-columns: minmax(0, 1fr);
+      }
     }
 
-    .event-item {
+    form {
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 9px 0;
-      border-bottom: 1px solid rgba(15,23,42,0.9);
+      flex-direction: column;
+      gap: 10px;
     }
 
-    .event-main {
-      max-width: 260px;
-    }
-
-    .event-name {
-      font-weight: 600;
-      margin-bottom: 2px;
-    }
-
-    .event-meta {
-      font-size: 11px;
-      color: var(--text-soft);
-    }
-
-    .event-pill {
-      padding: 6px 10px;
-      border-radius: var(--radius-pill);
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: #f9fafb;
-      background: linear-gradient(135deg, #b91c1c, #dc2626);
-      border: 1px solid rgba(248,250,252,0.45);
-    }
-
-    .event-pill.upcoming {
-      background: linear-gradient(135deg, #1d4ed8, #3b82f6);
-    }
-
-    .event-pill.state-demo {
-      background: linear-gradient(135deg, #0f766e, #22c55e);
-    }
-
-    .townhall-note {
-      font-size: 11px;
+    label {
+      font-size: 0.8rem;
       color: var(--text-muted);
-      margin-top: 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
     }
 
-    /* JOIN SECTION */
-
-    .join-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1.7fr);
-      gap: 16px;
-      align-items: center;
+    input,
+    select,
+    textarea {
+      background: rgba(9, 11, 20, 0.98);
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      color: var(--text-main);
+      padding: 9px 12px;
+      font-size: 0.85rem;
+      outline: none;
     }
 
-    .join-form label {
-      display: block;
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: var(--text-soft);
-      margin-bottom: 4px;
-    }
-
-    .join-form input,
-    .join-form select {
-      width: 100%;
-      padding: 8px 10px;
+    textarea {
       border-radius: 12px;
-      border: 1px solid rgba(148,163,184,0.7);
-      background: rgba(15,23,42,0.95);
-      color: #f9fafb;
-      font-size: 12px;
-      margin-bottom: 9px;
+      min-height: 70px;
+      resize: vertical;
     }
 
-    .join-confirm-note {
-      font-size: 10px;
-      color: var(--text-soft);
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--accent-soft);
+      box-shadow: 0 0 0 1px rgba(255, 138, 60, 0.4);
+    }
+
+    .form-note {
+      font-size: 0.72rem;
+      color: var(--text-muted);
       margin-top: 4px;
     }
 
-    .list {
-      list-style: none;
-      font-size: 11px;
-    }
-
-    .list-item {
-      padding: 8px 0;
-      border-bottom: 1px solid rgba(15,23,42,0.9);
-    }
-
-    .list-main {
-      color: #e5e7eb;
-      margin-bottom: 2px;
-    }
-
-    .list-sub {
-      color: var(--text-soft);
-      font-size: 10px;
-    }
-
     footer {
-      margin-top: 40px;
-      border-top: 1px solid rgba(31,41,55,0.9);
+      margin-top: 26px;
       padding-top: 16px;
-      font-size: 11px;
-      color: var(--text-soft);
+      border-top: 1px solid var(--border-soft);
+      font-size: 0.72rem;
+      color: var(--text-muted);
       text-align: center;
-    }
-
-    /* RESPONSIVE */
-
-    @media (max-width: 900px) {
-      .hero {
-        grid-template-columns: minmax(0, 1fr);
-        padding-top: 24px;
-      }
-
-      .hero-visual {
-        order: -1;
-      }
-
-      .join-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-
-      .townhall-grid {
-        grid-template-columns: minmax(0,1fr);
-      }
-    }
-
-    @media (max-width: 680px) {
-      .nav-links {
-        display: none;
-      }
-
-      .page-shell {
-        padding-bottom: 60px;
-      }
     }
   </style>
 </head>
+
 <body>
-  <header>
-    <div class="nav">
-      <div class="nav-left">
-        <div class="logo-mark">UT</div>
-        <div>
-          <div class="logo-text-main">UNITED BY TRUTH</div>
-          <div class="logo-text-sub">Peacefully Taking Our Power Back</div>
+  <main>
+    <!-- HEADER -->
+    <header>
+      <div class="brand">
+        <div class="brand-icon">AW</div>
+        <div class="brand-text">
+          <div class="brand-title">America's Watchlist</div>
+          <div class="brand-subtitle">The People's Eyes on Power</div>
         </div>
       </div>
-      <nav class="nav-links">
-        <a href="#features">Blueprint</a>
-        <a href="#townhalls">Town Halls</a>
-        <a href="#why">Why This Matters</a>
-        <a href="#join" class="nav-cta">Join the Movement</a>
+      <nav>
+        <a href="#alerts">Alerts</a>
+        <a href="#states">States</a>
+        <a href="#join">Join</a>
       </nav>
-    </div>
-  </header>
+    </header>
 
-  <main class="page-shell">
     <!-- HERO -->
-    <section class="hero" id="top">
-      <div>
-        <div class="hero-badge-row">
-          <div class="badge-chip">
-            <span class="badge-dot"></span>
-            LIVE SIGNAL · UNITED BY TRUTH
+    <section class="hero">
+      <!-- Left: text -->
+      <div class="hero-text-card">
+        <div class="hero-label-row">
+          <span class="pill">Prototype · Visual</span>
+          <span class="pill pill-accent">Citizen-Powered Platform</span>
+        </div>
+
+        <h1 class="hero-title">America's Watchlist</h1>
+        <p class="hero-tagline">The People's Eyes on Power.</p>
+
+        <p class="hero-body">
+          Imagine one place where Americans can finally see what government is doing:
+          bills, votes, taxes, power hikes, and influence — without having to dig through
+          dozens of sites or legal pages. America’s Watchlist is a peaceful,
+          citizen-powered platform to keep an eye on power so you don’t have to.
+        </p>
+
+        <div class="hero-metrics">
+          <div class="metric">
+            <div class="metric-label">Prototype · Demo</div>
+            <div class="metric-value">Live Visual Preview</div>
+            <div class="metric-note">This page is a mockup of how the movement could look in production.</div>
+          </div>
+          <div class="metric">
+            <div class="metric-label">Future Goal</div>
+            <div class="metric-value">50 States Watching</div>
+            <div class="metric-note">Every state with bill alerts, spending signals &amp; corruption watch.</div>
           </div>
         </div>
-
-        <h1>
-          UNITED BY TRUTH<br />
-          <span class="hero-highlight">PeacEfully taking our power back.</span>
-        </h1>
-
-        <div class="hero-subline">
-          ALERTS · FACTS · VOTES · UNITY
-        </div>
-
-        <p>
-          United by Truth is a citizen-powered platform and movement to expose what’s really
-          happening in our government, track corruption, and organize peaceful pressure in
-          every state – without violence, without parties, and without special interests.
-        </p>
 
         <div class="hero-actions">
           <button class="btn-primary" onclick="document.getElementById('join').scrollIntoView({behavior:'smooth'})">
-            Join United by Truth
+            Join America's Watchlist (Demo)
           </button>
-          <button class="btn-ghost" onclick="document.getElementById('features').scrollIntoView({behavior:'smooth'})">
-            View the national blueprint
+          <button class="btn-ghost" onclick="document.getElementById('alerts').scrollIntoView({behavior:'smooth'})">
+            See Example Alerts
           </button>
         </div>
 
-        <div class="hero-footnote">
-          This page is your first live prototype. You can share it, collect supporters by state,
-          and later connect it to real bill tracking, live dashboards, and secure voting.
-        </div>
-      </div>
-
-      <div class="hero-visual">
-        <div class="hero-card">
-          <div class="hero-card-header">
-            <div class="hero-pill">The Storm of Truth</div>
-            <div class="hero-storm-tag">Prototype · Visual Only</div>
-          </div>
-          <div class="hero-storm-box">
-            <div class="hero-storm-title">Lightning over the Capitol</div>
-            <div class="hero-storm-text">
-              Imagine a live map of bills, votes, power hikes and corruption – all in one place,
-              lit up like lightning hitting the Capitol. That’s what this app will surface.
-            </div>
-            <div class="storm-bar"></div>
-            <div class="hero-mini-grid">
-              <div class="mini-card">
-                <div class="mini-label">Potential supporters</div>
-                <div class="mini-value">Millions</div>
-                <div class="mini-subvalue">Across all 50 states</div>
-              </div>
-              <div class="mini-card">
-                <div class="mini-label">Goal</div>
-                <div class="mini-value">One citizen = one voice</div>
-                <div class="mini-subvalue">Real pressure, real change, no violence</div>
-              </div>
-            </div>
-          </div>
-          <div class="hero-float-tag">UNITED · BY · TRUTH</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- LIVE BETA BLUEPRINT -->
-    <section id="features">
-      <div class="section-header">
-        <div class="section-title-block">
-          <h2>Live Beta Blueprint</h2>
-          <p>
-            This section shows how the full United by Truth platform will work when it’s wired
-            to live data: national alerts, state dashboards, corruption tracking, and peaceful
-            voting pressure that cannot be ignored.
-          </p>
-        </div>
-        <div class="section-tag">Prototype · Not yet connected to real data</div>
-      </div>
-
-      <div class="card" style="margin-bottom:16px;">
-        <h3>Lightning over the Capitol · National Signal</h3>
-        <p>
-          A live-style preview of what United by Truth will surface: bills, votes, power hikes,
-          and Big Money influence trying to hide in the storm – all revealed in one national feed.
+        <p class="hero-disclaimer">
+          Demo only: this prototype doesn’t use real data yet. A developer can later plug in bill-tracking,
+          spending data, and secure logins to make it fully live.
         </p>
-        <div class="metrics-grid" style="margin-top:10px;">
-          <div class="metric-card">
-            <div class="metric-label">Nationwide Votes (demo)</div>
-            <div class="metric-value">12,584,903</div>
-            <div class="metric-subvalue">
-              On term limits, spending caps & transparency.
-            </div>
-          </div>
-          <div class="metric-card">
-            <div class="metric-label">States Engaged (demo)</div>
-            <div class="metric-value">37</div>
-            <div class="metric-subvalue">
-              Actively watching bills, power hikes & corruption alerts.
-            </div>
-          </div>
-        </div>
       </div>
 
-      <div class="card-grid-3">
-        <article class="card">
-          <h3>Alerts</h3>
-          <p>
-            Trigger citizen alerts when sneaky bills, tax hikes, or power rate increases move
-            quietly through committees, votes, or midnight sessions.
-          </p>
-          <div class="tag-row">
-            <span class="tag">Red Flag Bills</span>
-            <span class="tag">Power & Taxes</span>
-            <span class="tag">Emergency Signals</span>
-          </div>
-        </article>
-
-        <article class="card">
-          <h3>Dashboards</h3>
-          <p>
-            Show every state what’s happening in their backyard: bills, surpluses, spending,
-            property taxes, and who benefits from each move.
-          </p>
-          <div class="tag-row">
-            <span class="tag">State by State</span>
-            <span class="tag">Spending & Surpluses</span>
-            <span class="tag">Scorecards</span>
-          </div>
-        </article>
-
-        <article class="card">
-          <h3>Voting & Article V support</h3>
-          <p>
-            When enough citizens agree, convert that support into peaceful pressure: phone calls,
-            emails, petitions, and Article V pushes to limit power.
-          </p>
-          <div class="tag-row">
-            <span class="tag">One Citizen = One Vote</span>
-            <span class="tag">Term Limits</span>
-            <span class="tag">Spending Caps</span>
-          </div>
-        </article>
+      <!-- Right: poster image -->
+      <div class="hero-poster-card">
+        <!-- Replace with your saved hero image path -->
+        <img src="images/hero-poster.jpg" alt="America's Watchlist poster with Capitol and lightning" />
+        <div class="hero-poster-label">Concept art · America's Watchlist</div>
       </div>
     </section>
 
-    <!-- NATIONAL & STATE TOWN HALLS -->
-    <section id="townhalls">
-      <div class="section-header">
-        <div class="section-title-block">
-          <h2>National & State Town Halls</h2>
-          <p>
-            United by Truth will host live National People’s Briefings and State Town Halls
-            whenever something critical happens. Below is a mockup list of live and upcoming
-            events so you can see how this fits visually into the app.
-          </p>
-        </div>
-        <div class="section-tag">AI voice over · Visual streams · No camera required</div>
-      </div>
+    <!-- ALERTS SECTION -->
+    <section id="alerts">
+      <h2 class="section-title">Example Alerts</h2>
+      <p class="section-subtitle">
+        These are sample alerts to show how America’s Watchlist could surface what’s really happening —
+        fast, simple, and in plain language.
+      </p>
 
-      <div class="townhall-container">
-        <div style="margin-bottom:12px;">
-          <div class="townhall-subtitle">National Town Halls</div>
-          <div class="townhall-grid">
-            <div>
-              <ul class="event-list">
-                <li class="event-item">
-                  <div class="event-main">
-                    <div class="event-name">Weekly People’s Briefing – National</div>
-                    <div class="event-meta">
-                      Tonight · 9:00 PM ET · Topic: Spending, Surpluses & Power Bills
-                    </div>
-                  </div>
-                  <div class="event-pill">Live demo</div>
-                </li>
-                <li class="event-item">
-                  <div class="event-main">
-                    <div class="event-name">The Storm of Truth – Alert Deep Dive</div>
-                    <div class="event-meta">
-                      Tomorrow · 8:30 PM ET · Breaking down this week’s Red Flag and Sneaky Bills
-                    </div>
-                  </div>
-                  <div class="event-pill upcoming">Upcoming</div>
-                </li>
-                <li class="event-item">
-                  <div class="event-main">
-                    <div class="event-name">National Article V Update</div>
-                    <div class="event-meta">
-                      Sunday · 7:00 PM ET · States moving toward term-limit & spending amendments
-                    </div>
-                  </div>
-                  <div class="event-pill upcoming">Upcoming</div>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <div class="townhall-subtitle">State Town Halls – triggered by alerts</div>
-              <ul class="event-list">
-                <li class="event-item">
-                  <div class="event-main">
-                    <div class="event-name">Georgia – Power & Surplus Breakdown</div>
-                    <div class="event-meta">
-                      Live when a Power & Utility Alert or Spending Alert triggers a statewide threshold.
-                    </div>
-                  </div>
-                  <div class="event-pill state-demo">State demo</div>
-                </li>
-                <li class="event-item">
-                  <div class="event-main">
-                    <div class="event-name">South Carolina – Property Tax & School Funding</div>
-                    <div class="event-meta">
-                      Local proposals, tax use, and accountability on the ballot.
-                    </div>
-                  </div>
-                  <div class="event-pill state-demo">State demo</div>
-                </li>
-                <li class="event-item">
-                  <div class="event-main">
-                    <div class="event-name">Texas – Red Flag & Sneaky Bills Watch</div>
-                    <div class="event-meta">
-                      Deep dive on hidden provisions and who paid for them. Citizen questions in Q&A.
-                    </div>
-                  </div>
-                  <div class="event-pill state-demo">State demo</div>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="townhall-note">
-            These are example events for layout only. A future version can pull real schedules and trigger
-            town halls automatically when certain alerts reach a threshold of citizen interest.
-          </div>
+      <div class="grid">
+        <div class="card">
+          <div class="card-label">Red Flag · Spending</div>
+          <div class="card-title">Midnight spending bill with hidden raises &amp; new fees</div>
+          <p class="card-body">
+            A 900-page spending bill is rushed through with only hours to read it. Buried inside:
+            automatic pay raises for officials and new fees on utility bills. America’s Watchlist flags this
+            as a Red Flag alert so citizens can see who voted for it.
+          </p>
+          <div class="badge badge-alert">National · Prototype</div>
+        </div>
+
+        <div class="card">
+          <div class="card-label">Power &amp; Utilities</div>
+          <div class="card-title">State-wide power rate increase tied to “infrastructure fee”</div>
+          <p class="card-body">
+            Your state approves a 14% increase to power bills, calling it an “infrastructure fee.”
+            America’s Watchlist would show when it passed, who voted yes, and how much extra it
+            will cost the average household each year.
+          </p>
+          <div class="badge">State Demo · Georgia</div>
+        </div>
+
+        <div class="card">
+          <div class="card-label">Property &amp; Taxes</div>
+          <div class="card-title">Quiet change to property tax formula</div>
+          <p class="card-body">
+            A small line in a “technical corrections” bill changes the way property values are calculated,
+            pushing taxes higher over time. America’s Watchlist flags this as a Watch alert so homeowners
+            can see the long-term impact.
+          </p>
+          <div class="badge">State Demo · South Carolina</div>
         </div>
       </div>
     </section>
 
-    <!-- WHY THIS MATTERS -->
-    <section id="why">
-      <div class="section-header">
-        <div class="section-title-block">
-          <h2>Why this matters</h2>
-          <p>
-            Americans are divided on purpose. The more we fight each other, the easier it is
-            for corrupt systems to keep draining our time, money and freedom. United by Truth
-            exists to flip that script and put the pressure where it belongs.
-          </p>
-        </div>
-        <div class="section-tag">Unity · Facts · Hard Truths</div>
-      </div>
+    <!-- STATES SECTION -->
+    <section id="states">
+      <h2 class="section-title">State &amp; National Watch</h2>
+      <p class="section-subtitle">
+        In a full build, America’s Watchlist would give each state its own dashboard — so citizens can
+        see alerts that matter where they live, along with a national view of what’s happening across
+        all 50 states.
+      </p>
 
-      <article class="card">
-        <p style="font-size:13px;color:var(--text-muted);">
-          We are not building another party, cult, or personality brand. This is a tool for
-          regular people who are tired of being lied to, overcharged, overtaxed, and ignored.
-          The goal isn’t chaos – it’s accountability. The power belongs with the people, and
-          it always has. Most of us want the same things: honesty, stability, fair rules,
-          and a future for our kids that isn’t built on debt, corruption and fear.
-        </p>
-      </article>
+      <div class="grid">
+        <div class="card">
+          <div class="card-label">State Watch · Example</div>
+          <div class="card-title">Georgia · Bills, Power &amp; Surpluses</div>
+          <p class="card-body">
+            A Georgia dashboard could show current bills, power-company hikes, budget surpluses,
+            and how those surpluses are used: refunded, saved, or spent. The goal is simple:
+            no more guessing what happened at the Capitol.
+          </p>
+          <div class="badge">Prototype · Georgia Watch</div>
+        </div>
+
+        <div class="card">
+          <div class="card-label">State Watch · Example</div>
+          <div class="card-title">South Carolina · Property &amp; School Funding</div>
+          <p class="card-body">
+            See local proposals, school-funding decisions, and changes to property-tax rules — all in
+            one place. Parents and homeowners shouldn’t need a law degree to know what’s going on.
+          </p>
+          <div class="badge">Prototype · SC Watch</div>
+        </div>
+
+        <div class="card">
+          <div class="card-label">National View</div>
+          <div class="card-title">National · Big Money &amp; Influence</div>
+          <p class="card-body">
+            At the national level, America’s Watchlist could track where big money flows: who donates,
+            who votes a certain way, and which bills are pushed hardest by lobbyists — so citizens can
+            see patterns for themselves.
+          </p>
+          <div class="badge">Future Feature · Influence Map</div>
+        </div>
+      </div>
     </section>
 
-    <!-- JOIN -->
+    <!-- JOIN SECTION -->
     <section id="join">
-      <div class="section-header">
-        <div class="section-title-block">
-          <h2>Join United by Truth</h2>
-          <p>
-            This form is live and connected to Formspree. When someone joins, their name, email
-            and state go to your Formspree dashboard and email. Later we can replace this with
-            your own database and login system.
+      <h2 class="section-title">Join America's Watchlist (Demo)</h2>
+      <p class="section-subtitle">
+        This is where the movement becomes real. Use this demo form as your first live “join” page
+        to collect supporters by state. Later, a developer can hook it into a real database or email system.
+      </p>
+
+      <div class="join-layout">
+        <div>
+          <p class="section-subtitle" style="margin-bottom: 10px;">
+            When you join America’s Watchlist, you’re raising your hand to say:
+            <em>“The people are watching now.”</em> In a full version, this form would add you to your
+            state’s list so you could receive alerts, see dashboards, and join future town halls.
+          </p>
+
+          <ul style="font-size: 0.8rem; color: var(--text-muted); padding-left: 18px; line-height: 1.6;">
+            <li>No parties. No violence. No special interests.</li>
+            <li>Just citizens who want to see what government is doing.</li>
+            <li>One list, one movement, one nation watching together.</li>
+          </ul>
+
+          <p class="form-note">
+            Demo notice: this form is wired to Formspree so you can start collecting real sign-ups
+            without building a full backend yet.
           </p>
         </div>
-        <div class="section-tag">No parties · No violence · No special interests</div>
-      </div>
 
-      <div class="card join-grid">
         <div>
-          <h3 style="font-size:13px;text-transform:uppercase;letter-spacing:0.18em;margin-bottom:8px;">
-            Be part of the first wave
-          </h3>
-          <p style="font-size:12px;color:var(--text-muted);margin-bottom:10px;">
-            Enter your name, email, and state. This uses your real Formspree endpoint so
-            you can start collecting support by state right now.
-          </p>
+          <!-- Formspree form -->
+          <form action="https://formspree.io/f/xovypnwk" method="POST">
+            <label>
+              Your Name
+              <input type="text" name="name" placeholder="First &amp; last name (optional)" />
+            </label>
 
-          <!-- REAL FORMSPREE JOIN FORM -->
-          <form class="join-form" action="https://formspree.io/f/xovypnwk" method="POST">
-            <label for="name">Your Name</label>
-            <input
-              id="name"
-              name="name"
-              type="text"
-              placeholder="Your full name"
-              required
-            />
+            <label>
+              Your Email (required)
+              <input type="email" name="email" placeholder="you@example.com" required />
+            </label>
 
-            <label for="email">Your Email</label>
-            <input
-              id="email"
-              name="email"
-              type="email"
-              placeholder="you@example.com"
-              required
-            />
+            <label>
+              Your State (required)
+              <select name="state" required>
+                <option value="">Select your state</option>
+                <option value="AL">Alabama</option>
+                <option value="AK">Alaska</option>
+                <option value="AZ">Arizona</option>
+                <option value="AR">Arkansas</option>
+                <option value="CA">California</option>
+                <option value="CO">Colorado</option>
+                <option value="CT">Connecticut</option>
+                <option value="DE">Delaware</option>
+                <option value="FL">Florida</option>
+                <option value="GA">Georgia</option>
+                <option value="HI">Hawaii</option>
+                <option value="ID">Idaho</option>
+                <option value="IL">Illinois</option>
+                <option value="IN">Indiana</option>
+                <option value="IA">Iowa</option>
+                <option value="KS">Kansas</option>
+                <option value="KY">Kentucky</option>
+                <option value="LA">Louisiana</option>
+                <option value="ME">Maine</option>
+                <option value="MD">Maryland</option>
+                <option value="MA">Massachusetts</option>
+                <option value="MI">Michigan</option>
+                <option value="MN">Minnesota</option>
+                <option value="MS">Mississippi</option>
+                <option value="MO">Missouri</option>
+                <option value="MT">Montana</option>
+                <option value="NE">Nebraska</option>
+                <option value="NV">Nevada</option>
+                <option value="NH">New Hampshire</option>
+                <option value="NJ">New Jersey</option>
+                <option value="NM">New Mexico</option>
+                <option value="NY">New York</option>
+                <option value="NC">North Carolina</option>
+                <option value="ND">North Dakota</option>
+                <option value="OH">Ohio</option>
+                <option value="OK">Oklahoma</option>
+                <option value="OR">Oregon</option>
+                <option value="PA">Pennsylvania</option>
+                <option value="RI">Rhode Island</option>
+                <option value="SC">South Carolina</option>
+                <option value="SD">South Dakota</option>
+                <option value="TN">Tennessee</option>
+                <option value="TX">Texas</option>
+                <option value="UT">Utah</option>
+                <option value="VT">Vermont</option>
+                <option value="VA">Virginia</option>
+                <option value="WA">Washington</option>
+                <option value="WV">West Virginia</option>
+                <option value="WI">Wisconsin</option>
+                <option value="WY">Wyoming</option>
+              </select>
+            </label>
 
-            <label for="state">Your State</label>
-            <select id="state" name="state" required>
-              <option value="">Select your state</option>
-              <option value="AL">Alabama</option>
-              <option value="AK">Alaska</option>
-              <option value="AZ">Arizona</option>
-              <option value="AR">Arkansas</option>
-              <option value="CA">California</option>
-              <option value="CO">Colorado</option>
-              <option value="CT">Connecticut</option>
-              <option value="DE">Delaware</option>
-              <option value="FL">Florida</option>
-              <option value="GA">Georgia</option>
-              <option value="HI">Hawaii</option>
-              <option value="ID">Idaho</option>
-              <option value="IL">Illinois</option>
-              <option value="IN">Indiana</option>
-              <option value="IA">Iowa</option>
-              <option value="KS">Kansas</option>
-              <option value="KY">Kentucky</option>
-              <option value="LA">Louisiana</option>
-              <option value="ME">Maine</option>
-              <option value="MD">Maryland</option>
-              <option value="MA">Massachusetts</option>
-              <option value="MI">Michigan</option>
-              <option value="MN">Minnesota</option>
-              <option value="MS">Mississippi</option>
-              <option value="MO">Missouri</option>
-              <option value="MT">Montana</option>
-              <option value="NE">Nebraska</option>
-              <option value="NV">Nevada</option>
-              <option value="NH">New Hampshire</option>
-              <option value="NJ">New Jersey</option>
-              <option value="NM">New Mexico</option>
-              <option value="NY">New York</option>
-              <option value="NC">North Carolina</option>
-              <option value="ND">North Dakota</option>
-              <option value="OH">Ohio</option>
-              <option value="OK">Oklahoma</option>
-              <option value="OR">Oregon</option>
-              <option value="PA">Pennsylvania</option>
-              <option value="RI">Rhode Island</option>
-              <option value="SC">South Carolina</option>
-              <option value="SD">South Dakota</option>
-              <option value="TN">Tennessee</option>
-              <option value="TX">Texas</option>
-              <option value="UT">Utah</option>
-              <option value="VT">Vermont</option>
-              <option value="VA">Virginia</option>
-              <option value="WA">Washington</option>
-              <option value="WV">West Virginia</option>
-              <option value="WI">Wisconsin</option>
-              <option value="WY">Wyoming</option>
-            </select>
+            <label>
+              Why Are You Joining? (optional)
+              <textarea name="message" placeholder="Share why you think America needs a watchlist..."></textarea>
+            </label>
 
-            <button class="btn-primary" type="submit">Join United by Truth</button>
-            <p class="join-confirm-note">
-              After submitting, check your email for a confirmation from Formspree.
+            <button class="btn-primary" type="submit">
+              Join America's Watchlist
+            </button>
+
+            <p class="form-note">
+              After you hit submit, Formspree will send your entry to the email connected to this form.
+              Later, a developer can replace this with a custom database and login system.
             </p>
           </form>
         </div>
-
-        <div>
-          <h3 style="font-size:13px;text-transform:uppercase;letter-spacing:0.18em;margin-bottom:8px;">
-            What happens next
-          </h3>
-          <ul class="list">
-            <li class="list-item">
-              <div class="list-main">1 · Launch this page</div>
-              <div class="list-sub">
-                Use your GitHub Pages or Vercel URL as your public link. This is your live movement homepage.
-              </div>
-            </li>
-            <li class="list-item">
-              <div class="list-main">2 · Collect supporters by state</div>
-              <div class="list-sub">
-                Formspree will store names, emails, and states so you can see where your early support is coming from.
-              </div>
-            </li>
-            <li class="list-item">
-              <div class="list-main">3 · Add more features later</div>
-              <div class="list-sub">
-                When you’re ready, we can add dashboards, live alerts, maps, town halls and voting on top of this working base.
-              </div>
-            </li>
-            <li class="list-item">
-              <div class="list-main">4 · Build peaceful pressure</div>
-              <div class="list-sub">
-                Use hard truths, real data, and unity – not chaos – to push back on corruption in every state.
-              </div>
-            </li>
-          </ul>
-        </div>
       </div>
     </section>
 
+    <!-- FOOTER -->
     <footer>
-      UNITED BY TRUTH · A peaceful, citizen-powered movement to take our power back with facts,
-      hard truths, and united action.
+      <div>America's Watchlist · The People's Eyes on Power.</div>
+      <div style="margin-top:4px;">
+        Prototype layout for a peaceful, citizen-powered movement keeping watch on government.
+      </div>
     </footer>
   </main>
+
+  <!-- Optional: smooth scrolling for older browsers -->
+  <script>
+    // No heavy JS needed yet; the buttons use scrollIntoView.
+  </script>
 </body>
 </html>
