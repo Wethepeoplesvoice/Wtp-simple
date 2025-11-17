@@ -2,30 +2,273 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>America's Watchlist – The People's Eyes on Power</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <style>
     :root {
       --bg: #050812;
       --panel: #0b101f;
-      --panel-soft: #101729;
       --accent: #f6b45d;
       --accent-soft: #ff7f42;
       --text-main: #f5f5f7;
       --text-muted: #b0b6c8;
-      --border-soft: #242b3d;
       --pill-bg: #171f31;
-      --danger: #ff4b5c;
-      --info: #4da6ff;
       --radius-lg: 18px;
-      --radius-xl: 28px;
-      --radius-pill: 999px;
-      --shadow-soft: 0 22px 60px rgba(0, 0, 0, 0.65);
-      --font-heading: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-        sans-serif;
-      --font-body: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-        sans-serif;
     }
+
+    body {
+      background: var(--bg);
+      color: var(--text-main);
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background: var(--panel);
+      padding: 18px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid #00000033;
+    }
+
+    header .logo-text {
+      font-size: 22px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    nav a {
+      color: var(--text-main);
+      text-decoration: none;
+      margin-left: 24px;
+      font-size: 15px;
+      opacity: 0.85;
+    }
+
+    .hero {
+      width: 100%;
+      max-width: 900px;
+      margin: 40px auto 0 auto;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: 0px 0px 40px #00000055;
+    }
+
+    .hero img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .section {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+      line-height: 1.6;
+    }
+
+    .pill {
+      background: var(--pill-bg);
+      padding: 10px 20px;
+      display: inline-block;
+      border-radius: 999px;
+      margin-right: 10px;
+      margin-bottom: 14px;
+      font-size: 14px;
+      letter-spacing: 0.4px;
+      color: var(--accent);
+      border: 1px solid #ffffff18;
+    }
+
+    .btn {
+      background: linear-gradient(90deg, #ffba63, #ff7f42);
+      padding: 16px 26px;
+      color: #000;
+      text-decoration: none;
+      display: inline-block;
+      border-radius: var(--radius-lg);
+      margin-top: 20px;
+      font-weight: bold;
+      font-size: 17px;
+      box-shadow: 0px 0px 20px #00000066;
+    }
+
+    .btn-outline {
+      padding: 14px 26px;
+      border: 1px solid #ffffff44;
+      display: inline-block;
+      color: var(--text-main);
+      text-decoration: none;
+      border-radius: var(--radius-lg);
+      margin-top: 20px;
+      font-size: 16px;
+    }
+
+    /* JOIN FORM STYLES */
+    form {
+      margin-top: 20px;
+      padding: 20px;
+      border: 1px solid #ffffff22;
+      border-radius: var(--radius-lg);
+      background: #0c1221;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #ffffff33;
+      margin-top: 6px;
+      margin-bottom: 18px;
+      background: #070b14;
+      color: var(--text-main);
+      font-size: 15px;
+    }
+
+    label {
+      font-size: 14px;
+      opacity: 0.8;
+    }
+
+    button {
+      padding: 14px;
+      background: linear-gradient(90deg, #ffba63, #ff7f42);
+      color: #000;
+      font-size: 16px;
+      width: 100%;
+      border: none;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo-text">AMERICA'S WATCHLIST</div>
+  <nav>
+    <a href="#alerts">Alerts</a>
+    <a href="#states">States</a>
+    <a href="#townhalls">Town Halls</a>
+    <a href="#join">Join</a>
+  </nav>
+</header>
+
+<!-- HERO POSTER -->
+<div class="hero">
+  <img src="images/hero-poster.jpg" alt="America's Watchlist poster">
+</div>
+
+<!-- INTRO SECTION -->
+<div class="section">
+  <div class="pill">CITIZEN-POWERED PLATFORM</div>
+  <div class="pill">NO PARTIES</div>
+  <div class="pill">NO VIOLENCE</div>
+  <div class="pill">NO SPECIAL INTERESTS</div>
+
+  <h1>America's Watchlist</h1>
+  <h3 style="color: var(--accent); margin-top: -10px;">The People's Eyes on Power.</h3>
+
+  <p>
+    Imagine one place where Americans can finally see what government is doing:
+    bills, votes, taxes, power hikes, and influence — without having to dig through
+    dozens of sites or legal pages.
+    America's Watchlist is a peaceful, citizen-powered platform to keep an
+    eye on power so you don't have to.
+  </p>
+
+  <a class="btn" href="#join">Join America's Watchlist</a><br>
+  <a class="btn-outline" href="#alerts">See Example Alerts</a>
+</div>
+
+<!-- ALERTS SECTION -->
+<div id="alerts" class="section">
+  <h2>Example Alerts</h2>
+  <p>
+    These are sample alerts showing how the platform could warn citizens when
+    something important is happening.
+  </p>
+
+  <div class="pill">Red Flag: Utility Rate Increase – Georgia</div>
+  <div class="pill">Property Tax Reassessment – South Carolina</div>
+  <div class="pill">Federal “Sneaky Bill” Rider Detected</div>
+</div>
+
+<!-- STATES SECTION -->
+<div id="states" class="section">
+  <h2>State Dashboards</h2>
+  <p>
+    Each state would eventually get its own dashboard showing bills, spending,
+    taxes, and votes in one clean view.  
+  </p>
+
+  <div class="pill">Georgia</div>
+  <div class="pill">South Carolina</div>
+  <div class="pill">North Carolina</div>
+  <div class="pill">Texas</div>
+  <div class="pill">Florida</div>
+</div>
+
+<!-- TOWN HALL SECTION -->
+<div id="townhalls" class="section">
+  <h2>Town Halls (Voice Only)</h2>
+  <p>
+    When a major red-flag alert triggers in a state, supporters could be invited to a
+    live voice-only town hall with visuals and breakdowns — no camera needed.
+  </p>
+</div>
+
+<!-- JOIN FORM -->
+<div id="join" class="section">
+  <h2>Join America's Watchlist</h2>
+  <p>
+    This form is LIVE and connected to Formspree. When someone submits it, you
+    will receive the entry instantly.
+  </p>
+
+  <form action="https://formspree.io/f/xovypnwk" method="POST">
+    <label>Name:</label>
+    <input type="text" name="name" placeholder="Your full name" required>
+
+    <label>Email:</label>
+    <input type="email" name="email" placeholder="you@example.com" required>
+
+    <label>State:</label>
+    <select name="state" required>
+      <option value="">Choose your state</option>
+      <option>AL</option><option>AK</option><option>AZ</option>
+      <option>AR</option><option>CA</option><option>CO</option>
+      <option>CT</option><option>DE</option><option>FL</option>
+      <option>GA</option><option>HI</option><option>ID</option>
+      <option>IL</option><option>IN</option><option>IA</option>
+      <option>KS</option><option>KY</option><option>LA</option>
+      <option>ME</option><option>MD</option><option>MA</option>
+      <option>MI</option><option>MN</option><option>MS</option>
+      <option>MO</option><option>MT</option><option>NE</option>
+      <option>NV</option><option>NH</option><option>NJ</option>
+      <option>NM</option><option>NY</option><option>NC</option>
+      <option>ND</option><option>OH</option><option>OK</option>
+      <option>OR</option><option>PA</option><option>RI</option>
+      <option>SC</option><option>SD</option><option>TN</option>
+      <option>TX</option><option>UT</option><option>VT</option>
+      <option>VA</option><option>WA</option><option>WV</option>
+      <option>WI</option><option>WY</option>
+    </select>
+
+    <button type="submit">Join the Watchlist</button>
+  </form>
+</div>
+
+</body>
+</html>
 
     * {
       box-sizing: border-box;
