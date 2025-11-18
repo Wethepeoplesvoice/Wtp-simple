@@ -186,6 +186,21 @@
       color: #ffe9b8;
     }
 
+    .nav-login-pill {
+      padding: 7px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(246, 180, 93, 0.9);
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #ffe6c1;
+      background: radial-gradient(
+        circle at top left,
+        rgba(246, 180, 93, 0.25),
+        rgba(7, 9, 22, 0.96)
+      );
+    }
+
     /* HERO */
     .hero {
       margin-top: 18px;
@@ -500,7 +515,7 @@
       );
     }
 
-    /* JOIN SECTION / FORM */
+    /* JOIN / LOGIN LAYOUT */
     .join-layout {
       display: grid;
       grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
@@ -621,6 +636,50 @@
       line-height: 1.5;
     }
 
+    /* LOGIN PANEL (COMING SOON) */
+    .login-panel {
+      margin-top: 14px;
+      padding: 12px 12px 13px;
+      border-radius: 16px;
+      background: rgba(9, 11, 26, 0.95);
+      border: 1px dashed rgba(138, 151, 211, 0.8);
+    }
+
+    .login-panel-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .login-panel-title {
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .login-pill {
+      font-size: 10px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      padding: 4px 9px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: var(--text-muted);
+    }
+
+    .login-panel-body {
+      margin-top: 8px;
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .login-panel-body strong {
+      color: #ffe5ba;
+    }
+
     footer {
       margin-top: 26px;
       padding: 16px 4px 8px;
@@ -667,6 +726,7 @@
           <a href="#states">States</a>
           <a href="#townhalls">Town Halls</a>
           <a href="#join" class="nav-join">Join</a>
+          <a href="#login" class="nav-login-pill">Login (Coming Soon)</a>
         </nav>
       </div>
     </header>
@@ -834,7 +894,7 @@
         </div>
       </section>
 
-      <!-- JOIN SECTION -->
+      <!-- JOIN + LOGIN SECTION -->
       <section id="join" class="section">
         <div class="section-header-eyebrow">Join the First Wave</div>
         <h2 class="section-title">Be Part of America’s Watchlist</h2>
@@ -845,6 +905,7 @@
         </p>
 
         <div class="join-layout">
+          <!-- Steps / Roadmap -->
           <div class="join-steps">
             <div class="join-step">
               <div class="step-number">1</div>
@@ -876,7 +937,7 @@
                 <div class="step-body-text">
                   Later, a developer can connect bill-tracking APIs, campaign finance
                   data, and secure authentication to turn America’s Watchlist into a
-                  full platform.
+                  full platform with unique Watcher IDs and personal dashboards.
                 </div>
               </div>
             </div>
@@ -894,8 +955,9 @@
             </div>
           </div>
 
+          <!-- Join Form + Login Placeholder -->
           <div class="join-panel">
-            <div class="join-panel-title">Join America’s Watchlist (Demo)</div>
+            <div class="join-panel-title">Join America’s Watchlist (Live Form)</div>
             <div class="join-panel-sub">
               This form is connected to Formspree and can already collect real
               responses. Later, it can be swapped for a custom backend and login
@@ -1018,6 +1080,24 @@
                 database and login system.
               </div>
             </form>
+
+            <!-- LOGIN PLACEHOLDER (COMING SOON) -->
+            <div id="login" class="login-panel">
+              <div class="login-panel-header">
+                <div class="login-panel-title">Login with Your Watcher ID</div>
+                <div class="login-pill">Coming Soon</div>
+              </div>
+              <div class="login-panel-body">
+                In the full version of America’s Watchlist, every member will receive a
+                unique <strong>Watcher ID</strong>. You’ll be able to log in, see alerts
+                for your state, track issues you care about, and join town halls from
+                your own dashboard.
+                <br /><br />
+                Right now, this page is a <strong>live prototype</strong> for joining the
+                movement. If you want early access when login goes live, make sure you
+                fill out the join form above with a valid email and state.
+              </div>
+            </div>
           </div>
         </div>
       </section>
