@@ -43,7 +43,7 @@
       overflow-x: hidden;
     }
 
-    /* Faint flag-style stripes behind everything */
+    /* Faint flag-style texture behind everything */
     body::before {
       content: "";
       position: fixed;
@@ -53,7 +53,7 @@
         linear-gradient(
           to bottom right,
           rgba(255, 255, 255, 0.03),
-          rgba(255, 255, 255, 0.0)
+          rgba(255, 255, 255, 0)
         ),
         repeating-linear-gradient(
           to bottom,
@@ -621,6 +621,49 @@
       line-height: 1.5;
     }
 
+    /* OPTIONAL SUPPORT AD BLOCK */
+    .support-ad {
+      margin-top: 24px;
+      background: rgba(10, 9, 24, 0.96);
+      border-radius: 20px;
+      padding: 14px 14px 14px;
+      border: 1px dashed rgba(246, 180, 93, 0.7);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .support-ad-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .support-ad-title {
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .support-ad-body {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .support-ad-skip {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      border-radius: 999px;
+      padding: 5px 12px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      background: rgba(5, 7, 18, 0.9);
+      cursor: pointer;
+    }
+
     footer {
       margin-top: 26px;
       padding: 16px 4px 8px;
@@ -649,6 +692,12 @@
       }
     }
   </style>
+  <script>
+    function dismissAd() {
+      var ad = document.getElementById('support-ad');
+      if (ad) ad.style.display = 'none';
+    }
+  </script>
 </head>
 <body>
   <div class="page">
@@ -665,7 +714,7 @@
           <a href="#why">Why This Matters</a>
           <a href="#alerts">Alerts</a>
           <a href="#states">States</a>
-          <a href="#town-halls">Town Halls</a>
+          <a href="#townhalls">Town Halls</a>
           <a href="#join" class="nav-join">Join</a>
         </nav>
       </div>
@@ -765,7 +814,7 @@
         <h2 class="section-title">What America’s Watchlist Could Flag</h2>
         <p class="section-sub">
           These are example alerts to show how the platform could look. They’re not
-          live data yet — but this is how “The People’s Eyes on Power” might work once
+          live data yet — but this is how “The People's Eyes on Power” might work once
           real bill tracking and finance APIs are connected.
         </p>
 
@@ -803,7 +852,7 @@
       </section>
 
       <!-- TOWN HALLS -->
-      <section id="town-halls" class="section">
+      <section id="townhalls" class="section">
         <div class="section-header-eyebrow">National & State Town Halls</div>
         <h2 class="section-title">Voice-Over Streams · No Camera Needed</h2>
         <p class="section-sub">
@@ -988,6 +1037,26 @@
                 </select>
               </div>
 
+              <!-- U.S. citizen verification -->
+              <div class="form-field">
+                <label class="form-label" for="citizen">
+                  Eligibility
+                </label>
+                <div style="display:flex; align-items:flex-start; gap:8px; font-size:12px; color:var(--text-muted);">
+                  <input
+                    type="checkbox"
+                    id="citizen"
+                    name="citizen"
+                    required
+                    style="width:auto; margin-top:3px;"
+                  />
+                  <span>
+                    I confirm I am a U.S. citizen or lawful permanent resident and I am joining
+                    for peaceful, informational, and advocacy purposes only.
+                  </span>
+                </div>
+              </div>
+
               <button type="submit" class="btn btn-primary form-submit">
                 Join America’s Watchlist
               </button>
@@ -998,6 +1067,23 @@
                 database and login system.
               </div>
             </form>
+
+            <!-- OPTIONAL SUPPORT / AD BLOCK -->
+            <div id="support-ad" class="support-ad">
+              <div class="support-ad-header">
+                <div class="support-ad-title">Optional Message / Support Slot</div>
+                <button type="button" class="support-ad-skip" onclick="dismissAd()">
+                  Skip this message
+                </button>
+              </div>
+              <div class="support-ad-body">
+                This space could be used in the future for a sponsor message,
+                donation link, or partner ad that helps keep the platform free.
+                It is completely optional and does not affect your ability to join,
+                vote on issues, or receive alerts.
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
