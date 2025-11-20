@@ -2,43 +2,19 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>America's Watchlist – The People's Eyes on Power</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- 
-    AMERICA'S WATCHLIST – PROTOTYPE LANDING PAGE
-    ------------------------------------------------
-    - Single-page static prototype
-    - Demo login stored in localStorage only (no real auth)
-    - Join form posts to Formspree (replace with real backend later)
-    - Sponsor banner with "Skip Ad" demo behavior
-
-    TODO for dev:
-    - Replace Formspree action with real backend
-    - Replace demo login with real authentication + verification
-    - Connect alerts/states to live data APIs
-    - Swap hero image path if needed
-  -->
+  <title>America's Watchlist – The People's Eyes on Power</title>
 
   <style>
     :root {
       --bg: #050812;
-      --bg-soft: #070b18;
       --panel: #0b101f;
-      --panel-soft: #101729;
       --accent: #f6b45d;
-      --accent-strong: #ff7f42;
+      --accent-soft: #ff7f42;
       --text-main: #f5f5f7;
       --text-muted: #b0b6c8;
-      --border-soft: #242b3d;
       --pill-bg: #171f31;
-      --danger: #ff4b5c;
-      --info: #4da6ff;
-      --radius-lg: 26px;
-      --radius-md: 18px;
-      --radius-pill: 999px;
-      --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.75);
-      --shadow-hero: 0 30px 80px rgba(0, 0, 0, 0.85);
+      --radius-lg: 18px;
     }
 
     * {
@@ -46,1405 +22,703 @@
     }
 
     body {
+      background: var(--bg);
+      color: var(--text-main);
+      font-family: Arial, Helvetica, sans-serif;
       margin: 0;
       padding: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
-        Arial, sans-serif;
-      background: radial-gradient(
-        circle at top,
-        #0c1022 0,
-        #050812 45%,
-        #010208 100%
-      );
-      color: var(--text-main);
-      -webkit-font-smoothing: antialiased;
     }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .page {
-      min-height: 100vh;
-    }
-
-    .shell {
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 18px 16px 80px;
-    }
-
-    /* HEADER / NAV */
 
     header {
+      background: var(--panel);
+      padding: 18px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       position: sticky;
       top: 0;
-      z-index: 40;
-      background: linear-gradient(
-        to bottom,
-        rgba(5, 8, 18, 0.98),
-        rgba(5, 8, 18, 0.9),
-        transparent
-      );
-      backdrop-filter: blur(20px);
+      z-index: 10;
+      border-bottom: 1px solid #00000033;
     }
 
-    .nav-inner {
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 12px 16px 10px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
+    header .logo-text {
+      font-size: 22px;
+      font-weight: bold;
+      letter-spacing: 1px;
     }
 
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
+    nav a {
+      color: var(--text-main);
+      text-decoration: none;
+      margin-left: 18px;
+      font-size: 14px;
+      opacity: 0.85;
     }
 
-    .brand-icon {
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      background: radial-gradient(
-        circle at 30% 0,
-        #ffffff,
-        #f6b45d 40%,
-        #c47221 80%,
-        #000000
-      );
-      box-shadow:
-        0 0 0 1px rgba(0, 0, 0, 0.5),
-        0 16px 35px rgba(0, 0, 0, 0.7);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 800;
-      letter-spacing: 0.04em;
-      color: #1b1205;
-      font-size: 16px;
+    nav a:hover {
+      opacity: 1;
+      text-decoration: underline;
     }
-
-    .brand-text-main {
-      font-size: 17px;
-      font-weight: 700;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-    }
-
-    .brand-text-sub {
-      font-size: 11px;
-      letter-spacing: 0.19em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-top: 3px;
-    }
-
-    .nav-right {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      font-size: 13px;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-    }
-
-    .nav-links a {
-      position: relative;
-      padding-bottom: 3px;
-    }
-
-    .nav-links a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 0;
-      height: 2px;
-      background: linear-gradient(to right, #ff7f42, #f6b45d);
-      border-radius: 999px;
-      transition: width 0.18s ease-out;
-    }
-
-    .nav-links a:hover::after {
-      width: 100%;
-    }
-
-    .nav-links a.nav-join {
-      color: #ffe9b8;
-    }
-
-    .nav-login-status {
-      font-size: 11px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      padding: 8px 14px;
-      border-radius: 999px;
-      border: 1px solid rgba(75, 89, 142, 0.9);
-      background: rgba(6, 9, 24, 0.95);
-      color: var(--text-muted);
-      cursor: pointer;
-    }
-
-    .nav-login-status.logged-in {
-      border-color: rgba(246, 180, 93, 0.9);
-      color: #ffeac0;
-      background: radial-gradient(
-        circle at top left,
-        rgba(246, 180, 93, 0.26),
-        rgba(6, 9, 24, 0.96)
-      );
-    }
-
-    /* HERO */
 
     .hero {
-      margin-top: 18px;
-      background: radial-gradient(
-        circle at top left,
-        #131832 0,
-        #050812 55%,
-        #02030a 100%
-      );
-      border-radius: 32px;
-      padding: 26px 22px 26px;
-      border: 1px solid rgba(93, 113, 168, 0.45);
-      box-shadow: var(--shadow-hero);
-      display: grid;
-      grid-template-columns: minmax(0, 3fr) minmax(0, 2.5fr);
-      gap: 24px;
-      align-items: center;
-      position: relative;
+      width: 100%;
+      max-width: 900px;
+      margin: 40px auto 0 auto;
+      border-radius: var(--radius-lg);
       overflow: hidden;
+      box-shadow: 0px 0px 40px #00000055;
     }
 
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(
-        circle at top,
-        rgba(246, 180, 93, 0.26),
-        transparent 55%
-      );
-      opacity: 0.55;
-      pointer-events: none;
+    .hero img {
+      width: 100%;
+      height: auto;
+      display: block;
     }
 
-    .hero-inner {
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero-eyebrow {
-      font-size: 11px;
-      letter-spacing: 0.24em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: 10px;
-    }
-
-    .hero-title {
-      font-size: clamp(26px, 4vw, 34px);
-      letter-spacing: 0.26em;
-      text-transform: uppercase;
-      margin: 0 0 8px;
-    }
-
-    .hero-tagline {
-      font-size: 14px;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 14px;
-    }
-
-    .hero-body {
-      font-size: 14px;
+    .section {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
       line-height: 1.6;
-      color: var(--text-main);
-      max-width: 34rem;
-      margin: 0 0 18px;
+      background: #070b16;
+      border-radius: var(--radius-lg);
+      border: 1px solid #ffffff15;
+      box-shadow: 0 0 30px #00000066;
     }
 
-    .hero-pills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 18px;
+    h1, h2, h3 {
+      margin-top: 0;
     }
 
     .pill {
-      font-size: 11px;
-      letter-spacing: 0.18em;
+      background: var(--pill-bg);
+      padding: 10px 20px;
+      display: inline-block;
+      border-radius: 999px;
+      margin-right: 10px;
+      margin-bottom: 14px;
+      font-size: 13px;
+      letter-spacing: 0.4px;
+      color: var(--accent);
+      border: 1px solid #ffffff18;
       text-transform: uppercase;
-      padding: 7px 14px;
-      border-radius: var(--radius-pill);
-      background: rgba(7, 11, 27, 0.9);
-      border: 1px solid rgba(66, 80, 133, 0.9);
-      color: var(--text-muted);
-      white-space: nowrap;
-    }
-
-    .pill-accent {
-      border-color: rgba(246, 180, 93, 0.9);
-      color: #ffe4b0;
-      background: radial-gradient(
-        circle at top left,
-        rgba(246, 180, 93, 0.23),
-        rgba(7, 11, 27, 0.95)
-      );
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
     }
 
     .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 999px;
-      padding: 11px 22px;
-      font-size: 13px;
-      letter-spacing: 0.19em;
-      text-transform: uppercase;
-      border: 1px solid transparent;
-      cursor: pointer;
-      transition:
-        transform 0.12s ease-out,
-        box-shadow 0.12s ease-out,
-        background 0.12s ease-out,
-        border-color 0.12s ease-out;
+      background: linear-gradient(90deg, #ffba63, #ff7f42);
+      padding: 14px 22px;
+      color: #000;
       text-decoration: none;
-      white-space: nowrap;
+      display: inline-block;
+      border-radius: var(--radius-lg);
+      margin-top: 14px;
+      font-weight: bold;
+      font-size: 16px;
+      box-shadow: 0px 0px 20px #00000066;
     }
 
-    .btn-primary {
-      background: linear-gradient(135deg, #ff7f42, #f6b45d);
-      color: #15100a;
-      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.7);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
-    }
-
-    .btn-ghost {
-      background: rgba(8, 10, 22, 0.6);
-      border-color: rgba(75, 89, 142, 0.9);
-      color: var(--text-muted);
-    }
-
-    .btn-ghost:hover {
-      background: rgba(14, 19, 40, 0.9);
-      border-color: rgba(246, 180, 93, 0.9);
-      color: #fbe6c4;
-    }
-
-    /* HERO POSTER */
-
-    .hero-poster-wrap {
-      position: relative;
-      z-index: 1;
-      display: flex;
-      justify-content: center;
-    }
-
-    .hero-poster-frame {
-      border-radius: 26px;
-      background: radial-gradient(circle at top, #2a2132, #090b16);
-      padding: 9px 9px 10px;
-      border: 1px solid rgba(79, 68, 102, 0.9);
-      box-shadow: var(--shadow-hero);
-      max-width: 320px;
-      width: 100%;
-    }
-
-    .hero-poster {
-      display: block;
-      width: 100%;
-      border-radius: 22px;
-      border: 1px solid rgba(246, 180, 93, 0.6);
-    }
-
-    .hero-poster-caption {
-      margin-top: 7px;
-      font-size: 10px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      text-align: center;
-    }
-
-    /* GENERIC SECTION */
-
-    section {
-      margin-top: 26px;
-    }
-
-    .section-panel {
-      background: radial-gradient(
-        circle at top left,
-        #12172b,
-        #050812 55%,
-        #02030b 100%
-      );
-      border-radius: 28px;
-      padding: 20px 18px 22px;
-      border: 1px solid rgba(51, 64, 110, 0.8);
-      box-shadow: var(--shadow-soft);
-    }
-
-    .section-eyebrow {
-      font-size: 11px;
-      letter-spacing: 0.24em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: 6px;
-    }
-
-    .section-title {
-      font-size: 20px;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      margin: 0 0 8px;
-    }
-
-    .section-sub {
-      font-size: 13px;
-      color: var(--text-muted);
-      max-width: 44rem;
-      line-height: 1.6;
-      margin-bottom: 16px;
-    }
-
-    .grid-2 {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-      gap: 18px;
-    }
-
-    .card {
-      background: rgba(6, 9, 24, 0.95);
-      border-radius: 18px;
-      padding: 13px 14px 14px;
-      border: 1px solid rgba(46, 59, 110, 0.9);
-    }
-
-    .card-label {
-      font-size: 11px;
-      letter-spacing: 0.21em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: 4px;
-    }
-
-    .card-title {
+    .btn-outline {
+      padding: 12px 20px;
+      border: 1px solid #ffffff44;
+      display: inline-block;
+      color: var(--text-main);
+      text-decoration: none;
+      border-radius: var(--radius-lg);
+      margin-top: 12px;
       font-size: 15px;
-      font-weight: 600;
+    }
+
+    .btn-inline-wrap a {
+      margin-right: 10px;
+    }
+
+    form {
+      margin-top: 20px;
+      padding: 20px;
+      border: 1px solid #ffffff22;
+      border-radius: var(--radius-lg);
+      background: #0c1221;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ffffff33;
+      margin-top: 6px;
+      margin-bottom: 18px;
+      background: #070b14;
+      color: #f5f5f7;
+      font-size: 15px;
+      font-family: inherit;
+      resize: vertical;
+    }
+
+    label {
+      font-size: 13px;
+      opacity: 0.9;
+      display: block;
+    }
+
+    button {
+      padding: 12px;
+      background: linear-gradient(90deg, #ffba63, #ff7f42);
+      color: #000;
+      font-size: 16px;
+      width: 100%;
+      border: none;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      filter: brightness(1.05);
+    }
+
+    small {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .complaints-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 16px;
+    }
+
+    .complaints-panel {
+      background: #090f1f;
+      border-radius: 14px;
+      padding: 16px;
+      border: 1px solid #ffffff22;
+    }
+
+    .complaints-panel h3 {
+      margin-top: 0;
       margin-bottom: 6px;
     }
 
-    .card-body {
-      font-size: 13px;
-      color: var(--text-muted);
-      line-height: 1.6;
-    }
-
-    /* ALERT LIST */
-
-    .alert-list {
-      display: grid;
-      gap: 10px;
-      margin-top: 6px;
-    }
-
-    .alert-pill {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 9px 10px;
-      border-radius: 999px;
-      background: rgba(10, 13, 30, 0.96);
-      border: 1px solid rgba(69, 84, 144, 0.95);
-      font-size: 12px;
-      gap: 10px;
-    }
-
-    .alert-main {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
-
-    .alert-title {
-      font-size: 12px;
-      font-weight: 600;
-    }
-
-    .alert-meta {
-      font-size: 11px;
-      color: var(--text-muted);
-    }
-
-    .badge {
-      font-size: 10px;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      padding: 4px 9px;
-      border-radius: 999px;
-      border: 1px solid rgba(246, 180, 93, 0.8);
-      background: radial-gradient(
-        circle at top left,
-        rgba(246, 180, 93, 0.25),
-        rgba(6, 9, 22, 0.98)
-      );
-      color: #ffe7c0;
-      white-space: nowrap;
-    }
-
-    .badge-danger {
-      border-color: rgba(255, 75, 92, 0.85);
-      color: #ffd6da;
-      background: radial-gradient(
-        circle at top left,
-        rgba(255, 75, 92, 0.28),
-        rgba(10, 9, 24, 0.96)
-      );
-    }
-
-    .badge-info {
-      border-color: rgba(77, 166, 255, 0.85);
-      color: #d1e8ff;
-      background: radial-gradient(
-        circle at top left,
-        rgba(77, 166, 255, 0.3),
-        rgba(9, 10, 26, 0.96)
-      );
-    }
-
-    /* JOIN / FORM / LOGIN */
-
-    .join-layout {
-      display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-      gap: 20px;
-      margin-top: 6px;
-    }
-
-    .join-steps {
-      display: grid;
-      gap: 10px;
-    }
-
-    .join-step {
-      display: flex;
-      gap: 10px;
-      align-items: flex-start;
-    }
-
-    .step-number {
-      width: 22px;
-      height: 22px;
-      border-radius: 999px;
-      border: 1px solid rgba(246, 180, 93, 0.9);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 11px;
-      color: #ffe4ba;
-      background: radial-gradient(
-        circle at top,
-        rgba(246, 180, 93, 0.25),
-        rgba(10, 9, 24, 0.95)
-      );
-      flex-shrink: 0;
-    }
-
-    .step-body-title {
-      font-size: 13px;
-      font-weight: 600;
-      margin-bottom: 2px;
-    }
-
-    .step-body-text {
-      font-size: 12px;
-      color: var(--text-muted);
-      line-height: 1.5;
-    }
-
-    .join-panel {
-      background: rgba(6, 9, 24, 0.98);
-      border-radius: 20px;
-      padding: 14px 14px 16px;
-      border: 1px solid rgba(49, 64, 118, 0.95);
-      box-shadow: 0 18px 46px rgba(0, 0, 0, 0.85);
-    }
-
-    .join-panel-title {
-      font-size: 13px;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      margin-bottom: 8px;
-    }
-
-    .join-panel-sub {
+    .note {
       font-size: 12px;
       color: var(--text-muted);
       margin-bottom: 10px;
-      line-height: 1.6;
     }
 
-    .form-field {
-      margin-bottom: 10px;
-    }
-
-    .form-label {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--text-muted);
-      display: block;
-      margin-bottom: 4px;
-    }
-
-    .form-input,
-    .form-select {
-      width: 100%;
-      padding: 9px 10px;
+    .petition-text {
+      background: #050914;
       border-radius: 10px;
-      border: 1px solid rgba(65, 81, 135, 0.9);
-      background: rgba(5, 7, 20, 0.95);
-      color: var(--text-main);
-      font-size: 13px;
-      font-family: inherit;
+      padding: 12px;
+      border: 1px solid #ffffff22;
+      white-space: pre-wrap;
+      font-size: 14px;
     }
 
-    .form-input:focus,
-    .form-select:focus {
-      outline: none;
-      border-color: rgba(246, 180, 93, 0.9);
-      box-shadow: 0 0 0 1px rgba(246, 180, 93, 0.35);
-    }
-
-    .form-helper {
-      font-size: 11px;
-      color: var(--text-muted);
-      margin-top: 2px;
-    }
-
-    .checkbox-row {
-      display: flex;
-      align-items: flex-start;
-      gap: 8px;
-      font-size: 11px;
-      color: var(--text-muted);
-      margin-top: 4px;
-    }
-
-    .checkbox-row input {
-      margin-top: 2px;
-    }
-
-    .form-submit {
-      margin-top: 10px;
-      width: 100%;
-    }
-
-    .form-disclaimer {
-      margin-top: 8px;
-      font-size: 11px;
-      color: var(--text-muted);
-      line-height: 1.5;
-    }
-
-    .login-note {
-      margin-top: 4px;
-      font-size: 11px;
-      color: var(--text-muted);
-    }
-
-    .status-pill {
-      margin-top: 8px;
-      font-size: 11px;
-      color: var(--info);
-    }
-
-    .status-pill.error {
-      color: var(--danger);
-    }
-
-    /* SPONSOR BANNER (DEMO) */
-
-    .sponsor-banner {
-      position: fixed;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      z-index: 50;
-      background: radial-gradient(
-        circle at top,
-        #15182e 0,
-        #050813 55%,
-        #02030b 100%
-      );
-      border-top: 1px solid rgba(70, 80, 130, 0.9);
-      box-shadow: 0 -16px 40px rgba(0, 0, 0, 0.85);
-      padding: 12px 16px 14px;
-      display: flex;
-      justify-content: center;
-    }
-
-    .sponsor-inner {
-      width: 100%;
-      max-width: 1120px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 14px;
-      font-size: 13px;
-    }
-
-    .sponsor-text {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
-
-    .sponsor-eyebrow {
-      font-size: 10px;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-    }
-
-    .sponsor-headline {
-      font-size: 13px;
-    }
-
-    .sponsor-headline span {
-      color: var(--accent);
-      font-weight: 600;
-    }
-
-    .sponsor-note {
-      font-size: 11px;
-      color: var(--text-muted);
-    }
-
-    .sponsor-actions {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .sponsor-skip,
-    .sponsor-learn {
-      border-radius: 999px;
-      padding: 9px 16px;
-      font-size: 12px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      cursor: pointer;
-      border: 1px solid transparent;
-      background: transparent;
-      color: var(--text-main);
-    }
-
-    .sponsor-skip {
-      border-color: rgba(90, 102, 150, 0.9);
-      background: rgba(5, 8, 18, 0.95);
-    }
-
-    .sponsor-learn {
-      border-color: rgba(246, 180, 93, 0.9);
-      background: linear-gradient(135deg, #ff7f42, #f6b45d);
-      color: #15100a;
-      font-weight: 600;
-    }
-
-    /* FOOTER */
-
-    footer {
-      margin-top: 26px;
-      padding: 16px 4px 8px;
-      font-size: 11px;
-      color: var(--text-muted);
-      text-align: center;
-    }
-
-    /* RESPONSIVE */
-
-    @media (max-width: 880px) {
-      .hero {
-        grid-template-columns: minmax(0, 1fr);
-        padding: 22px 18px 22px;
+    @media (max-width: 800px) {
+      .section {
+        margin: 24px 12px;
       }
-
-      .hero-poster-wrap {
-        order: -1;
-      }
-
-      .hero-poster-frame {
-        max-width: 260px;
-      }
-
-      .nav-links {
-        display: none;
-      }
-
-      .join-layout {
-        grid-template-columns: minmax(0, 1fr);
-      }
-
-      .sponsor-inner {
+      header {
         flex-direction: column;
         align-items: flex-start;
       }
-
-      .sponsor-actions {
-        width: 100%;
-        justify-content: flex-end;
+      nav {
+        margin-top: 10px;
+      }
+      nav a {
+        margin-left: 0;
+        margin-right: 12px;
+        display: inline-block;
+        margin-bottom: 4px;
+      }
+      .complaints-grid {
+        grid-template-columns: 1fr;
       }
     }
   </style>
 </head>
 
 <body>
-  <div class="page">
-    <header>
-      <div class="nav-inner">
-        <div class="brand">
-          <div class="brand-icon">AW</div>
-          <div>
-            <div class="brand-text-main">AMERICA'S WATCHLIST</div>
-            <div class="brand-text-sub">THE PEOPLE'S EYES ON POWER</div>
-          </div>
-        </div>
 
-        <div class="nav-right">
-          <nav class="nav-links">
-            <a href="#why">WHY THIS MATTERS</a>
-            <a href="#alerts">ALERTS</a>
-            <a href="#states">STATES</a>
-            <a href="#townhalls">TOWN HALLS</a>
-            <a href="#join" class="nav-join">JOIN</a>
-          </nav>
-          <button id="navLoginStatus" class="nav-login-status" type="button">
-            LOGIN (DEMO)
-          </button>
-        </div>
-      </div>
-    </header>
+<header>
+  <div class="logo-text">AMERICA'S WATCHLIST</div>
+  <nav>
+    <a href="#alerts">Alerts</a>
+    <a href="#states">States</a>
+    <a href="#townhalls">Town Halls</a>
+    <a href="#vote">Vote</a>
+    <a href="#petition">Petition</a>
+    <a href="#complaints">Complaints</a>
+    <a href="#join">Join</a>
+  </nav>
+</header>
 
-    <main class="shell">
-      <!-- HERO -->
-      <section aria-labelledby="hero-title">
-        <div class="hero">
-          <div class="hero-inner">
-            <div class="hero-eyebrow">PROTOTYPE · CITIZEN-POWERED PLATFORM</div>
-            <h1 id="hero-title" class="hero-title">AMERICA'S WATCHLIST</h1>
-            <div class="hero-tagline">THE PEOPLE'S EYES ON POWER.</div>
+<!-- HERO POSTER -->
+<div class="hero">
+  <!-- make sure this exists at /images/hero-poster.jpg -->
+  <img src="images/hero-poster.jpg" alt="America's Watchlist poster">
+</div>
 
-            <p class="hero-body">
-              Imagine one place where Americans can finally see what government is
-              doing: bills, votes, taxes, power hikes, and influence — without
-              having to dig through dozens of sites or legal pages. America’s Watchlist
-              is a peaceful, citizen-powered platform to keep an eye on power
-              so you don’t have to.
-            </p>
+<!-- INTRO -->
+<div class="section">
+  <div class="pill">Citizen-Powered Platform</div>
+  <div class="pill">No Parties</div>
+  <div class="pill">No Violence</div>
+  <div class="pill">No Special Interests</div>
 
-            <div class="hero-pills">
-              <div class="pill pill-accent">CITIZEN-POWERED PLATFORM</div>
-              <div class="pill">NO PARTIES</div>
-              <div class="pill">NO VIOLENCE</div>
-              <div class="pill">NO SPECIAL INTERESTS</div>
-            </div>
+  <h1>America's Watchlist</h1>
+  <h3 style="color: var(--accent); margin-top: -8px;">The People's Eyes on Power.</h3>
 
-            <div class="hero-actions">
-              <a href="#join" class="btn btn-primary">JOIN AMERICA'S WATCHLIST</a>
-              <a href="#alerts" class="btn btn-ghost">SEE EXAMPLE ALERTS</a>
-            </div>
-          </div>
+  <p>
+    Imagine one place where Americans can finally see what government is doing:
+    bills, votes, taxes, power hikes, and influence — without digging through
+    dozens of sites or legal pages.
+    America’s Watchlist is a peaceful, citizen-powered platform to keep an eye on power.
+  </p>
 
-          <div class="hero-poster-wrap">
-            <div class="hero-poster-frame">
-              <!-- NOTE: this path assumes /images/hero-poster.jpg in your repo -->
-              <img
-                src="images/hero-poster.jpg"
-                alt="Poster art for America's Watchlist – citizens holding 'We The People' in front of the Capitol"
-                class="hero-poster"
-              />
-              <div class="hero-poster-caption">
-                CONCEPT ART · AMERICA'S WATCHLIST
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+  <div class="btn-inline-wrap">
+    <a class="btn" href="#join">Join America's Watchlist</a>
+    <a class="btn-outline" href="#alerts">See Example Alerts</a>
+  </div>
+</div>
 
-      <!-- WHY THIS MATTERS -->
-      <section id="why" aria-labelledby="why-title">
-        <div class="section-panel">
-          <div class="section-eyebrow">WHY THIS MATTERS</div>
-          <h2 id="why-title" class="section-title">
-            A PEACEFUL MOVEMENT FOR ACCOUNTABILITY
-          </h2>
-          <p class="section-sub">
-            Government has grown bigger, more complicated, and harder to follow.
-            Most people are working, raising families, and trying to survive —
-            they don’t have hours to dig through bills, budgets, and legal language.
-            That gap is where bad decisions, quiet deals, and unfair policies slip through.
-          </p>
+<!-- ALERTS -->
+<div id="alerts" class="section">
+  <h2>Example Alerts</h2>
+  <p>Sample alerts showing how the platform could warn citizens when something important is happening.</p>
 
-          <div class="grid-2">
-            <div class="card">
-              <div class="card-label">TODAY</div>
-              <div class="card-title">Confusing, Fragmented Information</div>
-              <div class="card-body">
-                Bills are buried on different sites, votes are hard to track,
-                and campaign money is scattered across databases. People sense
-                something is wrong, but can’t see the full picture in time
-                to push back.
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-label">VISION</div>
-              <div class="card-title">One Watchlist, Millions of Eyes</div>
-              <div class="card-body">
-                America’s Watchlist aims to surface what matters — clearly,
-                calmly, and on time. When enough citizens see the same facts,
-                they can apply united, peaceful pressure to change the outcome.
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+  <div class="pill">Red Flag: Utility Rate Increase – Georgia</div>
+  <div class="pill">Property Tax Reassessment – South Carolina</div>
+  <div class="pill">Federal “Sneaky Bill” Rider Detected</div>
+</div>
 
-      <!-- STATES / NATIONAL VIEW -->
-      <section id="states" aria-labelledby="states-title">
-        <div class="section-panel">
-          <div class="section-eyebrow">BUILT FOR EVERY AMERICAN STATE</div>
-          <h2 id="states-title" class="section-title">
-            A NATIONAL WATCH, STATE BY STATE
-          </h2>
-          <p class="section-sub">
-            In a full build, America’s Watchlist would plug into bill trackers,
-            campaign finance data, public budgets, and real-time feeds so citizens
-            can see what’s happening in their own state — and across the country —
-            in one place.
-          </p>
+<!-- STATES -->
+<div id="states" class="section">
+  <h2>State Dashboards</h2>
+  <p>Each state will eventually get its own dashboard showing bills, spending, taxes, and votes in one clean view.</p>
+  <div class="pill">Georgia</div>
+  <div class="pill">South Carolina</div>
+  <div class="pill">North Carolina</div>
+  <div class="pill">Texas</div>
+  <div class="pill">Florida</div>
+</div>
 
-          <div class="grid-2">
-            <div class="card">
-              <div class="card-label">STATE DASHBOARDS</div>
-              <div class="card-title">50 States Watching</div>
-              <div class="card-body">
-                Each state gets its own dashboard: bills on the move, new spending,
-                tax changes, and who voted yes or no — all in plain English,
-                not legalese.
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-label">NATIONAL VIEW</div>
-              <div class="card-title">Patterns of Power</div>
-              <div class="card-body">
-                Citizens can see national trends: which issues keep repeating,
-                which states are quietly passing copy-cat bills, and where the
-                same special interests appear again and again.
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+<!-- TOWN HALLS -->
+<div id="townhalls" class="section">
+  <h2>Town Halls (Voice Only)</h2>
+  <p>Major red-flag alerts could trigger live voice-only town halls with clear visuals and breakdowns — no camera required.</p>
+</div>
 
-      <!-- EXAMPLE ALERTS -->
-      <section id="alerts" aria-labelledby="alerts-title">
-        <div class="section-panel">
-          <div class="section-eyebrow">EXAMPLE ALERTS</div>
-          <h2 id="alerts-title" class="section-title">
-            WHAT AMERICA'S WATCHLIST COULD FLAG
-          </h2>
-          <p class="section-sub">
-            These are example alerts to show how the platform could look. They’re
-            not live data yet — but this is how “The People’s Eyes on Power” might
-            work once real bill tracking and finance APIs are connected.
-          </p>
+<!-- VOTE SECTION -->
+<div id="vote" class="section">
+  <h2>National Vote (Live Collection)</h2>
+  <p>
+    This is a live, simple vote using Formspree. Every response is recorded so you can
+    see how Americans feel about a specific question.
+  </p>
 
-          <div class="alert-list">
-            <div class="alert-pill">
-              <div class="alert-main">
-                <div class="alert-title">
-                  Power &amp; Utility Hike – Red Flag
-                </div>
-                <div class="alert-meta">
-                  Georgia · 12% rate increase tied to fuel surcharges and new fees.
-                </div>
-              </div>
-              <div class="badge badge-danger">COST OF LIVING</div>
-            </div>
+  <p><strong>Current question:</strong> Should members of Congress be required to publicly disclose all large donations, gifts, and foreign-linked income in a single, searchable online report?</p>
 
-            <div class="alert-pill">
-              <div class="alert-main">
-                <div class="alert-title">
-                  Property Tax &amp; Local Spending
-                </div>
-                <div class="alert-meta">
-                  South Carolina · New reassessments plus local projects that raise taxes.
-                </div>
-              </div>
-              <div class="badge">PROPERTY &amp; SCHOOLS</div>
-            </div>
+  <form action="https://formspree.io/f/xovypnwk" method="POST">
+    <input type="hidden" name="form_type" value="national_vote" />
+    <input type="hidden" name="vote_question" value="Public disclosure of large donations, gifts, and foreign-linked income in one online report" />
 
-            <div class="alert-pill">
-              <div class="alert-main">
-                <div class="alert-title">
-                  Hidden Riders in a “Small” Bill
-                </div>
-                <div class="alert-meta">
-                  Federal · Harmless-sounding bill with pages of add-ons and quiet favors.
-                </div>
-              </div>
-              <div class="badge badge-info">SNEAKY BILLS</div>
-            </div>
-          </div>
-        </div>
-      </section>
+    <label>Your Name (optional in public view):</label>
+    <input type="text" name="name" placeholder="Your name">
 
-      <!-- TOWN HALLS -->
-      <section id="townhalls" aria-labelledby="townhalls-title">
-        <div class="section-panel">
-          <div class="section-eyebrow">NATIONAL &amp; STATE TOWN HALLS</div>
-          <h2 id="townhalls-title" class="section-title">
-            VOICE-ONLY STREAMS · NO CAMERA NEEDED
-          </h2>
-          <p class="section-sub">
-            In a full launch, America’s Watchlist would host national briefings
-            and state-level town halls whenever major alerts cross a threshold —
-            using AI voice-over and visuals so you never have to be on camera.
-          </p>
+    <label>Your Email (kept private, for future alerts):</label>
+    <input type="email" name="email" placeholder="you@example.com" required>
 
-          <div class="grid-2">
-            <div class="card">
-              <div class="card-label">NATIONAL BRIEFINGS</div>
-              <div class="card-title">Weekly People's Update</div>
-              <div class="card-body">
-                A recurring national stream breaking down what happened this week
-                with bills, spending, and influence. No drama, no party spin —
-                just straight talk and visuals citizens can actually understand.
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-label">STATE TOWN HALLS</div>
-              <div class="card-title">Triggered by Alerts</div>
-              <div class="card-body">
-                When a state crosses a red-flag threshold — like a big tax hike
-                or a suspicious bill — supporters in that state get invited to a
-                live, voice-only town hall to go deeper and plan peaceful action.
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+    <label>Your State:</label>
+    <select name="state" required>
+      <option value="">Choose your state</option>
+      <option>AL</option><option>AK</option><option>AZ</option>
+      <option>AR</option><option>CA</option><option>CO</option>
+      <option>CT</option><option>DE</option><option>FL</option>
+      <option>GA</option><option>HI</option><option>ID</option>
+      <option>IL</option><option>IN</option><option>IA</option>
+      <option>KS</option><option>KY</option><option>LA</option>
+      <option>ME</option><option>MD</option><option>MA</option>
+      <option>MI</option><option>MN</option><option>MS</option>
+      <option>MO</option><option>MT</option><option>NE</option>
+      <option>NV</option><option>NH</option><option>NJ</option>
+      <option>NM</option><option>NY</option><option>NC</option>
+      <option>ND</option><option>OH</option><option>OK</option>
+      <option>OR</option><option>PA</option><option>RI</option>
+      <option>SC</option><option>SD</option><option>TN</option>
+      <option>TX</option><option>UT</option><option>VT</option>
+      <option>VA</option><option>WA</option><option>WV</option>
+      <option>WI</option><option>WY</option>
+    </select>
 
-      <!-- JOIN + LOGIN -->
-      <section id="join" aria-labelledby="join-title">
-        <div class="section-panel">
-          <div class="section-eyebrow">JOIN THE FIRST WAVE</div>
-          <h2 id="join-title" class="section-title">
-            BE PART OF AMERICA'S WATCHLIST
-          </h2>
-          <p class="section-sub">
-            This page is still a demo, but your join form is live through Formspree.
-            When people sign up, you’ll start seeing who’s interested and which
-            states they’re from — so you can plan alerts, town halls, and future tools.
-          </p>
+    <label>Your Vote:</label>
+    <select name="vote_choice" required>
+      <option value="">Select</option>
+      <option value="YES">YES – required nationwide</option>
+      <option value="NO">NO – do not require</option>
+      <option value="UNSURE">Unsure / need more information</option>
+    </select>
 
-          <div class="join-layout">
-            <!-- Steps / roadmap -->
-            <div class="join-steps">
-              <div class="join-step">
-                <div class="step-number">1</div>
-                <div>
-                  <div class="step-body-title">Launch the Public Site</div>
-                  <div class="step-body-text">
-                    Share this page as your first prototype. Make it clear it’s a peaceful,
-                    citizen-powered movement — not a party, not a campaign.
-                  </div>
-                </div>
-              </div>
+    <label>Optional comment to explain your vote:</label>
+    <textarea name="comment" rows="4" placeholder="Why do you feel this way?"></textarea>
 
-              <div class="join-step">
-                <div class="step-number">2</div>
-                <div>
-                  <div class="step-body-title">Collect Interest by State</div>
-                  <div class="step-body-text">
-                    As people join, you’ll start to see where support is coming from.
-                    That helps decide which states to focus alerts and town halls on first.
-                  </div>
-                </div>
-              </div>
+    <button type="submit">Submit Your Vote</button>
+  </form>
 
-              <div class="join-step">
-                <div class="step-number">3</div>
-                <div>
-                  <div class="step-body-title">Wire in Real Data &amp; Logins</div>
-                  <div class="step-body-text">
-                    Later, a developer can connect bill-tracking APIs,
-                    campaign finance data, and secure authentication — including
-                    U.S. citizen verification — to turn America’s Watchlist into
-                    a full platform.
-                  </div>
-                </div>
-              </div>
+  <small>All responses go to your Formspree inbox so you can tally results and share them with the public and with Congress.</small>
+</div>
 
-              <div class="join-step">
-                <div class="step-number">4</div>
-                <div>
-                  <div class="step-body-title">Start Peaceful Pressure</div>
-                  <div class="step-body-text">
-                    Use facts, alerts, and numbers — not violence — to put real,
-                    united pressure on people in power. The bigger the watchlist,
-                    the louder the message.
-                  </div>
-                </div>
-              </div>
-            </div>
+<!-- PETITION SECTION -->
+<div id="petition" class="section">
+  <h2>National Petition – America’s Watchlist</h2>
+  <p>Citizens can sign this petition and then send the same message directly to Congress using official contact pages.</p>
 
-            <!-- Live join form + demo login -->
-            <div class="join-panel">
-              <div class="join-panel-title">
-                JOIN AMERICA'S WATCHLIST (DEMO FORM)
-              </div>
-              <div class="join-panel-sub">
-                This form is connected to Formspree and can already collect real
-                responses. Later, it can be swapped for your own backend and login system.
-              </div>
+  <h3>Petition Text</h3>
+  <div class="petition-text" id="petition-body">
+To the elected officials of the United States:
 
-              <!-- JOIN FORM (LIVE VIA FORMSPREE) -->
-              <form
-                id="joinForm"
-                action="https://formspree.io/f/xovypnwk"
-                method="POST"
-              >
-                <div class="form-field">
-                  <label class="form-label" for="join-name">Your Name</label>
-                  <input
-                    id="join-name"
-                    class="form-input"
-                    type="text"
-                    name="name"
-                    placeholder="First &amp; last name"
-                    required
-                  />
-                </div>
+We, the undersigned citizens, are deeply concerned about the growing distance between government power and the people it is supposed to serve.
 
-                <div class="form-field">
-                  <label class="form-label" for="join-email">Email</label>
-                  <input
-                    id="join-email"
-                    class="form-input"
-                    type="email"
-                    name="email"
-                    placeholder="you@example.com"
-                    required
-                  />
-                  <div class="form-helper">
-                    Used to send future alerts and town hall invites.
-                    No spam, no selling your info.
-                  </div>
-                </div>
+We call for:
 
-                <div class="form-field">
-                  <label class="form-label" for="join-state">Your State</label>
-                  <select id="join-state" class="form-select" name="state" required>
-                    <option value="">Select your state</option>
-                    <option>AL</option><option>AK</option><option>AZ</option>
-                    <option>AR</option><option>CA</option><option>CO</option>
-                    <option>CT</option><option>DE</option><option>FL</option>
-                    <option>GA</option><option>HI</option><option>ID</option>
-                    <option>IL</option><option>IN</option><option>IA</option>
-                    <option>KS</option><option>KY</option><option>LA</option>
-                    <option>ME</option><option>MD</option><option>MA</option>
-                    <option>MI</option><option>MN</option><option>MS</option>
-                    <option>MO</option><option>MT</option><option>NE</option>
-                    <option>NV</option><option>NH</option><option>NJ</option>
-                    <option>NM</option><option>NY</option><option>NC</option>
-                    <option>ND</option><option>OH</option><option>OK</option>
-                    <option>OR</option><option>PA</option><option>RI</option>
-                    <option>SC</option><option>SD</option><option>TN</option>
-                    <option>TX</option><option>UT</option><option>VT</option>
-                    <option>VA</option><option>WA</option><option>WV</option>
-                    <option>WI</option><option>WY</option>
-                  </select>
-                </div>
+1. Real-time transparency for major federal spending, rate hikes, and new taxes that impact households.
+2. Clear, public disclosure of large donations, gifts, and foreign-linked income for all members of Congress.
+3. Stronger and faster oversight when officials appear to abuse their office, ignore the will of the people, or undermine trust in our institutions.
 
-                <div class="checkbox-row">
-                  <input
-                    id="join-citizen"
-                    type="checkbox"
-                    name="citizen_confirm"
-                    required
-                  />
-                  <label for="join-citizen">
-                    I confirm I am a U.S. resident or citizen and I’m joining for peaceful,
-                    lawful civic participation.
-                  </label>
-                </div>
+We believe these reforms are non-partisan. They are not about left or right — they are about honesty, accountability, and restoring trust.
 
-                <button type="submit" class="btn btn-primary form-submit">
-                  JOIN AMERICA'S WATCHLIST
-                </button>
+We respectfully urge you to:
+– Support stronger disclosure and ethics rules,
+– Defend the rights of citizens to know how power is being used,
+– And remember that your authority comes from us, the people.
 
-                <div class="form-disclaimer">
-                  Demo notice: submissions go to your Formspree inbox so you can see
-                  this working right away. Later, this can be connected to your own
-                  database and login system.
-                </div>
-              </form>
-
-              <!-- DEMO LOGIN (BROWSER ONLY) -->
-              <hr style="border: none; border-top: 1px solid #242b3d; margin: 14px 0 10px;" />
-
-              <div class="join-panel-title">
-                LOGIN PREVIEW (BROWSER DEMO ONLY)
-              </div>
-              <div class="join-panel-sub">
-                This demo simulates a login badge in the top navigation. It does
-                <strong>not</strong> create real accounts — it only stores your
-                email and state in your own browser using localStorage.
-              </div>
-
-              <form id="loginForm">
-                <div class="form-field">
-                  <label class="form-label" for="login-email">Email (demo)</label>
-                  <input
-                    id="login-email"
-                    class="form-input"
-                    type="email"
-                    placeholder="you@example.com"
-                    required
-                  />
-                </div>
-
-                <div class="form-field">
-                  <label class="form-label" for="login-state">State (demo)</label>
-                  <select id="login-state" class="form-select" required>
-                    <option value="">Select your state</option>
-                    <option>AL</option><option>AK</option><option>AZ</option>
-                    <option>AR</option><option>CA</option><option>CO</option>
-                    <option>CT</option><option>DE</option><option>FL</option>
-                    <option>GA</option><option>HI</option><option>ID</option>
-                    <option>IL</option><option>IN</option><option>IA</option>
-                    <option>KS</option><option>KY</option><option>LA</option>
-                    <option>ME</option><option>MD</option><option>MA</option>
-                    <option>MI</option><option>MN</option><option>MS</option>
-                    <option>MO</option><option>MT</option><option>NE</option>
-                    <option>NV</option><option>NH</option><option>NJ</option>
-                    <option>NM</option><option>NY</option><option>NC</option>
-                    <option>ND</option><option>OH</option><option>OK</option>
-                    <option>OR</option><option>PA</option><option>RI</option>
-                    <option>SC</option><option>SD</option><option>TN</option>
-                    <option>TX</option><option>UT</option><option>VT</option>
-                    <option>VA</option><option>WA</option><option>WV</option>
-                    <option>WI</option><option>WY</option>
-                  </select>
-                </div>
-
-                <div class="checkbox-row">
-                  <input id="login-terms" type="checkbox" required />
-                  <label for="login-terms">
-                    I understand this login preview is for design only and does
-                    not verify my identity or create a real account.
-                  </label>
-                </div>
-
-                <button type="submit" class="btn btn-ghost form-submit">
-                  SET DEMO LOGIN
-                </button>
-
-                <div id="loginStatusMsg" class="login-note">
-                  Status: not logged in (demo).
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <footer>
-        America’s Watchlist · Prototype layout for a peaceful, citizen-powered
-        movement. This is a demo — final platform will require secure logins,
-        verified users, and real data connections.
-      </footer>
-    </main>
+Sincerely,
+Citizens of the United States, signing through America’s Watchlist.
   </div>
 
-  <!-- SPONSOR / AD BANNER (DEMO) -->
-  <div id="sponsorBanner" class="sponsor-banner" role="region" aria-label="Sponsor message demo">
-    <div class="sponsor-inner">
-      <div class="sponsor-text">
-        <div class="sponsor-eyebrow">SPONSOR MESSAGE (DEMO)</div>
-        <div class="sponsor-headline">
-          <span>Keep America Watching.</span> A small banner like this could
-          help fund servers — citizens can ignore it or skip it anytime.
-        </div>
-        <div class="sponsor-note">
-          In a live build, this area could rotate sponsor messages or public-service
-          announcements instead of invasive ads.
-        </div>
-      </div>
-      <div class="sponsor-actions">
-        <button id="skipAdBtn" class="sponsor-skip" type="button">Skip Ad</button>
-        <button id="learnAdBtn" class="sponsor-learn" type="button">
-          Learn More (demo)
-        </button>
-      </div>
+  <h3 style="margin-top:20px;">Sign the Petition (goes to you)</h3>
+  <form action="https://formspree.io/f/xovypnwk" method="POST">
+    <input type="hidden" name="form_type" value="national_petition_signature" />
+
+    <label>Your Name:</label>
+    <input type="text" name="name" required>
+
+    <label>Your Email:</label>
+    <input type="email" name="email" required>
+
+    <label>Your State:</label>
+    <select name="state" required>
+      <option value="">Choose your state</option>
+      <option>AL</option><option>AK</option><option>AZ</option>
+      <option>AR</option><option>CA</option><option>CO</option>
+      <option>CT</option><option>DE</option><option>FL</option>
+      <option>GA</option><option>HI</option><option>ID</option>
+      <option>IL</option><option>IN</option><option>IA</option>
+      <option>KS</option><option>KY</option><option>LA</option>
+      <option>ME</option><option>MD</option><option>MA</option>
+      <option>MI</option><option>MN</option><option>MS</option>
+      <option>MO</option><option>MT</option><option>NE</option>
+      <option>NV</option><option>NH</option><option>NJ</option>
+      <option>NM</option><option>NY</option><option>NC</option>
+      <option>ND</option><option>OH</option><option>OK</option>
+      <option>OR</option><option>PA</option><option>RI</option>
+      <option>SC</option><option>SD</option><option>TN</option>
+      <option>TX</option><option>UT</option><option>VT</option>
+      <option>VA</option><option>WA</option><option>WV</option>
+      <option>WI</option><option>WY</option>
+    </select>
+
+    <label>Optional message:</label>
+    <textarea name="extra_comment" rows="3" placeholder="Anything you want to add."></textarea>
+
+    <button type="submit">Sign Petition</button>
+  </form>
+
+  <h3 style="margin-top:24px;">Send This Petition Straight to Congress</h3>
+  <p>
+    Congress does not use one single “petition email.” Each member has their own
+    official contact page. These links help citizens reach the right offices:
+  </p>
+  <ul>
+    <li>
+      <a class="btn-outline" href="https://www.house.gov/representatives/find-your-representative" target="_blank" rel="noopener">
+        Find & Contact Your Representative
+      </a>
+    </li>
+    <li>
+      <a class="btn-outline" href="https://www.senate.gov/senators/senators-contact.htm" target="_blank" rel="noopener">
+        Contact Your U.S. Senators
+      </a>
+    </li>
+  </ul>
+  <p>
+    Copy the petition text above (you can edit it), paste it into the contact form
+    or email message for your Representative and Senators, and send.
+  </p>
+</div>
+
+<!-- COMPLAINTS / ETHICS -->
+<div id="complaints" class="section">
+  <h2>Complaints & Ethics Reports</h2>
+  <p>
+    When something crosses the line, citizens shouldn’t have to dig for forms and
+    email addresses. These tools draft a complaint and open your email app with
+    everything filled in.
+  </p>
+
+  <div class="complaints-grid">
+    <!-- FEDERAL -->
+    <div class="complaints-panel">
+      <h3>Federal Complaint Menu</h3>
+      <p class="note">
+        Choose a federal target, describe the issue, and click
+        <strong>Open Email Draft</strong>. Your email program will open with
+        the correct address, subject, and body ready to send.
+      </p>
+
+      <label for="federal-target">Where should this go?</label>
+      <select id="federal-target">
+        <option value="">Select a federal office</option>
+        <option value="doj_general">
+          U.S. Department of Justice – General (AskDOJ)
+        </option>
+        <option value="doj_civil_rights">
+          DOJ – Civil Rights / Voting / Discrimination
+        </option>
+        <option value="senate_ethics">
+          U.S. Senate Select Committee on Ethics
+        </option>
+      </select>
+
+      <label for="federal-issue">Issue (short title)</label>
+      <input
+        id="federal-issue"
+        type="text"
+        placeholder="Example: Abuse of office, obstruction, corruption, etc."
+      />
+
+      <label for="federal-details">Details (what happened?)</label>
+      <textarea
+        id="federal-details"
+        rows="6"
+        placeholder="Describe what happened, when, where, and why you believe it violates the law or public trust. Be specific, factual, and respectful."
+      ></textarea>
+
+      <button type="button" onclick="openFederalEmail()">
+        Open Email Draft (Federal)
+      </button>
+
+      <small>
+        DOJ’s public email AskDOJ@usdoj.gov is routed inside the Department.
+        You can edit everything before you hit send.
+      </small>
+    </div>
+
+    <!-- STATE -->
+    <div class="complaints-panel">
+      <h3>State Forms & Complaints</h3>
+      <p class="note">
+        Use this for state-level issues (governor, legislature, state AG, or
+        ethics offices). You or a developer can set a permanent address for each state.
+      </p>
+
+      <label for="state-code">Your State</label>
+      <select id="state-code">
+        <option value="">Choose your state</option>
+        <option>AL</option><option>AK</option><option>AZ</option>
+        <option>AR</option><option>CA</option><option>CO</option>
+        <option>CT</option><option>DE</option><option>FL</option>
+        <option>GA</option><option>HI</option><option>ID</option>
+        <option>IL</option><option>IN</option><option>IA</option>
+        <option>KS</option><option>KY</option><option>LA</option>
+        <option>ME</option><option>MD</option><option>MA</option>
+        <option>MI</option><option>MN</option><option>MS</option>
+        <option>MO</option><option>MT</option><option>NE</option>
+        <option>NV</option><option>NH</option><option>NJ</option>
+        <option>NM</option><option>NY</option><option>NC</option>
+        <option>ND</option><option>OH</option><option>OK</option>
+        <option>OR</option><option>PA</option><option>RI</option>
+        <option>SC</option><option>SD</option><option>TN</option>
+        <option>TX</option><option>UT</option><option>VT</option>
+        <option>VA</option><option>WA</option><option>WV</option>
+        <option>WI</option><option>WY</option>
+      </select>
+
+      <label for="state-email">
+        Email for this state office
+      </label>
+      <input
+        id="state-email"
+        type="email"
+        placeholder="Example: AG or ethics office email for your state"
+      />
+
+      <label for="state-issue">Issue (short title)</label>
+      <input
+        id="state-issue"
+        type="text"
+        placeholder="Example: State-level corruption, tax abuse, election issue"
+      />
+
+      <label for="state-details">Details (what happened?)</label>
+      <textarea
+        id="state-details"
+        rows="6"
+        placeholder="Describe what your state is doing, who is involved, and what you are asking this office to review or investigate."
+      ></textarea>
+
+      <button type="button" onclick="openStateEmail()">
+        Open Email Draft (State)
+      </button>
+
+      <small>
+        Once you’ve set correct emails for each state office, people in that
+        state can send complaints in a few clicks, from their own inbox.
+      </small>
     </div>
   </div>
+</div>
 
-  <!-- BASIC INTERACTIVITY (SKIP AD + DEMO LOGIN) -->
-  <script>
-    (function () {
-      const SPONSOR_KEY = "awSponsorDismissed";
-      const LOGIN_KEY = "awDemoLogin";
+<!-- JOIN -->
+<div id="join" class="section">
+  <h2>Join America's Watchlist</h2>
+  <p>This form is LIVE and connected to Formspree. New supporters go straight to your inbox.</p>
 
-      const sponsorBanner = document.getElementById("sponsorBanner");
-      const skipAdBtn = document.getElementById("skipAdBtn");
-      const learnAdBtn = document.getElementById("learnAdBtn");
+  <form action="https://formspree.io/f/xovypnwk" method="POST">
+    <input type="hidden" name="form_type" value="join_list" />
 
-      const navLoginStatus = document.getElementById("navLoginStatus");
-      const loginForm = document.getElementById("loginForm");
-      const loginStatusMsg = document.getElementById("loginStatusMsg");
+    <label>Name:</label>
+    <input type="text" name="name" placeholder="Your full name" required>
 
-      function hideSponsor() {
-        if (sponsorBanner) {
-          sponsorBanner.style.display = "none";
-        }
-      }
+    <label>Email:</label>
+    <input type="email" name="email" placeholder="you@example.com" required>
 
-      // Sponsor banner: restore previous choice
-      try {
-        if (window.localStorage.getItem(SPONSOR_KEY) === "true") {
-          hideSponsor();
-        }
-      } catch (e) {
-        // ignore
-      }
+    <label>State:</label>
+    <select name="state" required>
+      <option value="">Choose your state</option>
+      <option>AL</option><option>AK</option><option>AZ</option>
+      <option>AR</option><option>CA</option><option>CO</option>
+      <option>CT</option><option>DE</option><option>FL</option>
+      <option>GA</option><option>HI</option><option>ID</option>
+      <option>IL</option><option>IN</option><option>IA</option>
+      <option>KS</option><option>KY</option><option>LA</option>
+      <option>ME</option><option>MD</option><option>MA</option>
+      <option>MI</option><option>MN</option><option>MS</option>
+      <option>MO</option><option>MT</option><option>NE</option>
+      <option>NV</option><option>NH</option><option>NJ</option>
+      <option>NM</option><option>NY</option><option>NC</option>
+      <option>ND</option><option>OH</option><option>OK</option>
+      <option>OR</option><option>PA</option><option>RI</option>
+      <option>SC</option><option>SD</option><option>TN</option>
+      <option>TX</option><option>UT</option><option>VT</option>
+      <option>VA</option><option>WA</option><option>WV</option>
+      <option>WI</option><option>WY</option>
+    </select>
 
-      if (skipAdBtn) {
-        skipAdBtn.addEventListener("click", function () {
-          hideSponsor();
-          try {
-            window.localStorage.setItem(SPONSOR_KEY, "true");
-          } catch (e) {}
-        });
-      }
+    <button type="submit">Join the Watchlist</button>
+  </form>
+</div>
 
-      if (learnAdBtn) {
-        learnAdBtn.addEventListener("click", function () {
-          alert(
-            "Demo only: in a live version this button could open a page explaining funding, sponsors, or public-service partners."
-          );
-        });
-      }
+<script>
+  // Federal complaint targets (email + subject)
+  const FEDERAL_TARGETS = {
+    doj_general: {
+      label: "U.S. Department of Justice – General",
+      email: "AskDOJ@usdoj.gov",
+      subject: "Citizen complaint – America's Watchlist"
+    },
+    doj_civil_rights: {
+      label: "DOJ – Civil Rights / Voting / Discrimination",
+      email: "AskDOJ@usdoj.gov",
+      subject: "ATTN: Civil Rights Division – citizen complaint – America's Watchlist"
+    },
+    senate_ethics: {
+      label: "U.S. Senate Select Committee on Ethics",
+      email: "mailbox_office@ethics.senate.gov",
+      subject: "Citizen ethics complaint – America's Watchlist"
+    }
+  };
 
-      // DEMO LOGIN HANDLING
+  function openFederalEmail() {
+    const select = document.getElementById("federal-target");
+    const targetKey = select.value;
+    const target = FEDERAL_TARGETS[targetKey];
 
-      function renderLoginBadge(data) {
-        if (!navLoginStatus) return;
+    if (!target) {
+      alert("Please choose a federal office first.");
+      return;
+    }
 
-        if (data && data.email && data.state) {
-          navLoginStatus.textContent = "LOGGED IN (" + data.state + ")";
-          navLoginStatus.classList.add("logged-in");
-          if (loginStatusMsg) {
-            loginStatusMsg.textContent =
-              "Status: demo login set for " +
-              data.email +
-              " (" +
-              data.state +
-              ").";
-          }
-        } else {
-          navLoginStatus.textContent = "LOGIN (DEMO)";
-          navLoginStatus.classList.remove("logged-in");
-          if (loginStatusMsg) {
-            loginStatusMsg.textContent = "Status: not logged in (demo).";
-          }
-        }
-      }
+    const issue = document.getElementById("federal-issue").value.trim();
+    const details = document.getElementById("federal-details").value.trim();
 
-      function loadDemoLogin() {
-        try {
-          const raw = window.localStorage.getItem(LOGIN_KEY);
-          if (!raw) return null;
-          return JSON.parse(raw);
-        } catch (e) {
-          return null;
-        }
-      }
+    let body =
+      "I am writing as a U.S. citizen through America's Watchlist to raise a concern.\n\n";
 
-      function saveDemoLogin(data) {
-        try {
-          window.localStorage.setItem(LOGIN_KEY, JSON.stringify(data));
-        } catch (e) {
-          // ignore
-        }
-      }
+    if (issue) {
+      body += "Issue: " + issue + "\n\n";
+    }
+    if (details) {
+      body += details + "\n\n";
+    }
 
-      const existingLogin = loadDemoLogin();
-      renderLoginBadge(existingLogin);
+    body +=
+      "---\nSubmitted via America's Watchlist (peaceful, citizen-powered watchdog).";
 
-      if (loginForm) {
-        loginForm.addEventListener("submit", function (e) {
-          e.preventDefault();
-          const email = document.getElementById("login-email").value.trim();
-          const state = document.getElementById("login-state").value.trim();
-          const terms = document.getElementById("login-terms").checked;
+    const mailto =
+      "mailto:" +
+      encodeURIComponent(target.email) +
+      "?subject=" +
+      encodeURIComponent(target.subject) +
+      "&body=" +
+      encodeURIComponent(body);
 
-          if (!email || !state || !terms) {
-            if (loginStatusMsg) {
-              loginStatusMsg.textContent =
-                "Please complete all demo login fields.";
-              loginStatusMsg.classList.add("error");
-            }
-            return;
-          }
+    window.location.href = mailto;
+  }
 
-          const data = { email: email, state: state };
-          saveDemoLogin(data);
-          renderLoginBadge(data);
-          if (loginStatusMsg) {
-            loginStatusMsg.classList.remove("error");
-          }
-        });
-      }
+  function openStateEmail() {
+    const state = document.getElementById("state-code").value;
+    const recipient = document.getElementById("state-email").value.trim();
+    const issue = document.getElementById("state-issue").value.trim();
+    const details = document.getElementById("state-details").value.trim();
 
-      // Clicking nav login scrolls to join/login section
-      if (navLoginStatus) {
-        navLoginStatus.addEventListener("click", function () {
-          const joinSection = document.getElementById("join");
-          if (joinSection) {
-            joinSection.scrollIntoView({ behavior: "smooth" });
-          }
-        });
-      }
-    })();
-  </script>
+    if (!recipient) {
+      alert("Add the email address for the state office you want this to go to.");
+      return;
+    }
+
+    const subject =
+      "Citizen complaint – " +
+      (state || "State") +
+      " – America's Watchlist";
+
+    let body =
+      "I am writing as a resident of " +
+      (state || "my state") +
+      " through America's Watchlist.\n\n";
+
+    if (issue) {
+      body += "Issue: " + issue + "\n\n";
+    }
+    if (details) {
+      body += details + "\n\n";
+    }
+
+    body +=
+      "---\nSubmitted via America's Watchlist (peaceful, citizen-powered watchdog).";
+
+    const mailto =
+      "mailto:" +
+      encodeURIComponent(recipient) +
+      "?subject=" +
+      encodeURIComponent(subject) +
+      "&body=" +
+      encodeURIComponent(body);
+
+    window.location.href = mailto;
+  }
+</script>
+
 </body>
 </html>
