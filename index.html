@@ -15,7 +15,64 @@
       --text-muted: #b0b6c8;
       --pill-bg: #171f31;
       --radius-lg: 18px;
-    }
+    }/* --- PETITION CENTER STYLES --- */
+.petition-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  margin-top: 16px;
+}
+
+.petition-card {
+  background: #070b16;
+  border-radius: 16px;
+  padding: 16px;
+  border: 1px solid #ffffff22;
+  box-shadow: 0 0 18px #00000066;
+}
+
+.petition-card h3 {
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+.petition-card p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.petition-text-small {
+  font-size: 13px;
+  line-height: 1.6;
+  background: #050914;
+  border-radius: 10px;
+  padding: 10px;
+  border: 1px solid #ffffff22;
+  max-height: 180px;
+  overflow-y: auto;
+  margin-bottom: 10px;
+}
+
+.petition-card form {
+  margin-top: 10px;
+}
+
+.petition-card label {
+  font-size: 12px;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.petition-card input,
+.petition-card select {
+  font-size: 13px;
+  padding: 8px;
+  margin-bottom: 10px;
+}
+
+.petition-card button {
+  font-size: 14px;
+}
 
     * {
       box-sizing: border-box;
