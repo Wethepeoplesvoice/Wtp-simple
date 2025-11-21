@@ -15,6 +15,104 @@
       --text-muted: #b0b6c8;
       --pill-bg: #171f31;
       --radius-lg: 18px;
+      /* --- TAKE ACTION SECTION --- */
+.action-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 18px;
+  margin-top: 16px;
+}
+
+.action-card {
+  background: #070b16;
+  border-radius: 16px;
+  padding: 16px;
+  border: 1px solid #ffffff22;
+  box-shadow: 0 0 18px #00000066;
+}
+
+.action-card h3 {
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+.action-card p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+.action-card .btn,
+.action-card .btn-outline {
+  margin-top: 10px;
+  font-size: 13px;
+  padding: 10px 18px;
+<!-- TAKE ACTION SECTION -->
+<div id="action" class="section">
+  <h2>Take Action Now</h2>
+  <p>
+    Reading the news isn’t enough anymore. America’s Watchlist is built so
+    you don’t just get informed — you take peaceful, powerful action with
+    thousands of other citizens. Choose how you want to speak up today:
+  </p>
+
+  <div class="action-grid">
+
+    <!-- ACTION: SIGN PETITIONS -->
+    <div class="action-card">
+      <h3>✍️ Sign a National Petition</h3>
+      <p>
+        Add your name to national petitions on term limits, big money, and
+        accountability in Congress. Every signature is another citizen on
+        record demanding real change.
+      </p>
+      <a href="#petitions" class="btn">View Petitions</a>
+    </div>
+
+    <!-- ACTION: CONTACT CONGRESS -->
+    <div class="action-card">
+      <h3>📨 Contact Your Members of Congress</h3>
+      <p>
+        After you sign, you can copy the petition text and send it directly
+        to your Representative and Senators. Make sure they hear from you
+        — not just donors and lobbyists.
+      </p>
+      <a href="https://www.house.gov/representatives/find-your-representative"
+         target="_blank" rel="noopener" class="btn-outline">
+        Find Your Representative
+      </a>
+      <br>
+      <a href="https://www.senate.gov/senators/senators-contact.htm"
+         target="_blank" rel="noopener" class="btn-outline">
+        Contact Your Senators
+      </a>
+    </div>
+
+    <!-- ACTION: JOIN THE WATCHLIST -->
+    <div class="action-card">
+      <h3>👁 Join America’s Watchlist</h3>
+      <p>
+        Get alerts, petition updates, and town hall invitations by email.
+        The bigger the watchlist, the louder the message to people in power:
+        <strong>the American people are paying attention.</strong>
+      </p>
+      <a href="#join" class="btn">Join the Watchlist</a>
+    </div>
+
+    <!-- ACTION: (FUTURE) FILE COMPLAINTS -->
+    <div class="action-card">
+      <h3>⚖️ Federal & State Complaints</h3>
+      <p>
+        Coming next: simple tools to help you send respectful, official
+        complaints to ethics offices, attorneys general, inspectors general,
+        and oversight committees when the government crosses the line.
+      </p>
+      <!-- Later you can change this href once we build those sections -->
+      <a href="#petitions" class="btn-outline">Use Petitions For Now</a>
+    </div>
+
+  </div>
+</div>
     }/* --- PETITION CENTER STYLES --- */
 .petition-grid {
   display: grid;
