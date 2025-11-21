@@ -16,7 +16,6 @@
       --text-muted: #b0b6c8;
       --border-soft: #242b3d;
       --pill-bg: #171f31;
-      --danger: #ff4b5c;
       --radius-lg: 22px;
       --radius-md: 16px;
       --shadow-soft: 0 20px 55px rgba(0, 0, 0, 0.85);
@@ -24,290 +23,17 @@
         sans-serif;
       --font-heading: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
         sans-serif;
-    }/* --- EMOTIONAL INTRO / WHY SECTION --- */
-.emotional-block {
-  background: rgba(7, 9, 22, 0.96);
-  border-radius: 18px;
-  padding: 16px 16px 14px;
-  border: 1px solid rgba(70, 84, 144, 0.9);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
-  font-size: 14px;
-  line-height: 1.7;
-}
+    }
 
-.emotional-block p {
-  margin: 8px 0;
-}
+    * {
+      box-sizing: border-box;
+    }
 
-/* --- HOT RIGHT NOW BANNER --- */
-.hot-banner {
-  margin-top: 14px;
-  border-radius: 14px;
-  padding: 10px 12px;
-  background: radial-gradient(circle at left, rgba(255, 127, 66, 0.25), #090b19);
-  border: 1px solid rgba(255, 127, 66, 0.7);
-  font-size: 13px;
-}
-
-.hot-banner strong {
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  font-size: 11px;
-  color: #ffb56f;
-  display: block;
-  margin-bottom: 4px;
-}
-
-/* --- TAKE ACTION GRID --- */
-.action-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 18px;
-  margin-top: 16px;
-}
-
-.action-card {
-  background: #070b16;
-  border-radius: 16px;
-  padding: 16px;
-  border: 1px solid #ffffff22;
-  box-shadow: 0 0 18px #00000066;
-}
-
-.action-card h3 {
-  margin-top: 0;
-  margin-bottom: 8px;
-}
-
-.action-card p {
-  font-size: 13px;
-  line-height: 1.6;
-  color: var(--text-muted);
-}
-
-/* --- EMAIL CONGRESS SECTION --- */
-.email-layout {
-  display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-  gap: 16px;
-  margin-top: 10px;
-}
-
-.email-card {
-  background: rgba(6, 9, 24, 0.96);
-  border-radius: 18px;
-  padding: 14px;
-  border: 1px solid rgba(46, 59, 110, 0.9);
-}
-
-.email-snippet {
-  background: #050914;
-  border-radius: 10px;
-  padding: 10px;
-  border: 1px solid #ffffff22;
-  font-size: 13px;
-  line-height: 1.7;
-}
-
-@media (max-width: 880px) {
-  .email-layout {
-    grid-template-columns: minmax(0, 1fr);
-  }
-}
-/* --- PETITION BOARD --- */
-
-<section class="section" id="petition">
-  <div class="section-header-eyebrow">National Petitions – America’s Watchlist</div>
-  <h2 class="section-title">Petition Board</h2>
-  <p class="section-sub">
-    These are live, peaceful petitions focused on the biggest problems Americans
-    are angry about right now: career politicians, big money controlling policy,
-    and zero accountability when people in power cross the line.
-  </p>
-
-  <div class="petition-grid">
-
-    <!-- PETITION #1 – 6-YEAR TERM LIMITS -->
-    <div class="petition-card">
-      <h3>Petition #1 – 6-Year Term Limits for Congress</h3>
-      <div class="petition-text-small">
-        We, the American people, believe public office should never become a
-        lifetime career. No elected official should hold power for decades while
-        the country suffers under corruption, division, and self-interest.
-        <br><br>
-        We demand a maximum of <strong>6 years total</strong> in Congress:
-        House only → 3 terms (2 years each), Senate only → 1 term (6 years),
-        or any combination totaling 6 years and out. No grandfathering, no
-        special exceptions, no seniority loopholes.
-        <br><br>
-        As long as the same politicians stay in power, backed by big donors and
-        lobbyists, the American people will never fully trust the government
-        again. It’s time to return power to citizens, not careers.
-      </div>
-
-      <form action="https://formspree.io/f/xovypnwk" method="POST">
-        <input type="hidden" name="form_kind" value="petition_signature">
-        <input type="hidden" name="petition_id" value="term_limits_6yr">
-
-        <label class="form-label">Your Name</label>
-        <input type="text" name="name" class="form-input" required>
-
-        <label class="form-label">Email</label>
-        <input type="email" name="email" class="form-input" required>
-
-        <label class="form-label">State</label>
-        <select name="state" class="form-select" required>
-          <option value="">Choose your state</option>
-          <option>AL</option><option>AK</option><option>AZ</option>
-          <option>AR</option><option>CA</option><option>CO</option>
-          <option>CT</option><option>DE</option><option>FL</option>
-          <option>GA</option><option>HI</option><option>ID</option>
-          <option>IL</option><option>IN</option><option>IA</option>
-          <option>KS</option><option>KY</option><option>LA</option>
-          <option>ME</option><option>MD</option><option>MA</option>
-          <option>MI</option><option>MN</option><option>MS</option>
-          <option>MO</option><option>MT</option><option>NE</option>
-          <option>NV</option><option>NH</option><option>NJ</option>
-          <option>NM</option><option>NY</option><option>NC</option>
-          <option>ND</option><option>OH</option><option>OK</option>
-          <option>OR</option><option>PA</option><option>RI</option>
-          <option>SC</option><option>SD</option><option>TN</option>
-          <option>TX</option><option>UT</option><option>VT</option>
-          <option>VA</option><option>WA</option><option>WV</option>
-          <option>WI</option><option>WY</option>
-        </select>
-
-        <button type="submit" class="btn btn-primary form-submit">
-          Sign Term Limits Petition
-        </button>
-      </form>
-    </div>
-
-    <!-- PETITION #2 – STOP BIG MONEY CONTROL -->
-    <div class="petition-card">
-      <h3>Petition #2 – Stop Big Money Controlling Our Government</h3>
-      <div class="petition-text-small">
-        We, the American people, are witnessing a government increasingly
-        controlled by billionaires, mega-corporations, and powerful lobbyists –
-        not voters. Dark money and donor networks shape legislation,
-        investigations, and who is protected or exposed.
-        <br><br>
-        We demand a ban on corporate PAC money in federal elections, strict
-        limits on individual political contributions, full public disclosure of
-        lobbying contacts, and real penalties for undisclosed influence and
-        corrupt networks that protect the powerful while the people are kept
-        in the dark.
-        <br><br>
-        Congress should serve the people – not the powerful.
-      </div>
-
-      <form action="https://formspree.io/f/xovypnwk" method="POST">
-        <input type="hidden" name="form_kind" value="petition_signature">
-        <input type="hidden" name="petition_id" value="ban_big_money">
-
-        <label class="form-label">Your Name</label>
-        <input type="text" name="name" class="form-input" required>
-
-        <label class="form-label">Email</label>
-        <input type="email" name="email" class="form-input" required>
-
-        <label class="form-label">State</label>
-        <select name="state" class="form-select" required>
-          <option value="">Choose your state</option>
-          <option>AL</option><option>AK</option><option>AZ</option>
-          <option>AR</option><option>CA</option><option>CO</option>
-          <option>CT</option><option>DE</option><option>FL</option>
-          <option>GA</option><option>HI</option><option>ID</option>
-          <option>IL</option><option>IN</option><option>IA</option>
-          <option>KS</option><option>KY</option><option>LA</option>
-          <option>ME</option><option>MD</option><option>MA</option>
-          <option>MI</option><option>MN</option><option>MS</option>
-          <option>MO</option><option>MT</option><option>NE</option>
-          <option>NV</option><option>NH</option><option>NJ</option>
-          <option>NM</option><option>NY</option><option>NC</option>
-          <option>ND</option><option>OH</option><option>OK</option>
-          <option>OR</option><option>PA</option><option>RI</option>
-          <option>SC</option><option>SD</option><option>TN</option>
-          <option>TX</option><option>UT</option><option>VT</option>
-          <option>VA</option><option>WA</option><option>WV</option>
-          <option>WI</option><option>WY</option>
-        </select>
-
-        <button type="submit" class="btn btn-primary form-submit">
-          Sign Big Money Petition
-        </button>
-      </form>
-    </div>
-
-    <!-- PETITION #3 – ACCOUNTABILITY IN CONGRESS -->
-    <div class="petition-card">
-      <h3>Petition #3 – Real Accountability for Corruption in Congress</h3>
-      <div class="petition-text-small">
-        Congress is supposed to represent the American people, not protect
-        itself. Too often, members escape consequences for abuse of power,
-        ethics violations, corruption, and misconduct. Investigations are slow
-        or selective, and partisan loyalty matters more than truth.
-        <br><br>
-        We demand mandatory investigations for ethics complaints, public
-        transparency of misconduct findings, equal accountability for both
-        parties, loss of committee positions for proven misconduct, and removal
-        from office for repeated or serious violations.
-        <br><br>
-        No member of Congress should be above the law or shielded because of
-        their party, donors, or connections.
-      </div>
-
-      <form action="https://formspree.io/f/xovypnwk" method="POST">
-        <input type="hidden" name="form_kind" value="petition_signature">
-        <input type="hidden" name="petition_id" value="congress_accountability">
-
-        <label class="form-label">Your Name</label>
-        <input type="text" name="name" class="form-input" required>
-
-        <label class="form-label">Email</label>
-        <input type="email" name="email" class="form-input" required>
-
-        <label class="form-label">State</label>
-        <select name="state" class="form-select" required>
-          <option value="">Choose your state</option>
-          <option>AL</option><option>AK</option><option>AZ</option>
-          <option>AR</option><option>CA</option><option>CO</option>
-          <option>CT</option><option>DE</option><option>FL</option>
-          <option>GA</option><option>HI</option><option>ID</option>
-          <option>IL</option><option>IN</option><option>IA</option>
-          <option>KS</option><option>KY</option><option>LA</option>
-          <option>ME</option><option>MD</option><option>MA</option>
-          <option>MI</option><option>MN</option><option>MS</option>
-          <option>MO</option><option>MT</option><option>NE</option>
-          <option>NV</option><option>NH</option><option>NJ</option>
-          <option>NM</option><option>NY</option><option>NC</option>
-          <option>ND</option><option>OH</option><option>OK</option>
-          <option>OR</option><option>PA</option><option>RI</option>
-          <option>SC</option><option>SD</option><option>TN</option>
-          <option>TX</option><option>UT</option><option>VT</option>
-          <option>VA</option><option>WA</option><option>WV</option>
-          <option>WI</option><option>WY</option>
-        </select>
-
-        <button type="submit" class="btn btn-primary form-submit">
-          Sign Accountability Petition
-        </button>
-      </form>
-    </div>
-
-  </div>
-
-  <p class="section-sub" style="margin-top:18px;">
-    All submissions go to your Formspree inbox with a petition ID so you can
-    track how many people sign each demand. Later, these can be wired into
-    automatic emails and official Congressional contact systems.
-  </p>
-</section>
     body {
       margin: 0;
       padding: 0;
       font-family: var(--font-body);
-      background: radial-gradient(circle at top, #0c1022 0, #050812 50%, #010208 100%);
+      background: radial-gradient(circle at top, #0c1022 0, #050812 45%, #010208 100%);
       color: var(--text-main);
       -webkit-font-smoothing: antialiased;
     }
@@ -325,11 +51,10 @@
     .shell {
       max-width: 1080px;
       margin: 0 auto;
-      padding: 18px 16px 90px;
+      padding: 18px 16px 80px;
     }
 
     /* HEADER / NAV */
-
     header {
       position: sticky;
       top: 0;
@@ -433,7 +158,6 @@
     }
 
     /* HERO */
-
     .hero {
       margin-top: 18px;
       background: radial-gradient(circle at top left, #131832 0, #050812 55%, #02030a 100%);
@@ -577,7 +301,6 @@
     }
 
     /* HERO POSTER */
-
     .hero-poster-wrap {
       position: relative;
       z-index: 1;
@@ -611,10 +334,9 @@
       text-align: center;
     }
 
-    /* GENERIC SECTIONS */
-
-    section.section {
-      margin-top: 28px;
+    /* SECTIONS */
+    .section {
+      margin-top: 26px;
       background: radial-gradient(circle at top left, #12172b, #050812 55%, #02030b 100%);
       border-radius: 28px;
       padding: 20px 18px 22px;
@@ -630,193 +352,20 @@
       margin-bottom: 6px;
     }
 
-    <section class="section" id="petition">
-  <div class="section-header-eyebrow">National Petitions – America’s Watchlist</div>
-  <h2 class="section-title">Petition Board</h2>
-  <p class="section-sub">
-    These are live, peaceful petitions focused on the biggest problems Americans
-    are angry about right now: career politicians, big money controlling policy,
-    and zero accountability when people in power cross the line.
-  </p>
+    .section-title {
+      font-size: 18px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      margin: 0 0 8px;
+    }
 
-  <div class="petition-grid">
-
-    <!-- PETITION #1 – 6-YEAR TERM LIMITS -->
-    <div class="petition-card">
-      <h3>Petition #1 – 6-Year Term Limits for Congress</h3>
-      <div class="petition-text-small">
-        We, the American people, believe public office should never become a
-        lifetime career. No elected official should hold power for decades while
-        the country suffers under corruption, division, and self-interest.
-        <br><br>
-        We demand a maximum of <strong>6 years total</strong> in Congress:
-        House only → 3 terms (2 years each), Senate only → 1 term (6 years),
-        or any combination totaling 6 years and out. No grandfathering, no
-        special exceptions, no seniority loopholes.
-        <br><br>
-        As long as the same politicians stay in power, backed by big donors and
-        lobbyists, the American people will never fully trust the government
-        again. It’s time to return power to citizens, not careers.
-      </div>
-
-      <form action="https://formspree.io/f/xovypnwk" method="POST">
-        <input type="hidden" name="form_kind" value="petition_signature">
-        <input type="hidden" name="petition_id" value="term_limits_6yr">
-
-        <label class="form-label">Your Name</label>
-        <input type="text" name="name" class="form-input" required>
-
-        <label class="form-label">Email</label>
-        <input type="email" name="email" class="form-input" required>
-
-        <label class="form-label">State</label>
-        <select name="state" class="form-select" required>
-          <option value="">Choose your state</option>
-          <option>AL</option><option>AK</option><option>AZ</option>
-          <option>AR</option><option>CA</option><option>CO</option>
-          <option>CT</option><option>DE</option><option>FL</option>
-          <option>GA</option><option>HI</option><option>ID</option>
-          <option>IL</option><option>IN</option><option>IA</option>
-          <option>KS</option><option>KY</option><option>LA</option>
-          <option>ME</option><option>MD</option><option>MA</option>
-          <option>MI</option><option>MN</option><option>MS</option>
-          <option>MO</option><option>MT</option><option>NE</option>
-          <option>NV</option><option>NH</option><option>NJ</option>
-          <option>NM</option><option>NY</option><option>NC</option>
-          <option>ND</option><option>OH</option><option>OK</option>
-          <option>OR</option><option>PA</option><option>RI</option>
-          <option>SC</option><option>SD</option><option>TN</option>
-          <option>TX</option><option>UT</option><option>VT</option>
-          <option>VA</option><option>WA</option><option>WV</option>
-          <option>WI</option><option>WY</option>
-        </select>
-
-        <button type="submit" class="btn btn-primary form-submit">
-          Sign Term Limits Petition
-        </button>
-      </form>
-    </div>
-
-    <!-- PETITION #2 – STOP BIG MONEY CONTROL -->
-    <div class="petition-card">
-      <h3>Petition #2 – Stop Big Money Controlling Our Government</h3>
-      <div class="petition-text-small">
-        We, the American people, are witnessing a government increasingly
-        controlled by billionaires, mega-corporations, and powerful lobbyists –
-        not voters. Dark money and donor networks shape legislation,
-        investigations, and who is protected or exposed.
-        <br><br>
-        We demand a ban on corporate PAC money in federal elections, strict
-        limits on individual political contributions, full public disclosure of
-        lobbying contacts, and real penalties for undisclosed influence and
-        corrupt networks that protect the powerful while the people are kept
-        in the dark.
-        <br><br>
-        Congress should serve the people – not the powerful.
-      </div>
-
-      <form action="https://formspree.io/f/xovypnwk" method="POST">
-        <input type="hidden" name="form_kind" value="petition_signature">
-        <input type="hidden" name="petition_id" value="ban_big_money">
-
-        <label class="form-label">Your Name</label>
-        <input type="text" name="name" class="form-input" required>
-
-        <label class="form-label">Email</label>
-        <input type="email" name="email" class="form-input" required>
-
-        <label class="form-label">State</label>
-        <select name="state" class="form-select" required>
-          <option value="">Choose your state</option>
-          <option>AL</option><option>AK</option><option>AZ</option>
-          <option>AR</option><option>CA</option><option>CO</option>
-          <option>CT</option><option>DE</option><option>FL</option>
-          <option>GA</option><option>HI</option><option>ID</option>
-          <option>IL</option><option>IN</option><option>IA</option>
-          <option>KS</option><option>KY</option><option>LA</option>
-          <option>ME</option><option>MD</option><option>MA</option>
-          <option>MI</option><option>MN</option><option>MS</option>
-          <option>MO</option><option>MT</option><option>NE</option>
-          <option>NV</option><option>NH</option><option>NJ</option>
-          <option>NM</option><option>NY</option><option>NC</option>
-          <option>ND</option><option>OH</option><option>OK</option>
-          <option>OR</option><option>PA</option><option>RI</option>
-          <option>SC</option><option>SD</option><option>TN</option>
-          <option>TX</option><option>UT</option><option>VT</option>
-          <option>VA</option><option>WA</option><option>WV</option>
-          <option>WI</option><option>WY</option>
-        </select>
-
-        <button type="submit" class="btn btn-primary form-submit">
-          Sign Big Money Petition
-        </button>
-      </form>
-    </div>
-
-    <!-- PETITION #3 – ACCOUNTABILITY IN CONGRESS -->
-    <div class="petition-card">
-      <h3>Petition #3 – Real Accountability for Corruption in Congress</h3>
-      <div class="petition-text-small">
-        Congress is supposed to represent the American people, not protect
-        itself. Too often, members escape consequences for abuse of power,
-        ethics violations, corruption, and misconduct. Investigations are slow
-        or selective, and partisan loyalty matters more than truth.
-        <br><br>
-        We demand mandatory investigations for ethics complaints, public
-        transparency of misconduct findings, equal accountability for both
-        parties, loss of committee positions for proven misconduct, and removal
-        from office for repeated or serious violations.
-        <br><br>
-        No member of Congress should be above the law or shielded because of
-        their party, donors, or connections.
-      </div>
-
-      <form action="https://formspree.io/f/xovypnwk" method="POST">
-        <input type="hidden" name="form_kind" value="petition_signature">
-        <input type="hidden" name="petition_id" value="congress_accountability">
-
-        <label class="form-label">Your Name</label>
-        <input type="text" name="name" class="form-input" required>
-
-        <label class="form-label">Email</label>
-        <input type="email" name="email" class="form-input" required>
-
-        <label class="form-label">State</label>
-        <select name="state" class="form-select" required>
-          <option value="">Choose your state</option>
-          <option>AL</option><option>AK</option><option>AZ</option>
-          <option>AR</option><option>CA</option><option>CO</option>
-          <option>CT</option><option>DE</option><option>FL</option>
-          <option>GA</option><option>HI</option><option>ID</option>
-          <option>IL</option><option>IN</option><option>IA</option>
-          <option>KS</option><option>KY</option><option>LA</option>
-          <option>ME</option><option>MD</option><option>MA</option>
-          <option>MI</option><option>MN</option><option>MS</option>
-          <option>MO</option><option>MT</option><option>NE</option>
-          <option>NV</option><option>NH</option><option>NJ</option>
-          <option>NM</option><option>NY</option><option>NC</option>
-          <option>ND</option><option>OH</option><option>OK</option>
-          <option>OR</option><option>PA</option><option>RI</option>
-          <option>SC</option><option>SD</option><option>TN</option>
-          <option>TX</option><option>UT</option><option>VT</option>
-          <option>VA</option><option>WA</option><option>WV</option>
-          <option>WI</option><option>WY</option>
-        </select>
-
-        <button type="submit" class="btn btn-primary form-submit">
-          Sign Accountability Petition
-        </button>
-      </form>
-    </div>
-
-  </div>
-
-  <p class="section-sub" style="margin-top:18px;">
-    All submissions go to your Formspree inbox with a petition ID so you can
-    track how many people sign each demand. Later, these can be wired into
-    automatic emails and official Congressional contact systems.
-  </p>
-</section>
+    .section-sub {
+      font-size: 13px;
+      color: var(--text-muted);
+      max-width: 40rem;
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
 
     .grid-2 {
       display: grid;
@@ -851,42 +400,192 @@
       line-height: 1.6;
     }
 
-    /* VOTE SECTION */
-
-    .vote-options {
-      display: grid;
-      gap: 10px;
-      margin-top: 10px;
+    /* EMOTIONAL INTRO BLOCK */
+    .emotional-block {
+      background: rgba(7, 9, 22, 0.96);
+      border-radius: 18px;
+      padding: 16px 16px 14px;
+      border: 1px solid rgba(70, 84, 144, 0.9);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+      font-size: 14px;
+      line-height: 1.7;
     }
 
-    .vote-option {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 9px 10px;
-      border-radius: 999px;
-      background: rgba(10, 13, 30, 0.96);
-      border: 1px solid rgba(69, 84, 144, 0.95);
+    .emotional-block p {
+      margin: 8px 0;
+    }
+
+    /* HOT RIGHT NOW BANNER */
+    .hot-banner {
+      margin-top: 14px;
+      border-radius: 14px;
+      padding: 10px 12px;
+      background: radial-gradient(circle at left, rgba(255, 127, 66, 0.25), #090b19);
+      border: 1px solid rgba(255, 127, 66, 0.7);
       font-size: 13px;
     }
 
-    .vote-footer {
-      margin-top: 10px;
+    .hot-banner strong {
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
       font-size: 11px;
+      color: #ffb56f;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    /* TAKE ACTION GRID */
+    .action-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 18px;
+      margin-top: 16px;
+    }
+
+    .action-card {
+      background: #070b16;
+      border-radius: 16px;
+      padding: 16px;
+      border: 1px solid #ffffff22;
+      box-shadow: 0 0 18px #00000066;
+    }
+
+    .action-card h3 {
+      margin-top: 0;
+      margin-bottom: 8px;
+    }
+
+    .action-card p {
+      font-size: 13px;
+      line-height: 1.6;
       color: var(--text-muted);
     }
 
-    /* FORMS */
+    .action-card .btn {
+      margin-top: 10px;
+      font-size: 11px;
+      padding: 9px 16px;
+    }
 
-    .form-grid {
+    /* EMAIL CONGRESS SNIPPET */
+    .email-layout {
       display: grid;
       grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
       gap: 16px;
-      margin-top: 8px;
+      margin-top: 10px;
+    }
+
+    .email-card {
+      background: rgba(6, 9, 24, 0.96);
+      border-radius: 18px;
+      padding: 14px;
+      border: 1px solid rgba(46, 59, 110, 0.9);
+    }
+
+    .email-snippet {
+      background: #050914;
+      border-radius: 10px;
+      padding: 10px;
+      border: 1px solid #ffffff22;
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    /* SPONSOR BANNER */
+    .sponsor-banner {
+      margin-top: 18px;
+      border-radius: 26px;
+      padding: 12px 16px;
+      background: radial-gradient(circle at top, #141935, #050812);
+      border: 1px solid rgba(70, 84, 144, 0.85);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .sponsor-text {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .sponsor-label {
+      font-size: 11px;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: #ffb56f;
+      margin-bottom: 4px;
+    }
+
+    .sponsor-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .sponsor-pill {
+      width: 68px;
+      height: 68px;
+      border-radius: 999px;
+      border: 1px solid #ffffff33;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      background: radial-gradient(circle at top, #181c3a, #050812);
+    }
+
+    .sponsor-pill span:last-child {
+      font-size: 13px;
+      letter-spacing: 0.05em;
+    }
+
+    .sponsor-cta {
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #ffb263, #ff7f42);
+      color: #1b1205;
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* PETITION STYLES */
+    .petition-box {
+      background: rgba(6, 9, 24, 0.96);
+      border-radius: 18px;
+      padding: 16px;
+      border: 1px solid rgba(58, 72, 130, 0.95);
+      margin-top: 10px;
+    }
+
+    .petition-text {
+      font-size: 13px;
+      line-height: 1.7;
+      color: var(--text-muted);
+      max-height: 260px;
+      overflow-y: auto;
+      padding-right: 4px;
+    }
+
+    .petition-form {
+      margin-top: 12px;
+      display: grid;
+      gap: 10px;
     }
 
     .form-field {
-      margin-bottom: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
     }
 
     .form-label {
@@ -894,8 +593,6 @@
       text-transform: uppercase;
       letter-spacing: 0.16em;
       color: var(--text-muted);
-      display: block;
-      margin-bottom: 4px;
     }
 
     .form-input,
@@ -912,7 +609,7 @@
     }
 
     .form-textarea {
-      min-height: 120px;
+      min-height: 60px;
       resize: vertical;
     }
 
@@ -927,80 +624,32 @@
     .form-helper {
       font-size: 11px;
       color: var(--text-muted);
-      margin-top: 2px;
-    }
-
-    .form-submit {
-      margin-top: 10px;
-      width: 100%;
     }
 
     .checkbox-row {
       display: flex;
-      align-items: flex-start;
+      align-items: center;
       gap: 8px;
-      margin-top: 6px;
-      font-size: 11px;
+      font-size: 12px;
       color: var(--text-muted);
     }
 
     .checkbox-row input {
-      margin-top: 2px;
+      width: 16px;
+      height: 16px;
     }
 
-    /* PETITION BODY */
-
-    .petition-body {
-      background: rgba(6, 9, 24, 0.96);
-      border-radius: 18px;
-      border: 1px solid rgba(46, 59, 110, 0.9);
-      padding: 12px 14px 14px;
-      font-size: 13px;
-      color: var(--text-main);
-      line-height: 1.7;
+    .form-submit {
+      margin-top: 4px;
+      width: 100%;
     }
 
-    .petition-body h4 {
-      margin-top: 0;
-      margin-bottom: 8px;
-      font-size: 14px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
+    .form-disclaimer {
+      margin-top: 8px;
+      font-size: 11px;
+      color: var(--text-muted);
+      line-height: 1.5;
     }
-
-    .petition-body p {
-      margin: 6px 0;
-    }
-
-    /* COMPLAINTS */
-
-    .badge {
-      font-size: 10px;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      padding: 4px 9px;
-      border-radius: 999px;
-      border: 1px solid rgba(246, 180, 93, 0.8);
-      background: radial-gradient(
-        circle at top left,
-        rgba(246, 180, 93, 0.25),
-        rgba(6, 9, 22, 0.98)
-      );
-      color: #ffe7c0;
-      white-space: nowrap;
-    }
-
-    .badge-danger {
-      border-color: rgba(255, 75, 92, 0.85);
-      color: #ffd6da;
-      background: radial-gradient(
-        circle at top left,
-        rgba(255, 75, 92, 0.28),
-        rgba(10, 9, 24, 0.96)
-      );
-    }
-
-    /* JOIN / FOOTER */
 
     footer {
       margin-top: 26px;
@@ -1010,66 +659,7 @@
       text-align: center;
     }
 
-    /* SPONSOR BANNER / SKIP AD */
-
-    .sponsor-banner {
-      position: fixed;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      z-index: 50;
-      background: radial-gradient(circle at top, #1a1324, #050812 70%);
-      border-top: 1px solid rgba(64, 54, 96, 0.9);
-      box-shadow: 0 -18px 40px rgba(0, 0, 0, 0.9);
-      padding: 10px 14px 12px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      font-size: 13px;
-    }
-
-    .sponsor-text small {
-      display: block;
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: var(--text-muted);
-      margin-bottom: 3px;
-    }
-
-    .sponsor-buttons {
-      display: flex;
-      gap: 10px;
-    }
-
-    .btn-circle {
-      width: 68px;
-      height: 68px;
-      border-radius: 999px;
-      border: 1px solid rgba(70, 82, 132, 0.9);
-      background: rgba(7, 9, 20, 0.96);
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--text-main);
-      cursor: pointer;
-    }
-
-    .btn-circle-primary {
-      border-color: rgba(246, 180, 93, 0.95);
-      background: radial-gradient(
-        circle at top,
-        #ffb66b,
-        #ff7f42 60%,
-        #d85a1f
-      );
-      color: #201208;
-      font-weight: 600;
-    }
-
     /* RESPONSIVE */
-
     @media (max-width: 880px) {
       .hero {
         grid-template-columns: minmax(0, 1fr);
@@ -1092,546 +682,329 @@
         grid-template-columns: minmax(0, 1fr);
       }
 
-      .form-grid {
+      .email-layout {
         grid-template-columns: minmax(0, 1fr);
       }
 
       .sponsor-banner {
-        flex-direction: column;
         align-items: flex-start;
-      }
-
-      .sponsor-buttons {
-        align-self: stretch;
-        justify-content: flex-end;
       }
     }
   </style>
 </head>
 
 <body>
-<div class="page">
-  <header>
-    <div class="nav-inner">
-      <div class="brand">
-        <div class="brand-icon">AW</div>
-        <div>
-          <div class="brand-text-main">AMERICA'S WATCHLIST</div>
-          <div class="brand-text-sub">THE PEOPLE'S EYES ON POWER</div>
+  <div class="page">
+    <header>
+      <div class="nav-inner">
+        <div class="brand">
+          <div class="brand-icon">AW</div>
+          <div>
+            <div class="brand-text-main">AMERICA'S WATCHLIST</div>
+            <div class="brand-text-sub">THE PEOPLE'S EYES ON POWER</div>
+          </div>
         </div>
+        <nav class="nav-links">
+          <a href="#alerts">Alerts</a>
+          <a href="#states">States</a>
+          <a href="#townhalls">Town Halls</a>
+          <a href="#vote">Vote</a>
+          <a href="#petition">Petition</a>
+          <a href="#complaints">Complaints</a>
+          <a class="nav-join" href="#join">Join</a>
+        </nav>
       </div>
-      <nav class="nav-links">
-        <a href="#alerts">Alerts</a>
-        <a href="#states">States</a>
-        <a href="#townhalls">Town Halls</a>
-        <a href="#vote">Vote</a>
-        <a href="#petition">Petition</a>
-        <a href="#complaints">Complaints</a>
-        <a href="#join" class="nav-join">Join</a>
-      </nav>
-    </div>
-  </header>
+    </header>
 
-  <main class="shell">
-    <!-- HERO -->
-    <section class="hero" id="alerts">
-      <div class="hero-inner">
-        <div class="hero-eyebrow">Prototype · Citizen-Powered Platform</div>
-        <h1 class="hero-title">AMERICA'S WATCHLIST</h1>
-        <div class="hero-tagline">THE PEOPLE'S EYES ON POWER.</div>
-        <p class="hero-body">
-          Imagine one place where Americans can finally see what government is
-          doing: bills, votes, taxes, power hikes, and influence — without
-          digging through dozens of sites or legal pages. America’s Watchlist is
-          a peaceful, citizen-powered platform to keep an eye on power so you
-          don’t have to.
+    <main class="shell">
+      <!-- HERO -->
+      <section class="hero">
+        <div class="hero-inner">
+          <div class="hero-eyebrow">Prototype · Citizen-Powered Platform</div>
+          <h1 class="hero-title">America's Watchlist</h1>
+          <div class="hero-tagline">The People's Eyes on Power.</div>
+          <p class="hero-body">
+            Imagine one place where Americans can finally see what government is doing:
+            bills, votes, taxes, power hikes, and influence — without having to dig through
+            dozens of sites or legal pages. America’s Watchlist is a peaceful,
+            citizen-powered platform to keep an eye on power so you don’t have to.
+          </p>
+
+          <div class="hero-pills">
+            <span class="pill pill-accent">Citizen-Powered Platform</span>
+            <span class="pill">No Parties</span>
+            <span class="pill">No Violence</span>
+            <span class="pill">No Special Interests</span>
+          </div>
+
+          <div class="hero-actions">
+            <a href="#join" class="btn btn-primary">Join America's Watchlist</a>
+            <a href="#petition" class="btn btn-ghost">See Petition &amp; Actions</a>
+          </div>
+        </div>
+
+        <div class="hero-poster-wrap">
+          <div class="hero-poster-frame">
+            <img
+              src="images/hero-poster.jpg"
+              alt="America's Watchlist – The People's Eyes on Power poster"
+              class="hero-poster"
+            />
+            <div class="hero-poster-caption">Concept Art · America’s Watchlist</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- WHY THIS MATTERS -->
+      <section class="section" id="why">
+        <div class="section-header-eyebrow">Why This Matters</div>
+        <h2 class="section-title">A Peaceful Movement for Accountability</h2>
+
+        <div class="emotional-block">
+          <p>
+            Government has grown bigger, more complicated, and harder to follow.
+            Most people are working, raising families, and trying to survive —
+            they don’t have hours to dig through bills, budgets, and legal language.
+          </p>
+          <p>
+            That gap is where bad decisions, quiet deals, and unfair policies slip through.
+            Billionaires, lobbyists, and giant corporations have learned how to use that gap
+            to pull the strings — while the people who are supposed to be in charge
+            are left in the dark.
+          </p>
+          <p>
+            Many elected officials have forgotten who they work for. They stay in power
+            for decades, grow wealthy on influence, and listen more to donors and TV cameras
+            than the people back home. As long as there are no real term limits and no real
+            transparency, trust in government will keep collapsing.
+          </p>
+          <p>
+            America’s Watchlist exists to peacefully flip that script:
+            to put power back in the hands of informed citizens,
+            to expose what’s really happening in plain language,
+            and to give millions of people a simple way to act together —
+            before it’s too late to fix.
+          </p>
+        </div>
+
+        <div class="hot-banner">
+          <strong>Hot Right Now</strong>
+          If you’re tired of only complaining about term limits, corruption,
+          and media spin — and you’re ready to help put real, peaceful pressure
+          on the people in power — this platform is for you.
+        </div>
+      </section>
+
+      <!-- SPONSOR BANNER (DEMO AD) -->
+      <section class="sponsor-banner">
+        <div class="sponsor-text">
+          <div class="sponsor-label">Sponsor Message (Demo)</div>
+          <div>
+            <strong>Keep America Watching.</strong>
+            A small banner like this could help fund servers — citizens can ignore it,
+            skip it, or tap to learn more. No pop-ups, no tracking, no forced ads.
+          </div>
+        </div>
+        <div class="sponsor-actions">
+          <div class="sponsor-pill">
+            <span>Skip</span>
+            <span>Ad</span>
+          </div>
+          <button class="sponsor-cta" type="button">Learn More (Demo)</button>
+        </div>
+      </section>
+
+      <!-- STATES SECTION -->
+      <section class="section" id="states">
+        <div class="section-header-eyebrow">Built for Every American State</div>
+        <h2 class="section-title">A National Watch, State by State</h2>
+        <p class="section-sub">
+          In a full build, America’s Watchlist would plug into bill trackers,
+          campaign finance data, public budgets, and real-time feeds so citizens
+          can see what’s happening in their own state — and across the country —
+          in one place.
         </p>
 
-        <div class="hero-pills">
-          <span class="pill pill-accent">CITIZEN-POWERED PLATFORM</span>
-          <span class="pill">NO PARTIES</span>
-          <span class="pill">NO VIOLENCE</span>
-          <span class="pill">NO SPECIAL INTERESTS</span>
-        </div>
+        <div class="grid-2">
+          <article class="card">
+            <div class="card-label">State Dashboards</div>
+            <h3 class="card-title">50 States Watching</h3>
+            <p class="card-body">
+              Each state gets its own dashboard: bills on the move, new spending,
+              tax changes, and who voted yes or no — all in plain English,
+              not legalese.
+            </p>
+          </article>
 
-        <div class="hero-actions">
-          <a href="#join" class="btn btn-primary">Join America's Watchlist</a>
-          <a href="#petition" class="btn btn-ghost">See Petition &amp; Actions</a>
+          <article class="card">
+            <div class="card-label">National View</div>
+            <h3 class="card-title">Patterns of Power</h3>
+            <p class="card-body">
+              Citizens can see national trends: which issues keep repeating,
+              which states are quietly passing copy-cat bills,
+              and where the same special interests appear again and again.
+            </p>
+          </article>
         </div>
-      </div>
+      </section>
 
-      <div class="hero-poster-wrap">
-        <div class="hero-poster-frame">
-          <img
-            src="images/hero-poster.jpg"
-            alt="America's Watchlist – The People's Eyes on Power poster"
-            class="hero-poster"
-          />
-          <div class="hero-poster-caption">
-            CONCEPT ART · AMERICA'S WATCHLIST
+      <!-- ALERTS SECTION -->
+      <section class="section" id="alerts">
+        <div class="section-header-eyebrow">Example Alerts</div>
+        <h2 class="section-title">What America’s Watchlist Could Flag</h2>
+        <p class="section-sub">
+          These are example alerts to show how the platform could look.
+          They’re not live data yet — but this is how “The People’s Eyes on Power”
+          might work once real bill tracking and finance APIs are connected.
+        </p>
+
+        <div class="grid-2">
+          <article class="card">
+            <div class="card-label">Power &amp; Utilities</div>
+            <h3 class="card-title">Red-Flag Rate Hike</h3>
+            <p class="card-body">
+              Georgia · 12% rate increase tied to fuel surcharges and new fees.
+              Alerts explain who voted for it, what it pays for,
+              and how much the average bill goes up.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-label">Cost of Living</div>
+            <h3 class="card-title">Property Tax &amp; Local Spending</h3>
+            <p class="card-body">
+              South Carolina · New reassessments plus local projects
+              that raise taxes. Citizens can see where the money is going
+              and who pushed it through.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-label">Sneaky Bills</div>
+            <h3 class="card-title">Hidden Riders in a “Small” Bill</h3>
+            <p class="card-body">
+              Federal · Harmless-sounding bill with pages of add-ons and
+              quiet favors. The platform highlights the buried language
+              and links it to donors and lobbyists.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-label">Ethics &amp; Trust</div>
+            <h3 class="card-title">When Officials Cross the Line</h3>
+            <p class="card-body">
+              Alerts trigger when an official is formally reprimanded,
+              investigated, or tied to serious misconduct — and show citizens
+              exactly how to respond peacefully but firmly.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- TOWN HALLS / VOTE PLACEHOLDER -->
+      <section class="section" id="townhalls">
+        <div class="section-header-eyebrow">National &amp; State Town Halls</div>
+        <h2 class="section-title">Voice-Only Streams, No Camera Needed</h2>
+        <p class="section-sub">
+          In a full launch, America’s Watchlist would host national briefings
+          and state-level town halls whenever major alerts cross a threshold —
+          using voice-over and visuals so citizens never have to be on camera.
+        </p>
+
+        <div class="grid-2">
+          <article class="card">
+            <div class="card-label">National Briefings</div>
+            <h3 class="card-title">Weekly People’s Update</h3>
+            <p class="card-body">
+              A recurring national stream breaking down “what happened this week”
+              with bills, spending, and influence. No drama, no party spin —
+              just straight talk and clear visuals.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-label">State Town Halls</div>
+            <h3 class="card-title">Triggered by Alerts</h3>
+            <p class="card-body">
+              When a state crosses a red-flag threshold — like a big tax hike
+              or a suspicious bill — supporters in that state can be invited
+              to a live, voice-only town hall to go deeper and plan peaceful action.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- PETITION SECTION -->
+      <section class="section" id="petition">
+        <div class="section-header-eyebrow">National Petition – America’s Watchlist</div>
+        <h2 class="section-title">Bring Back Accountability &amp; Term Limits</h2>
+        <p class="section-sub">
+          Citizens can sign this petition and then send the same message
+          directly to Congress using official contact pages.
+          In a full build, verified U.S.-citizen logins and secure vote counts
+          would power national mandates.
+        </p>
+
+        <div class="petition-box">
+          <div class="petition-text">
+            <p><strong>To the elected officials of the United States:</strong></p>
+
+            <p>
+              We, the undersigned citizens, are deeply concerned about the
+              growing distance between government power and the people it is
+              supposed to serve.
+            </p>
+
+            <p>We call for:</p>
+
+            <p>
+              <strong>1. Real-time transparency</strong> for major federal
+              spending, rate hikes, and new taxes that impact households.
+            </p>
+
+            <p>
+              <strong>2. Clear public disclosure</strong> of large donations,
+              gifts, and foreign-linked income for all members of Congress.
+            </p>
+
+            <p>
+              <strong>3. Stronger and faster oversight</strong> when officials
+              abuse their office, ignore the will of the people, or undermine
+              trust in our institutions.
+            </p>
+
+            <p>
+              <strong>4. Reasonable term limits</strong> for members of Congress,
+              so no one can turn public service into a permanent, untouchable
+              career. Power was never meant to be held for decades by the same
+              people, shielded by donors and party machines.
+            </p>
+
+            <p>
+              We believe these reforms are non-partisan.
+              They are not about left or right — they are about restoring
+              trust, accountability, and a government that remembers
+              who it works for: <em>the American people.</em>
+            </p>
+
+            <p>
+              We ask you to support meaningful reforms that bring power
+              back to the people and rebuild the trust that has been lost.
+            </p>
           </div>
-        </div>
-      </div>
-    </section>
-/* --- EMOTIONAL INTRO / WHY SECTION --- */
-.emotional-block {
-  background: rgba(7, 9, 22, 0.96);
-  border-radius: 18px;
-  padding: 16px 16px 14px;
-  border: 1px solid rgba(70, 84, 144, 0.9);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
-  font-size: 14px;
-  line-height: 1.7;
-}
 
-.emotional-block p {
-  margin: 8px 0;
-}
-
-/* --- HOT RIGHT NOW BANNER --- */
-.hot-banner {
-  margin-top: 14px;
-  border-radius: 14px;
-  padding: 10px 12px;
-  background: radial-gradient(circle at left, rgba(255, 127, 66, 0.25), #090b19);
-  border: 1px solid rgba(255, 127, 66, 0.7);
-  font-size: 13px;
-}
-
-.hot-banner strong {
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  font-size: 11px;
-  color: #ffb56f;
-  display: block;
-  margin-bottom: 4px;
-}
-
-/* --- TAKE ACTION GRID --- */
-.action-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 18px;
-  margin-top: 16px;
-}
-
-.action-card {
-  background: #070b16;
-  border-radius: 16px;
-  padding: 16px;
-  border: 1px solid #ffffff22;
-  box-shadow: 0 0 18px #00000066;
-}
-
-.action-card h3 {
-  margin-top: 0;
-  margin-bottom: 8px;
-}
-
-.action-card p {
-  font-size: 13px;
-  line-height: 1.6;
-  color: var(--text-muted);
-}
-
-/* --- EMAIL CONGRESS SECTION --- */
-.email-layout {
-  display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-  gap: 16px;
-  margin-top: 10px;
-}
-
-.email-card {
-  background: rgba(6, 9, 24, 0.96);
-  border-radius: 18px;
-  padding: 14px;
-  border: 1px solid rgba(46, 59, 110, 0.9);
-}
-
-.email-snippet {
-  background: #050914;
-  border-radius: 10px;
-  padding: 10px;
-  border: 1px solid #ffffff22;
-  font-size: 13px;
-  line-height: 1.7;
-}
-
-@media (max-width: 880px) {
-  .email-layout {
-    grid-template-columns: minmax(0, 1fr);
-  }
-}
-    <!-- WHY THIS MATTERS / STATES -->
-    <section class="section" id="states">
-      <div class="section-header-eyebrow">Built For Every American State</div>
-      <h2 class="section-title">A National Watch, State by State</h2>
-      <p class="section-sub">
-        In a full build, America’s Watchlist would plug into bill trackers,
-        public budgets, and real-time feeds so citizens can see what’s happening
-        in their own state — and across the country — in one place.
-      </p>
-
-      <div class="grid-2">
-        <div class="card">
-          <div class="card-label">State Dashboards</div>
-          <div class="card-title">50 States Watching</div>
-          <div class="card-body">
-            Each state gets its own dashboard: bills on the move, new spending,
-            tax changes, and who voted yes or no — all in plain English, not
-            legalese.
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-label">National View</div>
-          <div class="card-title">Patterns of Power</div>
-          <div class="card-body">
-            Citizens can see national trends: repeated tactics, copy-cat bills,
-            and where the same donors and interests keep appearing again and
-            again.
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- TOWN HALLS -->
-    <section class="section" id="townhalls">
-      <!-- TAKE ACTION SECTION -->
-    <section class="section" id="action">
-      <div class="section-header-eyebrow">Don’t Just Watch – Take Action</div>
-      <h2 class="section-title">Here’s How You Push Back Peacefully</h2>
-      <p class="section-sub">
-        America doesn’t change because people get angry. It changes when people
-        get organized. These tools are the start of a peaceful, citizen-powered
-        way to put pressure on the people who have forgotten who they work for.
-      </p>
-
-      <div class="action-grid">
-
-        <div class="action-card">
-          <h3>✍️ Sign National Petitions</h3>
-          <p>
-            Add your name to national demands for term limits, a government not
-            owned by billionaires and corporations, and real consequences when
-            Congress crosses the line.
-          </p>
-          <a href="#petition" class="btn btn-primary">View Petitions</a>
-        </div>
-
-        <div class="action-card">
-          <h3>🗳 Vote on Key Issues (Demo)</h3>
-          <p>
-            Share where you stand on term limits and other national questions.
-            These demo votes help map out how citizens actually feel — not just
-            party talking points.
-          </p>
-          <a href="#vote" class="btn btn-ghost">Go to Votes</a>
-        </div>
-
-        <div class="action-card">
-          <h3>📨 Email Your Members of Congress</h3>
-          <p>
-            Use a simple form to draft a respectful but firm message about what
-            matters to you. Later, this will plug into official contact systems
-            so thousands of citizens can speak up at once.
-          </p>
-          <a href="#emailCongress" class="btn btn-primary">Write Congress</a>
-        </div>
-
-        <div class="action-card">
-          <h3>⚖️ File Federal &amp; State Complaints</h3>
-          <p>
-            When something is serious — ethics violations, abuse of power,
-            blatant misconduct — you can send a complaint that will later be
-            matched with the proper ethics or oversight offices.
-          </p>
-          <a href="#complaints" class="btn btn-ghost">Open Complaint Hub</a>
-        </div>
-
-      </div>
-    </section>
-      <div class="section-header-eyebrow">National &amp; State Town Halls</div>
-      <h2 class="section-title">Voice-Only Briefings · No Camera Needed</h2>
-      <p class="section-sub">
-        In a full launch, America’s Watchlist would host national briefings and
-        state-level town halls whenever major alerts cross a threshold —
-        using voice-over and visuals so citizens can plug in without having to
-        be on camera.
-      </p>
-      <div class="grid-2">
-        <div class="card">
-          <div class="card-label">National Briefings</div>
-          <div class="card-title">Weekly People’s Update</div>
-          <div class="card-body">
-            A recurring national stream breaking down what happened this week:
-            bills, spending, and influence. No party spin — just straight talk
-            and visuals citizens can actually understand.
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-label">State Town Halls</div>
-          <div class="card-title">Triggered by Alerts</div>
-          <div class="card-body">
-            When a state crosses a red-flag threshold — like a big tax hike,
-            suspicious bill, or ethics scandal — supporters in that state get
-            invited to a live, voice-only town hall to go deeper and plan
-            peaceful pressure.
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- VOTE SECTION -->
-    <section class="section" id="vote">
-      <div class="section-header-eyebrow">Quick National Vote (Demo)</div>
-      <h2 class="section-title">Should Congress Have Term Limits?</h2>
-      <p class="section-sub">
-        This is a demo vote. In the future, a secure login would verify U.S.
-        citizenship and make sure every eligible voter only votes once.
-      </p>
-
-      <form
-        action="https://formspree.io/f/xovypnwk"
-        method="POST"
-        class="card"
-      >
-        <input type="hidden" name="form_kind" value="vote_term_limits" />
-        <div class="card-label">Issue</div>
-        <div class="card-title">
-          Limit members of Congress to 12 total years in office.
-        </div>
-        <div class="vote-options">
-          <label class="vote-option">
-            <input type="radio" name="vote_choice" value="yes" required />
-            <span>I support national term limits for Congress.</span>
-          </label>
-          <label class="vote-option">
-            <input type="radio" name="vote_choice" value="no" />
-            <span>I do not support term limits.</span>
-          </label>
-          <label class="vote-option">
-            <input type="radio" name="vote_choice" value="unsure" />
-            <span>I’m unsure / need more information.</span>
-          </label>
-        </div>
-
-        <div class="form-grid" style="margin-top:12px;">
-          <div>
+          <form
+            class="petition-form"
+            action="https://formspree.io/f/xovypnwk"
+            method="POST"
+          >
             <div class="form-field">
               <label class="form-label">Name</label>
               <input
+                class="form-input"
                 type="text"
-                name="name"
-                class="form-input"
-                placeholder="First &amp; last name"
-                required
-              />
-            </div>
-            <div class="form-field">
-              <label class="form-label">Email</label>
-              <input
-                type="email"
-                name="email"
-                class="form-input"
-                placeholder="you@example.com"
-                required
-              />
-            </div>
-          </div>
-          <div>
-            <div class="form-field">
-              <label class="form-label">State</label>
-              <select name="state" class="form-select" required>
-                <option value="">Select your state</option>
-                <option>AL</option><option>AK</option><option>AZ</option>
-                <option>AR</option><option>CA</option><option>CO</option>
-                <option>CT</option><option>DE</option><option>FL</option>
-                <option>GA</option><option>HI</option><option>ID</option>
-                <option>IL</option><option>IN</option><option>IA</option>
-                <option>KS</option><option>KY</option><option>LA</option>
-                <option>ME</option><option>MD</option><option>MA</option>
-                <option>MI</option><option>MN</option><option>MS</option>
-                <option>MO</option><option>MT</option><option>NE</option>
-                <option>NV</option><option>NH</option><option>NJ</option>
-                <option>NM</option><option>NY</option><option>NC</option>
-                <option>ND</option><option>OH</option><option>OK</option>
-                <option>OR</option><option>PA</option><option>RI</option>
-                <option>SC</option><option>SD</option><option>TN</option>
-                <option>TX</option><option>UT</option><option>VT</option>
-                <option>VA</option><option>WA</option><option>WV</option>
-                <option>WI</option><option>WY</option>
-              </select>
-            </div>
-            <div class="checkbox-row">
-              <input type="checkbox" name="citizen" required />
-              <span>
-                I confirm I am a U.S. citizen or lawful permanent resident and
-                understand this is a non-binding demo vote.
-              </span>
-            </div>
-          </div>
-        </div>
-
-        <button type="submit" class="btn btn-primary form-submit">
-          Submit Vote (Demo)
-        </button>
-        <div class="vote-footer">
-          Demo only: your response is emailed to the organizers so support can
-          be tracked by state. A future version would store votes securely in a
-          database.
-        </div>
-      </form>
-    </section>
-
-    <!-- PETITION SECTION -->
-    <section class="section" id="petition">
-      <div class="section-header-eyebrow">National Petition – America’s Watchlist</div>
-      <h2 class="section-title">For Term Limits, Transparency &amp; Accountability</h2>
-      <p class="section-sub">
-        Citizens can sign this petition and the same message can be copied into
-        official contact forms for Congress and state leaders.
-      </p>
-
-      <div class="form-grid">
-        <div class="petition-body">
-          <h4>Petition Text</h4>
-          <p>To the elected officials of the United States:</p>
-          <p>
-            We, the undersigned citizens, are deeply concerned about the growing
-            distance between government power and the people it is supposed to
-            serve.
-          </p>
-          <p>We call for:</p>
-          <ol>
-            <li>
-              Real-time transparency for major federal spending, rate hikes, and
-              new taxes that impact households.
-            </li>
-            <li>
-              Clear, public disclosure of large donations, gifts, and
-              foreign-linked income for all members of Congress.
-            </li>
-            <li>
-              National term limits so no one can build a lifelong political
-              empire while ordinary Americans struggle to be heard.
-            </li>
-            <li>
-              Stronger, faster ethics oversight when officials appear to abuse
-              their office, ignore the will of the people, or undermine trust in
-              our institutions.
-            </li>
-          </ol>
-          <p>
-            We believe these reforms are not about left or right — they are
-            about restoring trust, fairness, and basic accountability. The
-            longer Washington protects itself instead of the people, the harder
-            it will be for faith in our government to be repaired.
-          </p>
-          <p>
-            We respectfully urge you to act now and put the interests of the
-            American people above party, donors, and personal power.
-          </p>
-        </div>
-
-        <form
-          action="https://formspree.io/f/xovypnwk"
-          method="POST"
-          class="card"
-        >
-          <input type="hidden" name="form_kind" value="petition_signature" />
-          <div class="card-label">Sign the Petition</div>
-          <div class="card-body">
-            <div class="form-field">
-              <label class="form-label">Full Name</label>
-              <input
-                type="text"
-                name="name"
-                class="form-input"
-                required
-                placeholder="First &amp; last name"
-              />
-            </div>
-            <div class="form-field">
-              <label class="form-label">Email</label>
-              <input
-                type="email"
-                name="email"
-                class="form-input"
-                required
-                placeholder="you@example.com"
-              />
-            </div>
-            <div class="form-field">
-              <label class="form-label">State</label>
-              <select name="state" class="form-select" required>
-                <option value="">Select your state</option>
-                <option>AL</option><option>AK</option><option>AZ</option>
-                <option>AR</option><option>CA</option><option>CO</option>
-                <option>CT</option><option>DE</option><option>FL</option>
-                <option>GA</option><option>HI</option><option>ID</option>
-                <option>IL</option><option>IN</option><option>IA</option>
-                <option>KS</option><option>KY</option><option>LA</option>
-                <option>ME</option><option>MD</option><option>MA</option>
-                <option>MI</option><option>MN</option><option>MS</option>
-                <option>MO</option><option>MT</option><option>NE</option>
-                <option>NV</option><option>NH</option><option>NJ</option>
-                <option>NM</option><option>NY</option><option>NC</option>
-                <option>ND</option><option>OH</option><option>OK</option>
-                <option>OR</option><option>PA</option><option>RI</option>
-                <option>SC</option><option>SD</option><option>TN</option>
-                <option>TX</option><option>UT</option><option>VT</option>
-                <option>VA</option><option>WA</option><option>WV</option>
-                <option>WI</option><option>WY</option>
-              </select>
-            </div>
-            <div class="checkbox-row">
-              <input type="checkbox" name="citizen" required />
-              <span>
-                I understand this is a peaceful, non-partisan petition and agree
-                to have my name counted with other citizens asking for these
-                reforms.
-              </span>
-            </div>
-            <button type="submit" class="btn btn-primary form-submit">
-              Sign Petition
-            </button>
-            <div class="form-helper" style="margin-top:6px;">
-              After signing, you can copy this petition text into official
-              Congressional contact pages and state portals to multiply the
-              impact.
-            </div>
-          </div>
-        </form>
-      </div>
-    </section>
-
-    <!-- COMPLAINT HUB -->
-    <section class="section" id="complaints">
-      <!-- EMAIL CONGRESS SECTION -->
-    <section class="section" id="emailCongress">
-      <div class="section-header-eyebrow">Direct Message to Congress (Demo)</div>
-      <h2 class="section-title">Tell Them What You’re Tired Of</h2>
-      <p class="section-sub">
-        Most people never send a single message to their Representative or
-        Senators because it feels confusing and pointless. This tool starts the
-        habit: write once, send often, and later this can be wired into official
-        contact systems so thousands of citizens speak with one voice.
-      </p>
-
-      <div class="email-layout">
-        <div class="email-card">
-          <div class="card-label">Your Message</div>
-          <form action="https://formspree.io/f/xovypnwk" method="POST">
-            <input type="hidden" name="form_kind" value="email_congress">
-
-            <div class="form-field">
-              <label class="form-label">Your Name</label>
-              <input
-                type="text"
-                name="name"
-                class="form-input"
-                placeholder="First &amp; last name"
+                name="petition_name"
+                placeholder="Your full name"
                 required
               />
             </div>
@@ -1639,17 +1012,20 @@
             <div class="form-field">
               <label class="form-label">Email</label>
               <input
-                type="email"
-                name="email"
                 class="form-input"
+                type="email"
+                name="petition_email"
                 placeholder="you@example.com"
                 required
               />
+              <div class="form-helper">
+                Used only to confirm your signature and share future updates.
+              </div>
             </div>
 
             <div class="form-field">
               <label class="form-label">State</label>
-              <select name="state" class="form-select" required>
+              <select class="form-select" name="petition_state" required>
                 <option value="">Select your state</option>
                 <option>AL</option><option>AK</option><option>AZ</option>
                 <option>AR</option><option>CA</option><option>CO</option>
@@ -1671,396 +1047,236 @@
               </select>
             </div>
 
-            <div class="form-field">
-              <label class="form-label">Subject</label>
-              <input
-                type="text"
-                name="subject"
-                class="form-input"
-                placeholder="Example: Term limits, corruption, accountability…"
-                required
-              />
-            </div>
-
-            <div class="form-field">
-              <label class="form-label">Your Message</label>
-              <textarea
-                name="message"
-                class="form-textarea"
-                placeholder="Write to your Representative and Senators as if they actually work for you — because they do."
-                required
-              ></textarea>
-            </div>
-
             <div class="checkbox-row">
-              <input type="checkbox" name="ok_followup" />
+              <input type="checkbox" name="petition_agree" required />
               <span>
-                You may email me templates and links so I can also paste this
-                into the official contact forms for my Representative and
-                Senators.
+                I affirm that I am a U.S. resident adding my name to this petition,
+                and I want this message delivered to my representatives.
               </span>
             </div>
 
-            <button type="submit" class="btn btn-primary form-submit">
-              Send Message (Demo)
+            <button class="btn btn-primary form-submit" type="submit">
+              Sign Petition (Sends to You)
             </button>
 
-            <div class="form-helper" style="margin-top:6px;">
-              Demo: your message is sent to the America’s Watchlist inbox so it
-              can be organized, counted by state, and turned into future
-              templates for official Congressional channels.
+            <div class="form-disclaimer">
+              Demo only: for now, your signature goes to your Formspree inbox.
+              In a full build, verified U.S.-citizen accounts and direct delivery
+              tools would send this message straight to Congress and state leaders.
             </div>
           </form>
         </div>
+      </section>
 
-        <div class="email-card">
-          <div class="card-label">Example Message Starter</div>
-          <div class="email-snippet">
+      <!-- TAKE ACTION & COMPLAINTS -->
+      <section class="section" id="complaints">
+        <div class="section-header-eyebrow">Take Action</div>
+        <h2 class="section-title">State &amp; Federal Complaints, Made Easier</h2>
+        <p class="section-sub">
+          Most people don’t have time to hunt down the right form, the right email,
+          and the right committee. This page can act as a shortcut — a place where
+          citizens can find official channels in a few taps, not an afternoon.
+        </p>
+
+        <div class="action-grid">
+          <article class="action-card">
+            <h3>Email Congress (Official Pages)</h3>
             <p>
-              I am a citizen in your district watching how you handle term
-              limits, big money influence, and accountability in Congress.
+              Use the official House and Senate contact pages to send this petition
+              or your own words straight to your elected officials.
             </p>
-            <p>
-              I am tired of seeing the same politicians stay in office for
-              decades while our trust in government collapses. I am tired of
-              billionaires and corporations shaping laws while ordinary citizens
-              are ignored. I am tired of seeing corruption and abuse of power
-              go unpunished.
-            </p>
-            <p>
-              I am asking you to support strong term limits, to reject dark
-              money and special interest control, and to support real ethics
-              enforcement — even when it costs your own party something.
-            </p>
-            <p>
-              I want a government that remembers who it works for: the people
-              back home, not the donors in the back rooms.
-            </p>
-          </div>
-          <div class="form-helper" style="margin-top:8px;">
-            You can copy and adapt this language in your own words. The goal is
-            calm, firm, and clear pressure — not threats or hate.
-          </div>
-          <div style="margin-top:10px;">
             <a
-              href="https://www.house.gov/representatives/find-your-representative"
-              target="_blank"
-              rel="noopener"
               class="btn btn-ghost"
-              >Find Your Representative</a
+              href="https://www.congress.gov/contact-us"
+              target="_blank"
+              rel="noreferrer"
             >
-          </div>
-          <div style="margin-top:8px;">
+              Open Contact Pages
+            </a>
+          </article>
+
+          <article class="action-card">
+            <h3>Ethics &amp; Misconduct Complaints</h3>
+            <p>
+              When behavior crosses a line, citizens can file complaints with
+              ethics committees and oversight bodies — peacefully but firmly.
+            </p>
             <a
-              href="https://www.senate.gov/senators/senators-contact.htm"
-              target="_blank"
-              rel="noopener"
               class="btn btn-ghost"
-              >Contact Your Senators</a
+              href="https://ethics.house.gov"
+              target="_blank"
+              rel="noreferrer"
             >
-          </div>
-        </div>
-      </div>
-    </section>
-      <div class="section-header-eyebrow">Take Action · Complaint Hub</div>
-      <h2 class="section-title">Ethics, Misconduct &amp; Abuse of Power</h2>
-      <p class="section-sub">
-        When something crosses the line, most people don’t know where to send a
-        complaint. This simple hub helps citizens write it once and send it
-        where it needs to go — starting with an email to the organizers so you
-        can be guided to the right official form.
-      </p>
+              House Ethics (Info)
+            </a>
+          </article>
 
-      <div class="grid-2">
-        <!-- FEDERAL COMPLAINT -->
-        <form
-          action="https://formspree.io/f/xovypnwk"
-          method="POST"
-          class="card"
-        >
-          <input type="hidden" name="form_kind" value="federal_complaint" />
-          <div class="card-label">Federal Level</div>
-          <div class="card-title">
-            <span>Congress, DOJ, Federal Agencies</span>
-            <span class="badge badge-danger" style="margin-left:6px;">Serious Issues</span>
-          </div>
-          <div class="card-body">
-            <div class="form-field">
-              <label class="form-label">Target</label>
-              <select name="federal_target" class="form-select" required>
-                <option value="">Choose one</option>
-                <option>Member of Congress</option>
-                <option>Congressional Committee</option>
-                <option>Federal Agency / Department</option>
-                <option>Other federal official</option>
-              </select>
-            </div>
-            <div class="form-field">
-              <label class="form-label">Subject / Concern</label>
-              <input
-                type="text"
-                name="subject"
-                class="form-input"
-                placeholder="Example: Obstruction of oversight, ethics violation…"
-                required
-              />
-            </div>
-            <div class="form-field">
-              <label class="form-label">What happened?</label>
-              <textarea
-                name="details"
-                class="form-textarea"
-                placeholder="Describe dates, actions, bills, or behavior you believe violates ethics, law, or the public trust."
-                required
-              ></textarea>
-              <div class="form-helper">
-                Do not include sensitive personal data. Stick to public actions,
-                statements, and votes.
-              </div>
-            </div>
-            <div class="form-field">
-              <label class="form-label">Your Name &amp; State</label>
-              <input
-                type="text"
-                name="name_state"
-                class="form-input"
-                placeholder="Full name – State"
-                required
-              />
-            </div>
-            <div class="form-field">
-              <label class="form-label">Email (for follow-up)</label>
-              <input
-                type="email"
-                name="email"
-                class="form-input"
-                placeholder="you@example.com"
-                required
-              />
-            </div>
-            <button type="submit" class="btn btn-primary form-submit">
-              Send Complaint (Demo)
-            </button>
-            <div class="form-helper">
-              Demo: this sends your complaint to the America’s Watchlist inbox
-              so it can be organized and turned into template letters and links
-              to official ethics and DOJ forms.
-            </div>
-          </div>
-        </form>
-
-        <!-- STATE COMPLAINT -->
-        <form
-          action="https://formspree.io/f/xovypnwk"
-          method="POST"
-          class="card"
-        >
-          <input type="hidden" name="form_kind" value="state_complaint" />
-          <div class="card-label">State Level</div>
-          <div class="card-title">Governors, Legislatures &amp; Agencies</div>
-          <div class="card-body">
-            <div class="form-field">
-              <label class="form-label">Your State</label>
-              <select name="state" class="form-select" required>
-                <option value="">Select your state</option>
-                <option>AL</option><option>AK</option><option>AZ</option>
-                <option>AR</option><option>CA</option><option>CO</option>
-                <option>CT</option><option>DE</option><option>FL</option>
-                <option>GA</option><option>HI</option><option>ID</option>
-                <option>IL</option><option>IN</option><option>IA</option>
-                <option>KS</option><option>KY</option><option>LA</option>
-                <option>ME</option><option>MD</option><option>MA</option>
-                <option>MI</option><option>MN</option><option>MS</option>
-                <option>MO</option><option>MT</option><option>NE</option>
-                <option>NV</option><option>NH</option><option>NJ</option>
-                <option>NM</option><option>NY</option><option>NC</option>
-                <option>ND</option><option>OH</option><option>OK</option>
-                <option>OR</option><option>PA</option><option>RI</option>
-                <option>SC</option><option>SD</option><option>TN</option>
-                <option>TX</option><option>UT</option><option>VT</option>
-                <option>VA</option><option>WA</option><option>WV</option>
-                <option>WI</option><option>WY</option>
-              </select>
-            </div>
-            <div class="form-field">
-              <label class="form-label">Who or what are you reporting?</label>
-              <input
-                type="text"
-                name="target"
-                class="form-input"
-                placeholder="Example: State senator, school board, agency, bill number…"
-                required
-              />
-            </div>
-            <div class="form-field">
-              <label class="form-label">Describe the issue</label>
-              <textarea
-                name="details"
-                class="form-textarea"
-                placeholder="Explain what happened, why it matters, and any public evidence."
-                required
-              ></textarea>
-            </div>
-            <div class="form-field">
-              <label class="form-label">Your Name</label>
-              <input
-                type="text"
-                name="name"
-                class="form-input"
-                required
-              />
-            </div>
-            <div class="form-field">
-              <label class="form-label">Email</label>
-              <input
-                type="email"
-                name="email"
-                class="form-input"
-                required
-              />
-            </div>
-            <div class="checkbox-row">
-              <input type="checkbox" name="followup_ok" />
-              <span>
-                You may email me template language and links to my state’s
-                official complaint and ethics forms.
-              </span>
-            </div>
-            <button type="submit" class="btn btn-primary form-submit">
-              Send State Complaint (Demo)
-            </button>
-          </div>
-        </form>
-      </div>
-    </section>
-
-    <!-- JOIN SECTION -->
-    <section class="section" id="join">
-      <div class="section-header-eyebrow">Join the First Wave</div>
-      <h2 class="section-title">Be Part of America’s Watchlist</h2>
-      <p class="section-sub">
-        This page is still a prototype, but the join form is live through
-        Formspree. When people sign up, you’ll see where support is coming from
-        and which states are ready for alerts, town halls, and future tools.
-      </p>
-
-      <div class="form-grid">
-        <div class="card">
-          <div class="card-label">How It Starts</div>
-          <div class="card-body">
-            <p><strong>1. Launch the public site.</strong> Share this page as a
-              peaceful, citizen-powered movement — not a party, not a
-              campaign.</p>
-            <p><strong>2. Collect interest by state.</strong> Track where people
-              are signing up so you know which states to focus on first.</p>
-            <p><strong>3. Wire in real data &amp; logins.</strong> A developer
-              can later connect bill-tracking APIs, campaign finance data, and
-              secure authentication.</p>
-            <p><strong>4. Start peaceful pressure.</strong> Use facts, alerts,
-              and numbers — not violence — to put real pressure on people in
-              power.</p>
-          </div>
+          <article class="action-card">
+            <h3>State &amp; DOJ Forms</h3>
+            <p>
+              Each state has its own inspectors general, attorneys general, and
+              complaint portals. In a full build, this section would be customized
+              by state so citizens always know where to start.
+            </p>
+            <a
+              class="btn btn-ghost"
+              href="https://www.usa.gov/state-attorney-general"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Find State Contacts
+            </a>
+          </article>
         </div>
 
-        <form
-          action="https://formspree.io/f/xovypnwk"
-          method="POST"
-          class="card"
-        >
-          <input type="hidden" name="form_kind" value="join_waitlist" />
-          <div class="card-label">Join America’s Watchlist (Demo)</div>
-          <div class="card-body">
-            <div class="form-field">
-              <label class="form-label">Your Name</label>
-              <input
-                type="text"
-                name="name"
-                class="form-input"
-                placeholder="First &amp; last name (optional in public view)"
-                required
-              />
-            </div>
-            <div class="form-field">
-              <label class="form-label">Email</label>
-              <input
-                type="email"
-                name="email"
-                class="form-input"
-                placeholder="you@example.com"
-                required
-              />
-              <div class="form-helper">
-                Used to send future alerts and town hall invites. No selling
-                your info.
-              </div>
-            </div>
-            <div class="form-field">
-              <label class="form-label">Your State</label>
-              <select name="state" class="form-select" required>
-                <option value="">Select your state</option>
-                <option>AL</option><option>AK</option><option>AZ</option>
-                <option>AR</option><option>CA</option><option>CO</option>
-                <option>CT</option><option>DE</option><option>FL</option>
-                <option>GA</option><option>HI</option><option>ID</option>
-                <option>IL</option><option>IN</option><option>IA</option>
-                <option>KS</option><option>KY</option><option>LA</option>
-                <option>ME</option><option>MD</option><option>MA</option>
-                <option>MI</option><option>MN</option><option>MS</option>
-                <option>MO</option><option>MT</option><option>NE</option>
-                <option>NV</option><option>NH</option><option>NJ</option>
-                <option>NM</option><option>NY</option><option>NC</option>
-                <option>ND</option><option>OH</option><option>OK</option>
-                <option>OR</option><option>PA</option><option>RI</option>
-                <option>SC</option><option>SD</option><option>TN</option>
-                <option>TX</option><option>UT</option><option>VT</option>
-                <option>VA</option><option>WA</option><option>WV</option>
-                <option>WI</option><option>WY</option>
-              </select>
-            </div>
-
-            <button type="submit" class="btn btn-primary form-submit">
-              Join the Watchlist
-            </button>
-            <div class="form-helper" style="margin-top:6px;">
-              Demo notice: submissions go to your Formspree inbox so you can see
-              this working right away. Later, this can be connected to your own
-              database and secure login system.
+        <div class="email-layout" id="vote">
+          <div class="email-card">
+            <div class="card-label">Email Template (Copy &amp; Send)</div>
+            <h3 class="card-title">Sample Message to Representatives</h3>
+            <p class="card-body">
+              Citizens can copy this text, paste it into official contact forms,
+              and customize it with their own story.
+            </p>
+            <div class="email-snippet">
+              <strong>Subject:</strong> Restore Trust – Transparency, Term Limits,
+              and Oversight<br /><br />
+              Dear [Representative / Senator],<br /><br />
+              I am a constituent in [CITY, STATE]. I am asking you to support
+              stronger transparency for federal spending and donations,
+              real oversight when officials abuse their office,
+              and reasonable term limits for members of Congress.<br /><br />
+              Too many Americans no longer trust that our government is working
+              for us. Please support reforms that bring power back to the people
+              and rebuild that trust.<br /><br />
+              Sincerely,<br />
+              [YOUR NAME]
             </div>
           </div>
-        </form>
-      </div>
-    </section>
 
-    <footer>
-      America’s Watchlist · Prototype layout for a peaceful, citizen-powered
-      movement. Built so real developers can plug in logins, data, and secure
-      storage later.
-    </footer>
-  </main>
+          <div class="email-card">
+            <div class="card-label">What Voting Could Look Like</div>
+            <h3 class="card-title">One Citizen, One Secure Voice</h3>
+            <p class="card-body">
+              In the future, a verified U.S.-citizen login (for example, using a
+              service like Firebase authentication plus real ID checks) could
+              power secure national polls and petitions:
+            </p>
+            <ul class="card-body" style="padding-left: 18px; margin: 0;">
+              <li>One person, one account, one vote.</li>
+              <li>Anonymous public totals, private verified identity.</li>
+              <li>Issues promoted only when they reach a real threshold.</li>
+            </ul>
+            <p class="card-body">
+              For now, this page shows the vision — while the technical pieces
+              are planned and built safely.
+            </p>
+          </div>
+        </div>
+      </section>
 
-  <!-- SPONSOR MESSAGE / SKIP AD (DEMO) -->
-  <div class="sponsor-banner" id="sponsorBanner">
-    <div class="sponsor-text">
-      <small>SPONSOR MESSAGE (DEMO)</small>
-      <div>
-        <strong>Keep America Watching.</strong> A small banner like this could
-        fund servers — citizens can ignore it or skip it anytime.
-      </div>
-    </div>
-    <div class="sponsor-buttons">
-      <button class="btn-circle" onclick="skipAd()">Skip<br />Ad</button>
-      <button class="btn-circle btn-circle-primary">
-        Learn<br />More<br />(demo)
-      </button>
-    </div>
+      <!-- JOIN SECTION -->
+      <section class="section" id="join">
+        <div class="section-header-eyebrow">Join the First Wave</div>
+        <h2 class="section-title">Be Part of America’s Watchlist</h2>
+        <p class="section-sub">
+          This page is still a demo, but your join form is live through Formspree.
+          When people sign up, you’ll start seeing who’s interested and
+          which states they’re from — so you can plan alerts, town halls,
+          and future tools.
+        </p>
+
+        <div class="grid-2">
+          <div>
+            <div class="card-label">How to Use This Prototype</div>
+            <p class="card-body">
+              1. Share this page as your first public prototype. Make it clear
+              it’s a peaceful, citizen-powered movement — not a party,
+              not a campaign.<br /><br />
+              2. As people join, track which states show the most interest.
+              That helps decide where to focus alerts and town halls first.<br /><br />
+              3. When you’re ready, a developer can connect bill-tracking APIs,
+              finance data, and secure logins to turn America’s Watchlist
+              into a full platform.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3 class="card-title">Join America’s Watchlist (Demo Form)</h3>
+            <p class="card-body">
+              This form is connected to Formspree and can already collect real responses.
+              Later, it can be swapped for a custom backend and login system —
+              but you don’t have to wait to start building a list.
+            </p>
+
+            <form action="https://formspree.io/f/xovypnwk" method="POST">
+              <div class="form-field">
+                <label class="form-label">Your Name</label>
+                <input
+                  class="form-input"
+                  type="text"
+                  name="name"
+                  placeholder="First &amp; last name (optional in public view)"
+                  required
+                />
+              </div>
+
+              <div class="form-field">
+                <label class="form-label">Email</label>
+                <input
+                  class="form-input"
+                  type="email"
+                  name="email"
+                  placeholder="you@example.com"
+                  required
+                />
+                <div class="form-helper">
+                  Used to send future alerts and town hall invites.
+                  No spam, no selling your info.
+                </div>
+              </div>
+
+              <div class="form-field">
+                <label class="form-label">Your State</label>
+                <select class="form-select" name="state" required>
+                  <option value="">Select your state</option>
+                  <option>AL</option><option>AK</option><option>AZ</option>
+                  <option>AR</option><option>CA</option><option>CO</option>
+                  <option>CT</option><option>DE</option><option>FL</option>
+                  <option>GA</option><option>HI</option><option>ID</option>
+                  <option>IL</option><option>IN</option><option>IA</option>
+                  <option>KS</option><option>KY</option><option>LA</option>
+                  <option>ME</option><option>MD</option><option>MA</option>
+                  <option>MI</option><option>MN</option><option>MS</option>
+                  <option>MO</option><option>MT</option><option>NE</option>
+                  <option>NV</option><option>NH</option><option>NJ</option>
+                  <option>NM</option><option>NY</option><option>NC</option>
+                  <option>ND</option><option>OH</option><option>OK</option>
+                  <option>OR</option><option>PA</option><option>RI</option>
+                  <option>SC</option><option>SD</option><option>TN</option>
+                  <option>TX</option><option>UT</option><option>VT</option>
+                  <option>VA</option><option>WA</option><option>WV</option>
+                  <option>WI</option><option>WY</option>
+                </select>
+              </div>
+
+              <button class="btn btn-primary form-submit" type="submit">
+                Join America’s Watchlist
+              </button>
+
+              <div class="form-disclaimer">
+                Demo notice: submissions go to your Formspree inbox so you can see
+                this working right away. Later, this can be connected to your own
+                database and secure login system.
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        America’s Watchlist · Prototype layout for a peaceful, citizen-powered movement.
+      </footer>
+    </main>
   </div>
-</div>
-
-<script>
-  function skipAd() {
-    var el = document.getElementById("sponsorBanner");
-    if (el) el.style.display = "none";
-  }
-</script>
 </body>
 </html>
