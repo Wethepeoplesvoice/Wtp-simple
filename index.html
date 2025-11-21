@@ -24,7 +24,96 @@
         sans-serif;
       --font-heading: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
         sans-serif;
-    }
+    }/* --- EMOTIONAL INTRO / WHY SECTION --- */
+.emotional-block {
+  background: rgba(7, 9, 22, 0.96);
+  border-radius: 18px;
+  padding: 16px 16px 14px;
+  border: 1px solid rgba(70, 84, 144, 0.9);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.emotional-block p {
+  margin: 8px 0;
+}
+
+/* --- HOT RIGHT NOW BANNER --- */
+.hot-banner {
+  margin-top: 14px;
+  border-radius: 14px;
+  padding: 10px 12px;
+  background: radial-gradient(circle at left, rgba(255, 127, 66, 0.25), #090b19);
+  border: 1px solid rgba(255, 127, 66, 0.7);
+  font-size: 13px;
+}
+
+.hot-banner strong {
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-size: 11px;
+  color: #ffb56f;
+  display: block;
+  margin-bottom: 4px;
+}
+
+/* --- TAKE ACTION GRID --- */
+.action-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 18px;
+  margin-top: 16px;
+}
+
+.action-card {
+  background: #070b16;
+  border-radius: 16px;
+  padding: 16px;
+  border: 1px solid #ffffff22;
+  box-shadow: 0 0 18px #00000066;
+}
+
+.action-card h3 {
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+.action-card p {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+/* --- EMAIL CONGRESS SECTION --- */
+.email-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 16px;
+  margin-top: 10px;
+}
+
+.email-card {
+  background: rgba(6, 9, 24, 0.96);
+  border-radius: 18px;
+  padding: 14px;
+  border: 1px solid rgba(46, 59, 110, 0.9);
+}
+
+.email-snippet {
+  background: #050914;
+  border-radius: 10px;
+  padding: 10px;
+  border: 1px solid #ffffff22;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+@media (max-width: 880px) {
+  .email-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
 /* --- PETITION BOARD --- */
 
 <section class="section" id="petition">
@@ -1084,7 +1173,96 @@
         </div>
       </div>
     </section>
+/* --- EMOTIONAL INTRO / WHY SECTION --- */
+.emotional-block {
+  background: rgba(7, 9, 22, 0.96);
+  border-radius: 18px;
+  padding: 16px 16px 14px;
+  border: 1px solid rgba(70, 84, 144, 0.9);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+  font-size: 14px;
+  line-height: 1.7;
+}
 
+.emotional-block p {
+  margin: 8px 0;
+}
+
+/* --- HOT RIGHT NOW BANNER --- */
+.hot-banner {
+  margin-top: 14px;
+  border-radius: 14px;
+  padding: 10px 12px;
+  background: radial-gradient(circle at left, rgba(255, 127, 66, 0.25), #090b19);
+  border: 1px solid rgba(255, 127, 66, 0.7);
+  font-size: 13px;
+}
+
+.hot-banner strong {
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-size: 11px;
+  color: #ffb56f;
+  display: block;
+  margin-bottom: 4px;
+}
+
+/* --- TAKE ACTION GRID --- */
+.action-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 18px;
+  margin-top: 16px;
+}
+
+.action-card {
+  background: #070b16;
+  border-radius: 16px;
+  padding: 16px;
+  border: 1px solid #ffffff22;
+  box-shadow: 0 0 18px #00000066;
+}
+
+.action-card h3 {
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+.action-card p {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+/* --- EMAIL CONGRESS SECTION --- */
+.email-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 16px;
+  margin-top: 10px;
+}
+
+.email-card {
+  background: rgba(6, 9, 24, 0.96);
+  border-radius: 18px;
+  padding: 14px;
+  border: 1px solid rgba(46, 59, 110, 0.9);
+}
+
+.email-snippet {
+  background: #050914;
+  border-radius: 10px;
+  padding: 10px;
+  border: 1px solid #ffffff22;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+@media (max-width: 880px) {
+  .email-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
     <!-- WHY THIS MATTERS / STATES -->
     <section class="section" id="states">
       <div class="section-header-eyebrow">Built For Every American State</div>
@@ -1119,6 +1297,60 @@
 
     <!-- TOWN HALLS -->
     <section class="section" id="townhalls">
+      <!-- TAKE ACTION SECTION -->
+    <section class="section" id="action">
+      <div class="section-header-eyebrow">Don’t Just Watch – Take Action</div>
+      <h2 class="section-title">Here’s How You Push Back Peacefully</h2>
+      <p class="section-sub">
+        America doesn’t change because people get angry. It changes when people
+        get organized. These tools are the start of a peaceful, citizen-powered
+        way to put pressure on the people who have forgotten who they work for.
+      </p>
+
+      <div class="action-grid">
+
+        <div class="action-card">
+          <h3>✍️ Sign National Petitions</h3>
+          <p>
+            Add your name to national demands for term limits, a government not
+            owned by billionaires and corporations, and real consequences when
+            Congress crosses the line.
+          </p>
+          <a href="#petition" class="btn btn-primary">View Petitions</a>
+        </div>
+
+        <div class="action-card">
+          <h3>🗳 Vote on Key Issues (Demo)</h3>
+          <p>
+            Share where you stand on term limits and other national questions.
+            These demo votes help map out how citizens actually feel — not just
+            party talking points.
+          </p>
+          <a href="#vote" class="btn btn-ghost">Go to Votes</a>
+        </div>
+
+        <div class="action-card">
+          <h3>📨 Email Your Members of Congress</h3>
+          <p>
+            Use a simple form to draft a respectful but firm message about what
+            matters to you. Later, this will plug into official contact systems
+            so thousands of citizens can speak up at once.
+          </p>
+          <a href="#emailCongress" class="btn btn-primary">Write Congress</a>
+        </div>
+
+        <div class="action-card">
+          <h3>⚖️ File Federal &amp; State Complaints</h3>
+          <p>
+            When something is serious — ethics violations, abuse of power,
+            blatant misconduct — you can send a complaint that will later be
+            matched with the proper ethics or oversight offices.
+          </p>
+          <a href="#complaints" class="btn btn-ghost">Open Complaint Hub</a>
+        </div>
+
+      </div>
+    </section>
       <div class="section-header-eyebrow">National &amp; State Town Halls</div>
       <h2 class="section-title">Voice-Only Briefings · No Camera Needed</h2>
       <p class="section-sub">
@@ -1376,6 +1608,160 @@
 
     <!-- COMPLAINT HUB -->
     <section class="section" id="complaints">
+      <!-- EMAIL CONGRESS SECTION -->
+    <section class="section" id="emailCongress">
+      <div class="section-header-eyebrow">Direct Message to Congress (Demo)</div>
+      <h2 class="section-title">Tell Them What You’re Tired Of</h2>
+      <p class="section-sub">
+        Most people never send a single message to their Representative or
+        Senators because it feels confusing and pointless. This tool starts the
+        habit: write once, send often, and later this can be wired into official
+        contact systems so thousands of citizens speak with one voice.
+      </p>
+
+      <div class="email-layout">
+        <div class="email-card">
+          <div class="card-label">Your Message</div>
+          <form action="https://formspree.io/f/xovypnwk" method="POST">
+            <input type="hidden" name="form_kind" value="email_congress">
+
+            <div class="form-field">
+              <label class="form-label">Your Name</label>
+              <input
+                type="text"
+                name="name"
+                class="form-input"
+                placeholder="First &amp; last name"
+                required
+              />
+            </div>
+
+            <div class="form-field">
+              <label class="form-label">Email</label>
+              <input
+                type="email"
+                name="email"
+                class="form-input"
+                placeholder="you@example.com"
+                required
+              />
+            </div>
+
+            <div class="form-field">
+              <label class="form-label">State</label>
+              <select name="state" class="form-select" required>
+                <option value="">Select your state</option>
+                <option>AL</option><option>AK</option><option>AZ</option>
+                <option>AR</option><option>CA</option><option>CO</option>
+                <option>CT</option><option>DE</option><option>FL</option>
+                <option>GA</option><option>HI</option><option>ID</option>
+                <option>IL</option><option>IN</option><option>IA</option>
+                <option>KS</option><option>KY</option><option>LA</option>
+                <option>ME</option><option>MD</option><option>MA</option>
+                <option>MI</option><option>MN</option><option>MS</option>
+                <option>MO</option><option>MT</option><option>NE</option>
+                <option>NV</option><option>NH</option><option>NJ</option>
+                <option>NM</option><option>NY</option><option>NC</option>
+                <option>ND</option><option>OH</option><option>OK</option>
+                <option>OR</option><option>PA</option><option>RI</option>
+                <option>SC</option><option>SD</option><option>TN</option>
+                <option>TX</option><option>UT</option><option>VT</option>
+                <option>VA</option><option>WA</option><option>WV</option>
+                <option>WI</option><option>WY</option>
+              </select>
+            </div>
+
+            <div class="form-field">
+              <label class="form-label">Subject</label>
+              <input
+                type="text"
+                name="subject"
+                class="form-input"
+                placeholder="Example: Term limits, corruption, accountability…"
+                required
+              />
+            </div>
+
+            <div class="form-field">
+              <label class="form-label">Your Message</label>
+              <textarea
+                name="message"
+                class="form-textarea"
+                placeholder="Write to your Representative and Senators as if they actually work for you — because they do."
+                required
+              ></textarea>
+            </div>
+
+            <div class="checkbox-row">
+              <input type="checkbox" name="ok_followup" />
+              <span>
+                You may email me templates and links so I can also paste this
+                into the official contact forms for my Representative and
+                Senators.
+              </span>
+            </div>
+
+            <button type="submit" class="btn btn-primary form-submit">
+              Send Message (Demo)
+            </button>
+
+            <div class="form-helper" style="margin-top:6px;">
+              Demo: your message is sent to the America’s Watchlist inbox so it
+              can be organized, counted by state, and turned into future
+              templates for official Congressional channels.
+            </div>
+          </form>
+        </div>
+
+        <div class="email-card">
+          <div class="card-label">Example Message Starter</div>
+          <div class="email-snippet">
+            <p>
+              I am a citizen in your district watching how you handle term
+              limits, big money influence, and accountability in Congress.
+            </p>
+            <p>
+              I am tired of seeing the same politicians stay in office for
+              decades while our trust in government collapses. I am tired of
+              billionaires and corporations shaping laws while ordinary citizens
+              are ignored. I am tired of seeing corruption and abuse of power
+              go unpunished.
+            </p>
+            <p>
+              I am asking you to support strong term limits, to reject dark
+              money and special interest control, and to support real ethics
+              enforcement — even when it costs your own party something.
+            </p>
+            <p>
+              I want a government that remembers who it works for: the people
+              back home, not the donors in the back rooms.
+            </p>
+          </div>
+          <div class="form-helper" style="margin-top:8px;">
+            You can copy and adapt this language in your own words. The goal is
+            calm, firm, and clear pressure — not threats or hate.
+          </div>
+          <div style="margin-top:10px;">
+            <a
+              href="https://www.house.gov/representatives/find-your-representative"
+              target="_blank"
+              rel="noopener"
+              class="btn btn-ghost"
+              >Find Your Representative</a
+            >
+          </div>
+          <div style="margin-top:8px;">
+            <a
+              href="https://www.senate.gov/senators/senators-contact.htm"
+              target="_blank"
+              rel="noopener"
+              class="btn btn-ghost"
+              >Contact Your Senators</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
       <div class="section-header-eyebrow">Take Action · Complaint Hub</div>
       <h2 class="section-title">Ethics, Misconduct &amp; Abuse of Power</h2>
       <p class="section-sub">
