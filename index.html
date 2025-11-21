@@ -25,7 +25,45 @@
       --font-heading: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
         sans-serif;
     }
+/* --- PETITION BOARD --- */
+.petition-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  margin-top: 16px;
+}
 
+.petition-card {
+  background: rgba(6, 9, 24, 0.96);
+  border-radius: 18px;
+  padding: 14px;
+  border: 1px solid rgba(46, 59, 110, 0.9);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+}
+
+.petition-card h3 {
+  margin-top: 0;
+  margin-bottom: 6px;
+  font-size: 15px;
+}
+
+.petition-card p {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+.petition-text-small {
+  font-size: 13px;
+  line-height: 1.6;
+  background: #050914;
+  border-radius: 10px;
+  padding: 10px;
+  border: 1px solid #ffffff22;
+  max-height: 180px;
+  overflow-y: auto;
+  margin-bottom: 10px;
+}
     * {
       box-sizing: border-box;
     }
@@ -357,20 +395,193 @@
       margin-bottom: 6px;
     }
 
-    .section-title {
-      font-size: 18px;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      margin: 0 0 8px;
-    }
+    <section class="section" id="petition">
+  <div class="section-header-eyebrow">National Petitions – America’s Watchlist</div>
+  <h2 class="section-title">Petition Board</h2>
+  <p class="section-sub">
+    These are live, peaceful petitions focused on the biggest problems Americans
+    are angry about right now: career politicians, big money controlling policy,
+    and zero accountability when people in power cross the line.
+  </p>
 
-    .section-sub {
-      font-size: 13px;
-      color: var(--text-muted);
-      max-width: 40rem;
-      line-height: 1.6;
-      margin-bottom: 16px;
-    }
+  <div class="petition-grid">
+
+    <!-- PETITION #1 – 6-YEAR TERM LIMITS -->
+    <div class="petition-card">
+      <h3>Petition #1 – 6-Year Term Limits for Congress</h3>
+      <div class="petition-text-small">
+        We, the American people, believe public office should never become a
+        lifetime career. No elected official should hold power for decades while
+        the country suffers under corruption, division, and self-interest.
+        <br><br>
+        We demand a maximum of <strong>6 years total</strong> in Congress:
+        House only → 3 terms (2 years each), Senate only → 1 term (6 years),
+        or any combination totaling 6 years and out. No grandfathering, no
+        special exceptions, no seniority loopholes.
+        <br><br>
+        As long as the same politicians stay in power, backed by big donors and
+        lobbyists, the American people will never fully trust the government
+        again. It’s time to return power to citizens, not careers.
+      </div>
+
+      <form action="https://formspree.io/f/xovypnwk" method="POST">
+        <input type="hidden" name="form_kind" value="petition_signature">
+        <input type="hidden" name="petition_id" value="term_limits_6yr">
+
+        <label class="form-label">Your Name</label>
+        <input type="text" name="name" class="form-input" required>
+
+        <label class="form-label">Email</label>
+        <input type="email" name="email" class="form-input" required>
+
+        <label class="form-label">State</label>
+        <select name="state" class="form-select" required>
+          <option value="">Choose your state</option>
+          <option>AL</option><option>AK</option><option>AZ</option>
+          <option>AR</option><option>CA</option><option>CO</option>
+          <option>CT</option><option>DE</option><option>FL</option>
+          <option>GA</option><option>HI</option><option>ID</option>
+          <option>IL</option><option>IN</option><option>IA</option>
+          <option>KS</option><option>KY</option><option>LA</option>
+          <option>ME</option><option>MD</option><option>MA</option>
+          <option>MI</option><option>MN</option><option>MS</option>
+          <option>MO</option><option>MT</option><option>NE</option>
+          <option>NV</option><option>NH</option><option>NJ</option>
+          <option>NM</option><option>NY</option><option>NC</option>
+          <option>ND</option><option>OH</option><option>OK</option>
+          <option>OR</option><option>PA</option><option>RI</option>
+          <option>SC</option><option>SD</option><option>TN</option>
+          <option>TX</option><option>UT</option><option>VT</option>
+          <option>VA</option><option>WA</option><option>WV</option>
+          <option>WI</option><option>WY</option>
+        </select>
+
+        <button type="submit" class="btn btn-primary form-submit">
+          Sign Term Limits Petition
+        </button>
+      </form>
+    </div>
+
+    <!-- PETITION #2 – STOP BIG MONEY CONTROL -->
+    <div class="petition-card">
+      <h3>Petition #2 – Stop Big Money Controlling Our Government</h3>
+      <div class="petition-text-small">
+        We, the American people, are witnessing a government increasingly
+        controlled by billionaires, mega-corporations, and powerful lobbyists –
+        not voters. Dark money and donor networks shape legislation,
+        investigations, and who is protected or exposed.
+        <br><br>
+        We demand a ban on corporate PAC money in federal elections, strict
+        limits on individual political contributions, full public disclosure of
+        lobbying contacts, and real penalties for undisclosed influence and
+        corrupt networks that protect the powerful while the people are kept
+        in the dark.
+        <br><br>
+        Congress should serve the people – not the powerful.
+      </div>
+
+      <form action="https://formspree.io/f/xovypnwk" method="POST">
+        <input type="hidden" name="form_kind" value="petition_signature">
+        <input type="hidden" name="petition_id" value="ban_big_money">
+
+        <label class="form-label">Your Name</label>
+        <input type="text" name="name" class="form-input" required>
+
+        <label class="form-label">Email</label>
+        <input type="email" name="email" class="form-input" required>
+
+        <label class="form-label">State</label>
+        <select name="state" class="form-select" required>
+          <option value="">Choose your state</option>
+          <option>AL</option><option>AK</option><option>AZ</option>
+          <option>AR</option><option>CA</option><option>CO</option>
+          <option>CT</option><option>DE</option><option>FL</option>
+          <option>GA</option><option>HI</option><option>ID</option>
+          <option>IL</option><option>IN</option><option>IA</option>
+          <option>KS</option><option>KY</option><option>LA</option>
+          <option>ME</option><option>MD</option><option>MA</option>
+          <option>MI</option><option>MN</option><option>MS</option>
+          <option>MO</option><option>MT</option><option>NE</option>
+          <option>NV</option><option>NH</option><option>NJ</option>
+          <option>NM</option><option>NY</option><option>NC</option>
+          <option>ND</option><option>OH</option><option>OK</option>
+          <option>OR</option><option>PA</option><option>RI</option>
+          <option>SC</option><option>SD</option><option>TN</option>
+          <option>TX</option><option>UT</option><option>VT</option>
+          <option>VA</option><option>WA</option><option>WV</option>
+          <option>WI</option><option>WY</option>
+        </select>
+
+        <button type="submit" class="btn btn-primary form-submit">
+          Sign Big Money Petition
+        </button>
+      </form>
+    </div>
+
+    <!-- PETITION #3 – ACCOUNTABILITY IN CONGRESS -->
+    <div class="petition-card">
+      <h3>Petition #3 – Real Accountability for Corruption in Congress</h3>
+      <div class="petition-text-small">
+        Congress is supposed to represent the American people, not protect
+        itself. Too often, members escape consequences for abuse of power,
+        ethics violations, corruption, and misconduct. Investigations are slow
+        or selective, and partisan loyalty matters more than truth.
+        <br><br>
+        We demand mandatory investigations for ethics complaints, public
+        transparency of misconduct findings, equal accountability for both
+        parties, loss of committee positions for proven misconduct, and removal
+        from office for repeated or serious violations.
+        <br><br>
+        No member of Congress should be above the law or shielded because of
+        their party, donors, or connections.
+      </div>
+
+      <form action="https://formspree.io/f/xovypnwk" method="POST">
+        <input type="hidden" name="form_kind" value="petition_signature">
+        <input type="hidden" name="petition_id" value="congress_accountability">
+
+        <label class="form-label">Your Name</label>
+        <input type="text" name="name" class="form-input" required>
+
+        <label class="form-label">Email</label>
+        <input type="email" name="email" class="form-input" required>
+
+        <label class="form-label">State</label>
+        <select name="state" class="form-select" required>
+          <option value="">Choose your state</option>
+          <option>AL</option><option>AK</option><option>AZ</option>
+          <option>AR</option><option>CA</option><option>CO</option>
+          <option>CT</option><option>DE</option><option>FL</option>
+          <option>GA</option><option>HI</option><option>ID</option>
+          <option>IL</option><option>IN</option><option>IA</option>
+          <option>KS</option><option>KY</option><option>LA</option>
+          <option>ME</option><option>MD</option><option>MA</option>
+          <option>MI</option><option>MN</option><option>MS</option>
+          <option>MO</option><option>MT</option><option>NE</option>
+          <option>NV</option><option>NH</option><option>NJ</option>
+          <option>NM</option><option>NY</option><option>NC</option>
+          <option>ND</option><option>OH</option><option>OK</option>
+          <option>OR</option><option>PA</option><option>RI</option>
+          <option>SC</option><option>SD</option><option>TN</option>
+          <option>TX</option><option>UT</option><option>VT</option>
+          <option>VA</option><option>WA</option><option>WV</option>
+          <option>WI</option><option>WY</option>
+        </select>
+
+        <button type="submit" class="btn btn-primary form-submit">
+          Sign Accountability Petition
+        </button>
+      </form>
+    </div>
+
+  </div>
+
+  <p class="section-sub" style="margin-top:18px;">
+    All submissions go to your Formspree inbox with a petition ID so you can
+    track how many people sign each demand. Later, these can be wired into
+    automatic emails and official Congressional contact systems.
+  </p>
+</section>
 
     .grid-2 {
       display: grid;
