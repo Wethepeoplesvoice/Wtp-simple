@@ -51,7 +51,64 @@
       max-width: 1080px;
       margin: 0 auto;
       padding: 18px 16px 80px;
-    }
+    /* --- COMPLAINTS SECTION --- */
+.complaints-section {
+  margin-top: 40px;
+}
+
+.complaints-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+  margin-top: 16px;
+}
+
+.complaint-card {
+  background: #070b16;
+  border-radius: 18px;
+  padding: 18px 18px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 0 22px rgba(0, 0, 0, 0.55);
+}
+
+.complaint-card h3 {
+  margin-top: 0;
+  margin-bottom: 6px;
+}
+
+.complaint-tagline {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+
+.complaint-card ul {
+  padding-left: 18px;
+  margin: 0 0 12px 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+.complaint-note {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 10px;
+}
+
+/* small accent label */
+.label-pill {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background: rgba(255, 191, 110, 0.12);
+  color: #ffbf6e;
+  border: 1px solid rgba(255, 191, 110, 0.4);
+  margin-bottom: 10px;
+}
 
     /* ---------------------- */
     /* TOP NAV BAR            */
