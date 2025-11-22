@@ -615,37 +615,120 @@
       font-size: 12px;
       color: var(--text-muted);
       line-height: 1.6;
-    }
+    
+<!-- COMPLAINTS / FORMS -->
+    <section class="section" id="complaints">
+      <div class="kicker">Official Complaints &amp; Forms</div>
+      <h2>Turn Anger into Action, Not Just Posts</h2>
+      <p>
+        Most Americans never file a formal complaint because the forms are buried, confusing, or
+        scattered across dozens of sites. America’s Watchlist (soon America’s Torch) aims to
+        change that by putting the most important links in one place — and eventually generating
+        pre-filled forms based on the alerts you care about.
+      </p>
 
-    /* COMPLAINTS / FORMS SECTION */
+      <div class="complaints-grid">
+        <!-- FEDERAL ETHICS & OVERSIGHT -->
+        <div class="complaint-card">
+          <h3>Federal Ethics &amp; Oversight</h3>
+          <p>
+            When members of Congress are accused of serious misconduct, citizens can raise
+            concerns with official ethics and oversight bodies in the House and Senate.
+          </p>
+          <ul>
+            <li>
+              <a href="https://ethics.house.gov/file-a-complaint"
+                 target="_blank" rel="noopener noreferrer">
+                File a complaint with the U.S. House Committee on Ethics
+              </a>
+            </li>
+            <li>
+              <a href="https://conduct.house.gov/contact-us/make-a-submission"
+                 target="_blank" rel="noopener noreferrer">
+                Make a submission to the Office of Congressional Conduct (House)
+              </a>
+            </li>
+            <li>
+              <a href="https://www.ethics.senate.gov/public/index.cfm/contacting-the-committee"
+                 target="_blank" rel="noopener noreferrer">
+                Contact the U.S. Senate Select Committee on Ethics
+              </a>
+            </li>
+          </ul>
+          <p class="complaint-note">
+            In a full app, this section could generate a guided complaint draft based on
+            the alert you’re viewing, then help you send it to the correct office.
+          </p>
+        </div>
 
-    .complaints-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 16px;
-      margin-top: 16px;
-    }
+        <!-- DOJ & CIVIL RIGHTS -->
+        <div class="complaint-card">
+          <h3>Department of Justice &amp; Civil Rights</h3>
+          <p>
+            For issues involving civil rights violations, patterns of corruption, or abuse
+            of power, citizens can go directly to U.S. Department of Justice complaint pages.
+          </p>
+          <ul>
+            <li>
+              <a href="https://civilrights.justice.gov/report/"
+                 target="_blank" rel="noopener noreferrer">
+                Report a civil rights violation – DOJ Civil Rights Division
+              </a>
+            </li>
+            <li>
+              <a href="https://www.justice.gov/crt/filing-complaint"
+                 target="_blank" rel="noopener noreferrer">
+                How to file a civil rights complaint – DOJ
+              </a>
+            </li>
+            <li>
+              <a href="https://www.ada.gov/file-a-complaint/"
+                 target="_blank" rel="noopener noreferrer">
+                File an ADA (disability rights) complaint
+              </a>
+            </li>
+          </ul>
+          <p class="complaint-note">
+            In a later version, America’s Torch could help you choose the right DOJ path,
+            attach evidence, and keep a record of what you sent.
+          </p>
+        </div>
 
-    .complaint-card {
-      background: #070b16;
-      border-radius: 18px;
-      padding: 14px 14px 16px;
-      border: 1px solid rgba(255, 255, 255, 0.18);
-    }
-
-    .complaint-card h3 {
-      margin-bottom: 6px;
-    }
-
-    .complaint-card p {
-      font-size: 13px;
-      color: var(--text-muted);
-    }
-
-    .complaint-card a {
-      font-size: 13px;
-      color: var(--accent-soft);
-    }
+        <!-- STATE-LEVEL COMPLAINTS -->
+        <div class="complaint-card">
+          <h3>State-Level Complaints &amp; Your Representatives</h3>
+          <p>
+            Every state has its own attorneys general, ethics boards, inspectors general, and
+            complaint processes. You can also contact your own elected officials directly.
+          </p>
+          <ul>
+            <li>
+              <a href="https://www.usa.gov/state-local-governments"
+                 target="_blank" rel="noopener noreferrer">
+                Find your state government &amp; state attorney general
+              </a>
+            </li>
+            <li>
+              <a href="https://www.usa.gov/elected-officials"
+                 target="_blank" rel="noopener noreferrer">
+                Find and contact your elected officials (federal, state, local)
+              </a>
+            </li>
+            <li>
+              <a href="https://www.naag.org/find-my-ag/"
+                 target="_blank" rel="noopener noreferrer">
+                Look up your state attorney general (NAAG)
+              </a>
+            </li>
+          </ul>
+          <p class="complaint-note">
+            Future feature: based on your state and alert, America’s Torch could link you
+            straight to the correct state ethics or AG complaint form and generate a draft
+            letter with the right bill number, vote, or issue pre-filled.
+          </p>
+        </div>
+      </div>
+    </section>
 
     /* JOIN SECTION */
 
