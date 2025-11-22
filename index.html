@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>America's Watchlist – The People's Eyes on Power</title>
+  <title>America's Torch – The People’s Flame That Won’t Go Out</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <style>
@@ -44,71 +44,12 @@
 
     .page {
       min-height: 100vh;
-      color: var(--text-main);
     }
 
     .shell {
       max-width: 1080px;
       margin: 0 auto;
       padding: 18px 16px 80px;
-    }
-
-    /* --- (early complaints helpers, safe to leave) --- */
-    .complaints-section {
-      margin-top: 40px;
-    }
-
-    .complaints-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 18px;
-      margin-top: 16px;
-    }
-
-    .complaint-card {
-      background: #070b16;
-      border-radius: 18px;
-      padding: 18px 18px 20px;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      box-shadow: 0 0 22px rgba(0, 0, 0, 0.55);
-    }
-
-    .complaint-card h3 {
-      margin-top: 0;
-      margin-bottom: 6px;
-    }
-
-    .complaint-tagline {
-      font-size: 13px;
-      color: var(--text-muted);
-      margin-bottom: 10px;
-    }
-
-    .complaint-card ul {
-      padding-left: 18px;
-      margin: 0 0 12px 0;
-      font-size: 14px;
-      line-height: 1.5;
-      color: var(--text-muted);
-    }
-
-    .complaint-note {
-      font-size: 12px;
-      color: var(--text-muted);
-      margin-top: 10px;
-    }
-
-    .label-pill {
-      display: inline-block;
-      padding: 4px 10px;
-      border-radius: 999px;
-      font-size: 11px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      background: rgba(255, 191, 110, 0.12);
-      color: #ffbf6e;
-      border: 1px solid rgba(255, 191, 110, 0.4);
-      margin-bottom: 10px;
     }
 
     /* ---------------------- */
@@ -119,7 +60,7 @@
       width: 100%;
       display: flex;
       justify-content: center;
-      gap: 22px;
+      gap: 26px;
       padding: 14px 0;
       background: rgba(0, 0, 0, 0.4);
       backdrop-filter: blur(10px);
@@ -127,16 +68,14 @@
       position: sticky;
       top: 0;
       z-index: 9999;
-      flex-wrap: wrap;
     }
 
     .top-nav a {
       color: #f5f5f7;
-      font-size: 14px;
+      font-size: 15px;
       text-decoration: none;
       font-weight: 500;
       letter-spacing: 0.4px;
-      text-transform: uppercase;
     }
 
     .top-nav a:hover {
@@ -226,7 +165,7 @@
     }
 
     /* ---------------------- */
-    /* EMOTIONAL INTRO        */
+    /* SECTIONS / TYPO        */
     /* ---------------------- */
 
     .section {
@@ -388,102 +327,7 @@
       color: var(--text-muted);
     }
 
-    .action-card a {
-      color: var(--accent-soft);
-      font-size: 13px;
-    }
-
-    /* LIVE VOTE SECTION */
-
-    .poll-section {
-      margin-top: 30px;
-    }
-
-    .poll-card {
-      background: #070b16;
-      border-radius: 22px;
-      padding: 18px 16px 20px;
-      border: 1px solid rgba(255, 255, 255, 0.16);
-      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.85);
-    }
-
-    .poll-question {
-      font-size: 18px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      margin-bottom: 8px;
-    }
-
-    .poll-sub {
-      font-size: 14px;
-      color: var(--text-muted);
-      margin-bottom: 12px;
-    }
-
-    .poll-options {
-      margin-top: 8px;
-      margin-bottom: 10px;
-    }
-
-    .poll-options label {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 14px;
-      color: var(--text-main);
-      margin-bottom: 6px;
-    }
-
-    .poll-options input[type="radio"] {
-      width: 16px;
-      height: 16px;
-    }
-
-    .poll-comment {
-      margin-top: 10px;
-    }
-
-    .poll-comment input {
-      width: 100%;
-      padding: 9px 10px;
-      border-radius: 10px;
-      border: 1px solid rgba(255, 255, 255, 0.23);
-      background: #050913;
-      color: var(--text-main);
-      font-size: 14px;
-    }
-
-    .poll-footnote {
-      margin-top: 8px;
-      font-size: 12px;
-      color: var(--text-muted);
-      line-height: 1.5;
-    }
-
-    /* EMAIL / SPONSOR / PANELS / ALERTS etc */
-
-    .email-layout {
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-      gap: 16px;
-      margin-top: 10px;
-    }
-
-    .email-card {
-      background: rgba(6, 9, 24, 0.96);
-      border-radius: 18px;
-      padding: 14px;
-      border: 1px solid rgba(46, 59, 110, 0.9);
-    }
-
-    .email-snippet {
-      background: #050914;
-      border-radius: 10px;
-      padding: 10px;
-      border: 1px solid #ffffff22;
-      font-size: 13px;
-      line-height: 1.7;
-    }
+    /* SPONSOR / AD BANNER */
 
     .sponsor-banner {
       margin-top: 24px;
@@ -547,6 +391,8 @@
       font-weight: 700;
     }
 
+    /* STATE SECTION */
+
     .panel {
       margin-top: 28px;
       padding: 20px 18px 22px;
@@ -593,6 +439,8 @@
       color: var(--text-muted);
     }
 
+    /* ALERTS SECTION */
+
     .alert-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
@@ -619,6 +467,8 @@
       margin-bottom: 6px;
     }
 
+    /* TOWN HALLS SECTION */
+
     .town-grid {
       display: grid;
       grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
@@ -632,6 +482,8 @@
       padding: 16px;
       border: 1px solid rgba(255, 255, 255, 0.16);
     }
+
+    /* PETITIONS SECTION */
 
     .petitions-section {
       margin-top: 32px;
@@ -686,6 +538,8 @@
       font-size: 14px;
       line-height: 1.7;
     }
+
+    /* FORMS (join + petitions) */
 
     form {
       margin-top: 14px;
@@ -751,12 +605,37 @@
       line-height: 1.6;
     }
 
+    /* COMPLAINTS / FORMS SECTION */
+
     .complaints-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 16px;
       margin-top: 16px;
     }
+
+    .complaint-card {
+      background: #070b16;
+      border-radius: 18px;
+      padding: 14px 14px 16px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    .complaint-card h3 {
+      margin-bottom: 6px;
+    }
+
+    .complaint-card p {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .complaint-card a {
+      font-size: 13px;
+      color: var(--accent-soft);
+    }
+
+    /* JOIN SECTION */
 
     .join-panel {
       margin-top: 28px;
@@ -787,6 +666,8 @@
       padding-bottom: 10px;
     }
 
+    /* RESPONSIVE */
+
     @media (max-width: 880px) {
       .hero {
         padding: 18px 14px 20px;
@@ -796,7 +677,6 @@
         grid-template-columns: minmax(0, 1fr);
       }
 
-      .email-layout,
       .panel-columns,
       .town-grid {
         grid-template-columns: minmax(0, 1fr);
@@ -808,7 +688,8 @@
       }
 
       .top-nav {
-        gap: 12px;
+        flex-wrap: wrap;
+        gap: 14px;
         padding: 10px 6px;
       }
     }
@@ -823,10 +704,9 @@
     <a href="#alerts">Alerts</a>
     <a href="#states">States</a>
     <a href="#townhalls">Town Halls</a>
-    <a href="#vote">Action</a>
-    <a href="#live-vote">Live Vote</a>
-    <a href="#ideas">Ideas</a>
-    <a href="#petition">Petitions</a>
+    <a href="#vote">Vote</a>
+    <a href="#petition">Petition</a>
+    <a href="#article-v">Article V</a>
     <a href="#complaints">Complaints</a>
     <a href="#join">Join</a>
   </nav>
@@ -835,32 +715,32 @@
     <!-- HEADER / BRAND -->
     <header>
       <div class="brand-row">
-        <div class="brand-icon">AW</div>
+        <div class="brand-icon">AT</div>
         <div>
-          <div class="brand-text-main">AMERICA'S WATCHLIST</div>
-          <div class="brand-text-sub">THE PEOPLE'S EYES ON POWER</div>
+          <div class="brand-text-main">AMERICA'S TORCH</div>
+          <div class="brand-text-sub">THE PEOPLE’S FLAME THAT WON’T GO OUT</div>
         </div>
       </div>
     </header>
 
     <!-- HERO POSTER -->
-    <section class="hero" aria-label="America's Watchlist Poster">
+    <section class="hero" aria-label="America's Torch Poster">
       <div class="hero-art-frame">
-        <img src="images/hero-poster.jpg" alt="Poster artwork for America's Watchlist – citizens holding the Constitution in front of the Capitol with lightning." />
+        <img src="images/hero-poster.jpg" alt="Poster artwork for America's Torch – citizens holding the Constitution in front of the Capitol with lightning." />
       </div>
-      <div class="hero-meta">CONCEPT ART · AMERICA'S WATCHLIST</div>
+      <div class="hero-meta">CONCEPT ART · AMERICA'S TORCH</div>
     </section>
 
     <!-- INTRO / EMOTIONAL STORY -->
     <section class="section" id="top">
       <div class="kicker">PROTOTYPE · PEACEFUL CITIZEN MOVEMENT</div>
-      <h1>AMERICA'S WATCHLIST</h1>
-      <div class="accent-line">THE PEOPLE'S EYES ON POWER.</div>
+      <h1>AMERICA'S TORCH</h1>
+      <div class="accent-line">THE PEOPLE’S FLAME THAT WON’T GO OUT.</div>
 
       <p>
         If you are tired of yelling at the TV, tired of corruption stories that go nowhere, tired
         of watching the same people stay in power while life gets more expensive and more divided,
-        America’s Watchlist is built for you.
+        America’s Torch is built for you.
       </p>
 
       <div class="pill-row">
@@ -871,7 +751,7 @@
       </div>
 
       <div class="btn-row">
-        <a href="#join" class="btn-primary">Join America&rsquo;s Watchlist</a>
+        <a href="#join" class="btn-primary">Join America’s Torch</a>
         <a href="#alerts" class="btn-outline">See Example Alerts</a>
       </div>
 
@@ -890,8 +770,8 @@
           chipped away, and wondering if anyone in power actually sees them anymore.
         </p>
         <p>
-          America’s Watchlist exists for the people who are done just complaining. It’s for the
-          moms, dads, grandparents, and young people who still love this country, who still believe
+          America’s Torch exists for the people who are done just complaining. It’s for the moms,
+          dads, grandparents, and young people who still love this country, who still believe
           in peaceful change, and who know deep down that if we don’t stand together now, we may
           wake up one day and realize we waited too long.
         </p>
@@ -906,23 +786,23 @@
         <strong>Hot Right Now</strong>
         If you’re tired of watching the same politicians stay in office for life, tired of
         billionaires and big donors calling the shots, and tired of feeling powerless while the
-        country drifts further apart, America’s Watchlist is built for you — a peaceful way to put
+        country drifts further apart, America’s Torch is built for you — a peaceful way to put
         pressure where it belongs and take our country back before it’s too late.
       </div>
     </section>
 
-    <!-- TAKE ACTION SECTION -->
+    <!-- TAKE ACTION SECTION (linked to #vote) -->
     <section class="section" id="vote">
       <div class="kicker">TAKE ACTION</div>
       <h2>A Peaceful Movement for Accountability</h2>
       <p>
-        America’s Watchlist is not another place to argue online. It’s a set of tools for real-world,
+        America’s Torch is not another place to argue online. It’s a set of tools for real-world,
         peaceful pressure: citizens seeing the same facts at the same time and moving together.
       </p>
 
       <div class="action-grid">
         <div class="action-card">
-          <h3>1. See What&rsquo;s Really Happening</h3>
+          <h3>1. See What’s Really Happening</h3>
           <p>
             In a full build, live dashboards would track bills, votes, rate hikes, and spending in
             plain English — so you can see when something dangerous is moving <em>before</em> it’s
@@ -955,158 +835,6 @@
       </div>
     </section>
 
-    <!-- LIVE VOTE SECTION -->
-    <section class="section poll-section" id="live-vote">
-      <div class="kicker">Live Vote · Demo</div>
-      <h2>Have Your Say Right Now</h2>
-      <p>
-        This simple live vote shows how America’s Watchlist could let millions of citizens weigh in
-        on the same question at the same time — then send those results to Congress and the media.
-        For now, your response goes to your Formspree inbox so you can see it working.
-      </p>
-
-      <div class="poll-card">
-        <div class="poll-question">
-          Should Congress have strict 6-year term limits?
-        </div>
-        <div class="poll-sub">
-          One House member can serve up to three terms (6 years total). One Senate term is six
-          years. After that, they step aside so new voices can serve.
-        </div>
-
-        <form action="https://formspree.io/f/xovypnwk" method="POST">
-          <input type="hidden" name="form" value="Live Vote – 6-Year Term Limits" />
-
-          <div class="poll-options">
-            <label>
-              <input type="radio" name="vote" value="Yes – I support strict 6-year limits" required />
-              Yes – I support strict 6-year limits for Congress.
-            </label>
-            <label>
-              <input type="radio" name="vote" value="No – I do not support 6-year limits" />
-              No – I do not support 6-year limits for Congress.
-            </label>
-          </div>
-
-          <div class="poll-comment">
-            <label for="poll-comment">
-              Optional: Why do you feel this way?
-            </label>
-            <input
-              id="poll-comment"
-              type="text"
-              name="comment"
-              placeholder="1–3 sentences (optional)"
-            />
-          </div>
-
-          <button type="submit" class="btn-submit">
-            Submit My Vote
-          </button>
-
-          <div class="poll-footnote">
-            Demo only: your vote is stored in your Formspree inbox so you can see how people are
-            responding. In a full build, totals could be shown live on the page and shared with
-            Congress, state leaders, and independent media.
-          </div>
-        </form>
-      </div>
-    </section>
-
-    <!-- IDEAS SECTION -->
-    <section class="section" id="ideas">
-      <div class="kicker">Submit Your Ideas</div>
-      <h2>Help Shape What We Push For</h2>
-      <p>
-        This movement isn’t just about one person’s opinions. It’s about millions of Americans
-        bringing forward ideas for fair laws, better protections, and guardrails on government and
-        big donors — then letting others vote on them.
-      </p>
-      <p>
-        Use this form to share a specific idea you believe should become law or a clear rule:
-        federal or state. Later, these ideas can become polls, petitions, or letters that other
-        citizens can support.
-      </p>
-
-      <div class="action-grid">
-        <div class="action-card">
-          <h3>What Makes a Good Idea?</h3>
-          <p>
-            Think of:
-          </p>
-          <ul>
-            <li>Spending rules: caps, oversight, or transparency for tax dollars.</li>
-            <li>Term limits, ethics changes, or conflict-of-interest bans.</li>
-            <li>
-              Rules that stop big donors, corporations, or utilities from abusing their power
-              at the expense of normal families.
-            </li>
-            <li>
-              Protections for free speech that don’t allow harassment, threats, or targeted lies
-              to destroy people’s lives.
-            </li>
-          </ul>
-        </div>
-
-        <div class="action-card">
-          <h3>Send Your Idea to the Movement</h3>
-          <p>
-            Right now this is a simple form that goes to your Formspree inbox. Later, ideas can be
-            tagged by state and issue, and opened up for citizen voting.
-          </p>
-
-          <form action="https://formspree.io/f/xovypnwk" method="POST">
-            <input type="hidden" name="form" value="Idea Submission" />
-            <label for="idea-name">Name</label>
-            <input id="idea-name" type="text" name="name" placeholder="Your full name" required />
-
-            <label for="idea-email">Email</label>
-            <input id="idea-email" type="email" name="email" placeholder="you@example.com" required />
-
-            <label for="idea-state">State</label>
-            <select id="idea-state" name="state" required>
-              <option value="">Select your state</option>
-              <option>AL</option><option>AK</option><option>AZ</option><option>AR</option>
-              <option>CA</option><option>CO</option><option>CT</option><option>DE</option>
-              <option>FL</option><option>GA</option><option>HI</option><option>ID</option>
-              <option>IL</option><option>IN</option><option>IA</option><option>KS</option>
-              <option>KY</option><option>LA</option><option>ME</option><option>MD</option>
-              <option>MA</option><option>MI</option><option>MN</option><option>MS</option>
-              <option>MO</option><option>MT</option><option>NE</option><option>NV</option>
-              <option>NH</option><option>NJ</option><option>NM</option><option>NY</option>
-              <option>NC</option><option>ND</option><option>OH</option><option>OK</option>
-              <option>OR</option><option>PA</option><option>RI</option><option>SC</option>
-              <option>SD</option><option>TN</option><option>TX</option><option>UT</option>
-              <option>VT</option><option>VA</option><option>WA</option><option>WV</option>
-              <option>WI</option><option>WY</option>
-            </select>
-
-            <label for="idea-type">Is this for federal or state?</label>
-            <select id="idea-type" name="level" required>
-              <option value="">Choose one</option>
-              <option>Federal</option>
-              <option>My State Only</option>
-              <option>Both Federal and States</option>
-              <option>Not Sure Yet</option>
-            </select>
-
-            <label for="idea-text">Your Idea</label>
-            <input id="idea-text" type="text" name="idea"
-                   placeholder="Describe the rule/law you think we need (1–3 sentences)" required />
-
-            <button type="submit" class="btn-submit">
-              Submit My Idea
-            </button>
-
-            <div class="form-footnote">
-              Demo only: submissions go to your Formspree inbox so you can read and group them later.
-              In a full version, ideas could be grouped by topic and opened up for votes.
-            </div>
-          </form>
-        </div>
-      </div>
-    </section>
-
     <!-- SPONSOR / DEMO BANNER -->
     <section class="sponsor-banner">
       <div>
@@ -1135,7 +863,7 @@
       <div class="panel-title">Built for Every American State</div>
       <h2>A National Watch, State by State</h2>
       <p>
-        In a full build, America’s Watchlist would plug into bill trackers, campaign finance data,
+        In a full build, America’s Torch would plug into bill trackers, campaign finance data,
         public budgets, and real-time feeds so citizens can see what’s happening in their own state —
         and across the country — in one place.
       </p>
@@ -1171,11 +899,11 @@
     <!-- ALERTS SECTION -->
     <section class="section" id="alerts">
       <div class="kicker">Example Alerts</div>
-      <h2>What America&rsquo;s Watchlist Could Flag</h2>
+      <h2>What America’s Torch Could Flag</h2>
       <p>
         These are example alerts to show how the platform could look. They’re not live data yet —
-        but this is how “The People’s Eyes on Power” might work once real bill tracking and finance
-        APIs are connected.
+        but this is how “The People’s Flame That Won’t Go Out” might work once real bill tracking
+        and finance APIs are connected.
       </p>
 
       <div class="alert-grid">
@@ -1219,7 +947,7 @@
       <div class="kicker">National &amp; State Town Halls</div>
       <h2>Voice-Only Streams, No Camera Needed</h2>
       <p>
-        In a full launch, America’s Watchlist would host national briefings and state-level town
+        In a full launch, America’s Torch would host national briefings and state-level town
         halls whenever major alerts cross a threshold — using voice-over and visuals so citizens
         never have to be on camera.
       </p>
@@ -1245,8 +973,8 @@
 
     <!-- NATIONAL PETITIONS -->
     <section class="petitions-section" id="petition">
-      <div class="kicker">National Petitions – America&rsquo;s Watchlist</div>
-      <h2>We&rsquo;re Done Being Ignored</h2>
+      <div class="kicker">National Petitions – America’s Torch</div>
+      <h2>We’re Done Being Ignored</h2>
 
       <div class="petitions-intro">
         <p>
@@ -1410,13 +1138,67 @@
       </div>
     </section>
 
+    <!-- ARTICLE V SECTION -->
+    <section class="section" id="article-v">
+      <div class="kicker">Constitutional Power · Article V</div>
+      <h2>When the People Need a Reset</h2>
+      <p>
+        The Constitution gives us more than elections and phone calls. Under <strong>Article V</strong>,
+        the American people, through their states, have the power to push for amendments when
+        Washington will not fix itself.
+      </p>
+      <p>
+        There are two ways amendments can be proposed:
+      </p>
+      <ul>
+        <li>
+          <strong>Congressional Proposal:</strong> two-thirds of both the House and Senate vote
+          to propose an amendment.
+        </li>
+        <li>
+          <strong>Convention of States:</strong> when two-thirds of state legislatures (34 states)
+          call for a convention to propose amendments on specific issues.
+        </li>
+      </ul>
+      <p>
+        Any amendment, no matter how it is proposed, still must be approved by
+        <strong>three-fourths of the states</strong> (38 states) before it becomes part of the
+        Constitution. That means changes only happen when there is broad, nationwide agreement —
+        not just the mood of one election or one party.
+      </p>
+      <div class="emotional-block">
+        <p>
+          Many Americans feel like the system has drifted away from us: career politicians who never
+          leave, big donors and lobbyists buying access, 1,000-page bills written in back rooms and
+          passed before anyone can read them.
+        </p>
+        <p>
+          Article V is the pressure valve the founders left behind. It is not a weapon, not a call
+          for chaos or violence — it is a constitutional way for the states and the people to say:
+          <strong>“Enough. We want guardrails, term limits, and real accountability written in ink,
+          not just promised on TV.”</strong>
+        </p>
+        <p>
+          America’s Torch is not running a convention. But this movement can help educate
+          citizens, track which states are taking Article V seriously, and show where real,
+          peaceful momentum is building for reforms that return power to the people — without
+          burning the country down.
+        </p>
+      </div>
+      <p style="margin-top:14px;font-size:13px;color:var(--text-muted);">
+        Future feature: a live Article V tracker showing which state legislatures have active
+        resolutions, which issues they are focused on (term limits, money in politics, balanced
+        budgets, and more), and how close America really is to forcing Washington to listen.
+      </p>
+    </section>
+
     <!-- COMPLAINTS / FORMS -->
     <section class="section" id="complaints">
       <div class="kicker">Official Complaints &amp; Forms</div>
       <h2>Turn Anger into Action, Not Just Posts</h2>
       <p>
         Most Americans never file a formal complaint because the forms are buried, confusing, or
-        scattered across dozens of sites. America’s Watchlist aims to change that by putting the
+        scattered across dozens of sites. America’s Torch aims to change that by putting the
         most important links in one place — and eventually generating pre-filled forms based on the
         alerts you care about.
       </p>
@@ -1449,7 +1231,7 @@
           <h3>State-Level Complaints</h3>
           <p>
             Every state has its own ethics boards, inspectors general, and complaint processes.
-            America’s Watchlist can eventually route citizens to the correct office based on their
+            America’s Torch can eventually route citizens to the correct office based on their
             state and alert.
           </p>
           <a href="#states">Use the state section above as a starting point.</a>
@@ -1460,15 +1242,15 @@
     <!-- JOIN SECTION -->
     <section class="join-panel" id="join">
       <div class="kicker">Join the Movement</div>
-      <h2>Get Alerts When It Really Matters</h2>
+      <h2>Keep the Flame Burning</h2>
       <p>
-        This is the early prototype of America’s Watchlist. If you want to help shape it — from
+        This is the early prototype of America’s Torch. If you want to help shape it — from
         alerts and dashboards to town halls and petitions — add your name below. You’ll be the first
         to know when new tools go live.
       </p>
 
       <form action="https://formspree.io/f/xovypnwk" method="POST">
-        <input type="hidden" name="form" value="Join America's Watchlist" />
+        <input type="hidden" name="form" value="Join America's Torch" />
         <label for="join-name">Name</label>
         <input id="join-name" type="text" name="name" placeholder="Your full name" required />
 
@@ -1494,7 +1276,7 @@
         </select>
 
         <button type="submit" class="btn-submit">
-          Join America&rsquo;s Watchlist
+          Join America’s Torch
         </button>
 
         <div class="form-footnote">
@@ -1505,7 +1287,7 @@
     </section>
 
     <footer>
-      Prototype only · No legal, financial, or voting advice. America’s Watchlist is a peaceful,
+      Prototype only · No legal, financial, or voting advice. America’s Torch is a peaceful,
       citizen-powered concept for accountability and transparency.
     </footer>
   </div>
