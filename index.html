@@ -692,6 +692,74 @@
     }
 
     /* ---------------------- */
+    /* LEGAL DRAFT TOOLS      */
+    /* ---------------------- */
+
+    .draft-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    @media (max-width: 980px) {
+      .draft-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 720px) {
+      .draft-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .draft-card {
+      background: var(--panel-soft);
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 12px 12px 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .draft-card h3 {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    .draft-card p {
+      margin: 0;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .draft-output {
+      width: 100%;
+      min-height: 140px;
+      padding: 8px 9px;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      background: rgba(3, 6, 18, 0.95);
+      color: var(--text-main);
+      font-size: 12px;
+      font-family: var(--font-body);
+      resize: vertical;
+    }
+
+    .draft-controls {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-top: 4px;
+    }
+
+    .draft-note {
+      font-size: 10px;
+      color: var(--text-muted);
+    }
+
+    /* ---------------------- */
     /* FAQ + JOIN             */
     /* ---------------------- */
 
@@ -1112,6 +1180,7 @@
       <a href="#how-it-works">How It Works</a>
       <a href="#complaints">Start a Complaint</a>
       <a href="#ideas">Ideas Board</a>
+      <a href="#legal-tools">Legal Tools</a>
       <a href="#faq">FAQ</a>
       <a href="#join" class="nav-highlight">Join Early Access</a>
     </nav>
@@ -1475,6 +1544,115 @@
         </div>
       </section>
 
+      <!-- LEGAL TOOLS SECTION -->
+      <section id="legal-tools">
+        <div class="section-label">Legal tools • built on your summary</div>
+        <div class="section-header-row">
+          <h2>Turn your summary into drafts</h2>
+          <p class="section-sub">
+            First, use the “Civil rights &amp; constitutional concerns” wizard to build a
+            summary. Then use these tools to turn that summary into a draft judicial
+            complaint-style letter, a motion to strike / amend, or a supporting
+            affidavit you can edit and use with a lawyer or court forms.
+          </p>
+        </div>
+
+        <div class="draft-grid">
+          <!-- Judicial Complaint -->
+          <article class="draft-card">
+            <h3>Judicial Complaint Draft</h3>
+            <p>
+              Uses your summary to create a structured complaint-style letter you can
+              adapt for a judicial oversight body.
+            </p>
+            <textarea id="jqcDraftOutput" class="draft-output" placeholder="Click “Build from my summary” to generate a draft."></textarea>
+            <div class="draft-controls">
+              <button
+                type="button"
+                class="btn-primary"
+                onclick="buildLegalDraft('jqc')"
+              >
+                <span class="pill-icon">⚖️</span>
+                Build from my summary
+              </button>
+              <button
+                type="button"
+                class="btn-ghost"
+                onclick="copyDraft('jqcDraftOutput')"
+              >
+                📋 Copy draft to clipboard
+              </button>
+              <div class="draft-note">
+                This is a starting point only. Check the actual complaint form/instructions
+                for the judicial oversight body where you plan to file.
+              </div>
+            </div>
+          </article>
+
+          <!-- Motion to Strike / Amend -->
+          <article class="draft-card">
+            <h3>Motion to Strike / Amend Draft</h3>
+            <p>
+              Wraps your summary into a motion-style format asking a court to correct or
+              strike false or unsupported statements.
+            </p>
+            <textarea id="motionDraftOutput" class="draft-output" placeholder="Click “Build from my summary” to generate a draft."></textarea>
+            <div class="draft-controls">
+              <button
+                type="button"
+                class="btn-primary"
+                onclick="buildLegalDraft('motion')"
+              >
+                <span class="pill-icon">📝</span>
+                Build from my summary
+              </button>
+              <button
+                type="button"
+                class="btn-ghost"
+                onclick="copyDraft('motionDraftOutput')"
+              >
+                📋 Copy draft to clipboard
+              </button>
+              <div class="draft-note">
+                You will still need to format this into your court’s official caption,
+                case number, signature block, and follow local rules.
+              </div>
+            </div>
+          </article>
+
+          <!-- Affidavit -->
+          <article class="draft-card">
+            <h3>Supporting Affidavit Draft</h3>
+            <p>
+              Uses your summary as sworn statement language that you can adapt into an
+              affidavit and have notarized, if appropriate.
+            </p>
+            <textarea id="affidavitDraftOutput" class="draft-output" placeholder="Click “Build from my summary” to generate a draft."></textarea>
+            <div class="draft-controls">
+              <button
+                type="button"
+                class="btn-primary"
+                onclick="buildLegalDraft('affidavit')"
+              >
+                <span class="pill-icon">✒️</span>
+                Build from my summary
+              </button>
+              <button
+                type="button"
+                class="btn-ghost"
+                onclick="copyDraft('affidavitDraftOutput')"
+              >
+                📋 Copy draft to clipboard
+              </button>
+              <div class="draft-note">
+                Affidavit requirements vary by state. Treat this as draft language to
+                refine with an attorney or using your court’s affidavit form.
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
       <!-- FAQ + JOIN -->
       <section id="faq">
         <div class="section-label">Questions &amp; early access</div>
@@ -1823,6 +2001,15 @@
             match the rules of wherever you are sending it.
           </p>
           <textarea id="complaintSummaryOutput" class="wizard-summary-output" readonly></textarea>
+
+          <button
+            type="button"
+            class="btn-ghost"
+            style="margin-top:8px;width:100%;justify-content:center;"
+            onclick="copyComplaintSummary()"
+          >
+            📋 Copy summary to clipboard
+          </button>
         </div>
 
         <div class="wizard-footer">
@@ -1873,8 +2060,6 @@
       currentWizardStep = 1;
       setWizardStep(currentWizardStep);
 
-      // If we want to tweak title based on type later, we can use `type`.
-      // For now there is only "civil-rights".
       const output = document.getElementById("complaintSummaryOutput");
       if (output) {
         output.value = "";
@@ -2077,6 +2262,170 @@
       // Make sure we are on step 4 so user can see the text
       if (currentWizardStep !== 4) {
         setWizardStep(4);
+      }
+    }
+
+    function copyComplaintSummary() {
+      const output = document.getElementById("complaintSummaryOutput");
+      if (!output) return;
+
+      const text = output.value;
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(
+          function () {
+            alert("Summary copied to your clipboard.");
+          },
+          function () {
+            alert("Could not copy automatically. You can still select and copy the text manually.");
+          }
+        );
+      } else {
+        output.focus();
+        output.select();
+        try {
+          document.execCommand("copy");
+          alert("Summary copied to your clipboard.");
+        } catch (e) {
+          alert("Could not copy automatically. You can still select and copy the text manually.");
+        }
+      }
+    }
+
+    // -------------------------------
+    // Legal draft builders
+    // -------------------------------
+
+    function requireSummary() {
+      const summaryEl = document.getElementById("complaintSummaryOutput");
+      if (!summaryEl || !summaryEl.value.trim()) {
+        alert(
+          "First, open the 'Civil rights & constitutional concerns' wizard, fill in your information, and generate a summary (Step 4). Then come back here."
+        );
+        return null;
+      }
+      return summaryEl.value.trim();
+    }
+
+    function buildLegalDraft(type) {
+      const summary = requireSummary();
+      if (!summary) return;
+
+      let text = "";
+
+      if (type === "jqc") {
+        text =
+          "[Your Name]\n" +
+          "[Your Mailing Address]\n" +
+          "[City, State ZIP]\n" +
+          "[Phone] • [Email]\n\n" +
+          "[Date]\n\n" +
+          "[Judicial Oversight Body / Commission Name]\n" +
+          "[Address if known]\n\n" +
+          "RE: Complaint Regarding Judicial Conduct\n\n" +
+          "To Whom It May Concern:\n\n" +
+          "I am submitting this complaint to formally raise concerns about the conduct and decisions of a court and/or judge in my matter. " +
+          "I understand that this letter is not a substitute for legal advice and that I remain responsible for complying with any filing requirements of your office.\n\n" +
+          "Below is a summary of the situation and the rights and fairness concerns as I understand them:\n\n" +
+          summary +
+          "\n" +
+          "I respectfully request that your office review this situation, including the underlying orders and case history, " +
+          "and determine whether judicial misconduct or violations of judicial ethics have occurred. If appropriate, I ask that corrective action be considered, " +
+          "and that my concerns be included in any record your office maintains regarding this court or judge.\n\n" +
+          "I certify that the information I have provided is true and correct to the best of my knowledge and belief. " +
+          "I understand that knowingly providing false information in a complaint may have legal consequences.\n\n" +
+          "Sincerely,\n\n" +
+          "[Your Signature]\n" +
+          "[Your Printed Name]\n";
+        const out = document.getElementById("jqcDraftOutput");
+        if (out) out.value = text;
+      } else if (type === "motion") {
+        text =
+          "[COURT CAPTION GOES HERE]\n" +
+          "-------------------------------------------------\n" +
+          "[Your Name],\n" +
+          "    Movant,\n" +
+          "v.\n" +
+          "[Opposing Party Name],\n" +
+          "    Respondent.\n" +
+          "-------------------------------------------------\n" +
+          "MOTION TO STRIKE OR AMEND PORTIONS OF ORDER\n\n" +
+          "COMES NOW the Movant and respectfully moves this Court to strike and/or amend certain portions of its prior order, " +
+          "and shows the Court as follows:\n\n" +
+          "1.\tThis motion concerns the Court’s prior order in the above-styled matter, which contains statements and findings that are inaccurate, unsupported by the record, " +
+          "and/or were made without providing Movant a meaningful opportunity to be heard.\n\n" +
+          "2.\tMovant provides the following summary of concerns regarding the handling of the case and the fairness of the proceedings:\n\n" +
+          summary +
+          "\n" +
+          "3.\tMovant contends that the challenged portions of the order are materially misleading and have caused ongoing harm, including but not limited to damage to reputation, " +
+          "interference with family relationships, and confusion about Movant’s status in connection with the case.\n\n" +
+          "4.\tMovant respectfully requests that the Court review the record, consider the lack of notice and opportunity to be heard regarding the statements at issue, " +
+          "and strike or amend any language that is not supported by evidence or that improperly characterizes Movant’s conduct or role.\n\n" +
+          "WHEREFORE, Movant prays that this Court:\n" +
+          "  a.\tGrant this Motion to Strike or Amend;\n" +
+          "  b.\tStrike or correct the specific statements and findings identified by Movant in a separate list or proposed order;\n" +
+          "  c.\tSet this matter for a hearing, if necessary, so that Movant may be heard and present evidence; and\n" +
+          "  d.\tGrant such other and further relief as the Court deems just and proper.\n\n" +
+          "Respectfully submitted this ____ day of __________________, 20____.\n\n" +
+          "____________________________________\n" +
+          "[Your Name]\n" +
+          "[Address]\n" +
+          "[Phone]\n" +
+          "[Email]\n";
+        const out = document.getElementById("motionDraftOutput");
+        if (out) out.value = text;
+      } else if (type === "affidavit") {
+        text =
+          "AFFIDAVIT\n\n" +
+          "STATE OF _______________________\n" +
+          "COUNTY OF ______________________\n\n" +
+          "Personally appeared before the undersigned officer, duly authorized to administer oaths, the undersigned Affiant, who being first duly sworn, deposes and states as follows:\n\n" +
+          "1.\tMy name is ____________________________. I am over eighteen (18) years of age, competent to testify, and I make this affidavit based on my personal knowledge.\n\n" +
+          "2.\tThe following summary accurately reflects my understanding and recollection of events related to the court/agency actions in my matter:\n\n" +
+          summary +
+          "\n" +
+          "3.\tTo the best of my knowledge and belief, the information described above is true, correct, and complete. I understand that this affidavit may be used in support of motions, complaints, or other filings related to my case.\n\n" +
+          "FURTHER AFFIANT SAYETH NOT.\n\n\n" +
+          "____________________________________\n" +
+          "Affiant Signature\n\n" +
+          "Printed Name: ______________________\n" +
+          "Date: _____________________________\n\n" +
+          "Sworn to and subscribed before me this ____ day of __________________, 20____.\n\n" +
+          "____________________________________\n" +
+          "Notary Public\n" +
+          "My Commission Expires: _____________\n";
+        const out = document.getElementById("affidavitDraftOutput");
+        if (out) out.value = text;
+      }
+    }
+
+    function copyDraft(id) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      const text = el.value || "";
+      if (!text.trim()) {
+        alert("There is nothing to copy yet. Click “Build from my summary” first.");
+        return;
+      }
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(
+          function () {
+            alert("Draft copied to your clipboard.");
+          },
+          function () {
+            alert("Could not copy automatically. You can still select and copy the text manually.");
+          }
+        );
+      } else {
+        el.focus();
+        el.select();
+        try {
+          document.execCommand("copy");
+          alert("Draft copied to your clipboard.");
+        } catch (e) {
+          alert("Could not copy automatically. You can still select and copy the text manually.");
+        }
       }
     }
   </script>
