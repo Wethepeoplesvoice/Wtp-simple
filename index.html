@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>America's Torch – The People's Eyes on Power</title>
+  <title>America's Torch – The People’s Flame That Won’t Go Out</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <style>
@@ -53,23 +53,20 @@
       padding: 18px 16px 80px;
     }
 
-    /* ---------------------- */
-    /* TOP NAV BAR            */
-    /* ---------------------- */
+    /* TOP NAV BAR */
 
     .top-nav {
       width: 100%;
       display: flex;
       justify-content: center;
       gap: 22px;
-      padding: 14px 10px;
-      background: rgba(0, 0, 0, 0.6);
-      backdrop-filter: blur(12px);
+      padding: 12px 8px;
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(10px);
       border-bottom: 1px solid rgba(255, 255, 255, 0.15);
       position: sticky;
       top: 0;
       z-index: 9999;
-      flex-wrap: wrap;
     }
 
     .top-nav a {
@@ -77,8 +74,8 @@
       font-size: 14px;
       text-decoration: none;
       font-weight: 500;
-      letter-spacing: 0.4px;
-      padding: 4px 0;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
     }
 
     .top-nav a:hover {
@@ -86,18 +83,7 @@
       text-shadow: 0 0 4px rgba(255, 255, 255, 0.4);
     }
 
-    .top-nav .nav-highlight {
-      padding: 6px 14px;
-      border-radius: 999px;
-      background: linear-gradient(90deg, var(--accent-soft), var(--accent));
-      color: #05040a;
-      font-weight: 700;
-      box-shadow: 0 0 18px rgba(255, 153, 64, 0.35);
-    }
-
-    /* ---------------------- */
-    /* HEADER / BRAND         */
-    /* ---------------------- */
+    /* HEADER / BRAND */
 
     header {
       padding-top: 18px;
@@ -107,7 +93,6 @@
       display: flex;
       align-items: center;
       gap: 16px;
-      margin-bottom: 18px;
     }
 
     .brand-icon {
@@ -115,2596 +100,1200 @@
       height: 56px;
       border-radius: 50%;
       background: radial-gradient(circle at 30% 0, #ffffff, #f6b45d 40%, #c47221 80%, #000000);
-      box-shadow: 0 0 24px rgba(255, 184, 92, 0.55);
+      box-shadow: 0 0 1px rgba(0, 0, 0, 0.5), 0 16px 35px rgba(0, 0, 0, 0.7);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-weight: 900;
-      font-size: 26px;
-      letter-spacing: 1px;
-      color: #050812;
-      border: 1px solid rgba(255, 255, 255, 0.2);
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: #1b1205;
+      font-size: 16px;
     }
 
-    .brand-text h1 {
+    .brand-text-main {
       font-family: var(--font-heading);
-      font-size: 32px;
-      line-height: 1.1;
-      margin: 0 0 4px;
-      letter-spacing: 1.2px;
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 0.24em;
       text-transform: uppercase;
     }
 
-    .brand-text h1 span {
-      background: linear-gradient(90deg, #ffffff, #f6b45d);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-
-    .brand-text .tagline {
-      font-size: 14px;
+    .brand-text-sub {
+      font-size: 12px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
       color: var(--text-muted);
+      margin-top: 3px;
     }
 
-    /* ---------------------- */
-    /* HERO SECTION           */
-    /* ---------------------- */
+    /* HERO POSTER */
 
     .hero {
-      margin-top: 8px;
-      display: grid;
-      grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
-      gap: 20px;
-      align-items: stretch;
-      flex-wrap: wrap;
-    }
-
-    @media (max-width: 840px) {
-      .hero {
-        grid-template-columns: minmax(0, 1fr);
-      }
-    }
-
-    .hero-main {
-      background: radial-gradient(circle at top left, #202645 0, #0b101f 55%, #050812 100%);
-      border-radius: var(--radius-lg);
-      padding: 22px 20px 20px;
-      border: 1px solid rgba(255, 255, 255, 0.06);
+      margin-top: 22px;
+      background: radial-gradient(circle at top left, #181b38, #050812 55%);
+      border-radius: 32px;
+      padding: 22px 22px 26px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
       box-shadow: var(--shadow-soft);
       position: relative;
       overflow: hidden;
     }
 
-    .hero-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(8, 13, 35, 0.9);
-      border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      padding: 4px 10px;
-      color: var(--text-muted);
+    .hero-art-frame {
+      border-radius: 28px;
+      padding: 16px;
+      background: radial-gradient(circle at top left, #181b38, #050812);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .hero img {
+      width: 100%;
+      display: block;
+      border-radius: 22px;
+    }
+
+    .hero-meta {
+      margin-top: 10px;
       font-size: 11px;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
-      letter-spacing: 0.12em;
-      margin-bottom: 14px;
-    }
-
-    .hero-pill-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--accent-soft);
-      box-shadow: 0 0 10px rgba(255, 153, 64, 0.85);
-    }
-
-    .hero-title {
-      font-size: 26px;
-      line-height: 1.25;
-      margin-bottom: 10px;
-    }
-
-    .hero-title span {
-      background: linear-gradient(90deg, #ffffff, #ffe1ac);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-
-    .hero-sub {
-      font-size: 14px;
       color: var(--text-muted);
-      margin-bottom: 16px;
     }
 
-    .hero-cta-row {
+    /* GENERIC SECTION STYLES */
+
+    .section {
+      margin-top: 30px;
+    }
+
+    .kicker {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: var(--font-heading);
+      margin: 0;
+    }
+
+    h1 {
+      font-size: 32px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      font-size: 22px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    h3 {
+      font-size: 18px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    p {
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--text-main);
+      margin: 10px 0 0;
+    }
+
+    .accent-line {
+      margin-top: 6px;
+      font-size: 13px;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .pill-row {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
-      margin-bottom: 16px;
+      margin-top: 14px;
     }
 
-    .btn-primary,
-    .btn-ghost {
+    .pill {
+      background: var(--pill-bg);
+      padding: 8px 16px;
       border-radius: 999px;
-      padding: 9px 16px;
-      font-size: 14px;
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .pill strong {
+      color: var(--accent);
       font-weight: 600;
-      border: none;
-      outline: none;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease, color 0.12s ease;
-      text-align: center;
+    }
+
+    .btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 18px;
     }
 
     .btn-primary {
-      background: linear-gradient(90deg, var(--accent-soft), var(--accent));
-      color: #050812;
-      box-shadow: 0 0 22px rgba(255, 153, 64, 0.4);
+      background: linear-gradient(90deg, #ffba63, #ff7f42);
+      padding: 13px 22px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 700;
+      color: #000;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.8);
     }
 
-    .btn-primary:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 0 28px rgba(255, 153, 64, 0.6);
-    }
-
-    .btn-ghost {
-      background: rgba(7, 13, 32, 0.85);
-      border: 1px solid rgba(255, 255, 255, 0.18);
+    .btn-outline {
+      padding: 11px 20px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      font-size: 14px;
       color: var(--text-main);
     }
 
-    .btn-ghost:hover {
-      background: rgba(16, 24, 54, 0.95);
-      transform: translateY(-1px);
-    }
+    /* EMOTIONAL STORY BLOCK */
 
-    .btn-primary .pill-icon,
-    .btn-ghost .pill-icon {
-      font-size: 15px;
-    }
-
-    .hero-meta-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      font-size: 11px;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-    }
-
-    .hero-meta-pill {
-      padding: 6px 10px;
-      border-radius: 999px;
-      background: rgba(8, 13, 33, 0.9);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-    }
-
-    .hero-meta-pill strong {
-      color: var(--accent);
-    }
-
-    .hero-badge-corner {
-      position: absolute;
-      right: 16px;
-      bottom: 16px;
-      padding: 6px 10px;
-      border-radius: 999px;
-      background: rgba(4, 7, 18, 0.9);
-      border: 1px solid rgba(255, 255, 255, 0.16);
-      font-size: 11px;
-      color: var(--text-muted);
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .hero-badge-corner span {
-      width: 16px;
-      height: 16px;
-      border-radius: 50%;
-      background: radial-gradient(circle at 30% 0, #ffffff, #f6b45d 40%, #c47221 80%);
-      box-shadow: 0 0 10px rgba(255, 184, 92, 0.8);
-    }
-
-    @media (max-width: 600px) {
-      .hero-badge-corner {
-        position: static;
-        margin-top: 14px;
-      }
-    }
-
-    /* HERO SIDE PANEL */
-
-    .hero-side {
-      background: linear-gradient(145deg, #0f1427, #050812);
-      border-radius: var(--radius-lg);
-      padding: 18px 16px 16px;
-      border: 1px solid rgba(255, 255, 255, 0.06);
-      box-shadow: var(--shadow-soft);
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
-
-    .side-label {
-      font-size: 11px;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-    }
-
-    .side-card {
-      background: rgba(9, 14, 32, 0.95);
-      border-radius: var(--radius-md);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      padding: 10px 11px;
-    }
-
-    .side-card h3 {
-      margin: 0 0 4px;
-      font-size: 13px;
-      letter-spacing: 0.03em;
-      text-transform: uppercase;
-    }
-
-    .side-card p {
-      margin: 0;
-      font-size: 12px;
-      color: var(--text-muted);
-    }
-
-    .side-stats {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 10px;
-      margin-top: 8px;
-    }
-
-    .side-stat {
-      background: rgba(10, 16, 36, 0.9);
-      border-radius: 12px;
-      border: 1px solid rgba(255, 255, 255, 0.06);
-      padding: 8px 9px;
-      font-size: 11px;
-      color: var(--text-muted);
-    }
-
-    .side-stat strong {
-      display: block;
-      font-size: 15px;
-      color: #ffffff;
-    }
-
-    .side-links {
-      margin-top: 6px;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      font-size: 12px;
-    }
-
-    .side-link-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 6px;
-      padding: 7px 9px;
-      border-radius: 999px;
-      background: rgba(5, 9, 22, 0.85);
-      border: 1px solid rgba(255, 255, 255, 0.06);
-      cursor: pointer;
-    }
-
-    .side-link-row span {
-      color: var(--text-muted);
-    }
-
-    .side-link-row strong {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      color: var(--accent-soft);
-    }
-
-    .side-disclaimer {
-      font-size: 10px;
-      color: var(--text-muted);
-      margin-top: 4px;
-      line-height: 1.4;
-    }
-
-    /* ---------------------- */
-    /* SECTION FRAME          */
-    /* ---------------------- */
-
-    section {
-      margin-top: 32px;
-    }
-
-    .section-label {
-      font-size: 11px;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      margin-bottom: 8px;
-    }
-
-    .section-header-row {
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
-      gap: 12px;
-      margin-bottom: 14px;
-    }
-
-    .section-header-row h2 {
-      margin: 0;
-      font-size: 19px;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-    }
-
-    .section-sub {
-      margin: 0;
-      font-size: 13px;
-      color: var(--text-muted);
-      max-width: 460px;
-    }
-
-    /* ---------------------- */
-    /* HOW IT WORKS           */
-    /* ---------------------- */
-
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 14px;
-    }
-
-    @media (max-width: 840px) {
-      .steps {
-        grid-template-columns: minmax(0, 1fr);
-      }
-    }
-
-    .step-card {
-      background: var(--panel);
-      border-radius: var(--radius-md);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      padding: 14px 14px 12px;
-      box-shadow: var(--shadow-soft);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .step-number {
-      width: 24px;
-      height: 24px;
-      border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, 0.14);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 12px;
-      color: var(--accent);
-      margin-bottom: 8px;
-      background: rgba(5, 9, 22, 0.9);
-    }
-
-    .step-card h3 {
-      margin: 0 0 6px;
+    .emotional-block {
+      margin-top: 26px;
+      background: rgba(7, 9, 22, 0.96);
+      border-radius: 18px;
+      padding: 16px 16px 14px;
+      border: 1px solid rgba(70, 84, 144, 0.9);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
       font-size: 14px;
+      line-height: 1.7;
     }
 
-    .step-card p {
-      margin: 0;
-      font-size: 12px;
-      color: var(--text-muted);
+    .emotional-block p {
+      margin: 8px 0;
     }
 
-    .step-tag-row {
-      margin-top: 8px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-    }
+    /* HOT RIGHT NOW banner */
 
-    .step-tag {
-      font-size: 10px;
-      padding: 4px 7px;
-      border-radius: 999px;
-      background: var(--pill-bg);
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-    }
-
-    /* ---------------------- */
-    /* IDEA BOARD             */
-    /* ---------------------- */
-
-    .idea-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 14px;
-    }
-
-    @media (max-width: 980px) {
-      .idea-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-    }
-
-    @media (max-width: 680px) {
-      .idea-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-    }
-
-    .idea-card {
-      background: var(--panel-soft);
-      border-radius: var(--radius-md);
-      border: 1px solid rgba(255, 255, 255, 0.06);
-      padding: 12px 12px 10px;
-      display: flex;
-      flex-direction: column;
-      gap: 7px;
-    }
-
-    .idea-topic {
-      font-size: 11px;
-      color: var(--accent);
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-    }
-
-    .idea-title {
-      font-size: 14px;
-      margin-bottom: 2px;
-    }
-
-    .idea-meta {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      font-size: 11px;
-      color: var(--text-muted);
-      margin-top: 4px;
-    }
-
-    .idea-votes {
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      padding: 4px 7px;
-      border-radius: 999px;
-      background: rgba(5, 9, 22, 0.9);
-      border: 1px solid rgba(255, 255, 255, 0.16);
-      font-size: 11px;
-    }
-
-    .idea-votes strong {
-      color: #ffffff;
-    }
-
-    .idea-status {
-      font-size: 10px;
-      padding: 4px 7px;
-      border-radius: 999px;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      border: 1px solid rgba(255, 255, 255, 0.18);
-    }
-
-    .idea-status-open {
-      color: var(--accent);
-      background: rgba(255, 184, 92, 0.08);
-    }
-
-    .idea-status-sent {
-      color: #6ed3ff;
-      background: rgba(73, 162, 230, 0.12);
-      border-color: rgba(140, 210, 255, 0.35);
-    }
-
-    .idea-status-archived {
-      color: var(--text-muted);
-      background: rgba(10, 15, 30, 0.9);
-    }
-
-    /* ---------------------- */
-    /* COMPLAINT PATHWAYS     */
-    /* ---------------------- */
-
-    .complaints-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 14px;
-    }
-
-    @media (max-width: 780px) {
-      .complaints-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-    }
-
-    .complaint-card {
-      background: var(--panel);
-      border-radius: var(--radius-md);
-      border: 1px solid rgba(255, 255, 255, 0.09);
-      padding: 13px 13px 11px;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .complaint-chip {
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--text-muted);
-      padding: 4px 7px;
-      border-radius: 999px;
-      background: rgba(8, 13, 30, 0.9);
-      border: 1px solid rgba(255, 255, 255, 0.09);
-      align-self: flex-start;
-    }
-
-    .complaint-card h3 {
-      margin: 0;
-      font-size: 15px;
-    }
-
-    .complaint-card p {
-      margin: 0;
-      font-size: 12px;
-      color: var(--text-muted);
-    }
-
-    .complaint-actions {
-      margin-top: 8px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .pill-link {
-      font-size: 11px;
-      padding: 6px 12px;
-      border-radius: 999px;
-      background: rgba(8, 13, 30, 0.9);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      cursor: pointer;
-    }
-
-    .pill-link span {
-      font-size: 13px;
-    }
-
-    /* ---------------------- */
-    /* LEGAL DRAFT TOOLS      */
-    /* ---------------------- */
-
-    .legal-disclaimer {
-      margin-bottom: 12px;
-      padding: 10px 12px;
+    .hot-banner {
+      margin-top: 18px;
       border-radius: 14px;
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      background: rgba(80, 20, 20, 0.3);
-      font-size: 11px;
-      color: var(--text-muted);
+      padding: 10px 12px;
+      background: radial-gradient(circle at left, rgba(255, 127, 66, 0.25), #090b19);
+      border: 1px solid rgba(255, 127, 66, 0.7);
+      font-size: 13px;
     }
 
-    .legal-disclaimer strong {
-      color: var(--danger);
+    .hot-banner strong {
+      letter-spacing: 0.16em;
       text-transform: uppercase;
-      letter-spacing: 0.12em;
-      font-size: 10px;
+      font-size: 11px;
+      color: #ffb56f;
       display: block;
       margin-bottom: 4px;
     }
 
-    .draft-grid {
+    /* TAKE ACTION GRID */
+
+    .action-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 18px;
+      margin-top: 16px;
+    }
+
+    .action-card {
+      background: #070b16;
+      border-radius: 16px;
+      padding: 16px;
+      border: 1px solid #ffffff22;
+      box-shadow: 0 0 18px #00000066;
+    }
+
+    .action-card h3 {
+      margin-top: 0;
+      margin-bottom: 8px;
+    }
+
+    .action-card p {
+      font-size: 13px;
+      line-height: 1.6;
+      color: var(--text-muted);
+    }
+
+    .action-card a {
+      color: var(--accent-soft);
+      font-size: 13px;
+    }
+
+    /* SPONSOR / AD BANNER */
+
+    .sponsor-banner {
+      margin-top: 24px;
+      border-radius: 26px;
+      padding: 16px 16px 18px;
+      background: radial-gradient(circle at left, rgba(255, 186, 99, 0.18), rgba(6, 10, 32, 0.98));
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      display: grid;
+      grid-template-columns: minmax(0, 1.6fr) minmax(0, 0.9fr);
       gap: 14px;
+      align-items: center;
     }
 
-    @media (max-width: 980px) {
-      .draft-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
+    .sponsor-label {
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 6px;
     }
 
-    @media (max-width: 720px) {
-      .draft-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-    }
-
-    .draft-card {
-      background: var(--panel-soft);
-      border-radius: var(--radius-md);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      padding: 12px 12px 10px;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .draft-card h3 {
-      margin: 0;
+    .sponsor-text {
       font-size: 14px;
+      line-height: 1.6;
     }
 
-    .draft-card p {
-      margin: 0;
-      font-size: 12px;
-      color: var(--text-muted);
+    .sponsor-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      flex-wrap: wrap;
     }
 
-    .draft-output {
-      width: 100%;
-      min-height: 140px;
-      padding: 8px 9px;
-      border-radius: 10px;
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      background: rgba(3, 6, 18, 0.95);
-      color: var(--text-main);
-      font-size: 12px;
-      font-family: var(--font-body);
-      resize: vertical;
-    }
-
-    .draft-controls {
+    .sponsor-skip {
+      min-width: 88px;
+      height: 88px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.4);
       display: flex;
       flex-direction: column;
-      gap: 6px;
-      margin-top: 4px;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
     }
 
-    .draft-note {
-      font-size: 10px;
+    .sponsor-main {
+      min-width: 110px;
+      height: 88px;
+      border-radius: 999px;
+      background: radial-gradient(circle at top, #ffba63, #ff7f42);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #000;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: 700;
+    }
+
+    /* PANEL SECTIONS */
+
+    .panel {
+      margin-top: 28px;
+      padding: 20px 18px 22px;
+      border-radius: 26px;
+      background: radial-gradient(circle at top left, rgba(33, 39, 82, 0.8), #050812 70%);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      box-shadow: 0 18px 55px rgba(0, 0, 0, 0.9);
+    }
+
+    .panel-title {
+      font-size: 13px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    .panel-columns {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .panel-card {
+      background: rgba(5, 8, 25, 0.9);
+      border-radius: 20px;
+      padding: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .panel-card h3 {
+      margin-bottom: 6px;
+    }
+
+    .panel-card ul {
+      padding-left: 20px;
+      margin: 6px 0 0;
+      font-size: 14px;
       color: var(--text-muted);
     }
 
-    /* ---------------------- */
-    /* FAQ + JOIN             */
-    /* ---------------------- */
+    /* ALERTS SECTION */
 
-    .two-column {
+    .alert-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .alert-card {
+      background: #070b16;
+      border-radius: 18px;
+      padding: 14px 14px 16px;
+      border: 1px solid rgba(255, 255, 255, 0.13);
+    }
+
+    .alert-tag {
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
+    /* TOWN HALLS SECTION */
+
+    .town-grid {
       display: grid;
       grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
       gap: 18px;
+      margin-top: 16px;
     }
 
-    @media (max-width: 840px) {
-      .two-column {
-        grid-template-columns: minmax(0, 1fr);
-      }
+    .town-card {
+      background: #070b16;
+      border-radius: 20px;
+      padding: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
     }
 
-    details {
-      background: var(--panel);
-      border-radius: var(--radius-md);
-      border: 1px solid rgba(255, 255, 255, 0.09);
-      padding: 10px 12px;
+    /* PETITIONS */
+
+    .petitions-section {
+      margin-top: 32px;
+    }
+
+    .petitions-intro {
+      background: #070b16;
+      border-radius: 22px;
+      padding: 18px 16px 18px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      margin-bottom: 18px;
+    }
+
+    .petition-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 18px;
+    }
+
+    .petition-card {
+      background: #070b16;
+      border-radius: 22px;
+      padding: 18px 16px 18px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      box-shadow: 0 16px 45px rgba(0, 0, 0, 0.85);
+    }
+
+    .petition-label {
+      font-size: 12px;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--text-muted);
       margin-bottom: 6px;
     }
 
-    summary {
-      cursor: pointer;
-      list-style: none;
-      font-size: 13px;
-      font-weight: 500;
-    }
-
-    summary::-webkit-details-marker {
-      display: none;
-    }
-
-    .summary-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
-    }
-
-    .summary-row span.icon {
-      font-size: 16px;
-      opacity: 0.9;
-    }
-
-    details[open] summary span.icon {
-      transform: rotate(90deg);
-    }
-
-    details p {
-      margin: 8px 0 2px;
-      font-size: 12px;
-      color: var(--text-muted);
-    }
-
-    .join-card {
-      background: radial-gradient(circle at top, #202645 0, #050812 60%);
-      border-radius: var(--radius-lg);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      padding: 16px 15px 14px;
-      box-shadow: var(--shadow-soft);
-    }
-
-    .join-card h3 {
-      margin: 0 0 6px;
-      font-size: 16px;
-    }
-
-    .join-card p {
-      margin: 0 0 10px;
-      font-size: 12px;
-      color: var(--text-muted);
-    }
-
-    .join-form {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .join-form label {
-      font-size: 11px;
-      color: var(--text-muted);
-    }
-
-    .join-form input,
-    .join-form select,
-    .join-form textarea {
-      width: 100%;
-      padding: 8px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, 0.16);
-      background: rgba(4, 7, 20, 0.96);
-      color: var(--text-main);
-      font-family: var(--font-body);
-      font-size: 13px;
-      outline: none;
-    }
-
-    .join-form textarea {
-      border-radius: 14px;
-      min-height: 66px;
-      resize: vertical;
-      padding-top: 8px;
-    }
-
-    .join-form input::placeholder,
-    .join-form textarea::placeholder {
-      color: #636a82;
-    }
-
-    .join-footnote {
-      font-size: 10px;
-      color: var(--text-muted);
-      margin-top: 6px;
-    }
-
-    .join-form button {
-      margin-top: 6px;
-      width: 100%;
-    }
-
-    /* ---------------------- */
-    /* FOOTER                 */
-    /* ---------------------- */
-
-    footer {
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-      padding-top: 16px;
-      margin-top: 30px;
-      font-size: 11px;
-      color: var(--text-muted);
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      justify-content: space-between;
-    }
-
-    footer .foot-left {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      align-items: center;
-    }
-
-    footer .foot-tag {
-      padding: 4px 7px;
-      border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      background: rgba(8, 13, 30, 0.9);
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-    }
-
-    footer a {
-      font-size: 11px;
-      color: var(--text-muted);
-    }
-
-    footer a:hover {
-      color: var(--accent-soft);
-    }
-
-    /* ---------------------- */
-    /* COMPLAINT WIZARD MODAL */
-    /* ---------------------- */
-
-    .wizard-overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.75);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      padding: 16px;
-      z-index: 10000;
-    }
-
-    .wizard-overlay-active {
-      display: flex;
-    }
-
-    .wizard {
-      max-width: 760px;
-      width: 100%;
-      background: var(--panel);
-      border-radius: var(--radius-lg);
-      border: 1px solid rgba(255, 255, 255, 0.16);
-      box-shadow: var(--shadow-soft);
-      padding: 18px 18px 14px;
-      position: relative;
-      max-height: 90vh;
-      overflow: auto;
-    }
-
-    @media (max-width: 600px) {
-      .wizard {
-        padding: 14px 12px 12px;
-      }
-    }
-
-    .wizard-header {
-      margin-bottom: 8px;
-    }
-
-    .wizard-header h2 {
-      margin: 0 0 4px;
-      font-size: 18px;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-    }
-
-    .wizard-header p {
-      margin: 0;
-      font-size: 12px;
-      color: var(--text-muted);
-    }
-
-    .wizard-close {
-      position: absolute;
-      top: 10px;
-      right: 12px;
-      width: 26px;
-      height: 26px;
-      border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      background: rgba(4, 7, 18, 0.9);
-      color: var(--text-main);
-      font-size: 16px;
-      cursor: button;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .wizard-close:hover {
-      background: rgba(10, 15, 30, 0.95);
-    }
-
-    .wizard-steps-indicator {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      margin-bottom: 10px;
-      font-size: 11px;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-    }
-
-    .wizard-step-dot {
-      width: 9px;
-      height: 9px;
-      border-radius: 50%;
-      border: 1px solid rgba(255, 255, 255, 0.5);
-      background: transparent;
-    }
-
-    .wizard-step-dot-active {
-      background: var(--accent-soft);
-      border-color: var(--accent-soft);
-      box-shadow: 0 0 10px rgba(255, 153, 64, 0.8);
-    }
-
-    .wizard-step-labels {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
+    .petition-card h3 {
       margin-bottom: 10px;
     }
 
-    .wizard-step-label {
-      font-size: 10px;
-      padding: 3px 7px;
-      border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      background: rgba(8, 13, 30, 0.9);
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-    }
-
-    .wizard-step-label-active {
-      border-color: var(--accent-soft);
-      color: var(--accent);
-      background: rgba(255, 184, 92, 0.08);
-    }
-
-    .wizard-step {
-      display: none;
-      background: rgba(4, 7, 20, 0.9);
-      border-radius: var(--radius-md);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      padding: 12px 12px 10px;
-      margin-bottom: 10px;
-    }
-
-    .wizard-step-active {
-      display: block;
-    }
-
-    .wizard-step h3 {
-      margin: 0 0 8px;
+    .petition-card ol {
+      margin: 6px 0 8px 20px;
       font-size: 14px;
-    }
-
-    .wizard-fields {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .wizard-fields label {
-      font-size: 11px;
-      color: var(--text-muted);
-      display: block;
-      margin-bottom: 2px;
-    }
-
-    .wizard-fields input,
-    .wizard-fields select,
-    .wizard-fields textarea {
-      width: 100%;
-      padding: 7px 9px;
-      border-radius: 10px;
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      background: rgba(3, 6, 18, 0.95);
       color: var(--text-main);
-      font-size: 13px;
-      font-family: var(--font-body);
-      outline: none;
+      line-height: 1.7;
     }
 
-    .wizard-fields textarea {
-      min-height: 70px;
-      resize: vertical;
-    }
-
-    .wizard-fields input::placeholder,
-    .wizard-fields textarea::placeholder {
-      color: #686f86;
-    }
-
-    .wizard-rights-group {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 6px;
-      margin-top: 4px;
+    .petition-card ol li {
       margin-bottom: 4px;
     }
 
-    @media (max-width: 600px) {
-      .wizard-rights-group {
-        grid-template-columns: minmax(0, 1fr);
-      }
+    /* FORMS (join + petitions + ideas) */
+
+    form {
+      margin-top: 14px;
+      padding-top: 10px;
+      border-top: 1px solid rgba(255, 255, 255, 0.14);
     }
 
-    .wizard-rights-option {
-      font-size: 11px;
-      display: flex;
-      align-items: center;
-      gap: 6px;
+    label {
+      font-size: 13px;
+      display: block;
+      margin: 10px 0 4px;
       color: var(--text-muted);
     }
 
-    .wizard-rights-option input {
-      width: auto;
-    }
-
-    .wizard-footer {
-      display: flex;
-      justify-content: space-between;
-      gap: 10px;
-      margin-top: 8px;
-    }
-
-    .wizard-footer .btn-ghost,
-    .wizard-footer .btn-primary {
-      flex: 1;
-      justify-content: center;
-    }
-
-    .wizard-footer .btn-ghost[disabled] {
-      opacity: 0.45;
-      cursor: not-allowed;
-    }
-
-    .wizard-summary-note {
-      font-size: 11px;
-      color: var(--text-muted);
-      margin-bottom: 6px;
-    }
-
-    .wizard-summary-output {
+    input, select, textarea {
       width: 100%;
-      min-height: 160px;
-      padding: 8px 9px;
+      padding: 10px 11px;
       border-radius: 10px;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      background: rgba(3, 6, 18, 0.95);
+      border: 1px solid rgba(255, 255, 255, 0.23);
+      background: #050913;
       color: var(--text-main);
-      font-size: 12px;
-      font-family: var(--font-body);
+      font-size: 14px;
+      font-family: inherit;
+    }
+
+    textarea {
+      min-height: 90px;
       resize: vertical;
     }
 
-    .wizard-summary-output::selection {
-      background: rgba(255, 184, 92, 0.3);
+    input::placeholder,
+    textarea::placeholder {
+      color: #6b738b;
+    }
+
+    .checkbox-row {
+      margin-top: 10px;
+      display: flex;
+      gap: 8px;
+      align-items: flex-start;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .checkbox-row input[type="checkbox"] {
+      width: 16px;
+      height: 16px;
+      margin-top: 2px;
+    }
+
+    .btn-submit {
+      margin-top: 14px;
+      width: 100%;
+      border-radius: 999px;
+      padding: 13px 18px;
+      border: none;
+      background: linear-gradient(90deg, #ffba63, #ff7f42);
+      color: #000;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+
+    .form-footnote {
+      margin-top: 10px;
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* COMPLAINTS */
+
+    .complaints-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .complaint-card {
+      background: #070b16;
+      border-radius: 18px;
+      padding: 14px 14px 16px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    .complaint-card h3 {
+      margin-bottom: 6px;
+    }
+
+    .complaint-card p {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .complaint-card a {
+      font-size: 13px;
+      color: var(--accent-soft);
+    }
+
+    /* IDEAS SECTION */
+
+    .ideas-card {
+      background: #070b16;
+      border-radius: 22px;
+      padding: 18px 16px 18px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.85);
+      margin-top: 16px;
+    }
+
+    /* JOIN SECTION */
+
+    .join-panel {
+      margin-top: 28px;
+      margin-bottom: 20px;
+      padding: 18px 16px 18px;
+      border-radius: 22px;
+      background: radial-gradient(circle at top left, rgba(32, 42, 84, 0.95), #050812 65%);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      box-shadow: 0 18px 55px rgba(0, 0, 0, 0.9);
+    }
+
+    footer {
+      margin-top: 20px;
+      padding-top: 10px;
+      border-top: 1px solid rgba(255, 255, 255, 0.14);
+      font-size: 11px;
+      color: var(--text-muted);
+      text-align: center;
+      padding-bottom: 10px;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 880px) {
+      .hero {
+        padding: 18px 14px 20px;
+      }
+
+      .sponsor-banner {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .panel-columns,
+      .town-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .brand-text-main {
+        font-size: 18px;
+        letter-spacing: 0.18em;
+      }
+
+      .top-nav {
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 10px 6px;
+      }
     }
   </style>
 </head>
+
 <body>
-  <div class="page">
-    <!-- TOP NAV -->
-    <nav class="top-nav">
-      <a href="#top">Home</a>
-      <a href="#how-it-works">How It Works</a>
-      <a href="#complaints">Start a Complaint</a>
-      <a href="#ideas">Ideas Board</a>
-      <a href="#legal-tools">Legal Tools</a>
-      <a href="#faq">FAQ</a>
-      <a href="#join" class="nav-highlight">Join Early Access</a>
-    </nav>
+<div class="page">
 
-    <main class="shell" id="top">
-      <!-- HEADER / BRAND -->
-      <header>
-        <div class="brand-row">
-          <div class="brand-icon">AT</div>
-          <div class="brand-text">
-            <h1><span>America's Torch</span></h1>
-            <div class="tagline">The People's Eyes on Power</div>
-          </div>
-        </div>
-      </header>
+  <!-- TOP NAV -->
+  <nav class="top-nav">
+    <a href="#alerts">Alerts</a>
+    <a href="#states">States</a>
+    <a href="#townhalls">Town Halls</a>
+    <a href="#vote">Vote</a>
+    <a href="#petition">Petitions</a>
+    <a href="#complaints">Complaints</a>
+    <a href="#ideas">Ideas</a>
+    <a href="#join">Join</a>
+  </nav>
 
-      <!-- HERO LAYOUT -->
-      <section class="hero">
-        <!-- HERO MAIN -->
-        <div class="hero-main">
-          <div class="hero-pill">
-            <div class="hero-pill-dot"></div>
-            LIVE BUILD • APP COMING SOON
-          </div>
-
-          <div class="hero-title">
-            Turn everyday Americans into a<br />
-            <span>24/7 watchdog over government power.</span>
-          </div>
-
-          <p class="hero-sub">
-            America’s Torch lets citizens file complaints, surface patterns, and push
-            verified public mandates to leaders — from city hall to Congress — in one
-            simple, public, trackable hub.
-          </p>
-
-          <div class="hero-cta-row">
-            <button class="btn-primary" onclick="scrollToSection('complaints')">
-              <span class="pill-icon">⚖️</span>
-              Start a Complaint
-            </button>
-            <button class="btn-ghost" onclick="scrollToSection('ideas')">
-              <span class="pill-icon">💡</span>
-              Share an Idea
-            </button>
-          </div>
-
-          <div class="hero-meta-row">
-            <div class="hero-meta-pill">
-              <strong>Phase 1:</strong> Issue tracking &amp; complaint routing
-            </div>
-            <div class="hero-meta-pill">
-              Transparent. Non-partisan. Citizen-first.
-            </div>
-          </div>
-
-          <div class="hero-badge-corner">
-            <span></span>
-            BUILD IN PUBLIC • BETA 0.1
-          </div>
-        </div>
-
-        <!-- HERO SIDE PANEL -->
-        <aside class="hero-side">
-          <div class="side-label">Snapshot • Mock data</div>
-
-          <div class="side-card">
-            <h3>Tonight’s Signal Board</h3>
-            <p>
-              Aggregated view of the issues Americans are flagging most in the last
-              24 hours — across states, agencies, and elected offices.
-            </p>
-
-            <div class="side-stats">
-              <div class="side-stat">
-                <strong>2,431</strong>
-                Complaints queued
-              </div>
-              <div class="side-stat">
-                <strong>17</strong>
-                States represented
-              </div>
-            </div>
-          </div>
-
-          <div class="side-links">
-            <div class="side-link-row" onclick="scrollToSection('complaints')">
-              <span>Local or agency problem?</span>
-              <strong>FILE ROUTED COMPLAINT →</strong>
-            </div>
-            <div class="side-link-row" onclick="scrollToSection('ideas')">
-              <span>New law or policy idea?</span>
-              <strong>POST A PUBLIC IDEA →</strong>
-            </div>
-          </div>
-
-          <div class="side-disclaimer">
-            *Demo view only — real complaint data will be anonymized, verified, and
-            routed by jurisdiction once the app is live.
-          </div>
-        </aside>
-      </section>
-
-      <!-- HOW IT WORKS -->
-      <section id="how-it-works">
-        <div class="section-label">How it works</div>
-        <div class="section-header-row">
-          <h2>From outrage to organized pressure</h2>
-          <p class="section-sub">
-            America’s Torch is not another rant feed. It’s a structured way to log
-            issues, find patterns, and push them in front of the people who
-            actually have to fix them.
-          </p>
-        </div>
-
-        <div class="steps">
-          <article class="step-card">
-            <div class="step-number">1</div>
-            <h3>Capture the problem</h3>
-            <p>
-              You describe what happened, who’s involved, and attach proof
-              (documents, photos, links). We help you categorize it by level:
-              local, state, or federal.
-            </p>
-            <div class="step-tag-row">
-              <span class="step-tag">Complaint builder</span>
-              <span class="step-tag">Evidence-first</span>
-            </div>
-          </article>
-
-          <article class="step-card">
-            <div class="step-number">2</div>
-            <h3>Route &amp; surface patterns</h3>
-            <p>
-              Similar complaints are grouped into “Signals” — so one person
-              isn’t shouting into the void. Patterns become heatmaps your
-              representatives can’t ignore.
-            </p>
-            <div class="step-tag-row">
-              <span class="step-tag">Signal scoring</span>
-              <span class="step-tag">Pattern tracking</span>
-            </div>
-          </article>
-
-          <article class="step-card">
-            <div class="step-number">3</div>
-            <h3>Push public mandates</h3>
-            <p>
-              When a Signal reaches critical mass, it can be promoted into a
-              public mandate: a clear citizen demand sent to the relevant
-              offices, on the record, with receipts.
-            </p>
-            <div class="step-tag-row">
-              <span class="step-tag">Public record</span>
-              <span class="step-tag">Accountability</span>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <!-- IDEA BOARD / MOCK DATA -->
-      <section id="ideas">
-        <div class="section-label">Idea board • preview</div>
-        <div class="section-header-row">
-          <h2>Sample public Signals</h2>
-          <p class="section-sub">
-            These are example cards to show how ideas and complaints might appear
-            when grouped into Signals. Real content will be verified and
-            jurisdiction-aware.
-          </p>
-        </div>
-
-        <div class="idea-grid">
-          <article class="idea-card">
-            <div class="idea-topic">Election integrity</div>
-            <div class="idea-title">
-              Standardized 48-hour posting of all county-level vote tallies
-            </div>
-            <p style="font-size:12px;color:var(--text-muted);margin:0;">
-              Require every county to post precinct-level results in a single,
-              public, machine-readable format.
-            </p>
-            <div class="idea-meta">
-              <div class="idea-votes">
-                <span>⬆️</span><strong>1,248</strong> supports
-              </div>
-              <div class="idea-status idea-status-open">Collecting support</div>
-            </div>
-          </article>
-
-          <article class="idea-card">
-            <div class="idea-topic">Agency abuse</div>
-            <div class="idea-title">
-              Transparent dashboards for wait times &amp; case backlogs
-            </div>
-            <p style="font-size:12px;color:var(--text-muted);margin:0;">
-              Public scorecards for courts and agencies so citizens can see where
-              justice is delayed or blocked.
-            </p>
-            <div class="idea-meta">
-              <div class="idea-votes">
-                <span>⬆️</span><strong>932</strong> supports
-              </div>
-              <div class="idea-status idea-status-sent">Sent to officials</div>
-            </div>
-          </article>
-
-          <article class="idea-card">
-            <div class="idea-topic">Civil rights</div>
-            <div class="idea-title">
-              Flag due-process violations by county &amp; judge
-            </div>
-            <p style="font-size:12px;color:var(--text-muted);margin:0;">
-              Aggregate citizen-reported due-process concerns into a trackable
-              Signal per jurisdiction.
-            </p>
-            <div class="idea-meta">
-              <div class="idea-votes">
-                <span>⬆️</span><strong>617</strong> supports
-              </div>
-              <div class="idea-status idea-status-open">In drafting</div>
-            </div>
-          </article>
-
-          <article class="idea-card">
-            <div class="idea-topic">Local government</div>
-            <div class="idea-title">
-              One-stop portal for city code complaints
-            </div>
-            <p style="font-size:12px;color:var(--text-muted);margin:0;">
-              Streamline how citizens report zoning, safety, and code issues
-              with auto-routing to the right office.
-            </p>
-            <div class="idea-meta">
-              <div class="idea-votes">
-                <span>⬆️</span><strong>312</strong> supports
-              </div>
-              <div class="idea-status idea-status-open">Collecting support</div>
-            </div>
-          </article>
-
-          <article class="idea-card">
-            <div class="idea-topic">Justice system</div>
-            <div class="idea-title">
-              Track repeat complaints against the same court
-            </div>
-            <p style="font-size:12px;color:var(--text-muted);margin:0;">
-              When many citizens flag the same court or judge, the pattern is
-              captured as a Signal.
-            </p>
-            <div class="idea-meta">
-              <div class="idea-votes">
-                <span>⬆️</span><strong>458</strong> supports
-              </div>
-              <div class="idea-status idea-status-open">Signal forming</div>
-            </div>
-          </article>
-
-          <article class="idea-card">
-            <div class="idea-topic">Spending</div>
-            <div class="idea-title">
-              Line-item visibility on local &amp; state budgets
-            </div>
-            <p style="font-size:12px;color:var(--text-muted);margin:0;">
-              Give citizens a readable window into where tax dollars actually
-              go — and what to flag.
-            </p>
-            <div class="idea-meta">
-              <div class="idea-votes">
-                <span>⬆️</span><strong>289</strong> supports
-              </div>
-              <div class="idea-status idea-status-archived">Archived mock</div>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <!-- COMPLAINT PATHWAYS -->
-      <section id="complaints">
-        <div class="section-label">Complaint flows • phase 1</div>
-        <div class="section-header-row">
-          <h2>Where should your complaint go?</h2>
-          <p class="section-sub">
-            In the live app, these cards will act like wizards. You’ll answer a
-            few questions, and we’ll help you generate a clear, routed complaint
-            with supporting evidence.
-          </p>
-        </div>
-
-        <div class="complaints-grid">
-          <article class="complaint-card">
-            <div class="complaint-chip">Local &amp; county</div>
-            <h3>Problem with a local office, court, or agency</h3>
-            <p>
-              Record delayed hearings, lost paperwork, selective enforcement, or
-              policy abuse at the city or county level.
-            </p>
-            <div class="complaint-actions">
-              <div class="pill-link" onclick="alert('Wizard coming soon – Local/County complaint flow.')">
-                <span>📍</span> Map to your jurisdiction
-              </div>
-              <div class="pill-link" onclick="alert('Template coming soon – Local complaint letter.')">
-                <span>📄</span> Draft complaint letter
-              </div>
-            </div>
-          </article>
-
-          <article class="complaint-card">
-            <div class="complaint-chip">State level</div>
-            <h3>State law, agency, or official overreach</h3>
-            <p>
-              Log patterns tied to state agencies, governors, or legislatures —
-              especially where rights, due process, or parental authority are in
-              question.
-            </p>
-            <div class="complaint-actions">
-              <div class="pill-link" onclick="alert('Wizard coming soon – State complaint flow.')">
-                <span>🏛️</span> Start state complaint
-              </div>
-              <div class="pill-link" onclick="alert('Export coming soon – PDF &amp; email package.')">
-                <span>⬇️</span> Export to send manually
-              </div>
-            </div>
-          </article>
-
-          <article class="complaint-card">
-            <div class="complaint-chip">Federal &amp; oversight</div>
-            <h3>Civil rights &amp; constitutional concerns</h3>
-            <p>
-              Capture situations where you believe courts or agencies crossed
-              constitutional lines. We’ll help package the story, evidence, and
-              timeline.
-            </p>
-            <div class="complaint-actions">
-              <div class="pill-link" onclick="openComplaintWizard('civil-rights')">
-                <span>🛡️</span> Build rights packet
-              </div>
-              <div class="pill-link" onclick="openComplaintWizard('civil-rights')">
-                <span>🧾</span> Generate summary text
-              </div>
-            </div>
-          </article>
-
-          <article class="complaint-card">
-            <div class="complaint-chip">Elections &amp; voting</div>
-            <h3>Election process, access, or integrity issues</h3>
-            <p>
-              Document problems with voter rolls, ballot access, counting
-              procedures, or transparency — without turning it into a party
-              fight.
-            </p>
-            <div class="complaint-actions">
-              <div class="pill-link" onclick="alert('Wizard coming soon – Election incident log.')">
-                <span>🗳️</span> Log an election incident
-              </div>
-              <div class="pill-link" onclick="alert('View coming soon – anonymized pattern map.')">
-                <span>📊</span> View pattern map
-              </div>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <!-- LEGAL TOOLS SECTION -->
-      <section id="legal-tools">
-        <div class="section-label">Legal tools • built on your summary</div>
-        <div class="section-header-row">
-          <h2>Turn your summary into drafts</h2>
-          <p class="section-sub">
-            First, use the “Civil rights &amp; constitutional concerns” wizard to build a
-            summary. Then use these tools to turn that summary into drafts you can paste into
-            letters, motions, affidavits, timelines, and more.
-          </p>
-        </div>
-
-        <div class="legal-disclaimer">
-          <strong>NOT LEGAL ADVICE</strong>
-          America’s Torch is a document generator and organizing tool. It does not provide legal
-          advice, does not create an attorney–client relationship, and cannot tell you what to
-          file or how a court will rule. You are responsible for checking court rules, deadlines,
-          and requirements, and for deciding whether to consult an attorney.
-        </div>
-
-        <div class="draft-grid">
-          <!-- Judicial Complaint -->
-          <article class="draft-card">
-            <h3>Judicial Complaint Draft</h3>
-            <p>
-              Uses your summary to create a structured complaint-style letter you can
-              adapt for a judicial oversight body.
-            </p>
-            <textarea id="jqcDraftOutput" class="draft-output" placeholder="Click “Build from my summary” to generate a draft."></textarea>
-            <div class="draft-controls">
-              <button
-                type="button"
-                class="btn-primary"
-                onclick="buildLegalDraft('jqc')"
-              >
-                <span class="pill-icon">⚖️</span>
-                Build from my summary
-              </button>
-              <button
-                type="button"
-                class="btn-ghost"
-                onclick="copyDraft('jqcDraftOutput')"
-              >
-                📋 Copy draft to clipboard
-              </button>
-              <div class="draft-note">
-                This is a starting point only. Check the actual complaint form/instructions
-                for the judicial oversight body where you plan to file.
-              </div>
-            </div>
-          </article>
-
-          <!-- Motion to Strike / Amend -->
-          <article class="draft-card">
-            <h3>Motion to Strike / Amend Draft</h3>
-            <p>
-              Wraps your summary into a motion-style format asking a court to correct or
-              strike false or unsupported statements.
-            </p>
-            <textarea id="motionDraftOutput" class="draft-output" placeholder="Click “Build from my summary” to generate a draft."></textarea>
-            <div class="draft-controls">
-              <button
-                type="button"
-                class="btn-primary"
-                onclick="buildLegalDraft('motion')"
-              >
-                <span class="pill-icon">📝</span>
-                Build from my summary
-              </button>
-              <button
-                type="button"
-                class="btn-ghost"
-                onclick="copyDraft('motionDraftOutput')"
-              >
-                📋 Copy draft to clipboard
-              </button>
-              <div class="draft-note">
-                You will still need to format this into your court’s official caption,
-                case number, signature block, and follow local rules.
-              </div>
-            </div>
-          </article>
-
-          <!-- Affidavit -->
-          <article class="draft-card">
-            <h3>Supporting Affidavit Draft</h3>
-            <p>
-              Uses your summary as sworn statement language that you can adapt into an
-              affidavit and have notarized, if appropriate.
-            </p>
-            <textarea id="affidavitDraftOutput" class="draft-output" placeholder="Click “Build from my summary” to generate a draft."></textarea>
-            <div class="draft-controls">
-              <button
-                type="button"
-                class="btn-primary"
-                onclick="buildLegalDraft('affidavit')"
-              >
-                <span class="pill-icon">✒️</span>
-                Build from my summary
-              </button>
-              <button
-                type="button"
-                class="btn-ghost"
-                onclick="copyDraft('affidavitDraftOutput')"
-              >
-                📋 Copy draft to clipboard
-              </button>
-              <div class="draft-note">
-                Affidavit requirements vary by state. Treat this as draft language to
-                refine with an attorney or using your court’s affidavit form.
-              </div>
-            </div>
-          </article>
-
-          <!-- Timeline -->
-          <article class="draft-card">
-            <h3>Timeline of Events Draft</h3>
-            <p>
-              Creates a structured timeline template using your summary, so you can list key
-              dates, actions, and who was involved.
-            </p>
-            <textarea id="timelineDraftOutput" class="draft-output" placeholder="Click “Build from my summary” to generate a draft."></textarea>
-            <div class="draft-controls">
-              <button
-                type="button"
-                class="btn-primary"
-                onclick="buildLegalDraft('timeline')"
-              >
-                <span class="pill-icon">📅</span>
-                Build from my summary
-              </button>
-              <button
-                type="button"
-                class="btn-ghost"
-                onclick="copyDraft('timelineDraftOutput')"
-              >
-                📋 Copy draft to clipboard
-              </button>
-              <div class="draft-note">
-                Fill in specific dates and details based on your records (orders, emails,
-                texts, recordings, etc.).
-              </div>
-            </div>
-          </article>
-
-          <!-- Exhibit List -->
-          <article class="draft-card">
-            <h3>Exhibit List Draft</h3>
-            <p>
-              Generates an exhibit list template tied to your story, so you can label and
-              describe documents, audio, and screenshots.
-            </p>
-            <textarea id="exhibitDraftOutput" class="draft-output" placeholder="Click “Build from my summary” to generate a draft."></textarea>
-            <div class="draft-controls">
-              <button
-                type="button"
-                class="btn-primary"
-                onclick="buildLegalDraft('exhibits')"
-              >
-                <span class="pill-icon">📂</span>
-                Build from my summary
-              </button>
-              <button
-                type="button"
-                class="btn-ghost"
-                onclick="copyDraft('exhibitDraftOutput')"
-              >
-                📋 Copy draft to clipboard
-              </button>
-              <div class="draft-note">
-                You can attach this to motions, complaints, or letters to show exactly what
-                evidence you have and how it connects.
-              </div>
-            </div>
-          </article>
-
-          <!-- Attorney Letter -->
-          <article class="draft-card">
-            <h3>Letter to Attorney Draft</h3>
-            <p>
-              Uses your summary to create a clear, organized letter to a potential civil
-              rights or family-law attorney.
-            </p>
-            <textarea id="attorneyDraftOutput" class="draft-output" placeholder="Click “Build from my summary” to generate a draft."></textarea>
-            <div class="draft-controls">
-              <button
-                type="button"
-                class="btn-primary"
-                onclick="buildLegalDraft('attorney')"
-              >
-                <span class="pill-icon">👩‍⚖️</span>
-                Build from my summary
-              </button>
-              <button
-                type="button"
-                class="btn-ghost"
-                onclick="copyDraft('attorneyDraftOutput')"
-              >
-                📋 Copy draft to clipboard
-              </button>
-              <div class="draft-note">
-                You can email or print this for lawyers so they quickly understand what
-                happened and what you’re asking for.
-              </div>
-            </div>
-          </article>
-
-          <!-- Governor / Agency Complaint -->
-          <article class="draft-card">
-            <h3>Governor / Agency Complaint Draft</h3>
-            <p>
-              Turns your summary into a respectful, firm complaint letter to a governor’s
-              office or state agency.
-            </p>
-            <textarea id="governorDraftOutput" class="draft-output" placeholder="Click “Build from my summary” to generate a draft."></textarea>
-            <div class="draft-controls">
-              <button
-                type="button"
-                class="btn-primary"
-                onclick="buildLegalDraft('governor')"
-              >
-                <span class="pill-icon">🏛️</span>
-                Build from my summary
-              </button>
-              <button
-                type="button"
-                class="btn-ghost"
-                onclick="copyDraft('governorDraftOutput')"
-              >
-                📋 Copy draft to clipboard
-              </button>
-              <div class="draft-note">
-                Check the specific complaint / contact instructions for the office you’re writing
-                to and adjust formatting as needed.
-              </div>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <!-- FAQ + JOIN -->
-      <section id="faq">
-        <div class="section-label">Questions &amp; early access</div>
-        <div class="section-header-row">
-          <h2>What America’s Torch is (and isn’t)</h2>
-          <p class="section-sub">
-            Built to give the people leverage — not to become another screaming
-            match. Here are a few quick answers while we build the first live
-            version.
-          </p>
-        </div>
-
-        <div class="two-column">
-          <!-- FAQ COLUMN -->
-          <div>
-            <details open>
-              <summary>
-                <div class="summary-row">
-                  <span>Is this a social media platform?</span>
-                  <span class="icon">›</span>
-                </div>
-              </summary>
-              <p>
-                No. Posts are structured complaints and proposals — not random
-                posts. Everything aims toward patterns, documentation, and
-                pressure on real decision-makers.
-              </p>
-            </details>
-
-            <details>
-              <summary>
-                <div class="summary-row">
-                  <span>Will my name be public?</span>
-                  <span class="icon">›</span>
-                </div>
-              </summary>
-              <p>
-                The idea board will show anonymized public data by default.
-                Certain complaint flows may give you options: anonymous pattern
-                contribution, or named complaint packets you can sign and send.
-              </p>
-            </details>
-
-            <details>
-              <summary>
-                <div class="summary-row">
-                  <span>Is America’s Torch tied to any party?</span>
-                  <span class="icon">›</span>
-                </div>
-              </summary>
-              <p>
-                No. The goal is structural: track what government is doing,
-                where it is failing, and what citizens are demanding — regardless
-                of party label.
-              </p>
-            </details>
-
-            <details>
-              <summary>
-                <div class="summary-row">
-                  <span>When will the live app be ready?</span>
-                  <span class="icon">›</span>
-                </div>
-              </summary>
-              <p>
-                We’re actively building the web app first, then a mobile-friendly
-                version. Join the early access list to help test complaint flows
-                and give real-world feedback.
-              </p>
-            </details>
-
-            <details>
-              <summary>
-                <div class="summary-row">
-                  <span>Does this replace a lawyer?</span>
-                  <span class="icon">›</span>
-                </div>
-              </summary>
-              <p>
-                No. This is a way to organize your story, documents, and patterns
-                so that if you do speak with a lawyer, official, or court, you’re
-                clearer and better prepared.
-              </p>
-            </details>
-          </div>
-
-          <!-- JOIN CARD -->
-          <div id="join">
-            <div class="join-card">
-              <h3>Join the early access list</h3>
-              <p>
-                Want to help shape how America’s Torch works — especially around
-                courts, children, civil rights, and government transparency?
-                Drop your info below.
-              </p>
-
-              <!--
-                TODO:
-                - Replace action="" with your Formspree or backend endpoint.
-                - Example for Formspree:
-                  action="https://formspree.io/f/your-form-id"
-              -->
-              <form class="join-form" method="POST" action="">
-                <div>
-                  <label for="name">Name (optional)</label>
-                  <input id="name" name="name" type="text" placeholder="First name, or alias" />
-                </div>
-
-                <div>
-                  <label for="email">Email for updates *</label>
-                  <input id="email" name="email" type="email" required placeholder="you@example.com" />
-                </div>
-
-                <div>
-                  <label for="role">I’m mainly here as a...</label>
-                  <select id="role" name="role">
-                    <option value="">Select one</option>
-                    <option value="citizen">Concerned citizen</option>
-                    <option value="parent">Parent / guardian</option>
-                    <option value="veteran">Veteran / military</option>
-                    <option value="attorney">Attorney / advocate</option>
-                    <option value="official">Elected official / staff</option>
-                    <option value="other">Other</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label for="focus">What issue do you care about most?</label>
-                  <textarea
-                    id="focus"
-                    name="focus"
-                    placeholder="Example: family court transparency, local corruption, election process, government spending..."
-                  ></textarea>
-                </div>
-
-                <button class="btn-primary" type="submit">
-                  <span class="pill-icon">🔥</span>
-                  Add me to early access
-                </button>
-
-                <div class="join-footnote">
-                  We’ll only use your contact info for app updates, early testing
-                  invites, or important feature votes. No spam, no selling your
-                  data.
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- FOOTER -->
-      <footer>
-        <div class="foot-left">
-          <span class="foot-tag">America's Torch • Beta concept</span>
-          <span>© <span id="year"></span> America’s Torch. All rights reserved.</span>
-        </div>
+  <div class="shell">
+    <!-- HEADER / BRAND -->
+    <header>
+      <div class="brand-row">
+        <div class="brand-icon">AT</div>
         <div>
-          <a href="#top">Back to top ↑</a>
+          <div class="brand-text-main">AMERICA'S TORCH</div>
+          <div class="brand-text-sub">THE PEOPLE'S FLAME THAT WON'T GO OUT</div>
         </div>
-      </footer>
-    </main>
-  </div>
+      </div>
+    </header>
 
-  <!-- CIVIL RIGHTS / COURT COMPLAINT WIZARD MODAL -->
-  <div id="complaintWizardOverlay" class="wizard-overlay" aria-hidden="true">
-    <div class="wizard" role="dialog" aria-modal="true" aria-labelledby="wizardTitle">
-      <button class="wizard-close" type="button" onclick="closeComplaintWizard()">×</button>
+    <!-- HERO POSTER -->
+    <section class="hero" aria-label="America's Torch Poster">
+      <div class="hero-art-frame">
+        <img src="images/hero-poster.jpg" alt="Poster artwork for America's Torch – citizens lifting a torn Constitution and torch in front of the Capitol." />
+      </div>
+      <div class="hero-meta">CONCEPT ART · AMERICA'S TORCH</div>
+    </section>
 
-      <div class="wizard-header">
-        <h2 id="wizardTitle">Civil Rights / Court Abuse Packet</h2>
+    <!-- INTRO / EMOTIONAL STORY -->
+    <section class="section" id="top">
+      <div class="kicker">PROTOTYPE · PEACEFUL CITIZEN MOVEMENT</div>
+      <h1>AMERICA'S TORCH</h1>
+      <div class="accent-line">UNITED CITIZENS HOLDING POWER TO THE FLAME.</div>
+
+      <p>
+        If you are tired of yelling at the TV, tired of corruption stories that go nowhere, tired
+        of watching the same people stay in power while life gets more expensive and more divided,
+        America’s Torch is built for you.
+      </p>
+
+      <div class="pill-row">
+        <div class="pill"><strong>Citizen-Powered Platform</strong></div>
+        <div class="pill">No Parties</div>
+        <div class="pill">No Violence</div>
+        <div class="pill">No Special Interests</div>
+      </div>
+
+      <div class="btn-row">
+        <a href="#join" class="btn-primary">Join America’s Torch</a>
+        <a href="#alerts" class="btn-outline">See Example Alerts</a>
+      </div>
+
+      <div class="emotional-block">
         <p>
-          This tool helps you organize your story into a clear summary you can copy into
-          letters, court filings, or official complaints. Nothing is sent anywhere — it
-          just builds text for you.
+          For years, the government and media have tried to control the story — turning neighbors
+          against each other, calling division “normal politics,” and acting like the American
+          people are too busy or too tired to notice what they’re doing with our money, our laws,
+          and our future.
+        </p>
+        <p>
+          Billionaires and big donors pour money into campaigns and party machines until regular
+          Americans can’t even imagine running for office. Politicians stay in power for decades,
+          growing richer and more arrogant, while families at home stretch every paycheck and watch
+          prices climb.
+        </p>
+        <p>
+          Somewhere along the way, too many leaders forgot who they work for. They forgot the people
+          back home: the ones paying the taxes, raising kids, caring for parents, and hoping this
+          country is still worth inheriting.
+        </p>
+        <p>
+          America’s Torch is a simple promise: to shine a light they can’t easily spin away — with
+          clear alerts, real numbers, and peaceful tools for millions of citizens to act together
+          instead of shouting alone. The government has tried to dim our flame, but as long as we
+          stand together, they will never blow it out.
         </p>
       </div>
 
-      <div class="wizard-steps-indicator">
-        <span class="wizard-step-dot wizard-step-dot-active" data-step-dot="1"></span>
-        <span class="wizard-step-dot" data-step-dot="2"></span>
-        <span class="wizard-step-dot" data-step-dot="3"></span>
-        <span class="wizard-step-dot" data-step-dot="4"></span>
-        <span>Step <span id="wizardStepNumber">1</span> of 4</span>
+      <div class="hot-banner">
+        <strong>HOT RIGHT NOW</strong>
+        If we don’t demand term limits, real transparency, and an end to pay-to-play politics,
+        trust will never return and power will never come back to the people. America’s Torch is
+        about drawing that line peacefully — and holding it.
       </div>
+    </section>
 
-      <div class="wizard-step-labels">
-        <span class="wizard-step-label wizard-step-label-active" data-step-label="1">What happened</span>
-        <span class="wizard-step-label" data-step-label="2">Court / agency</span>
-        <span class="wizard-step-label" data-step-label="3">Rights &amp; harm</span>
-        <span class="wizard-step-label" data-step-label="4">Summary text</span>
-      </div>
+    <!-- TAKE ACTION SECTION -->
+    <section class="section" id="vote">
+      <div class="kicker">TAKE ACTION</div>
+      <h2>A Peaceful Movement for Accountability</h2>
+      <p>
+        America’s Torch is not another place to argue online. It’s a set of tools for real-world,
+        peaceful pressure: citizens seeing the same facts at the same time and moving together.
+      </p>
 
-      <form id="complaintWizardForm" onsubmit="event.preventDefault(); generateComplaintSummary();">
-        <!-- STEP 1 -->
-        <div class="wizard-step wizard-step-active" data-step="1">
-          <h3>Step 1 • Basic situation</h3>
-          <div class="wizard-fields">
-            <div>
-              <label for="problemType">What kind of problem is this?</label>
-              <select id="problemType" name="problemType">
-                <option value="">Select one</option>
-                <option value="family court">Family court / custody</option>
-                <option value="juvenile court">Juvenile court</option>
-                <option value="criminal court">Criminal court</option>
-                <option value="civil court">Civil court</option>
-                <option value="agency">Government agency (non-court)</option>
-                <option value="law enforcement">Law enforcement / police / sheriff</option>
-                <option value="other">Other / mixed</option>
-              </select>
-            </div>
-
-            <div>
-              <label for="location">Where is this happening? (city / county / state)</label>
-              <input id="location" name="location" type="text" placeholder="Example: Columbia County, Georgia" />
-            </div>
-
-            <div>
-              <label for="timeframe">Rough dates / time period</label>
-              <input
-                id="timeframe"
-                name="timeframe"
-                type="text"
-                placeholder="Example: From March 2022 through July 7, 2025"
-              />
-            </div>
-
-            <div>
-              <label for="shortSummary">Briefly describe what is happening (1–3 sentences)</label>
-              <textarea
-                id="shortSummary"
-                name="shortSummary"
-                placeholder="Example: A judge entered a final custody order with false statements about me, a non-party, without notice or a chance to respond..."
-              ></textarea>
-            </div>
-          </div>
-        </div>
-
-        <!-- STEP 2 -->
-        <div class="wizard-step" data-step="2">
-          <h3>Step 2 • Court / agency details</h3>
-          <div class="wizard-fields">
-            <div>
-              <label for="courtName">Court or agency name</label>
-              <input
-                id="courtName"
-                name="courtName"
-                type="text"
-                placeholder="Example: Columbia County Juvenile Court"
-              />
-            </div>
-
-            <div>
-              <label for="caseNumber">Case number(s) (optional, you can list multiple)</label>
-              <input
-                id="caseNumber"
-                name="caseNumber"
-                type="text"
-                placeholder="Example: 2025EDR0808 or 'final custody order dated July 7, 2025'"
-              />
-            </div>
-
-            <div>
-              <label for="officialName">Judge / official / agency contact (if known)</label>
-              <input
-                id="officialName"
-                name="officialName"
-                type="text"
-                placeholder="Example: Judge [Name], Clerk [Name], Agency worker [Name]"
-              />
-            </div>
-
-            <div>
-              <label for="childrenInvolved">
-                Children or family members involved (use initials if you want privacy)
-              </label>
-              <textarea
-                id="childrenInvolved"
-                name="childrenInvolved"
-                placeholder="Example: Five minor children, initials A.J., C.J., A.J., D.J., J.J."
-              ></textarea>
-            </div>
-
-            <div>
-              <label for="currentStatus">Is the situation still ongoing?</label>
-              <select id="currentStatus" name="currentStatus">
-                <option value="">Select one</option>
-                <option value="ongoing">Yes, still ongoing</option>
-                <option value="recent">Recently happened but effects continue</option>
-                <option value="past">Happened in the past, but I need accountability</option>
-              </select>
-            </div>
-          </div>
-        </div>
-
-        <!-- STEP 3 -->
-        <div class="wizard-step" data-step="3">
-          <h3>Step 3 • Rights &amp; harm</h3>
-          <div class="wizard-fields">
-            <div>
-              <label>Which rights do you believe were violated? (check any that fit)</label>
-              <div class="wizard-rights-group">
-                <label class="wizard-rights-option">
-                  <input type="checkbox" name="rights" value="due process" />
-                  <span>Due process (notice, chance to be heard, fair procedure)</span>
-                </label>
-                <label class="wizard-rights-option">
-                  <input type="checkbox" name="rights" value="equal protection" />
-                  <span>Equal protection / unfair or biased treatment</span>
-                </label>
-                <label class="wizard-rights-option">
-                  <input type="checkbox" name="rights" value="parental rights" />
-                  <span>Parental rights / interference with family relationships</span>
-                </label>
-                <label class="wizard-rights-option">
-                  <input type="checkbox" name="rights" value="free speech" />
-                  <span>Free speech / retaliation for speaking up</span>
-                </label>
-                <label class="wizard-rights-option">
-                  <input type="checkbox" name="rights" value="unreasonable search" />
-                  <span>Unreasonable search / seizure or overreach by officials</span>
-                </label>
-                <label class="wizard-rights-option">
-                  <input type="checkbox" name="rights" value="other" />
-                  <span>Other important rights (explain below)</span>
-                </label>
-              </div>
-            </div>
-
-            <div>
-              <label for="harmDescription">
-                How has this harmed you or your family? (include emotional, financial, or safety impacts)
-              </label>
-              <textarea
-                id="harmDescription"
-                name="harmDescription"
-                placeholder="Example: My reputation has been damaged in a public court order, I lost time with children, and I have been treated as if I did something wrong without any hearing..."
-              ></textarea>
-            </div>
-
-            <div>
-              <label for="stepsTaken">
-                Have you already tried to fix this? (motions, complaints, contacting officials)
-              </label>
-              <textarea
-                id="stepsTaken"
-                name="stepsTaken"
-                placeholder="Example: Filed a motion to amend/strike parts of the order, contacted the clerk, spoke with a staff attorney, and attempted to get a hearing..."
-              ></textarea>
-            </div>
-          </div>
-        </div>
-
-        <!-- STEP 4 -->
-        <div class="wizard-step" data-step="4">
-          <h3>Step 4 • Copy-paste summary</h3>
-          <p class="wizard-summary-note">
-            Below is a draft summary built from your answers. You can copy and paste this
-            into letters, affidavits, or complaint forms. Edit the text after copying to
-            match the rules of wherever you are sending it.
+      <div class="action-grid">
+        <div class="action-card">
+          <h3>1. See What&rsquo;s Really Happening</h3>
+          <p>
+            In a full build, live dashboards would track bills, votes, rate hikes, and spending in
+            plain English — so you can see when something dangerous is moving <em>before</em> it’s
+            too late to react.
           </p>
-          <textarea id="complaintSummaryOutput" class="wizard-summary-output" readonly></textarea>
-
-          <button
-            type="button"
-            class="btn-ghost"
-            style="margin-top:8px;width:100%;justify-content:center;"
-            onclick="copyComplaintSummary()"
-          >
-            📋 Copy summary to clipboard
-          </button>
         </div>
+        <div class="action-card">
+          <h3>2. Vote on Proposals &amp; Petitions</h3>
+          <p>
+            Citizens can vote on national proposals, sign focused petitions, and help shape which
+            problems we push on first — instead of waiting for party leaders or cable news to tell
+            us what matters.
+          </p>
+        </div>
+        <div class="action-card">
+          <h3>3. Send Real Complaints, Not Just Posts</h3>
+          <p>
+            When officials cross the line, the platform can help citizens fill out official ethics,
+            oversight, or civil-rights forms and send them to the right committee — federal or
+            state — instead of hunting for links one by one.
+          </p>
+        </div>
+        <div class="action-card">
+          <h3>4. Pressure Without Violence</h3>
+          <p>
+            No riots, no threats, no doxxing. Just millions of citizens watching the same alerts,
+            signing the same petitions, and sending clear, peaceful messages that can’t be ignored.
+          </p>
+        </div>
+      </div>
+    </section>
 
-        <div class="wizard-footer">
-          <button
-            type="button"
-            class="btn-ghost"
-            id="wizardBackBtn"
-            onclick="wizardPrevStep()"
-            disabled
-          >
-            ◀ Back
-          </button>
-          <button
-            type="button"
-            class="btn-primary"
-            id="wizardNextBtn"
-            onclick="wizardNextStep()"
-          >
-            Next ▶
-          </button>
+    <!-- SPONSOR / DEMO BANNER -->
+    <section class="sponsor-banner">
+      <div>
+        <div class="sponsor-label">Sponsor Message (Demo)</div>
+        <div class="sponsor-text">
+          <strong>Keep America’s Torch Lit.</strong> A small banner like this could help fund
+          servers and tools for citizens — with no tracking, no pop-ups, and no forced ads. People
+          could ignore it, skip it, or tap to learn more anytime.
+        </div>
+      </div>
+      <div class="sponsor-actions">
+        <div class="sponsor-skip">
+          <span>Skip</span>
+          <span>Ad</span>
+        </div>
+        <div class="sponsor-main">
+          <span>Learn</span>
+          <span>More</span>
+          <span>(Demo)</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATE SECTION -->
+    <section class="panel" id="states">
+      <div class="panel-title">Built for Every American State</div>
+      <h2>A National Watch, State by State</h2>
+      <p>
+        In a full build, America’s Torch would plug into bill trackers, campaign finance data,
+        public budgets, and real-time feeds so citizens can see what’s happening in their own state —
+        and across the country — in one place.
+      </p>
+
+      <div class="panel-columns">
+        <div class="panel-card">
+          <h3>State Dashboards · <strong>50 States Watching</strong></h3>
+          <p>
+            Each state gets its own dashboard: bills on the move, new spending, tax changes, and who
+            voted yes or no — all in plain English, not legalese.
+          </p>
+          <ul>
+            <li>Bills and resolutions that actually affect households.</li>
+            <li>Major votes with names, not just party lines.</li>
+            <li>New taxes, fees, and rate hikes flagged in advance.</li>
+          </ul>
+        </div>
+        <div class="panel-card">
+          <h3>National View · <strong>Patterns of Power</strong></h3>
+          <p>
+            Citizens can see national trends: which issues keep repeating, which states quietly pass
+            copy-cat bills, and where the same special interests appear again and again.
+          </p>
+          <ul>
+            <li>Spot coordinated pushes from big donors or lobbyists.</li>
+            <li>See which states lead on reforms — and which drag their feet.</li>
+            <li>Share those patterns with neighbors, family, and friends.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ALERTS SECTION -->
+    <section class="section" id="alerts">
+      <div class="kicker">Example Alerts</div>
+      <h2>What America&rsquo;s Torch Could Flag</h2>
+      <p>
+        These are example alerts to show how the platform could look. They’re not live data yet —
+        but this is how “the people’s flame” might work once real bill tracking and finance APIs are
+        connected.
+      </p>
+
+      <div class="alert-grid">
+        <div class="alert-card">
+          <div class="alert-tag">Power &amp; Utilities</div>
+          <h3>Red-Flag Rate Hike</h3>
+          <p>
+            <strong>Georgia ·</strong> 12% rate increase tied to fuel surcharges and new fees.
+            Alerts explain who voted for it, what it pays for, and how much the average bill goes up.
+          </p>
+        </div>
+        <div class="alert-card">
+          <div class="alert-tag">Cost of Living</div>
+          <h3>Property Tax &amp; Local Spending</h3>
+          <p>
+            <strong>South Carolina ·</strong> New reassessments plus local projects that raise taxes.
+            Citizens can see where the money is going and who pushed it through.
+          </p>
+        </div>
+        <div class="alert-card">
+          <div class="alert-tag">Sneaky Bills</div>
+          <h3>Hidden Riders &amp; Midnight Votes</h3>
+          <p>
+            Flags when unrelated items are stuffed into must-pass bills or when major votes are
+            scheduled late at night or during holidays.
+          </p>
+        </div>
+        <div class="alert-card">
+          <div class="alert-tag">Ethics &amp; Trust</div>
+          <h3>When Officials Cross the Line</h3>
+          <p>
+            Alerts trigger when an official is formally reprimanded, investigated, or tied to serious
+            misconduct — and show citizens exactly how to respond peacefully but firmly.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TOWN HALLS SECTION -->
+    <section class="section" id="townhalls">
+      <div class="kicker">National &amp; State Town Halls</div>
+      <h2>Voice-Only Streams, No Camera Needed</h2>
+      <p>
+        In a full launch, America’s Torch would host national briefings and state-level town halls
+        whenever major alerts cross a threshold — using voice-over and visuals so citizens never
+        have to be on camera.
+      </p>
+
+      <div class="town-grid">
+        <div class="town-card">
+          <h3>National Briefings</h3>
+          <p>
+            A weekly “People’s Update” that breaks down what happened this week: bills, spending,
+            and influence. No drama, no party spin — just straight talk and clear visuals.
+          </p>
+        </div>
+        <div class="town-card">
+          <h3>State Town Halls</h3>
+          <p>
+            When a state crosses a red-flag threshold — like a big tax hike or a suspicious bill —
+            supporters in that state can be invited to a live, voice-only town hall to go deeper and
+            plan peaceful action.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- NATIONAL PETITIONS -->
+    <section class="petitions-section" id="petition">
+      <div class="kicker">National Petitions – America&rsquo;s Torch</div>
+      <h2>We&rsquo;re Done Being Ignored</h2>
+
+      <div class="petitions-intro">
+        <p>
+          These petitions are written for everyday Americans — not lobbyists, not party insiders.
+          They focus on the same core problem: a government that has drifted away from the people
+          who are supposed to be in charge.
+        </p>
+        <p>
+          Right now, this is a prototype. When you sign below, your entry goes to a secure inbox via
+          Formspree so counts can be tracked. In a full build, verified U.S.-citizen accounts and
+          delivery tools would send these messages directly to Congress and state leaders.
+        </p>
+      </div>
+
+      <div class="petition-grid">
+        <!-- PETITION #1 -->
+        <article class="petition-card">
+          <div class="petition-label">Petition #1</div>
+          <h3>Real Transparency and Accountability in Government</h3>
+          <p><strong>To the elected officials of the United States:</strong></p>
+          <p>
+            We, the undersigned citizens, are deeply concerned about the growing distance between
+            government power and the people it is supposed to serve. We call for:
+          </p>
+          <ol>
+            <li>
+              Real-time transparency for major federal spending, rate hikes, and new taxes that
+              impact households.
+            </li>
+            <li>
+              Full disclosure of large donations, financial conflicts, and foreign-linked income for
+              all members of Congress and senior officials, with easy, public tools for citizens to
+              see who is paying whom.
+            </li>
+            <li>
+              Stronger, faster oversight when officials abuse their office, break the public trust,
+              ignore the will of the people, or protect their friends instead of the law.
+            </li>
+          </ol>
+          <p>
+            These reforms are not about left or right — they are about restoring basic trust,
+            honesty, and accountability in a government that is supposed to belong to the people.
+          </p>
+
+          <form action="https://formspree.io/f/xovypnwk" method="POST">
+            <input type="hidden" name="petition" value="Petition #1 – Accountability" />
+            <label for="p1-name">Name</label>
+            <input id="p1-name" type="text" name="name" placeholder="Your full name" required />
+
+            <label for="p1-email">Email</label>
+            <input id="p1-email" type="email" name="email" placeholder="you@example.com" required />
+
+            <label for="p1-state">State</label>
+            <select id="p1-state" name="state" required>
+              <option value="">Select your state</option>
+              <option>AL</option><option>AK</option><option>AZ</option><option>AR</option>
+              <option>CA</option><option>CO</option><option>CT</option><option>DE</option>
+              <option>FL</option><option>GA</option><option>HI</option><option>ID</option>
+              <option>IL</option><option>IN</option><option>IA</option><option>KS</option>
+              <option>KY</option><option>LA</option><option>ME</option><option>MD</option>
+              <option>MA</option><option>MI</option><option>MN</option><option>MS</option>
+              <option>MO</option><option>MT</option><option>NE</option><option>NV</option>
+              <option>NH</option><option>NJ</option><option>NM</option><option>NY</option>
+              <option>NC</option><option>ND</option><option>OH</option><option>OK</option>
+              <option>OR</option><option>PA</option><option>RI</option><option>SC</option>
+              <option>SD</option><option>TN</option><option>TX</option><option>UT</option>
+              <option>VT</option><option>VA</option><option>WA</option><option>WV</option>
+              <option>WI</option><option>WY</option>
+            </select>
+
+            <div class="checkbox-row">
+              <input id="p1-consent" type="checkbox" name="consent" required />
+              <label for="p1-consent">
+                I affirm that I am a U.S. resident adding my name to this petition, and I want this
+                message delivered to my representatives.
+              </label>
+            </div>
+
+            <button type="submit" class="btn-submit">
+              Sign Petition #1 – Accountability
+            </button>
+
+            <div class="form-footnote">
+              Demo only: for now, your signature goes to your Formspree inbox so you can count and
+              export them later. In a full build, verified U.S.-citizen accounts and direct-delivery
+              tools would send this same message straight to Congress and state leaders.
+            </div>
+          </form>
+        </article>
+
+        <!-- PETITION #2 -->
+        <article class="petition-card">
+          <div class="petition-label">Petition #2</div>
+          <h3>6-Year Term Limits for Congress</h3>
+          <p><strong>To the United States Congress:</strong></p>
+          <p>
+            We, the undersigned, believe that public office is a temporary duty, not a lifetime
+            career. When the same politicians stay in power for decades, they become more loyal to
+            donors, lobbyists, and their own status than to the people back home.
+          </p>
+          <p>We call for a national law that:</p>
+          <ol>
+            <li>Limits members of the House to a total of <strong>three terms</strong> (6 years).</li>
+            <li>Limits members of the Senate to a total of <strong>one term</strong> (6 years).</li>
+            <li>
+              Prevents any member from using loopholes, appointments, or “musical chairs” jobs to
+              stay in power indefinitely.
+            </li>
+          </ol>
+          <p>
+            Without real term limits, the American people will never fully trust the federal
+            government again. Power will never return to ordinary citizens as long as the same
+            insiders stay in office for life, fueled by big donors and billionaire money.
+          </p>
+
+          <form action="https://formspree.io/f/xovypnwk" method="POST">
+            <input type="hidden" name="petition" value="Petition #2 – 6-Year Term Limits" />
+            <label for="p2-name">Name</label>
+            <input id="p2-name" type="text" name="name" placeholder="Your full name" required />
+
+            <label for="p2-email">Email</label>
+            <input id="p2-email" type="email" name="email" placeholder="you@example.com" required />
+
+            <label for="p2-state">State</label>
+            <select id="p2-state" name="state" required>
+              <option value="">Select your state</option>
+              <option>AL</option><option>AK</option><option>AZ</option><option>AR</option>
+              <option>CA</option><option>CO</option><option>CT</option><option>DE</option>
+              <option>FL</option><option>GA</option><option>HI</option><option>ID</option>
+              <option>IL</option><option>IN</option><option>IA</option><option>KS</option>
+              <option>KY</option><option>LA</option><option>ME</option><option>MD</option>
+              <option>MA</option><option>MI</option><option>MN</option><option>MS</option>
+              <option>MO</option><option>MT</option><option>NE</option><option>NV</option>
+              <option>NH</option><option>NJ</option><option>NM</option><option>NY</option>
+              <option>NC</option><option>ND</option><option>OH</option><option>OK</option>
+              <option>OR</option><option>PA</option><option>RI</option><option>SC</option>
+              <option>SD</option><option>TN</option><option>TX</option><option>UT</option>
+              <option>VT</option><option>VA</option><option>WA</option><option>WV</option>
+              <option>WI</option><option>WY</option>
+            </select>
+
+            <div class="checkbox-row">
+              <input id="p2-consent" type="checkbox" name="consent" required />
+              <label for="p2-consent">
+                I support 6-year term limits for Congress and want this message delivered to my
+                elected officials.
+              </label>
+            </div>
+
+            <button type="submit" class="btn-submit">
+              Sign Petition #2 – Term Limits
+            </button>
+
+            <div class="form-footnote">
+              Demo only: like Petition #1, signatures are stored in your Formspree inbox for now so
+              you can track and export them. In a future build, they can be verified and forwarded
+              automatically to Congress.
+            </div>
+          </form>
+        </article>
+      </div>
+    </section>
+
+    <!-- COMPLAINTS / FORMS -->
+    <section class="section" id="complaints">
+      <div class="kicker">Official Complaints &amp; Forms</div>
+      <h2>Turn Anger into Action, Not Just Posts</h2>
+      <p>
+        Most Americans never file a formal complaint because the forms are buried, confusing, or
+        scattered across dozens of sites. America’s Torch aims to change that by putting the most
+        important links in one place — and eventually generating pre-filled forms based on the
+        alerts you care about.
+      </p>
+
+      <div class="complaints-grid">
+        <div class="complaint-card">
+          <h3>Federal Ethics &amp; Oversight</h3>
+          <p>
+            When members of Congress are accused of serious misconduct, citizens can raise concerns
+            with official ethics and oversight bodies.
+          </p>
+          <p>
+            Example links (you can customize later):
+            <br />
+            • House &amp; Senate ethics complaint pages
+            <br />
+            • Office of Congressional Ethics tips form
+          </p>
+          <a href="#top">In a full app, this button would open a guided federal complaint form.</a>
+        </div>
+        <div class="complaint-card">
+          <h3>Department of Justice &amp; Civil Rights</h3>
+          <p>
+            For issues involving civil rights violations, patterns of corruption, or abuse of power,
+            citizens can be guided to the right DOJ contact pages.
+          </p>
+          <a href="#top">Future feature: auto-generated DOJ complaint drafts you can review.</a>
+        </div>
+        <div class="complaint-card">
+          <h3>State-Level Complaints</h3>
+          <p>
+            Every state has its own ethics boards, inspectors general, and complaint processes.
+            America’s Torch can eventually route citizens to the correct office based on their
+            state and alert.
+          </p>
+          <a href="#states">Use the state section above as a starting point.</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- IDEAS SECTION -->
+    <section class="section" id="ideas">
+      <div class="kicker">Ideas from the People</div>
+      <h2>What Do You Think Needs to Change?</h2>
+      <p>
+        America’s Torch isn’t just one person’s opinion. It’s meant to be a place where citizens
+        bring ideas, vote on them, and push together for the ones that matter most. From federal
+        reforms to local power-bill abuses, your ideas can help shape the next alerts, petitions,
+        and town halls.
+      </p>
+
+      <div class="ideas-card">
+        <h3>Submit Your Idea</h3>
+        <p style="font-size: 14px; color: var(--text-muted);">
+          Share one idea per submission: a law that should exist, a loophole that should close, or a
+          pattern of corruption or waste you want exposed. In a full version of America’s Torch,
+          ideas like these could be turned into public votes and petitions.
+        </p>
+
+        <form action="https://formspree.io/f/xovypnwk" method="POST">
+          <input type="hidden" name="form" value="Citizen Idea – America's Torch" />
+
+          <label for="idea-name">Name (optional in public view)</label>
+          <input id="idea-name" type="text" name="name" placeholder="Your name" />
+
+          <label for="idea-email">Email</label>
+          <input id="idea-email" type="email" name="email" placeholder="you@example.com" required />
+
+          <label for="idea-state">State</label>
+          <select id="idea-state" name="state" required>
+            <option value="">Select your state</option>
+            <option>AL</option><option>AK</option><option>AZ</option><option>AR</option>
+            <option>CA</option><option>CO</option><option>CT</option><option>DE</option>
+            <option>FL</option><option>GA</option><option>HI</option><option>ID</option>
+            <option>IL</option><option>IN</option><option>IA</option><option>KS</option>
+            <option>KY</option><option>LA</option><option>ME</option><option>MD</option>
+            <option>MA</option><option>MI</option><option>MN</option><option>MS</option>
+            <option>MO</option><option>MT</option><option>NE</option><option>NV</option>
+            <option>NH</option><option>NJ</option><option>NM</option><option>NY</option>
+            <option>NC</option><option>ND</option><option>OH</option><option>OK</option>
+            <option>OR</option><option>PA</option><option>RI</option><option>SC</option>
+            <option>SD</option><option>TN</option><option>TX</option><option>UT</option>
+            <option>VT</option><option>VA</option><option>WA</option><option>WV</option>
+            <option>WI</option><option>WY</option>
+          </select>
+
+          <label for="idea-text">Your Idea</label>
+          <textarea id="idea-text" name="idea"
+            placeholder="Example: Ban unlimited donations from public utility companies to the same state officials who regulate them. Or: Require every new tax or fee to be listed in plain English on one public dashboard."></textarea>
+
+          <button type="submit" class="btn-submit">Submit Idea</button>
+
+          <div class="form-footnote">
+            Demo only: your idea goes to your Formspree inbox so you can read, organize, and later
+            turn the strongest ideas into votes, petitions, and alerts.
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- JOIN SECTION -->
+    <section class="join-panel" id="join">
+      <div class="kicker">Join the Movement</div>
+      <h2>Keep the Flame Lit</h2>
+      <p>
+        This is the early prototype of America’s Torch. If you want to help shape it — from alerts
+        and dashboards to town halls and petitions — add your name below. You’ll be the first to
+        know when new tools go live.
+      </p>
+
+      <form action="https://formspree.io/f/xovypnwk" method="POST">
+        <input type="hidden" name="form" value="Join America's Torch" />
+        <label for="join-name">Name</label>
+        <input id="join-name" type="text" name="name" placeholder="Your full name" required />
+
+        <label for="join-email">Email</label>
+        <input id="join-email" type="email" name="email" placeholder="you@example.com" required />
+
+        <label for="join-state">State</label>
+        <select id="join-state" name="state" required>
+          <option value="">Select your state</option>
+          <option>AL</option><option>AK</option><option>AZ</option><option>AR</option>
+          <option>CA</option><option>CO</option><option>CT</option><option>DE</option>
+          <option>FL</option><option>GA</option><option>HI</option><option>ID</option>
+          <option>IL</option><option>IN</option><option>IA</option><option>KS</option>
+          <option>KY</option><option>LA</option><option>ME</option><option>MD</option>
+          <option>MA</option><option>MI</option><option>MN</option><option>MS</option>
+          <option>MO</option><option>MT</option><option>NE</option><option>NV</option>
+          <option>NH</option><option>NJ</option><option>NM</option><option>NY</option>
+          <option>NC</option><option>ND</option><option>OH</option><option>OK</option>
+          <option>OR</option><option>PA</option><option>RI</option><option>SC</option>
+          <option>SD</option><option>TN</option><option>TX</option><option>UT</option>
+          <option>VT</option><option>VA</option><option>WA</option><option>WV</option>
+          <option>WI</option><option>WY</option>
+        </select>
+
+        <button type="submit" class="btn-submit">
+          Join America’s Torch
+        </button>
+
+        <div class="form-footnote">
+          Demo only: your info goes to Formspree so you can export and manage it later. No tracking
+          scripts, no party lists, no selling data — ever.
         </div>
       </form>
-    </div>
+    </section>
+
+    <footer>
+      Prototype only · No legal, financial, or voting advice. America’s Torch is a peaceful,
+      citizen-powered concept for accountability and transparency.
+    </footer>
   </div>
-
-  <script>
-    // Simple scroll helper
-    function scrollToSection(id) {
-      var el = document.getElementById(id);
-      if (!el) return;
-      el.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-
-    // Dynamic year for footer
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    // -------------------------------
-    // Complaint wizard logic
-    // -------------------------------
-    let currentWizardStep = 1;
-    const totalWizardSteps = 4;
-
-    function openComplaintWizard(type) {
-      const overlay = document.getElementById("complaintWizardOverlay");
-      if (!overlay) return;
-      overlay.classList.add("wizard-overlay-active");
-      overlay.setAttribute("aria-hidden", "false");
-      currentWizardStep = 1;
-      setWizardStep(currentWizardStep);
-
-      const output = document.getElementById("complaintSummaryOutput");
-      if (output) {
-        output.value = "";
-      }
-    }
-
-    function closeComplaintWizard() {
-      const overlay = document.getElementById("complaintWizardOverlay");
-      if (!overlay) return;
-      overlay.classList.remove("wizard-overlay-active");
-      overlay.setAttribute("aria-hidden", "true");
-    }
-
-    function setWizardStep(step) {
-      currentWizardStep = step;
-
-      // Toggle step panels
-      const steps = document.querySelectorAll(".wizard-step");
-      steps.forEach(function (s) {
-        const stepNum = parseInt(s.getAttribute("data-step"), 10);
-        if (stepNum === step) {
-          s.classList.add("wizard-step-active");
-        } else {
-          s.classList.remove("wizard-step-active");
-        }
-      });
-
-      // Update dots
-      const dots = document.querySelectorAll(".wizard-step-dot");
-      dots.forEach(function (d) {
-        const dotStep = parseInt(d.getAttribute("data-step-dot"), 10);
-        if (dotStep === step) {
-          d.classList.add("wizard-step-dot-active");
-        } else {
-          d.classList.remove("wizard-step-dot-active");
-        }
-      });
-
-      // Update labels
-      const labels = document.querySelectorAll(".wizard-step-label");
-      labels.forEach(function (l) {
-        const labelStep = parseInt(l.getAttribute("data-step-label"), 10);
-        if (labelStep === step) {
-          l.classList.add("wizard-step-label-active");
-        } else {
-          l.classList.remove("wizard-step-label-active");
-        }
-      });
-
-      // Update step number text
-      const numSpan = document.getElementById("wizardStepNumber");
-      if (numSpan) numSpan.textContent = String(step);
-
-      // Back / Next button state & label
-      const backBtn = document.getElementById("wizardBackBtn");
-      const nextBtn = document.getElementById("wizardNextBtn");
-
-      if (backBtn) {
-        backBtn.disabled = step === 1;
-      }
-
-      if (nextBtn) {
-        if (step < totalWizardSteps) {
-          nextBtn.textContent = "Next ▶";
-        } else {
-          nextBtn.textContent = "Generate summary";
-        }
-      }
-    }
-
-    function wizardNextStep() {
-      if (currentWizardStep < totalWizardSteps) {
-        setWizardStep(currentWizardStep + 1);
-        // If we just moved into step 4, build the summary automatically
-        if (currentWizardStep === 4) {
-          generateComplaintSummary();
-        }
-      } else {
-        // Already at final step – regenerate summary in case user edited fields
-        generateComplaintSummary();
-      }
-    }
-
-    function wizardPrevStep() {
-      if (currentWizardStep > 1) {
-        setWizardStep(currentWizardStep - 1);
-      }
-    }
-
-    function generateComplaintSummary() {
-      function val(id) {
-        var el = document.getElementById(id);
-        return el ? el.value.trim() : "";
-      }
-
-      const problemType = val("problemType");
-      const location = val("location");
-      const timeframe = val("timeframe");
-      const shortSummary = val("shortSummary");
-
-      const courtName = val("courtName");
-      const caseNumber = val("caseNumber");
-      const officialName = val("officialName");
-      const childrenInvolved = val("childrenInvolved");
-      const currentStatus = val("currentStatus");
-
-      const rightsChecked = Array.from(
-        document.querySelectorAll("input[name='rights']:checked")
-      ).map(function (c) {
-        return c.value;
-      });
-
-      const harmDescription = val("harmDescription");
-      const stepsTaken = val("stepsTaken");
-
-      let rightsSentence = "";
-      if (rightsChecked.length > 0) {
-        rightsSentence =
-          "I believe this situation involves serious violations of my rights, including " +
-          rightsChecked.join(", ") +
-          ". ";
-      }
-
-      let statusSentence = "";
-      if (currentStatus === "ongoing") {
-        statusSentence =
-          "These problems are ongoing and continue to affect me and my family. ";
-      } else if (currentStatus === "recent") {
-        statusSentence =
-          "Although some events have already occurred, the effects are still active today. ";
-      } else if (currentStatus === "past") {
-        statusSentence =
-          "These events occurred in the past, but I am seeking accountability and correction of the record. ";
-      }
-
-      let intro = "SUMMARY OF CONCERN:\n";
-      intro += shortSummary
-        ? shortSummary + "\n\n"
-        : "I am raising serious concerns about how this court or agency has handled my situation.\n\n";
-
-      let context = "BACKGROUND & CONTEXT:\n";
-      if (problemType) {
-        context += "- Type of matter: " + problemType + "\n";
-      }
-      if (location) {
-        context += "- Location / jurisdiction: " + location + "\n";
-      }
-      if (timeframe) {
-        context += "- Timeframe: " + timeframe + "\n";
-      }
-      if (courtName) {
-        context += "- Court / agency: " + courtName + "\n";
-      }
-      if (caseNumber) {
-        context += "- Case number(s) / order: " + caseNumber + "\n";
-      }
-      if (officialName) {
-        context += "- Judge / official(s): " + officialName + "\n";
-      }
-      if (childrenInvolved) {
-        context += "- Children / family involved: " + childrenInvolved + "\n";
-      }
-      if (currentStatus) {
-        context += "- Status: " + currentStatus + "\n";
-      }
-      context += "\n";
-
-      let rightsBlock = "RIGHTS & FAIRNESS CONCERNS:\n";
-      if (rightsSentence) {
-        rightsBlock += rightsSentence + "\n";
-      }
-      if (harmDescription) {
-        rightsBlock +=
-          "Specific harms I have experienced include: " + harmDescription + "\n\n";
-      } else {
-        rightsBlock +=
-          "I have suffered concrete harms to my family, reputation, and/or safety as a result of these actions.\n\n";
-      }
-
-      let stepsBlock = "STEPS I HAVE ALREADY TAKEN:\n";
-      if (stepsTaken) {
-        stepsBlock += stepsTaken + "\n\n";
-      } else {
-        stepsBlock +=
-          "I am now documenting these concerns and seeking guidance on how to correct the situation and protect my rights.\n\n";
-      }
-
-      let closing =
-        "REQUEST:\n" +
-        statusSentence +
-        "I respectfully ask that these concerns be reviewed, that any false or unsupported statements about me be corrected, " +
-        "and that my rights — and the rights of any children or family members involved — be protected going forward.\n";
-
-      const finalText = intro + context + rightsBlock + stepsBlock + closing;
-
-      const output = document.getElementById("complaintSummaryOutput");
-      if (output) {
-        output.value = finalText;
-      }
-
-      // Make sure we are on step 4 so user can see the text
-      if (currentWizardStep !== 4) {
-        setWizardStep(4);
-      }
-    }
-
-    function copyComplaintSummary() {
-      const output = document.getElementById("complaintSummaryOutput");
-      if (!output) return;
-
-      const text = output.value;
-
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(text).then(
-          function () {
-            alert("Summary copied to your clipboard.");
-          },
-          function () {
-            alert("Could not copy automatically. You can still select and copy the text manually.");
-          }
-        );
-      } else {
-        output.focus();
-        output.select();
-        try {
-          document.execCommand("copy");
-          alert("Summary copied to your clipboard.");
-        } catch (e) {
-          alert("Could not copy automatically. You can still select and copy the text manually.");
-        }
-      }
-    }
-
-    // -------------------------------
-    // Legal draft builders
-    // -------------------------------
-
-    function requireSummary() {
-      const summaryEl = document.getElementById("complaintSummaryOutput");
-      if (!summaryEl || !summaryEl.value.trim()) {
-        alert(
-          "First, open the 'Civil rights & constitutional concerns' wizard, fill in your information, and generate a summary (Step 4). Then come back here."
-        );
-        return null;
-      }
-      return summaryEl.value.trim();
-    }
-
-    function buildLegalDraft(type) {
-      const summary = requireSummary();
-      if (!summary) return;
-
-      let text = "";
-
-      if (type === "jqc") {
-        text =
-          "[Your Name]\n" +
-          "[Your Mailing Address]\n" +
-          "[City, State ZIP]\n" +
-          "[Phone] • [Email]\n\n" +
-          "[Date]\n\n" +
-          "[Judicial Oversight Body / Commission Name]\n" +
-          "[Address if known]\n\n" +
-          "RE: Complaint Regarding Judicial Conduct\n\n" +
-          "To Whom It May Concern:\n\n" +
-          "I am submitting this complaint to formally raise concerns about the conduct and decisions of a court and/or judge in my matter. " +
-          "I understand that this letter is not a substitute for legal advice and that I remain responsible for complying with any filing requirements of your office.\n\n" +
-          "Below is a summary of the situation and the rights and fairness concerns as I understand them:\n\n" +
-          summary +
-          "\n" +
-          "I respectfully request that your office review this situation, including the underlying orders and case history, " +
-          "and determine whether judicial misconduct or violations of judicial ethics have occurred. If appropriate, I ask that corrective action be considered, " +
-          "and that my concerns be included in any record your office maintains regarding this court or judge.\n\n" +
-          "I certify that the information I have provided is true and correct to the best of my knowledge and belief. " +
-          "I understand that knowingly providing false information in a complaint may have legal consequences.\n\n" +
-          "Sincerely,\n\n" +
-          "[Your Signature]\n" +
-          "[Your Printed Name]\n";
-        const out = document.getElementById("jqcDraftOutput");
-        if (out) out.value = text;
-      } else if (type === "motion") {
-        text =
-          "[COURT CAPTION GOES HERE]\n" +
-          "-------------------------------------------------\n" +
-          "[Your Name],\n" +
-          "    Movant,\n" +
-          "v.\n" +
-          "[Opposing Party Name],\n" +
-          "    Respondent.\n" +
-          "-------------------------------------------------\n" +
-          "MOTION TO STRIKE OR AMEND PORTIONS OF ORDER\n\n" +
-          "COMES NOW the Movant and respectfully moves this Court to strike and/or amend certain portions of its prior order, " +
-          "and shows the Court as follows:\n\n" +
-          "1.\tThis motion concerns the Court’s prior order in the above-styled matter, which contains statements and findings that are inaccurate, unsupported by the record, " +
-          "and/or were made without providing Movant a meaningful opportunity to be heard.\n\n" +
-          "2.\tMovant provides the following summary of concerns regarding the handling of the case and the fairness of the proceedings:\n\n" +
-          summary +
-          "\n" +
-          "3.\tMovant contends that the challenged portions of the order are materially misleading and have caused ongoing harm, including but not limited to damage to reputation, " +
-          "interference with family relationships, and confusion about Movant’s status in connection with the case.\n\n" +
-          "4.\tMovant respectfully requests that the Court review the record, consider the lack of notice and opportunity to be heard regarding the statements at issue, " +
-          "and strike or amend any language that is not supported by evidence or that improperly characterizes Movant’s conduct or role.\n\n" +
-          "WHEREFORE, Movant prays that this Court:\n" +
-          "  a.\tGrant this Motion to Strike or Amend;\n" +
-          "  b.\tStrike or correct the specific statements and findings identified by Movant in a separate list or proposed order;\n" +
-          "  c.\tSet this matter for a hearing, if necessary, so that Movant may be heard and present evidence; and\n" +
-          "  d.\tGrant such other and further relief as the Court deems just and proper.\n\n" +
-          "Respectfully submitted this ____ day of __________________, 20____.\n\n" +
-          "____________________________________\n" +
-          "[Your Name]\n" +
-          "[Address]\n" +
-          "[Phone]\n" +
-          "[Email]\n";
-        const out = document.getElementById("motionDraftOutput");
-        if (out) out.value = text;
-      } else if (type === "affidavit") {
-        text =
-          "AFFIDAVIT\n\n" +
-          "STATE OF _______________________\n" +
-          "COUNTY OF ______________________\n\n" +
-          "Personally appeared before the undersigned officer, duly authorized to administer oaths, the undersigned Affiant, who being first duly sworn, deposes and states as follows:\n\n" +
-          "1.\tMy name is ____________________________. I am over eighteen (18) years of age, competent to testify, and I make this affidavit based on my personal knowledge.\n\n" +
-          "2.\tThe following summary accurately reflects my understanding and recollection of events related to the court/agency actions in my matter:\n\n" +
-          summary +
-          "\n" +
-          "3.\tTo the best of my knowledge and belief, the information described above is true, correct, and complete. I understand that this affidavit may be used in support of motions, complaints, or other filings related to my case.\n\n" +
-          "FURTHER AFFIANT SAYETH NOT.\n\n\n" +
-          "____________________________________\n" +
-          "Affiant Signature\n\n" +
-          "Printed Name: ______________________\n" +
-          "Date: _____________________________\n\n" +
-          "Sworn to and subscribed before me this ____ day of __________________, 20____.\n\n" +
-          "____________________________________\n" +
-          "Notary Public\n" +
-          "My Commission Expires: _____________\n";
-        const out = document.getElementById("affidavitDraftOutput");
-        if (out) out.value = text;
-      } else if (type === "timeline") {
-        text =
-          "TIMELINE OF EVENTS (DRAFT)\n\n" +
-          "Overview:\n" +
-          "The following timeline is based on the summarized concerns below. Replace the placeholders with specific dates, times, and details from your records.\n\n" +
-          "Summary reference:\n\n" +
-          summary +
-          "\n" +
-          "Chronological events:\n\n" +
-          "1. [Date] – [Event]\n" +
-          "   - What happened:\n" +
-          "   - Who was involved:\n" +
-          "   - Related document / exhibit (if any):\n\n" +
-          "2. [Date] – [Event]\n" +
-          "   - What happened:\n" +
-          "   - Who was involved:\n" +
-          "   - Related document / exhibit (if any):\n\n" +
-          "3. [Date] – [Event]\n" +
-          "   - What happened:\n" +
-          "   - Who was involved:\n" +
-          "   - Related document / exhibit (if any):\n\n" +
-          "4. [Date] – [Event]\n" +
-          "   - What happened:\n" +
-          "   - Who was involved:\n" +
-          "   - Related document / exhibit (if any):\n\n" +
-          "Use as many numbered entries as needed to cover key hearings, orders, conversations, filings, and incidents.\n";
-        const out = document.getElementById("timelineDraftOutput");
-        if (out) out.value = text;
-      } else if (type === "exhibits") {
-        text =
-          "EXHIBIT LIST (DRAFT)\n\n" +
-          "This exhibit list is tied to the concerns described in the summary below. Adjust the labels (A, B, C, etc.) and descriptions to match your actual documents.\n\n" +
-          "Summary reference:\n\n" +
-          summary +
-          "\n" +
-          "Exhibits:\n\n" +
-          "Exhibit A – [Short title]\n" +
-          "  - Type: (Order / transcript / email / text screenshot / recording / photo / report)\n" +
-          "  - Date:\n" +
-          "  - Description: [What this document shows and how it supports your concerns]\n\n" +
-          "Exhibit B – [Short title]\n" +
-          "  - Type:\n" +
-          "  - Date:\n" +
-          "  - Description:\n\n" +
-          "Exhibit C – [Short title]\n" +
-          "  - Type:\n" +
-          "  - Date:\n" +
-          "  - Description:\n\n" +
-          "Exhibit D – [Short title]\n" +
-          "  - Type:\n" +
-          "  - Date:\n" +
-          "  - Description:\n\n" +
-          "You can attach this exhibit list to motions, letters to officials, or complaints to show you have organized evidence.\n";
-        const out = document.getElementById("exhibitDraftOutput");
-        if (out) out.value = text;
-      } else if (type === "attorney") {
-        text =
-          "[Your Name]\n" +
-          "[Your Mailing Address]\n" +
-          "[City, State ZIP]\n" +
-          "[Phone] • [Email]\n\n" +
-          "[Date]\n\n" +
-          "[Attorney Name]\n" +
-          "[Law Firm Name]\n" +
-          "[Address]\n\n" +
-          "RE: Request for Consultation – Court / Agency Conduct and Possible Civil Rights Issues\n\n" +
-          "Dear [Attorney Name],\n\n" +
-          "I am writing to request a consultation regarding serious concerns about how a court and/or government agency has handled my matter. " +
-          "I am seeking guidance on whether I may have viable claims or remedies related to due process, parental rights, or other civil rights issues.\n\n" +
-          "Below is a summary of the situation and the rights and fairness concerns as I understand them:\n\n" +
-          summary +
-          "\n" +
-          "I would appreciate your review of this situation and your advice about:\n" +
-          "  • Whether you handle this type of case (or can refer me to someone who does);\n" +
-          "  • What options, if any, I may have under state or federal law;\n" +
-          "  • What documents and evidence you would need from me to fully evaluate the matter.\n\n" +
-          "I understand that this letter does not create an attorney–client relationship and that you may or may not be able to take my case. " +
-          "I am simply asking for a consultation to see if there is any path forward.\n\n" +
-          "Thank you for your time and consideration.\n\n" +
-          "Sincerely,\n\n" +
-          "[Your Signature]\n" +
-          "[Your Printed Name]\n";
-        const out = document.getElementById("attorneyDraftOutput");
-        if (out) out.value = text;
-      } else if (type === "governor") {
-        text =
-          "[Your Name]\n" +
-          "[Your Mailing Address]\n" +
-          "[City, State ZIP]\n" +
-          "[Phone] • [Email]\n\n" +
-          "[Date]\n\n" +
-          "[Governor / Agency Name]\n" +
-          "[Office or Department]\n" +
-          "[Address]\n\n" +
-          "RE: Citizen Complaint Regarding Court / Agency Conduct and Civil Rights Concerns\n\n" +
-          "To Whom It May Concern:\n\n" +
-          "I am writing as a concerned citizen and resident of [City/County, State] to report serious concerns about how a court and/or government agency has handled my matter. " +
-          "I believe the situation raises broader issues of fairness, transparency, and civil rights that may warrant your attention.\n\n" +
-          "Below is a summary of what has occurred and why I am asking for review or oversight:\n\n" +
-          summary +
-          "\n" +
-          "I respectfully request that your office:\n" +
-          "  • Review the actions described above, including any relevant orders or case history, to the extent your authority allows;\n" +
-          "  • Consider whether existing policies, oversight mechanisms, or reporting channels are sufficient to prevent similar situations for other families;\n" +
-          "  • Inform me, if possible, of any steps that can be taken to address these concerns or to improve transparency and accountability.\n\n" +
-          "I understand that your office may not be able to intervene in individual court decisions. However, I believe that what has happened in my situation may reflect deeper issues that affect other citizens as well.\n\n" +
-          "Thank you for your time and for any attention you can give to these concerns.\n\n" +
-          "Sincerely,\n\n" +
-          "[Your Signature]\n" +
-          "[Your Printed Name]\n";
-        const out = document.getElementById("governorDraftOutput");
-        if (out) out.value = text;
-      }
-    }
-
-    function copyDraft(id) {
-      const el = document.getElementById(id);
-      if (!el) return;
-      const text = el.value || "";
-      if (!text.trim()) {
-        alert("There is nothing to copy yet. Click “Build from my summary” first.");
-        return;
-      }
-
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(text).then(
-          function () {
-            alert("Draft copied to your clipboard.");
-          },
-          function () {
-            alert("Could not copy automatically. You can still select and copy the text manually.");
-          }
-        );
-      } else {
-        el.focus();
-        el.select();
-        try {
-          document.execCommand("copy");
-          alert("Draft copied to your clipboard.");
-        } catch (e) {
-          alert("Could not copy automatically. You can still select and copy the text manually.");
-        }
-      }
-    }
-  </script>
+</div>
 </body>
 </html>
