@@ -305,6 +305,60 @@
       margin-bottom: 4px;
     }
 
+    /* QUICK ACTIONS */
+
+    .quick-actions {
+      margin-top: 20px;
+      padding: 14px 14px 16px;
+      border-radius: 18px;
+      background: rgba(7, 9, 22, 0.96);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      box-shadow: 0 14px 40px rgba(0, 0, 0, 0.75);
+    }
+
+    .quick-actions-title {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+
+    .quick-actions-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .quick-actions-btn {
+      flex: 1 1 160px;
+      text-align: center;
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-size: 13px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      background: #050913;
+    }
+
+    .quick-actions-btn.primary {
+      background: linear-gradient(90deg, #ffba63, #ff7f42);
+      color: #000;
+      border-color: transparent;
+      font-weight: 700;
+    }
+
+    .quick-actions-btn.secondary {
+      border-color: rgba(255, 255, 255, 0.4);
+    }
+
+    .quick-actions-btn.outline {
+      border-style: dashed;
+      border-color: rgba(255, 255, 255, 0.35);
+      font-size: 12px;
+    }
+
     /* TAKE ACTION GRID */
 
     .action-grid {
@@ -744,6 +798,10 @@
         font-size: 18px;
         letter-spacing: 0.18em;
       }
+
+      .quick-actions-row {
+        flex-direction: column;
+      }
     }
   </style>
 </head>
@@ -791,7 +849,7 @@
       <div class="accent-line">THE FLAME THEY CAN'T BLOW OUT.</div>
 
       <p>
-        If you’re tired of yelling at the TV, tired of corruption stories that go nowhere, and tired
+        If you’re tired of feeling ignored, tired of corruption stories that go nowhere, and tired
         of watching the same people stay in power while life gets more expensive and divided,
         America’s Torch is built for you.
       </p>
@@ -844,6 +902,22 @@
         If the people who swore an oath will not protect our rights, our money, and our peace, then
         the people themselves must step in — peacefully, clearly, and in numbers too big to ignore.
         America’s Torch is one way to do that.
+      </div>
+
+      <!-- QUICK ACTIONS STRIP -->
+      <div class="quick-actions">
+        <div class="quick-actions-title">Start in 10 Seconds</div>
+        <div class="quick-actions-row">
+          <a href="#petition-accountability" class="quick-actions-btn primary">
+            Sign Accountability Petition
+          </a>
+          <a href="#petition-term-limits" class="quick-actions-btn secondary">
+            Sign Term Limits Petition
+          </a>
+          <a href="#ideas" class="quick-actions-btn outline">
+            Submit an Idea to America’s Torch
+          </a>
+        </div>
       </div>
     </section>
 
@@ -1052,7 +1126,7 @@
 
       <div class="petition-grid">
         <!-- PETITION #1 -->
-        <article class="petition-card">
+        <article class="petition-card" id="petition-accountability">
           <div class="petition-label">Petition #1</div>
           <h3>Real Transparency and Accountability in Government</h3>
           <p><strong>To the elected officials of the United States:</strong></p>
@@ -1127,7 +1201,7 @@
         </article>
 
         <!-- PETITION #2 -->
-        <article class="petition-card">
+        <article class="petition-card" id="petition-term-limits">
           <div class="petition-label">Petition #2</div>
           <h3>6-Year Term Limits for Congress</h3>
           <p><strong>To the United States Congress:</strong></p>
@@ -1193,6 +1267,81 @@
               Demo only: like Petition #1, signatures are stored in your Formspree inbox for now so
               you can track and export them. In a future build, they can be verified and forwarded
               automatically to Congress.
+            </div>
+          </form>
+        </article>
+
+        <!-- PETITION #3 -->
+        <article class="petition-card" id="petition-donor-power">
+          <div class="petition-label">Petition #3</div>
+          <h3>End Donor-Controlled Politics &amp; Dark-Money Influence</h3>
+          <p><strong>To the United States Congress and state legislatures:</strong></p>
+          <p>
+            We, the undersigned, are tired of watching billionaires, corporations, and dark-money
+            groups pour money into our government while ordinary Americans struggle to be heard.
+          </p>
+          <p>We call for bold but peaceful reforms that:</p>
+          <ol>
+            <li>
+              Require simple, searchable disclosure of all large donations, bundled money, and PAC
+              spending — in one public place the average person can understand.
+            </li>
+            <li>
+              Close loopholes that allow donors to hide behind layers of shell companies and
+              “nonprofits” while still shaping laws, regulations, and appointments.
+            </li>
+            <li>
+              Set clear limits on how much any one donor, company, or organization can give to
+              influence elections and policy in a single year.
+            </li>
+          </ol>
+          <p>
+            A system that rewards money over merit has failed the American people. We demand a
+            government that listens to voters first — not checkbooks.
+          </p>
+
+          <form action="https://formspree.io/f/xovypnwk" method="POST">
+            <input type="hidden" name="petition" value="Petition #3 – End Donor-Controlled Politics" />
+            <label for="p3-name">Name</label>
+            <input id="p3-name" type="text" name="name" placeholder="Your full name" required />
+
+            <label for="p3-email">Email</label>
+            <input id="p3-email" type="email" name="email" placeholder="you@example.com" required />
+
+            <label for="p3-state">State</label>
+            <select id="p3-state" name="state" required>
+              <option value="">Select your state</option>
+              <option>AL</option><option>AK</option><option>AZ</option><option>AR</option>
+              <option>CA</option><option>CO</option><option>CT</option><option>DE</option>
+              <option>FL</option><option>GA</option><option>HI</option><option>ID</option>
+              <option>IL</option><option>IN</option><option>IA</option><option>KS</option>
+              <option>KY</option><option>LA</option><option>ME</option><option>MD</option>
+              <option>MA</option><option>MI</option><option>MN</option><option>MS</option>
+              <option>MO</option><option>MT</option><option>NE</option><option>NV</option>
+              <option>NH</option><option>NJ</option><option>NM</option><option>NY</option>
+              <option>NC</option><option>ND</option><option>OH</option><option>OK</option>
+              <option>OR</option><option>PA</option><option>RI</option><option>SC</option>
+              <option>SD</option><option>TN</option><option>TX</option><option>UT</option>
+              <option>VT</option><option>VA</option><option>WA</option><option>WV</option>
+              <option>WI</option><option>WY</option>
+            </select>
+
+            <div class="checkbox-row">
+              <input id="p3-consent" type="checkbox" name="consent" required />
+              <label for="p3-consent">
+                I support stronger limits and transparency on big donors, and I want this message
+                delivered to my elected officials.
+              </label>
+            </div>
+
+            <button type="submit" class="btn-submit">
+              Sign Petition #3 – End Donor Power
+            </button>
+
+            <div class="form-footnote">
+              Demo only: this also goes to your Formspree inbox for counting and export. In a future
+              build, verified voters and automated delivery tools can turn this into a formal
+              petition campaign.
             </div>
           </form>
         </article>
