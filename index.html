@@ -695,6 +695,25 @@
     /* LEGAL DRAFT TOOLS      */
     /* ---------------------- */
 
+    .legal-disclaimer {
+      margin-bottom: 12px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      background: rgba(80, 20, 20, 0.3);
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .legal-disclaimer strong {
+      color: var(--danger);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 10px;
+      display: block;
+      margin-bottom: 4px;
+    }
+
     .draft-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -990,7 +1009,7 @@
       background: rgba(4, 7, 18, 0.9);
       color: var(--text-main);
       font-size: 16px;
-      cursor: pointer;
+      cursor: button;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -1551,10 +1570,17 @@
           <h2>Turn your summary into drafts</h2>
           <p class="section-sub">
             First, use the “Civil rights &amp; constitutional concerns” wizard to build a
-            summary. Then use these tools to turn that summary into a draft judicial
-            complaint-style letter, a motion to strike / amend, or a supporting
-            affidavit you can edit and use with a lawyer or court forms.
+            summary. Then use these tools to turn that summary into drafts you can paste into
+            letters, motions, affidavits, timelines, and more.
           </p>
+        </div>
+
+        <div class="legal-disclaimer">
+          <strong>NOT LEGAL ADVICE</strong>
+          America’s Torch is a document generator and organizing tool. It does not provide legal
+          advice, does not create an attorney–client relationship, and cannot tell you what to
+          file or how a court will rule. You are responsible for checking court rules, deadlines,
+          and requirements, and for deciding whether to consult an attorney.
         </div>
 
         <div class="draft-grid">
@@ -1650,6 +1676,130 @@
               </div>
             </div>
           </article>
+
+          <!-- Timeline -->
+          <article class="draft-card">
+            <h3>Timeline of Events Draft</h3>
+            <p>
+              Creates a structured timeline template using your summary, so you can list key
+              dates, actions, and who was involved.
+            </p>
+            <textarea id="timelineDraftOutput" class="draft-output" placeholder="Click “Build from my summary” to generate a draft."></textarea>
+            <div class="draft-controls">
+              <button
+                type="button"
+                class="btn-primary"
+                onclick="buildLegalDraft('timeline')"
+              >
+                <span class="pill-icon">📅</span>
+                Build from my summary
+              </button>
+              <button
+                type="button"
+                class="btn-ghost"
+                onclick="copyDraft('timelineDraftOutput')"
+              >
+                📋 Copy draft to clipboard
+              </button>
+              <div class="draft-note">
+                Fill in specific dates and details based on your records (orders, emails,
+                texts, recordings, etc.).
+              </div>
+            </div>
+          </article>
+
+          <!-- Exhibit List -->
+          <article class="draft-card">
+            <h3>Exhibit List Draft</h3>
+            <p>
+              Generates an exhibit list template tied to your story, so you can label and
+              describe documents, audio, and screenshots.
+            </p>
+            <textarea id="exhibitDraftOutput" class="draft-output" placeholder="Click “Build from my summary” to generate a draft."></textarea>
+            <div class="draft-controls">
+              <button
+                type="button"
+                class="btn-primary"
+                onclick="buildLegalDraft('exhibits')"
+              >
+                <span class="pill-icon">📂</span>
+                Build from my summary
+              </button>
+              <button
+                type="button"
+                class="btn-ghost"
+                onclick="copyDraft('exhibitDraftOutput')"
+              >
+                📋 Copy draft to clipboard
+              </button>
+              <div class="draft-note">
+                You can attach this to motions, complaints, or letters to show exactly what
+                evidence you have and how it connects.
+              </div>
+            </div>
+          </article>
+
+          <!-- Attorney Letter -->
+          <article class="draft-card">
+            <h3>Letter to Attorney Draft</h3>
+            <p>
+              Uses your summary to create a clear, organized letter to a potential civil
+              rights or family-law attorney.
+            </p>
+            <textarea id="attorneyDraftOutput" class="draft-output" placeholder="Click “Build from my summary” to generate a draft."></textarea>
+            <div class="draft-controls">
+              <button
+                type="button"
+                class="btn-primary"
+                onclick="buildLegalDraft('attorney')"
+              >
+                <span class="pill-icon">👩‍⚖️</span>
+                Build from my summary
+              </button>
+              <button
+                type="button"
+                class="btn-ghost"
+                onclick="copyDraft('attorneyDraftOutput')"
+              >
+                📋 Copy draft to clipboard
+              </button>
+              <div class="draft-note">
+                You can email or print this for lawyers so they quickly understand what
+                happened and what you’re asking for.
+              </div>
+            </div>
+          </article>
+
+          <!-- Governor / Agency Complaint -->
+          <article class="draft-card">
+            <h3>Governor / Agency Complaint Draft</h3>
+            <p>
+              Turns your summary into a respectful, firm complaint letter to a governor’s
+              office or state agency.
+            </p>
+            <textarea id="governorDraftOutput" class="draft-output" placeholder="Click “Build from my summary” to generate a draft."></textarea>
+            <div class="draft-controls">
+              <button
+                type="button"
+                class="btn-primary"
+                onclick="buildLegalDraft('governor')"
+              >
+                <span class="pill-icon">🏛️</span>
+                Build from my summary
+              </button>
+              <button
+                type="button"
+                class="btn-ghost"
+                onclick="copyDraft('governorDraftOutput')"
+              >
+                📋 Copy draft to clipboard
+              </button>
+              <div class="draft-note">
+                Check the specific complaint / contact instructions for the office you’re writing
+                to and adjust formatting as needed.
+              </div>
+            </div>
+          </article>
         </div>
       </section>
 
@@ -1721,6 +1871,20 @@
                 We’re actively building the web app first, then a mobile-friendly
                 version. Join the early access list to help test complaint flows
                 and give real-world feedback.
+              </p>
+            </details>
+
+            <details>
+              <summary>
+                <div class="summary-row">
+                  <span>Does this replace a lawyer?</span>
+                  <span class="icon">›</span>
+                </div>
+              </summary>
+              <p>
+                No. This is a way to organize your story, documents, and patterns
+                so that if you do speak with a lawyer, official, or court, you’re
+                clearer and better prepared.
               </p>
             </details>
           </div>
@@ -2249,6 +2413,7 @@
 
       let closing =
         "REQUEST:\n" +
+        statusSentence +
         "I respectfully ask that these concerns be reviewed, that any false or unsupported statements about me be corrected, " +
         "and that my rights — and the rights of any children or family members involved — be protected going forward.\n";
 
@@ -2395,6 +2560,118 @@
           "Notary Public\n" +
           "My Commission Expires: _____________\n";
         const out = document.getElementById("affidavitDraftOutput");
+        if (out) out.value = text;
+      } else if (type === "timeline") {
+        text =
+          "TIMELINE OF EVENTS (DRAFT)\n\n" +
+          "Overview:\n" +
+          "The following timeline is based on the summarized concerns below. Replace the placeholders with specific dates, times, and details from your records.\n\n" +
+          "Summary reference:\n\n" +
+          summary +
+          "\n" +
+          "Chronological events:\n\n" +
+          "1. [Date] – [Event]\n" +
+          "   - What happened:\n" +
+          "   - Who was involved:\n" +
+          "   - Related document / exhibit (if any):\n\n" +
+          "2. [Date] – [Event]\n" +
+          "   - What happened:\n" +
+          "   - Who was involved:\n" +
+          "   - Related document / exhibit (if any):\n\n" +
+          "3. [Date] – [Event]\n" +
+          "   - What happened:\n" +
+          "   - Who was involved:\n" +
+          "   - Related document / exhibit (if any):\n\n" +
+          "4. [Date] – [Event]\n" +
+          "   - What happened:\n" +
+          "   - Who was involved:\n" +
+          "   - Related document / exhibit (if any):\n\n" +
+          "Use as many numbered entries as needed to cover key hearings, orders, conversations, filings, and incidents.\n";
+        const out = document.getElementById("timelineDraftOutput");
+        if (out) out.value = text;
+      } else if (type === "exhibits") {
+        text =
+          "EXHIBIT LIST (DRAFT)\n\n" +
+          "This exhibit list is tied to the concerns described in the summary below. Adjust the labels (A, B, C, etc.) and descriptions to match your actual documents.\n\n" +
+          "Summary reference:\n\n" +
+          summary +
+          "\n" +
+          "Exhibits:\n\n" +
+          "Exhibit A – [Short title]\n" +
+          "  - Type: (Order / transcript / email / text screenshot / recording / photo / report)\n" +
+          "  - Date:\n" +
+          "  - Description: [What this document shows and how it supports your concerns]\n\n" +
+          "Exhibit B – [Short title]\n" +
+          "  - Type:\n" +
+          "  - Date:\n" +
+          "  - Description:\n\n" +
+          "Exhibit C – [Short title]\n" +
+          "  - Type:\n" +
+          "  - Date:\n" +
+          "  - Description:\n\n" +
+          "Exhibit D – [Short title]\n" +
+          "  - Type:\n" +
+          "  - Date:\n" +
+          "  - Description:\n\n" +
+          "You can attach this exhibit list to motions, letters to officials, or complaints to show you have organized evidence.\n";
+        const out = document.getElementById("exhibitDraftOutput");
+        if (out) out.value = text;
+      } else if (type === "attorney") {
+        text =
+          "[Your Name]\n" +
+          "[Your Mailing Address]\n" +
+          "[City, State ZIP]\n" +
+          "[Phone] • [Email]\n\n" +
+          "[Date]\n\n" +
+          "[Attorney Name]\n" +
+          "[Law Firm Name]\n" +
+          "[Address]\n\n" +
+          "RE: Request for Consultation – Court / Agency Conduct and Possible Civil Rights Issues\n\n" +
+          "Dear [Attorney Name],\n\n" +
+          "I am writing to request a consultation regarding serious concerns about how a court and/or government agency has handled my matter. " +
+          "I am seeking guidance on whether I may have viable claims or remedies related to due process, parental rights, or other civil rights issues.\n\n" +
+          "Below is a summary of the situation and the rights and fairness concerns as I understand them:\n\n" +
+          summary +
+          "\n" +
+          "I would appreciate your review of this situation and your advice about:\n" +
+          "  • Whether you handle this type of case (or can refer me to someone who does);\n" +
+          "  • What options, if any, I may have under state or federal law;\n" +
+          "  • What documents and evidence you would need from me to fully evaluate the matter.\n\n" +
+          "I understand that this letter does not create an attorney–client relationship and that you may or may not be able to take my case. " +
+          "I am simply asking for a consultation to see if there is any path forward.\n\n" +
+          "Thank you for your time and consideration.\n\n" +
+          "Sincerely,\n\n" +
+          "[Your Signature]\n" +
+          "[Your Printed Name]\n";
+        const out = document.getElementById("attorneyDraftOutput");
+        if (out) out.value = text;
+      } else if (type === "governor") {
+        text =
+          "[Your Name]\n" +
+          "[Your Mailing Address]\n" +
+          "[City, State ZIP]\n" +
+          "[Phone] • [Email]\n\n" +
+          "[Date]\n\n" +
+          "[Governor / Agency Name]\n" +
+          "[Office or Department]\n" +
+          "[Address]\n\n" +
+          "RE: Citizen Complaint Regarding Court / Agency Conduct and Civil Rights Concerns\n\n" +
+          "To Whom It May Concern:\n\n" +
+          "I am writing as a concerned citizen and resident of [City/County, State] to report serious concerns about how a court and/or government agency has handled my matter. " +
+          "I believe the situation raises broader issues of fairness, transparency, and civil rights that may warrant your attention.\n\n" +
+          "Below is a summary of what has occurred and why I am asking for review or oversight:\n\n" +
+          summary +
+          "\n" +
+          "I respectfully request that your office:\n" +
+          "  • Review the actions described above, including any relevant orders or case history, to the extent your authority allows;\n" +
+          "  • Consider whether existing policies, oversight mechanisms, or reporting channels are sufficient to prevent similar situations for other families;\n" +
+          "  • Inform me, if possible, of any steps that can be taken to address these concerns or to improve transparency and accountability.\n\n" +
+          "I understand that your office may not be able to intervene in individual court decisions. However, I believe that what has happened in my situation may reflect deeper issues that affect other citizens as well.\n\n" +
+          "Thank you for your time and for any attention you can give to these concerns.\n\n" +
+          "Sincerely,\n\n" +
+          "[Your Signature]\n" +
+          "[Your Printed Name]\n";
+        const out = document.getElementById("governorDraftOutput");
         if (out) out.value = text;
       }
     }
