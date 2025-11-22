@@ -2,26 +2,23 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>America's Watchlist – The People's Eyes on Power</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>America's Torch – The People's Flame That Won't Go Out</title>
 
   <style>
     :root {
       --bg: #050812;
-      --panel: #0b101f;
-      --panel-soft: #131933;
+      --bg-soft: #0b101f;
+      --panel: #090e1d;
       --accent: #f6b45d;
       --accent-soft: #ff7f42;
       --text-main: #f5f5f7;
-      --text-muted: #b3b8c9;
-      --border-soft: #242b3d;
-      --pill-bg: #171f31;
-      --danger: #ff4b5c;
-      --radius-lg: 22px;
-      --radius-md: 16px;
-      --shadow-soft: 0 20px 55px rgba(0, 0, 0, 0.85);
-      --font-body: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      --font-heading: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --text-muted: #a4aec4;
+      --pill-bg: #151b2e;
+      --radius-lg: 24px;
+      --radius-md: 18px;
+      --radius-pill: 999px;
+      --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.85);
     }
 
     * {
@@ -31,9 +28,9 @@
     body {
       margin: 0;
       padding: 0;
-      font-family: var(--font-body);
+      background: radial-gradient(circle at top, #111733 0, #050812 55%, #02030a 100%);
       color: var(--text-main);
-      background: radial-gradient(circle at top, #0c1022 0, #050812 45%, #010208 100%);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       -webkit-font-smoothing: antialiased;
     }
 
@@ -53,767 +50,509 @@
       padding: 18px 16px 80px;
     }
 
-    /* ---------------------- */
-    /* TOP NAV BAR            */
-    /* ---------------------- */
-
-    .top-nav {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      gap: 26px;
-      padding: 14px 0;
-      background: rgba(0, 0, 0, 0.4);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    /* HEADER / NAV */
+    header {
       position: sticky;
       top: 0;
-      z-index: 9999;
+      z-index: 40;
+      background: linear-gradient(to bottom,
+        rgba(5, 8, 18, 0.98),
+        rgba(5, 8, 18, 0.9),
+        transparent
+      );
+      backdrop-filter: blur(20px);
     }
 
-    .top-nav a {
-      color: #f5f5f7;
-      font-size: 15px;
-      text-decoration: none;
-      font-weight: 500;
-      letter-spacing: 0.4px;
-    }
-
-    .top-nav a:hover {
-      color: var(--accent-soft);
-      text-shadow: 0 0 4px rgba(255, 255, 255, 0.4);
-    }
-
-    /* ---------------------- */
-    /* HEADER / BRAND         */
-    /* ---------------------- */
-
-    header {
-      padding-top: 18px;
-    }
-
-    .brand-row {
+    .nav-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 14px 16px 10px;
       display: flex;
       align-items: center;
+      justify-content: space-between;
       gap: 16px;
     }
 
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
     .brand-icon {
-      width: 56px;
-      height: 56px;
+      width: 42px;
+      height: 42px;
       border-radius: 50%;
-      background: radial-gradient(circle at 30% 0, #ffffff, #f6b45d 40%, #c47221 80%, #000000);
-      box-shadow: 0 0 1px rgba(0, 0, 0, 0.5), 0 16px 35px rgba(0, 0, 0, 0.7);
+      background: radial-gradient(circle at 30% 0,
+        #ffffff,
+        #f6b45d 38%,
+        #c47221 75%,
+        #000000
+      );
+      box-shadow:
+        0 0 0 1px rgba(0, 0, 0, 0.6),
+        0 16px 35px rgba(0, 0, 0, 0.75);
       display: flex;
       align-items: center;
       justify-content: center;
       font-weight: 800;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.06em;
       color: #1b1205;
-      font-size: 16px;
+      font-size: 15px;
     }
 
     .brand-text-main {
-      font-family: var(--font-heading);
-      font-size: 20px;
+      font-size: 17px;
       font-weight: 700;
-      letter-spacing: 0.24em;
+      letter-spacing: 0.22em;
       text-transform: uppercase;
     }
 
     .brand-text-sub {
-      font-size: 12px;
-      letter-spacing: 0.22em;
+      font-size: 11px;
+      letter-spacing: 0.19em;
       text-transform: uppercase;
       color: var(--text-muted);
       margin-top: 3px;
     }
 
-    /* ---------------------- */
-    /* HERO POSTER            */
-    /* ---------------------- */
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      font-size: 13px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
 
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .nav-links a {
+      position: relative;
+      padding-bottom: 3px;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(to right, #ff7f42, #f6b45d);
+      border-radius: 999px;
+      transition: width 0.18s ease-out;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      border-radius: 999px;
+      border: 1px solid rgba(246, 180, 93, 0.95);
+      padding: 7px 16px;
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #ffe5bd;
+      background: radial-gradient(circle at top left,
+        rgba(246, 180, 93, 0.2),
+        rgba(10, 9, 24, 0.96)
+      );
+    }
+
+    /* HERO */
     .hero {
-      margin-top: 22px;
-      background: radial-gradient(circle at top left, #181b38, #050812 55%);
+      margin-top: 18px;
+      background: radial-gradient(circle at top left,
+        #161c3b 0,
+        #070b19 55%,
+        #02030a 100%
+      );
       border-radius: 32px;
-      padding: 22px 22px 26px;
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 26px 22px 26px;
+      border: 1px solid rgba(93, 113, 168, 0.55);
       box-shadow: var(--shadow-soft);
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.5fr);
+      gap: 24px;
+      align-items: center;
       position: relative;
       overflow: hidden;
     }
 
-    .hero-art-frame {
-      border-radius: 28px;
-      padding: 16px;
-      background: radial-gradient(circle at top left, #181b38, #050812);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top,
+        rgba(246, 180, 93, 0.34),
+        transparent 55%
+      );
+      opacity: 0.55;
+      pointer-events: none;
     }
 
-    .hero img {
-      width: 100%;
-      display: block;
-      border-radius: 22px;
+    .hero-inner {
+      position: relative;
+      z-index: 1;
     }
 
-    .hero-meta {
-      margin-top: 10px;
+    .hero-eyebrow {
       font-size: 11px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-    }
-
-    /* ---------------------- */
-    /* GENERIC SECTIONS       */
-    /* ---------------------- */
-
-    .section {
-      margin-top: 30px;
-    }
-
-    .kicker {
-      font-size: 11px;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: 8px;
-    }
-
-    h1, h2, h3, h4 {
-      font-family: var(--font-heading);
-      margin: 0;
-    }
-
-    h1 {
-      font-size: 32px;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-    }
-
-    h2 {
-      font-size: 22px;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-    }
-
-    h3 {
-      font-size: 18px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-    }
-
-    p {
-      font-size: 15px;
-      line-height: 1.7;
-      color: var(--text-main);
-      margin: 10px 0 0;
-    }
-
-    .accent-line {
-      margin-top: 6px;
-      font-size: 13px;
       letter-spacing: 0.24em;
       text-transform: uppercase;
-      color: var(--accent);
+      color: var(--text-muted);
+      margin-bottom: 10px;
     }
 
-    .pill-row {
+    .hero-title {
+      font-size: clamp(26px, 4vw, 34px);
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      margin: 0 0 6px;
+    }
+
+    .hero-tagline {
+      font-size: 13px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 14px;
+    }
+
+    .hero-body {
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--text-main);
+      max-width: 34rem;
+      margin: 0 0 16px;
+    }
+
+    .hero-pills {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 14px;
+      gap: 8px;
+      margin-bottom: 16px;
     }
 
     .pill {
-      background: var(--pill-bg);
-      padding: 8px 16px;
-      border-radius: 999px;
-      font-size: 12px;
+      font-size: 11px;
       letter-spacing: 0.18em;
       text-transform: uppercase;
+      padding: 7px 14px;
+      border-radius: var(--radius-pill);
+      background: rgba(7, 11, 27, 0.96);
+      border: 1px solid rgba(66, 80, 133, 0.9);
       color: var(--text-muted);
-      border: 1px solid rgba(255, 255, 255, 0.08);
     }
 
-    .pill strong {
-      color: var(--accent);
-      font-weight: 600;
+    .pill-accent {
+      border-color: rgba(246, 180, 93, 0.9);
+      color: #ffe4b0;
+      background: radial-gradient(circle at top left,
+        rgba(246, 180, 93, 0.23),
+        rgba(7, 11, 27, 0.98)
+      );
     }
 
-    .btn-row {
+    .hero-actions {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
-      margin-top: 18px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      padding: 11px 22px;
+      font-size: 12px;
+      letter-spacing: 0.19em;
+      text-transform: uppercase;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition:
+        transform 0.12s ease-out,
+        box-shadow 0.12s ease-out,
+        background 0.12s ease-out,
+        border-color 0.12s ease-out;
+      text-decoration: none;
+      white-space: nowrap;
     }
 
     .btn-primary {
-      background: linear-gradient(90deg, #ffba63, #ff7f42);
-      padding: 13px 22px;
-      border-radius: 999px;
-      font-size: 14px;
-      font-weight: 700;
-      color: #000;
-      box-shadow: 0 0 25px rgba(0, 0, 0, 0.8);
+      background: linear-gradient(135deg, #ff7f42, #f6b45d);
+      color: #15100a;
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.8);
     }
 
-    .btn-outline {
-      padding: 11px 20px;
-      border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, 0.35);
-      font-size: 14px;
-      color: var(--text-main);
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 20px 42px rgba(0, 0, 0, 0.9);
     }
 
-    /* Emotional story block */
-
-    .emotional-block {
-      margin-top: 26px;
-      background: rgba(7, 9, 22, 0.96);
-      border-radius: 18px;
-      padding: 16px 16px 14px;
-      border: 1px solid rgba(70, 84, 144, 0.9);
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
-      font-size: 14px;
-      line-height: 1.7;
+    .btn-ghost {
+      background: rgba(8, 10, 22, 0.7);
+      border-color: rgba(78, 92, 150, 0.95);
+      color: var(--text-muted);
     }
 
-    .emotional-block p {
-      margin: 8px 0;
+    .btn-ghost:hover {
+      background: rgba(14, 19, 40, 0.96);
+      border-color: rgba(246, 180, 93, 0.95);
+      color: #fde3be;
     }
 
-    /* HOT RIGHT NOW banner */
-
-    .hot-banner {
-      margin-top: 18px;
-      border-radius: 14px;
-      padding: 10px 12px;
-      background: radial-gradient(circle at left, rgba(255, 127, 66, 0.25), #090b19);
-      border: 1px solid rgba(255, 127, 66, 0.7);
-      font-size: 13px;
+    /* HERO POSTER */
+    .hero-poster-wrap {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      justify-content: center;
     }
 
-    .hot-banner strong {
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      font-size: 11px;
-      color: #ffb56f;
+    .hero-poster-frame {
+      border-radius: 26px;
+      background: radial-gradient(circle at top,
+        #2a2132,
+        #090b16
+      );
+      padding: 9px 9px 10px;
+      border: 1px solid rgba(79, 68, 102, 0.9);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.9);
+      max-width: 320px;
+      width: 100%;
+    }
+
+    .hero-poster {
       display: block;
-      margin-bottom: 4px;
+      width: 100%;
+      border-radius: 22px;
+      border: 1px solid rgba(246, 180, 93, 0.6);
     }
 
-    .hot-list {
-      margin: 6px 0 0 18px;
-      padding: 0;
-      font-size: 13px;
-      color: var(--text-main);
-    }
-
-    .hot-list li {
-      margin-bottom: 4px;
-    }
-
-    /* TAKE ACTION GRID */
-
-    .action-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 18px;
-      margin-top: 16px;
-    }
-
-    .action-card {
-      background: #070b16;
-      border-radius: 16px;
-      padding: 16px;
-      border: 1px solid #ffffff22;
-      box-shadow: 0 0 18px #00000066;
-    }
-
-    .action-card h3 {
-      margin-top: 0;
-      margin-bottom: 8px;
-    }
-
-    .action-card p {
-      font-size: 13px;
-      line-height: 1.6;
-      color: var(--text-muted);
-    }
-
-    .action-card a {
-      color: var(--accent-soft);
-      font-size: 13px;
-    }
-
-    /* SPONSOR / AD BANNER */
-
-    .sponsor-banner {
-      margin-top: 24px;
-      border-radius: 26px;
-      padding: 16px 16px 18px;
-      background: radial-gradient(circle at left, rgba(255, 186, 99, 0.18), rgba(6, 10, 32, 0.98));
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      display: grid;
-      grid-template-columns: minmax(0, 1.6fr) minmax(0, 0.9fr);
-      gap: 14px;
-      align-items: center;
-    }
-
-    .sponsor-label {
-      font-size: 11px;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: 6px;
-    }
-
-    .sponsor-text {
-      font-size: 14px;
-      line-height: 1.6;
-    }
-
-    .sponsor-actions {
-      display: flex;
-      justify-content: flex-end;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    .sponsor-skip {
-      min-width: 88px;
-      height: 88px;
-      border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, 0.4);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      font-size: 13px;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-    }
-
-    .sponsor-main {
-      min-width: 110px;
-      height: 88px;
-      border-radius: 999px;
-      background: radial-gradient(circle at top, #ffba63, #ff7f42);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      color: #000;
-      font-size: 13px;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      font-weight: 700;
-    }
-
-    /* FOLLOW YOUR MONEY PANEL */
-
-    .money-panel {
-      margin-top: 30px;
-      padding: 20px 18px 22px;
-      border-radius: 26px;
-      background: radial-gradient(circle at top left, rgba(33, 39, 82, 0.9), #050812 70%);
-      border: 1px solid rgba(255, 255, 255, 0.14);
-      box-shadow: 0 18px 55px rgba(0, 0, 0, 0.9);
-    }
-
-    .money-panel h2 {
-      margin-bottom: 8px;
-    }
-
-    .money-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-      gap: 16px;
-      margin-top: 16px;
-    }
-
-    .money-card {
-      background: rgba(5, 8, 25, 0.96);
-      border-radius: 20px;
-      padding: 16px;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-    }
-
-    .money-card h3 {
-      margin-top: 0;
-      margin-bottom: 6px;
-    }
-
-    .money-card ul {
-      padding-left: 18px;
-      margin: 6px 0 0;
-      font-size: 14px;
-      color: var(--text-muted);
-      line-height: 1.6;
-    }
-
-    .money-microgrid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 10px;
-      margin-top: 10px;
-    }
-
-    .money-pill {
-      border-radius: 14px;
-      padding: 10px;
-      background: #070b16;
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      font-size: 13px;
-      color: var(--text-muted);
-      line-height: 1.5;
-    }
-
-    .money-label {
-      font-size: 11px;
+    .hero-poster-caption {
+      margin-top: 7px;
+      font-size: 10px;
       letter-spacing: 0.18em;
       text-transform: uppercase;
       color: var(--text-muted);
+      text-align: center;
     }
 
-    /* STATE SECTION */
-
-    .panel {
-      margin-top: 28px;
+    /* GENERIC SECTIONS */
+    .section {
+      margin-top: 26px;
+      background: radial-gradient(circle at top left,
+        #12172b,
+        #050812 55%,
+        #02030b 100%
+      );
+      border-radius: 28px;
       padding: 20px 18px 22px;
-      border-radius: 26px;
-      background: radial-gradient(circle at top left, rgba(33, 39, 82, 0.8), #050812 70%);
-      border: 1px solid rgba(255, 255, 255, 0.14);
-      box-shadow: 0 18px 55px rgba(0, 0, 0, 0.9);
+      border: 1px solid rgba(51, 64, 110, 0.8);
+      box-shadow: 0 18px 46px rgba(0, 0, 0, 0.72);
     }
 
-    .panel-title {
-      font-size: 13px;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: 8px;
-    }
-
-    .panel h2 {
-      margin-bottom: 8px;
-    }
-
-    .panel-columns {
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-      gap: 16px;
-      margin-top: 16px;
-    }
-
-    .panel-card {
-      background: rgba(5, 8, 25, 0.9);
-      border-radius: 20px;
-      padding: 16px;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    .panel-card h3 {
-      margin-bottom: 6px;
-    }
-
-    .panel-card ul {
-      padding-left: 20px;
-      margin: 6px 0 0;
-      font-size: 14px;
-      color: var(--text-muted);
-    }
-
-    /* ALERTS SECTION */
-
-    .alert-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 16px;
-      margin-top: 16px;
-    }
-
-    .alert-card {
-      background: #070b16;
-      border-radius: 18px;
-      padding: 14px 14px 16px;
-      border: 1px solid rgba(255, 255, 255, 0.13);
-    }
-
-    .alert-tag {
+    .section-header-eyebrow {
       font-size: 11px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: 6px;
-    }
-
-    .alert-card h3 {
-      margin-bottom: 6px;
-    }
-
-    /* TOWN HALLS SECTION */
-
-    .town-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-      gap: 18px;
-      margin-top: 16px;
-    }
-
-    .town-card {
-      background: #070b16;
-      border-radius: 20px;
-      padding: 16px;
-      border: 1px solid rgba(255, 255, 255, 0.16);
-    }
-
-    /* PETITIONS SECTION */
-
-    .petitions-section {
-      margin-top: 32px;
-    }
-
-    .petitions-intro {
-      background: #070b16;
-      border-radius: 22px;
-      padding: 18px 16px 18px;
-      border: 1px solid rgba(255, 255, 255, 0.16);
-      margin-bottom: 18px;
-    }
-
-    .petition-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr);
-      gap: 18px;
-    }
-
-    .petition-card {
-      background: #070b16;
-      border-radius: 22px;
-      padding: 18px 16px 18px;
-      border: 1px solid rgba(255, 255, 255, 0.16);
-      box-shadow: 0 16px 45px rgba(0, 0, 0, 0.85);
-    }
-
-    .petition-label {
-      font-size: 12px;
       letter-spacing: 0.24em;
       text-transform: uppercase;
       color: var(--text-muted);
-      margin-bottom: 6px;
+      margin-bottom: 5px;
     }
 
-    .petition-card h3 {
-      margin-bottom: 10px;
+    .section-title {
+      font-size: 18px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      margin: 0 0 8px;
     }
 
-    .petition-card ol {
-      margin: 6px 0 8px 20px;
-      font-size: 14px;
-      color: var(--text-main);
+    .section-sub {
+      font-size: 13px;
+      color: var(--text-muted);
+      max-width: 42rem;
       line-height: 1.7;
+      margin-bottom: 14px;
     }
 
-    .petition-card ol li {
+    .grid-2 {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      background: rgba(6, 9, 24, 0.97);
+      border-radius: var(--radius-md);
+      padding: 13px 14px 14px;
+      border: 1px solid rgba(46, 59, 110, 0.95);
+    }
+
+    .card-label {
+      font-size: 11px;
+      letter-spacing: 0.21em;
+      text-transform: uppercase;
+      color: var(--text-muted);
       margin-bottom: 4px;
     }
 
-    .petition-card p {
-      font-size: 14px;
+    .card-title {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .card-body {
+      font-size: 13px;
+      color: var(--text-muted);
       line-height: 1.7;
     }
 
-    /* FORMS (join + petitions + complaints) */
-
-    form {
-      margin-top: 14px;
-      padding-top: 10px;
-      border-top: 1px solid rgba(255, 255, 255, 0.14);
-    }
-
-    label {
-      font-size: 13px;
-      display: block;
-      margin: 10px 0 4px;
-      color: var(--text-muted);
-    }
-
-    input, select, textarea {
-      width: 100%;
-      padding: 10px 11px;
-      border-radius: 10px;
-      border: 1px solid rgba(255, 255, 255, 0.23);
-      background: #050913;
-      color: var(--text-main);
-      font-size: 14px;
-      font-family: var(--font-body);
-    }
-
-    input::placeholder,
-    textarea::placeholder {
-      color: #6b738b;
-    }
-
-    textarea {
-      resize: vertical;
-      min-height: 80px;
+    /* ALERT LIST */
+    .alert-list {
+      display: grid;
+      gap: 10px;
       margin-top: 6px;
-      margin-bottom: 12px;
     }
 
-    .checkbox-row {
-      margin-top: 10px;
+    .alert-pill {
       display: flex;
-      gap: 8px;
-      align-items: flex-start;
-      font-size: 13px;
+      justify-content: space-between;
+      align-items: center;
+      padding: 9px 10px;
+      border-radius: 999px;
+      background: rgba(10, 13, 30, 0.96);
+      border: 1px solid rgba(69, 84, 144, 0.95);
+      font-size: 12px;
+      gap: 10px;
+    }
+
+    .alert-main {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .alert-title {
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .alert-meta {
+      font-size: 11px;
       color: var(--text-muted);
     }
 
-    .checkbox-row input[type="checkbox"] {
-      width: 16px;
-      height: 16px;
+    .badge {
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 4px 9px;
+      border-radius: 999px;
+      border: 1px solid rgba(246, 180, 93, 0.8);
+      background: radial-gradient(circle at top left,
+        rgba(246, 180, 93, 0.25),
+        rgba(6, 9, 22, 0.98)
+      );
+      color: #ffe7c0;
+      white-space: nowrap;
+    }
+
+    .badge-danger {
+      border-color: rgba(255, 75, 92, 0.85);
+      color: #ffd6da;
+      background: radial-gradient(circle at top left,
+        rgba(255, 75, 92, 0.28),
+        rgba(10, 9, 24, 0.96)
+      );
+    }
+
+    /* FORMS */
+    form {
+      margin-top: 12px;
+    }
+
+    .form-field {
+      margin-bottom: 10px;
+    }
+
+    .form-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-muted);
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .form-input,
+    .form-select {
+      width: 100%;
+      padding: 9px 10px;
+      border-radius: 10px;
+      border: 1px solid rgba(65, 81, 135, 0.9);
+      background: rgba(5, 7, 20, 0.96);
+      color: var(--text-main);
+      font-size: 13px;
+      font-family: inherit;
+    }
+
+    .form-input:focus,
+    .form-select:focus {
+      outline: none;
+      border-color: rgba(246, 180, 93, 0.95);
+      box-shadow: 0 0 0 1px rgba(246, 180, 93, 0.35);
+    }
+
+    .form-helper {
+      font-size: 11px;
+      color: var(--text-muted);
       margin-top: 2px;
     }
 
-    .btn-submit,
-    form button[type="submit"] {
-      margin-top: 14px;
+    .form-submit {
+      margin-top: 10px;
       width: 100%;
-      border-radius: 999px;
-      padding: 13px 18px;
-      border: none;
-      background: linear-gradient(90deg, #ffba63, #ff7f42);
-      color: #000;
-      font-weight: 700;
-      font-size: 14px;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      cursor: pointer;
-    }
-
-    .form-footnote {
-      margin-top: 10px;
-      font-size: 12px;
-      color: var(--text-muted);
-      line-height: 1.6;
-    }
-
-    /* COMPLAINTS / FORMS SECTION */
-
-    .complaints-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 16px;
-      margin-top: 16px;
-    }
-
-    .complaint-card {
-      background: #070b16;
-      border-radius: 18px;
-      padding: 14px 14px 16px;
-      border: 1px solid rgba(255, 255, 255, 0.18);
-    }
-
-    .complaint-card h3 {
-      margin-bottom: 6px;
-    }
-
-    .complaint-card p {
-      font-size: 13px;
-      color: var(--text-muted);
-    }
-
-    .complaint-card a {
-      font-size: 13px;
-      color: var(--accent-soft);
-    }
-
-    .complaint-tagline {
-      font-size: 13px;
-      color: var(--text-muted);
-      margin-bottom: 10px;
-    }
-
-    .complaint-note {
-      font-size: 12px;
-      color: var(--text-muted);
-      margin-top: 10px;
-    }
-
-    .label-pill {
-      display: inline-block;
-      padding: 4px 10px;
-      border-radius: 999px;
-      font-size: 11px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      background: rgba(255, 191, 110, 0.12);
-      color: #ffbf6e;
-      border: 1px solid rgba(255, 191, 110, 0.4);
-      margin-bottom: 10px;
-    }
-
-    /* JOIN SECTION */
-
-    .join-panel {
-      margin-top: 28px;
-      margin-bottom: 20px;
-      padding: 18px 16px 18px;
-      border-radius: 22px;
-      background: radial-gradient(circle at top left, rgba(32, 42, 84, 0.95), #050812 65%);
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      box-shadow: 0 18px 55px rgba(0, 0, 0, 0.9);
-    }
-
-    .join-panel h2 {
-      margin-bottom: 6px;
-    }
-
-    .join-panel p {
-      font-size: 14px;
-      color: var(--text-main);
     }
 
     footer {
-      margin-top: 20px;
-      padding-top: 10px;
-      border-top: 1px solid rgba(255, 255, 255, 0.14);
+      margin-top: 26px;
+      padding: 16px 4px 8px;
       font-size: 11px;
       color: var(--text-muted);
       text-align: center;
-      padding-bottom: 10px;
     }
 
     /* RESPONSIVE */
-
     @media (max-width: 880px) {
       .hero {
-        padding: 18px 14px 20px;
-      }
-
-      .sponsor-banner {
         grid-template-columns: minmax(0, 1fr);
+        padding: 22px 18px 22px;
       }
-
-      .money-grid,
-      .panel-columns,
-      .town-grid {
+      .hero-poster-wrap {
+        order: -1;
+      }
+      .hero-poster-frame {
+        max-width: 260px;
+      }
+      .nav-links {
+        display: none;
+      }
+      .nav-right {
+        justify-content: flex-end;
+      }
+      .grid-2 {
         grid-template-columns: minmax(0, 1fr);
-      }
-
-      .brand-text-main {
-        font-size: 18px;
-        letter-spacing: 0.18em;
-      }
-
-      .top-nav {
-        flex-wrap: wrap;
-        gap: 14px;
-        padding: 10px 6px;
       }
     }
   </style>
@@ -821,823 +560,364 @@
 
 <body>
 <div class="page">
-
-  <!-- TOP NAV -->
-  <nav class="top-nav">
-    <a href="#alerts">Alerts</a>
-    <a href="#states">States</a>
-    <a href="#townhalls">Town Halls</a>
-    <a href="#vote">Vote</a>
-    <a href="#petition">Petition</a>
-    <a href="#complaints">Complaints</a>
-    <a href="#join">Join</a>
-  </nav>
-
-  <div class="shell">
-    <!-- HEADER / BRAND -->
-    <header>
-      <div class="brand-row">
-        <div class="brand-icon">AW</div>
+  <header>
+    <div class="nav-inner">
+      <div class="brand">
+        <div class="brand-icon">AT</div>
         <div>
-          <div class="brand-text-main">AMERICA'S WATCHLIST</div>
-          <div class="brand-text-sub">THE PEOPLE'S EYES ON POWER</div>
+          <div class="brand-text-main">AMERICA'S TORCH</div>
+          <div class="brand-text-sub">THE PEOPLE'S FLAME WON'T GO OUT</div>
         </div>
       </div>
-    </header>
-
-    <!-- HERO POSTER -->
-    <section class="hero" aria-label="America's Watchlist Poster">
-      <div class="hero-art-frame">
-        <img src="images/hero-poster.jpg" alt="Poster artwork for America's Watchlist – citizens holding the Constitution in front of the Capitol with lightning." />
+      <div class="nav-right">
+        <div class="nav-links">
+          <a href="#movement">Movement</a>
+          <a href="#alerts">Alerts</a>
+          <a href="#petition">Petition</a>
+          <a href="#articlev">Article V</a>
+          <a href="#join">Join</a>
+        </div>
+        <a href="#petition" class="nav-cta">Sign Petition</a>
       </div>
-      <div class="hero-meta">CONCEPT ART · AMERICA'S WATCHLIST</div>
-    </section>
+    </div>
+  </header>
 
-    <!-- INTRO / EMOTIONAL STORY -->
-    <section class="section" id="top">
-      <div class="kicker">PROTOTYPE · PEACEFUL CITIZEN MOVEMENT</div>
-      <h1>AMERICA'S WATCHLIST</h1>
-      <div class="accent-line">THE PEOPLE'S EYES ON POWER.</div>
-
-      <p>
-        If you are tired of yelling at the TV, tired of corruption stories that go nowhere, tired
-        of watching the same people stay in power while life gets more expensive and more divided,
-        America’s Watchlist is built for you.
-      </p>
-
-      <div class="pill-row">
-        <div class="pill"><strong>Citizen-Powered Platform</strong></div>
-        <div class="pill">No Parties</div>
-        <div class="pill">No Violence</div>
-        <div class="pill">No Special Interests</div>
-      </div>
-
-      <div class="btn-row">
-        <a href="#join" class="btn-primary">Join America&rsquo;s Watchlist</a>
-        <a href="#alerts" class="btn-outline">See Example Alerts</a>
-      </div>
-
-      <div class="emotional-block">
-        <p>
-          Government has grown bigger, more complicated, and harder to follow. Most people are
-          working, raising families, and trying to survive — they don’t have hours to dig through
-          bills, budgets, and legal language. That gap is where bad decisions, quiet deals, and
-          unfair policies slip through.
+  <main class="shell">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-eyebrow">PEACEFUL • UNITED • CITIZEN-POWERED</div>
+        <h1 class="hero-title">America's Torch</h1>
+        <div class="hero-tagline">The People’s Flame That Won’t Go Out</div>
+        <p class="hero-body">
+          For years, we’ve watched a system divide us, waste our money, and ignore our voice.
+          America’s Torch is a peaceful, citizen-powered movement and platform to expose
+          corruption, demand transparency, and unite Americans who are done being played
+          against each other.
         </p>
-        <p>
-          Every year, the IRS collects trillions of dollars from families, workers, and small
-          businesses. States add on their own income taxes, sales taxes, property taxes, gas taxes,
-          “fees,” and fines. But almost nobody can see, in plain English, where that money actually
-          goes — or how much is wasted on bloated agencies, useless positions, no-cap contracts, and
-          projects the American people never truly agreed to.
-        </p>
-        <p>
-          While families cut coupons and choose between groceries and medicine, the federal and
-          state governments rarely cut themselves. Instead, they add new departments, hire for jobs
-          that don’t need to exist, and sign open-ended contracts where private companies drain
-          tax dollars with almost no oversight or spending caps.
-        </p>
-        <p>
-          Somewhere along the way, too many leaders forgot who they work for. They forgot the people
-          back home who are paying higher prices, watching their rights and savings get chipped away,
-          and wondering if anyone in power actually sees them anymore.
-        </p>
-        <p>
-          America’s Watchlist exists for the people who are done just complaining. It’s for the
-          moms, dads, grandparents, and young people who still love this country, who still believe
-          in peaceful change, and who know deep down that if we don’t stand together now, we may
-          wake up one day and realize we waited too long.
-        </p>
-        <p>
-          This platform is a simple promise: to shine light on what they’re doing, in language
-          everyone can understand, and give millions of ordinary Americans an easy way to act
-          <em>together</em> instead of shouting alone at a screen.
-        </p>
-      </div>
-
-      <div class="hot-banner">
-        <strong>Hot Right Now</strong>
-        <ul class="hot-list">
-          <li>Americans want to know how much the IRS and states collect — and how much is wasted.</li>
-          <li>People are angry that government jobs and contractor deals grow while families struggle.</li>
-          <li>Trust in Congress and agencies keeps falling because there is no real transparency.</li>
-          <li>More and more citizens are ready for peaceful, united pressure — not just more talking.</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- TAKE ACTION SECTION -->
-    <section class="section" id="vote">
-      <div class="kicker">TAKE ACTION</div>
-      <h2>A Peaceful Movement for Accountability</h2>
-      <p>
-        America’s Watchlist is not another place to argue online. It’s a set of tools for real-world,
-        peaceful pressure: citizens seeing the same facts at the same time and moving together.
-      </p>
-
-      <div class="action-grid">
-        <div class="action-card">
-          <h3>1. See What&rsquo;s Really Happening</h3>
-          <p>
-            Live dashboards can track bills, votes, rate hikes, and spending in plain English — so
-            you can see when something dangerous is moving <em>before</em> it’s too late to react.
-          </p>
+        <div class="hero-pills">
+          <span class="pill pill-accent">No Parties Owning Us</span>
+          <span class="pill">No Violence</span>
+          <span class="pill">No Big Donor Control</span>
+          <span class="pill">Facts, Sunlight & Unity</span>
         </div>
-        <div class="action-card">
-          <h3>2. Vote on Proposals &amp; Petitions</h3>
-          <p>
-            Citizens can vote on national proposals, sign focused petitions, and help shape which
-            problems we push on first — instead of waiting for party leaders or cable news to tell
-            us what matters.
-          </p>
-        </div>
-        <div class="action-card">
-          <h3>3. Send Real Complaints, Not Just Posts</h3>
-          <p>
-            When officials cross the line, the platform can help citizens fill out official ethics,
-            oversight, or civil-rights forms and send them to the right committee — federal or
-            state — instead of hunting for links one by one.
-          </p>
-        </div>
-        <div class="action-card">
-          <h3>4. Pressure Without Violence</h3>
-          <p>
-            No riots, no threats, no doxxing. Just millions of citizens watching the same alerts,
-            signing the same petitions, and sending clear, peaceful messages that can’t be ignored.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- SPONSOR / DEMO BANNER -->
-    <section class="sponsor-banner">
-      <div>
-        <div class="sponsor-label">Sponsor Message (Demo)</div>
-        <div class="sponsor-text">
-          <strong>Keep America Watching.</strong> A small banner like this could help fund servers
-          and tools for citizens — with no tracking, no pop-ups, and no forced ads. People could
-          ignore it, skip it, or tap to learn more anytime.
-        </div>
-      </div>
-      <div class="sponsor-actions">
-        <div class="sponsor-skip">
-          <span>Skip</span>
-          <span>Ad</span>
-        </div>
-        <div class="sponsor-main">
-          <span>Learn</span>
-          <span>More</span>
-          <span>(Demo)</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- FOLLOW YOUR MONEY / TAX & WASTE -->
-    <section class="money-panel" id="money">
-      <div class="kicker">Follow Your Money</div>
-      <h2>Tax, Waste, &amp; the Cost of a Bloated Government</h2>
-      <p>
-        Every year, the IRS and the states collect enormous amounts of tax money from ordinary
-        people. What almost nobody sees is how much of that money disappears into wasteful
-        programs, duplicated agencies, unnecessary jobs, and contractor deals with no real caps.
-      </p>
-
-      <div class="money-grid">
-        <div class="money-card">
-          <h3>Where the Money Goes (and Disappears)</h3>
-          <p>
-            A real “Follow Your Money” dashboard would show how federal and state budgets are
-            actually spent — and where they’re wasted:
-          </p>
-          <ul>
-            <li>Agencies that grow every year while services get worse.</li>
-            <li>Departments doing the same job as another department.</li>
-            <li>Government jobs that exist to protect budgets, not serve people.</li>
-            <li>“Use it or lose it” spending sprees at the end of the fiscal year.</li>
-          </ul>
-        </div>
-
-        <div class="money-card">
-          <h3>No-Cap Contractors &amp; Endless Projects</h3>
-          <p>
-            Too often, private companies get open-ended contracts with no real spending caps, weak
-            oversight, and no meaningful punishment when projects run over budget.
-          </p>
-          <ul>
-            <li>Contracts that double or triple their original cost.</li>
-            <li>Projects that never finish but keep getting funded.</li>
-            <li>Consulting deals that produce reports, not results.</li>
-          </ul>
+        <div class="hero-actions">
+          <a href="#petition" class="btn btn-primary">🔥 Sign the National Petition</a>
+          <a href="#movement" class="btn btn-ghost">About the Movement</a>
         </div>
       </div>
 
-      <div class="money-microgrid">
-        <div class="money-pill">
-          <div class="money-label">Federal View (Concept)</div>
-          <div><strong>IRS &amp; Federal Taxes</strong> — how much is collected, how much is basic
-            operations, and how much is wasted or lost in duplication.</div>
-        </div>
-        <div class="money-pill">
-          <div class="money-label">State View (Concept)</div>
-          <div><strong>State &amp; Local Taxes</strong> — property, sales, and special fees that
-            quietly rise while roads, schools, and services still fall behind.</div>
-        </div>
-        <div class="money-pill">
-          <div class="money-label">Waste Watch (Concept)</div>
-          <div><strong>Government Job &amp; Contractor Waste</strong> — highlighting useless roles,
-            padded departments, and no-cap contracts so citizens can demand cuts at the top, not at
-            the bottom.</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- STATE SECTION -->
-    <section class="panel" id="states">
-      <div class="panel-title">Built for Every American State</div>
-      <h2>A National Watch, State by State</h2>
-      <p>
-        In a full build, America’s Watchlist would plug into bill trackers, campaign finance data,
-        public budgets, and real-time feeds so citizens can see what’s happening in their own state —
-        and across the country — in one place.
-      </p>
-
-      <div class="panel-columns">
-        <div class="panel-card">
-          <h3>State Dashboards · <strong>50 States Watching</strong></h3>
-          <p>
-            Each state gets its own dashboard: bills on the move, new spending, tax changes, and who
-            voted yes or no — all in plain English, not legalese.
-          </p>
-          <ul>
-            <li>Bills and resolutions that actually affect households.</li>
-            <li>Major votes with names, not just party lines.</li>
-            <li>New taxes, fees, and rate hikes flagged in advance.</li>
-          </ul>
-        </div>
-        <div class="panel-card">
-          <h3>National View · <strong>Patterns of Power</strong></h3>
-          <p>
-            Citizens can see national trends: which issues keep repeating, which states quietly pass
-            copy-cat bills, and where the same special interests appear again and again.
-          </p>
-          <ul>
-            <li>Spot coordinated pushes from big donors or lobbyists.</li>
-            <li>See which states lead on reforms — and which drag their feet.</li>
-            <li>Share those patterns with neighbors, family, and friends.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- ALERTS SECTION -->
-    <section class="section" id="alerts">
-      <div class="kicker">Example Alerts</div>
-      <h2>What America&rsquo;s Watchlist Could Flag</h2>
-      <p>
-        These are example alerts to show how the platform could look. They’re not live data yet —
-        but this is how “The People’s Eyes on Power” might work once real bill tracking and finance
-        APIs are connected.
-      </p>
-
-      <div class="alert-grid">
-        <div class="alert-card">
-          <div class="alert-tag">Power &amp; Utilities</div>
-          <h3>Red-Flag Rate Hike</h3>
-          <p>
-            <strong>Georgia ·</strong> 12% rate increase tied to fuel surcharges and new fees.
-            Alerts explain who voted for it, what it pays for, and how much the average bill goes up.
-          </p>
-        </div>
-        <div class="alert-card">
-          <div class="alert-tag">Cost of Living</div>
-          <h3>Property Tax &amp; Local Spending</h3>
-          <p>
-            <strong>South Carolina ·</strong> New reassessments plus local projects that raise taxes.
-            Citizens can see where the money is going and who pushed it through.
-          </p>
-        </div>
-        <div class="alert-card">
-          <div class="alert-tag">Sneaky Bills</div>
-          <h3>Hidden Riders &amp; Midnight Votes</h3>
-          <p>
-            Flags when unrelated items are stuffed into must-pass bills or when major votes are
-            scheduled late at night or during holidays.
-          </p>
-        </div>
-        <div class="alert-card">
-          <div class="alert-tag">Ethics &amp; Trust</div>
-          <h3>When Officials Cross the Line</h3>
-          <p>
-            Alerts trigger when an official is formally reprimanded, investigated, or tied to serious
-            misconduct — and show citizens exactly how to respond peacefully but firmly.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- TOWN HALLS SECTION -->
-    <section class="section" id="townhalls">
-      <div class="kicker">National &amp; State Town Halls</div>
-      <h2>Voice-Only Streams, No Camera Needed</h2>
-      <p>
-        In a full launch, America’s Watchlist would host national briefings and state-level town
-        halls whenever major alerts cross a threshold — using voice-over and visuals so citizens
-        never have to be on camera.
-      </p>
-
-      <div class="town-grid">
-        <div class="town-card">
-          <h3>National Briefings</h3>
-          <p>
-            A weekly “People’s Update” that breaks down what happened this week: bills, spending,
-            and influence. No drama, no party spin — just straight talk and clear visuals.
-          </p>
-        </div>
-        <div class="town-card">
-          <h3>State Town Halls</h3>
-          <p>
-            When a state crosses a red-flag threshold — like a big tax hike or a suspicious bill —
-            supporters in that state can be invited to a live, voice-only town hall to go deeper and
-            plan peaceful action.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- NATIONAL PETITIONS -->
-    <section class="petitions-section" id="petition">
-      <div class="kicker">National Petitions – America&rsquo;s Watchlist</div>
-      <h2>We&rsquo;re Done Being Ignored</h2>
-
-      <div class="petitions-intro">
-        <p>
-          These petitions are written for everyday Americans — not lobbyists, not party insiders.
-          They focus on the same core problem: a government that has drifted away from the people
-          who are supposed to be in charge.
-        </p>
-        <p>
-          Right now, this is a prototype. When you sign below, your entry goes to a secure inbox via
-          Formspree so counts can be tracked. In a full build, verified U.S.-citizen accounts and
-          delivery tools would send these messages directly to Congress and state leaders.
-        </p>
-      </div>
-
-      <div class="petition-grid">
-        <!-- PETITION #1 -->
-        <article class="petition-card">
-          <div class="petition-label">Petition #1</div>
-          <h3>Real Transparency and Accountability in Government</h3>
-          <p><strong>To the elected officials of the United States:</strong></p>
-          <p>
-            We, the undersigned citizens, are deeply concerned about the growing distance between
-            government power and the people it is supposed to serve. We call for:
-          </p>
-          <ol>
-            <li>
-              Real-time transparency for major federal spending, rate hikes, and new taxes that
-              impact households.
-            </li>
-            <li>
-              Full disclosure of large donations, financial conflicts, and foreign-linked income for
-              all members of Congress and senior officials, with easy, public tools for citizens to
-              see who is paying whom.
-            </li>
-            <li>
-              Stronger, faster oversight when officials abuse their office, break the public trust,
-              ignore the will of the people, or protect their friends instead of the law.
-            </li>
-          </ol>
-          <p>
-            These reforms are not about left or right — they are about restoring basic trust,
-            honesty, and accountability in a government that is supposed to belong to the people.
-          </p>
-
-          <form action="https://formspree.io/f/xovypnwk" method="POST">
-            <input type="hidden" name="petition" value="Petition #1 – Accountability" />
-            <label for="p1-name">Name</label>
-            <input id="p1-name" type="text" name="name" placeholder="Your full name" required />
-
-            <label for="p1-email">Email</label>
-            <input id="p1-email" type="email" name="email" placeholder="you@example.com" required />
-
-            <label for="p1-state">State</label>
-            <select id="p1-state" name="state" required>
-              <option value="">Select your state</option>
-              <option>AL</option><option>AK</option><option>AZ</option><option>AR</option>
-              <option>CA</option><option>CO</option><option>CT</option><option>DE</option>
-              <option>FL</option><option>GA</option><option>HI</option><option>ID</option>
-              <option>IL</option><option>IN</option><option>IA</option><option>KS</option>
-              <option>KY</option><option>LA</option><option>ME</option><option>MD</option>
-              <option>MA</option><option>MI</option><option>MN</option><option>MS</option>
-              <option>MO</option><option>MT</option><option>NE</option><option>NV</option>
-              <option>NH</option><option>NJ</option><option>NM</option><option>NY</option>
-              <option>NC</option><option>ND</option><option>OH</option><option>OK</option>
-              <option>OR</option><option>PA</option><option>RI</option><option>SC</option>
-              <option>SD</option><option>TN</option><option>TX</option><option>UT</option>
-              <option>VT</option><option>VA</option><option>WA</option><option>WV</option>
-              <option>WI</option><option>WY</option>
-            </select>
-
-            <div class="checkbox-row">
-              <input id="p1-consent" type="checkbox" name="consent" required />
-              <label for="p1-consent">
-                I affirm that I am a U.S. resident adding my name to this petition, and I want this
-                message delivered to my representatives.
-              </label>
-            </div>
-
-            <button type="submit" class="btn-submit">
-              Sign Petition #1 – Accountability
-            </button>
-
-            <div class="form-footnote">
-              Demo only: for now, your signature goes to your Formspree inbox so you can count and
-              export them later. In a full build, verified U.S.-citizen accounts and direct-delivery
-              tools would send this same message straight to Congress and state leaders.
-            </div>
-          </form>
-        </article>
-
-        <!-- PETITION #2 -->
-        <article class="petition-card">
-          <div class="petition-label">Petition #2</div>
-          <h3>6-Year Term Limits for Congress</h3>
-          <p><strong>To the United States Congress:</strong></p>
-          <p>
-            We, the undersigned, believe that public office is a temporary duty, not a lifetime
-            career. When the same politicians stay in power for decades, they become more loyal to
-            donors, lobbyists, and their own status than to the people back home.
-          </p>
-          <p>We call for a national law that:</p>
-          <ol>
-            <li>Limits members of the House to a total of <strong>three terms</strong> (6 years).</li>
-            <li>Limits members of the Senate to a total of <strong>one term</strong> (6 years).</li>
-            <li>
-              Prevents any member from using loopholes, appointments, or “musical chairs” jobs to
-              stay in power indefinitely.
-            </li>
-          </ol>
-          <p>
-            Without real term limits, the American people will never fully trust the federal
-            government again. Power will never return to ordinary citizens as long as the same
-            insiders stay in office for life, fueled by big donors and billionaire money.
-          </p>
-
-          <form action="https://formspree.io/f/xovypnwk" method="POST">
-            <input type="hidden" name="petition" value="Petition #2 – 6-Year Term Limits" />
-            <label for="p2-name">Name</label>
-            <input id="p2-name" type="text" name="name" placeholder="Your full name" required />
-
-            <label for="p2-email">Email</label>
-            <input id="p2-email" type="email" name="email" placeholder="you@example.com" required />
-
-            <label for="p2-state">State</label>
-            <select id="p2-state" name="state" required>
-              <option value="">Select your state</option>
-              <option>AL</option><option>AK</option><option>AZ</option><option>AR</option>
-              <option>CA</option><option>CO</option><option>CT</option><option>DE</option>
-              <option>FL</option><option>GA</option><option>HI</option><option>ID</option>
-              <option>IL</option><option>IN</option><option>IA</option><option>KS</option>
-              <option>KY</option><option>LA</option><option>ME</option><option>MD</option>
-              <option>MA</option><option>MI</option><option>MN</option><option>MS</option>
-              <option>MO</option><option>MT</option><option>NE</option><option>NV</option>
-              <option>NH</option><option>NJ</option><option>NM</option><option>NY</option>
-              <option>NC</option><option>ND</option><option>OH</option><option>OK</option>
-              <option>OR</option><option>PA</option><option>RI</option><option>SC</option>
-              <option>SD</option><option>TN</option><option>TX</option><option>UT</option>
-              <option>VT</option><option>VA</option><option>WA</option><option>WV</option>
-              <option>WI</option><option>WY</option>
-            </select>
-
-            <div class="checkbox-row">
-              <input id="p2-consent" type="checkbox" name="consent" required />
-              <label for="p2-consent">
-                I support 6-year term limits for Congress and want this message delivered to my
-                elected officials.
-              </label>
-            </div>
-
-            <button type="submit" class="btn-submit">
-              Sign Petition #2 – Term Limits
-            </button>
-
-            <div class="form-footnote">
-              Demo only: like Petition #1, signatures are stored in your Formspree inbox for now so
-              you can track and export them. In a future build, they can be verified and forwarded
-              automatically to Congress.
-            </div>
-          </form>
-        </article>
-
-        <!-- PETITION #3 -->
-        <article class="petition-card">
-          <div class="petition-label">Petition #3</div>
-          <h3>Follow the Money &amp; Tax Waste Transparency Act</h3>
-          <p><strong>To the Congress and state legislatures of the United States:</strong></p>
-          <p>
-            We, the undersigned, are demanding a new era of honesty about how our tax dollars are
-            collected, spent, and wasted. We call for laws that:
-          </p>
-          <ol>
-            <li>
-              Require a public, easy-to-read breakdown of federal, state, and local spending that
-              any citizen can understand without a law degree.
-            </li>
-            <li>
-              Publish annual waste reports for every major agency, including unused funds, duplicate
-              programs, and bloated departments that do not serve the public.
-            </li>
-            <li>
-              Automatically return unused or unnecessary funds to taxpayers or apply them to paying
-              down national and state debt — not new pet projects.
-            </li>
-          </ol>
-          <p>
-            For too long, Americans have been told to “just trust” that their money is being used
-            wisely. We no longer accept that. If you are proud of how you use our money, you should
-            have no problem showing it in plain English.
-          </p>
-
-          <form action="https://formspree.io/f/xovypnwk" method="POST">
-            <input type="hidden" name="petition" value="Petition #3 – Follow the Money" />
-            <label for="p3-name">Name</label>
-            <input id="p3-name" type="text" name="name" placeholder="Your full name" required />
-
-            <label for="p3-email">Email</label>
-            <input id="p3-email" type="email" name="email" placeholder="you@example.com" required />
-
-            <label for="p3-state">State</label>
-            <select id="p3-state" name="state" required>
-              <option value="">Select your state</option>
-              <option>AL</option><option>AK</option><option>AZ</option><option>AR</option>
-              <option>CA</option><option>CO</option><option>CT</option><option>DE</option>
-              <option>FL</option><option>GA</option><option>HI</option><option>ID</option>
-              <option>IL</option><option>IN</option><option>IA</option><option>KS</option>
-              <option>KY</option><option>LA</option><option>ME</option><option>MD</option>
-              <option>MA</option><option>MI</option><option>MN</option><option>MS</option>
-              <option>MO</option><option>MT</option><option>NE</option><option>NV</option>
-              <option>NH</option><option>NJ</option><option>NM</option><option>NY</option>
-              <option>NC</option><option>ND</option><option>OH</option><option>OK</option>
-              <option>OR</option><option>PA</option><option>RI</option><option>SC</option>
-              <option>SD</option><option>TN</option><option>TX</option><option>UT</option>
-              <option>VT</option><option>VA</option><option>WA</option><option>WV</option>
-              <option>WI</option><option>WY</option>
-            </select>
-
-            <div class="checkbox-row">
-              <input id="p3-consent" type="checkbox" name="consent" required />
-              <label for="p3-consent">
-                I want my representatives to support strong Follow the Money and tax waste
-                transparency laws.
-              </label>
-            </div>
-
-            <button type="submit" class="btn-submit">
-              Sign Petition #3 – Follow the Money
-            </button>
-
-            <div class="form-footnote">
-              Demo only: this petition also goes to your Formspree inbox for counting and export.
-            </div>
-          </form>
-        </article>
-
-        <!-- PETITION #4 -->
-        <article class="petition-card">
-          <div class="petition-label">Petition #4</div>
-          <h3>Stop Useless Government Jobs &amp; No-Cap Contractor Deals</h3>
-          <p><strong>To federal and state leaders:</strong></p>
-          <p>
-            We are tired of watching government grow on paper while nothing improves in our daily
-            lives. We are tired of:
-          </p>
-          <ol>
-            <li>
-              Government jobs that exist mainly to protect budgets and titles, not to serve the
-              American people.
-            </li>
-            <li>
-              Bloated agencies with multiple departments doing the same work, while taxpayers pay
-              the bill.
-            </li>
-            <li>
-              Contractor deals with no meaningful spending caps, weak oversight, and no real
-              consequences when projects go over budget or never deliver.
-            </li>
-          </ol>
-          <p>
-            We demand laws that cap contractor spending, require competitive bidding, and force
-            agencies to justify every new job and every new department in plain English. If a job
-            or contract doesn’t clearly serve the people, it should not be funded with our money.
-          </p>
-
-          <form action="https://formspree.io/f/xovypnwk" method="POST">
-            <input type="hidden" name="petition" value="Petition #4 – Waste & Contractor Caps" />
-            <label for="p4-name">Name</label>
-            <input id="p4-name" type="text" name="name" placeholder="Your full name" required />
-
-            <label for="p4-email">Email</label>
-            <input id="p4-email" type="email" name="email" placeholder="you@example.com" required />
-
-            <label for="p4-state">State</label>
-            <select id="p4-state" name="state" required>
-              <option value="">Select your state</option>
-              <option>AL</option><option>AK</option><option>AZ</option><option>AR</option>
-              <option>CA</option><option>CO</option><option>CT</option><option>DE</option>
-              <option>FL</option><option>GA</option><option>HI</option><option>ID</option>
-              <option>IL</option><option>IN</option><option>IA</option><option>KS</option>
-              <option>KY</option><option>LA</option><option>ME</option><option>MD</option>
-              <option>MA</option><option>MI</option><option>MN</option><option>MS</option>
-              <option>MO</option><option>MT</option><option>NE</option><option>NV</option>
-              <option>NH</option><option>NJ</option><option>NM</option><option>NY</option>
-              <option>NC</option><option>ND</option><option>OH</option><option>OK</option>
-              <option>OR</option><option>PA</option><option>RI</option><option>SC</option>
-              <option>SD</option><option>TN</option><option>TX</option><option>UT</option>
-              <option>VT</option><option>VA</option><option>WA</option><option>WV</option>
-              <option>WI</option><option>WY</option>
-            </select>
-
-            <div class="checkbox-row">
-              <input id="p4-consent" type="checkbox" name="consent" required />
-              <label for="p4-consent">
-                I want government waste, useless positions, and no-cap contractor deals exposed and
-                reduced, not funded forever.
-              </label>
-            </div>
-
-            <button type="submit" class="btn-submit">
-              Sign Petition #4 – Stop Waste
-            </button>
-
-            <div class="form-footnote">
-              Demo only: as with the other petitions, signatures go to your Formspree inbox for now.
-            </div>
-          </form>
-        </article>
-      </div>
-    </section>
-
-    <!-- COMPLAINTS / FORMS -->
-    <section class="section" id="complaints">
-      <div class="label-pill">Federal &amp; State Complaints</div>
-      <h2>Turn Anger into Action, Not Just Posts</h2>
-      <p>
-        Most Americans never file a formal complaint because the forms are buried, confusing, or
-        scattered across dozens of sites. America’s Watchlist aims to change that by putting the
-        most important links in one place — and eventually generating pre-filled forms based on the
-        alerts you care about.
-      </p>
-
-      <div class="complaints-grid">
-        <div class="complaint-card">
-          <h3>Federal Ethics &amp; Misconduct</h3>
-          <div class="complaint-tagline">
-            For issues involving members of Congress, federal judges, or executive-branch officials.
+      <div class="hero-poster-wrap">
+        <div class="hero-poster-frame">
+          <!-- Use your existing hero-poster if you like -->
+          <img src="images/hero-poster.jpg" alt="America's Torch artwork" class="hero-poster" />
+          <div class="hero-poster-caption">
+            Concept Art · The People Relighting America's Torch
           </div>
+        </div>
+      </div>
+    </section>
 
-          <p><strong>Typical issues:</strong></p>
-          <p>
-            Ethics violations, corruption, abuse of office, failure to act on serious allegations,
-            or protecting donors and friends instead of the law.
-          </p>
+    <!-- MOVEMENT MEANING -->
+    <section id="movement" class="section">
+      <div class="section-header-eyebrow">MOVEMENT MEANING</div>
+      <h2 class="section-title">What Is America's Torch?</h2>
+      <p class="section-sub">
+        America’s Torch is a united, peaceful stand against corruption, division, and
+        manipulation — from government, media, and big money. We are not trying to burn
+        America down. We are relighting what was supposed to be there from the beginning:
+        honest leadership, transparent spending, and respect for the people who fund it all.
+      </p>
 
-          <p><strong>Where this message can go:</strong></p>
-          <p>
-            House &amp; Senate Ethics Committees, the Department of Justice, Inspector General
-            offices, and your U.S. Representative and Senators.
-          </p>
-
-          <form action="https://formspree.io/f/xovypnwk" method="POST">
-            <input type="hidden" name="form" value="Federal Complaint" />
-
-            <label for="fed-name">Name</label>
-            <input id="fed-name" type="text" name="name" placeholder="Your full name" required>
-
-            <label for="fed-email">Email</label>
-            <input id="fed-email" type="email" name="email" placeholder="you@example.com" required>
-
-            <label for="fed-state">State</label>
-            <input id="fed-state" type="text" name="state" placeholder="GA, TX, OH..." required>
-
-            <label for="fed-subject">Subject of complaint</label>
-            <input id="fed-subject" type="text" name="subject" placeholder="Example: Ethics complaint about Senator / Representative">
-
-            <label for="fed-message">What happened?</label>
-            <textarea id="fed-message" name="message"
-              placeholder="Describe what happened, who was involved, and why you believe this crosses the line."></textarea>
-
-            <button type="submit">Send Federal Complaint (Demo – Sends to You)</button>
-          </form>
-
-          <p class="complaint-note">
-            Demo only: right now, this form sends to your Formspree inbox so you can
-            review, edit, and forward to House/Senate ethics or the DOJ. In a full build,
-            automated tools can route complaints directly to the proper offices.
-          </p>
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-label">The People’s Stand</div>
+          <div class="card-title">Enough Division. Enough Waste. Enough Being Ignored.</div>
+          <div class="card-body">
+            For too long, Americans have watched:
+            <ul>
+              <li>Thousand-page bills rushed through that nobody reads.</li>
+              <li>Hidden riders, backroom deals, and “pet projects” we never approved.</li>
+              <li>Media narratives that divide us for ratings and political gain.</li>
+              <li>Big donors and lobbyists shaping laws while families live paycheck to paycheck.</li>
+            </ul>
+            We are done pretending not to see it. We are done being pitted against each other
+            while the same people stay rich, powerful, and unaccountable.
+          </div>
         </div>
 
-        <div class="complaint-card">
-          <h3>State-Level Complaints</h3>
-          <div class="complaint-tagline">
-            For governors, state legislators, state courts, and local officials.
+        <div class="card">
+          <div class="card-label">The Flame They Can’t Put Out</div>
+          <div class="card-title">United, Peaceful, Unshakable</div>
+          <div class="card-body">
+            America’s Torch is not about violence or tearing the country apart.
+            It is about:
+            <ul>
+              <li>Exposing corruption with facts and data.</li>
+              <li>Tracking how our money is really spent.</li>
+              <li>Demanding transparency before votes and laws.</li>
+              <li>Building peaceful, lawful pressure that no politician or institution can ignore.</li>
+            </ul>
+            The powerful tried to dim the flame. But the flame was never theirs.
+            <strong>The flame belongs to the people. And as long as we stand together,
+            America’s Torch will never burn out.</strong>
           </div>
+        </div>
+      </div>
+    </section>
 
-          <p><strong>Typical issues:</strong></p>
-          <p>
-            Unfair tax or rate hikes pushed through without transparency, state agencies ignoring
-            court orders or citizens’ rights, or officials using power to punish critics instead of
-            serving the people.
-          </p>
+    <!-- EXAMPLE ALERTS -->
+    <section id="alerts" class="section">
+      <div class="section-header-eyebrow">EXAMPLE WATCH ALERTS</div>
+      <h2 class="section-title">What America's Torch Could Flag</h2>
+      <p class="section-sub">
+        These are example alerts to show how a full build of America’s Torch could work:
+        tracking bills, spending, taxes, and donor influence — at the national and state level —
+        so citizens know what’s going on before it hits their wallet or their rights.
+      </p>
 
-          <p><strong>Where to send:</strong></p>
-          <p>
-            State ethics commissions, inspectors general, attorneys general, and your state house
-            and senate members.
-          </p>
+      <div class="grid-2">
+        <div>
+          <div class="card-label">Recent Sample Alerts</div>
+          <div class="alert-list">
+            <div class="alert-pill">
+              <div class="alert-main">
+                <div class="alert-title">Power & Utility Hike</div>
+                <div class="alert-meta">State: Georgia · 12% rate increase tied to new surcharges.</div>
+              </div>
+              <span class="badge badge-danger">Red Flag</span>
+            </div>
+            <div class="alert-pill">
+              <div class="alert-main">
+                <div class="alert-title">Property Tax & Local Spending Spike</div>
+                <div class="alert-meta">State: South Carolina · Reassessments + “nice to have” projects.</div>
+              </div>
+              <span class="badge">Cost of Living</span>
+            </div>
+            <div class="alert-pill">
+              <div class="alert-main">
+                <div class="alert-title">“Small” Bill, Huge Hidden Riders</div>
+                <div class="alert-meta">Federal · Unrelated add-ons and quiet favors buried in pages.</div>
+              </div>
+              <span class="badge">Sneaky Bills</span>
+            </div>
+          </div>
+        </div>
 
-          <form action="https://formspree.io/f/xovypnwk" method="POST">
-            <input type="hidden" name="form" value="State Complaint" />
+        <div class="card">
+          <div class="card-label">Future Features</div>
+          <div class="card-title">50-State Dashboards & National Pattern View</div>
+          <div class="card-body">
+            In a full build, America’s Torch would:
+            <ul>
+              <li>Give every state its own dashboard: bills, spending, tax changes, votes.</li>
+              <li>Map national patterns: copy-cat laws, repeated tricks, donor overlaps.</li>
+              <li>Trigger red-flag alerts when something big or shady moves forward.</li>
+              <li>Invite citizens to peaceful town halls and actions when thresholds are crossed.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
 
-            <label for="state-name">Name</label>
-            <input id="state-name" type="text" name="name" placeholder="Your full name" required>
+    <!-- PETITION -->
+    <section id="petition" class="section">
+      <div class="section-header-eyebrow">NATIONAL PETITION</div>
+      <h2 class="section-title">Accountability & Transparency Now</h2>
+      <p class="section-sub">
+        This is the first national petition from America’s Torch. When a strong number of
+        signatures is collected, it can be compiled and delivered to leaders in Washington, D.C.
+        This is peaceful, lawful pressure — united, not divided.
+      </p>
 
-            <label for="state-email">Email</label>
-            <input id="state-email" type="email" name="email" placeholder="you@example.com" required>
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-label">The People’s Declaration</div>
+          <div class="card-title">What We’re Demanding</div>
+          <div class="card-body">
+            We, the united citizens of the United States, call for:
+            <ul>
+              <li>Clear public review time on major laws before any vote.</li>
+              <li>Full transparency on how every tax dollar is spent and who benefits.</li>
+              <li>Independent citizen oversight of government spending and contracts.</li>
+              <li>Real steps toward term limits and reducing big donor and lobbyist control.</li>
+              <li>Election systems that are secure, transparent, and trusted by Americans across parties.</li>
+            </ul>
+            By signing, you support peaceful, lawful, citizen-powered pressure to restore integrity,
+            transparency, and respect for the American people.
+          </div>
+        </div>
 
-            <label for="state-state">State</label>
-            <input id="state-state" type="text" name="state" placeholder="GA, SC, NC..." required>
+        <div class="card">
+          <div class="card-label">Sign the Petition</div>
+          <div class="card-title">Your Signature Is Your Voice</div>
+          <div class="card-body">
+            <form action="https://formspree.io/f/xovypnwk" method="POST">
+              <div class="form-field">
+                <label class="form-label">Name</label>
+                <input class="form-input" type="text" name="name" placeholder="Your full name" required />
+              </div>
+              <div class="form-field">
+                <label class="form-label">Email</label>
+                <input class="form-input" type="email" name="email" placeholder="you@example.com" required />
+                <div class="form-helper">Used to confirm your signature & send future updates. No selling your info.</div>
+              </div>
+              <div class="form-field">
+                <label class="form-label">State</label>
+                <select class="form-select" name="state" required>
+                  <option value="">Choose your state</option>
+                  <option>AL</option><option>AK</option><option>AZ</option><option>AR</option>
+                  <option>CA</option><option>CO</option><option>CT</option><option>DE</option>
+                  <option>FL</option><option>GA</option><option>HI</option><option>ID</option>
+                  <option>IL</option><option>IN</option><option>IA</option><option>KS</option>
+                  <option>KY</option><option>LA</option><option>ME</option><option>MD</option>
+                  <option>MA</option><option>MI</option><option>MN</option><option>MS</option>
+                  <option>MO</option><option>MT</option><option>NE</option><option>NV</option>
+                  <option>NH</option><option>NJ</option><option>NM</option><option>NY</option>
+                  <option>NC</option><option>ND</option><option>OH</option><option>OK</option>
+                  <option>OR</option><option>PA</option><option>RI</option><option>SC</option>
+                  <option>SD</option><option>TN</option><option>TX</option><option>UT</option>
+                  <option>VT</option><option>VA</option><option>WA</option><option>WV</option>
+                  <option>WI</option><option>WY</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label class="form-label">Why I’m Signing (optional)</label>
+                <input class="form-input" type="text" name="reason" placeholder="One sentence on why this matters to you" />
+              </div>
 
-            <label for="state-city">City / County</label>
-            <input id="state-city" type="text" name="city" placeholder="Your city or county">
+              <button type="submit" class="btn btn-primary form-submit">🔥 Submit My Signature</button>
+              <div class="form-helper">
+                Right now, each submission goes to a secure inbox (Formspree). Later, this can be wired
+                to batch and deliver signatures directly to Congress and other officials.
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
 
-            <label for="state-message">Describe the problem</label>
-            <textarea id="state-message" name="message"
-              placeholder="Who is involved? What happened? What should your state leaders do?"></textarea>
+    <!-- ARTICLE V -->
+    <section id="articlev" class="section">
+      <div class="section-header-eyebrow">KNOW YOUR CONSTITUTION</div>
+      <h2 class="section-title">Article V – The People's Constitutional Power</h2>
+      <p class="section-sub">
+        When Washington stops listening, the Constitution does not leave the people powerless.
+        Article V gives Americans and the states a peaceful, lawful way to demand big reforms —
+        but most citizens were never really taught what it means.
+      </p>
 
-            <button type="submit">Send State Complaint (Demo – Sends to You)</button>
-          </form>
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-label">How Amendments Can Start</div>
+          <div class="card-title">Two Paths, Both Require the People</div>
+          <div class="card-body">
+            Article V explains how the Constitution can be amended:
+            <ul>
+              <li><strong>By Congress:</strong> Two-thirds of both the House and Senate vote to propose an amendment.</li>
+              <li><strong>By the States:</strong> Two-thirds of state legislatures (34 states) can call for a convention to propose amendments.</li>
+            </ul>
+            No matter how it starts, any amendment still must be approved by
+            <strong>three-fourths of the states</strong> to take effect.
+            That means broad national agreement is required — no one group can hijack the process alone.
+          </div>
+        </div>
 
-          <p class="complaint-note">
-            Demo only: these complaints also arrive in your Formspree inbox so you can
-            forward them to state ethics offices, attorneys general, or local leaders.
-            Later, this can be wired with official state contact links for each state.
-          </p>
+        <div class="card">
+          <div class="card-label">Why It Matters</div>
+          <div class="card-title">Peaceful, Lawful Pressure – Not Chaos</div>
+          <div class="card-body">
+            Many Americans believe that, in the future, Article V could be used to push for:
+            <ul>
+              <li>Term limits for members of Congress.</li>
+              <li>Stronger transparency and financial accountability rules.</li>
+              <li>Clearer limits on donor and lobbyist influence.</li>
+              <li>Balanced budget or spending responsibility amendments.</li>
+            </ul>
+            <strong>America’s Torch is not calling for an Article V convention today.</strong>
+            But we believe citizens should understand their full constitutional tools — especially
+            when government forgets who it is supposed to serve. Knowledge is power, and a people who
+            understand Article V are much harder to mislead or divide.
+          </div>
         </div>
       </div>
     </section>
 
     <!-- JOIN SECTION -->
-    <section class="join-panel" id="join">
-      <div class="kicker">Join the Movement</div>
-      <h2>Get Alerts When It Really Matters</h2>
-      <p>
-        This is the early prototype of America’s Watchlist. If you want to help shape it — from
-        alerts and dashboards to town halls and petitions — add your name below. You’ll be the first
-        to know when new tools go live.
+    <section id="join" class="section">
+      <div class="section-header-eyebrow">JOIN THE MOVEMENT</div>
+      <h2 class="section-title">Be Part of America’s Torch</h2>
+      <p class="section-sub">
+        This is still just the beginning. As more Americans join, you’ll be able to help decide
+        which states and issues get focus first — alerts, town halls, future votes, and tools to
+        message Congress and state leaders directly.
       </p>
 
-      <form action="https://formspree.io/f/xovypnwk" method="POST">
-        <input type="hidden" name="form" value="Join America's Watchlist" />
-        <label for="join-name">Name</label>
-        <input id="join-name" type="text" name="name" placeholder="Your full name" required />
-
-        <label for="join-email">Email</label>
-        <input id="join-email" type="email" name="email" placeholder="you@example.com" required />
-
-        <label for="join-state">State</label>
-        <select id="join-state" name="state" required>
-          <option value="">Select your state</option>
-          <option>AL</option><option>AK</option><option>AZ</option><option>AR</option>
-          <option>CA</option><option>CO</option><option>CT</option><option>DE</option>
-          <option>FL</option><option>GA</option><option>HI</option><option>ID</option>
-          <option>IL</option><option>IN</option><option>IA</option><option>KS</option>
-          <option>KY</option><option>LA</option><option>ME</option><option>MD</option>
-          <option>MA</option><option>MI</option><option>MN</option><option>MS</option>
-          <option>MO</option><option>MT</option><option>NE</option><option>NV</option>
-          <option>NH</option><option>NJ</option><option>NM</option><option>NY</option>
-          <option>NC</option><option>ND</option><option>OH</option><option>OK</option>
-          <option>OR</option><option>PA</option><option>RI</option><option>SC</option>
-          <option>SD</option><option>TN</option><option>TX</option><option>UT</option>
-          <option>VT</option><option>VA</option><option>WA</option><option>WV</option>
-          <option>WI</option><option>WY</option>
-        </select>
-
-        <button type="submit" class="btn-submit">
-          Join America&rsquo;s Watchlist
-        </button>
-
-        <div class="form-footnote">
-          Demo only: your info goes to Formspree so you can export and manage it later. No tracking
-          scripts, no party lists, no selling data — ever.
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-label">How It Grows</div>
+          <div class="card-title">From Prototype to Real Power</div>
+          <div class="card-body">
+            Step by step:
+            <ul>
+              <li><strong>1. Launch:</strong> Share this site as a peaceful, citizen-powered movement.</li>
+              <li><strong>2. Build the List:</strong> As people join, we see where support is strongest by state.</li>
+              <li><strong>3. Wire Data & Logins:</strong> Later, developers can connect real bill tracking, finance data, and secure sign-ins.</li>
+              <li><strong>4. Apply Pressure:</strong> Use facts, numbers, petitions, and letters — not violence — to put real pressure on leaders.</li>
+            </ul>
+          </div>
         </div>
-      </form>
+
+        <div class="card">
+          <div class="card-label">Join America's Torch</div>
+          <div class="card-title">Get Updates by State</div>
+          <div class="card-body">
+            <form action="https://formspree.io/f/xovypnwk" method="POST">
+              <input type="hidden" name="source" value="join-form" />
+              <div class="form-field">
+                <label class="form-label">Name</label>
+                <input class="form-input" type="text" name="name" placeholder="Your full name" required />
+              </div>
+              <div class="form-field">
+                <label class="form-label">Email</label>
+                <input class="form-input" type="email" name="email" placeholder="you@example.com" required />
+              </div>
+              <div class="form-field">
+                <label class="form-label">State</label>
+                <select class="form-select" name="state" required>
+                  <option value="">Choose your state</option>
+                  <option>AL</option><option>AK</option><option>AZ</option><option>AR</option>
+                  <option>CA</option><option>CO</option><option>CT</option><option>DE</option>
+                  <option>FL</option><option>GA</option><option>HI</option><option>ID</option>
+                  <option>IL</option><option>IN</option><option>IA</option><option>KS</option>
+                  <option>KY</option><option>LA</option><option>ME</option><option>MD</option>
+                  <option>MA</option><option>MI</option><option>MN</option><option>MS</option>
+                  <option>MO</option><option>MT</option><option>NE</option><option>NV</option>
+                  <option>NH</option><option>NJ</option><option>NM</option><option>NY</option>
+                  <option>NC</option><option>ND</option><option>OH</option><option>OK</option>
+                  <option>OR</option><option>PA</option><option>RI</option><option>SC</option>
+                  <option>SD</option><option>TN</option><option>TX</option><option>UT</option>
+                  <option>VT</option><option>VA</option><option>WA</option><option>WV</option>
+                  <option>WI</option><option>WY</option>
+                </select>
+              </div>
+
+              <button type="submit" class="btn btn-primary form-submit">Join America’s Torch</button>
+              <div class="form-helper">
+                This uses Formspree for now so you can see real signups as they come in.
+                Later, this can be moved to your own backend or app.
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
     </section>
 
     <footer>
-      Prototype only · No legal, financial, or voting advice. America’s Watchlist is a peaceful,
-      citizen-powered concept for accountability and transparency.
+      America’s Torch · A peaceful, citizen-powered movement to relight accountability,
+      transparency, and unity in the United States.
     </footer>
-  </div>
+  </main>
 </div>
 </body>
 </html>
