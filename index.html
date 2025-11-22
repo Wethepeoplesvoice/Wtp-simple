@@ -51,64 +51,69 @@
       max-width: 1080px;
       margin: 0 auto;
       padding: 18px 16px 80px;
-    /* --- COMPLAINTS SECTION --- */
-.complaints-section {
-  margin-top: 40px;
-}
+    }
 
-.complaints-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 18px;
-  margin-top: 16px;
-}
+    /* ---------------------- */
+    /* COMPLAINTS SECTION     */
+    /* (early block, some of this is duplicated later but safe) */
+    /* ---------------------- */
 
-.complaint-card {
-  background: #070b16;
-  border-radius: 18px;
-  padding: 18px 18px 20px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 0 22px rgba(0, 0, 0, 0.55);
-}
+    .complaints-section {
+      margin-top: 40px;
+    }
 
-.complaint-card h3 {
-  margin-top: 0;
-  margin-bottom: 6px;
-}
+    .complaints-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+      margin-top: 16px;
+    }
 
-.complaint-tagline {
-  font-size: 13px;
-  color: var(--text-muted);
-  margin-bottom: 10px;
-}
+    .complaint-card {
+      background: #070b16;
+      border-radius: 18px;
+      padding: 18px 18px 20px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 0 22px rgba(0, 0, 0, 0.55);
+    }
 
-.complaint-card ul {
-  padding-left: 18px;
-  margin: 0 0 12px 0;
-  font-size: 14px;
-  line-height: 1.5;
-  color: var(--text-muted);
-}
+    .complaint-card h3 {
+      margin-top: 0;
+      margin-bottom: 6px;
+    }
 
-.complaint-note {
-  font-size: 12px;
-  color: var(--text-muted);
-  margin-top: 10px;
-}
+    .complaint-tagline {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
 
-/* small accent label */
-.label-pill {
-  display: inline-block;
-  padding: 4px 10px;
-  border-radius: 999px;
-  font-size: 11px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  background: rgba(255, 191, 110, 0.12);
-  color: #ffbf6e;
-  border: 1px solid rgba(255, 191, 110, 0.4);
-  margin-bottom: 10px;
-}
+    .complaint-card ul {
+      padding-left: 18px;
+      margin: 0 0 12px 0;
+      font-size: 14px;
+      line-height: 1.5;
+      color: var(--text-muted);
+    }
+
+    .complaint-note {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 10px;
+    }
+
+    .label-pill {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      background: rgba(255, 191, 110, 0.12);
+      color: #ffbf6e;
+      border: 1px solid rgba(255, 191, 110, 0.4);
+      margin-bottom: 10px;
+    }
 
     /* ---------------------- */
     /* TOP NAV BAR            */
@@ -324,8 +329,6 @@
       color: var(--text-main);
     }
 
-    /* Emotional story block */
-
     .emotional-block {
       margin-top: 26px;
       background: rgba(7, 9, 22, 0.96);
@@ -340,8 +343,6 @@
     .emotional-block p {
       margin: 8px 0;
     }
-
-    /* HOT RIGHT NOW banner */
 
     .hot-banner {
       margin-top: 18px;
@@ -394,7 +395,7 @@
       font-size: 13px;
     }
 
-    /* EMAIL CONGRESS SECTION – card layout */
+    /* EMAIL / SPONSOR / PANELS / ALERTS etc */
 
     .email-layout {
       display: grid;
@@ -418,8 +419,6 @@
       font-size: 13px;
       line-height: 1.7;
     }
-
-    /* SPONSOR / AD BANNER */
 
     .sponsor-banner {
       margin-top: 24px;
@@ -483,8 +482,6 @@
       font-weight: 700;
     }
 
-    /* STATE SECTION */
-
     .panel {
       margin-top: 28px;
       padding: 20px 18px 22px;
@@ -531,8 +528,6 @@
       color: var(--text-muted);
     }
 
-    /* ALERTS SECTION */
-
     .alert-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
@@ -559,8 +554,6 @@
       margin-bottom: 6px;
     }
 
-    /* TOWN HALLS SECTION */
-
     .town-grid {
       display: grid;
       grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
@@ -574,8 +567,6 @@
       padding: 16px;
       border: 1px solid rgba(255, 255, 255, 0.16);
     }
-
-    /* PETITIONS SECTION */
 
     .petitions-section {
       margin-top: 32px;
@@ -630,8 +621,6 @@
       font-size: 14px;
       line-height: 1.7;
     }
-
-    /* FORMS (join + petitions) */
 
     form {
       margin-top: 14px;
@@ -697,8 +686,6 @@
       line-height: 1.6;
     }
 
-    /* COMPLAINTS / FORMS SECTION */
-
     .complaints-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -726,8 +713,6 @@
       font-size: 13px;
       color: var(--accent-soft);
     }
-
-    /* JOIN SECTION */
 
     .join-panel {
       margin-top: 28px;
@@ -757,8 +742,6 @@
       text-align: center;
       padding-bottom: 10px;
     }
-
-    /* RESPONSIVE */
 
     @media (max-width: 880px) {
       .hero {
@@ -798,6 +781,7 @@
     <a href="#states">States</a>
     <a href="#townhalls">Town Halls</a>
     <a href="#vote">Vote</a>
+    <a href="#ideas">Ideas</a>
     <a href="#petition">Petition</a>
     <a href="#complaints">Complaints</a>
     <a href="#join">Join</a>
@@ -923,6 +907,100 @@
             No riots, no threats, no doxxing. Just millions of citizens watching the same alerts,
             signing the same petitions, and sending clear, peaceful messages that can’t be ignored.
           </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEW: IDEAS SECTION -->
+    <section class="section" id="ideas">
+      <div class="kicker">Submit Your Ideas</div>
+      <h2>Help Shape What We Push For</h2>
+      <p>
+        This movement isn’t just about one person’s opinions. It’s about millions of Americans
+        bringing forward ideas for fair laws, better protections, and guardrails on government and
+        big donors — then letting others vote on them.
+      </p>
+      <p>
+        Use this form to share a specific idea you believe should become law or a clear rule:
+        federal or state. Later, these ideas can become polls, petitions, or letters that other
+        citizens can support.
+      </p>
+
+      <div class="action-grid">
+        <div class="action-card">
+          <h3>What Makes a Good Idea?</h3>
+          <p>
+            Think of:
+          </p>
+          <ul>
+            <li>Spending rules: caps, oversight, or transparency for tax dollars.</li>
+            <li>Term limits, ethics changes, or conflict-of-interest bans.</li>
+            <li>
+              Rules that stop big donors, corporations, or utilities from abusing their power
+              at the expense of normal families.
+            </li>
+            <li>
+              Protections for free speech that don’t allow harassment, threats, or targeted lies
+              to destroy people’s lives.
+            </li>
+          </ul>
+        </div>
+
+        <div class="action-card">
+          <h3>Send Your Idea to the Movement</h3>
+          <p>
+            Right now this is a simple form that goes to your Formspree inbox. Later, ideas can be
+            tagged by state and issue, and opened up for citizen voting.
+          </p>
+
+          <form action="https://formspree.io/f/xovypnwk" method="POST">
+            <input type="hidden" name="form" value="Idea Submission" />
+            <label for="idea-name">Name</label>
+            <input id="idea-name" type="text" name="name" placeholder="Your full name" required />
+
+            <label for="idea-email">Email</label>
+            <input id="idea-email" type="email" name="email" placeholder="you@example.com" required />
+
+            <label for="idea-state">State</label>
+            <select id="idea-state" name="state" required>
+              <option value="">Select your state</option>
+              <option>AL</option><option>AK</option><option>AZ</option><option>AR</option>
+              <option>CA</option><option>CO</option><option>CT</option><option>DE</option>
+              <option>FL</option><option>GA</option><option>HI</option><option>ID</option>
+              <option>IL</option><option>IN</option><option>IA</option><option>KS</option>
+              <option>KY</option><option>LA</option><option>ME</option><option>MD</option>
+              <option>MA</option><option>MI</option><option>MN</option><option>MS</option>
+              <option>MO</option><option>MT</option><option>NE</option><option>NV</option>
+              <option>NH</option><option>NJ</option><option>NM</option><option>NY</option>
+              <option>NC</option><option>ND</option><option>OH</option><option>OK</option>
+              <option>OR</option><option>PA</option><option>RI</option><option>SC</option>
+              <option>SD</option><option>TN</option><option>TX</option><option>UT</option>
+              <option>VT</option><option>VA</option><option>WA</option><option>WV</option>
+              <option>WI</option><option>WY</option>
+            </select>
+
+            <label for="idea-type">Is this for federal or state?</label>
+            <select id="idea-type" name="level" required>
+              <option value="">Choose one</option>
+              <option>Federal</option>
+              <option>My State Only</option>
+              <option>Both Federal and States</option>
+              <option>Not Sure Yet</option>
+            </select>
+
+            <label for="idea-text">Your Idea</label>
+            <input id="idea-text" type="text" name="idea"
+                   placeholder="Describe the rule/law you think we need (1–3 sentences)" required />
+
+            <button type="submit" class="btn-submit">
+              Submit My Idea
+            </button>
+
+            <div class="form-footnote">
+              Demo only: submissions go to your Formspree inbox so you can read and group them later.
+              In a full version, ideas could be grouped by topic and opened up for votes.
+            </div>
+          </form>
         </div>
       </div>
     </section>
