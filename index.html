@@ -51,64 +51,7 @@
       max-width: 1080px;
       margin: 0 auto;
       padding: 18px 16px 80px;
-    /* --- COMPLAINTS SECTION --- */
-.complaints-section {
-  margin-top: 40px;
-}
-
-.complaints-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 18px;
-  margin-top: 16px;
-}
-
-.complaint-card {
-  background: #070b16;
-  border-radius: 18px;
-  padding: 18px 18px 20px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 0 22px rgba(0, 0, 0, 0.55);
-}
-
-.complaint-card h3 {
-  margin-top: 0;
-  margin-bottom: 6px;
-}
-
-.complaint-tagline {
-  font-size: 13px;
-  color: var(--text-muted);
-  margin-bottom: 10px;
-}
-
-.complaint-card ul {
-  padding-left: 18px;
-  margin: 0 0 12px 0;
-  font-size: 14px;
-  line-height: 1.5;
-  color: var(--text-muted);
-}
-
-.complaint-note {
-  font-size: 12px;
-  color: var(--text-muted);
-  margin-top: 10px;
-}
-
-/* small accent label */
-.label-pill {
-  display: inline-block;
-  padding: 4px 10px;
-  border-radius: 999px;
-  font-size: 11px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  background: rgba(255, 191, 110, 0.12);
-  color: #ffbf6e;
-  border: 1px solid rgba(255, 191, 110, 0.4);
-  margin-bottom: 10px;
-}
+    }
 
     /* ---------------------- */
     /* TOP NAV BAR            */
@@ -223,7 +166,7 @@
     }
 
     /* ---------------------- */
-    /* EMOTIONAL INTRO        */
+    /* GENERIC SECTIONS       */
     /* ---------------------- */
 
     .section {
@@ -361,6 +304,17 @@
       margin-bottom: 4px;
     }
 
+    .hot-list {
+      margin: 6px 0 0 18px;
+      padding: 0;
+      font-size: 13px;
+      color: var(--text-main);
+    }
+
+    .hot-list li {
+      margin-bottom: 4px;
+    }
+
     /* TAKE ACTION GRID */
 
     .action-grid {
@@ -392,31 +346,6 @@
     .action-card a {
       color: var(--accent-soft);
       font-size: 13px;
-    }
-
-    /* EMAIL CONGRESS SECTION – card layout */
-
-    .email-layout {
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-      gap: 16px;
-      margin-top: 10px;
-    }
-
-    .email-card {
-      background: rgba(6, 9, 24, 0.96);
-      border-radius: 18px;
-      padding: 14px;
-      border: 1px solid rgba(46, 59, 110, 0.9);
-    }
-
-    .email-snippet {
-      background: #050914;
-      border-radius: 10px;
-      padding: 10px;
-      border: 1px solid #ffffff22;
-      font-size: 13px;
-      line-height: 1.7;
     }
 
     /* SPONSOR / AD BANNER */
@@ -481,6 +410,72 @@
       text-transform: uppercase;
       letter-spacing: 0.12em;
       font-weight: 700;
+    }
+
+    /* FOLLOW YOUR MONEY PANEL */
+
+    .money-panel {
+      margin-top: 30px;
+      padding: 20px 18px 22px;
+      border-radius: 26px;
+      background: radial-gradient(circle at top left, rgba(33, 39, 82, 0.9), #050812 70%);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      box-shadow: 0 18px 55px rgba(0, 0, 0, 0.9);
+    }
+
+    .money-panel h2 {
+      margin-bottom: 8px;
+    }
+
+    .money-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .money-card {
+      background: rgba(5, 8, 25, 0.96);
+      border-radius: 20px;
+      padding: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .money-card h3 {
+      margin-top: 0;
+      margin-bottom: 6px;
+    }
+
+    .money-card ul {
+      padding-left: 18px;
+      margin: 6px 0 0;
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .money-microgrid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .money-pill {
+      border-radius: 14px;
+      padding: 10px;
+      background: #070b16;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .money-label {
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-muted);
     }
 
     /* STATE SECTION */
@@ -631,7 +626,7 @@
       line-height: 1.7;
     }
 
-    /* FORMS (join + petitions) */
+    /* FORMS (join + petitions + complaints) */
 
     form {
       margin-top: 14px;
@@ -646,7 +641,7 @@
       color: var(--text-muted);
     }
 
-    input, select {
+    input, select, textarea {
       width: 100%;
       padding: 10px 11px;
       border-radius: 10px;
@@ -654,10 +649,19 @@
       background: #050913;
       color: var(--text-main);
       font-size: 14px;
+      font-family: var(--font-body);
     }
 
-    input::placeholder {
+    input::placeholder,
+    textarea::placeholder {
       color: #6b738b;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 80px;
+      margin-top: 6px;
+      margin-bottom: 12px;
     }
 
     .checkbox-row {
@@ -675,7 +679,8 @@
       margin-top: 2px;
     }
 
-    .btn-submit {
+    .btn-submit,
+    form button[type="submit"] {
       margin-top: 14px;
       width: 100%;
       border-radius: 999px;
@@ -727,6 +732,31 @@
       color: var(--accent-soft);
     }
 
+    .complaint-tagline {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+
+    .complaint-note {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 10px;
+    }
+
+    .label-pill {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      background: rgba(255, 191, 110, 0.12);
+      color: #ffbf6e;
+      border: 1px solid rgba(255, 191, 110, 0.4);
+      margin-bottom: 10px;
+    }
+
     /* JOIN SECTION */
 
     .join-panel {
@@ -769,7 +799,7 @@
         grid-template-columns: minmax(0, 1fr);
       }
 
-      .email-layout,
+      .money-grid,
       .panel-columns,
       .town-grid {
         grid-template-columns: minmax(0, 1fr);
@@ -855,11 +885,22 @@
           unfair policies slip through.
         </p>
         <p>
-          At the same time, billionaires and big donors pour money into the system until the same
-          politicians stay in power for decades and grow richer while the country grows more
-          divided. Somewhere along the way, too many leaders forgot who they work for. They forgot
-          the people back home who are paying higher prices, watching their rights and savings get
-          chipped away, and wondering if anyone in power actually sees them anymore.
+          Every year, the IRS collects trillions of dollars from families, workers, and small
+          businesses. States add on their own income taxes, sales taxes, property taxes, gas taxes,
+          “fees,” and fines. But almost nobody can see, in plain English, where that money actually
+          goes — or how much is wasted on bloated agencies, useless positions, no-cap contracts, and
+          projects the American people never truly agreed to.
+        </p>
+        <p>
+          While families cut coupons and choose between groceries and medicine, the federal and
+          state governments rarely cut themselves. Instead, they add new departments, hire for jobs
+          that don’t need to exist, and sign open-ended contracts where private companies drain
+          tax dollars with almost no oversight or spending caps.
+        </p>
+        <p>
+          Somewhere along the way, too many leaders forgot who they work for. They forgot the people
+          back home who are paying higher prices, watching their rights and savings get chipped away,
+          and wondering if anyone in power actually sees them anymore.
         </p>
         <p>
           America’s Watchlist exists for the people who are done just complaining. It’s for the
@@ -876,10 +917,12 @@
 
       <div class="hot-banner">
         <strong>Hot Right Now</strong>
-        If you’re tired of watching the same politicians stay in office for life, tired of
-        billionaires and big donors calling the shots, and tired of feeling powerless while the
-        country drifts further apart, America’s Watchlist is built for you — a peaceful way to put
-        pressure where it belongs and take our country back before it’s too late.
+        <ul class="hot-list">
+          <li>Americans want to know how much the IRS and states collect — and how much is wasted.</li>
+          <li>People are angry that government jobs and contractor deals grow while families struggle.</li>
+          <li>Trust in Congress and agencies keeps falling because there is no real transparency.</li>
+          <li>More and more citizens are ready for peaceful, united pressure — not just more talking.</li>
+        </ul>
       </div>
     </section>
 
@@ -896,9 +939,8 @@
         <div class="action-card">
           <h3>1. See What&rsquo;s Really Happening</h3>
           <p>
-            In a full build, live dashboards would track bills, votes, rate hikes, and spending in
-            plain English — so you can see when something dangerous is moving <em>before</em> it’s
-            too late to react.
+            Live dashboards can track bills, votes, rate hikes, and spending in plain English — so
+            you can see when something dangerous is moving <em>before</em> it’s too late to react.
           </p>
         </div>
         <div class="action-card">
@@ -910,7 +952,7 @@
           </p>
         </div>
         <div class="action-card">
-          <h3>3. Send Real Complaints, Not Just Comments</h3>
+          <h3>3. Send Real Complaints, Not Just Posts</h3>
           <p>
             When officials cross the line, the platform can help citizens fill out official ethics,
             oversight, or civil-rights forms and send them to the right committee — federal or
@@ -946,6 +988,65 @@
           <span>Learn</span>
           <span>More</span>
           <span>(Demo)</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOLLOW YOUR MONEY / TAX & WASTE -->
+    <section class="money-panel" id="money">
+      <div class="kicker">Follow Your Money</div>
+      <h2>Tax, Waste, &amp; the Cost of a Bloated Government</h2>
+      <p>
+        Every year, the IRS and the states collect enormous amounts of tax money from ordinary
+        people. What almost nobody sees is how much of that money disappears into wasteful
+        programs, duplicated agencies, unnecessary jobs, and contractor deals with no real caps.
+      </p>
+
+      <div class="money-grid">
+        <div class="money-card">
+          <h3>Where the Money Goes (and Disappears)</h3>
+          <p>
+            A real “Follow Your Money” dashboard would show how federal and state budgets are
+            actually spent — and where they’re wasted:
+          </p>
+          <ul>
+            <li>Agencies that grow every year while services get worse.</li>
+            <li>Departments doing the same job as another department.</li>
+            <li>Government jobs that exist to protect budgets, not serve people.</li>
+            <li>“Use it or lose it” spending sprees at the end of the fiscal year.</li>
+          </ul>
+        </div>
+
+        <div class="money-card">
+          <h3>No-Cap Contractors &amp; Endless Projects</h3>
+          <p>
+            Too often, private companies get open-ended contracts with no real spending caps, weak
+            oversight, and no meaningful punishment when projects run over budget.
+          </p>
+          <ul>
+            <li>Contracts that double or triple their original cost.</li>
+            <li>Projects that never finish but keep getting funded.</li>
+            <li>Consulting deals that produce reports, not results.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="money-microgrid">
+        <div class="money-pill">
+          <div class="money-label">Federal View (Concept)</div>
+          <div><strong>IRS &amp; Federal Taxes</strong> — how much is collected, how much is basic
+            operations, and how much is wasted or lost in duplication.</div>
+        </div>
+        <div class="money-pill">
+          <div class="money-label">State View (Concept)</div>
+          <div><strong>State &amp; Local Taxes</strong> — property, sales, and special fees that
+            quietly rise while roads, schools, and services still fall behind.</div>
+        </div>
+        <div class="money-pill">
+          <div class="money-label">Waste Watch (Concept)</div>
+          <div><strong>Government Job &amp; Contractor Waste</strong> — highlighting useless roles,
+            padded departments, and no-cap contracts so citizens can demand cuts at the top, not at
+            the bottom.</div>
         </div>
       </div>
     </section>
@@ -1227,12 +1328,158 @@
             </div>
           </form>
         </article>
+
+        <!-- PETITION #3 -->
+        <article class="petition-card">
+          <div class="petition-label">Petition #3</div>
+          <h3>Follow the Money &amp; Tax Waste Transparency Act</h3>
+          <p><strong>To the Congress and state legislatures of the United States:</strong></p>
+          <p>
+            We, the undersigned, are demanding a new era of honesty about how our tax dollars are
+            collected, spent, and wasted. We call for laws that:
+          </p>
+          <ol>
+            <li>
+              Require a public, easy-to-read breakdown of federal, state, and local spending that
+              any citizen can understand without a law degree.
+            </li>
+            <li>
+              Publish annual waste reports for every major agency, including unused funds, duplicate
+              programs, and bloated departments that do not serve the public.
+            </li>
+            <li>
+              Automatically return unused or unnecessary funds to taxpayers or apply them to paying
+              down national and state debt — not new pet projects.
+            </li>
+          </ol>
+          <p>
+            For too long, Americans have been told to “just trust” that their money is being used
+            wisely. We no longer accept that. If you are proud of how you use our money, you should
+            have no problem showing it in plain English.
+          </p>
+
+          <form action="https://formspree.io/f/xovypnwk" method="POST">
+            <input type="hidden" name="petition" value="Petition #3 – Follow the Money" />
+            <label for="p3-name">Name</label>
+            <input id="p3-name" type="text" name="name" placeholder="Your full name" required />
+
+            <label for="p3-email">Email</label>
+            <input id="p3-email" type="email" name="email" placeholder="you@example.com" required />
+
+            <label for="p3-state">State</label>
+            <select id="p3-state" name="state" required>
+              <option value="">Select your state</option>
+              <option>AL</option><option>AK</option><option>AZ</option><option>AR</option>
+              <option>CA</option><option>CO</option><option>CT</option><option>DE</option>
+              <option>FL</option><option>GA</option><option>HI</option><option>ID</option>
+              <option>IL</option><option>IN</option><option>IA</option><option>KS</option>
+              <option>KY</option><option>LA</option><option>ME</option><option>MD</option>
+              <option>MA</option><option>MI</option><option>MN</option><option>MS</option>
+              <option>MO</option><option>MT</option><option>NE</option><option>NV</option>
+              <option>NH</option><option>NJ</option><option>NM</option><option>NY</option>
+              <option>NC</option><option>ND</option><option>OH</option><option>OK</option>
+              <option>OR</option><option>PA</option><option>RI</option><option>SC</option>
+              <option>SD</option><option>TN</option><option>TX</option><option>UT</option>
+              <option>VT</option><option>VA</option><option>WA</option><option>WV</option>
+              <option>WI</option><option>WY</option>
+            </select>
+
+            <div class="checkbox-row">
+              <input id="p3-consent" type="checkbox" name="consent" required />
+              <label for="p3-consent">
+                I want my representatives to support strong Follow the Money and tax waste
+                transparency laws.
+              </label>
+            </div>
+
+            <button type="submit" class="btn-submit">
+              Sign Petition #3 – Follow the Money
+            </button>
+
+            <div class="form-footnote">
+              Demo only: this petition also goes to your Formspree inbox for counting and export.
+            </div>
+          </form>
+        </article>
+
+        <!-- PETITION #4 -->
+        <article class="petition-card">
+          <div class="petition-label">Petition #4</div>
+          <h3>Stop Useless Government Jobs &amp; No-Cap Contractor Deals</h3>
+          <p><strong>To federal and state leaders:</strong></p>
+          <p>
+            We are tired of watching government grow on paper while nothing improves in our daily
+            lives. We are tired of:
+          </p>
+          <ol>
+            <li>
+              Government jobs that exist mainly to protect budgets and titles, not to serve the
+              American people.
+            </li>
+            <li>
+              Bloated agencies with multiple departments doing the same work, while taxpayers pay
+              the bill.
+            </li>
+            <li>
+              Contractor deals with no meaningful spending caps, weak oversight, and no real
+              consequences when projects go over budget or never deliver.
+            </li>
+          </ol>
+          <p>
+            We demand laws that cap contractor spending, require competitive bidding, and force
+            agencies to justify every new job and every new department in plain English. If a job
+            or contract doesn’t clearly serve the people, it should not be funded with our money.
+          </p>
+
+          <form action="https://formspree.io/f/xovypnwk" method="POST">
+            <input type="hidden" name="petition" value="Petition #4 – Waste & Contractor Caps" />
+            <label for="p4-name">Name</label>
+            <input id="p4-name" type="text" name="name" placeholder="Your full name" required />
+
+            <label for="p4-email">Email</label>
+            <input id="p4-email" type="email" name="email" placeholder="you@example.com" required />
+
+            <label for="p4-state">State</label>
+            <select id="p4-state" name="state" required>
+              <option value="">Select your state</option>
+              <option>AL</option><option>AK</option><option>AZ</option><option>AR</option>
+              <option>CA</option><option>CO</option><option>CT</option><option>DE</option>
+              <option>FL</option><option>GA</option><option>HI</option><option>ID</option>
+              <option>IL</option><option>IN</option><option>IA</option><option>KS</option>
+              <option>KY</option><option>LA</option><option>ME</option><option>MD</option>
+              <option>MA</option><option>MI</option><option>MN</option><option>MS</option>
+              <option>MO</option><option>MT</option><option>NE</option><option>NV</option>
+              <option>NH</option><option>NJ</option><option>NM</option><option>NY</option>
+              <option>NC</option><option>ND</option><option>OH</option><option>OK</option>
+              <option>OR</option><option>PA</option><option>RI</option><option>SC</option>
+              <option>SD</option><option>TN</option><option>TX</option><option>UT</option>
+              <option>VT</option><option>VA</option><option>WA</option><option>WV</option>
+              <option>WI</option><option>WY</option>
+            </select>
+
+            <div class="checkbox-row">
+              <input id="p4-consent" type="checkbox" name="consent" required />
+              <label for="p4-consent">
+                I want government waste, useless positions, and no-cap contractor deals exposed and
+                reduced, not funded forever.
+              </label>
+            </div>
+
+            <button type="submit" class="btn-submit">
+              Sign Petition #4 – Stop Waste
+            </button>
+
+            <div class="form-footnote">
+              Demo only: as with the other petitions, signatures go to your Formspree inbox for now.
+            </div>
+          </form>
+        </article>
       </div>
     </section>
 
     <!-- COMPLAINTS / FORMS -->
     <section class="section" id="complaints">
-      <div class="kicker">Official Complaints &amp; Forms</div>
+      <div class="label-pill">Federal &amp; State Complaints</div>
       <h2>Turn Anger into Action, Not Just Posts</h2>
       <p>
         Most Americans never file a formal complaint because the forms are buried, confusing, or
@@ -1243,36 +1490,98 @@
 
       <div class="complaints-grid">
         <div class="complaint-card">
-          <h3>Federal Ethics &amp; Oversight</h3>
+          <h3>Federal Ethics &amp; Misconduct</h3>
+          <div class="complaint-tagline">
+            For issues involving members of Congress, federal judges, or executive-branch officials.
+          </div>
+
+          <p><strong>Typical issues:</strong></p>
           <p>
-            When members of Congress are accused of serious misconduct, citizens can raise concerns
-            with official ethics and oversight bodies.
+            Ethics violations, corruption, abuse of office, failure to act on serious allegations,
+            or protecting donors and friends instead of the law.
           </p>
+
+          <p><strong>Where this message can go:</strong></p>
           <p>
-            Example links (you can customize later):
-            <br />
-            • House &amp; Senate ethics complaint pages
-            <br />
-            • Office of Congressional Ethics tips form
+            House &amp; Senate Ethics Committees, the Department of Justice, Inspector General
+            offices, and your U.S. Representative and Senators.
           </p>
-          <a href="#top">In a full app, this button would open a guided federal complaint form.</a>
+
+          <form action="https://formspree.io/f/xovypnwk" method="POST">
+            <input type="hidden" name="form" value="Federal Complaint" />
+
+            <label for="fed-name">Name</label>
+            <input id="fed-name" type="text" name="name" placeholder="Your full name" required>
+
+            <label for="fed-email">Email</label>
+            <input id="fed-email" type="email" name="email" placeholder="you@example.com" required>
+
+            <label for="fed-state">State</label>
+            <input id="fed-state" type="text" name="state" placeholder="GA, TX, OH..." required>
+
+            <label for="fed-subject">Subject of complaint</label>
+            <input id="fed-subject" type="text" name="subject" placeholder="Example: Ethics complaint about Senator / Representative">
+
+            <label for="fed-message">What happened?</label>
+            <textarea id="fed-message" name="message"
+              placeholder="Describe what happened, who was involved, and why you believe this crosses the line."></textarea>
+
+            <button type="submit">Send Federal Complaint (Demo – Sends to You)</button>
+          </form>
+
+          <p class="complaint-note">
+            Demo only: right now, this form sends to your Formspree inbox so you can
+            review, edit, and forward to House/Senate ethics or the DOJ. In a full build,
+            automated tools can route complaints directly to the proper offices.
+          </p>
         </div>
-        <div class="complaint-card">
-          <h3>Department of Justice &amp; Civil Rights</h3>
-          <p>
-            For issues involving civil rights violations, patterns of corruption, or abuse of power,
-            citizens can be guided to the right DOJ contact pages.
-          </p>
-          <a href="#top">Future feature: auto-generated DOJ complaint drafts you can review.</a>
-        </div>
+
         <div class="complaint-card">
           <h3>State-Level Complaints</h3>
+          <div class="complaint-tagline">
+            For governors, state legislators, state courts, and local officials.
+          </div>
+
+          <p><strong>Typical issues:</strong></p>
           <p>
-            Every state has its own ethics boards, inspectors general, and complaint processes.
-            America’s Watchlist can eventually route citizens to the correct office based on their
-            state and alert.
+            Unfair tax or rate hikes pushed through without transparency, state agencies ignoring
+            court orders or citizens’ rights, or officials using power to punish critics instead of
+            serving the people.
           </p>
-          <a href="#states">Use the state section above as a starting point.</a>
+
+          <p><strong>Where to send:</strong></p>
+          <p>
+            State ethics commissions, inspectors general, attorneys general, and your state house
+            and senate members.
+          </p>
+
+          <form action="https://formspree.io/f/xovypnwk" method="POST">
+            <input type="hidden" name="form" value="State Complaint" />
+
+            <label for="state-name">Name</label>
+            <input id="state-name" type="text" name="name" placeholder="Your full name" required>
+
+            <label for="state-email">Email</label>
+            <input id="state-email" type="email" name="email" placeholder="you@example.com" required>
+
+            <label for="state-state">State</label>
+            <input id="state-state" type="text" name="state" placeholder="GA, SC, NC..." required>
+
+            <label for="state-city">City / County</label>
+            <input id="state-city" type="text" name="city" placeholder="Your city or county">
+
+            <label for="state-message">Describe the problem</label>
+            <textarea id="state-message" name="message"
+              placeholder="Who is involved? What happened? What should your state leaders do?"></textarea>
+
+            <button type="submit">Send State Complaint (Demo – Sends to You)</button>
+          </form>
+
+          <p class="complaint-note">
+            Demo only: these complaints also arrive in your Formspree inbox so you can
+            forward them to state ethics offices, attorneys general, or local leaders.
+            Later, this can be wired with official state contact links for each state.
+          </p>
         </div>
       </div>
     </section>
