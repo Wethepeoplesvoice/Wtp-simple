@@ -53,11 +53,7 @@
       padding: 18px 16px 80px;
     }
 
-    /* ---------------------- */
-    /* COMPLAINTS SECTION     */
-    /* (early block, some of this is duplicated later but safe) */
-    /* ---------------------- */
-
+    /* --- (early complaints helpers, safe to leave) --- */
     .complaints-section {
       margin-top: 40px;
     }
@@ -123,7 +119,7 @@
       width: 100%;
       display: flex;
       justify-content: center;
-      gap: 26px;
+      gap: 22px;
       padding: 14px 0;
       background: rgba(0, 0, 0, 0.4);
       backdrop-filter: blur(10px);
@@ -131,14 +127,16 @@
       position: sticky;
       top: 0;
       z-index: 9999;
+      flex-wrap: wrap;
     }
 
     .top-nav a {
       color: #f5f5f7;
-      font-size: 15px;
+      font-size: 14px;
       text-decoration: none;
       font-weight: 500;
       letter-spacing: 0.4px;
+      text-transform: uppercase;
     }
 
     .top-nav a:hover {
@@ -393,6 +391,73 @@
     .action-card a {
       color: var(--accent-soft);
       font-size: 13px;
+    }
+
+    /* LIVE VOTE SECTION */
+
+    .poll-section {
+      margin-top: 30px;
+    }
+
+    .poll-card {
+      background: #070b16;
+      border-radius: 22px;
+      padding: 18px 16px 20px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.85);
+    }
+
+    .poll-question {
+      font-size: 18px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .poll-sub {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    .poll-options {
+      margin-top: 8px;
+      margin-bottom: 10px;
+    }
+
+    .poll-options label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      color: var(--text-main);
+      margin-bottom: 6px;
+    }
+
+    .poll-options input[type="radio"] {
+      width: 16px;
+      height: 16px;
+    }
+
+    .poll-comment {
+      margin-top: 10px;
+    }
+
+    .poll-comment input {
+      width: 100%;
+      padding: 9px 10px;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.23);
+      background: #050913;
+      color: var(--text-main);
+      font-size: 14px;
+    }
+
+    .poll-footnote {
+      margin-top: 8px;
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.5;
     }
 
     /* EMAIL / SPONSOR / PANELS / ALERTS etc */
@@ -693,27 +758,6 @@
       margin-top: 16px;
     }
 
-    .complaint-card {
-      background: #070b16;
-      border-radius: 18px;
-      padding: 14px 14px 16px;
-      border: 1px solid rgba(255, 255, 255, 0.18);
-    }
-
-    .complaint-card h3 {
-      margin-bottom: 6px;
-    }
-
-    .complaint-card p {
-      font-size: 13px;
-      color: var(--text-muted);
-    }
-
-    .complaint-card a {
-      font-size: 13px;
-      color: var(--accent-soft);
-    }
-
     .join-panel {
       margin-top: 28px;
       margin-bottom: 20px;
@@ -764,8 +808,7 @@
       }
 
       .top-nav {
-        flex-wrap: wrap;
-        gap: 14px;
+        gap: 12px;
         padding: 10px 6px;
       }
     }
@@ -780,9 +823,10 @@
     <a href="#alerts">Alerts</a>
     <a href="#states">States</a>
     <a href="#townhalls">Town Halls</a>
-    <a href="#vote">Vote</a>
+    <a href="#vote">Action</a>
+    <a href="#live-vote">Live Vote</a>
     <a href="#ideas">Ideas</a>
-    <a href="#petition">Petition</a>
+    <a href="#petition">Petitions</a>
     <a href="#complaints">Complaints</a>
     <a href="#join">Join</a>
   </nav>
@@ -911,7 +955,65 @@
       </div>
     </section>
 
-    <!-- NEW: IDEAS SECTION -->
+    <!-- LIVE VOTE SECTION -->
+    <section class="section poll-section" id="live-vote">
+      <div class="kicker">Live Vote · Demo</div>
+      <h2>Have Your Say Right Now</h2>
+      <p>
+        This simple live vote shows how America’s Watchlist could let millions of citizens weigh in
+        on the same question at the same time — then send those results to Congress and the media.
+        For now, your response goes to your Formspree inbox so you can see it working.
+      </p>
+
+      <div class="poll-card">
+        <div class="poll-question">
+          Should Congress have strict 6-year term limits?
+        </div>
+        <div class="poll-sub">
+          One House member can serve up to three terms (6 years total). One Senate term is six
+          years. After that, they step aside so new voices can serve.
+        </div>
+
+        <form action="https://formspree.io/f/xovypnwk" method="POST">
+          <input type="hidden" name="form" value="Live Vote – 6-Year Term Limits" />
+
+          <div class="poll-options">
+            <label>
+              <input type="radio" name="vote" value="Yes – I support strict 6-year limits" required />
+              Yes – I support strict 6-year limits for Congress.
+            </label>
+            <label>
+              <input type="radio" name="vote" value="No – I do not support 6-year limits" />
+              No – I do not support 6-year limits for Congress.
+            </label>
+          </div>
+
+          <div class="poll-comment">
+            <label for="poll-comment">
+              Optional: Why do you feel this way?
+            </label>
+            <input
+              id="poll-comment"
+              type="text"
+              name="comment"
+              placeholder="1–3 sentences (optional)"
+            />
+          </div>
+
+          <button type="submit" class="btn-submit">
+            Submit My Vote
+          </button>
+
+          <div class="poll-footnote">
+            Demo only: your vote is stored in your Formspree inbox so you can see how people are
+            responding. In a full build, totals could be shown live on the page and shared with
+            Congress, state leaders, and independent media.
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- IDEAS SECTION -->
     <section class="section" id="ideas">
       <div class="kicker">Submit Your Ideas</div>
       <h2>Help Shape What We Push For</h2>
