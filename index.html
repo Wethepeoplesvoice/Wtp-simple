@@ -16,6 +16,9 @@
       --text-muted: #b3b8c9;
       --border-soft: #242b3d;
       --pill-bg: #171f31;
+      --danger: #ff4b5c;
+      --radius-lg: 22px;
+      --radius-md: 16px;
       --shadow-soft: 0 20px 55px rgba(0, 0, 0, 0.85);
       --font-body: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       --font-heading: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -50,7 +53,9 @@
       padding: 18px 16px 80px;
     }
 
-    /* TOP NAV BAR */
+    /* ---------------------- */
+    /* TOP NAV BAR            */
+    /* ---------------------- */
 
     .top-nav {
       width: 100%;
@@ -70,6 +75,7 @@
     .top-nav a {
       color: #f5f5f7;
       font-size: 15px;
+      text-decoration: none;
       font-weight: 500;
       letter-spacing: 0.4px;
     }
@@ -79,7 +85,9 @@
       text-shadow: 0 0 4px rgba(255, 255, 255, 0.4);
     }
 
-    /* HEADER / BRAND */
+    /* ---------------------- */
+    /* HEADER / BRAND         */
+    /* ---------------------- */
 
     header {
       padding-top: 18px;
@@ -122,7 +130,9 @@
       margin-top: 3px;
     }
 
-    /* HERO POSTER */
+    /* ---------------------- */
+    /* HERO POSTER            */
+    /* ---------------------- */
 
     .hero {
       margin-top: 22px;
@@ -156,7 +166,9 @@
       color: var(--text-muted);
     }
 
-    /* TYPOGRAPHY / SECTIONS */
+    /* ---------------------- */
+    /* TYPOGRAPHY / SECTIONS  */
+    /* ---------------------- */
 
     .section {
       margin-top: 30px;
@@ -170,28 +182,27 @@
       margin-bottom: 8px;
     }
 
-    h1,
-    h2,
-    h3,
-    h4 {
+    h1, h2, h3, h4 {
       font-family: var(--font-heading);
       margin: 0;
-      text-transform: uppercase;
     }
 
     h1 {
       font-size: 32px;
       letter-spacing: 0.2em;
+      text-transform: uppercase;
     }
 
     h2 {
       font-size: 22px;
       letter-spacing: 0.14em;
+      text-transform: uppercase;
     }
 
     h3 {
       font-size: 18px;
       letter-spacing: 0.12em;
+      text-transform: uppercase;
     }
 
     p {
@@ -257,7 +268,7 @@
       color: var(--text-main);
     }
 
-    /* EMOTIONAL STORY BLOCK */
+    /* Emotional story block */
 
     .emotional-block {
       margin-top: 26px;
@@ -274,7 +285,7 @@
       margin: 8px 0;
     }
 
-    /* HOT RIGHT NOW BANNER */
+    /* HOT RIGHT NOW banner */
 
     .hot-banner {
       margin-top: 18px;
@@ -294,32 +305,37 @@
       margin-bottom: 4px;
     }
 
-    /* GRIDS */
+    /* TAKE ACTION GRID */
 
-    .action-grid,
-    .alert-grid {
+    .action-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
       gap: 18px;
       margin-top: 16px;
     }
 
-    .action-card,
-    .alert-card {
+    .action-card {
       background: #070b16;
       border-radius: 16px;
-      padding: 14px 16px 16px;
+      padding: 16px;
       border: 1px solid #ffffff22;
       box-shadow: 0 0 18px #00000066;
-      font-size: 14px;
     }
 
-    .alert-tag {
-      font-size: 11px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
+    .action-card h3 {
+      margin-top: 0;
+      margin-bottom: 8px;
+    }
+
+    .action-card p {
+      font-size: 13px;
+      line-height: 1.6;
       color: var(--text-muted);
-      margin-bottom: 6px;
+    }
+
+    .action-card a {
+      color: var(--accent-soft);
+      font-size: 13px;
     }
 
     /* DEMO VOTE PANEL */
@@ -381,7 +397,163 @@
       color: var(--text-muted);
     }
 
-    /* PETITIONS */
+    /* SPONSOR / AD BANNER */
+
+    .sponsor-banner {
+      margin-top: 24px;
+      border-radius: 26px;
+      padding: 16px 16px 18px;
+      background: radial-gradient(circle at left, rgba(255, 186, 99, 0.18), rgba(6, 10, 32, 0.98));
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      display: grid;
+      grid-template-columns: minmax(0, 1.6fr) minmax(0, 0.9fr);
+      gap: 14px;
+      align-items: center;
+    }
+
+    .sponsor-label {
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
+    .sponsor-text {
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .sponsor-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .sponsor-skip {
+      min-width: 88px;
+      height: 88px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .sponsor-main {
+      min-width: 110px;
+      height: 88px;
+      border-radius: 999px;
+      background: radial-gradient(circle at top, #ffba63, #ff7f42);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #000;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: 700;
+    }
+
+    /* STATE SECTION */
+
+    .panel {
+      margin-top: 28px;
+      padding: 20px 18px 22px;
+      border-radius: 26px;
+      background: radial-gradient(circle at top left, rgba(33, 39, 82, 0.8), #050812 70%);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      box-shadow: 0 18px 55px rgba(0, 0, 0, 0.9);
+    }
+
+    .panel-title {
+      font-size: 13px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    .panel h2 {
+      margin-bottom: 8px;
+    }
+
+    .panel-columns {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .panel-card {
+      background: rgba(5, 8, 25, 0.9);
+      border-radius: 20px;
+      padding: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .panel-card h3 {
+      margin-bottom: 6px;
+    }
+
+    .panel-card ul {
+      padding-left: 20px;
+      margin: 6px 0 0;
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    /* ALERTS SECTION */
+
+    .alert-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .alert-card {
+      background: #070b16;
+      border-radius: 18px;
+      padding: 14px 14px 16px;
+      border: 1px solid rgba(255, 255, 255, 0.13);
+    }
+
+    .alert-tag {
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
+    .alert-card h3 {
+      margin-bottom: 6px;
+    }
+
+    /* TOWN HALLS SECTION */
+
+    .town-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 18px;
+      margin-top: 16px;
+    }
+
+    .town-card {
+      background: #070b16;
+      border-radius: 20px;
+      padding: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+    }
+
+    /* PETITIONS SECTION */
 
     .petitions-section {
       margin-top: 32px;
@@ -435,6 +607,12 @@
     .petition-card p {
       font-size: 14px;
       line-height: 1.7;
+    }
+
+    .petition-demo-count {
+      margin-top: 8px;
+      font-size: 12px;
+      color: var(--text-muted);
     }
 
     /* FORMS (join + petitions + ideas) */
@@ -651,6 +829,10 @@
         padding: 18px 14px 20px;
       }
 
+      .sponsor-banner {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
       .panel-columns,
       .town-grid {
         grid-template-columns: minmax(0, 1fr);
@@ -669,667 +851,780 @@
 </head>
 
 <body>
-  <div class="page">
-    <!-- TOP NAV -->
-    <nav class="top-nav">
-      <a href="#alerts">Alerts</a>
-      <a href="#vote">Take Action</a>
-      <a href="#petition">Petitions</a>
-      <a href="#ideas">Ideas</a>
-      <a href="#complaints">Complaints</a>
-      <a href="#donate">Donate</a>
-      <a href="#join">Join</a>
-    </nav>
+<div class="page">
 
-    <main class="shell">
-      <!-- HEADER / BRAND -->
-      <header>
-        <div class="brand-row">
-          <div class="brand-icon">AT</div>
-          <div>
-            <div class="brand-text-main">AMERICA'S TORCH</div>
-            <div class="brand-text-sub">THE FLAME THEY CAN'T BLOW OUT</div>
-          </div>
+  <!-- TOP NAV -->
+  <nav class="top-nav">
+    <a href="#states">States</a>
+    <a href="#townhalls">Town Halls</a>
+    <a href="#alerts">Alerts</a>
+    <a href="#vote">Take Action</a>
+    <a href="#petition">Petitions</a>
+    <a href="#ideas">Ideas</a>
+    <a href="#complaints">Complaints</a>
+    <a href="#donate">Donate</a>
+    <a href="#join">Join</a>
+  </nav>
+
+  <div class="shell">
+    <!-- HEADER / BRAND -->
+    <header>
+      <div class="brand-row">
+        <div class="brand-icon">AT</div>
+        <div>
+          <div class="brand-text-main">AMERICA'S TORCH</div>
+          <div class="brand-text-sub">THE FLAME THEY CAN'T BLOW OUT</div>
         </div>
-      </header>
+      </div>
+    </header>
 
-      <!-- HERO POSTER -->
-      <section class="hero" aria-label="America's Torch Poster">
-        <div class="hero-art-frame">
-          <img
-            src="images/hero-poster.jpg"
-            alt="Poster artwork for America's Torch – citizens holding fragments of the Constitution in front of the Capitol with lightning."
-          />
-        </div>
-        <div class="hero-meta">CONCEPT ART · AMERICA'S TORCH</div>
-      </section>
+    <!-- HERO POSTER -->
+    <section class="hero" aria-label="America's Torch Poster">
+      <div class="hero-art-frame">
+        <img src="images/hero-poster.jpg"
+             alt="Poster artwork for America's Torch – citizens holding fragments of the Constitution in front of the Capitol with lightning." />
+      </div>
+      <div class="hero-meta">CONCEPT ART · AMERICA'S TORCH</div>
+    </section>
 
-      <!-- INTRO / EMOTIONAL STORY -->
-      <section class="section" id="top">
-        <div class="kicker">PROTOTYPE · PEACEFUL CITIZEN MOVEMENT</div>
-        <h1>AMERICA'S TORCH</h1>
-        <div class="accent-line">THE FLAME THEY CAN'T BLOW OUT.</div>
+    <!-- INTRO / EMOTIONAL STORY -->
+    <section class="section" id="top">
+      <div class="kicker">PROTOTYPE · PEACEFUL CITIZEN MOVEMENT</div>
+      <h1>AMERICA'S TORCH</h1>
+      <div class="accent-line">THE FLAME THEY CAN'T BLOW OUT.</div>
 
+      <p>
+        If you’re tired of watching the news and feeling like your voice doesn’t matter, tired of
+        seeing the same people stay in power while life gets more expensive and divided, America’s
+        Torch is built for you.
+      </p>
+
+      <div class="pill-row">
+        <div class="pill"><strong>Citizen-Powered Platform</strong></div>
+        <div class="pill">No Parties</div>
+        <div class="pill">No Violence</div>
+        <div class="pill">No Special Interests</div>
+      </div>
+
+      <div class="btn-row">
+        <a href="#join" class="btn-primary">Join America&rsquo;s Torch</a>
+        <a href="#alerts" class="btn-outline">See Example Alerts</a>
+      </div>
+
+      <div class="emotional-block">
         <p>
-          If you’re tired of watching the news and feeling like your voice doesn’t matter, tired of
-          seeing the same people stay in power while life gets more expensive and divided, America’s
-          Torch is built for you.
+          Government has grown bigger, more complicated, and harder to follow. Most people are
+          working, raising families, and trying to survive — they don’t have hours to dig through
+          8,000-page bills, budgets, and legal language. That fog is where bad decisions, quiet
+          deals, and unfair policies slip through.
+        </p>
+        <p>
+          Every year the IRS and state governments collect huge sums from families, workers, and
+          small businesses. States stack on income taxes, sales taxes, property taxes, gas taxes,
+          “fees,” and fines. We fund bloated agencies, useless positions, and contracts with no
+          spending caps — while ordinary Americans live paycheck to paycheck.
+        </p>
+        <p>
+          At the same time, billionaires, big donors, and media empires pour money into the system
+          to control the story we hear. They keep us divided and distracted while the same insiders
+          stay in office for decades and grow richer off our work.
+        </p>
+        <p>
+          America’s Torch exists for people who are done being played. It’s for moms, dads,
+          grandparents, and young people who still love this country, who still believe in peaceful
+          change, and who know that if we stand together, no government, party, or network will ever
+          blow out our flame.
+        </p>
+        <p>
+          This platform is a simple promise: to shine light on what they’re doing, in language
+          everyone can understand, and give millions of ordinary Americans an easy way to act
+          <em>together</em> — instead of shouting alone at a screen.
+        </p>
+      </div>
+
+      <div class="hot-banner">
+        <strong>Hot Right Now</strong>
+        If the people who swore an oath will not protect our rights, our money, and our peace, then
+        the people themselves must step in — peacefully, clearly, and in numbers too big to ignore.
+        America’s Torch is one way to do that.
+      </div>
+    </section>
+
+    <!-- STATES SECTION (UP TOP) -->
+    <section class="panel" id="states">
+      <div class="panel-title">Built for Every American State</div>
+      <h2>A National Watch, State by State</h2>
+      <p>
+        In a full build, America’s Torch would plug into bill trackers, campaign finance data,
+        public budgets, and real-time feeds so citizens can see what’s happening in their own state —
+        and across the country — in one place.
+      </p>
+
+      <div class="panel-columns">
+        <div class="panel-card">
+          <h3>State Dashboards · <strong>50 States Watching</strong></h3>
+          <p>
+            Each state gets its own dashboard: bills on the move, new spending, tax changes, and who
+            voted yes or no — all in plain English, not legalese.
+          </p>
+          <ul>
+            <li>Bills and resolutions that actually affect households.</li>
+            <li>Major votes with names, not just party lines.</li>
+            <li>New taxes, fees, and rate hikes flagged in advance.</li>
+          </ul>
+        </div>
+        <div class="panel-card">
+          <h3>National View · <strong>Patterns of Power</strong></h3>
+          <p>
+            Citizens can see national trends: which issues keep repeating, which states quietly pass
+            copy-cat bills, and where the same special interests appear again and again.
+          </p>
+          <ul>
+            <li>Spot coordinated pushes from big donors or lobbyists.</li>
+            <li>See which states lead on reforms — and which drag their feet.</li>
+            <li>Share those patterns with neighbors, family, and friends.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- TOWN HALLS SECTION (UP TOP) -->
+    <section class="section" id="townhalls">
+      <div class="kicker">National &amp; State Town Halls</div>
+      <h2>Voice-Only Streams, No Camera Needed</h2>
+      <p>
+        In a full launch, America’s Torch would host national briefings and state-level town halls
+        whenever major alerts cross a threshold — using voice-over and visuals so citizens never
+        have to be on camera.
+      </p>
+
+      <div class="town-grid">
+        <div class="town-card">
+          <h3>National Briefings</h3>
+          <p>
+            A weekly “People’s Update” that breaks down what happened this week: bills, spending,
+            and influence. No drama, no party spin — just straight talk and clear visuals.
+          </p>
+        </div>
+        <div class="town-card">
+          <h3>State Town Halls</h3>
+          <p>
+            When a state crosses a red-flag threshold — like a big tax hike or a suspicious bill —
+            supporters in that state can be invited to a live, voice-only town hall to go deeper and
+            plan peaceful action.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAKE ACTION SECTION + DEMO VOTE -->
+    <section class="section" id="vote">
+      <div class="kicker">TAKE ACTION</div>
+      <h2>A Peaceful Movement for Accountability</h2>
+      <p>
+        America’s Torch is not another place to argue online. It’s a set of tools for real-world,
+        peaceful pressure: citizens seeing the same facts at the same time and moving together.
+      </p>
+
+      <div class="action-grid">
+        <div class="action-card">
+          <h3>1. See What&rsquo;s Really Happening</h3>
+          <p>
+            In a full build, live dashboards would track bills, votes, rate hikes, and spending in
+            plain English — so you can see when something dangerous is moving <em>before</em> it’s
+            too late to react.
+          </p>
+        </div>
+        <div class="action-card">
+          <h3>2. Vote on Proposals &amp; Petitions</h3>
+          <p>
+            Citizens can vote on national proposals, sign focused petitions, and help shape which
+            problems we push on first — instead of waiting for party leaders or cable news to tell
+            us what matters.
+          </p>
+        </div>
+        <div class="action-card">
+          <h3>3. Send Real Complaints, Not Just Posts</h3>
+          <p>
+            When officials cross the line, the platform can help citizens fill out official ethics,
+            oversight, or civil-rights forms and send them to the right committee — federal or
+            state — instead of hunting for links one by one.
+          </p>
+        </div>
+        <div class="action-card">
+          <h3>4. Pressure Without Violence</h3>
+          <p>
+            No riots, no threats, no doxxing. Just millions of citizens watching the same alerts,
+            signing the same petitions, and sending clear, peaceful messages that can’t be ignored.
+          </p>
+        </div>
+      </div>
+
+      <!-- DEMO VOTE BOX -->
+      <div class="vote-panel" aria-label="Demo vote – not secure or official">
+        <h3>Demo Vote: 6-Year Term Limits for Congress</h3>
+        <p>
+          This is a <strong>demo vote</strong> running only in your browser. It is
+          <strong>not secure, not official, and not one-person-one-vote</strong>. It just shows
+          how a simple vote could feel inside America’s Torch.
         </p>
 
-        <div class="pill-row">
-          <div class="pill"><strong>Citizen-Powered Platform</strong></div>
-          <div class="pill">No Parties</div>
-          <div class="pill">No Violence</div>
-          <div class="pill">No Special Interests</div>
-        </div>
-
-        <div class="btn-row">
-          <a href="#join" class="btn-primary">Join America&rsquo;s Torch</a>
-          <a href="#alerts" class="btn-outline">See Example Alerts</a>
-        </div>
-
-        <div class="emotional-block">
-          <p>
-            Government has grown bigger, more complicated, and harder to follow. Most people are
-            working, raising families, and trying to survive — they don’t have hours to dig through
-            8,000-page bills, budgets, and legal language. That fog is where bad decisions, quiet
-            deals, and unfair policies slip through.
-          </p>
-          <p>
-            Every year the IRS and state governments collect huge sums from families, workers, and
-            small businesses. States stack on income taxes, sales taxes, property taxes, gas taxes,
-            “fees,” and fines. We fund bloated agencies, useless positions, and contracts with no
-            spending caps — while ordinary Americans live paycheck to paycheck.
-          </p>
-          <p>
-            At the same time, billionaires, big donors, and media empires pour money into the system
-            to control the story we hear. They keep us divided and distracted while the same insiders
-            stay in office for decades and grow richer off our work.
-          </p>
-          <p>
-            America’s Torch exists for people who are done being played. It’s for moms, dads,
-            grandparents, and young people who still love this country, who still believe in peaceful
-            change, and who know that if we stand together, no government, party, or network will ever
-            blow out our flame.
-          </p>
-          <p>
-            This platform is a simple promise: to shine light on what they’re doing, in language
-            everyone can understand, and give millions of ordinary Americans an easy way to act
-            <em>together</em> — instead of shouting alone at a screen.
-          </p>
-        </div>
-
-        <div class="hot-banner">
-          <strong>Hot Right Now</strong>
-          If the people who swore an oath will not protect our rights, our money, and our peace, then
-          the people themselves must step in — peacefully, clearly, and in numbers too big to ignore.
-          America’s Torch is one way to do that.
-        </div>
-      </section>
-
-      <!-- TAKE ACTION SECTION + DEMO VOTE -->
-      <section class="section" id="vote">
-        <div class="kicker">TAKE ACTION</div>
-        <h2>A Peaceful Movement for Accountability</h2>
-        <p>
-          America’s Torch is not another place to argue online. It’s a set of tools for real-world,
-          peaceful pressure: citizens seeing the same facts at the same time and moving together.
-        </p>
-
-        <div class="action-grid">
-          <article class="action-card">
-            <h3>1. See What&rsquo;s Really Happening</h3>
-            <p>
-              In a full build, live dashboards would track bills, votes, rate hikes, and spending in
-              plain English — so you can see when something dangerous is moving
-              <em>before</em> it’s too late to react.
-            </p>
-          </article>
-
-          <article class="action-card">
-            <h3>2. Vote on Proposals &amp; Petitions</h3>
-            <p>
-              Citizens can vote on national proposals, sign focused petitions, and help shape which
-              problems we push on first — instead of waiting for party leaders or cable news to tell
-              us what matters.
-            </p>
-          </article>
-
-          <article class="action-card">
-            <h3>3. Send Real Complaints, Not Just Posts</h3>
-            <p>
-              When officials cross the line, the platform can help citizens fill out official ethics,
-              oversight, or civil-rights forms and send them to the right committee — federal or
-              state — instead of hunting for links one by one.
-            </p>
-          </article>
-
-          <article class="action-card">
-            <h3>4. Pressure Without Violence</h3>
-            <p>
-              No riots, no threats, no doxxing. Just millions of citizens watching the same alerts,
-              signing the same petitions, and sending clear, peaceful messages that can’t be ignored.
-            </p>
-          </article>
-        </div>
-
-        <!-- DEMO VOTE BOX -->
-        <div class="vote-panel" aria-label="Demo vote – not secure or official">
-          <h3>Demo Vote: 6-Year Term Limits for Congress</h3>
-          <p>
-            This is a <strong>demo vote</strong> running only in your browser. It is
-            <strong>not secure, not official, and not one-person-one-vote</strong>. It just shows
-            how a simple vote could feel inside America’s Torch.
-          </p>
-
-          <div class="vote-buttons">
-            <button class="vote-btn vote-btn-yes" onclick="castDemoVote('yes')">
-              YES – I Support
-            </button>
-            <button class="vote-btn vote-btn-no" onclick="castDemoVote('no')">
-              NO – I Oppose
-            </button>
-          </div>
-
-          <div class="vote-counts">
-            Yes votes (this browser only): <span id="yes-count">0</span><br />
-            No votes (this browser only): <span id="no-count">0</span>
-          </div>
-          <div class="vote-warning">
-            Demo only. Real voting would require secure accounts, identity checks, and strict
-            one-person-one-vote safeguards.
-          </div>
-        </div>
-      </section>
-
-      <!-- ALERTS SECTION -->
-      <section class="section" id="alerts">
-        <div class="kicker">Example Alerts</div>
-        <h2>What America&rsquo;s Torch Could Flag</h2>
-        <p>
-          These are example alerts to show how the platform could look. They’re not live data yet —
-          but this is how “The People’s Eyes on Power” might work once real bill tracking and finance
-          APIs are connected.
-        </p>
-
-        <div class="alert-grid">
-          <article class="alert-card">
-            <div class="alert-tag">Power &amp; Utilities</div>
-            <h3>Red-Flag Rate Hike</h3>
-            <p>
-              <strong>Georgia ·</strong> 12% rate increase tied to fuel surcharges and new fees.
-              Alerts explain who voted for it, what it pays for, and how much the average bill goes up.
-            </p>
-          </article>
-
-          <article class="alert-card">
-            <div class="alert-tag">Cost of Living</div>
-            <h3>Property Tax &amp; Local Spending</h3>
-            <p>
-              <strong>South Carolina ·</strong> New reassessments plus local projects that raise taxes.
-              Citizens can see where the money is going and who pushed it through.
-            </p>
-          </article>
-
-          <article class="alert-card">
-            <div class="alert-tag">Sneaky Bills</div>
-            <h3>Hidden Riders &amp; Midnight Votes</h3>
-            <p>
-              Flags when unrelated items are stuffed into must-pass bills or when major votes are
-              scheduled late at night or during holidays.
-            </p>
-          </article>
-
-          <article class="alert-card">
-            <div class="alert-tag">Ethics &amp; Trust</div>
-            <h3>When Officials Cross the Line</h3>
-            <p>
-              Alerts trigger when an official is formally reprimanded, investigated, or tied to serious
-              misconduct — and show citizens exactly how to respond peacefully but firmly.
-            </p>
-          </article>
-        </div>
-      </section>
-
-      <!-- NATIONAL PETITIONS -->
-      <section class="petitions-section" id="petition">
-        <div class="kicker">National Petitions – America&rsquo;s Torch</div>
-        <h2>We&rsquo;re Done Being Ignored</h2>
-
-        <div class="petitions-intro">
-          <p>
-            These petitions are written for everyday Americans — not lobbyists, not party insiders.
-            They focus on the same core problem: a government that has drifted away from the people
-            who are supposed to be in charge.
-          </p>
-          <p>
-            Right now, this is a prototype. When you sign below, your entry goes to a secure inbox via
-            Formspree so counts can be tracked. In a full build, verified U.S.-citizen accounts and
-            delivery tools would send these messages directly to Congress and state leaders.
-          </p>
-          <p>
-            Share this page link with friends when you’re ready to push a petition:
-            <br />
-            <strong>https://wtp-simple-lyq0gs1p9-reerees-projects.vercel.app/</strong>
-          </p>
-        </div>
-
-        <div class="petition-grid">
-          <!-- PETITION #1 -->
-          <article class="petition-card">
-            <div class="petition-label">Petition #1</div>
-            <h3>Real Transparency and Accountability in Government</h3>
-            <p><strong>To the elected officials of the United States:</strong></p>
-            <p>
-              We, the undersigned citizens, are deeply concerned about the growing distance between
-              government power and the people it is supposed to serve. We call for:
-            </p>
-            <ol>
-              <li>
-                Real-time transparency for major federal spending, rate hikes, and new taxes that
-                impact households.
-              </li>
-              <li>
-                Full disclosure of large donations, financial conflicts, and foreign-linked income for
-                all members of Congress and senior officials, with easy, public tools for citizens to
-                see who is paying whom.
-              </li>
-              <li>
-                Stronger, faster oversight when officials abuse their office, break the public trust,
-                ignore the will of the people, or protect their friends instead of the law.
-              </li>
-            </ol>
-            <p>
-              These reforms are not about left or right — they are about restoring basic trust,
-              honesty, and accountability in a government that is supposed to belong to the people.
-            </p>
-
-            <form action="https://formspree.io/f/xovypnwk" method="POST">
-              <input type="hidden" name="petition" value="Petition #1 – Accountability" />
-              <label for="p1-name">Name</label>
-              <input id="p1-name" type="text" name="name" placeholder="Your full name" required />
-
-              <label for="p1-email">Email</label>
-              <input id="p1-email" type="email" name="email" placeholder="you@example.com" required />
-
-              <label for="p1-state">State</label>
-              <select id="p1-state" name="state" required>
-                <option value="">Select your state</option>
-                <option>AL</option><option>AK</option><option>AZ</option><option>AR</option>
-                <option>CA</option><option>CO</option><option>CT</option><option>DE</option>
-                <option>FL</option><option>GA</option><option>HI</option><option>ID</option>
-                <option>IL</option><option>IN</option><option>IA</option><option>KS</option>
-                <option>KY</option><option>LA</option><option>ME</option><option>MD</option>
-                <option>MA</option><option>MI</option><option>MN</option><option>MS</option>
-                <option>MO</option><option>MT</option><option>NE</option><option>NV</option>
-                <option>NH</option><option>NJ</option><option>NM</option><option>NY</option>
-                <option>NC</option><option>ND</option><option>OH</option><option>OK</option>
-                <option>OR</option><option>PA</option><option>RI</option><option>SC</option>
-                <option>SD</option><option>TN</option><option>TX</option><option>UT</option>
-                <option>VT</option><option>VA</option><option>WA</option><option>WV</option>
-                <option>WI</option><option>WY</option>
-              </select>
-
-              <div class="checkbox-row">
-                <input id="p1-consent" type="checkbox" name="consent" required />
-                <label for="p1-consent">
-                  I affirm that I am a U.S. resident adding my name to this petition, and I want this
-                  message delivered to my representatives.
-                </label>
-              </div>
-
-              <button type="submit" class="btn-submit">
-                Sign Petition #1 – Accountability
-              </button>
-
-              <div class="form-footnote">
-                Demo only: for now, your signature goes to your Formspree inbox so you can count and
-                export them later. In a full build, verified U.S.-citizen accounts and direct-delivery
-                tools would send this same message straight to Congress and state leaders.
-              </div>
-            </form>
-          </article>
-
-          <!-- PETITION #2 -->
-          <article class="petition-card">
-            <div class="petition-label">Petition #2</div>
-            <h3>6-Year Term Limits for Congress</h3>
-            <p><strong>To the United States Congress:</strong></p>
-            <p>
-              We, the undersigned, believe that public office is a temporary duty, not a lifetime
-              career. When the same politicians stay in power for decades, they become more loyal to
-              donors, lobbyists, and their own status than to the people back home.
-            </p>
-            <p>We call for a national law that:</p>
-            <ol>
-              <li>Limits members of the House to a total of <strong>three terms</strong> (6 years).</li>
-              <li>Limits members of the Senate to a total of <strong>one term</strong> (6 years).</li>
-              <li>
-                Prevents any member from using loopholes, appointments, or “musical chairs” jobs to
-                stay in power indefinitely.
-              </li>
-            </ol>
-            <p>
-              Without real term limits, the American people will never fully trust the federal
-              government again. Power will never return to ordinary citizens as long as the same
-              insiders stay in office for life, fueled by big donors and billionaire money.
-            </p>
-
-            <form action="https://formspree.io/f/xovypnwk" method="POST">
-              <input type="hidden" name="petition" value="Petition #2 – 6-Year Term Limits" />
-              <label for="p2-name">Name</label>
-              <input id="p2-name" type="text" name="name" placeholder="Your full name" required />
-
-              <label for="p2-email">Email</label>
-              <input id="p2-email" type="email" name="email" placeholder="you@example.com" required />
-
-              <label for="p2-state">State</label>
-              <select id="p2-state" name="state" required>
-                <option value="">Select your state</option>
-                <option>AL</option><option>AK</option><option>AZ</option><option>AR</option>
-                <option>CA</option><option>CO</option><option>CT</option><option>DE</option>
-                <option>FL</option><option>GA</option><option>HI</option><option>ID</option>
-                <option>IL</option><option>IN</option><option>IA</option><option>KS</option>
-                <option>KY</option><option>LA</option><option>ME</option><option>MD</option>
-                <option>MA</option><option>MI</option><option>MN</option><option>MS</option>
-                <option>MO</option><option>MT</option><option>NE</option><option>NV</option>
-                <option>NH</option><option>NJ</option><option>NM</option><option>NY</option>
-                <option>NC</option><option>ND</option><option>OH</option><option>OK</option>
-                <option>OR</option><option>PA</option><option>RI</option><option>SC</option>
-                <option>SD</option><option>TN</option><option>TX</option><option>UT</option>
-                <option>VT</option><option>VA</option><option>WA</option><option>WV</option>
-                <option>WI</option><option>WY</option>
-              </select>
-
-              <div class="checkbox-row">
-                <input id="p2-consent" type="checkbox" name="consent" required />
-                <label for="p2-consent">
-                  I support 6-year term limits for Congress and want this message delivered to my
-                  elected officials.
-                </label>
-              </div>
-
-              <button type="submit" class="btn-submit">
-                Sign Petition #2 – Term Limits
-              </button>
-
-              <div class="form-footnote">
-                Demo only: like Petition #1, signatures are stored in your Formspree inbox for now so
-                you can track and export them. In a future build, they can be verified and forwarded
-                automatically to Congress.
-              </div>
-            </form>
-          </article>
-        </div>
-      </section>
-
-      <!-- IDEAS SECTION -->
-      <section class="ideas-panel" id="ideas">
-        <div class="kicker">The People’s Ideas</div>
-        <h2>Send Ideas Straight from the People</h2>
-        <p>
-          America’s Torch isn’t just about one person’s ideas — it’s about yours. Use this space to
-          suggest laws, reforms, and protections you believe the American people should vote on. In a
-          full build, the most-supported ideas could be turned into petitions and Article V–style
-          proposals for nationwide debate.
-        </p>
-
-        <form action="https://formspree.io/f/xovypnwk" method="POST">
-          <input type="hidden" name="form" value="Ideas – America's Torch" />
-
-          <label for="idea-name">Name (optional)</label>
-          <input
-            id="idea-name"
-            type="text"
-            name="name"
-            placeholder="Your name (or leave blank)"
-          />
-
-          <label for="idea-state">State</label>
-          <select id="idea-state" name="state">
-            <option value="">Select your state</option>
-            <option>AL</option><option>AK</option><option>AZ</option><option>AR</option>
-            <option>CA</option><option>CO</option><option>CT</option><option>DE</option>
-            <option>FL</option><option>GA</option><option>HI</option><option>ID</option>
-            <option>IL</option><option>IN</option><option>IA</option><option>KS</option>
-            <option>KY</option><option>LA</option><option>ME</option><option>MD</option>
-            <option>MA</option><option>MI</option><option>MN</option><option>MS</option>
-            <option>MO</option><option>MT</option><option>NE</option><option>NV</option>
-            <option>NH</option><option>NJ</option><option>NM</option><option>NY</option>
-            <option>NC</option><option>ND</option><option>OH</option><option>OK</option>
-            <option>OR</option><option>PA</option><option>RI</option><option>SC</option>
-            <option>SD</option><option>TN</option><option>TX</option><option>UT</option>
-            <option>VT</option><option>VA</option><option>WA</option><option>WV</option>
-            <option>WI</option><option>WY</option>
-          </select>
-
-          <label for="idea-text">Your Idea</label>
-          <textarea
-            id="idea-text"
-            name="idea"
-            placeholder="Explain the change you want: what’s broken, what needs to change, and how it should work instead."
-          ></textarea>
-
-          <button type="submit" class="btn-submit">
-            Submit Idea
+        <div class="vote-buttons">
+          <button class="vote-btn vote-btn-yes" onclick="castDemoVote('yes')">
+            YES – I Support
           </button>
-
-          <div class="form-footnote">
-            Demo only: ideas go to your Formspree inbox so you can read, tag, and sort them later.
-            In a full build, ideas could be up-voted and turned into public proposals.
-          </div>
-        </form>
-      </section>
-
-      <!-- COMPLAINTS / FORMS -->
-      <section class="complaints-section" id="complaints">
-        <div class="kicker">Official Complaints &amp; Forms</div>
-        <h2>Turn Anger into Action, Not Just Posts</h2>
-        <p>
-          Most Americans never file a formal complaint because the forms are buried, confusing, or
-          scattered across dozens of sites. America’s Torch aims to change that by putting the most
-          important links in one place — and eventually generating pre-filled forms based on the
-          alerts you care about.
-        </p>
-
-        <div class="complaints-grid">
-          <article class="complaint-card">
-            <h3>Federal Ethics &amp; Oversight</h3>
-            <div class="complaint-tagline">
-              When members of Congress are accused of serious misconduct, citizens can raise concerns
-              with official ethics and oversight bodies.
-            </div>
-            <ul>
-              <li>U.S. House Committee on Ethics complaint information.</li>
-              <li>Office of Congressional Ethics (OCE) tips and referrals.</li>
-              <li>U.S. Senate Select Committee on Ethics complaint guidance.</li>
-            </ul>
-            <a href="https://ethics.house.gov" target="_blank" rel="noopener noreferrer">
-              Open House Ethics site
-            </a>
-            <a href="https://oce.house.gov" target="_blank" rel="noopener noreferrer">
-              Open Office of Congressional Ethics
-            </a>
-            <a href="https://www.ethics.senate.gov" target="_blank" rel="noopener noreferrer">
-              Open Senate Ethics site
-            </a>
-            <div class="complaint-note">
-              In a full app, one button here would open a guided federal complaint form that fills in
-              names, dates, and bill numbers for you.
-            </div>
-          </article>
-
-          <article class="complaint-card">
-            <h3>Department of Justice &amp; Civil Rights</h3>
-            <div class="complaint-tagline">
-              For issues involving civil rights violations, patterns of corruption, or abuse of power,
-              citizens can be guided to the right DOJ contact pages.
-            </div>
-            <ul>
-              <li>Report civil-rights violations directly to the DOJ.</li>
-              <li>Send tips on public corruption and misuse of office.</li>
-            </ul>
-            <a href="https://civilrights.justice.gov" target="_blank" rel="noopener noreferrer">
-              File a civil-rights report
-            </a>
-            <a
-              href="https://www.justice.gov/doj/webform/your-message-department-justice"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Contact the Department of Justice
-            </a>
-            <div class="complaint-note">
-              Future feature: auto-generated DOJ complaint drafts based on alerts you follow — you
-              review, edit, and then submit yourself.
-            </div>
-          </article>
-
-          <article class="complaint-card">
-            <h3>State-Level Complaints</h3>
-            <div class="complaint-tagline">
-              Every state has its own ethics boards, inspectors general, and complaint processes.
-              America’s Torch can eventually route citizens to the correct office automatically.
-            </div>
-            <ul>
-              <li>Find your state Attorney General’s office.</li>
-              <li>Look up state-level ethics or inspector-general contacts.</li>
-              <li>Report misuse of state or local tax dollars.</li>
-            </ul>
-            <a href="https://www.naag.org/find-my-ag/" target="_blank" rel="noopener noreferrer">
-              Find your State Attorney General
-            </a>
-            <div class="complaint-note">
-              In a full build, alerts for your state could link directly into these complaint flows so
-              you’re always one or two clicks away from real action.
-            </div>
-          </article>
-
-          <article class="complaint-card">
-            <h3>Media &amp; Narrative Accountability</h3>
-            <div class="complaint-tagline">
-              The media should inform, not inflame. When networks push one-sided narratives, hide key
-              facts, or fuel division for ratings, citizens deserve a way to push back.
-            </div>
-            <ul>
-              <li>Contact major news networks and demand factual, balanced reporting.</li>
-              <li>Raise concerns with ombudsman or standards editors where available.</li>
-              <li>
-                Organize peaceful pressure campaigns when coverage is clearly misleading or
-                intentionally divisive.
-              </li>
-            </ul>
-            <a href="#ideas">
-              Use the Ideas form to propose specific media reforms and accountability rules.
-            </a>
-            <div class="complaint-note">
-              In a full build, this section could help generate coordinated but peaceful email
-              campaigns to media outlets when coverage crosses the line.
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <!-- DONATION SECTION -->
-      <section class="donate-panel" id="donate">
-        <div class="kicker">Support the Movement</div>
-        <h2>Help Keep the Torch Burning</h2>
-        <p>
-          If you want to support building out America’s Torch — servers, tools, research, and
-          outreach — you’ll eventually be able to donate here. No big donors controlling the message,
-          no party machine, just ordinary Americans chipping in what they can.
-        </p>
-        <p>
-          For now, this button is just a placeholder. When you’re ready, you can connect it to
-          Stripe, PayPal, or another trusted payment processor.
-        </p>
-
-        <a href="#join" class="btn-donate">Donate (Coming Soon)</a>
-      </section>
-
-      <!-- JOIN SECTION -->
-      <section class="join-panel" id="join">
-        <div class="kicker">Join the Movement</div>
-        <h2>Keep the Flame Burning</h2>
-        <p>
-          This is the early prototype of America’s Torch. If you want to help shape it — from alerts
-          and dashboards to town halls, petitions, and idea votes — add your name below. You’ll be the
-          first to know when new tools go live.
-        </p>
-
-        <form action="https://formspree.io/f/xovypnwk" method="POST">
-          <input type="hidden" name="form" value="Join America's Torch" />
-          <label for="join-name">Name</label>
-          <input id="join-name" type="text" name="name" placeholder="Your full name" required />
-
-          <label for="join-email">Email</label>
-          <input
-            id="join-email"
-            type="email"
-            name="email"
-            placeholder="you@example.com"
-            required
-          />
-
-          <label for="join-state">State</label>
-          <select id="join-state" name="state" required>
-            <option value="">Select your state</option>
-            <option>AL</option><option>AK</option><option>AZ</option><option>AR</option>
-            <option>CA</option><option>CO</option><option>CT</option><option>DE</option>
-            <option>FL</option><option>GA</option><option>HI</option><option>ID</option>
-            <option>IL</option><option>IN</option><option>IA</option><option>KS</option>
-            <option>KY</option><option>LA</option><option>ME</option><option>MD</option>
-            <option>MA</option><option>MI</option><option>MN</option><option>MS</option>
-            <option>MO</option><option>MT</option><option>NE</option><option>NV</option>
-            <option>NH</option><option>NJ</option><option>NM</option><option>NY</option>
-            <option>NC</option><option>ND</option><option>OH</option><option>OK</option>
-            <option>OR</option><option>PA</option><option>RI</option><option>SC</option>
-            <option>SD</option><option>TN</option><option>TX</option><option>UT</option>
-            <option>VT</option><option>VA</option><option>WA</option><option>WV</option>
-            <option>WI</option><option>WY</option>
-          </select>
-
-          <button type="submit" class="btn-submit">
-            Join America&rsquo;s Torch
+          <button class="vote-btn vote-btn-no" onclick="castDemoVote('no')">
+            NO – I Oppose
           </button>
+        </div>
 
-          <div class="form-footnote">
-            Demo only: your info goes to Formspree so you can export and manage it later. No tracking
-            scripts, no party lists, no selling data — ever.
+        <div class="vote-counts">
+          Yes votes (this browser only): <span id="yes-count">0</span><br />
+          No votes (this browser only): <span id="no-count">0</span>
+        </div>
+        <div class="vote-warning">
+          Demo only. Real voting would require secure accounts, identity checks, and strict
+          one-person-one-vote safeguards.
+        </div>
+      </div>
+    </section>
+
+    <!-- SPONSOR / DEMO BANNER -->
+    <section class="sponsor-banner">
+      <div>
+        <div class="sponsor-label">Sponsor Message (Demo)</div>
+        <div class="sponsor-text">
+          <strong>Keep America’s Torch Burning.</strong> A small banner like this could help fund
+          servers and tools for citizens — with no tracking, no pop-ups, and no forced ads. People
+          could ignore it, skip it, or tap to learn more anytime.
+        </div>
+      </div>
+      <div class="sponsor-actions">
+        <div class="sponsor-skip">
+          <span>Skip</span>
+          <span>Ad</span>
+        </div>
+        <div class="sponsor-main">
+          <span>Learn</span>
+          <span>More</span>
+          <span>(Demo)</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ALERTS SECTION -->
+    <section class="section" id="alerts">
+      <div class="kicker">Example Alerts</div>
+      <h2>What America&rsquo;s Torch Could Flag</h2>
+      <p>
+        These are example alerts to show how the platform could look. They’re not live data yet —
+        but this is how “The People’s Eyes on Power” might work once real bill tracking and finance
+        APIs are connected.
+      </p>
+
+      <div class="alert-grid">
+        <div class="alert-card">
+          <div class="alert-tag">Power &amp; Utilities</div>
+          <h3>Red-Flag Rate Hike</h3>
+          <p>
+            <strong>Georgia ·</strong> 12% rate increase tied to fuel surcharges and new fees.
+            Alerts explain who voted for it, what it pays for, and how much the average bill goes up.
+          </p>
+        </div>
+        <div class="alert-card">
+          <div class="alert-tag">Cost of Living</div>
+          <h3>Property Tax &amp; Local Spending</h3>
+          <p>
+            <strong>South Carolina ·</strong> New reassessments plus local projects that raise taxes.
+            Citizens can see where the money is going and who pushed it through.
+          </p>
+        </div>
+        <div class="alert-card">
+          <div class="alert-tag">Sneaky Bills</div>
+          <h3>Hidden Riders &amp; Midnight Votes</h3>
+          <p>
+            Flags when unrelated items are stuffed into must-pass bills or when major votes are
+            scheduled late at night or during holidays.
+          </p>
+        </div>
+        <div class="alert-card">
+          <div class="alert-tag">Ethics &amp; Trust</div>
+          <h3>When Officials Cross the Line</h3>
+          <p>
+            Alerts trigger when an official is formally reprimanded, investigated, or tied to serious
+            misconduct — and show citizens exactly how to respond peacefully but firmly.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- NATIONAL PETITIONS -->
+    <section class="petitions-section" id="petition">
+      <div class="kicker">National Petitions – America&rsquo;s Torch</div>
+      <h2>We&rsquo;re Done Being Ignored</h2>
+
+      <div class="petitions-intro">
+        <p>
+          These petitions are written for everyday Americans — not lobbyists, not party insiders.
+          They focus on the same core problem: a government that has drifted away from the people
+          who are supposed to be in charge.
+        </p>
+        <p>
+          Right now, this is a prototype. When you sign below, your entry goes to a secure inbox via
+          Formspree so counts can be tracked. In a full build, verified U.S.-citizen accounts and
+          delivery tools would send these messages directly to Congress and state leaders.
+        </p>
+        <p>
+          Share this page link with friends when you’re ready to push a petition:
+          <br />
+          <strong>https://wtp-simple-lyq0gs1p9-reerees-projects.vercel.app/</strong>
+        </p>
+      </div>
+
+      <div class="petition-grid">
+        <!-- PETITION #1 -->
+        <article class="petition-card">
+          <div class="petition-label">Petition #1</div>
+          <h3>Real Transparency and Accountability in Government</h3>
+          <p><strong>To the elected officials of the United States:</strong></p>
+          <p>
+            We, the undersigned citizens, are deeply concerned about the growing distance between
+            government power and the people it is supposed to serve. We call for:
+          </p>
+          <ol>
+            <li>
+              Real-time transparency for major federal spending, rate hikes, and new taxes that
+              impact households.
+            </li>
+            <li>
+              Full disclosure of large donations, financial conflicts, and foreign-linked income for
+              all members of Congress and senior officials, with easy, public tools for citizens to
+              see who is paying whom.
+            </li>
+            <li>
+              Stronger, faster oversight when officials abuse their office, break the public trust,
+              ignore the will of the people, or protect their friends instead of the law.
+            </li>
+          </ol>
+          <p>
+            These reforms are not about left or right — they are about restoring basic trust,
+            honesty, and accountability in a government that is supposed to belong to the people.
+          </p>
+
+          <p class="petition-demo-count">
+            Demo signatures recorded on this browser: <span id="p1-demo-count">0</span>
+          </p>
+
+          <form id="petition1-form" action="https://formspree.io/f/xovypnwk" method="POST">
+            <input type="hidden" name="petition" value="Petition #1 – Accountability" />
+            <label for="p1-name">Name</label>
+            <input id="p1-name" type="text" name="name" placeholder="Your full name" required />
+
+            <label for="p1-email">Email</label>
+            <input id="p1-email" type="email" name="email" placeholder="you@example.com" required />
+
+            <label for="p1-state">State</label>
+            <select id="p1-state" name="state" required>
+              <option value="">Select your state</option>
+              <option>AL</option><option>AK</option><option>AZ</option><option>AR</option>
+              <option>CA</option><option>CO</option><option>CT</option><option>DE</option>
+              <option>FL</option><option>GA</option><option>HI</option><option>ID</option>
+              <option>IL</option><option>IN</option><option>IA</option><option>KS</option>
+              <option>KY</option><option>LA</option><option>ME</option><option>MD</option>
+              <option>MA</option><option>MI</option><option>MN</option><option>MS</option>
+              <option>MO</option><option>MT</option><option>NE</option><option>NV</option>
+              <option>NH</option><option>NJ</option><option>NM</option><option>NY</option>
+              <option>NC</option><option>ND</option><option>OH</option><option>OK</option>
+              <option>OR</option><option>PA</option><option>RI</option><option>SC</option>
+              <option>SD</option><option>TN</option><option>TX</option><option>UT</option>
+              <option>VT</option><option>VA</option><option>WA</option><option>WV</option>
+              <option>WI</option><option>WY</option>
+            </select>
+
+            <div class="checkbox-row">
+              <input id="p1-consent" type="checkbox" name="consent" required />
+              <label for="p1-consent">
+                I affirm that I am a U.S. resident adding my name to this petition, and I want this
+                message delivered to my representatives.
+              </label>
+            </div>
+
+            <button type="submit" class="btn-submit">
+              Sign Petition #1 – Accountability
+            </button>
+
+            <div class="form-footnote">
+              Demo only: for now, your signature goes to your Formspree inbox so you can count and
+              export them later. In a full build, verified U.S.-citizen accounts and direct-delivery
+              tools would send this same message straight to Congress and state leaders.
+            </div>
+          </form>
+        </article>
+
+        <!-- PETITION #2 -->
+        <article class="petition-card">
+          <div class="petition-label">Petition #2</div>
+          <h3>6-Year Term Limits for Congress</h3>
+          <p><strong>To the United States Congress:</strong></p>
+          <p>
+            We, the undersigned, believe that public office is a temporary duty, not a lifetime
+            career. When the same politicians stay in power for decades, they become more loyal to
+            donors, lobbyists, and their own status than to the people back home.
+          </p>
+          <p>We call for a national law that:</p>
+          <ol>
+            <li>Limits members of the House to a total of <strong>three terms</strong> (6 years).</li>
+            <li>Limits members of the Senate to a total of <strong>one term</strong> (6 years).</li>
+            <li>
+              Prevents any member from using loopholes, appointments, or “musical chairs” jobs to
+              stay in power indefinitely.
+            </li>
+          </ol>
+          <p>
+            Without real term limits, the American people will never fully trust the federal
+            government again. Power will never return to ordinary citizens as long as the same
+            insiders stay in office for life, fueled by big donors and billionaire money.
+          </p>
+
+          <p class="petition-demo-count">
+            Demo signatures recorded on this browser: <span id="p2-demo-count">0</span>
+          </p>
+
+          <form id="petition2-form" action="https://formspree.io/f/xovypnwk" method="POST">
+            <input type="hidden" name="petition" value="Petition #2 – 6-Year Term Limits" />
+            <label for="p2-name">Name</label>
+            <input id="p2-name" type="text" name="name" placeholder="Your full name" required />
+
+            <label for="p2-email">Email</label>
+            <input id="p2-email" type="email" name="email" placeholder="you@example.com" required />
+
+            <label for="p2-state">State</label>
+            <select id="p2-state" name="state" required>
+              <option value="">Select your state</option>
+              <option>AL</option><option>AK</option><option>AZ</option><option>AR</option>
+              <option>CA</option><option>CO</option><option>CT</option><option>DE</option>
+              <option>FL</option><option>GA</option><option>HI</option><option>ID</option>
+              <option>IL</option><option>IN</option><option>IA</option><option>KS</option>
+              <option>KY</option><option>LA</option><option>ME</option><option>MD</option>
+              <option>MA</option><option>MI</option><option>MN</option><option>MS</option>
+              <option>MO</option><option>MT</option><option>NE</option><option>NV</option>
+              <option>NH</option><option>NJ</option><option>NM</option><option>NY</option>
+              <option>NC</option><option>ND</option><option>OH</option><option>OK</option>
+              <option>OR</option><option>PA</option><option>RI</option><option>SC</option>
+              <option>SD</option><option>TN</option><option>TX</option><option>UT</option>
+              <option>VT</option><option>VA</option><option>WA</option><option>WV</option>
+              <option>WI</option><option>WY</option>
+            </select>
+
+            <div class="checkbox-row">
+              <input id="p2-consent" type="checkbox" name="consent" required />
+              <label for="p2-consent">
+                I support 6-year term limits for Congress and want this message delivered to my
+                elected officials.
+              </label>
+            </div>
+
+            <button type="submit" class="btn-submit">
+              Sign Petition #2 – Term Limits
+            </button>
+
+            <div class="form-footnote">
+              Demo only: like Petition #1, signatures are stored in your Formspree inbox for now so
+              you can track and export them. In a future build, they can be verified and forwarded
+              automatically to Congress.
+            </div>
+          </form>
+        </article>
+      </div>
+    </section>
+
+    <!-- IDEAS SECTION -->
+    <section class="ideas-panel" id="ideas">
+      <div class="kicker">The People’s Ideas</div>
+      <h2>Send Ideas Straight from the People</h2>
+      <p>
+        America’s Torch isn’t just about one person’s ideas — it’s about yours. Use this space to
+        suggest laws, reforms, and protections you believe the American people should vote on. In a
+        full build, the most-supported ideas could be turned into petitions and Article V–style
+        proposals for nationwide debate.
+      </p>
+
+      <form action="https://formspree.io/f/xovypnwk" method="POST">
+        <input type="hidden" name="form" value="Ideas – America's Torch" />
+
+        <label for="idea-name">Name (optional)</label>
+        <input id="idea-name" type="text" name="name" placeholder="Your name (or leave blank)" />
+
+        <label for="idea-state">State</label>
+        <select id="idea-state" name="state">
+          <option value="">Select your state</option>
+          <option>AL</option><option>AK</option><option>AZ</option><option>AR</option>
+          <option>CA</option><option>CO</option><option>CT</option><option>DE</option>
+          <option>FL</option><option>GA</option><option>HI</option><option>ID</option>
+          <option>IL</option><option>IN</option><option>IA</option><option>KS</option>
+          <option>KY</option><option>LA</option><option>ME</option><option>MD</option>
+          <option>MA</option><option>MI</option><option>MN</option><option>MS</option>
+          <option>MO</option><option>MT</option><option>NE</option><option>NV</option>
+          <option>NH</option><option>NJ</option><option>NM</option><option>NY</option>
+          <option>NC</option><option>ND</option><option>OH</option><option>OK</option>
+          <option>OR</option><option>PA</option><option>RI</option><option>SC</option>
+          <option>SD</option><option>TN</option><option>TX</option><option>UT</option>
+          <option>VT</option><option>VA</option><option>WA</option><option>WV</option>
+          <option>WI</option><option>WY</option>
+        </select>
+
+        <label for="idea-text">Your Idea</label>
+        <textarea id="idea-text" name="idea"
+                  placeholder="Explain the change you want: what’s broken, what needs to change, and how it should work instead."></textarea>
+
+        <button type="submit" class="btn-submit">
+          Submit Idea
+        </button>
+
+        <div class="form-footnote">
+          Demo only: ideas go to your Formspree inbox so you can read, tag, and sort them later.
+          In a full build, ideas could be up-voted and turned into public proposals.
+        </div>
+      </form>
+    </section>
+
+    <!-- COMPLAINTS / FORMS -->
+    <section class="complaints-section" id="complaints">
+      <div class="kicker">Official Complaints &amp; Forms</div>
+      <h2>Turn Anger into Action, Not Just Posts</h2>
+      <p>
+        Most Americans never file a formal complaint because the forms are buried, confusing, or
+        scattered across dozens of sites. America’s Torch aims to change that by putting the most
+        important links in one place — and eventually generating pre-filled forms based on the
+        alerts you care about.
+      </p>
+
+      <div class="complaints-grid">
+        <div class="complaint-card">
+          <h3>Federal Ethics &amp; Oversight</h3>
+          <div class="complaint-tagline">
+            When members of Congress are accused of serious misconduct, citizens can raise concerns
+            with official ethics and oversight bodies.
           </div>
-        </form>
-      </section>
+          <ul>
+            <li>U.S. House Committee on Ethics complaint information.</li>
+            <li>Office of Congressional Ethics (OCE) tips and referrals.</li>
+            <li>U.S. Senate Select Committee on Ethics complaint guidance.</li>
+          </ul>
+          <a href="https://ethics.house.gov" target="_blank" rel="noopener noreferrer">
+            Open House Ethics site
+          </a>
+          <a href="https://oce.house.gov" target="_blank" rel="noopener noreferrer">
+            Open Office of Congressional Ethics
+          </a>
+          <a href="https://www.ethics.senate.gov" target="_blank" rel="noopener noreferrer">
+            Open Senate Ethics site
+          </a>
+          <div class="complaint-note">
+            In a full app, one button here would open a guided federal complaint form that fills in
+            names, dates, and bill numbers for you.
+          </div>
+        </div>
 
-      <footer>
-        Prototype only · No legal, financial, or voting advice. America’s Torch is a peaceful,
-        citizen-powered concept for accountability and transparency.
-      </footer>
-    </main>
+        <div class="complaint-card">
+          <h3>Department of Justice &amp; Civil Rights</h3>
+          <div class="complaint-tagline">
+            For issues involving civil rights violations, patterns of corruption, or abuse of power,
+            citizens can be guided to the right DOJ contact pages.
+          </div>
+          <ul>
+            <li>Report civil-rights violations directly to the DOJ.</li>
+            <li>Send tips on public corruption and misuse of office.</li>
+          </ul>
+          <a href="https://civilrights.justice.gov" target="_blank" rel="noopener noreferrer">
+            File a civil-rights report
+          </a>
+          <a href="https://www.justice.gov/doj/webform/your-message-department-justice"
+             target="_blank" rel="noopener noreferrer">
+            Contact the Department of Justice
+          </a>
+          <div class="complaint-note">
+            Future feature: auto-generated DOJ complaint drafts based on alerts you follow — you
+            review, edit, and then submit yourself.
+          </div>
+        </div>
+
+        <div class="complaint-card">
+          <h3>State-Level Complaints</h3>
+          <div class="complaint-tagline">
+            Every state has its own ethics boards, inspectors general, and complaint processes.
+            America’s Torch can eventually route citizens to the correct office automatically.
+          </div>
+          <ul>
+            <li>Find your state Attorney General’s office.</li>
+            <li>Look up state-level ethics or inspector-general contacts.</li>
+            <li>Report misuse of state or local tax dollars.</li>
+          </ul>
+          <a href="https://www.naag.org/find-my-ag/" target="_blank" rel="noopener noreferrer">
+            Find your State Attorney General
+          </a>
+          <a href="#states">
+            Use the state dashboards above as a starting point
+          </a>
+          <div class="complaint-note">
+            In a full build, alerts for your state could link directly into these complaint flows so
+            you’re always one or two clicks away from real action.
+          </div>
+        </div>
+
+        <div class="complaint-card">
+          <h3>Media &amp; Narrative Accountability</h3>
+          <div class="complaint-tagline">
+            The media should inform, not inflame. When networks push one-sided narratives, hide key
+            facts, or fuel division for ratings, citizens deserve a way to push back.
+          </div>
+          <ul>
+            <li>Contact major news networks and demand factual, balanced reporting.</li>
+            <li>Raise concerns with ombudsman or standards editors where available.</li>
+            <li>
+              Organize peaceful pressure campaigns when coverage is clearly misleading or
+              intentionally divisive.
+            </li>
+          </ul>
+          <a href="#ideas">
+            Use the Ideas form to propose specific media reforms and accountability rules.
+          </a>
+          <div class="complaint-note">
+            In a full build, this section could help generate coordinated but peaceful email
+            campaigns to media outlets when coverage crosses the line.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DONATION SECTION -->
+    <section class="donate-panel" id="donate">
+      <div class="kicker">Support the Movement</div>
+      <h2>Help Keep the Torch Burning</h2>
+      <p>
+        If you want to support building out America’s Torch — servers, tools, research, and
+        outreach — you’ll eventually be able to donate here. No big donors controlling the message,
+        no party machine, just ordinary Americans chipping in what they can.
+      </p>
+      <p>
+        For now, this button is just a placeholder. When you’re ready, you can connect it to
+        Stripe, PayPal, or another trusted payment processor.
+      </p>
+
+      <a href="#join" class="btn-donate">Donate (Coming Soon)</a>
+    </section>
+
+    <!-- JOIN SECTION -->
+    <section class="join-panel" id="join">
+      <div class="kicker">Join the Movement</div>
+      <h2>Keep the Flame Burning</h2>
+      <p>
+        This is the early prototype of America’s Torch. If you want to help shape it — from alerts
+        and dashboards to town halls, petitions, and idea votes — add your name below. You’ll be the
+        first to know when new tools go live.
+      </p>
+
+      <form action="https://formspree.io/f/xovypnwk" method="POST">
+        <input type="hidden" name="form" value="Join America's Torch" />
+        <label for="join-name">Name</label>
+        <input id="join-name" type="text" name="name" placeholder="Your full name" required />
+
+        <label for="join-email">Email</label>
+        <input id="join-email" type="email" name="email" placeholder="you@example.com" required />
+
+        <label for="join-state">State</label>
+        <select id="join-state" name="state" required>
+          <option value="">Select your state</option>
+          <option>AL</option><option>AK</option><option>AZ</option><option>AR</option>
+          <option>CA</option><option>CO</option><option>CT</option><option>DE</option>
+          <option>FL</option><option>GA</option><option>HI</option><option>ID</option>
+          <option>IL</option><option>IN</option><option>IA</option><option>KS</option>
+          <option>KY</option><option>LA</option><option>ME</option><option>MD</option>
+          <option>MA</option><option>MI</option><option>MN</option><option>MS</option>
+          <option>MO</option><option>MT</option><option>NE</option><option>NV</option>
+          <option>NH</option><option>NJ</option><option>NM</option><option>NY</option>
+          <option>NC</option><option>ND</option><option>OH</option><option>OK</option>
+          <option>OR</option><option>PA</option><option>RI</option><option>SC</option>
+          <option>SD</option><option>TN</option><option>TX</option><option>UT</option>
+          <option>VT</option><option>VA</option><option>WA</option><option>WV</option>
+          <option>WI</option><option>WY</option>
+        </select>
+
+        <button type="submit" class="btn-submit">
+          Join America&rsquo;s Torch
+        </button>
+
+        <div class="form-footnote">
+          Demo only: your info goes to Formspree so you can export and manage it later. No tracking
+          scripts, no party lists, no selling data — ever.
+        </div>
+      </form>
+    </section>
+
+    <footer>
+      Prototype only · No legal, financial, or voting advice. America’s Torch is a peaceful,
+      citizen-powered concept for accountability and transparency.
+    </footer>
   </div>
+</div>
 
-  <!-- SIMPLE FRONTEND VOTE LOGIC (NO REAL SECURITY) -->
-  <script>
-    function loadDemoVotes() {
-      const yes = parseInt(localStorage.getItem('demoVoteYes') || '0', 10);
-      const no = parseInt(localStorage.getItem('demoVoteNo') || '0', 10);
-      const yesSpan = document.getElementById('yes-count');
-      const noSpan = document.getElementById('no-count');
-      if (yesSpan) yesSpan.textContent = yes;
-      if (noSpan) noSpan.textContent = no;
+<!-- SIMPLE FRONTEND LOGIC (NO REAL SECURITY) -->
+<script>
+  function loadDemoVotes() {
+    const yes = parseInt(localStorage.getItem('demoVoteYes') || '0', 10);
+    const no = parseInt(localStorage.getItem('demoVoteNo') || '0', 10);
+    const yesSpan = document.getElementById('yes-count');
+    const noSpan = document.getElementById('no-count');
+    if (yesSpan) yesSpan.textContent = yes;
+    if (noSpan) noSpan.textContent = no;
+  }
+
+  function castDemoVote(type) {
+    if (type === 'yes') {
+      const current = parseInt(localStorage.getItem('demoVoteYes') || '0', 10);
+      localStorage.setItem('demoVoteYes', current + 1);
+    } else if (type === 'no') {
+      const current = parseInt(localStorage.getItem('demoVoteNo') || '0', 10);
+      localStorage.setItem('demoVoteNo', current + 1);
+    }
+    loadDemoVotes();
+  }
+
+  function loadPetitionCounts() {
+    const p1 = parseInt(localStorage.getItem('petition1Count') || '0', 10);
+    const p2 = parseInt(localStorage.getItem('petition2Count') || '0', 10);
+    const p1Span = document.getElementById('p1-demo-count');
+    const p2Span = document.getElementById('p2-demo-count');
+    if (p1Span) p1Span.textContent = p1;
+    if (p2Span) p2Span.textContent = p2;
+  }
+
+  function attachPetitionListeners() {
+    const p1Form = document.getElementById('petition1-form');
+    const p2Form = document.getElementById('petition2-form');
+
+    if (p1Form) {
+      p1Form.addEventListener('submit', function() {
+        const current = parseInt(localStorage.getItem('petition1Count') || '0', 10);
+        localStorage.setItem('petition1Count', current + 1);
+        loadPetitionCounts();
+      });
     }
 
-    function castDemoVote(type) {
-      if (type === 'yes') {
-        const current = parseInt(localStorage.getItem('demoVoteYes') || '0', 10);
-        localStorage.setItem('demoVoteYes', current + 1);
-      } else if (type === 'no') {
-        const current = parseInt(localStorage.getItem('demoVoteNo') || '0', 10);
-        localStorage.setItem('demoVoteNo', current + 1);
-      }
-      loadDemoVotes();
+    if (p2Form) {
+      p2Form.addEventListener('submit', function() {
+        const current = parseInt(localStorage.getItem('petition2Count') || '0', 10);
+        localStorage.setItem('petition2Count', current + 1);
+        loadPetitionCounts();
+      });
     }
+  }
 
-    document.addEventListener('DOMContentLoaded', loadDemoVotes);
-  </script>
+  document.addEventListener('DOMContentLoaded', function() {
+    loadDemoVotes();
+    loadPetitionCounts();
+    attachPetitionListeners();
+  });
+</script>
 </body>
 </html>
