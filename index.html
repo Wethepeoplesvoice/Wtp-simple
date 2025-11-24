@@ -322,132 +322,63 @@
       margin-bottom: 6px;
     }
 
-    /* SPONSOR / AD BANNER */
+    /* DEMO VOTE PANEL */
 
-    .sponsor-banner {
+    .vote-panel {
       margin-top: 24px;
-      border-radius: 26px;
-      padding: 16px 16px 18px;
-      background: radial-gradient(circle at left, rgba(255, 186, 99, 0.18), rgba(6, 10, 32, 0.98));
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      display: grid;
-      grid-template-columns: minmax(0, 1.6fr) minmax(0, 0.9fr);
-      gap: 14px;
-      align-items: center;
-    }
-
-    .sponsor-label {
-      font-size: 11px;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: 6px;
-    }
-
-    .sponsor-text {
-      font-size: 14px;
-      line-height: 1.6;
-    }
-
-    .sponsor-actions {
-      display: flex;
-      justify-content: flex-end;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    .sponsor-skip {
-      min-width: 88px;
-      height: 88px;
-      border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, 0.4);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      font-size: 13px;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-    }
-
-    .sponsor-main {
-      min-width: 110px;
-      height: 88px;
-      border-radius: 999px;
-      background: radial-gradient(circle at top, #ffba63, #ff7f42);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      color: #000;
-      font-size: 13px;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      font-weight: 700;
-    }
-
-    /* STATE SECTION */
-
-    .panel {
-      margin-top: 28px;
-      padding: 20px 18px 22px;
-      border-radius: 26px;
-      background: radial-gradient(circle at top left, rgba(33, 39, 82, 0.8), #050812 70%);
-      border: 1px solid rgba(255, 255, 255, 0.14);
-      box-shadow: 0 18px 55px rgba(0, 0, 0, 0.9);
-    }
-
-    .panel-title {
-      font-size: 13px;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: 8px;
-    }
-
-    .panel h2 {
-      margin-bottom: 8px;
-    }
-
-    .panel-columns {
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-      gap: 16px;
-      margin-top: 16px;
-    }
-
-    .panel-card {
-      background: rgba(5, 8, 25, 0.9);
-      border-radius: 20px;
-      padding: 16px;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    .panel-card h3 {
-      margin-bottom: 6px;
-    }
-
-    .panel-card ul {
-      padding-left: 20px;
-      margin: 6px 0 0;
-      font-size: 14px;
-      color: var(--text-muted);
-    }
-
-    /* TOWN HALLS */
-
-    .town-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-      gap: 18px;
-      margin-top: 16px;
-    }
-
-    .town-card {
+      padding: 18px 16px 20px;
+      border-radius: 22px;
       background: #070b16;
-      border-radius: 20px;
-      padding: 16px;
-      border: 1px solid rgba(255, 255, 255, 0.16);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 16px 45px rgba(0, 0, 0, 0.8);
+    }
+
+    .vote-panel h3 {
+      margin-bottom: 6px;
+    }
+
+    .vote-panel p {
+      font-size: 14px;
+    }
+
+    .vote-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .vote-btn {
+      flex: 1;
+      min-width: 120px;
+      border-radius: 999px;
+      border: none;
+      padding: 10px 14px;
+      font-size: 14px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .vote-btn-yes {
+      background: linear-gradient(90deg, #75ff9b, #31d679);
+      color: #001a08;
+    }
+
+    .vote-btn-no {
+      background: linear-gradient(90deg, #ff7575, #ff4b5c);
+      color: #1b0006;
+    }
+
+    .vote-counts {
+      margin-top: 10px;
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    .vote-warning {
+      margin-top: 8px;
+      font-size: 11px;
+      color: var(--text-muted);
     }
 
     /* PETITIONS */
@@ -720,10 +651,6 @@
         padding: 18px 14px 20px;
       }
 
-      .sponsor-banner {
-        grid-template-columns: minmax(0, 1fr);
-      }
-
       .panel-columns,
       .town-grid {
         grid-template-columns: minmax(0, 1fr);
@@ -746,8 +673,6 @@
     <!-- TOP NAV -->
     <nav class="top-nav">
       <a href="#alerts">Alerts</a>
-      <a href="#states">States</a>
-      <a href="#townhalls">Town Halls</a>
       <a href="#vote">Take Action</a>
       <a href="#petition">Petitions</a>
       <a href="#ideas">Ideas</a>
@@ -842,7 +767,7 @@
         </div>
       </section>
 
-      <!-- TAKE ACTION SECTION -->
+      <!-- TAKE ACTION SECTION + DEMO VOTE -->
       <section class="section" id="vote">
         <div class="kicker">TAKE ACTION</div>
         <h2>A Peaceful Movement for Accountability</h2>
@@ -887,67 +812,33 @@
             </p>
           </article>
         </div>
-      </section>
 
-      <!-- SPONSOR / DEMO BANNER -->
-      <section class="sponsor-banner" aria-label="Sponsor message demo">
-        <div>
-          <div class="sponsor-label">Sponsor Message (Demo)</div>
-          <p class="sponsor-text">
-            <strong>Keep America’s Torch Burning.</strong> A small banner like this could help fund
-            servers and tools for citizens — with no tracking, no pop-ups, and no forced ads. People
-            could ignore it, skip it, or tap to learn more anytime.
+        <!-- DEMO VOTE BOX -->
+        <div class="vote-panel" aria-label="Demo vote – not secure or official">
+          <h3>Demo Vote: 6-Year Term Limits for Congress</h3>
+          <p>
+            This is a <strong>demo vote</strong> running only in your browser. It is
+            <strong>not secure, not official, and not one-person-one-vote</strong>. It just shows
+            how a simple vote could feel inside America’s Torch.
           </p>
-        </div>
-        <div class="sponsor-actions">
-          <div class="sponsor-skip">
-            <span>Skip</span>
-            <span>Ad</span>
+
+          <div class="vote-buttons">
+            <button class="vote-btn vote-btn-yes" onclick="castDemoVote('yes')">
+              YES – I Support
+            </button>
+            <button class="vote-btn vote-btn-no" onclick="castDemoVote('no')">
+              NO – I Oppose
+            </button>
           </div>
-          <div class="sponsor-main">
-            <span>Learn</span>
-            <span>More</span>
-            <span>(Demo)</span>
+
+          <div class="vote-counts">
+            Yes votes (this browser only): <span id="yes-count">0</span><br />
+            No votes (this browser only): <span id="no-count">0</span>
           </div>
-        </div>
-      </section>
-
-      <!-- STATE SECTION -->
-      <section class="panel" id="states">
-        <div class="panel-title">Built for Every American State</div>
-        <h2>A National Watch, State by State</h2>
-        <p>
-          In a full build, America’s Torch would plug into bill trackers, campaign finance data,
-          public budgets, and real-time feeds so citizens can see what’s happening in their own state —
-          and across the country — in one place.
-        </p>
-
-        <div class="panel-columns">
-          <article class="panel-card">
-            <h3>State Dashboards · <strong>50 States Watching</strong></h3>
-            <p>
-              Each state gets its own dashboard: bills on the move, new spending, tax changes, and who
-              voted yes or no — all in plain English, not legalese.
-            </p>
-            <ul>
-              <li>Bills and resolutions that actually affect households.</li>
-              <li>Major votes with names, not just party lines.</li>
-              <li>New taxes, fees, and rate hikes flagged in advance.</li>
-            </ul>
-          </article>
-
-          <article class="panel-card">
-            <h3>National View · <strong>Patterns of Power</strong></h3>
-            <p>
-              Citizens can see national trends: which issues keep repeating, which states quietly pass
-              copy-cat bills, and where the same special interests appear again and again.
-            </p>
-            <ul>
-              <li>Spot coordinated pushes from big donors or lobbyists.</li>
-              <li>See which states lead on reforms — and which drag their feet.</li>
-              <li>Share those patterns with neighbors, family, and friends.</li>
-            </ul>
-          </article>
+          <div class="vote-warning">
+            Demo only. Real voting would require secure accounts, identity checks, and strict
+            one-person-one-vote safeguards.
+          </div>
         </div>
       </section>
 
@@ -995,36 +886,6 @@
             <p>
               Alerts trigger when an official is formally reprimanded, investigated, or tied to serious
               misconduct — and show citizens exactly how to respond peacefully but firmly.
-            </p>
-          </article>
-        </div>
-      </section>
-
-      <!-- TOWN HALLS SECTION -->
-      <section class="section" id="townhalls">
-        <div class="kicker">National &amp; State Town Halls</div>
-        <h2>Voice-Only Streams, No Camera Needed</h2>
-        <p>
-          In a full launch, America’s Torch would host national briefings and state-level town halls
-          whenever major alerts cross a threshold — using voice-over and visuals so citizens never
-          have to be on camera.
-        </p>
-
-        <div class="town-grid">
-          <article class="town-card">
-            <h3>National Briefings</h3>
-            <p>
-              A weekly “People’s Update” that breaks down what happened this week: bills, spending,
-              and influence. No drama, no party spin — just straight talk and clear visuals.
-            </p>
-          </article>
-
-          <article class="town-card">
-            <h3>State Town Halls</h3>
-            <p>
-              When a state crosses a red-flag threshold — like a big tax hike or a suspicious bill —
-              supporters in that state can be invited to a live, voice-only town hall to go deeper and
-              plan peaceful action.
             </p>
           </article>
         </div>
@@ -1338,9 +1199,6 @@
             <a href="https://www.naag.org/find-my-ag/" target="_blank" rel="noopener noreferrer">
               Find your State Attorney General
             </a>
-            <a href="#states">
-              Use the state dashboards above as a starting point
-            </a>
             <div class="complaint-note">
               In a full build, alerts for your state could link directly into these complaint flows so
               you’re always one or two clicks away from real action.
@@ -1448,5 +1306,30 @@
       </footer>
     </main>
   </div>
+
+  <!-- SIMPLE FRONTEND VOTE LOGIC (NO REAL SECURITY) -->
+  <script>
+    function loadDemoVotes() {
+      const yes = parseInt(localStorage.getItem('demoVoteYes') || '0', 10);
+      const no = parseInt(localStorage.getItem('demoVoteNo') || '0', 10);
+      const yesSpan = document.getElementById('yes-count');
+      const noSpan = document.getElementById('no-count');
+      if (yesSpan) yesSpan.textContent = yes;
+      if (noSpan) noSpan.textContent = no;
+    }
+
+    function castDemoVote(type) {
+      if (type === 'yes') {
+        const current = parseInt(localStorage.getItem('demoVoteYes') || '0', 10);
+        localStorage.setItem('demoVoteYes', current + 1);
+      } else if (type === 'no') {
+        const current = parseInt(localStorage.getItem('demoVoteNo') || '0', 10);
+        localStorage.setItem('demoVoteNo', current + 1);
+      }
+      loadDemoVotes();
+    }
+
+    document.addEventListener('DOMContentLoaded', loadDemoVotes);
+  </script>
 </body>
 </html>
