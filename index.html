@@ -10,8 +10,8 @@
       --bg: #050812;
       --panel: #0b101f;
       --panel-soft: #131933;
-      --accent: #f6b45d;
-      --accent-soft: #ff9b4a;
+      --accent: #f6b45d;      /* gold */
+      --accent-soft: #ff7f42;
       --text-main: #f5f5f7;
       --text-muted: #b3b8c9;
       --border-soft: #242b3d;
@@ -33,7 +33,7 @@
       padding: 0;
       font-family: var(--font-body);
       color: var(--text-main);
-      background: radial-gradient(circle at top, #111633 0, #050812 45%, #010208 100%);
+      background: radial-gradient(circle at top, #050812 0, #02030a 55%, #000000 100%);
       -webkit-font-smoothing: antialiased;
     }
 
@@ -49,15 +49,16 @@
       z-index: 0;
     }
 
-    /* subtle “torch glow” behind everything */
+    /* stronger “torch” glow in the background */
     .page::before {
       content: "";
       position: fixed;
       inset: -10%;
       background:
-        radial-gradient(circle at 50% 0, rgba(246, 180, 93, 0.22), transparent 60%),
-        radial-gradient(circle at 10% 90%, rgba(255, 127, 66, 0.12), transparent 55%);
-      opacity: 0.85;
+        radial-gradient(circle at 50% 0, rgba(246, 180, 93, 0.35), transparent 65%),
+        radial-gradient(circle at 15% 85%, rgba(255, 127, 66, 0.18), transparent 55%),
+        radial-gradient(circle at 85% 80%, rgba(111, 134, 255, 0.18), transparent 55%);
+      opacity: 1;
       pointer-events: none;
       z-index: -1;
     }
@@ -88,16 +89,16 @@
     }
 
     .top-nav a {
-      color: #f5f5f7;
+      color: var(--accent);         /* gold */
       font-size: 15px;
       text-decoration: none;
-      font-weight: 500;
+      font-weight: 600;
       letter-spacing: 0.4px;
     }
 
     .top-nav a:hover {
       color: var(--accent-soft);
-      text-shadow: 0 0 4px rgba(255, 255, 255, 0.4);
+      text-shadow: 0 0 6px rgba(255, 186, 99, 0.8);
     }
 
     /* ---------------------- */
@@ -203,20 +204,22 @@
       margin: 0;
       text-transform: uppercase;
       letter-spacing: 0.16em;
-      color: var(--accent);
+      color: var(--accent);  /* gold headings */
     }
 
     h1 {
       font-size: 32px;
-      letter-spacing: 0.22em;
+      letter-spacing: 0.2em;
     }
 
     h2 {
       font-size: 22px;
+      letter-spacing: 0.14em;
     }
 
     h3 {
       font-size: 18px;
+      letter-spacing: 0.12em;
     }
 
     p {
@@ -249,7 +252,7 @@
       letter-spacing: 0.18em;
       text-transform: uppercase;
       color: var(--text-muted);
-      border: 1px solid rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.08);
     }
 
     .pill strong {
@@ -358,7 +361,7 @@
       margin-top: 24px;
       border-radius: 26px;
       padding: 16px 16px 18px;
-      background: radial-gradient(circle at left, rgba(255, 186, 99, 0.2), rgba(6, 10, 32, 0.98));
+      background: radial-gradient(circle at left, rgba(255, 186, 99, 0.18), rgba(6, 10, 32, 0.98));
       border: 1px solid rgba(255, 255, 255, 0.12);
       display: grid;
       grid-template-columns: minmax(0, 1.6fr) minmax(0, 0.9fr);
@@ -740,32 +743,6 @@
       text-transform: uppercase;
     }
 
-    /* ABOUT SECTION */
-
-    .about-panel {
-      margin-top: 32px;
-      padding: 20px 18px 22px;
-      border-radius: 24px;
-      background: radial-gradient(circle at top left, rgba(28, 33, 70, 0.9), #040612 75%);
-      border: 1px solid rgba(255, 255, 255, 0.14);
-      box-shadow: 0 18px 55px rgba(0, 0, 0, 0.9);
-    }
-
-    .about-panel p {
-      font-size: 14px;
-      line-height: 1.8;
-    }
-
-    .about-highlight {
-      margin-top: 10px;
-      padding: 10px 12px;
-      border-radius: 14px;
-      border: 1px solid rgba(246, 180, 93, 0.45);
-      background: radial-gradient(circle at left, rgba(246, 180, 93, 0.10), transparent 55%);
-      font-size: 13px;
-      color: var(--text-main);
-    }
-
     /* JOIN SECTION */
 
     .join-panel {
@@ -837,7 +814,6 @@
     <a href="#petition">Petitions</a>
     <a href="#ideas">Ideas</a>
     <a href="#complaints">Complaints</a>
-    <a href="#about">About</a>
     <a href="#donate">Donate</a>
     <a href="#join">Join</a>
   </nav>
@@ -1265,7 +1241,7 @@
             </div>
 
             <button type="submit" class="btn-submit">
-              Sign Petition #2 – 6-Year Term Limits
+              Sign Petition #2 – Term Limits
             </button>
 
             <div class="form-footnote">
@@ -1434,41 +1410,6 @@
             campaigns to media outlets when coverage crosses the line.
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- ABOUT SECTION -->
-    <section class="about-panel" id="about">
-      <div class="kicker">About America’s Torch</div>
-      <h2>Who This Movement Is For</h2>
-      <p>
-        America’s Torch was born from the same place a lot of people are in right now: watching
-        leaders break trust, watching agencies grow bigger and colder, and watching media turn
-        everything into a fight while ordinary families are just trying to survive.
-      </p>
-      <p>
-        This movement isn’t backed by billionaires, parties, or lobbyists. It’s built for people who
-        still love this country, still believe in peaceful change, and still believe the
-        Constitution means something — even if some in power act like it doesn’t apply to them.
-      </p>
-
-      <h3>About the Founder</h3>
-      <p>
-        America’s Torch was started by an ordinary citizen — a parent and grandparent who has seen
-        firsthand what happens when systems stop protecting families, stop listening, and stop
-        telling the truth. No political office, no special title, just someone who refused to stay
-        quiet while corruption and confusion hurt the people they love.
-      </p>
-      <p>
-        This platform is a promise: to stand in the gap for people who don’t have time or money to
-        hire lawyers, lobbyists, or PR firms. To turn fear and frustration into peaceful,
-        organized action that leaders can’t ignore.
-      </p>
-
-      <div class="about-highlight">
-        You can change this text anytime to share as much or as little of your personal story as
-        you want. America’s Torch is bigger than any one person — but it starts with one citizen
-        willing to light the flame.
       </div>
     </section>
 
