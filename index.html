@@ -6,6 +6,40 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <style>
+    /* Live bill alerts */
+.alert-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+  margin-top: 16px;
+}
+
+.alert-meta {
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.alert-tag {
+  display: inline-block;
+  font-size: 11px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(250, 204, 21, 0.08);
+  border: 1px solid rgba(250, 204, 21, 0.45);
+  color: #fde68a;
+  margin-bottom: 8px;
+}
+
+.alert-section-note {
+  margin-top: 10px;
+  font-size: 12px;
+  color: #9aa5c9;
+}
     :root{
       --bg: #050812;
       --bg2:#0a0f24;
@@ -317,7 +351,107 @@
         </div>
       </div>
     </section>
+<!-- LIVE BILL ALERTS (PROTOTYPE) -->
+    <section class="section" id="live-alerts">
+      <div class="kicker">Live Bill Alerts · Prototype</div>
+      <h2>plain-english bill breakdowns</h2>
+      <p class="alert-section-note">
+        These are demo examples of how America’s Torch would explain real bills:
+        what they do, who pays, who benefits, and what looks crazy. In a future
+        version, this section will pull from live data for Congress and state legislatures.
+      </p>
 
+      <div class="alert-list">
+        <!-- Alert 1 -->
+        <div class="card">
+          <div class="alert-meta">STATUS · PASSED HOUSE · HEADING TO SENATE</div>
+          <div class="alert-tag">Example · Utility Fees</div>
+          <h3>“Utility Grid Stabilization Act”</h3>
+          <p>
+            <strong>What it really does:</strong> Lets power companies add a new
+            “grid stability” fee to every monthly bill — even if your usage goes
+            down — to cover “infrastructure upgrades”.
+          </p>
+          <p>
+            <strong>Who benefits:</strong> Large utility companies and investors.
+            <br>
+            <strong>Who pays:</strong> Every household and small business customer.
+          </p>
+          <p>
+            <strong>What looks crazy:</strong> The bill weakens the refund rules
+            if companies overcharge you and makes it harder for citizens to contest
+            rate hikes at public hearings.
+          </p>
+          <p class="note">
+            Prototype only – this is a sample alert showing the style of breakdown
+            America’s Torch will provide.
+          </p>
+        </div>
+
+        <!-- Alert 2 -->
+        <div class="card">
+          <div class="alert-meta">STATUS · COMMITTEE STAGE · RUSHED HEARING</div>
+          <div class="alert-tag">Example · Property Taxes</div>
+          <h3>“Local Revenue Modernization Bill”</h3>
+          <p>
+            <strong>What it really does:</strong> Allows counties to re-assess
+            property values more often, which can push taxes up faster even when
+            your income stays the same.
+          </p>
+          <p>
+            <strong>Who benefits:</strong> Local governments with budget gaps.
+            <br>
+            <strong>Who pays:</strong> Homeowners, especially on fixed incomes.
+          </p>
+          <p>
+            <strong>What looks crazy:</strong> A hidden clause reduces notice time
+            before increases and schedules public hearings in the middle of the workday,
+            making it harder for regular people to show up and object.
+          </p>
+          <p class="note">
+            In a live system, this card would link to your county, your reps, and
+            peaceful actions you can take.
+          </p>
+        </div>
+
+        <!-- Alert 3 -->
+        <div class="card">
+          <div class="alert-meta">STATUS · SIGNED INTO LAW · TAKES EFFECT NEXT YEAR</div>
+          <div class="alert-tag">Example · Hidden Riders</div>
+          <h3>“Critical Infrastructure Security Act”</h3>
+          <p>
+            <strong>What it really does:</strong> The public title focuses on
+            “security”, but a buried section relaxes reporting requirements for
+            certain large contractors and shields some records from open-records requests.
+          </p>
+          <p>
+            <strong>Who benefits:</strong> Specific contractors and agencies with
+            less transparency.
+            <br>
+            <strong>Who loses:</strong> Citizens, watchdogs, and local journalists
+            trying to follow the money.
+          </p>
+          <p>
+            <strong>What looks crazy:</strong> The “security” bill was voted on
+            just before a holiday weekend, and the rider language was added at
+            the last minute with no separate debate.
+          </p>
+          <p class="note">
+            Future versions of America’s Torch will track midnight votes, last-minute
+            riders, and who sponsored them – with exportable timelines for oversight
+            and media.
+          </p>
+        </div>
+      </div>
+
+      <div class="banner" style="margin-top:20px;">
+        <strong>Next Step · From Demo to Live Alerts</strong>
+        In a future phase, alerts like these will be generated from real bill data
+        for Congress and your state, then checked by human reviewers to keep them
+        accurate, calm, and fair – while still calling out anything that looks
+        quietly dangerous to families.
+      </div>
+    </section>
     <!-- TOWN HALLS -->
     <section class="section" id="townhalls">
       <div class="kicker">Town Halls</div>
