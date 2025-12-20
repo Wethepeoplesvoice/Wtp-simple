@@ -13,7 +13,6 @@
       gap: 18px;
       margin-top: 16px;
     }
-
     .alert-meta {
       font-size: 11px;
       color: var(--muted);
@@ -21,7 +20,6 @@
       text-transform: uppercase;
       margin-bottom: 6px;
     }
-
     .alert-tag {
       display: inline-block;
       font-size: 11px;
@@ -34,7 +32,6 @@
       color: #fde68a;
       margin-bottom: 8px;
     }
-
     .alert-section-note {
       margin-top: 10px;
       font-size: 12px;
@@ -46,7 +43,7 @@
       --bg2:#0a0f24;
       --panel:#0b101f;
       --panel-soft:#131933;
-      --gold:#f6b45d;          /* accent gold */
+      --gold:#f6b45d;
       --gold-strong:#ffb651;
       --gold-soft:#c48a3a;
       --text:#e9ecf4;
@@ -211,6 +208,7 @@
 
   <nav class="top-nav">
     <a href="#alerts">Alerts</a>
+    <a href="#live-alerts">Bills</a>
     <a href="#states">States</a>
     <a href="#townhalls">Town Halls</a>
     <a href="#action">Take Action</a>
@@ -367,94 +365,98 @@
       </p>
 
       <div class="alert-list">
-        <!-- Alert 1 -->
         <div class="card">
           <div class="alert-meta">STATUS · PASSED HOUSE · HEADING TO SENATE</div>
           <div class="alert-tag">Example · Utility Fees</div>
           <h3>“Utility Grid Stabilization Act”</h3>
-          <p>
-            <strong>What it really does:</strong> Lets power companies add a new
-            “grid stability” fee to every monthly bill — even if your usage goes
-            down — to cover “infrastructure upgrades”.
-          </p>
-          <p>
-            <strong>Who benefits:</strong> Large utility companies and investors.
-            <br>
-            <strong>Who pays:</strong> Every household and small business customer.
-          </p>
-          <p>
-            <strong>What looks crazy:</strong> The bill weakens the refund rules
-            if companies overcharge you and makes it harder for citizens to contest
-            rate hikes at public hearings.
-          </p>
-          <p class="note">
-            Prototype only – this is a sample alert showing the style of breakdown
-            America’s Torch will provide.
-          </p>
+          <p><strong>What it really does:</strong> Lets power companies add a new “grid stability” fee to every monthly bill — even if usage goes down — to cover “infrastructure upgrades”.</p>
+          <p><strong>Who benefits:</strong> Large utility companies and investors.<br><strong>Who pays:</strong> Every household and small business customer.</p>
+          <p><strong>What looks crazy:</strong> Weakens refund rules if companies overcharge and makes it harder for citizens to contest rate hikes.</p>
+          <p class="note">Prototype only – sample alert format.</p>
         </div>
 
-        <!-- Alert 2 -->
         <div class="card">
           <div class="alert-meta">STATUS · COMMITTEE STAGE · RUSHED HEARING</div>
           <div class="alert-tag">Example · Property Taxes</div>
           <h3>“Local Revenue Modernization Bill”</h3>
-          <p>
-            <strong>What it really does:</strong> Allows counties to re-assess
-            property values more often, which can push taxes up faster even when
-            your income stays the same.
-          </p>
-          <p>
-            <strong>Who benefits:</strong> Local governments with budget gaps.
-            <br>
-            <strong>Who pays:</strong> Homeowners, especially on fixed incomes.
-          </p>
-          <p>
-            <strong>What looks crazy:</strong> A hidden clause reduces notice time
-            before increases and schedules public hearings in the middle of the workday,
-            making it harder for regular people to show up and object.
-          </p>
-          <p class="note">
-            In a live system, this card would link to your county, your reps, and
-            peaceful actions you can take.
-          </p>
+          <p><strong>What it really does:</strong> Allows counties to reassess property values more often, pushing taxes up faster even when income stays the same.</p>
+          <p><strong>Who benefits:</strong> Local governments with budget gaps.<br><strong>Who pays:</strong> Homeowners, especially fixed-income families.</p>
+          <p><strong>What looks crazy:</strong> Reduces notice time before increases and schedules hearings in the middle of the workday.</p>
+          <p class="note">In a live system, this would link to your reps and actions.</p>
         </div>
 
-        <!-- Alert 3 -->
         <div class="card">
           <div class="alert-meta">STATUS · SIGNED INTO LAW · TAKES EFFECT NEXT YEAR</div>
           <div class="alert-tag">Example · Hidden Riders</div>
           <h3>“Critical Infrastructure Security Act”</h3>
-          <p>
-            <strong>What it really does:</strong> The public title focuses on
-            “security”, but a buried section relaxes reporting requirements for
-            certain large contractors and shields some records from open-records requests.
-          </p>
-          <p>
-            <strong>Who benefits:</strong> Specific contractors and agencies with
-            less transparency.
-            <br>
-            <strong>Who loses:</strong> Citizens, watchdogs, and local journalists
-            trying to follow the money.
-          </p>
-          <p>
-            <strong>What looks crazy:</strong> The “security” bill was voted on
-            just before a holiday weekend, and the rider language was added at
-            the last minute with no separate debate.
-          </p>
-          <p class="note">
-            Future versions of America’s Torch will track midnight votes, last-minute
-            riders, and who sponsored them – with exportable timelines for oversight
-            and media.
-          </p>
+          <p><strong>What it really does:</strong> The title says “security,” but a buried section shields certain contractor records from open-records requests.</p>
+          <p><strong>Who benefits:</strong> Contractors and agencies with less transparency.<br><strong>Who loses:</strong> Citizens and watchdogs trying to follow the money.</p>
+          <p><strong>What looks crazy:</strong> Rider language added at the last minute just before a holiday weekend.</p>
+          <p class="note">Future: track midnight votes and last-minute riders with timelines.</p>
         </div>
       </div>
 
       <div class="banner" style="margin-top:20px;">
         <strong>Next Step · From Demo to Live Alerts</strong>
-        In a future phase, alerts like these will be generated from real bill data
-        for Congress and your state, then checked by human reviewers to keep them
-        accurate, calm, and fair – while still calling out anything that looks
-        quietly dangerous to families.
+        In a future phase, alerts like these will be generated from real bill data,
+        then checked by human reviewers to keep them accurate, calm, and fair — while
+        still calling out anything that looks quietly dangerous to families.
+      </div>
+
+      <!-- SUBMIT A BILL FOR REVIEW -->
+      <div class="card" style="margin-top:18px;">
+        <h3>Submit a Bill for Review</h3>
+        <p>
+          Send a bill link (Congress or your state), and we’ll turn it into a calm,
+          plain-English “Torch Breakdown”: what it does, who benefits, who pays, what looks risky,
+          and what peaceful actions are available.
+        </p>
+
+        <form action="https://formspree.io/f/xovypnwk" method="POST">
+          <input type="hidden" name="form" value="Bill Submission – America's Torch" />
+
+          <label for="bill-name">Your Name (optional)</label>
+          <input id="bill-name" name="name" placeholder="Name (optional)" />
+
+          <label for="bill-email">Email (optional)</label>
+          <input id="bill-email" name="email" type="email" placeholder="Email (optional)" />
+
+          <label for="bill-state">State (if state bill)</label>
+          <select id="bill-state" name="state">
+            <option value="">Select your state (optional)</option>
+            <option>AL</option><option>AK</option><option>AZ</option><option>AR</option>
+            <option>CA</option><option>CO</option><option>CT</option><option>DE</option>
+            <option>FL</option><option>GA</option><option>HI</option><option>ID</option>
+            <option>IL</option><option>IN</option><option>IA</option><option>KS</option>
+            <option>KY</option><option>LA</option><option>ME</option><option>MD</option>
+            <option>MA</option><option>MI</option><option>MN</option><option>MS</option>
+            <option>MO</option><option>MT</option><option>NE</option><option>NV</option>
+            <option>NH</option><option>NJ</option><option>NM</option><option>NY</option>
+            <option>NC</option><option>ND</option><option>OH</option><option>OK</option>
+            <option>OR</option><option>PA</option><option>RI</option><option>SC</option>
+            <option>SD</option><option>TN</option><option>TX</option><option>UT</option>
+            <option>VT</option><option>VA</option><option>WA</option><option>WV</option>
+            <option>WI</option><option>WY</option>
+          </select>
+
+          <label for="bill-type">Bill Type</label>
+          <select id="bill-type" name="bill_type" required>
+            <option value="">Choose one</option>
+            <option>Federal (Congress)</option>
+            <option>State Legislature</option>
+            <option>Local (County/City)</option>
+            <option>Not sure</option>
+          </select>
+
+          <label for="bill-link">Bill Link (required)</label>
+          <input id="bill-link" name="bill_link" required placeholder="Paste the bill URL here" />
+
+          <label for="bill-issue">What worries you about it?</label>
+          <textarea id="bill-issue" name="concern" placeholder="Example: hidden fees, new taxes, censorship, surveillance, property rights, etc."></textarea>
+
+          <button class="submit" type="submit">Submit Bill</button>
+          <div class="note">This sends to America’s Torch inbox for review and future breakdown posts.</div>
+        </form>
       </div>
     </section>
 
