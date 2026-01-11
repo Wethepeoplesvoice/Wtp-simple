@@ -6,38 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <style>
-    /* Live bill alerts */
-    .alert-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 18px;
-      margin-top: 16px;
-    }
-    .alert-meta {
-      font-size: 11px;
-      color: var(--muted);
-      letter-spacing: .16em;
-      text-transform: uppercase;
-      margin-bottom: 6px;
-    }
-    .alert-tag {
-      display: inline-block;
-      font-size: 11px;
-      letter-spacing: .16em;
-      text-transform: uppercase;
-      padding: 4px 10px;
-      border-radius: 999px;
-      background: rgba(250, 204, 21, 0.08);
-      border: 1px solid rgba(250, 204, 21, 0.45);
-      color: #fde68a;
-      margin-bottom: 8px;
-    }
-    .alert-section-note {
-      margin-top: 10px;
-      font-size: 12px;
-      color: #9aa5c9;
-    }
-
     :root{
       --bg: #050812;
       --bg2:#0a0f24;
@@ -56,6 +24,19 @@
       --font: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Arial, sans-serif;
     }
 
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family:var(--font); color:var(--text);
+      background:
+        radial-gradient(1000px 600px at 80% -200px, rgba(255,184,97,.12), transparent 60%),
+        radial-gradient(900px 600px at -200px 40%, rgba(89,115,255,.10), transparent 55%),
+        linear-gradient(180deg, var(--bg2), var(--bg) 42%, #010208 100%);
+      -webkit-font-smoothing:antialiased;
+    }
+
+    a{color:inherit; text-decoration:none}
+
     .prototype-strip{
       text-align:center;
       padding:6px 10px;
@@ -70,19 +51,6 @@
       color:#f6b45d;
       font-weight:700;
     }
-
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0; font-family:var(--font); color:var(--text);
-      background:
-        radial-gradient(1000px 600px at 80% -200px, rgba(255,184,97,.12), transparent 60%),
-        radial-gradient(900px 600px at -200px 40%, rgba(89,115,255,.10), transparent 55%),
-        linear-gradient(180deg, var(--bg2), var(--bg) 42%, #010208 100%);
-      -webkit-font-smoothing:antialiased;
-    }
-
-    a{color:inherit; text-decoration:none}
 
     /* Top nav */
     .top-nav{
@@ -193,6 +161,38 @@
     .donate{margin-top:30px; padding:18px; border-radius:22px; background: radial-gradient(circle at top left, rgba(118,81,20,.85), #050812 68%); border:1px solid rgba(255,191,110,.4)}
     .join{margin-top:28px; padding:18px; border-radius:22px; background: radial-gradient(circle at top left, rgba(34,45,96,.95), #050812 65%); border:1px solid rgba(255,255,255,.18)}
 
+    /* Live bill alerts feed */
+    .alert-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+      margin-top: 16px;
+    }
+    .alert-meta {
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .alert-tag {
+      display: inline-block;
+      font-size: 11px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(250, 204, 21, 0.08);
+      border: 1px solid rgba(250, 204, 21, 0.45);
+      color: #fde68a;
+      margin-bottom: 8px;
+    }
+    .alert-section-note {
+      margin-top: 10px;
+      font-size: 12px;
+      color: #9aa5c9;
+    }
+
     footer{margin-top:22px; padding:12px 0; text-align:center; color:#a8b1cf; border-top:1px solid rgba(255,255,255,.14); font-size:11px}
 
     @media (max-width:880px){
@@ -208,7 +208,6 @@
 
   <nav class="top-nav">
     <a href="#alerts">Alerts</a>
-    <a href="#live-alerts">Bills</a>
     <a href="#states">States</a>
     <a href="#townhalls">Town Halls</a>
     <a href="#action">Take Action</a>
@@ -354,64 +353,22 @@
       </div>
     </section>
 
-    <!-- LIVE BILL ALERTS (PROTOTYPE) -->
+    <!-- LIVE BILL ALERTS (JSON FEED) -->
     <section class="section" id="live-alerts">
-      <div class="kicker">Live Bill Alerts · Prototype</div>
+      <div class="kicker">Live Bill Alerts · Website-Only</div>
       <h2>plain-english bill breakdowns</h2>
       <p class="alert-section-note">
-        These are demo examples of how America’s Torch would explain real bills:
-        what they do, who pays, who benefits, and what looks crazy. In a future
-        version, this section will pull from live data for Congress and state legislatures.
+        This section loads posts from <strong>alerts.json</strong>. To add a new bill: edit alerts.json → commit → Vercel auto-deploys.
       </p>
 
-      <div class="alert-list">
-        <div class="card">
-          <div class="alert-meta">STATUS · PASSED HOUSE · HEADING TO SENATE</div>
-          <div class="alert-tag">Example · Utility Fees</div>
-          <h3>“Utility Grid Stabilization Act”</h3>
-          <p><strong>What it really does:</strong> Lets power companies add a new “grid stability” fee to every monthly bill — even if usage goes down — to cover “infrastructure upgrades”.</p>
-          <p><strong>Who benefits:</strong> Large utility companies and investors.<br><strong>Who pays:</strong> Every household and small business customer.</p>
-          <p><strong>What looks crazy:</strong> Weakens refund rules if companies overcharge and makes it harder for citizens to contest rate hikes.</p>
-          <p class="note">Prototype only – sample alert format.</p>
-        </div>
-
-        <div class="card">
-          <div class="alert-meta">STATUS · COMMITTEE STAGE · RUSHED HEARING</div>
-          <div class="alert-tag">Example · Property Taxes</div>
-          <h3>“Local Revenue Modernization Bill”</h3>
-          <p><strong>What it really does:</strong> Allows counties to reassess property values more often, pushing taxes up faster even when income stays the same.</p>
-          <p><strong>Who benefits:</strong> Local governments with budget gaps.<br><strong>Who pays:</strong> Homeowners, especially fixed-income families.</p>
-          <p><strong>What looks crazy:</strong> Reduces notice time before increases and schedules hearings in the middle of the workday.</p>
-          <p class="note">In a live system, this would link to your reps and actions.</p>
-        </div>
-
-        <div class="card">
-          <div class="alert-meta">STATUS · SIGNED INTO LAW · TAKES EFFECT NEXT YEAR</div>
-          <div class="alert-tag">Example · Hidden Riders</div>
-          <h3>“Critical Infrastructure Security Act”</h3>
-          <p><strong>What it really does:</strong> The title says “security,” but a buried section shields certain contractor records from open-records requests.</p>
-          <p><strong>Who benefits:</strong> Contractors and agencies with less transparency.<br><strong>Who loses:</strong> Citizens and watchdogs trying to follow the money.</p>
-          <p><strong>What looks crazy:</strong> Rider language added at the last minute just before a holiday weekend.</p>
-          <p class="note">Future: track midnight votes and last-minute riders with timelines.</p>
-        </div>
-      </div>
+      <div class="alert-list" id="torch-feed"></div>
 
       <div class="banner" style="margin-top:20px;">
-        <strong>Next Step · From Demo to Live Alerts</strong>
-        In a future phase, alerts like these will be generated from real bill data,
-        then checked by human reviewers to keep them accurate, calm, and fair — while
-        still calling out anything that looks quietly dangerous to families.
+        <strong>Submit a Bill for Review</strong>
+        Paste a bill link below and we’ll turn it into a calm, plain-English “Torch Breakdown.”
       </div>
 
-      <!-- SUBMIT A BILL FOR REVIEW -->
-      <div class="card" style="margin-top:18px;">
-        <h3>Submit a Bill for Review</h3>
-        <p>
-          Send a bill link (Congress or your state), and we’ll turn it into a calm,
-          plain-English “Torch Breakdown”: what it does, who benefits, who pays, what looks risky,
-          and what peaceful actions are available.
-        </p>
-
+      <div class="card" style="margin-top:14px;">
         <form action="https://formspree.io/f/xovypnwk" method="POST">
           <input type="hidden" name="form" value="Bill Submission – America's Torch" />
 
@@ -420,24 +377,6 @@
 
           <label for="bill-email">Email (optional)</label>
           <input id="bill-email" name="email" type="email" placeholder="Email (optional)" />
-
-          <label for="bill-state">State (if state bill)</label>
-          <select id="bill-state" name="state">
-            <option value="">Select your state (optional)</option>
-            <option>AL</option><option>AK</option><option>AZ</option><option>AR</option>
-            <option>CA</option><option>CO</option><option>CT</option><option>DE</option>
-            <option>FL</option><option>GA</option><option>HI</option><option>ID</option>
-            <option>IL</option><option>IN</option><option>IA</option><option>KS</option>
-            <option>KY</option><option>LA</option><option>ME</option><option>MD</option>
-            <option>MA</option><option>MI</option><option>MN</option><option>MS</option>
-            <option>MO</option><option>MT</option><option>NE</option><option>NV</option>
-            <option>NH</option><option>NJ</option><option>NM</option><option>NY</option>
-            <option>NC</option><option>ND</option><option>OH</option><option>OK</option>
-            <option>OR</option><option>PA</option><option>RI</option><option>SC</option>
-            <option>SD</option><option>TN</option><option>TX</option><option>UT</option>
-            <option>VT</option><option>VA</option><option>WA</option><option>WV</option>
-            <option>WI</option><option>WY</option>
-          </select>
 
           <label for="bill-type">Bill Type</label>
           <select id="bill-type" name="bill_type" required>
@@ -455,7 +394,7 @@
           <textarea id="bill-issue" name="concern" placeholder="Example: hidden fees, new taxes, censorship, surveillance, property rights, etc."></textarea>
 
           <button class="submit" type="submit">Submit Bill</button>
-          <div class="note">This sends to America’s Torch inbox for review and future breakdown posts.</div>
+          <div class="note">Demo intake via Formspree for now.</div>
         </form>
       </div>
     </section>
@@ -502,12 +441,11 @@
               <option>KY</option><option>LA</option><option>ME</option><option>MD</option>
               <option>MA</option><option>MI</option><option>MN</option><option>MS</option>
               <option>MO</option><option>MT</option><option>NE</option><option>NV</option>
-              <option>NH</option><option>NJ</option><option>NM</option><option>NY</option>
-              <option>NC</option><option>ND</option><option>OH</option><option>OK</option>
-              <option>OR</option><option>PA</option><option>RI</option><option>SC</option>
-              <option>SD</option><option>TN</option><option>TX</option><option>UT</option>
-              <option>VT</option><option>VA</option><option>WA</option><option>WV</option>
-              <option>WI</option><option>WY</option>
+              <option>NH</option><option>NV</option><option>NY</option><option>NC</option>
+              <option>ND</option><option>OH</option><option>OK</option><option>OR</option>
+              <option>PA</option><option>RI</option><option>SC</option><option>SD</option>
+              <option>TN</option><option>TX</option><option>UT</option><option>VT</option>
+              <option>VA</option><option>WA</option><option>WV</option><option>WI</option><option>WY</option>
             </select>
             <button class="submit" type="submit">Sign Petition #1</button>
             <div class="note">Demo only — signatures go to a private Formspree inbox for counting/export.</div>
@@ -680,11 +618,11 @@
       const n = parseInt(localStorage.getItem('AT_no')||'0',10);
       const t = y+n;
       const p = t ? Math.round((y/t)*100) : 0;
-      els.yes.textContent = y;
-      els.no.textContent = n;
-      els.total.textContent = t;
-      els.pct.textContent = p;
-      els.bar.style.width = p + '%';
+      if (els.yes) els.yes.textContent = y;
+      if (els.no) els.no.textContent = n;
+      if (els.total) els.total.textContent = t;
+      if (els.pct) els.pct.textContent = p;
+      if (els.bar) els.bar.style.width = p + '%';
     }
 
     function cast(type){
@@ -695,6 +633,77 @@
     }
 
     loadVotes();
+
+    // --- Torch Feed (alerts.json) ---
+    async function loadTorchFeed(){
+      const feedEl = document.getElementById('torch-feed');
+      if (!feedEl) return;
+
+      try {
+        const res = await fetch('alerts.json?v=' + Date.now(), { cache: 'no-store' });
+        if (!res.ok) throw new Error('Could not load alerts.json (HTTP ' + res.status + ')');
+        const data = await res.json();
+
+        const items = Array.isArray(data.items) ? data.items : [];
+        if (!items.length) {
+          feedEl.innerHTML = `
+            <div class="card">
+              <div class="alert-meta">NO POSTS YET</div>
+              <h3>First Torch Breakdown coming soon</h3>
+              <p>Add items to <strong>alerts.json</strong> to publish here.</p>
+            </div>`;
+          return;
+        }
+
+        // newest first by date (YYYY-MM-DD)
+        items.sort((a,b) => (b.date || '').localeCompare(a.date || ''));
+
+        feedEl.innerHTML = items.map(item => {
+          const link = item.link
+            ? `<p><a href="${escapeHtmlAttr(item.link)}" target="_blank" rel="noopener"><strong>Source Link</strong></a></p>`
+            : '';
+
+          return `
+            <div class="card">
+              <div class="alert-meta">${escapeHtml(item.status || 'STATUS · UPDATE')}</div>
+              <div class="alert-tag">${escapeHtml(item.tag || 'Torch Breakdown')}</div>
+              <h3>${escapeHtml(item.title || 'Untitled')}</h3>
+
+              <p><strong>What it really does:</strong> ${escapeHtml(item.what || '')}</p>
+              <p><strong>Who benefits:</strong> ${escapeHtml(item.benefits || '')}<br>
+                 <strong>Who pays:</strong> ${escapeHtml(item.pays || '')}</p>
+              <p><strong>What looks risky/crazy:</strong> ${escapeHtml(item.crazy || '')}</p>
+
+              ${link}
+              <p class="note">Updated: ${escapeHtml(item.date || data.updated_at || '')}</p>
+            </div>`;
+        }).join('');
+      } catch (err) {
+        feedEl.innerHTML = `
+          <div class="card">
+            <div class="alert-meta">FEED ERROR</div>
+            <h3>Couldn’t load alerts.json</h3>
+            <p>Make sure <strong>alerts.json</strong> is in the same folder as <strong>index.html</strong>.</p>
+            <p class="note">${escapeHtml(String(err))}</p>
+          </div>`;
+      }
+    }
+
+    function escapeHtml(str){
+      return String(str || '')
+        .replaceAll('&','&amp;')
+        .replaceAll('<','&lt;')
+        .replaceAll('>','&gt;')
+        .replaceAll('"','&quot;')
+        .replaceAll("'","&#039;");
+    }
+
+    function escapeHtmlAttr(str){
+      // escape for attributes (href)
+      return escapeHtml(str).replaceAll('`','&#096;');
+    }
+
+    loadTorchFeed();
   </script>
 </body>
 </html>
