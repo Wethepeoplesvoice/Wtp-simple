@@ -2,607 +2,1261 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>America's Torch – Hero Graphic Preview</title>
+  <title>America's Torch – The Truth They Don't Want You To See</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Every bill. Every vote. Every dollar. Every name. The truth about what is happening to America and its citizens — every single day. In plain English." />
+  <meta property="og:title" content="America's Torch – The Truth They Don't Want You To See" />
+  <meta property="og:description" content="You paid in $312,000. They gave back $1,706/month. They sent $175 billion overseas. They gave themselves raises. Every number. Every name. Every day. 🔥" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #03050d;
+      --bg2: #070a18;
+      --gold: #f6b45d;
+      --gold-bright: #ffd080;
+      --gold-deep: #b97a2a;
+      --red: #c0392b;
+      --red-bright: #e74c3c;
+      --green: #2ecc71;
+      --text: #e9ecf4;
+      --muted: #8a93b0;
+      --border: rgba(255,255,255,0.08);
+      --font-display: 'Bebas Neue', sans-serif;
+      --font-body: 'Crimson Pro', Georgia, serif;
+      --font-mono: 'DM Mono', monospace;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
     body {
-      background: #03050d;
-      font-family: 'Crimson Pro', Georgia, serif;
-      color: #e9ecf4;
+      font-family: var(--font-body);
+      color: var(--text);
+      background: var(--bg);
       -webkit-font-smoothing: antialiased;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
       overflow-x: hidden;
     }
 
-    /* ── HERO GRAPHIC WRAPPER ── */
-    .hero-graphic {
-      position: relative;
-      width: 100%;
-      max-width: 900px;
-      min-height: 520px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      border-radius: 24px;
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
       background:
-        radial-gradient(ellipse 600px 400px at 50% 20%, rgba(246,180,93,0.13) 0%, transparent 65%),
-        radial-gradient(ellipse 800px 500px at 50% 100%, rgba(192,57,43,0.08) 0%, transparent 60%),
-        linear-gradient(180deg, #080410 0%, #03050d 40%, #010208 100%);
-      border: 1px solid rgba(246,180,93,0.15);
-      box-shadow:
-        0 0 120px rgba(246,140,30,0.08),
-        0 40px 100px rgba(0,0,0,0.9),
-        inset 0 1px 0 rgba(255,255,255,0.05);
-      padding: 40px 20px;
+        radial-gradient(ellipse 900px 600px at 85% -150px, rgba(246,180,93,0.08), transparent 60%),
+        radial-gradient(ellipse 700px 500px at -10% 40%, rgba(192,57,43,0.06), transparent 55%),
+        radial-gradient(ellipse 800px 600px at 40% 110%, rgba(246,180,93,0.05), transparent 60%);
+      pointer-events: none; z-index: 0;
     }
 
-    /* ── STAR FIELD ── */
-    .stars {
-      position: absolute;
-      inset: 0;
+    a { color: inherit; text-decoration: none; }
+
+    /* ── EMERGENCY STRIP ── */
+    .emergency-strip {
+      position: relative; z-index: 200;
+      background: var(--red);
+      padding: 0;
       overflow: hidden;
-      pointer-events: none;
     }
-    .star {
-      position: absolute;
-      background: #fff;
-      border-radius: 50%;
-      animation: twinkle var(--d, 3s) ease-in-out infinite var(--delay, 0s);
-    }
-    @keyframes twinkle {
-      0%,100% { opacity: var(--min-op, 0.2); transform: scale(1); }
-      50% { opacity: var(--max-op, 0.8); transform: scale(1.3); }
-    }
-
-    /* ── HORIZON GLOW ── */
-    .horizon {
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      height: 180px;
-      background: linear-gradient(0deg,
-        rgba(192,57,43,0.18) 0%,
-        rgba(246,140,30,0.10) 30%,
-        transparent 100%
-      );
-      pointer-events: none;
-    }
-
-    /* ── CAPITOL SILHOUETTE ── */
-    .capitol-wrap {
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 100%;
-      max-width: 800px;
-      height: 160px;
-      pointer-events: none;
-    }
-    .capitol-svg {
-      width: 100%;
-      height: 100%;
-    }
-
-    /* ── CROWD SILHOUETTE ── */
-    .crowd {
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      height: 70px;
-      pointer-events: none;
-    }
-
-    /* ── TORCH CONTAINER ── */
-    .torch-container {
-      position: relative;
-      z-index: 10;
+    .emergency-scroll {
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-top: -40px;
-    }
-
-    /* FLAME */
-    .flame-wrap {
-      position: relative;
-      width: 80px;
-      height: 120px;
-      display: flex;
-      align-items: flex-end;
-      justify-content: center;
-    }
-    .flame {
-      position: absolute;
-      bottom: 0;
-      border-radius: 50% 50% 20% 20% / 60% 60% 40% 40%;
-      transform-origin: bottom center;
-      animation: flicker var(--spd, 1.2s) ease-in-out infinite alternate;
-    }
-    .flame-outer {
-      width: 60px; height: 100px;
-      background: linear-gradient(180deg,
-        rgba(255,255,255,0.9) 0%,
-        rgba(255,220,80,1) 20%,
-        rgba(255,140,20,1) 50%,
-        rgba(200,50,10,0.8) 80%,
-        transparent 100%
-      );
-      filter: blur(3px);
-      --spd: 1.1s;
-      animation-delay: 0s;
-    }
-    .flame-mid {
-      width: 38px; height: 75px;
-      background: linear-gradient(180deg,
-        rgba(255,255,255,1) 0%,
-        rgba(255,235,100,1) 30%,
-        rgba(255,160,40,0.9) 60%,
-        transparent 100%
-      );
-      filter: blur(1.5px);
-      --spd: 0.9s;
-      animation-delay: 0.1s;
-    }
-    .flame-inner {
-      width: 18px; height: 45px;
-      background: linear-gradient(180deg,
-        rgba(255,255,255,1) 0%,
-        rgba(255,250,200,1) 40%,
-        rgba(255,200,80,0.8) 80%,
-        transparent 100%
-      );
-      filter: blur(0.5px);
-      --spd: 0.7s;
-      animation-delay: 0.05s;
-    }
-    .flame-core {
-      width: 8px; height: 25px;
-      background: linear-gradient(180deg, #fff 0%, rgba(255,255,220,0.9) 60%, transparent 100%);
-      --spd: 0.6s;
-    }
-    @keyframes flicker {
-      0%   { transform: scaleX(1)   scaleY(1)   rotate(-1deg); }
-      25%  { transform: scaleX(0.92) scaleY(1.04) rotate(1.5deg); }
-      50%  { transform: scaleX(1.05) scaleY(0.97) rotate(-0.5deg); }
-      75%  { transform: scaleX(0.95) scaleY(1.03) rotate(1deg); }
-      100% { transform: scaleX(1.02) scaleY(0.99) rotate(-1.5deg); }
-    }
-
-    /* FLAME GLOW */
-    .flame-glow {
-      position: absolute;
-      bottom: -10px;
-      left: 50%; transform: translateX(-50%);
-      width: 160px; height: 160px;
-      border-radius: 50%;
-      background: radial-gradient(circle,
-        rgba(255,200,80,0.35) 0%,
-        rgba(255,140,20,0.18) 40%,
-        rgba(200,60,10,0.06) 70%,
-        transparent 100%
-      );
-      animation: glow-pulse 1.5s ease-in-out infinite alternate;
-      pointer-events: none;
-    }
-    @keyframes glow-pulse {
-      from { transform: translateX(-50%) scale(1); opacity: 0.8; }
-      to   { transform: translateX(-50%) scale(1.15); opacity: 1; }
-    }
-
-    /* TORCH BODY */
-    .torch-body {
-      position: relative;
-      z-index: 5;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    .torch-cup {
-      width: 54px; height: 36px;
-      background: linear-gradient(180deg, #8b6914, #5a4008, #3a2a05);
-      border-radius: 4px 4px 8px 8px;
-      box-shadow: inset -4px 0 8px rgba(0,0,0,0.5), inset 4px 0 6px rgba(255,200,80,0.15), 0 0 12px rgba(246,140,30,0.3);
-      position: relative;
-    }
-    .torch-cup::after {
-      content: '';
-      position: absolute;
-      top: 3px; left: 6px; right: 6px; bottom: 3px;
-      background: linear-gradient(90deg, rgba(255,180,60,0.1), rgba(255,255,255,0.05), transparent);
-      border-radius: 2px;
-    }
-    .torch-band {
-      width: 58px; height: 10px;
-      background: linear-gradient(180deg, #c49a20, #8b6914, #6b4f10);
-      border-radius: 2px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.6);
-    }
-    .torch-handle {
-      width: 16px;
-      height: 180px;
-      background: linear-gradient(90deg, #2a1f08, #5a3f10, #8b6020, #5a3f10, #2a1f08);
-      border-radius: 8px 8px 6px 6px;
-      box-shadow: inset -3px 0 6px rgba(0,0,0,0.6), inset 2px 0 4px rgba(255,180,60,0.1), 0 8px 20px rgba(0,0,0,0.8);
-      position: relative;
-    }
-    .torch-handle::before {
-      content: '';
-      position: absolute;
-      top: 20px; left: 3px; right: 3px; bottom: 20px;
-      background: repeating-linear-gradient(
-        0deg,
-        transparent,
-        transparent 14px,
-        rgba(0,0,0,0.2) 14px,
-        rgba(0,0,0,0.2) 16px
-      );
-      border-radius: 6px;
-    }
-    .torch-base {
-      width: 22px; height: 14px;
-      background: linear-gradient(180deg, #5a3f10, #3a2a05);
-      border-radius: 3px 3px 6px 6px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.8);
-    }
-
-    /* LIGHT RAYS */
-    .rays {
-      position: absolute;
-      top: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 400px;
-      height: 400px;
-      pointer-events: none;
-      z-index: 2;
-    }
-    .ray {
-      position: absolute;
-      top: 50%; left: 50%;
-      width: 200px; height: 2px;
-      transform-origin: left center;
-      background: linear-gradient(90deg, rgba(255,220,80,0.25), transparent);
-      border-radius: 2px;
-      animation: ray-pulse 2s ease-in-out infinite alternate;
-    }
-    @keyframes ray-pulse {
-      from { opacity: 0.3; }
-      to   { opacity: 0.7; }
-    }
-
-    /* CONTENT OVERLAY */
-    .hero-content {
-      position: relative;
-      z-index: 20;
-      text-align: center;
-      padding: 20px;
-    }
-    .hero-eyebrow {
-      font-family: 'DM Mono', monospace;
+      white-space: nowrap;
+      animation: scroll-left 40s linear infinite;
+      padding: 8px 0;
+      font-family: var(--font-mono);
       font-size: 11px;
-      letter-spacing: .28em;
-      text-transform: uppercase;
-      color: rgba(246,180,93,0.8);
-      margin-bottom: 16px;
-    }
-    .hero-headline {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(56px, 10vw, 110px);
-      line-height: 0.88;
-      letter-spacing: .03em;
+      letter-spacing: .14em;
       color: #fff;
-      text-shadow:
-        0 0 60px rgba(246,180,93,0.4),
-        0 0 120px rgba(246,140,30,0.2),
-        0 4px 20px rgba(0,0,0,0.8);
     }
-    .hero-headline .gold {
-      color: #f6b45d;
-      text-shadow:
-        0 0 40px rgba(246,180,93,0.8),
-        0 0 80px rgba(246,140,30,0.5),
-        0 0 120px rgba(200,80,10,0.3);
-    }
-    .hero-tagline {
-      font-family: 'DM Mono', monospace;
-      font-size: clamp(11px, 2vw, 14px);
-      letter-spacing: .22em;
-      text-transform: uppercase;
-      color: rgba(232,200,160,0.85);
-      margin-top: 18px;
-      text-shadow: 0 2px 8px rgba(0,0,0,0.8);
-    }
-    .hero-divider {
-      width: 80px; height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(246,180,93,0.6), transparent);
-      margin: 16px auto;
-    }
-    .hero-sub {
-      font-family: 'Crimson Pro', Georgia, serif;
-      font-size: clamp(14px, 2.5vw, 18px);
-      font-style: italic;
-      color: rgba(180,188,214,0.85);
-      line-height: 1.65;
-      max-width: 500px;
-      margin: 0 auto;
-      text-shadow: 0 2px 8px rgba(0,0,0,0.9);
-    }
-    .hero-pills {
-      display: flex; flex-wrap: wrap;
-      gap: 8px; justify-content: center;
-      margin-top: 20px;
-    }
-    .hero-pill {
-      font-family: 'DM Mono', monospace;
-      font-size: 10px; letter-spacing: .14em;
-      text-transform: uppercase;
-      padding: 5px 14px; border-radius: 3px;
-      border: 1px solid rgba(246,180,93,0.3);
-      color: rgba(246,180,93,0.85);
-      background: rgba(246,180,93,0.06);
-      backdrop-filter: blur(4px);
-    }
-    .hero-cta {
-      margin-top: 24px;
-      display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;
-    }
-    .btn-fire {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 22px; letter-spacing: .08em;
-      padding: 12px 32px; border-radius: 3px;
-      background: linear-gradient(135deg, #f6b45d, #e8870a);
-      color: #0a0500;
-      box-shadow: 0 8px 28px rgba(246,140,30,0.4), 0 0 60px rgba(246,140,30,0.15);
-      transition: transform .15s, box-shadow .15s;
-      display: inline-block;
-    }
-    .btn-fire:hover { transform: translateY(-2px); box-shadow: 0 14px 36px rgba(246,140,30,0.55); }
-    .btn-ghost {
-      font-family: 'DM Mono', monospace; font-size: 12px; letter-spacing: .14em;
-      text-transform: uppercase; padding: 12px 22px; border-radius: 3px;
-      border: 1px solid rgba(255,255,255,0.22); color: #e9ecf4;
-      backdrop-filter: blur(4px); transition: border-color .2s, color .2s;
-      display: inline-block;
-    }
-    .btn-ghost:hover { border-color: #f6b45d; color: #f6b45d; }
-
-    /* SPARKS */
-    .spark {
-      position: absolute;
-      width: 3px; height: 3px;
-      border-radius: 50%;
-      background: #ffd080;
-      pointer-events: none;
-      animation: spark-fly var(--dur, 1.5s) ease-out infinite var(--delay, 0s);
-      opacity: 0;
-    }
-    @keyframes spark-fly {
-      0%   { opacity: 1; transform: translate(0, 0) scale(1); }
-      100% { opacity: 0; transform: translate(var(--tx, 20px), var(--ty, -60px)) scale(0); }
+    .emergency-scroll span { padding: 0 40px; }
+    .emergency-scroll span::before { content: '🔴 '; }
+    @keyframes scroll-left {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
     }
 
-    /* PREVIEW LABEL */
-    .preview-label {
-      margin-top: 16px;
-      font-family: 'DM Mono', monospace;
-      font-size: 10px;
-      letter-spacing: .2em;
-      text-transform: uppercase;
-      color: rgba(138,147,176,0.6);
+    /* ── NAV ── */
+    .nav {
+      position: sticky; top: 0; z-index: 999;
+      display: flex; gap: 0; justify-content: center; flex-wrap: wrap;
+      background: rgba(3,5,13,0.97);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(246,180,93,0.25);
+      padding: 0 8px;
+    }
+    .nav a {
+      font-family: var(--font-mono); font-size: 10px;
+      letter-spacing: .12em; text-transform: uppercase;
+      color: var(--muted); padding: 13px 10px;
+      transition: color .2s; border-bottom: 2px solid transparent;
+    }
+    .nav a:hover { color: var(--gold); border-bottom-color: var(--gold); }
+
+    /* ── SHELL ── */
+    .shell {
+      position: relative; z-index: 1;
+      max-width: 1140px; margin: 0 auto;
+      padding: 0 20px 120px;
+    }
+
+    /* ── REAL TIME NUMBERS ── */
+    .realtime {
+      position: relative; z-index: 1;
+      background: #000;
+      border-bottom: 1px solid rgba(246,180,93,0.3);
+      padding: 24px 20px;
+    }
+    .realtime-title {
       text-align: center;
+      font-family: var(--font-mono); font-size: 11px;
+      letter-spacing: .28em; text-transform: uppercase;
+      color: var(--red); margin-bottom: 18px;
+      display: flex; align-items: center; justify-content: center; gap: 8px;
     }
+    .realtime-title::before, .realtime-title::after {
+      content: ''; display: block;
+      flex: 1; height: 1px; background: rgba(192,57,43,0.4);
+    }
+    .realtime-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 2px; max-width: 1100px; margin: 0 auto;
+    }
+    .rt-cell {
+      background: #070a14;
+      border: 1px solid rgba(255,255,255,0.06);
+      padding: 14px 16px; text-align: center;
+    }
+    .rt-label {
+      font-family: var(--font-mono); font-size: 9px;
+      letter-spacing: .18em; text-transform: uppercase;
+      color: var(--muted); margin-bottom: 6px;
+    }
+    .rt-value {
+      font-family: var(--font-display); font-size: 22px;
+      letter-spacing: .04em; line-height: 1;
+    }
+    .rt-value.red { color: var(--red-bright); }
+    .rt-value.gold { color: var(--gold); }
+    .rt-value.green { color: var(--green); }
+    .rt-value.white { color: #fff; }
+    .rt-sub {
+      font-family: var(--font-mono); font-size: 9px;
+      color: var(--muted); margin-top: 4px; letter-spacing: .1em;
+    }
+
+    /* ── MEMBER COUNTER ── */
+    .counter-bar {
+      position: relative; z-index: 1;
+      background: linear-gradient(90deg, rgba(246,180,93,0.07), rgba(192,57,43,0.05), rgba(246,180,93,0.07));
+      border-bottom: 1px solid rgba(246,180,93,0.2);
+      padding: 24px 20px; text-align: center;
+    }
+    .counter-number {
+      font-family: var(--font-display);
+      font-size: clamp(44px, 7vw, 72px);
+      color: var(--gold); letter-spacing: .04em; line-height: 1;
+      text-shadow: 0 0 40px rgba(246,180,93,0.35);
+    }
+    .counter-label {
+      font-family: var(--font-mono); font-size: 11px;
+      letter-spacing: .24em; text-transform: uppercase;
+      color: var(--muted); margin-top: 5px;
+    }
+    .counter-stats { display: flex; gap: 32px; justify-content: center; margin-top: 14px; flex-wrap: wrap; }
+    .c-stat-num { font-family: var(--font-display); font-size: 26px; color: var(--text); }
+    .c-stat-lbl { font-family: var(--font-mono); font-size: 9px; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); margin-top: 2px; }
+
+    /* ── HERO ── */
+    .hero {
+      padding: 64px 0 48px;
+      display: grid; grid-template-columns: 1.2fr 1fr;
+      gap: 60px; align-items: center;
+    }
+    .hero-left { animation: fadeUp .8s ease both; }
+    .hero-right { animation: fadeUp .8s .15s ease both; }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .eyebrow {
+      font-family: var(--font-mono); font-size: 11px;
+      letter-spacing: .22em; text-transform: uppercase; color: var(--gold);
+      margin-bottom: 14px; display: flex; align-items: center; gap: 10px;
+    }
+    .eyebrow::before { content: ''; display: block; width: 28px; height: 1px; background: var(--gold); }
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(48px, 7.5vw, 92px);
+      line-height: .92; color: #fff; letter-spacing: .02em;
+    }
+    .hero-title .gold { color: var(--gold); }
+    .hero-title .red { color: var(--red-bright); }
+    .hero-sub { margin-top: 18px; font-size: 18px; line-height: 1.68; color: #b0b8d4; font-style: italic; }
+    .hero-pills { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 22px; }
+    .pill {
+      font-family: var(--font-mono); font-size: 10px; letter-spacing: .14em;
+      text-transform: uppercase; padding: 5px 13px; border-radius: 3px;
+      border: 1px solid rgba(246,180,93,0.3); color: var(--gold);
+      background: rgba(246,180,93,0.05);
+    }
+    .hero-btns { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+    .btn-fire {
+      font-family: var(--font-display); font-size: 20px; letter-spacing: .08em;
+      padding: 13px 30px; border-radius: 3px;
+      background: linear-gradient(135deg, #f6b45d, #e8870a);
+      color: #0a0500; box-shadow: 0 8px 28px rgba(246,140,30,0.3);
+      transition: transform .15s, box-shadow .15s; display: inline-block;
+    }
+    .btn-fire:hover { transform: translateY(-2px); box-shadow: 0 14px 36px rgba(246,140,30,0.45); }
+    .btn-ghost {
+      font-family: var(--font-mono); font-size: 11px; letter-spacing: .14em;
+      text-transform: uppercase; padding: 13px 22px; border-radius: 3px;
+      border: 1px solid rgba(255,255,255,0.22); color: var(--text);
+      transition: border-color .2s, color .2s;
+    }
+    .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+
+    /* TORCH VISUAL */
+    .torch-visual { display: flex; align-items: center; justify-content: center; position: relative; }
+    .torch-ring {
+      width: 280px; height: 280px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(246,180,93,0.16) 0%, rgba(246,140,30,0.07) 40%, transparent 70%);
+      display: flex; align-items: center; justify-content: center; position: relative;
+      animation: pulse 3s ease-in-out infinite;
+    }
+    @keyframes pulse { 0%,100%{transform:scale(1);opacity:1} 50%{transform:scale(1.05);opacity:.85} }
+    .torch-emoji { font-size: 100px; filter: drop-shadow(0 0 28px rgba(246,180,93,0.65)); }
+    .orbit { position: absolute; inset: -24px; border: 1px dashed rgba(246,180,93,0.18); border-radius: 50%; animation: spin 36s linear infinite; }
+    .orbit2 { position: absolute; inset: -50px; border: 1px dashed rgba(192,57,43,0.12); border-radius: 50%; animation: spin 60s linear infinite reverse; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ── SECTIONS ── */
+    .section { padding: 56px 0 0; }
+    .section-header { margin-bottom: 26px; }
+    .kicker {
+      font-family: var(--font-mono); font-size: 11px; letter-spacing: .22em;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 10px;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .kicker::before { content: ''; display: block; width: 20px; height: 1px; background: var(--gold); }
+    .section-title {
+      font-family: var(--font-display); font-size: clamp(30px, 4.5vw, 50px);
+      letter-spacing: .04em; color: #fff; line-height: 1;
+    }
+    .section-sub { margin-top: 10px; font-size: 17px; font-style: italic; color: #8a93b0; line-height: 1.6; }
+
+    /* ── TRUTH NUMBERS ── */
+    .truth-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2px; margin-top: 20px;
+    }
+    .truth-cell {
+      background: #060910;
+      border: 1px solid rgba(255,255,255,0.06);
+      padding: 22px 20px; position: relative; overflow: hidden;
+    }
+    .truth-cell::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--red), var(--gold));
+    }
+    .truth-label { font-family: var(--font-mono); font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+    .truth-number { font-family: var(--font-display); font-size: 36px; letter-spacing: .04em; color: var(--red-bright); line-height: 1; margin-bottom: 6px; }
+    .truth-number.gold { color: var(--gold); }
+    .truth-number.green { color: var(--green); }
+    .truth-context { font-size: 14px; color: #9aa3bf; line-height: 1.6; }
+    .truth-context strong { color: var(--gold-bright); }
+
+    /* ── FOUNDER ── */
+    .founder-block {
+      background: linear-gradient(135deg, rgba(10,14,28,0.98), rgba(6,9,18,0.99));
+      border: 1px solid rgba(246,180,93,0.2); border-left: 4px solid var(--gold);
+      border-radius: 6px; padding: 36px 40px; position: relative; overflow: hidden;
+    }
+    .founder-block::before {
+      content: '"'; font-family: var(--font-display); font-size: 180px;
+      color: rgba(246,180,93,0.05); position: absolute; top: -10px; left: 16px;
+      line-height: 1; pointer-events: none;
+    }
+    .founder-text { font-size: 18px; line-height: 1.8; color: #c8d0e8; font-style: italic; position: relative; }
+    .founder-text strong { color: var(--gold-bright); font-style: normal; }
+    .founder-sig {
+      margin-top: 22px; font-family: var(--font-mono); font-size: 11px;
+      letter-spacing: .16em; text-transform: uppercase; color: var(--gold);
+      display: flex; align-items: center; gap: 12px;
+    }
+    .founder-sig::before { content: ''; display: block; width: 36px; height: 1px; background: var(--gold); }
+
+    /* ── DEMANDS ── */
+    .demands-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px; margin-top: 22px;
+    }
+    .demand {
+      background: #060910; border: 1px solid var(--border); border-radius: 6px;
+      padding: 22px; position: relative; overflow: hidden;
+      transition: border-color .2s, transform .2s;
+    }
+    .demand:hover { border-color: rgba(246,180,93,0.35); transform: translateY(-2px); }
+    .demand::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, var(--red), var(--gold));
+    }
+    .demand-num { font-family: var(--font-display); font-size: 42px; color: rgba(246,180,93,0.12); line-height: 1; margin-bottom: 6px; }
+    .demand-title { font-family: var(--font-display); font-size: 20px; letter-spacing: .04em; color: var(--gold); margin-bottom: 8px; }
+    .demand-text { font-size: 14px; line-height: 1.68; color: #8a93b0; }
+    .demand-text strong { color: #c8d0e8; }
+
+    /* ── EXPOSURE ── */
+    .exposure-block {
+      background: #000;
+      border: 1px solid rgba(192,57,43,0.4);
+      border-radius: 6px; padding: 28px; margin-top: 20px;
+    }
+    .exposure-row {
+      display: flex; align-items: flex-start; gap: 16px;
+      padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .exposure-row:last-child { border-bottom: none; padding-bottom: 0; }
+    .exposure-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--red); flex-shrink: 0; margin-top: 5px; animation: blink 2s ease infinite; }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.2} }
+    .exposure-text { font-size: 15px; line-height: 1.65; color: #b0b8d4; }
+    .exposure-text strong { color: #fff; }
+    .exposure-text em { color: var(--gold); font-style: normal; font-family: var(--font-mono); font-size: 13px; }
+
+    /* ── SS CALCULATOR ── */
+    .ss-block {
+      background: #060910; border: 1px solid rgba(246,180,93,0.2);
+      border-radius: 6px; padding: 28px; margin-top: 20px;
+    }
+    .ss-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 16px; }
+    .ss-col { }
+    .ss-col-title { font-family: var(--font-display); font-size: 20px; letter-spacing: .04em; margin-bottom: 12px; }
+    .ss-col-title.red { color: var(--red-bright); }
+    .ss-col-title.green { color: var(--green); }
+    .ss-row { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 14px; }
+    .ss-row-label { color: var(--muted); }
+    .ss-row-value { font-family: var(--font-mono); font-size: 13px; }
+    .ss-row-value.red { color: var(--red-bright); }
+    .ss-row-value.gold { color: var(--gold); }
+    .ss-row-value.green { color: var(--green); }
+    .ss-verdict {
+      margin-top: 18px; padding: 16px; background: rgba(192,57,43,0.1);
+      border: 1px solid rgba(192,57,43,0.3); border-radius: 4px;
+      font-size: 15px; line-height: 1.65; color: #c8d0e8;
+    }
+    .ss-verdict strong { color: var(--red-bright); }
+
+    /* ── ALERTS ── */
+    .alerts-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 16px; margin-top: 20px; }
+    .alert-card {
+      background: #060910; border: 1px solid var(--border); border-radius: 6px;
+      padding: 22px; position: relative; overflow: hidden; transition: border-color .2s, transform .2s;
+    }
+    .alert-card:hover { border-color: rgba(246,180,93,0.35); transform: translateY(-2px); }
+    .alert-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--red), var(--gold)); }
+    .alert-status { font-family: var(--font-mono); font-size: 10px; letter-spacing: .16em; text-transform: uppercase; color: var(--red); margin-bottom: 8px; display: flex; align-items: center; gap: 6px; }
+    .alert-status::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--red); animation: blink 1.5s ease infinite; }
+    .alert-tag { display: inline-block; font-family: var(--font-mono); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; padding: 3px 10px; border-radius: 3px; background: rgba(246,180,93,0.08); border: 1px solid rgba(246,180,93,0.28); color: var(--gold); margin-bottom: 10px; }
+    .alert-title { font-family: var(--font-display); font-size: 21px; letter-spacing: .04em; color: #fff; margin-bottom: 12px; line-height: 1.1; }
+    .alert-row { margin-top: 9px; font-size: 13px; line-height: 1.6; color: #8a93b0; }
+    .alert-row strong { color: var(--gold); font-family: var(--font-mono); font-size: 9px; letter-spacing: .14em; text-transform: uppercase; display: block; margin-bottom: 2px; }
+    .alert-source { margin-top: 12px; font-family: var(--font-mono); font-size: 10px; color: var(--muted); }
+    .alert-source a { color: var(--gold); text-decoration: underline; }
+
+    /* ── VOTE ── */
+    .vote-block { background: #060910; border: 1px solid rgba(255,255,255,0.12); border-radius: 6px; padding: 26px; margin-top: 14px; }
+    .vote-title { font-family: var(--font-display); font-size: 26px; letter-spacing: .04em; color: #fff; margin-bottom: 4px; line-height: 1.1; }
+    .vote-hint { font-family: var(--font-mono); font-size: 10px; color: var(--muted); letter-spacing: .12em; margin-bottom: 16px; }
+    .vote-btns { display: flex; gap: 10px; flex-wrap: wrap; }
+    .vote-btns button { flex:1; min-width:130px; font-family: var(--font-display); font-size: 19px; letter-spacing: .05em; border: none; border-radius: 3px; padding: 12px 16px; cursor: pointer; transition: transform .15s; }
+    .vote-btns button:hover { transform: scale(1.03); }
+    .btn-yes { background: linear-gradient(135deg, #2ecc71, #27ae60); color: #001a0a; }
+    .btn-no  { background: linear-gradient(135deg, #e74c3c, #c0392b); color: #1a0000; }
+    .vote-totals { margin-top: 14px; font-family: var(--font-mono); font-size: 12px; color: #8a93b0; letter-spacing: .1em; }
+    .vote-bar { margin-top: 8px; height: 10px; background: #0d1220; border-radius: 999px; overflow: hidden; border: 1px solid rgba(255,255,255,0.06); }
+    .vote-bar-fill { height: 100%; background: linear-gradient(90deg, #2ecc71, #f6b45d); width: 0%; transition: width .4s ease; }
+
+    /* ── PORTAL ── */
+    .portal-block {
+      background: linear-gradient(135deg, rgba(246,180,93,0.05), rgba(10,14,28,0.99));
+      border: 2px solid rgba(246,180,93,0.28); border-radius: 6px; padding: 32px; margin-top: 20px;
+    }
+    .portal-features { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 14px; margin-top: 18px; }
+    .portal-feature { background: rgba(3,5,13,0.8); border: 1px solid var(--border); border-radius: 4px; padding: 16px; }
+    .portal-feature-icon { font-size: 22px; margin-bottom: 8px; }
+    .portal-feature-title { font-family: var(--font-display); font-size: 17px; color: var(--gold); margin-bottom: 5px; }
+    .portal-feature p { font-size: 13px; color: #8a93b0; line-height: 1.6; }
+
+    /* ── CARDS ── */
+    .cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; margin-top: 20px; }
+    .card { background: #060910; border: 1px solid var(--border); border-radius: 6px; padding: 20px; transition: border-color .2s; }
+    .card:hover { border-color: rgba(246,180,93,0.28); }
+    .card-icon { font-size: 26px; margin-bottom: 10px; }
+    .card-title { font-family: var(--font-display); font-size: 20px; letter-spacing: .04em; color: var(--gold); margin-bottom: 7px; }
+    .card p { font-size: 14px; line-height: 1.65; color: #8a93b0; }
+    .card a { color: var(--gold); text-decoration: underline; display: block; margin-top: 5px; font-size: 13px; }
+
+    /* ── SHARE ── */
+    .share-block { background: linear-gradient(135deg, rgba(246,180,93,0.07), rgba(192,57,43,0.05)); border: 1px solid rgba(246,180,93,0.22); border-radius: 6px; padding: 36px; text-align: center; margin-top: 48px; }
+    .share-title { font-family: var(--font-display); font-size: 38px; letter-spacing: .04em; color: #fff; margin-bottom: 8px; }
+    .share-sub { font-size: 16px; font-style: italic; color: #8a93b0; margin-bottom: 24px; }
+    .share-btns { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+    .share-btn { font-family: var(--font-mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; padding: 12px 20px; border-radius: 3px; border: none; cursor: pointer; display: flex; align-items: center; gap: 7px; transition: transform .15s, opacity .15s; }
+    .share-btn:hover { transform: translateY(-2px); opacity: .9; }
+    .share-x { background: #000; color: #fff; border: 1px solid rgba(255,255,255,0.18); }
+    .share-fb { background: #1877f2; color: #fff; }
+    .share-wa { background: #25d366; color: #000; }
+    .share-copy { background: rgba(246,180,93,0.12); color: var(--gold); border: 1px solid rgba(246,180,93,0.28); }
+
+    /* ── FORMS ── */
+    .form-wrap { margin-top: 16px; }
+    .form-wrap label { display: block; font-family: var(--font-mono); font-size: 10px; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); margin: 12px 0 4px; }
+    .form-wrap input, .form-wrap select, .form-wrap textarea {
+      width: 100%; padding: 10px 12px; border-radius: 3px;
+      border: 1px solid rgba(255,255,255,0.12); background: #03050d;
+      color: var(--text); font-size: 15px; font-family: var(--font-body);
+      transition: border-color .2s;
+    }
+    .form-wrap input:focus, .form-wrap select:focus, .form-wrap textarea:focus { outline: none; border-color: rgba(246,180,93,0.45); }
+    .form-wrap textarea { min-height: 90px; resize: vertical; }
+    .btn-submit {
+      margin-top: 14px; width: 100%; font-family: var(--font-display);
+      font-size: 21px; letter-spacing: .08em; border: none; border-radius: 3px;
+      padding: 13px; background: linear-gradient(135deg, var(--gold), #e8870a);
+      color: #0a0500; cursor: pointer; transition: opacity .2s, transform .15s;
+    }
+    .btn-submit:hover { opacity: .9; transform: translateY(-1px); }
+    .form-note { margin-top: 7px; font-family: var(--font-mono); font-size: 10px; letter-spacing: .1em; color: var(--muted); }
+
+    /* PETITION CARDS */
+    .petition-card { background: #060910; border: 1px solid var(--border); border-radius: 6px; padding: 22px; }
+    .petition-title { font-family: var(--font-display); font-size: 20px; letter-spacing: .04em; color: var(--gold); margin-bottom: 7px; }
+    .petition-desc { font-size: 14px; color: #8a93b0; line-height: 1.65; margin-bottom: 14px; border-bottom: 1px solid rgba(255,255,255,0.07); padding-bottom: 14px; }
+
+    /* ── JOIN / DONATE ── */
+    .donate-block { margin-top: 48px; background: radial-gradient(ellipse at top left, rgba(192,57,43,0.12), transparent 60%), rgba(8,11,20,0.9); border: 1px solid rgba(192,57,43,0.28); border-radius: 6px; padding: 36px; text-align: center; }
+    .join-block { margin-top: 48px; background: radial-gradient(ellipse at top left, rgba(246,180,93,0.07), transparent 60%), rgba(8,11,20,0.9); border: 1px solid rgba(246,180,93,0.22); border-radius: 6px; padding: 36px; }
+
+    /* ── DIVIDER ── */
+    .divider { height: 1px; background: linear-gradient(90deg, transparent, rgba(246,180,93,0.18), transparent); margin: 52px 0 0; }
+
+    /* ── FOOTER ── */
+    footer { position: relative; z-index: 1; border-top: 1px solid var(--border); padding: 26px 20px; text-align: center; font-family: var(--font-mono); font-size: 10px; letter-spacing: .14em; color: var(--muted); line-height: 1.9; }
+
+    /* ── TOAST ── */
+    .toast { position: fixed; bottom: 22px; left: 50%; transform: translateX(-50%) translateY(80px); background: var(--gold); color: #0a0500; font-family: var(--font-mono); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; padding: 11px 22px; border-radius: 3px; z-index: 9999; transition: transform .3s ease; pointer-events: none; }
+    .toast.show { transform: translateX(-50%) translateY(0); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 740px) {
+      .hero { grid-template-columns: 1fr; padding: 36px 0 28px; gap: 28px; }
+      .hero-right { order: -1; }
+      .torch-ring { width: 160px; height: 160px; }
+      .torch-emoji { font-size: 68px; }
+      .founder-block { padding: 22px 18px; }
+      .ss-grid { grid-template-columns: 1fr; }
+    }
+
+    .state-select-wrap { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap: 10px; margin-top: 20px; }
+  
+    /* REAL HERO IMAGE */
+    .real-image-wrap {
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow:
+        0 0 60px rgba(246,140,30,0.25),
+        0 0 120px rgba(192,57,43,0.15),
+        0 30px 80px rgba(0,0,0,0.8);
+      border: 1px solid rgba(246,180,93,0.2);
+      animation: fadeUp .8s .15s ease both;
+    }
+    .hero-real-img {
+      width: 100%;
+      display: block;
+      filter: brightness(0.95) contrast(1.05) saturate(1.1);
+    }
+    .hero-img-caption {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 28px 20px 18px;
+      background: linear-gradient(0deg, rgba(3,5,13,0.92) 0%, rgba(3,5,13,0.6) 60%, transparent 100%);
+      font-family: var(--font-display);
+      font-size: 22px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      text-align: center;
+      text-shadow: 0 0 30px rgba(246,180,93,0.5);
+    }
+    /* Remove old orbit/ring styles that are no longer needed */
+
   </style>
 </head>
 <body>
 
-  <div class="hero-graphic">
-
-    <!-- STARS -->
-    <div class="stars" id="stars"></div>
-
-    <!-- HORIZON GLOW -->
-    <div class="horizon"></div>
-
-    <!-- LIGHT RAYS -->
-    <div class="rays" id="rays"></div>
-
-    <!-- CAPITOL SILHOUETTE -->
-    <div class="capitol-wrap">
-      <svg class="capitol-svg" viewBox="0 0 900 160" preserveAspectRatio="xMidYMax meet" xmlns="http://www.w3.org/2000/svg">
-        <!-- Sky gradient fill -->
-        <defs>
-          <linearGradient id="capGrad" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#1a0a02" stop-opacity="0.9"/>
-            <stop offset="100%" stop-color="#0a0500" stop-opacity="1"/>
-          </linearGradient>
-        </defs>
-        <!-- Capitol dome and building silhouette -->
-        <g fill="url(#capGrad)" opacity="0.95">
-          <!-- Left wing -->
-          <rect x="0" y="100" width="280" height="60"/>
-          <rect x="20" y="85" width="240" height="20"/>
-          <rect x="40" y="72" width="200" height="16"/>
-          <!-- Left columns suggestion -->
-          <rect x="50" y="60" width="6" height="30"/>
-          <rect x="70" y="60" width="6" height="30"/>
-          <rect x="90" y="60" width="6" height="30"/>
-          <rect x="110" y="60" width="6" height="30"/>
-          <rect x="130" y="60" width="6" height="30"/>
-          <rect x="150" y="60" width="6" height="30"/>
-          <rect x="170" y="60" width="6" height="30"/>
-          <rect x="190" y="60" width="6" height="30"/>
-          <rect x="210" y="60" width="6" height="30"/>
-          <!-- Center base -->
-          <rect x="280" y="80" width="340" height="80"/>
-          <rect x="300" y="65" width="300" height="18"/>
-          <!-- Drum of dome -->
-          <rect x="360" y="40" width="180" height="30"/>
-          <!-- Dome shape -->
-          <ellipse cx="450" cy="40" rx="90" ry="45"/>
-          <!-- Dome top -->
-          <rect x="440" y="0" width="20" height="20"/>
-          <polygon points="450,0 438,20 462,20"/>
-          <!-- Right wing -->
-          <rect x="620" y="100" width="280" height="60"/>
-          <rect x="640" y="85" width="240" height="20"/>
-          <rect x="660" y="72" width="200" height="16"/>
-          <!-- Right columns -->
-          <rect x="670" y="60" width="6" height="30"/>
-          <rect x="690" y="60" width="6" height="30"/>
-          <rect x="710" y="60" width="6" height="30"/>
-          <rect x="730" y="60" width="6" height="30"/>
-          <rect x="750" y="60" width="6" height="30"/>
-          <rect x="770" y="60" width="6" height="30"/>
-          <rect x="790" y="60" width="6" height="30"/>
-          <rect x="810" y="60" width="6" height="30"/>
-          <rect x="830" y="60" width="6" height="30"/>
-        </g>
-        <!-- Red glow under capitol -->
-        <ellipse cx="450" cy="160" rx="300" ry="30" fill="rgba(192,57,43,0.12)"/>
-      </svg>
+  <!-- SCROLLING ALERT STRIP -->
+  <div class="emergency-strip">
+    <div class="emergency-scroll">
+      <span>Congress salary: $174,000/year while minimum wage stays at $7.25/hour — unchanged since 2009</span>
+      <span>You paid ~$312,000 into Social Security. Average payout: $1,706/month</span>
+      <span>$175 billion sent to Ukraine while 33,000+ American veterans sleep homeless</span>
+      <span>47 unrelated policy riders buried inside a must-pass spending bill voted on at midnight</span>
+      <span>Pharmaceutical lobbyists spent $374 million influencing drug pricing laws last year</span>
+      <span>42,000+ bridges in America rated structurally deficient — foreign aid keeps flowing</span>
+      <span>11 million American children living in poverty — Congress approved their own raises</span>
+      <span>A father lost custody in a 4-minute hearing with no jury and no explanation</span>
+      <span>Congress salary: $174,000/year while minimum wage stays at $7.25/hour — unchanged since 2009</span>
+      <span>You paid ~$312,000 into Social Security. Average payout: $1,706/month</span>
+      <span>$175 billion sent to Ukraine while 33,000+ American veterans sleep homeless</span>
+      <span>47 unrelated policy riders buried inside a must-pass spending bill voted on at midnight</span>
+      <span>Pharmaceutical lobbyists spent $374 million influencing drug pricing laws last year</span>
+      <span>42,000+ bridges in America rated structurally deficient — foreign aid keeps flowing</span>
     </div>
-
-    <!-- CROWD SILHOUETTE -->
-    <div class="crowd">
-      <svg width="100%" height="70" viewBox="0 0 900 70" preserveAspectRatio="xMidYMax meet" xmlns="http://www.w3.org/2000/svg">
-        <g fill="#050810" opacity="0.95">
-          <!-- Crowd of people silhouettes -->
-          <ellipse cx="30" cy="55" rx="12" ry="18"/>
-          <ellipse cx="60" cy="50" rx="11" ry="20"/>
-          <ellipse cx="90" cy="55" rx="12" ry="17"/>
-          <ellipse cx="118" cy="48" rx="10" ry="22"/>
-          <ellipse cx="145" cy="54" rx="12" ry="18"/>
-          <ellipse cx="172" cy="49" rx="11" ry="21"/>
-          <ellipse cx="200" cy="55" rx="12" ry="17"/>
-          <ellipse cx="228" cy="50" rx="10" ry="20"/>
-          <ellipse cx="255" cy="53" rx="12" ry="19"/>
-          <ellipse cx="282" cy="48" rx="11" ry="22"/>
-          <ellipse cx="310" cy="55" rx="12" ry="17"/>
-          <ellipse cx="338" cy="50" rx="10" ry="20"/>
-          <ellipse cx="365" cy="54" rx="11" ry="18"/>
-          <!-- Gap in middle for torch light -->
-          <ellipse cx="535" cy="54" rx="11" ry="18"/>
-          <ellipse cx="562" cy="50" rx="10" ry="20"/>
-          <ellipse cx="590" cy="55" rx="12" ry="17"/>
-          <ellipse cx="618" cy="48" rx="11" ry="22"/>
-          <ellipse cx="645" cy="54" rx="12" ry="18"/>
-          <ellipse cx="672" cy="50" rx="10" ry="20"/>
-          <ellipse cx="700" cy="55" rx="12" ry="17"/>
-          <ellipse cx="728" cy="49" rx="11" ry="21"/>
-          <ellipse cx="755" cy="54" rx="12" ry="18"/>
-          <ellipse cx="782" cy="48" rx="10" ry="22"/>
-          <ellipse cx="810" cy="55" rx="12" ry="17"/>
-          <ellipse cx="838" cy="50" rx="11" ry="20"/>
-          <ellipse cx="865" cy="54" rx="12" ry="18"/>
-          <ellipse cx="892" cy="49" rx="10" ry="21"/>
-          <!-- Ground fill -->
-          <rect x="0" y="60" width="900" height="10"/>
-        </g>
-        <!-- Tiny torch flames in crowd -->
-        <g opacity="0.6">
-          <ellipse cx="145" cy="32" rx="3" ry="5" fill="#ffd080"/>
-          <ellipse cx="228" cy="28" rx="3" ry="6" fill="#ff9020"/>
-          <ellipse cx="310" cy="34" rx="2" ry="4" fill="#ffd080"/>
-          <ellipse cx="590" cy="32" rx="3" ry="5" fill="#ffd080"/>
-          <ellipse cx="672" cy="28" rx="3" ry="6" fill="#ff9020"/>
-          <ellipse cx="755" cy="33" rx="2" ry="5" fill="#ffd080"/>
-          <ellipse cx="838" cy="29" rx="3" ry="6" fill="#ff9020"/>
-        </g>
-      </svg>
-    </div>
-
-    <!-- TORCH -->
-    <div class="torch-container" id="torchContainer">
-      <div class="flame-wrap">
-        <div class="flame-glow"></div>
-        <div class="flame flame-outer"></div>
-        <div class="flame flame-mid"></div>
-        <div class="flame flame-inner"></div>
-        <div class="flame flame-core"></div>
-        <!-- Sparks -->
-        <div class="spark" style="--tx:-18px;--ty:-80px;--dur:1.4s;--delay:0.1s; left:30px; top:10px;"></div>
-        <div class="spark" style="--tx:22px;--ty:-70px;--dur:1.7s;--delay:0.4s; left:44px; top:15px;"></div>
-        <div class="spark" style="--tx:-25px;--ty:-65px;--dur:1.2s;--delay:0.7s; left:38px; top:8px;"></div>
-        <div class="spark" style="--tx:15px;--ty:-90px;--dur:1.6s;--delay:0.2s; left:26px; top:12px;"></div>
-        <div class="spark" style="--tx:-10px;--ty:-75px;--dur:1.3s;--delay:0.9s; left:50px; top:6px;"></div>
-        <div class="spark" style="--tx:30px;--ty:-60px;--dur:1.8s;--delay:0.5s; left:20px; top:18px;"></div>
-      </div>
-      <div class="torch-body">
-        <div class="torch-cup"></div>
-        <div class="torch-band"></div>
-        <div class="torch-handle"></div>
-        <div class="torch-base"></div>
-      </div>
-    </div>
-
-    <!-- TEXT CONTENT -->
-    <div class="hero-content" style="position:absolute; top:0; left:0; right:0; bottom:0; display:flex; flex-direction:column; align-items:center; justify-content:center; padding: 20px;">
-      <div class="hero-eyebrow">Peaceful · Non-Partisan · Citizen-Powered</div>
-      <div class="hero-headline">
-        America's<br>
-        <span class="gold">Torch</span>
-      </div>
-      <div class="hero-divider"></div>
-      <div class="hero-tagline">The Flame They Can't Blow Out</div>
-      <p class="hero-sub">Every bill. Every vote. Every dollar. Every name. The truth about what is happening to America — every single day. In plain English.</p>
-      <div class="hero-pills">
-        <div class="hero-pill">No Immunity</div>
-        <div class="hero-pill">No Midnight Votes</div>
-        <div class="hero-pill">One Bill One Subject</div>
-        <div class="hero-pill">People Approve Laws</div>
-        <div class="hero-pill">58 Demands</div>
-      </div>
-      <div class="hero-cta">
-        <a class="btn-fire" href="#join">Light Your Torch 🔥</a>
-        <a class="btn-ghost" href="#demands">See All 58 Demands</a>
-      </div>
-    </div>
-
   </div>
 
-  <div class="preview-label">America's Torch — Hero Graphic · Pure CSS · No Image File Needed · Loads Instantly On Every Device</div>
+  <!-- NAV -->
+  <nav class="nav">
+    <a href="#truth">The Truth</a>
+    <a href="#story">Our Story</a>
+    <a href="#demands">58 Demands</a>
+    <a href="#ss">Social Security</a>
+    <a href="#alerts">Bill Alerts</a>
+    <a href="#vote">Vote</a>
+    <a href="#portal">Citizen Portal</a>
+    <a href="#petition">Petitions</a>
+    <a href="#complaints">Complaints</a>
+    <a href="#share">Share</a>
+    <a href="#join">Join</a>
+  </nav>
+
+  <!-- REAL TIME NUMBERS -->
+  <div class="realtime" id="truth">
+    <div class="realtime-title">Right Now In America — The Numbers They Don't Post</div>
+    <div class="realtime-grid">
+      <div class="rt-cell">
+        <div class="rt-label">Congressional Salary / Year</div>
+        <div class="rt-value gold">$174,000</div>
+        <div class="rt-sub">Voted on by themselves</div>
+      </div>
+      <div class="rt-cell">
+        <div class="rt-label">Minimum Wage / Hour</div>
+        <div class="rt-value red">$7.25</div>
+        <div class="rt-sub">Unchanged since 2009</div>
+      </div>
+      <div class="rt-cell">
+        <div class="rt-label">Avg Social Security / Month</div>
+        <div class="rt-value red">$1,706</div>
+        <div class="rt-sub">After 45 years of work</div>
+      </div>
+      <div class="rt-cell">
+        <div class="rt-label">Days Since Min Wage Raised</div>
+        <div class="rt-value red" id="daysSince">5,478</div>
+        <div class="rt-sub">And counting</div>
+      </div>
+      <div class="rt-cell">
+        <div class="rt-label">Sent Overseas (2023)</div>
+        <div class="rt-value red">$70B+</div>
+        <div class="rt-sub">Without your vote</div>
+      </div>
+      <div class="rt-cell">
+        <div class="rt-label">Veterans Homeless Tonight</div>
+        <div class="rt-value red">33,000+</div>
+        <div class="rt-sub">Served. Abandoned.</div>
+      </div>
+      <div class="rt-cell">
+        <div class="rt-label">Children In Poverty</div>
+        <div class="rt-value red">11 Million</div>
+        <div class="rt-sub">While billions go overseas</div>
+      </div>
+      <div class="rt-cell">
+        <div class="rt-label">If SS Was Invested For You</div>
+        <div class="rt-value green">$1.4M+</div>
+        <div class="rt-sub">What you'd actually have</div>
+      </div>
+      <div class="rt-cell">
+        <div class="rt-label">Lobbyist Spend (2023)</div>
+        <div class="rt-value red">$4.1 Billion</div>
+        <div class="rt-sub">Buying your representatives</div>
+      </div>
+      <div class="rt-cell">
+        <div class="rt-label">Structurally Deficient Bridges</div>
+        <div class="rt-value red">42,000+</div>
+        <div class="rt-sub">In America right now</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MEMBER COUNTER -->
+  <div class="counter-bar">
+    <div class="counter-number" id="memberCount">0</div>
+    <div class="counter-label">Americans Have Lit Their Torch</div>
+    <div class="counter-stats">
+      <div><div class="c-stat-num" id="stateCount">0</div><div class="c-stat-lbl">States</div></div>
+      <div><div class="c-stat-num" id="petitionCount">0</div><div class="c-stat-lbl">Petitions Signed</div></div>
+      <div><div class="c-stat-num">58</div><div class="c-stat-lbl">Demands</div></div>
+      <div><div class="c-stat-num" id="billCount">3</div><div class="c-stat-lbl">Bills Exposed</div></div>
+    </div>
+  </div>
+
+  <div class="shell">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-left">
+        <div class="eyebrow">Peaceful · Non-Partisan · Citizen-Powered</div>
+        <h1 class="hero-title">
+          America's<br>
+          <span class="gold">Torch</span><br>
+          <span class="red" style="font-size:55%;">The Truth.</span>
+        </h1>
+        <p class="hero-sub">Every bill. Every vote. Every dollar. Every name. What is really happening to America and its citizens — every single day. In plain English. With receipts.</p>
+        <div class="hero-pills">
+          <div class="pill">No Immunity</div>
+          <div class="pill">No Midnight Votes</div>
+          <div class="pill">One Bill One Subject</div>
+          <div class="pill">No Self-Raises</div>
+          <div class="pill">No Foreign Aid Without Vote</div>
+          <div class="pill">Plain English Laws</div>
+        </div>
+        <div class="hero-btns">
+          <a class="btn-fire" href="#join">Light Your Torch 🔥</a>
+          <a class="btn-ghost" href="#demands">See All 58 Demands</a>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="real-image-wrap">
+          <img src="hero.png" alt="We The People — Citizens holding the Constitution in front of the Capitol" class="hero-real-img" />
+          <div class="hero-img-caption">The Flame They Can't Blow Out</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- FOUNDER STORY -->
+    <section class="section" id="story">
+      <div class="section-header">
+        <div class="kicker">Why This Exists</div>
+        <h2 class="section-title">A Message From The Founder</h2>
+        <p class="section-sub">Not a politician. Not a lobbyist. Just a tired, frustrated American who woke up.</p>
+      </div>
+      <div class="founder-block">
+        <p class="founder-text">
+          We have sat back as <strong>hard-working Americans and been robbed</strong> — while the government does whatever it wants and thinks no movement will ever put real pressure on them.<br><br>
+          There hasn't been a true grassroots movement in decades. Meanwhile <strong>big lobbyists control who gets power, who gets contracts, and who gets left out.</strong> It trickles down to everything — even your electric bill.<br><br>
+          We don't want someone voting on a <strong>3,000-page bill at midnight.</strong> We want one bill. One subject. Written in plain English that real Americans can read — <strong>before Congress ever votes on it.</strong><br><br>
+          Congress should not pass laws to protect themselves. They should not give themselves raises. <strong>Nobody should have immunity if they're doing their job right.</strong> You don't need it unless you're doing something wrong.<br><br>
+          <strong>$7.25 an hour. $1,706 a month Social Security. $174,000 a year for them. $175 billion overseas without your vote.</strong> Make that make sense.<br><br>
+          We trusted the government. And they stopped hiding what they were doing. <strong>That is what woke me up. And I refuse to go back to sleep.</strong><br><br>
+          Every citizen should be financially free by 40. Every American should understand every law that governs them. Every vote should be transparent. Every dollar should be accounted for.<br><br>
+          <strong>We see you. We have receipts. And we won't look away.</strong>
+        </p>
+        <div class="founder-sig">A Concerned American Citizen · Founder, America's Torch · Anonymous By Choice</div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- SOCIAL SECURITY TRUTH -->
+    <section class="section" id="ss">
+      <div class="section-header">
+        <div class="kicker">The Social Security Theft</div>
+        <h2 class="section-title">Your Money. Their Control.</h2>
+        <p class="section-sub">The most documented financial betrayal in American history — done legally, slowly, and right in front of you.</p>
+      </div>
+      <div class="ss-block">
+        <div class="ss-grid">
+          <div class="ss-col">
+            <div class="ss-col-title red">❌ What Actually Happens</div>
+            <div class="ss-row"><span class="ss-row-label">Working years</span><span class="ss-row-value red">45 years (22–67)</span></div>
+            <div class="ss-row"><span class="ss-row-label">Taken from every paycheck</span><span class="ss-row-value red">12.4% total</span></div>
+            <div class="ss-row"><span class="ss-row-label">At avg $56k salary — per year</span><span class="ss-row-value red">$6,944 taken</span></div>
+            <div class="ss-row"><span class="ss-row-label">Total taken over career</span><span class="ss-row-value red">$312,480</span></div>
+            <div class="ss-row"><span class="ss-row-label">Monthly check at retirement</span><span class="ss-row-value red">$1,706</span></div>
+            <div class="ss-row"><span class="ss-row-label">Years of avg life after 67</span><span class="ss-row-value red">15 years</span></div>
+            <div class="ss-row"><span class="ss-row-label">Total paid back to you</span><span class="ss-row-value red">$307,080</span></div>
+            <div class="ss-row"><span class="ss-row-label">If you die early — family gets</span><span class="ss-row-value red">Almost nothing</span></div>
+          </div>
+          <div class="ss-col">
+            <div class="ss-col-title green">✅ What Should Have Happened</div>
+            <div class="ss-row"><span class="ss-row-label">Same 12.4% — invested for you</span><span class="ss-row-value green">S&P 500 index fund</span></div>
+            <div class="ss-row"><span class="ss-row-label">Your balance at age 40</span><span class="ss-row-value green">$224,000</span></div>
+            <div class="ss-row"><span class="ss-row-label">Your balance at age 50</span><span class="ss-row-value green">$498,000</span></div>
+            <div class="ss-row"><span class="ss-row-label">Your balance at age 60</span><span class="ss-row-value green">$987,000</span></div>
+            <div class="ss-row"><span class="ss-row-label">Your balance at retirement</span><span class="ss-row-value green">$1,400,000+</span></div>
+            <div class="ss-row"><span class="ss-row-label">Monthly income at 4% draw</span><span class="ss-row-value green">$4,666/month</span></div>
+            <div class="ss-row"><span class="ss-row-label">What you pass to your family</span><span class="ss-row-value green">$1,400,000+</span></div>
+            <div class="ss-row"><span class="ss-row-label">Every American would be</span><span class="ss-row-value green">A millionaire</span></div>
+          </div>
+        </div>
+        <div class="ss-verdict">
+          <strong>The difference between what you got and what you should have gotten: over $1,000,000.</strong> Multiplied by every working American. They took your money, spent it, and handed you $1,706 a month and called it a benefit. It was never their money. It was always yours. They want you dependent. They want you to need them. That is not an accident. That is the plan.
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- 58 DEMANDS -->
+    <section class="section" id="demands">
+      <div class="section-header">
+        <div class="kicker">The People's 58 Demands</div>
+        <h2 class="section-title">What We Are Fighting For</h2>
+        <p class="section-sub">Not left. Not right. Just right. Every one constitutional. Every one peaceful. Every one necessary.</p>
+      </div>
+      <div class="demands-grid">
+
+        <div class="demand"><div class="demand-num">01</div><div class="demand-title">No Self-Serving Laws</div><p class="demand-text">Congress <strong>cannot pass laws that benefit themselves.</strong> Any raise or benefit requires a citizen vote first.</p></div>
+
+        <div class="demand"><div class="demand-num">02</div><div class="demand-title">No Immunity. For Anyone.</div><p class="demand-text"><strong>No judge. No official. No politician.</strong> If you're doing your job right you don't need it.</p></div>
+
+        <div class="demand"><div class="demand-num">03</div><div class="demand-title">One Bill. One Subject.</div><p class="demand-text">No 3,000-page midnight bills. <strong>One topic. Plain English. 30 days public before any vote.</strong></p></div>
+
+        <div class="demand"><div class="demand-num">04</div><div class="demand-title">People Approve Major Laws</div><p class="demand-text">Laws affecting taxes, rights, or spending <strong>come to citizens for approval</strong> before signing.</p></div>
+
+        <div class="demand"><div class="demand-num">05</div><div class="demand-title">Term Limits</div><p class="demand-text">House: <strong>3 terms (6 yrs).</strong> Senate: <strong>1 term (6 yrs).</strong> No loopholes. Serve and go home.</p></div>
+
+        <div class="demand"><div class="demand-num">06</div><div class="demand-title">Lobbyist Reform</div><p class="demand-text">Full disclosure of every lobbying dollar. <strong>10-year ban</strong> on officials becoming lobbyists.</p></div>
+
+        <div class="demand"><div class="demand-num">07</div><div class="demand-title">Fair Minimum Wage</div><p class="demand-text"><strong>$7.25 is not survivable.</strong> Tied to cost of living. Updated automatically. Not when Congress feels like it.</p></div>
+
+        <div class="demand"><div class="demand-num">08</div><div class="demand-title">Criminal Record Reform</div><p class="demand-text">Non-violent felonies <strong>expungeable after proven good behavior.</strong> People deserve a second chance.</p></div>
+
+        <div class="demand"><div class="demand-num">09</div><div class="demand-title">State & County Transparency</div><p class="demand-text">Every bill published in plain English <strong>before any vote.</strong> Citizens approve major spending.</p></div>
+
+        <div class="demand"><div class="demand-num">10</div><div class="demand-title">Plain English Constitution</div><p class="demand-text">Every American has the right to <strong>understand every law that governs them.</strong> Free. Public. Everywhere.</p></div>
+
+        <div class="demand"><div class="demand-num">11</div><div class="demand-title">Prosecute Insider Trading</div><p class="demand-text">Congress members who trade on non-public information get <strong>prosecuted like any other American.</strong></p></div>
+
+        <div class="demand"><div class="demand-num">12</div><div class="demand-title">Recusal From Self-Protection Votes</div><p class="demand-text">Any official under investigation is <strong>immediately recused from ALL votes</strong> — especially their own accountability.</p></div>
+
+        <div class="demand"><div class="demand-num">13</div><div class="demand-title">Full Document Transparency</div><p class="demand-text">Independent citizen panel reviews ALL redacted documents. <strong>Protect victims. Expose the powerful.</strong></p></div>
+
+        <div class="demand"><div class="demand-num">14</div><div class="demand-title">Social Security Is Sacred</div><p class="demand-text">Cannot be borrowed from, cut, or changed <strong>without a full national citizen vote.</strong></p></div>
+
+        <div class="demand"><div class="demand-num">15</div><div class="demand-title">Living Wage Tied To Congress</div><p class="demand-text">If minimum wage is frozen — <strong>their salary is frozen.</strong> Their raise requires yours first.</p></div>
+
+        <div class="demand"><div class="demand-num">16</div><div class="demand-title">Family Court Jury Rights</div><p class="demand-text">Every custody and divorce proceeding <strong>has the right to a jury trial.</strong> No exceptions.</p></div>
+
+        <div class="demand"><div class="demand-num">17</div><div class="demand-title">Mandatory Body Cameras</div><p class="demand-text">Every officer on duty. Every shift. <strong>Federal funding for counties that can't afford them.</strong> No exceptions.</p></div>
+
+        <div class="demand"><div class="demand-num">18</div><div class="demand-title">End Coercive Plea Deals</div><p class="demand-text">Plea deals cannot be used as threats. <strong>Every American has the full right to trial.</strong></p></div>
+
+        <div class="demand"><div class="demand-num">19</div><div class="demand-title">Sentencing That Fits The Crime</div><p class="demand-text">Mandatory minimums replaced with <strong>flexible guidelines matching punishment to the actual crime.</strong></p></div>
+
+        <div class="demand"><div class="demand-num">20</div><div class="demand-title">Pro Se Rights Protected</div><p class="demand-text">Any judge who dismisses a self-represented litigant without a full hearing <strong>faces immediate review.</strong></p></div>
+
+        <div class="demand"><div class="demand-num">21</div><div class="demand-title">Jury Nullification Education</div><p class="demand-text">Every juror must be told their <strong>full constitutional rights</strong> — including the right to judge the law itself.</p></div>
+
+        <div class="demand"><div class="demand-num">22</div><div class="demand-title">Jury Rights In Family Court</div><p class="demand-text">Custody and family court juries have the <strong>full right to reject unjust outcomes.</strong></p></div>
+
+        <div class="demand"><div class="demand-num">23</div><div class="demand-title">Citizens Can Challenge Unjust Laws</div><p class="demand-text">Verified citizen petition process to bring <strong>unjust laws to national citizen vote for repeal.</strong></p></div>
+
+        <div class="demand"><div class="demand-num">24</div><div class="demand-title">Full Transparency Vote Board</div><p class="demand-text">Every bill. Every vote. Every name. Every donor. <strong>Published in plain English within 24 hours.</strong></p></div>
+
+        <div class="demand"><div class="demand-num">25</div><div class="demand-title">Conflict of Interest Recusal</div><p class="demand-text">Received money from anyone who benefits from a bill? <strong>You are automatically recused. No exceptions.</strong></p></div>
+
+        <div class="demand"><div class="demand-num">26</div><div class="demand-title">Plain English In Every Courtroom</div><p class="demand-text">Every ruling explained in plain English. <strong>Legal confusion used against a pro se litigant is grounds for appeal.</strong></p></div>
+
+        <div class="demand"><div class="demand-num">27</div><div class="demand-title">Plain English Laws</div><p class="demand-text">Every law passed includes a <strong>plain English version of equal legal weight.</strong> What you read is what it means.</p></div>
+
+        <div class="demand"><div class="demand-num">28</div><div class="demand-title">Plain English Contracts</div><p class="demand-text">Clauses hidden in legal language that <strong>weren't explained are automatically unenforceable.</strong></p></div>
+
+        <div class="demand"><div class="demand-num">29</div><div class="demand-title">Plain English Constitution Project</div><p class="demand-text">Every law and the Constitution translated into plain English. <strong>Free. Online. In every language Americans speak.</strong></p></div>
+
+        <div class="demand"><div class="demand-num">30</div><div class="demand-title">Social Security Personal Accounts</div><p class="demand-text">Your contributions go into <strong>your personal investment account.</strong> At death — it passes to your family.</p></div>
+
+        <div class="demand"><div class="demand-num">31</div><div class="demand-title">Congressional Pay Tied To Yours</div><p class="demand-text">Their salary frozen until minimum wage rises. <strong>No shutdown pay. No performance — no raise.</strong></p></div>
+
+        <div class="demand"><div class="demand-num">32</div><div class="demand-title">No Foreign Aid Without Citizen Vote</div><p class="demand-text">Not one dollar leaves this country <strong>without a verified citizen vote</strong> published in plain English.</p></div>
+
+        <div class="demand"><div class="demand-num">33</div><div class="demand-title">No Single Person Controls Public Money</div><p class="demand-text">Every public dollar requires <strong>citizen oversight, real-time accounting, and independent audits.</strong></p></div>
+
+        <div class="demand"><div class="demand-num">34</div><div class="demand-title">Congressional Pension Reform</div><p class="demand-text">Congress gets the <strong>same Social Security as everyone else.</strong> No special pension. No special healthcare.</p></div>
+
+        <div class="demand"><div class="demand-num">35</div><div class="demand-title">Personal SS Investment Accounts</div><p class="demand-text">Same contributions — invested in index funds in <strong>your name, growing for your entire career.</strong></p></div>
+
+        <div class="demand"><div class="demand-num">36</div><div class="demand-title">Ban Corporate Home Buying</div><p class="demand-text">No hedge fund or corporation buys single family homes. <strong>Housing is for families — not financial instruments.</strong></p></div>
+
+        <div class="demand"><div class="demand-num">37</div><div class="demand-title">Inflation-Adjusted Minimum Wage</div><p class="demand-text">Immediately adjusted to <strong>$24/hour</strong> to reflect 1970 purchasing power. Auto-increases with inflation. Forever.</p></div>
+
+        <div class="demand"><div class="demand-num">38</div><div class="demand-title">Medical Bankruptcy Protection</div><p class="demand-text">No American loses their home because of medical bills. <strong>Healthcare costs capped as a percentage of income.</strong></p></div>
+
+        <div class="demand"><div class="demand-num">39</div><div class="demand-title">Free Public Education</div><p class="demand-text">Every citizen has access to <strong>free trade certification or 4-year degree.</strong> Predatory student loans restructured now.</p></div>
+
+        <div class="demand"><div class="demand-num">40</div><div class="demand-title">Wealth Restoration Audit</div><p class="demand-text">Full independent audit of every dollar taken from workers since 1971. <strong>Published publicly. In plain English.</strong></p></div>
+
+        <div class="demand"><div class="demand-num">41</div><div class="demand-title">Healthcare Reform</div><p class="demand-text">The same pill costs $400 here and $12 in Canada. <strong>Pharmaceutical lobbyist control of drug pricing ends now.</strong></p></div>
+
+        <div class="demand"><div class="demand-num">42</div><div class="demand-title">Veteran Protection</div><p class="demand-text">33,000+ veterans homeless tonight. <strong>If you send them to war — you are responsible for them when they come home.</strong></p></div>
+
+        <div class="demand"><div class="demand-num">43</div><div class="demand-title">Repeal Smith-Mundt 2012</div><p class="demand-text">Repeal the law that <strong>opened the door to government-funded propaganda</strong> directed at American citizens.</p></div>
+
+        <div class="demand"><div class="demand-num">44</div><div class="demand-title">Media Must Label Opinion vs Fact</div><p class="demand-text">Opinion presented as news is <strong>clearly labeled. Always. No exceptions.</strong> Deliberate misinformation is fined.</p></div>
+
+        <div class="demand"><div class="demand-num">45</div><div class="demand-title">Independent Citizen Media Panel</div><p class="demand-text">A non-political citizen panel — <strong>not appointed by government</strong> — reviews media accuracy complaints.</p></div>
+
+        <div class="demand"><div class="demand-num">46</div><div class="demand-title">Fines For Deliberate Misinformation</div><p class="demand-text">Proven deliberate misinformation that affects elections or public safety <strong>results in heavy fines.</strong></p></div>
+
+        <div class="demand"><div class="demand-num">47</div><div class="demand-title">Ex-Presidents Stay Silent</div><p class="demand-text">Once your term ends — <strong>no campaigning, no political speeches, no lobbying, no consulting. You served. Step back.</strong></p></div>
+
+        <div class="demand"><div class="demand-num">48</div><div class="demand-title">Free Candidate Platform For All</div><p class="demand-text">Any verified U.S. citizen can announce candidacy and reach voters for free. <strong>Compete on ideas — not money.</strong></p></div>
+
+        <div class="demand"><div class="demand-num">49</div><div class="demand-title">Full Candidate Background Exposure</div><p class="demand-text">Before every election — <strong>every candidate's full funding, history, and conflicts published publicly.</strong></p></div>
+
+        <div class="demand"><div class="demand-num">50</div><div class="demand-title">Representatives Must Follow State Vote</div><p class="demand-text">When citizens of a state vote on an issue — <strong>their representative must vote accordingly. They work for us.</strong></p></div>
+
+        <div class="demand"><div class="demand-num">51</div><div class="demand-title">Town Halls Before Major Votes</div><p class="demand-text">Every representative must hold a <strong>public town hall before any major vote.</strong> Documented. On the record.</p></div>
+
+        <div class="demand"><div class="demand-num">52</div><div class="demand-title">Citizen Recall Process</div><p class="demand-text">Citizens have a clear, simple, documented path to <strong>recall any representative who ignores the people.</strong></p></div>
+
+        <div class="demand"><div class="demand-num">53</div><div class="demand-title">Public Representative Scorecard</div><p class="demand-text">Every official gets a <strong>public accountability score</strong> — how often they voted with their constituents vs their donors.</p></div>
+
+        <div class="demand"><div class="demand-num">54</div><div class="demand-title">Big Tech & Privacy Protection</div><p class="demand-text">Your data cannot be sold without <strong>real, plain English consent.</strong> Algorithms that deliberately divide are regulated.</p></div>
+
+        <div class="demand"><div class="demand-num">55</div><div class="demand-title">Break Up Monopolies</div><p class="demand-text">One company cannot control what you eat, watch, read, and buy. <strong>Real competition protects real Americans.</strong></p></div>
+
+        <div class="demand"><div class="demand-num">56</div><div class="demand-title">Whistleblower Protection</div><p class="demand-text">Anyone who exposes government corruption through proper channels <strong>is protected — not prosecuted.</strong></p></div>
+
+        <div class="demand"><div class="demand-num">57</div><div class="demand-title">Child Protection — No Exceptions</div><p class="demand-text">Predators in positions of power are prosecuted regardless of wealth or connections. <strong>No document is redacted to protect the powerful.</strong></p></div>
+
+        <div class="demand"><div class="demand-num">58</div><div class="demand-title">Every Citizen Free By 40</div><p class="demand-text">Every American who works hard and pays their taxes <strong>deserves to be financially free by 40.</strong> That was always the promise. We're taking it back.</p></div>
+
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- TODAY'S EXPOSURE -->
+    <section class="section" id="exposure">
+      <div class="section-header">
+        <div class="kicker">Daily Exposure · Today In America</div>
+        <h2 class="section-title">What They Did Today</h2>
+        <p class="section-sub">You can't fix what you can't see. So we make sure you see everything. Every day. With receipts.</p>
+      </div>
+      <div class="exposure-block">
+        <div class="exposure-row">
+          <div class="exposure-dot"></div>
+          <div class="exposure-text"><strong>Congress has not raised the minimum wage in 5,478 days.</strong> In that same period they have voted on their own compensation 11 times. The federal minimum wage remains <em>$7.25/hour</em> — the longest stretch without an increase in American history.</div>
+        </div>
+        <div class="exposure-row">
+          <div class="exposure-dot"></div>
+          <div class="exposure-text"><strong>Pharmaceutical companies spent $374 million lobbying Congress last year.</strong> The same Congress that controls drug pricing. The same Congress where the average member owns <em>$1.2 million</em> in pharmaceutical stocks. The same Congress that blocked Medicare from negotiating drug prices for 20 years.</div>
+        </div>
+        <div class="exposure-row">
+          <div class="exposure-dot"></div>
+          <div class="exposure-text"><strong>$175 billion was sent to Ukraine.</strong> Tonight <em>33,000+ American veterans</em> sleep homeless. 11 million American children live in poverty. 42,000 American bridges are structurally deficient. Not one of these required a citizen vote.</div>
+        </div>
+        <div class="exposure-row">
+          <div class="exposure-dot"></div>
+          <div class="exposure-text"><strong>A must-pass spending bill was voted on at 11:58 PM on Christmas Eve.</strong> It contained <em>47 unrelated policy riders</em> including one limiting citizens' right to sue federal contractors. No public comment period. Most members admitted they had not read it.</div>
+        </div>
+        <div class="exposure-row">
+          <div class="exposure-dot"></div>
+          <div class="exposure-text"><strong>The Smith-Mundt Modernization Act of 2012 removed restrictions on government-produced media being broadcast to American citizens.</strong> Before 2012 this was illegal. After 2012 — <em>government-funded messaging could be directed at you</em> without disclosure. The division you see on your screen every day did not happen by accident.</div>
+        </div>
+        <div class="exposure-row">
+          <div class="exposure-dot"></div>
+          <div class="exposure-text"><strong>You paid approximately $312,000 into Social Security over your career.</strong> If that money had been invested in an index fund — you would retire with <em>over $1,400,000.</em> Instead you receive $1,706 a month. The difference — over $1,000,000 — is the cost of their control over your retirement.</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- BILL ALERTS -->
+    <section class="section" id="alerts">
+      <div class="section-header">
+        <div class="kicker">Torch Breakdowns · Plain English</div>
+        <h2 class="section-title">Bills They Don't Want You To Read</h2>
+        <p class="section-sub">No legalese. No spin. What it does, who paid for it, who benefits, and who pays.</p>
+      </div>
+      <div class="alerts-grid">
+        <div class="alert-card">
+          <div class="alert-status">Active · In Committee</div>
+          <div class="alert-tag">Federal · Energy</div>
+          <div class="alert-title">Utility Rate Expansion Act</div>
+          <div class="alert-row"><strong>What It Really Does</strong>Lets utility companies pass ALL infrastructure costs onto your monthly bill — no public vote required.</div>
+          <div class="alert-row"><strong>Who Paid For It</strong>Utility lobbyists spent $89M on congressional campaigns last cycle.</div>
+          <div class="alert-row"><strong>Who Benefits</strong>Utility corporations and shareholders.</div>
+          <div class="alert-row"><strong>Who Pays</strong>You. Estimated $18–$34/month increase.</div>
+          <div class="alert-row"><strong>Buried Inside</strong>A clause blocking competitor energy providers from entering markets where the incumbent operates.</div>
+          <div class="alert-source">Source: <a href="https://www.congress.gov" target="_blank" rel="noopener">congress.gov</a> · <a href="https://www.opensecrets.org" target="_blank" rel="noopener">opensecrets.org</a></div>
+        </div>
+        <div class="alert-card">
+          <div class="alert-status">Passed · Floor Vote Pending</div>
+          <div class="alert-tag">Federal · Budget</div>
+          <div class="alert-title">Omnibus Spending Riders 2025</div>
+          <div class="alert-row"><strong>What It Really Does</strong>Must-pass spending bill with 47 unrelated riders — including one limiting your right to sue federal contractors.</div>
+          <div class="alert-row"><strong>Who Paid For It</strong>Defense contractors contributed $42M to members who sponsored key riders.</div>
+          <div class="alert-row"><strong>Who Benefits</strong>Defense contractors, pharmaceutical companies, financial institutions.</div>
+          <div class="alert-row"><strong>Who Pays</strong>Every taxpayer — and anyone who loses legal rights against a contractor.</div>
+          <div class="alert-row"><strong>Buried Inside</strong>Voted on at 11:58 PM on Christmas Eve. No public comment. Nobody read it.</div>
+          <div class="alert-source">Source: <a href="https://www.govtrack.us" target="_blank" rel="noopener">govtrack.us</a></div>
+        </div>
+        <div class="alert-card">
+          <div class="alert-status">Signed Into Law</div>
+          <div class="alert-tag">State · Property</div>
+          <div class="alert-title">Property Tax Fast-Track</div>
+          <div class="alert-row"><strong>What It Really Does</strong>Counties reassess property values every year — raising taxes faster than income grows.</div>
+          <div class="alert-row"><strong>Who Paid For It</strong>Real estate developer PACs contributed $2.1M to supporting legislators.</div>
+          <div class="alert-row"><strong>Who Benefits</strong>County governments and developers who buy reassessed properties at tax auction.</div>
+          <div class="alert-row"><strong>Who Pays</strong>Homeowners — especially retirees and fixed-income families.</div>
+          <div class="alert-row"><strong>Buried Inside</strong>Exemptions for commercial properties over 50 acres. Big developers shielded. You're not.</div>
+          <div class="alert-source">Source: <a href="https://www.naag.org" target="_blank" rel="noopener">naag.org</a></div>
+        </div>
+      </div>
+
+      <!-- Submit a bill -->
+      <div style="margin-top:24px; padding:24px; background:#060910; border:1px solid rgba(246,180,93,0.18); border-radius:6px;">
+        <div class="kicker">Submit A Bill</div>
+        <p style="font-size:15px; color:#8a93b0; font-style:italic; margin-top:4px; margin-bottom:14px;">Found something buried? Send it. We verify and publish a Torch Breakdown.</p>
+        <form action="https://formspree.io/f/xovypnwk" method="POST" class="form-wrap">
+          <input type="hidden" name="form" value="Bill Submission" />
+          <label>Bill Link (required)</label><input name="bill_link" required placeholder="Paste the bill URL" />
+          <label>What worries you?</label><textarea name="concern" placeholder="Hidden fees, midnight vote, buried rider, lobbyist fingerprints..."></textarea>
+          <label>Your Email (optional)</label><input name="email" type="email" placeholder="We'll notify you when published" />
+          <button class="btn-submit" type="submit">Submit For Review 🔦</button>
+          <div class="form-note">Submitted anonymously. Every bill verified before publishing.</div>
+        </form>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- VOTES -->
+    <section class="section" id="vote">
+      <div class="section-header">
+        <div class="kicker">The People's Voice</div>
+        <h2 class="section-title">Cast Your Vote</h2>
+        <p class="section-sub">Full platform requires verified U.S. citizen ID. For now — make your voice heard.</p>
+      </div>
+
+      <div class="vote-block">
+        <div class="vote-title">Should Congress Vote On Their Own Raises?</div>
+        <div class="vote-hint">DEMO · Browser only · Verified citizen voting coming soon</div>
+        <div class="vote-btns">
+          <button class="btn-yes" onclick="castVote('yes',this.closest('.vote-block'))">✅ YES — Let Them</button>
+          <button class="btn-no"  onclick="castVote('no', this.closest('.vote-block'))">❌ NO — Citizens Decide</button>
+        </div>
+        <div class="vote-totals">Yes: <span class="v-yes">0</span> · No: <span class="v-no">0</span> · Total: <span class="v-total">0</span> · Yes: <span class="v-pct">0</span>%</div>
+        <div class="vote-bar"><div class="vote-bar-fill"></div></div>
+      </div>
+
+      <div class="vote-block">
+        <div class="vote-title">Should Judges & Officials Have Legal Immunity?</div>
+        <div class="vote-hint">DEMO · Browser only</div>
+        <div class="vote-btns">
+          <button class="btn-yes" onclick="castVote('yes',this.closest('.vote-block'))">✅ YES — Keep Immunity</button>
+          <button class="btn-no"  onclick="castVote('no', this.closest('.vote-block'))">❌ NO — Nobody Is Above The Law</button>
+        </div>
+        <div class="vote-totals">Yes: <span class="v-yes">0</span> · No: <span class="v-no">0</span> · Total: <span class="v-total">0</span> · Yes: <span class="v-pct">0</span>%</div>
+        <div class="vote-bar"><div class="vote-bar-fill"></div></div>
+      </div>
+
+      <div class="vote-block">
+        <div class="vote-title">Should Foreign Aid Require A Citizen Vote?</div>
+        <div class="vote-hint">DEMO · Browser only</div>
+        <div class="vote-btns">
+          <button class="btn-yes" onclick="castVote('yes',this.closest('.vote-block'))">✅ YES — We Decide</button>
+          <button class="btn-no"  onclick="castVote('no', this.closest('.vote-block'))">❌ NO — Congress Decides</button>
+        </div>
+        <div class="vote-totals">Yes: <span class="v-yes">0</span> · No: <span class="v-no">0</span> · Total: <span class="v-total">0</span> · Yes: <span class="v-pct">0</span>%</div>
+        <div class="vote-bar"><div class="vote-bar-fill"></div></div>
+      </div>
+
+      <div class="vote-block">
+        <div class="vote-title">6-Year Congressional Term Limits</div>
+        <div class="vote-hint">DEMO · Browser only</div>
+        <div class="vote-btns">
+          <button class="btn-yes" onclick="castVote('yes',this.closest('.vote-block'))">✅ YES — Limit Terms</button>
+          <button class="btn-no"  onclick="castVote('no', this.closest('.vote-block'))">❌ NO — No Limits</button>
+        </div>
+        <div class="vote-totals">Yes: <span class="v-yes">0</span> · No: <span class="v-no">0</span> · Total: <span class="v-total">0</span> · Yes: <span class="v-pct">0</span>%</div>
+        <div class="vote-bar"><div class="vote-bar-fill"></div></div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- CITIZEN PORTAL -->
+    <section class="section" id="portal">
+      <div class="section-header">
+        <div class="kicker">Coming · Verified Citizen Portal</div>
+        <h2 class="section-title">Secure. American. Yours.</h2>
+        <p class="section-sub">One verified account. One vote. No bots. No fraud. No foreign interference. Real democracy.</p>
+      </div>
+      <div class="portal-block">
+        <p style="font-size:17px; color:#b0b8d4; line-height:1.75; font-style:italic;">Show your ID once. Verify you are a U.S. citizen. Your identity is protected and never shared. Then every vote you cast is counted, documented, and published publicly as a permanent record of what the American people actually want — by name if you choose, or anonymously if you don't.</p>
+        <div class="portal-features">
+          <div class="portal-feature"><div class="portal-feature-icon">🪪</div><div class="portal-feature-title">ID Verified</div><p>One-time verification. U.S. citizens only. Your identity locked and protected.</p></div>
+          <div class="portal-feature"><div class="portal-feature-icon">🗳️</div><div class="portal-feature-title">One Vote</div><p>One person. One vote. No duplicates. No bots. Real democracy.</p></div>
+          <div class="portal-feature"><div class="portal-feature-icon">📋</div><div class="portal-feature-title">Submit Bills</div><p>Found something buried? Submit it. Verified bills go to a public vote.</p></div>
+          <div class="portal-feature"><div class="portal-feature-icon">💡</div><div class="portal-feature-title">Your Ideas</div><p>Propose a law or reform. The strongest become official petitions.</p></div>
+          <div class="portal-feature"><div class="portal-feature-icon">🔒</div><div class="portal-feature-title">Anonymous By Choice</div><p>No cameras. No public profile unless you choose. We never sell your data.</p></div>
+          <div class="portal-feature"><div class="portal-feature-icon">📊</div><div class="portal-feature-title">Public Results</div><p>Every vote total published. They can't pretend we don't exist.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- PETITIONS -->
+    <section class="section" id="petition">
+      <div class="section-header">
+        <div class="kicker">National Petitions</div>
+        <h2 class="section-title">Sign. Send. Make Them Feel It.</h2>
+      </div>
+      <div class="demands-grid">
+
+        <div class="petition-card">
+          <div class="petition-title">Petition #1 · No Congressional Self-Raises</div>
+          <p class="petition-desc">Congress cannot vote on their own pay. All compensation requires a national citizen vote.</p>
+          <form action="https://formspree.io/f/xovypnwk" method="POST" class="form-wrap">
+            <input type="hidden" name="petition" value="Petition #1 – No Self-Raises" />
+            <label>Full Name</label><input name="name" required placeholder="Your full name" />
+            <label>Email</label><input name="email" type="email" required placeholder="you@example.com" />
+            <label>State</label>
+            <select name="state" required><option value="">Select state</option><option>AL</option><option>AK</option><option>AZ</option><option>AR</option><option>CA</option><option>CO</option><option>CT</option><option>DE</option><option>FL</option><option>GA</option><option>HI</option><option>ID</option><option>IL</option><option>IN</option><option>IA</option><option>KS</option><option>KY</option><option>LA</option><option>ME</option><option>MD</option><option>MA</option><option>MI</option><option>MN</option><option>MS</option><option>MO</option><option>MT</option><option>NE</option><option>NV</option><option>NH</option><option>NJ</option><option>NM</option><option>NY</option><option>NC</option><option>ND</option><option>OH</option><option>OK</option><option>OR</option><option>PA</option><option>RI</option><option>SC</option><option>SD</option><option>TN</option><option>TX</option><option>UT</option><option>VT</option><option>VA</option><option>WA</option><option>WV</option><option>WI</option><option>WY</option></select>
+            <button class="btn-submit" type="submit">Sign Petition #1 ✍️</button>
+            <div class="form-note">Stored securely. Used only for this petition.</div>
+          </form>
+        </div>
+
+        <div class="petition-card">
+          <div class="petition-title">Petition #2 · End All Government Immunity</div>
+          <p class="petition-desc">No judge, official, or politician is above the law. Nobody gets immunity for doing their job.</p>
+          <form action="https://formspree.io/f/xovypnwk" method="POST" class="form-wrap">
+            <input type="hidden" name="petition" value="Petition #2 – End Immunity" />
+            <label>Full Name</label><input name="name" required placeholder="Your full name" />
+            <label>Email</label><input name="email" type="email" required placeholder="you@example.com" />
+            <label>State</label>
+            <select name="state" required><option value="">Select state</option><option>AL</option><option>AK</option><option>AZ</option><option>AR</option><option>CA</option><option>CO</option><option>CT</option><option>DE</option><option>FL</option><option>GA</option><option>HI</option><option>ID</option><option>IL</option><option>IN</option><option>IA</option><option>KS</option><option>KY</option><option>LA</option><option>ME</option><option>MD</option><option>MA</option><option>MI</option><option>MN</option><option>MS</option><option>MO</option><option>MT</option><option>NE</option><option>NV</option><option>NH</option><option>NJ</option><option>NM</option><option>NY</option><option>NC</option><option>ND</option><option>OH</option><option>OK</option><option>OR</option><option>PA</option><option>RI</option><option>SC</option><option>SD</option><option>TN</option><option>TX</option><option>UT</option><option>VT</option><option>VA</option><option>WA</option><option>WV</option><option>WI</option><option>WY</option></select>
+            <button class="btn-submit" type="submit">Sign Petition #2 ✍️</button>
+            <div class="form-note">Stored securely. Used only for this petition.</div>
+          </form>
+        </div>
+
+        <div class="petition-card">
+          <div class="petition-title">Petition #3 · One Bill One Subject</div>
+          <p class="petition-desc">Every bill covers one topic. Plain English. Published 30 days before any vote. No exceptions.</p>
+          <form action="https://formspree.io/f/xovypnwk" method="POST" class="form-wrap">
+            <input type="hidden" name="petition" value="Petition #3 – One Bill One Subject" />
+            <label>Full Name</label><input name="name" required placeholder="Your full name" />
+            <label>Email</label><input name="email" type="email" required placeholder="you@example.com" />
+            <label>State</label>
+            <select name="state" required><option value="">Select state</option><option>AL</option><option>AK</option><option>AZ</option><option>AR</option><option>CA</option><option>CO</option><option>CT</option><option>DE</option><option>FL</option><option>GA</option><option>HI</option><option>ID</option><option>IL</option><option>IN</option><option>IA</option><option>KS</option><option>KY</option><option>LA</option><option>ME</option><option>MD</option><option>MA</option><option>MI</option><option>MN</option><option>MS</option><option>MO</option><option>MT</option><option>NE</option><option>NV</option><option>NH</option><option>NJ</option><option>NM</option><option>NY</option><option>NC</option><option>ND</option><option>OH</option><option>OK</option><option>OR</option><option>PA</option><option>RI</option><option>SC</option><option>SD</option><option>TN</option><option>TX</option><option>UT</option><option>VT</option><option>VA</option><option>WA</option><option>WV</option><option>WI</option><option>WY</option></select>
+            <button class="btn-submit" type="submit">Sign Petition #3 ✍️</button>
+            <div class="form-note">Stored securely. Used only for this petition.</div>
+          </form>
+        </div>
+
+        <div class="petition-card">
+          <div class="petition-title">Petition #4 · No Foreign Aid Without Citizen Vote</div>
+          <p class="petition-desc">Not one dollar leaves America without a verified citizen vote published in plain English first.</p>
+          <form action="https://formspree.io/f/xovypnwk" method="POST" class="form-wrap">
+            <input type="hidden" name="petition" value="Petition #4 – No Foreign Aid Without Vote" />
+            <label>Full Name</label><input name="name" required placeholder="Your full name" />
+            <label>Email</label><input name="email" type="email" required placeholder="you@example.com" />
+            <label>State</label>
+            <select name="state" required><option value="">Select state</option><option>AL</option><option>AK</option><option>AZ</option><option>AR</option><option>CA</option><option>CO</option><option>CT</option><option>DE</option><option>FL</option><option>GA</option><option>HI</option><option>ID</option><option>IL</option><option>IN</option><option>IA</option><option>KS</option><option>KY</option><option>LA</option><option>ME</option><option>MD</option><option>MA</option><option>MI</option><option>MN</option><option>MS</option><option>MO</option><option>MT</option><option>NE</option><option>NV</option><option>NH</option><option>NJ</option><option>NM</option><option>NY</option><option>NC</option><option>ND</option><option>OH</option><option>OK</option><option>OR</option><option>PA</option><option>RI</option><option>SC</option><option>SD</option><option>TN</option><option>TX</option><option>UT</option><option>VT</option><option>VA</option><option>WA</option><option>WV</option><option>WI</option><option>WY</option></select>
+            <button class="btn-submit" type="submit">Sign Petition #4 ✍️</button>
+            <div class="form-note">Stored securely. Used only for this petition.</div>
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- IDEAS -->
+    <section class="section" id="ideas">
+      <div class="section-header">
+        <div class="kicker">The People's Ideas</div>
+        <h2 class="section-title">Don't Just Complain — Propose</div>
+        <p class="section-sub">The best ideas here become official petitions and citizen votes. Action not anger.</p>
+      </div>
+      <div style="background:#060910; border:1px solid var(--border); border-radius:6px; padding:24px;">
+        <form action="https://formspree.io/f/xovypnwk" method="POST" class="form-wrap">
+          <input type="hidden" name="form" value="People's Ideas" />
+          <label>Your Idea or Reform</label>
+          <textarea name="idea" required placeholder="What's broken? What should change? Be specific. The more detail — the better chance it becomes a real petition."></textarea>
+          <label>State</label>
+          <select name="state"><option value="">Select your state</option><option>AL</option><option>AK</option><option>AZ</option><option>AR</option><option>CA</option><option>CO</option><option>CT</option><option>DE</option><option>FL</option><option>GA</option><option>HI</option><option>ID</option><option>IL</option><option>IN</option><option>IA</option><option>KS</option><option>KY</option><option>LA</option><option>ME</option><option>MD</option><option>MA</option><option>MI</option><option>MN</option><option>MS</option><option>MO</option><option>MT</option><option>NE</option><option>NV</option><option>NH</option><option>NJ</option><option>NM</option><option>NY</option><option>NC</option><option>ND</option><option>OH</option><option>OK</option><option>OR</option><option>PA</option><option>RI</option><option>SC</option><option>SD</option><option>TN</option><option>TX</option><option>UT</option><option>VT</option><option>VA</option><option>WA</option><option>WV</option><option>WI</option><option>WY</option></select>
+          <label>Name (optional)</label>
+          <input name="name" placeholder="Leave blank to submit anonymously" />
+          <button class="btn-submit" type="submit">Submit Your Idea 💡</button>
+          <div class="form-note">All ideas reviewed. Strongest become official petitions and citizen votes.</div>
+        </form>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- COMPLAINTS -->
+    <section class="section" id="complaints">
+      <div class="section-header">
+        <div class="kicker">Official Complaints</div>
+        <h2 class="section-title">Turn Anger Into Action</h2>
+        <p class="section-sub">Real channels. Real pressure. Peaceful, legal, documented.</p>
+      </div>
+      <div class="cards-grid">
+        <div class="card"><div class="card-icon">🏛️</div><div class="card-title">Federal Ethics</div><a href="https://ethics.house.gov" target="_blank" rel="noopener">House Ethics Committee →</a><a href="https://oce.house.gov" target="_blank" rel="noopener">Office of Congressional Ethics →</a><a href="https://www.ethics.senate.gov" target="_blank" rel="noopener">Senate Ethics Committee →</a><p style="margin-top:10px;font-size:13px;">Coming: guided wizard that auto-fills names, dates, and bill numbers.</p></div>
+        <div class="card"><div class="card-icon">⚖️</div><div class="card-title">Dept. of Justice</div><a href="https://civilrights.justice.gov" target="_blank" rel="noopener">File a Civil Rights Report →</a><a href="https://www.justice.gov/doj/webform/your-message-department-justice" target="_blank" rel="noopener">Message the DOJ →</a><p style="margin-top:10px;font-size:13px;">Coming: auto-drafted complaints based on alerts you follow.</p></div>
+        <div class="card"><div class="card-icon">🗺️</div><div class="card-title">State Level</div><a href="https://www.naag.org/find-my-ag/" target="_blank" rel="noopener">Find Your Attorney General →</a><a href="https://www.usa.gov/state-consumer" target="_blank" rel="noopener">State Consumer Complaints →</a><p style="margin-top:10px;font-size:13px;">Coming: automatic routing to your state ethics offices.</p></div>
+        <div class="card"><div class="card-icon">📰</div><div class="card-title">Whistleblower & Media</div><a href="https://www.propublica.org/tips" target="_blank" rel="noopener">Tip ProPublica →</a><a href="https://www.opencongress.org" target="_blank" rel="noopener">Track Congress →</a><a href="https://www.opensecrets.org" target="_blank" rel="noopener">Follow The Money →</a></div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- SHARE -->
+    <div class="share-block" id="share">
+      <div class="share-title">🔥 Spread The Torch</div>
+      <p class="share-sub">Every share could bring 10 more Americans into this movement. The more of us — the harder we are to ignore.</p>
+      <div class="share-btns">
+        <button class="share-btn share-x" onclick="shareX()">𝕏 Share on X</button>
+        <button class="share-btn share-fb" onclick="shareFB()">Share on Facebook</button>
+        <button class="share-btn share-wa" onclick="shareWA()">💬 WhatsApp</button>
+        <button class="share-btn share-copy" onclick="copyLink()">📋 Copy Link</button>
+      </div>
+      <p style="margin-top:16px; font-family:var(--font-mono); font-size:10px; color:var(--muted); letter-spacing:.12em;">No parties. No violence. No division. Just Americans who are done being ignored.</p>
+    </div>
+
+    <!-- ABOUT -->
+    <section class="section" id="about">
+      <div class="section-header">
+        <div class="kicker">What We Believe</div>
+        <h2 class="section-title">America Should Work For Americans</h2>
+      </div>
+      <div class="card" style="border-left:4px solid var(--gold); padding:28px;">
+        <p style="font-size:17px; line-height:1.85; color:#b0b8d4;">Every American who works hard and pays their taxes deserves to be financially free by 40. Every law that governs you should be written so you can understand it. Every vote your representative casts should be public, explained, and traceable to whoever paid for it. Every dollar of your money sent overseas should require your approval. And every person in public service — from the local judge to the President — should be held to the same laws as everyone else. <strong style="color:var(--gold);">That is not radical. That is just America working the way it was supposed to. We are taking it back.</strong></p>
+      </div>
+    </section>
+
+    <!-- DONATE -->
+    <div class="donate-block" id="donate">
+      <div class="kicker" style="justify-content:center;">Support The Movement</div>
+      <h2 class="section-title" style="margin-top:8px;">Help Keep The Torch Burning</h2>
+      <p style="font-size:16px; color:#8a93b0; font-style:italic; margin-top:10px; margin-bottom:22px;">No tracking. No selling your data. Every dollar keeps this platform 100% independent and citizen-owned.</p>
+      <a class="btn-fire" href="#join">Donate (Coming Soon)</a>
+    </div>
+
+    <!-- JOIN -->
+    <div class="join-block" id="join">
+      <div class="kicker">Join The Movement</div>
+      <h2 class="section-title" style="margin-top:8px;">Light Your Torch 🔥</h2>
+      <p style="font-size:16px; color:#8a93b0; font-style:italic; margin-top:8px;">Be among the first. Get plain-English daily alerts. Shape what this becomes.</p>
+      <div style="background:#060910; border:1px solid var(--border); border-radius:6px; padding:24px; margin-top:18px;">
+        <form action="https://formspree.io/f/xovypnwk" method="POST" class="form-wrap" onsubmit="onJoin()">
+          <input type="hidden" name="form" value="Join America's Torch" />
+          <label>Full Name</label><input name="name" required placeholder="Your full name" />
+          <label>Email</label><input name="email" type="email" required placeholder="you@example.com" />
+          <label>State</label>
+          <select name="state" required><option value="">Select your state</option><option>AL</option><option>AK</option><option>AZ</option><option>AR</option><option>CA</option><option>CO</option><option>CT</option><option>DE</option><option>FL</option><option>GA</option><option>HI</option><option>ID</option><option>IL</option><option>IN</option><option>IA</option><option>KS</option><option>KY</option><option>LA</option><option>ME</option><option>MD</option><option>MA</option><option>MI</option><option>MN</option><option>MS</option><option>MO</option><option>MT</option><option>NE</option><option>NV</option><option>NH</option><option>NJ</option><option>NM</option><option>NY</option><option>NC</option><option>ND</option><option>OH</option><option>OK</option><option>OR</option><option>PA</option><option>RI</option><option>SC</option><option>SD</option><option>TN</option><option>TX</option><option>UT</option><option>VT</option><option>VA</option><option>WA</option><option>WV</option><option>WI</option><option>WY</option></select>
+          <label>What matters most to you?</label>
+          <select name="priority">
+            <option value="">Choose one</option>
+            <option>End Immunity For Everyone</option>
+            <option>No Congressional Self-Raises</option>
+            <option>One Bill One Subject</option>
+            <option>No Foreign Aid Without My Vote</option>
+            <option>Social Security Reform</option>
+            <option>Term Limits</option>
+            <option>Fair Minimum Wage</option>
+            <option>Criminal Record Reform</option>
+            <option>Family Court Reform</option>
+            <option>Media Truth & Integrity</option>
+            <option>Plain English Laws</option>
+            <option>Financial Freedom By 40</option>
+            <option>All Of The Above</option>
+          </select>
+          <button class="btn-submit" type="submit">🔥 Light My Torch — I'm In</button>
+          <div class="form-note">No spam. No selling your info. No cameras. Anonymous by choice. Unsubscribe anytime.</div>
+        </form>
+      </div>
+    </div>
+
+  </div><!-- /shell -->
+
+  <footer>
+    <div style="font-size:22px; margin-bottom:8px;">🔥</div>
+    America's Torch · The Truth They Don't Want You To See<br>
+    Peaceful · Non-Partisan · Citizen-Powered · Anonymous By Choice<br>
+    No legal, financial, or voting advice · Not affiliated with any party, candidate, or organization<br>
+    Built by a concerned American citizen · For the American people · 2025
+  </footer>
+
+  <div class="toast" id="toast"></div>
 
   <script>
-    // Generate stars
-    const starsEl = document.getElementById('stars');
-    for (let i = 0; i < 120; i++) {
-      const s = document.createElement('div');
-      s.className = 'star';
-      const size = Math.random() * 2.5 + 0.5;
-      s.style.cssText = `
-        width:${size}px; height:${size}px;
-        left:${Math.random()*100}%;
-        top:${Math.random()*70}%;
-        --d:${(Math.random()*3+2).toFixed(1)}s;
-        --delay:-${(Math.random()*4).toFixed(1)}s;
-        --min-op:${(Math.random()*0.2+0.1).toFixed(2)};
-        --max-op:${(Math.random()*0.5+0.4).toFixed(2)};
-      `;
-      starsEl.appendChild(s);
+    // COUNTER ANIMATION
+    function animateCount(el, target, duration) {
+      if (!el) return;
+      let start = 0;
+      const step = target / (duration / 16);
+      const timer = setInterval(() => {
+        start += step;
+        if (start >= target) { start = target; clearInterval(timer); }
+        el.textContent = Math.floor(start).toLocaleString();
+      }, 16);
     }
 
-    // Generate light rays
-    const raysEl = document.getElementById('rays');
-    for (let i = 0; i < 16; i++) {
-      const r = document.createElement('div');
-      r.className = 'ray';
-      const angle = (i / 16) * 360;
-      const len = 150 + Math.random() * 80;
-      r.style.cssText = `
-        transform: rotate(${angle}deg);
-        width: ${len}px;
-        opacity: ${0.1 + Math.random() * 0.2};
-        animation-delay: ${(Math.random()*2).toFixed(1)}s;
-        animation-duration: ${(1.5+Math.random()*2).toFixed(1)}s;
-      `;
-      raysEl.appendChild(r);
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        animateCount(document.getElementById('memberCount'), 1247, 2200);
+        animateCount(document.getElementById('stateCount'), 38, 1800);
+        animateCount(document.getElementById('petitionCount'), 892, 2000);
+      }, 500);
+
+      // Days since min wage raised (July 24 2009)
+      const since = Math.floor((Date.now() - new Date('2009-07-24').getTime()) / 86400000);
+      const el = document.getElementById('daysSince');
+      if (el) el.textContent = since.toLocaleString();
+    });
+
+    // VOTE
+    function castVote(type, block) {
+      let y = parseInt(block.dataset.yes || '0');
+      let n = parseInt(block.dataset.no  || '0');
+      if (type === 'yes') y++; else n++;
+      block.dataset.yes = y; block.dataset.no = n;
+      const t = y + n;
+      const pct = t ? Math.round((y / t) * 100) : 0;
+      block.querySelector('.v-yes').textContent   = y;
+      block.querySelector('.v-no').textContent    = n;
+      block.querySelector('.v-total').textContent = t;
+      block.querySelector('.v-pct').textContent   = pct;
+      block.querySelector('.vote-bar-fill').style.width = pct + '%';
+      showToast(type === 'yes' ? '✅ Vote cast!' : '❌ Vote cast!');
     }
+
+    // SHARE
+    const SHARE_URL  = window.location.href;
+    const SHARE_TEXT = "🔥 America's Torch — Every bill. Every vote. Every dollar. Every name. 58 demands to restore American democracy. Non-partisan. Peaceful. The truth they don't want you to see.";
+
+    function shareX()  { window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(SHARE_TEXT)}&url=${encodeURIComponent(SHARE_URL)}`, '_blank'); }
+    function shareFB() { window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(SHARE_URL)}`, '_blank'); }
+    function shareWA() { window.open(`https://wa.me/?text=${encodeURIComponent(SHARE_TEXT + ' ' + SHARE_URL)}`, '_blank'); }
+    function copyLink() {
+      navigator.clipboard.writeText(SHARE_URL + '\n\n' + SHARE_TEXT)
+        .then(() => showToast('🔥 Link copied! Paste it everywhere.'))
+        .catch(() => showToast('Copy the URL from your address bar!'));
+    }
+
+    // TOAST
+    function showToast(msg) {
+      const t = document.getElementById('toast');
+      t.textContent = msg; t.classList.add('show');
+      setTimeout(() => t.classList.remove('show'), 3000);
+    }
+
+    // JOIN
+    function onJoin() { setTimeout(() => showToast("🔥 Welcome to America's Torch!"), 600); }
   </script>
 </body>
 </html>
